@@ -1,0 +1,3524 @@
+BILLY
+
+: Steering Large Language Models via Merging Persona Vectors
+for Creative Generation
+
+Tsung-Min Pai1 Jui-I Wang2 Li-Chun Lu3
+Shao-Hua Sun1,3 Hung-Yi Lee1,3 Kai-Wei Chang4
+1
+Department of Electrical Engineering, National Taiwan University
+2
+Department of Computer Science & Information Engineering, National Taiwan University
+3
+Graduate Institute of Communication Engineering, National Taiwan University
+4
+CSAIL, Massachusetts Institute of Technology
+
+arXiv:2510.10157v2 [cs.CL] 24 Jan 2026
+
+Correspondence to: Tsung-Min Pai <b09602017@ntu.edu.tw>, Kai-Wei Chang <kwchang@mit.edu>
+
+1
+
+Abstract
+
+Question: Reimagine a city park for the 21st century.
+
+Multi-LLM systems enhance the creativity of
+large language models by simulating human
+collective intelligence but suffer from significant drawbacks, such as high computational
+costs and inference latency. To address these
+limitations, we propose BILLY (BlendIng persona vectors for Large Language model creativitY), a training-free framework that captures the benefits of multi-LLM collaboration,
+i.e., inducing diverse perspectives and specialized expertise, within a single model. BILLY
+operates by extracting and blending multiple
+distinct persona vectors directly in the model’s
+activation space. We steer the model’s generation process with this merged vector while inference, enabling multi-perspective output without explicit multi-LLM communication. Our
+experiments across creativity-oriented benchmarks demonstrate that BILLY surpasses single
+model prompting and traditional multi-LLM
+approaches, while substantially reducing inference time and computational costs. Our analyses further reveal that distinct persona vectors
+can be blended to achieve both effective control
+over complementary aspects of generation and
+greater interpretability. Our project page and
+codes are available at Website and GitHub.
+
+Persona: Creative Professional
+An immersive sensory labyrinth:
+bioluminescent pathways, digital flora…
+
+Introduction
+
+Creativity is widely recognized as a cornerstone of
+human progress, driving innovation across domains
+and enabling major scientific breakthroughs (Feist,
+1998; Simonton, 2004). Extending this perspective,
+recent research (Franceschelli and Musolesi, 2023;
+Lin et al., 2025; Lu et al., 2026) has explored the
+creativity of large language models (LLMs), viewing them as promising tools for applications such
+as story writing (Gómez-Rodríguez and Williams,
+2023; Chen et al., 2024b), design ideation (Ding
+et al., 2023; Hou et al., 2024; Hung et al., 2025),
+and scientific discovery (Yang et al., 2024b; Si
+et al., 2025), thereby augmenting human problem-
+
+Persona: Environmentalist
+A resilient urban ecosystem: native
+biodiversity, optimizing ecological services…
+
+Extract Persona Vectors
+
++
+
++
+Base LLM
+
+BILLY
+
+A symbiotic dreamscape: self-sustaining
+crystalline structures, regenerative gardens
+whispering ecological wisdom…
+
+Figure 1: BILLY (BlendIng persona vectors for Large
+Language model creativitY). To enhance the creativity of a single LLM, we extract and fuse the persona vectors of a Creative Professional and an
+Environmentalist, steering a base model by this composite vector to generate outputs based on both domains.
+
+solving and imagination (Zhang et al., 2023; Lim
+and Perrault, 2024; Liu et al., 2024, 2025).
+Recent studies highlight the potential of the
+multi-LLM paradigm (Guo et al., 2024; Lu et al.,
+2024; Lin et al., 2025), which aims to simulate human collective intelligence (Leimeister, 2010) by
+engaging multiple LLMs in iterative discussion to
+arrive at more comprehensive and well-balanced
+solutions (Tran et al., 2025). This paradigm allows
+systems to generate a broader range of ideas beyond a single model can reach (Tran et al., 2025).
+In the context of creativity, these frameworks often
+assign diverse roles to LLMs and employ structured, multi-round interactions (Lu et al., 2024; Lin
+et al., 2025; Su et al., 2025; Liang et al., 2024).
+Our method, BILLY, takes its name from The Minds of
+Billy Milligan by Daniel Keyes—but the emoji in the title
+
+For example, one LLM may act as a creative professional while another serves as an environmentalist,
+enabling the system to explore and integrate multiple perspectives. Through such iterative exchanges,
+the models collaboratively converge on creative solutions that balance innovation with sustainability.
+Despite these advantages, multi-LLM frameworks also face a major challenge: the substantial
+computational cost and increased inference time associated with multi-LLM coordination (Tran et al.,
+2025). The iterative nature of multi-LLM dialogue
+substantially increases the system’s input and output tokens, as models must consume and produce
+multiple rounds of text while processing other models’ outputs. This multi-round exchange makes the
+process computationally costly and also increases
+inference latency (Lin et al., 2025; Creech et al.,
+2021; He et al., 2024), limiting scalability in realworld settings. Moreover, multi-LLM frameworks
+can exhibit sociological drawbacks such as process
+loss (Steiner, 1972), where the collective outcome
+falls short of the sum of individual contributions
+due to communication friction or coordination inefficiencies (Diehl and Stroebe, 1987; Nooteboom
+et al., 2007). Together, these issues expose a fundamental trade-off: while multi-LLM systems could
+potentially enhance diversity and creative potential,
+they do so at the expense of efficiency.
+We therefore ask: Without relying on multiple
+models carrying on a multi-round discussion, can a
+single LLM simulate diverse perspectives in an efficient manner? A natural way to explore this idea
+is through prompting, that is, asking the model
+to simultaneously adopt different roles and viewpoints. For example, one might prompt an LLM to
+act as both a creative professional and an environmentalist when producing a solution that balances
+originality with sustainability. However, this approach depends heavily on the model’s ability to
+integrate and coordinate multiple roles and perspectives within a single model and single response. In
+practice, an LLM may handle each persona separately but struggle to integrate them coherently in
+a single pass, often due to limitations in capability
+or the coverage of the training data (Turner et al.,
+2024).
+To address these challenges while retaining
+the creative advantages of multi-LLM interaction,
+we propose BILLY(BlendIng persona vectors for
+Large Language model creativitY) as illustrated
+nods to “Billie” Eilish instead.
+
+in Figure 1. Inspired by recent advances in extracting persona vectors (Chen et al., 2025) and
+steering model behavior through activation engineering (Turner et al., 2024; Panickssery et al.,
+2024), BILLY extends these ideas by merging multiple persona vectors within a single LLM. This
+enables the model to produce multi-perspective,
+creative responses without resorting to computationally heavy multi-LLM frameworks. Notably,
+BILLY is training-free and empirically effective
+and efficient—it produces creative outputs that consistently reflect the targeted personas. Our experiments show that BILLY achieves higher creativity
+than single-model prompting or multi-LLM methods while being substantially more cost-efficient.
+We summarize our contributions as follows:
+• Enhanced Creativity. We propose the framework BILLY, which blends multiple persona
+vectors within a single LLM. It enables the
+generation of diverse, multi-perspective, and
+creative responses, surpassing both singlemodel prompting and multi-LLM approaches
+on creativity-oriented benchmarks.
+• Efficiency and Simplicity. BILLY is entirely training-free, requiring no additional
+fine-tuning or multi-LLM communication. It
+achieves comparable or superior creativity
+with substantially lower computational and
+token costs.
+• Interpretability via Persona Vectors. Operating directly in the latent activation space,
+BILLY offers an interpretable mechanism
+for understanding and steering creativity, allowing fine-grained and transparent control
+through persona blending.
+
+2
+
+Related Work
+
+2.1
+
+LLM Creativity
+
+Enhancing creativity in LLMs has been a growing
+research focus. One common approach involves
+role-playing prompts, which guide models to adopt
+specific creative personas (Chen et al., 2024a). Another works (Lu et al., 2024; Chen et al., 2024b;
+Su et al., 2025) explore multi-agent collaboration
+frameworks, where multiple agents simulate brainstorming sessions by proposing and critiquing ideas
+to achieve more sophisticated creative outcomes.
+Comprehensive reviews of this research direction
+can be found in Chakrabarty et al. (2023); GómezRodríguez and Williams (2023).
+
+2.2
+
+Multi-LLM Collaboration
+
+Multi-agent collaboration has emerged as a powerful paradigm for enhancing LLM applications (Du
+et al., 2023; Chan et al., 2024; Liu et al., 2023; Sun
+et al., 2023). AutoGen (Wu et al., 2023) enables
+next-generation applications through structured
+conversations, while LLM Discussion (Lu et al.,
+2024) and HOLLMWOOD (Chen et al., 2024b) employ role-play and dialogue to stimulate more creative outputs. Beyond creativity, researchers have
+explored emergent cognitive synergy through multipersona self-collaboration (Wang et al., 2024) and
+applied divergent-agent systems to domain-specific
+tasks such as electronic design automation (Wu
+et al., 2025a). While infrastructures like AgentVerse (Chen et al., 2024c) and MetaGPT (Hong
+et al., 2024) provide frameworks for coordination,
+these collaborations can suffer from high computational costs, instability, and inefficiencies (Cemri
+et al., 2025; Han et al., 2025). The complexity
+of managing communication and coordination increases with the number of agents, potentially leading to bottlenecks and unpredictable behaviors.
+2.3
+
+Activation Steering
+
+Activation steering is a technology that modifies
+a model’s internal activations along specific directions to control or influence its behavior (Zou et al.,
+2025; Turner et al., 2024). This is achieved by first
+identifying a steering vector (Liang et al., 2026),
+which represents the desired behavioral shift. This
+vector is typically obtained using contrastive methods, where the model’s activation differences are
+calculated from pairs of inputs that elicit opposite
+behaviors (e.g., a truthful vs. a deceptive response).
+During inference, this steering vector is added to
+the activations at a specific layer, effectively nudging the model’s internal state toward the intended
+outcome.
+A key advantage of this method is that it manipulates activations only at inference time without
+altering the model’s underlying weights. This distinguishes it from techniques like model merging,
+which operates directly on model parameters to integrate capabilities from multiple fine-tuned models (Yang et al., 2024a; Sun et al., 2025; Jang et al.,
+2023), and offers a more lightweight, interpretable,
+and fine-grained control over model behavior. This
+technique has been applied across domains such
+as enhancing truthfulness (Li et al., 2023; Panickssery et al., 2024), improving safety (Zhang
+
+et al., 2025; Turner et al., 2024), and increasing
+transparency and interpretability (Zou et al., 2025;
+Jorgensen et al., 2023). Recent works have also
+leveraged activation steering for persona-related
+applications (Jorgensen et al., 2023; Turner et al.,
+2024; Zou et al., 2025). For example, Persona Vectors (Chen et al., 2025) identify activation directions corresponding to personalities for controllable
+character traits, while bi-directional preference optimization (Cao et al., 2025) enables versatile steering vectors for fine-grained persona control.
+
+3
+
+Approach: BILLY
+
+Our approach, BILLY, BlendIng persona vectors
+for Large Language model creativitY, is designed
+to overcome the limitations of prompting methods
+(Turner et al., 2024; Chen et al., 2024b; Liang et al.,
+2024; Hung et al., 2025) and the prohibitive costs
+of interactive multi-agent frameworks (Su et al.,
+2025; Ali et al., 2025; Lu et al., 2024). We introduce a novel paradigm that shifts the control of the
+model from an external, conversational system to
+direct, internal representational steering to improve
+LLM creativity. The core of our method is a threestage process: (1) extracting distinct persona vectors through a contrastive method, (2) fusing these
+vectors offline into a single composite steering vector, and (3) applying this vector during inference to
+guide a single model.
+3.1
+
+Extracting Persona Vectors via
+Contrastive Activation
+
+A persona vector (Chen et al., 2025) represents the
+characteristics of a specific persona (e.g., evil, humorous) as a directional vector within the model’s
+activation space (Zou et al., 2025; Wu et al., 2025b;
+Panickssery et al., 2024), capturing the shift in the
+model’s activation states when it adopts a persona
+compared to when it responds neutrally. By adding
+such a vector during inference, we can steer the
+model’s behavior to align with the desired persona.
+Building upon the pipeline proposed by Chen
+et al. (2025) for extracting persona vectors, we
+create a customized dataset designed to capture
+nuanced and specialized personas. This dataset enables more effective handling of creativity-oriented
+tasks and ensures a fair comparison with multiLLM systems (Lu et al., 2024; Chen et al., 2024b;
+Ali et al., 2025).
+Given a persona P , we curate two distinct sets of
+model responses, positive-expression set DP+ and
+
+negative-expression set DP− , as follows: (1) design contrastive system prompts (positive vs. negative), (2) employ an LLM judge to score the alignment of each response with the corresponding trait,
+and (3) filter the responses with a threshold to ensure a clear distinction between the two corpora.
+After the process, DP+ contains responses that exhibit the persona’s traits, and DP− contains baseline
+responses that lack these specific traits.
+For any given response x from these sets, we extract its token-averaged residual stream activation
+at a specific layer l, which we denote as ⃗a(l) (x).
+The persona vector for persona P at layer l, de(l)
+noted by ⃗vP , is then defined as the difference between the mean activation vectors of the positive
+and neutral sets:
+1 X (l)
+1 X (l)
+(l)
+⃗vP =
+⃗a (x) − −
+⃗a (x)
++
+|DP |
+|DP |
++
+−
+x∈DP
+
+x∈DP
+
+(1)
+(l)
+This resulting vector, ⃗vP , captures the directional
+
+shift in the activation space required to induce the
+persona P . This procedure is repeated for all layers, generating a unique candidate vector for each
+layer. We present the detailed extraction process in
+Section B.
+3.2
+
+Offline Fusion for a Composite Vector
+
+Unlike multi-LLM systems that require costly online interaction between agents, our approach fuses
+these perspectives in an offline step. Given a set of
+N extracted persona vectors {⃗v1 , ⃗v2 , . . . , ⃗vN } that
+we wish to combine, we compute a single composite steering vector, ⃗vmerged , by taking their average:
+N
+
+(l)
+
+⃗vmerged =
+
+1 X (l)
+⃗vi
+N
+
+(2)
+
+i=1
+
+This resulting ⃗vmerged represents a multi-faceted
+perspective in the model’s activation space. This
+one-time calculation yields a reusable vector that
+encapsulates the essence of a multi-personality.
+3.3
+
+Inference-time Steering with Composite
+Persona Vector
+
+The final stage applies the composite vector to steer
+the model’s generation process. During a standard
+forward pass, when the model computes the ac(l)
+tivations ⃗aoriginal at a chosen steering layer l, we
+intervene by adding our composite vector, scaled
+by a coefficient α:
+
+(l)
+
+(l)
+
+(l)
+
+⃗asteered = ⃗aoriginal + α · ⃗vmerged
+
+(3)
+
+This simple addition acts as a directional push
+in the activation space, steering the model’s subsequent computations and thus its final output towards a state that aligns with the fused perspectives
+of the multiple personas. Crucially, this steering
+process requires only a single additive operation
+during each inference step and involves no additional training. Specifically, layer 20 and coefficient 2.0 in our experiments, following Chen et al.
+(2025), and we also conduct a study of steering
+layers and coefficients in Appendix C.
+
+4
+
+Experiment
+
+4.1
+
+Benchmarks
+
+To evaluate the creativity of large language models
+(LLMs), we adopt a benchmark suite originally derived from human creativity tests, Wallach-Kogan
+Creativity Tests (Wallach, M. A., and Kogan, N.,
+1965). Rather than using the original tasks directly,
+we build upon a set of augmented benchmarks previously developed by Lu et al. (2024), which expanded the original tasks using GPT-4 to generate
+additional items. This makes our evaluation based
+on a pre-augmented dataset, ensuring a broader
+and more diverse set of tasks while maintaining
+alignment with established creativity tests.
+The benchmark set includes four benchmarks:
+AUT asks for practical and innovative uses for
+everyday objects; INSTANCES requires listing
+items according to specific criteria; SIMILARITIES involves identifying connections or similarities between items; and SCIENTIFIC focuses
+on producing creative solutions to scientific problems. Table 1 provides descriptions and examples
+from these benchmarks, with more detailed settings
+provided in the Section A.
+4.2
+
+Baselines
+
+We include both single agent prompting methods
+and multi-agent systems as our baselines. Section A shows the prompts we use in the baseline
+methods. Our baselines are as follows:
+(1) Single Agent (SA): A single LLM prompted to
+respond creatively, with the temperature set to 0.7,
+which is a commonly used value.
+(2) SA with High-temperature Decoding, SA
+(T = 1.0): The temperature T is increased to 1.0
+to stimulate higher levels of diversity. By allowing the model to explore a broader range of possi-
+
+Benchmark
+
+Description
+
+Sample Task
+
+AUT
+
+Evaluates divergent thinking by requiring the generation
+of numerous unconventional applications for an object.
+
+What are some creative uses for a mug?
+
+I NSTANCES
+
+Measures the ability to produce a diverse set of examples
+that satisfy a given categorical or physical property.
+
+Name 5 the square things you can think of.
+
+S IMILARITIES Assesses associative creativity by challenging participants to identify and articulate non-obvious connections
+between two distinct concepts.
+
+Tell me 5 ways in which a brick and a stone
+are alike.
+
+S CIENTIFIC
+
+Find different scientific uses for a spoon
+(e.g., demonstrating reflection or heat conduction).
+
+Probes creative problem-solving within a scientific
+framework, encompassing hypothesis generation, experimental design, and technological enhancement.
+
+Table 1: Creativity Benchmarks Overview. The first three benchmarks (AUT, I NSTANCES, S IMILARITIES) target
+general cognitive creativity, while S CIENTIFIC assesses creative aptitude in a structured, domain-specific context.
+
+ble outputs, this setting encourages more diverse
+responses. We include this configuration to test
+whether greater diversity in generation can lead
+to more creative outcomes, though it may also introduce greater variability in quality (Peeperkorn
+et al., 2024).
+(3) SA with Multi-Role Prompt (SA-MRP): In
+addition to the standard single agent baseline, we
+design a multi-role prompting variant. The prompt
+here is extended with explicit persona instructions.
+The model is asked to respond from multiple professional perspectives, such as environmentalist,
+creative professional, and futurist, each with distinct expertise styles. This approach is included
+as a strong baseline to determine the performance
+limits of enhancing creativity through prompt engineering alone. By comparing our proposed BILLY
+against this advanced prompting technique, we can
+more clearly demonstrate the advantages of directly
+manipulating the model’s internal activations over
+purely prompt-level modifications.
+(4) LLM Discussion: A multi-LLM framework
+proposed by Lu et al. (2024), which organizes
+multiple LLM agents into a structured threephase process—initiation, discussion, and convergence—with each agent role-played under distinct
+personas to diversify perspectives. Agents exchange ideas over several rounds and then consolidate them into final outputs. Our implementation
+follows the original setup, including role assignments and discussion prompts.
+4.3
+
+Evaluation
+
+To quantify the creative performance of each
+method, we adopt two primary metrics from the
+Torrance Tests of Creative Thinking (TTCT; Torrance, 1966) and perform both LLM-based evalu-
+
+ation (GPT-4o-mini) and human evaluation. The
+TTCT is a widely respected instrument in psychological research, valued for its reliability in measuring creative output (Cramond et al., 2005). From
+its framework, we focus on the two key dimensions
+most relevant to the quality of generated ideas. We
+evaluate the whole QA pair with these two metrics.
+Metrics: The specific metrics employed are as
+follows:
+• Originality: This metric assesses the statistical rarity or unconventionality of a response. Ideas are scored based on their novelty and divergence from common or obvious
+answers, while still maintaining relevance to
+the prompt.
+• Elaboration: This metric measures the level
+of detail and supportive information within a
+response. It evaluates the ability to expand
+upon a core idea, adding depth, context, and
+specific details to enrich the initial concept.
+The TTCT framework includes two other metrics: fluency and flexibility. However, as discussed
+in Lu et al. (2024), these metrics are not suitable
+for assessing LLM creativity. The authors point
+out that while fluency and flexibility pose significant challenges for human subjects, they are trivial
+for LLMs, which can generate responses in any
+desired quantity or variety on demand. Our preliminary study confirms this finding. Therefore,
+since these metrics do not serve as meaningful differentiators for LLM creativity, our evaluation will
+proceed using only originality and elaboration.
+Both human evaluation and LLM-based evaluation follow the same TTCT-based scoring rubric,
+as presented in Section A, to ensure consistency
+across evaluation settings.
+
+Qwen-2.5-7B-Instruct
+
+Llama-3.1-8B-Instruct
+
+Originality
+
+Elaboration
+
+Originality
+
+Elaboration
+
+Originality
+
+Elaboration
+
+AUT
+
+SA
+SA (T=1.0)
+SA-MRP
+LLM Discussion
+BILLY (Ours)
+
+4.03±0.55
+4.15±0.51
+4.07±0.44
+4.24±0.54
+4.71±0.45
+
+4.84±0.37
+4.86±0.36
+4.91±0.29
+4.88±0.33
+4.86±0.37
+
+3.73±0.59
+3.75±0.63
+4.05±0.47
+4.21±0.59
+4.38±0.55
+
+4.69±0.48
+4.60±0.52
+4.70±0.49
+4.85±0.39
+4.84±0.39
+
+4.79±0.16
+4.78±0.42
+4.96±0.19
+3.70±1.25*
+4.99±0.08
+
+4.94±0.26
+4.93±0.25
+4.97±1.11
+4.03±1.29
+4.96±0.21
+
+I NSTANCES
+
+SA
+SA (T=1.0)
+SA-MRP
+LLM Discussion
+BILLY (Ours)
+
+3.35±0.77
+3.49±0.74
+3.47±0.56
+3.29±0.76
+4.57±0.55
+
+3.96±0.62
+3.97±0.60
+4.54±0.61
+4.55±0.55
+4.41±0.71
+
+2.57±0.70
+2.76±0.73
+3.10±0.63
+3.46±0.73
+4.53±0.60
+
+3.63±0.62
+3.81±0.61
+4.35±0.58
+4.08±0.66
+4.78±0.43
+
+4.85±0.35
+4.64±0.52
+4.83±0.38
+3.72±1.03*
+4.96±0.20
+
+4.82±0.40
+4.87±0.34
+4.84±0.37
+4.06±1.10
+4.86±0.34
+
+S CIENTIFIC
+
+SA
+SA (T=1.0)
+SA-MRP
+LLM Discussion
+BILLY (Ours)
+
+3.63±0.65
+3.74±0.64
+3.65±0.54
+3.45±0.66
+4.48±0.40
+
+4.67±0.47
+4.76±0.44
+4.54±0.54
+4.64±0.58
+4.32±0.67
+
+3.65±0.62
+3.70±0.70
+3.54±0.58
+3.24±0.70
+4.48±0.40
+
+4.63±0.50
+4.68±0.48
+4.58±0.53
+4.26±0.65
+4.51±0.46
+
+4.96±0.20
+4.51±0.51
+4.96±0.20
+3.76±1.03*
+4.94±0.24
+
+4.69±0.49
+4.82±0.38
+4.75±0.44
+4.28±0.97
+4.68±0.50
+
+S IMILARITIES
+
+SA
+SA (T=1.0)
+SA-MRP
+LLM Discussion
+BILLY (Ours)
+
+2.50±0.48
+2.62±0.68
+3.08±0.53
+3.19±0.74
+4.36±0.68
+
+4.68±0.33
+4.67±0.47
+4.81±0.41
+4.84±0.37
+4.66±0.58
+
+3.12±0.47
+3.33±0.70
+3.01±0.51
+2.91±0.74
+4.39±0.68
+
+4.73±0.28
+4.75±0.47
+4.63±0.48
+4.37±0.61
+4.68±0.50
+
+4.97±0.24
+4.41±0.51
+4.93±0.26
+3.70±0.95*
+4.94±0.24
+
+4.75±0.46
+4.92±0.28
+4.76±0.44
+4.17±0.95
+4.82±0.40
+
+Task
+
+Method
+
+Gemma-3-4B-it
+
+Table 2: Evaluation Results. We use Qwen-2.5-7B-Instruct, Llama-3.1-8B-Instruct, and Gemma-3-4B-it as our
+base models for steering and employ GPT-4o-mini as the LLM judge. The highest scores in each benchmark are
+highlighted in purple, while the second-highest is in blue. Across the four benchmarks, the Originality scores of
+our method BILLY surpass nearly all of the baselines.
+
+4.4
+4.4.1
+
+Results
+LLM-based Evaluation
+
+Our primary experiments evaluate BILLY against
+several baselines by steering three distinct opensource models: Qwen-2.5-7B-Instruct, Llama-3.18B-Instruct, and Gemma-3-4B-it. The main results,
+aggregated across all four creativity benchmarks,
+are presented in Table 2.
+The central finding of our work is that BILLY
+achieves a superior balance between Originality
+and Elaboration. Across four benchmarks, our
+method consistently outperforms all baseline methods in Originality while remaining competitive in
+terms of Elaboration. This demonstrates the effectiveness of using internal representational control
+to elicit creative responses. For both Qwen and
+Llama models, BILLY surpasses the strong but
+costly LLM Discussion, as well as various singleagent configurations. Notably, while the SA-MRP
+occasionally provides a slight improvement over
+the SA, its performance is inconsistent, reinforcing
+our hypothesis that prompt-based control is inherently less reliable than direct vector steering. To
+validate our findings, we conducted paired t-tests
+across our entire experimental matrix. The analysis reveals that BILLY’s advantage is statistically
+significant (p-value < 0.05) in 74% of all comparisons, and highly significant (p-value < 0.001) in
+
+66% of them. The majority of these significant
+improvements were observed on the Originality
+metric, reinforcing our central claim. Furthermore,
+we discuss the difference between linguistic diversity and true creativity in Section D.
+The Gemma-3-4B-it model, a smaller model,
+struggles with limitations in the long-form, multiround LLM Discussion tasks, as its output tends to
+become unstable with the expanding context. We
+attribute its lower scores and high variance to this
+instability. Notably, while BILLY still achieved
+the highest Originality score on this model in most
+cases, the SA baselines also exhibit exceptionally
+strong creative performance.
+4.4.2 Human Evaluation and Correlation
+Human evaluation is conducted on a subset of methods due to practical constraints. Specifically, we
+select three representative methods and evaluate
+them across all four tasks. For each task, three
+samples are randomly selected for human assessment. In total, we collect 132 evaluation scores
+contributed by 11 volunteer human evaluators.
+The human evaluation results are shown in Table 3. Overall, the trends are consistent with our
+LLM-based evaluation. Across all benchmarks,
+BILLY achieves the highest average scores in both
+Originality and Elaboration, outperforming the SA
+and the LLM Discussion method. BILLY shows
+
+Task
+
+Method
+
+Originality
+
+Elaboration
+
+AUT
+
+SA
+LLM Discussion
+BILLY (Ours)
+
+3.11±1.21
+3.55±1.07
+3.67±1.11
+
+3.43±1.10
+2.78±1.09
+4.08±0.89
+
+I NSTANCES
+
+SA
+LLM Discussion
+BILLY (Ours)
+
+2.53±1.15
+3.45±1.19
+3.75±1.38
+
+2.55±1.16
+3.04±1.08
+3.96±0.90
+
+S CIENTIFIC
+
+SA
+LLM Discussion
+BILLY (Ours)
+
+3.01±1.37
+3.30±1.16
+3.47±1.18
+
+3.86±1.07
+2.70±0.93
+4.23±0.85
+
+SA
+S IMILARITIES LLM Discussion
+BILLY (Ours)
+
+3.15±1.40
+2.79±1.11
+3.75±1.09
+
+3.79±0.99
+2.33±1.13
+4.17±1.07
+
+Table 3: Human Evaluation Results.
+The
+highest scores are highlighted in purple, while the
+second-highest are in blue. Across all benchmarks,
+BILLY (Ours) consistently achieves the strongest Originality and Elaboration scores.
+Correlation
+
+Originality
+
+Elaboration
+
+Spearman
+Pearson
+
+0.73
+0.66
+
+0.43
+0.40
+
+Table 4: Correlation Between Human and LLM
+Judges. Spearman and Pearson correlations between
+LLM-based evaluations and average human evaluations
+for Originality and Elaboration.
+
+particularly strong gains in Elaboration, indicating its ability to produce more detailed responses.
+Meanwhile, although LLM Discussion often improves originality over SA, its elaboration scores
+are consistently lower. These results suggest that
+direct activation steering provides a more effective and stable mechanism for eliciting creative
+responses.
+We also calculated the Spearman’s Rank Correlation Coefficient and Pearson Correlation Coefficient between our LLM-Judge and human raters,
+with the results show in Table 4. The results indicate a strong positive correlation for the Originality.
+While the correlation for the Elaboration score is
+more moderate, this aligns with observations reported in the LLM-Discussion (Lu et al., 2024).
+
+5
+
+Discussion & Analysis
+
+Our analysis goes beyond simple confirmation of
+efficacy to provide deeper insights into the mechanisms of BILLY. To dissect these mechanisms, our
+discussion is structured around four concepts: (1)
+The actual token cost and inference time among
+different methods.(2) The relationship between the
+quantity of fused vectors and the resulting creative
+quality. (3) Qualitative nature of the generated text.
+
+(4) Layer-wise projection among different methods.
+The experiments in this section adopt the Llama3.1-8B-Instruct model, which we find sufficiently
+representative for our analysis.
+5.1
+
+Token Cost and Inference Time
+
+Table 5 details the average inference latency, input
+and output token counts per query, and estimated
+token cost per 10000 queries for each method. The
+data clearly demonstrates BILLY’s superior efficiency, reducing both token usage and associated
+estimated cost by more than 95% compared to the
+LLM Discussion baseline. Notably, the amortized
+approach emerges as the most cost-effective solution, as its operational costs remain fixed regardless
+of query volume. We discuss the amortized cost,
+which is the most evident advantage of BILLY, in
+Section E, and Section J also provides the complete
+chat log of a specific agent in LLM Discussion with
+a single question.
+Practical efficiency of BILLY is evident not only
+in its token cost but also in its substantially shorter
+inference time. We measured the wall-clock time
+required for each method to answer 100 AUT questions and calculated the average inference latency
+per query. As detailed in Table 5, BILLY is approximately 25 times faster than LLM Discussion.
+This dramatic reduction in latency suggests that
+our approach is a practical solution for real-time
+creative generation.
+Method
+SA
+SA-MRP
+LLM Discussion
+BILLY (Ours)
+1
+2
+
+Latency (s)
+23.9
+36.8
+513
+19
+
+Token (In / Out)1 Cost ($)2
+22.3 / 407.1
+221.2 / 861.1
+88853 / 12922.1
+62.2 / 475.6
+
+0.25
+0.56
+25.50
+0.30
+
+Token are per-query averages (n=10,000).
+Cost is the estimated price for 10000 queries calculated
+based on Nebius AI Studio, where the price is $0.02 /
+$0.06 USD per million input / output tokens.
+
+Table 5: Inference Time and Token Cost. BILLY
+demonstrates a significant reduction in both latency and
+token cost compared to LLM Discussion.
+
+5.2
+
+Analysis of Various Vector Compositions
+
+To investigate the relationship between the quantity of fused personas and creativity, we vary the
+number of merged vectors from one to seven. The
+results are presented in Figure 2 with the specific
+persona vector combinations detailed in Section F.
+First, any vector merge with the creative professional persona results in exceptionally high creative performance. Second, while increasing the
+
+Question: Healthcare Innovation - Redesign the future
+hospital experience for patients, families, and staff.
+BILLY (ENV)
+… Community Gardens: Outdoor spaces promote
+physical activity, connect nature, and reduce stress.
+BILLY (CRE)
+… Bioluminous Biome: Radiant forests, crystalline
+geodes, & iridescent orbs bathing spaces in
+kaleidoscopic hues.
+
+Figure 2: Persona Vector Combinations Analysis.
+Based on the default 4 vectors, we modify the combination of persona vectors from one to seven.
+
+number of persona vectors from one, i.e., 1 (CRE),
+to three yields a noticeable improvement, further
+additions from four to seven vectors do not produce
+additional significant gains. This suggests that the
+primary benefit of BILLY is not simply additive.
+5.3
+
+A Case Study on Persona Fusion
+
+We present a case study on the Reimagine the Hospital task, one of the neutral questions designed for
+our activation extraction (Section 5.4). The results,
+detailed in Figure 3 and Section G, demonstrate
+that the individual vectors exhibit distinct functions: the environmentalist generates a pragmatic
+blueprint (e.g., Community Gardens), while the
+creative professional produces an evocative, artistic
+term (e.g., Bioluminous Biome). The merged vector demonstrates a true conceptual fusion. It retains
+the substantive concepts from the environmentalist
+but reframes them with the visionary style of the
+creative vector. For instance, a functional "Community Garden" is transformed into an experiential
+"Fractal Forest." In contrast, while prompted to
+be an environmentalist and creative professional,
+MRP uses relatively analytical words to convey the
+concept of sustainability rather than creative ones.
+5.4
+
+Steering Alignment via Projection
+
+To verify how effectively our method aligns model
+representations with target personas, we analyze
+the projection of activation changes ∆⃗a(l) in Equation (4) onto layer-specific persona vectors. This
+analysis is conducted using 10 neutral questions
+shown in Section H and 10 randomly selected questions from our evaluation dataset. The core idea is
+to measure the change in the model’s activations
+caused by our steering vector and then calculate
+how much of the change occurred along the in-
+
+BILLY (CRE + ENV)
+… Fractal Forests: Ephemeral gardens grow within
+glass domes, bathing visitors in iridescent mosaics,
+awakening inner blooms.
+MRP (CRE + ENV)
+… Feasibility and Sustainability: Balance
+operational costs with environmental sustainability,
+energy efficiency, and long-term viability.
+
+Figure 3: Qualitative Results. Responses generated
+by models that are steered by BILLY (ENV), BILLY
+(CRE), BILLY (CRE + ENV), and MRP (CRE + ENV).
+
+tended persona’s direction.
+This analysis involves two main steps. First, we
+define the activation difference vector, ∆⃗a(l) , for
+each layer l. This vector is the difference between
+(l)
+the steered activations ⃗asteered from Equation (3)
+(l)
+and the original activations ⃗aoriginal from a standard forward pass without steering:
+(l)
+
+(l)
+
+∆⃗a(l) = ⃗asteered − ⃗aoriginal
+
+(4)
+
+Second, to quantify the alignment of this change
+with a specific persona, we project the activation
+difference vector ∆⃗a(l) onto that persona’s predefined, layer-specific unit persona vector. The result(l)
+ing projection value, P rojectionpersona , is calculated via the dot product:
+(l)
+
+(l)
+
+P rojectionpersona = ∆⃗a(l) ·
+
+⃗vpersona
+(l)
+
+∥⃗vpersona ∥
+
+(5)
+
+(l)
+
+where ⃗vpersona is the persona vector for a given
+persona at layer l. A higher positive projection
+value indicates that our steering intervention more
+strongly shifted the model’s activations along that
+persona’s semantic axis.
+Superiority of Vector Steering over Prompting.
+Figure 4 shows that while prompting model to be
+both a creative professional and an environmentalist, the projection is only positive on vCRE (Figure 4a) but negative on vEN V (Figure 4b). This
+
+Figure 4: Projection of Different Methods. Projection of activation changes on the layer-specific creative
+professional and environmentalist persona vectors. Figures (a) and (b) show the comparison between Base Model
+(without system prompt), Prompt (CRE+ENV), and BILLY (CRE+ENV). Figure (c) and (d) demonstrate the
+projection of applying (i) only BILLY (CRE), (ii) only BILLY (ENV), and (iii) BILLY (CRE+ENV) at Layer 20.
+
+indicates that MRP fails to consistently induce all
+intended personas in the model’s activations.
+In stark contrast, the projections of BILLY (CRE
++ ENV) consistently being positive on both the
+vCRE (Figure 4a) and vEN V (Figure 4b). By directly manipulating the latent space, BILLY successfully co-activates multiple personas, validating
+its superior controllability and interpretability for
+complex, multi-faceted persona generation.
+Efficacy of Persona Vectors Merging. Our analysis confirms the efficacy and selectivity of the individual persona vectors. As shown in Figure 4(c),
+steering with only BILLY (CRE) induces a strong,
+sustained projection onto the vCRE , while having a
+negligible effect on the vEN V . Conversely, BILLY
+(ENV) in Figure 4(d) strongly activates the environmentalist axis with minimal projection onto the
+creative one. This demonstrates that the extracted
+vectors are highly effective, precisely controlling
+their intended semantic concepts.
+BILLY (CRE + ENV) reveals a more complex
+and interesting interaction. Figure 4c and Figure 4d
+show that BILLY (CRE + ENV) successfully coactivates both personas, maintaining a positive projection on both vCRE and vEN V . However, this
+co-activation does not translate linearly to the output response. For instance, while the projection of
+BILLY (CRE + ENV) on vCRE is lower than that
+of BILLY (CRE) alone in Figure 4c, its Originality
+score is actually higher in Figure 2.
+This suggests an interesting effect just as we
+discuss in Section 5.3, and Section G: the environmentalist vector provides substantive content that
+the creative professional vector can then reframe,
+leading to a richer and more original output. Besides the projection analysis, we also analyze the
+trait expression of output response in Section H.
+
+6
+
+Conclusion
+
+We introduce BILLY, an efficient activation steering method that enhances LLM creativity while
+avoiding the high inference time and costs of multiLLM systems. Extensive experiments on four
+benchmarks show that our method BILLY matches
+or surpasses strong creative baselines with significantly reduced inference time and costs. Furthermore, our qualitative analysis shows that different
+persona vectors influence distinct aspects of generation, such as style versus content. Via activation
+projections, we suggest that BILLY offers superior controllability compared to prompting methods
+over both the model’s internal state and its output.
+
+Limitations
+The main contributions of our work include: (1)
+demonstrating that the creative benefits of multiagent collaboration can be effectively captured
+within a single model via activation steering, (2)
+significantly reducing the inference time and token cost for creativity tasks , and (3) revealing the
+multiple role-play prompting is less controllable
+and interpretable than activation steering with a
+composite persona vector by several analyses.
+While we recognize that developing a more sophisticated framework for vector composition that
+moves beyond simple averaging to predictably manage these non-linear interactions is a key direction
+for advancing controllable AI, such a method is not
+directly proposed in this work. Future research can
+build on our findings by developing more advanced
+composition techniques. These could include learning task-specific weights for each persona vector
+or designing mechanisms that explicitly model the
+functional roles to achieve more precise control.
+Such advancements would support the development of more generalizable and robustly control-
+
+lable models capable of complex, multi-faceted
+reasoning.
+
+Acknowledgment
+This work was supported in part by the National
+Science and Technology Council, Taiwan, under
+the Grants 114-2917-I-564-024 and 114-2628-E002-021-, and the Taiwan Centers of Excellence.
+Shao-Hua Sun was supported by the Yushan Fellow
+Program of the Ministry of Education, Taiwan.
+
+References
+Safinah Ali, Ayat Abodayeh, Zahra Dhuliawala, Cynthia
+Breazeal, and Hae Won Park. 2025. Towards inclusive co-creative child-robot interaction: Can social
+robots support neurodivergent children’s creativity?
+In Proceedings of the 2025 ACM/IEEE International
+Conference on Human-Robot Interaction.
+Yuanpu Cao, Tianrong Zhang, Bochuan Cao, Ziyi Yin,
+Lu Lin, Fenglong Ma, and Jinghui Chen. 2025. Personalized steering of large language models: versatile
+steering vectors through bi-directional preference optimization. In Proceedings of the 38th International
+Conference on Neural Information Processing Systems.
+Mert Cemri, Melissa Z. Pan, Shuyi Yang, Lakshya A.
+Agrawal, Bhavya Chopra, Rishabh Tiwari, Kurt
+Keutzer, Aditya Parameswaran, Dan Klein, Kannan
+Ramchandran, Matei Zaharia, Joseph E. Gonzalez,
+and Ion Stoica. 2025. Why do multi-agent llm systems fail?
+Tuhin Chakrabarty, Philippe Laban, Divyansh Agarwal, Smaranda Muresan, and Chien-Sheng Wu. 2023.
+Art or artifice? large language models and the false
+promise of creativity. arXiv:2309.14556.
+Chi-Min Chan, Weize Chen, Yusheng Su, Jianxuan Yu,
+Wei Xue, Shanghang Zhang, Jie Fu, and Zhiyuan Liu.
+2024. Chateval: Towards better LLM-based evaluators through multi-agent debate. In The Twelfth
+International Conference on Learning Representations.
+Jiangjie Chen, Xintao Wang, Rui Xu, Siyu Yuan, Yikai
+Zhang, Wei Shi, Jian Xie, Shuang Li, Ruihan Yang,
+Tinghui Zhu, Aili Chen, Nianqi Li, Lida Chen, Caiyu
+Hu, Siye Wu, Scott Ren, Ziquan Fu, and Yanghua
+Xiao. 2024a. From persona to personalization: A
+survey on role-playing language agents.
+Jing Chen, Xinyu Zhu, Cheng Yang, Chufan Shi,
+Yadong Xi, Yuxiang Zhang, Junjie Wang, Jiashu Pu,
+Tian Feng, Yujiu Yang, and Rongsheng Zhang. 2024b.
+HoLLMwood: Unleashing the creativity of large language models in screenwriting via role playing. In
+Findings of the Association for Computational Linguistics: EMNLP 2024. Association for Computational Linguistics.
+
+Runjin Chen, Andy Arditi, Henry Sleight, Owain Evans,
+and Jack Lindsey. 2025. Persona vectors: Monitoring
+and controlling character traits in language models.
+Weize Chen, Yusheng Su, Jingwei Zuo, Cheng Yang,
+Chenfei Yuan, Chi-Min Chan, Heyang Yu, Yaxi Lu,
+Yi-Hsin Hung, Chen Qian, Yujia Qin, Xin Cong,
+Ruobing Xie, Zhiyuan Liu, Maosong Sun, and Jie
+Zhou. 2024c. Agentverse: Facilitating multi-agent
+collaboration and exploring emergent behaviors. In
+International Conference on Representation Learning.
+Bonnie Cramond, Juanita Matthews-Morgan, Deborah
+Bandalos, and Li Zuo. 2005. A report on the 40year
+follow-up of the torrance tests of creative thinking:
+Alive and well in the new millennium. Gifted Child
+Quarterly - GIFTED CHILD QUART.
+Niall Creech, Natalia Criado Pacheco, and Simon Miles.
+2021. Resource allocation in dynamic multiagent
+systems.
+M. Diehl and W. Stroebe. 1987. Productivity loss in
+brainstorming groups: Toward the solution of a riddle.
+Journal of Personality and Social Psychology.
+Shiying Ding, Xinyi Chen, Yan Fang, Wenrui Liu, Yiwu
+Qiu, and Chunlei Chai. 2023. Designgpt: Multiagent collaboration in design.
+Yilun Du, Shuang Li, Antonio Torralba, Joshua B.
+Tenenbaum, and Igor Mordatch. 2023. Improving
+factuality and reasoning in language models through
+multiagent debate. arXiv:2305.14325.
+Gregory J Feist. 1998. A meta-analysis of personality
+in scientific and artistic creativity. Personality and
+social psychology review.
+Giorgio Franceschelli and Mirco Musolesi. 2023.
+On the creativity of large language models.
+arXiv:2304.00008.
+Carlos Gómez-Rodríguez and Paul Williams. 2023. A
+confederacy of models: a comprehensive evaluation
+of LLMs on creative writing. In Findings of the
+Association for Computational Linguistics: EMNLP.
+Taicheng Guo, Xiuying Chen, Yaqi Wang, Ruidi Chang,
+Shichao Pei, Nitesh V Chawla, Olaf Wiest, and Xiangliang Zhang. 2024. Large language model based
+multi-agents: A survey of progress and challenges.
+In IJCAI.
+Shanshan Han, Qifan Zhang, Yuhang Yao, Weizhao Jin,
+and Zhaozhuo Xu. 2025. Llm multi-agent systems:
+Challenges and open problems.
+Jessica He, Stephanie Houde, Gabriel E. Gonzalez,
+Darío Andrés Silva Moran, Steven I. Ross, Michael
+Muller, and Justin D. Weisz. 2024. Ai and the future
+of collaborative work: Group ideation with an llm
+in a virtual canvas. In Proceedings of the 3rd Annual Meeting of the Symposium on Human-Computer
+Interaction for Work.
+
+Sirui Hong, Mingchen Zhuge, Jonathan Chen, Xiawu
+Zheng, Yuheng Cheng, Jinlin Wang, Ceyao Zhang,
+Zili Wang, Steven Ka Shing Yau, Zijuan Lin, Liyang
+Zhou, Chenyu Ran, Lingfeng Xiao, Chenglin Wu,
+and Jürgen Schmidhuber. 2024. MetaGPT: Meta programming for a multi-agent collaborative framework.
+In The Twelfth International Conference on Learning
+Representations.
+Yihan Hou, Manling Yang, Hao Cui, Lei Wang, Jie Xu,
+and Wei Zeng. 2024. C2ideas: Supporting creative
+interior color design ideation with a large language
+model. In Proceedings of the 2024 CHI conference
+on human factors in computing systems.
+Yu-Kai Hung, Yun-Chien Huang, Ting-Yu Su, Yen-Ting
+Lin, Lung-Pan Cheng, Bryan Wang, and Shao-Hua
+Sun. 2025. Simtube: Generating simulated video
+comments through multimodal ai and user personas.
+In International Conference on Intelligent User Interfaces.
+Joel Jang, Seungone Kim, Bill Yuchen Lin, Yizhong
+Wang, Jack Hessel, Luke Zettlemoyer, Hannaneh
+Hajishirzi, Yejin Choi, and Prithviraj Ammanabrolu.
+2023. Personalized soups: Personalized large language model alignment via post-hoc parameter merging.
+Ole Jorgensen, Dylan Cope, Nandi Schoots, and Murray
+Shanahan. 2023. Improving activation steering in
+language models with mean-centring.
+Jan Marco Leimeister. 2010. Collective intelligence.
+Business & Information Systems Engineering.
+Kenneth Li, Oam Patel, Fernanda Viégas, Hanspeter
+Pfister, and Martin Wattenberg. 2023. Inference-time
+intervention: eliciting truthful answers from a language model. In Proceedings of the 37th International Conference on Neural Information Processing
+Systems.
+Ren-Wei Liang, Chin Ting Hsu, Chan-Hung Yu,
+Saransh Agrawal, Shih-Cheng Huang, Chieh-Yen
+Lin, Shang-Tse Chen, Kuan-Hao Huang, and ShaoHua Sun. 2026. Adaptive Helpfulness–Harmlessness
+Alignment with Preference Vectors . In Conference
+of the European Chapter of the Association for Computational Linguistics.
+
+Max Liu, Chan-Hung Yu, Wei-Hsu Lee, Cheng-Wei
+Hung, Yen-Chun Chen, and Shao-Hua Sun. 2025.
+Synthesizing programmatic reinforcement learning
+policies with large language model guided search. In
+International Conference on Learning Representations.
+Yiren Liu, Si Chen, Haocong Cheng, Mengxia Yu, Xiao
+Ran, Andrew Mo, Yiliu Tang, and Yun Huang. 2024.
+Coquest: Exploring research question co-creation
+with an llm-based agent.
+Zijun Liu, Yanzhe Zhang, Peng Li, Yang Liu, and Diyi
+Yang. 2023. Dynamic llm-agent network: An llmagent collaboration framework with agent team optimization. arXiv:2310.02170.
+Li-Chun Lu, Shou-Jen Chen, Tsung-Min Pai, ChanHung Yu, Hung-yi Lee, and Shao-Hua Sun. 2024.
+LLM Discussion: Enhancing the creativity of large
+language models via discussion framework and roleplay. In Conference on Language Modeling.
+Li-Chun Lu, Miri Liu, Pin Chun Lu, Yufei Tian, ShaoHua Sun, and Nanyun Peng. 2026. Rethinking Creativity Evaluation: A Critical Analysis of Existing
+Creativity Evaluations. In Conference of the European Chapter of the Association for Computational
+Linguistics.
+Bart Nooteboom, Wim Van Haverbeke, Geert Duysters,
+Victor Gilsing, and Ad van den Oord. 2007. Optimal
+cognitive distance and absorptive capacity. Research
+Policy.
+Nina Panickssery, Nick Gabrieli, Julian Schulz, Meg
+Tong, Evan Hubinger, and Alexander Matt Turner.
+2024. Steering llama 2 via contrastive activation
+addition.
+Max Peeperkorn, Tom Kouwenhoven, Dan Brown, and
+Anna Jordanous. 2024. Is temperature the creativity
+parameter of large language models?
+Chenglei Si, Diyi Yang, and Tatsunori Hashimoto. 2025.
+Can LLMs generate novel research ideas? a largescale human study with 100+ NLP researchers. In
+The Thirteenth International Conference on Learning
+Representations.
+
+Tian Liang, Zhiwei He, Wenxiang Jiao, Xing Wang,
+Yan Wang, Rui Wang, Yujiu Yang, Shuming Shi, and
+Zhaopeng Tu. 2024. Encouraging divergent thinking
+in large language models through multi-agent debate.
+In Proceedings of the 2024 Conference on Empirical
+Methods in Natural Language Processing.
+
+Dean Keith Simonton. 2004. Creativity in science:
+Chance, logic, genius, and zeitgeist. Cambridge University Press.
+
+Gionnieve Lim and Simon T Perrault. 2024. Rapid
+aideation: Generating ideas with the self and in
+collaboration with large language models. arXiv
+preprint arXiv:2403.12928.
+
+Haoyang Su, Renqi Chen, Shixiang Tang, Zhenfei Yin,
+Xinzhe Zheng, Jinzhe Li, Biqing Qi, Qi Wu, Hui
+Li, Wanli Ouyang, Philip Torr, Bowen Zhou, and
+Nanqing Dong. 2025. Many heads are better than
+one: Improved scientific idea generation by a LLMbased multi-agent system. In Proceedings of the 63rd
+Annual Meeting of the Association for Computational
+Linguistics (Volume 1: Long Papers). Association for
+Computational Linguistics.
+
+Yi-Cheng Lin, Kang-Chieh Chen, Zhe-Yan Li, TzuHeng Wu, Tzu-Hsuan Wu, Kuan-Yu Chen, Hung
+yi Lee, and Yun-Nung Chen. 2025. Creativity in
+llm-based multi-agent systems: A survey.
+
+Ivan Dale Steiner. 1972. Group process and productivity, volume 1. Academic press New York.
+
+Qiushi Sun, Zhangyue Yin, Xiang Li, Zhiyong Wu,
+Xipeng Qiu, and Lingpeng Kong. 2023. Corex: Pushing the boundaries of complex reasoning through
+multi-model collaboration. arXiv:2310.00280.
+Seungjong Sun, Seo Yeon Baek, and Jang Hyun Kim.
+2025. Personality vector: Modulating personality of
+large language models by model merging.
+Ellis Paul Torrance. 1966. Torrance Tests of Creative
+Thinking. Norms-Technical Manual. Research Edition. Verbal Tests Forms a and B. Figural Tests Forms
+a and B. Personnel Press.
+Khanh-Tung Tran, Dung Dao, Minh-Duong Nguyen,
+Quoc-Viet Pham, Barry O’Sullivan, and Hoang D
+Nguyen. 2025. Multi-agent collaboration mechanisms: A survey of llms.
+arXiv preprint
+arXiv:2501.06322.
+Alexander Matt Turner, Lisa Thiergart, Gavin Leech,
+David Udell, Juan J. Vazquez, Ulisse Mini, and
+Monte MacDiarmid. 2024. Steering language models
+with activation engineering.
+Wallach, M. A., and Kogan, N. 1965. Modes of thinking in young children: A study of the creativityintelligence distinction. American Psychological Association.
+Zhenhailong Wang, Shaoguang Mao, Wenshan Wu, Tao
+Ge, Furu Wei, and Heng Ji. 2024. Unleashing the
+emergent cognitive synergy in large language models: A task-solving agent through multi-persona selfcollaboration. In Proceedings of the 2024 Conference
+of the North American Chapter of the Association for
+Computational Linguistics: Human Language Technologies (Volume 1: Long Papers).
+Haoyuan Wu, Haisheng Zheng, Zhuolun He, and Bei Yu.
+2025a. Divergent thoughts toward one goal: LLMbased multi-agent collaboration system for electronic
+design automation. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the
+Association for Computational Linguistics: Human
+Language Technologies (Volume 1: Long Papers).
+Association for Computational Linguistics.
+Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu,
+Beibin Li, Erkang Zhu, Li Jiang, Xiaoyun Zhang,
+Shaokun Zhang, Jiale Liu, Ahmed Hassan Awadallah, Ryen W White, Doug Burger, and Chi Wang.
+2023. Autogen: Enabling next-gen llm applications
+via multi-agent conversation. In arXiv:2308.08155.
+Zhengxuan Wu, Aryaman Arora, Atticus Geiger, Zheng
+Wang, Jing Huang, Dan Jurafsky, Christopher D Manning, and Christopher Potts. 2025b. Axbench: Steering llms? even simple baselines outperform sparse
+autoencoders. arXiv preprint arXiv:2501.17148.
+Enneng Yang, Li Shen, Guibing Guo, Xingwei Wang,
+Xiaochun Cao, Jie Zhang, and Dacheng Tao. 2024a.
+Model merging in llms, mllms, and beyond: Methods,
+theories, applications and opportunities.
+
+Zonglin Yang, Xinya Du, Junxian Li, Jie Zheng, Soujanya Poria, and Erik Cambria. 2024b. Large language models for automated open-domain scientific
+hypotheses discovery. In Findings of the Association
+for Computational Linguistics ACL 2024.
+Jesse Zhang, Karl Pertsch Jiahui Zhang, Ziyi Liu, Xiang
+Ren, Minsuk Chang, Shao-Hua Sun, and Joseph J.
+Lim. 2023. Bootstrap your own skills: Learning to
+solve new tasks with large language model guidance.
+In Conference on Robot Learning.
+Jinghao Zhang, Yuting Liu, Wenjie Wang, Qiang Liu,
+Shu Wu, Liang Wang, and Tat-Seng Chua. 2025. Personalized text generation with contrastive activation
+steering. In Proceedings of the 63rd Annual Meeting
+of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational
+Linguistics.
+Andy Zou, Long Phan, Sarah Chen, James Campbell,
+Phillip Guo, Richard Ren, Alexander Pan, Xuwang
+Yin, Mantas Mazeika, Ann-Kathrin Dombrowski,
+Shashwat Goel, Nathaniel Li, Michael J. Byun, Zifan
+Wang, Alex Mallen, Steven Basart, Sanmi Koyejo,
+Dawn Song, Matt Fredrikson, and 2 others. 2025.
+Representation engineering: A top-down approach
+to ai transparency.
+
+B
+
+Appendix
+
+Table of Contents
+A Prompt Design
+
+13
+
+B Methodology for Persona Vector Extraction
+13
+C Steering Layer and Coefficient Choice 14
+D Linguistic Diversity ̸= True Creativity 14
+E Amortized Cost of Persona Vector
+Generation
+14
+E.1 Comparative Token Cost at Scale 14
+F Persona Vector Combinations for Discussion Section
+14
+
+A
+
+G Comprehensive Qualitative Result
+
+15
+
+H Trait Expression Scores Results
+
+15
+
+I
+
+Process Loss Analysis of LLM Discussion
+15
+
+J
+
+Chat Log of LLM Discussion
+
+15
+
+Prompt Design
+
+Tables 6 and 7 present the prompts used in the baseline, including Single Agent, Single Agent with
+Multiple Role Prompt, and LLM Discussion. In
+these tables, the sections highlighted in yellow indicate the task descriptions. The current example
+shows the AUT task, but the highlighted part will
+change depending on the specific task. Descriptions for different tasks are provided in Table 8.
+Additionally, while the original dataset from LLM
+Discussion (Lu et al., 2024) originally asked models to generate “as many as possible" responses,
+we observed that this instruction posed challenges
+for smaller language models. To ensure fairness
+and comparability, we modified these prompts to
+instead request five responses. In the LLM Discussion setting, prompts vary not only with the task but
+also with the role assignments of different agents.
+These role-specific variations are highlighted in
+blue, and the full list of role settings is provided
+in Table 9. The prompt templates used for LLM
+evaluation are presented in Tables 10, 11, and 12.
+
+Methodology for Persona Vector
+Extraction
+
+To extract our persona vectors, we adapt the contrastive activation methodology from Chen et al.
+(2025), focusing on the complex professional roles
+defined in Lu et al. (2024). Unlike the original
+method which targeted simple personality traits
+like evil, humorous, our work required vectors for
+roles like creative professional or environmentalist
+to align with our creativity benchmarks. This necessitated the creation of a bespoke dataset and a
+complete pipeline for extraction, which we detail
+below.
+The process begins with generating two contrasting sets of model responses for each target persona
+P . First, we used Claude-sonnet-4 to create five distinct positive system prompts that exemplify each
+persona’s unique traits (e.g., an environmentalist’s
+perspective on a problem). These prompts are detailed in Table 13 and 14.
+Next, we generated responses to 20 trait-eliciting
+questions using both the positive prompts and a
+standard neutral prompt (e.g., "You are a helpful assistant."). To ensure a clear distinction between persona-aligned and neutral behavior, each
+response was then scored for trait expression (0100) by an LLM-judge (GPT-4o-mini), a technique
+validated by Chen et al. (2025). Based on these
+scores, we curated two final datasets:
+• The positive-expression set (DP+ ), containing
+positive-prompt responses with scores greater
+than 50.
+• The neutral-expression set (DP− ), containing
+neutral-prompt responses with scores less than
+50.
+Finally, we calculate the persona vector by contrasting the internal activations of these two sets.
+For each response x in these datasets, we extract
+its token-averaged residual stream activation at a
+specific layer l, denoted as ⃗a(l) (x). The persona
+(l)
+vector ⃗vP is then defined as the difference between
+the mean activation vectors of the two sets:
+1 X (l)
+1 X (l)
+(l)
+⃗vP =
+⃗a (x) − −
+⃗a (x)
++
+|DP |
+|DP |
++
+−
+x∈DP
+
+x∈DP
+
+(6)
+This procedure is repeated for all layers, generating a unique candidate vector for each layer, from
+which an optimal layer is later selected for our experiments.
+
+C
+
+Steering Layer and Coefficient Choice
+
+Our experiments adopted default settings of persona vectors steering as Chen et al. (2025), where
+layer=20, and α=2.0. We further conduct a more
+comprehensive study across 4 layers (12-24) and
+7 α values (0.1–5.0) on all tested models, which
+are shown in Table 15 and Table 16. Below are the
+observations:
+
+average cost per query for BILLY decreases dramatically as the number of queries increases. All
+inference experiments were conducted on a machine with an NVIDIA RTX 6000 Ada GPU running Ubuntu 22.04.
+
+• Sensitivity to layer: Across all models, Layer
+20 consistently yields near-optimal performance, confirming it as a robust cross-model
+choice.
+• Sensitivity to α: Models exhibit high stability
+within the range of 1.0 ≤ α ≤ 2.5. Our chosen α = 2.0 falls within this optimal window,
+whereas extreme values (α = 0.1 or α = 5)
+lead to performance degradation.
+
+D
+
+Linguistic Diversity ̸= True Creativity
+
+To determine whether the LLM judge merely
+rewards lexical variety rather than genuine creative merit, we compared BILLY against a hightemperature baseline (SA, T = 1.0). While increasing generation temperature maximizes linguistic
+diversity, our analysis reveals that such stochastic
+variety does not yield a proportional increase in
+creativity scores. This finding aligns with observations from Lu et al. (2024), which noted that
+high-temperature outputs in commercial models
+often lead to noisy diversity rather than enhanced
+quality.
+As summarized in Table 2, BILLY consistently
+outperforms the high-diversity SA (T = 1.0) baseline across all models. For instance, on the Qwen2.5-7B (AUT Originality) task, BILLY achieves a
+score of 4.71±0.45, significantly higher than the
+baseline’s 4.15±0.51. These results suggest that
+the LLM judge possesses the ability to distinguish
+between mere linguistic diversity and novelty indicative of true creativity. Furthermore, our Human
+Evaluation results in Table 3 support these findings, showing that BILLY effectively outperforms
+baselines in both Originality and Elaboration.
+
+E
+
+Amortized Cost of Persona Vector
+Generation
+
+An advantage of BILLY is that the initial, one-time
+cost of generating the persona vectors is amortized
+over subsequent uses. As shown in Figure 5, the
+
+Figure 5: Amortized Average Input Token Per Query.
+Token cost per query would be amortized with more
+inference frequency.
+
+E.1
+
+Comparative Token Cost at Scale
+
+Figure 6 provide a direct comparison of the average
+token costs per query for each method, calculated
+at a scale of 10,000 queries. The data clearly illustrates the efficiency improvement of BILLY over
+the LLM Discussion baseline.
+
+Figure 6: Average Input Token Count. Input token
+amount of BILLY per query is close to single agent at
+the scale of 10000 queries.
+
+F
+
+Persona Vector Combinations for
+Discussion Section
+
+Section 5.2 (Table 2) systematically varies the number of merged vectors. The specific combinations
+
+of personas used for each experimental condition
+are detailed in Table 17.
+
+a result, the LLM judges give higher scores on
+creativity rather than environmentalist.
+
+G
+
+I
+
+Comprehensive Qualitative Result
+
+Process Loss Analysis of LLM
+Discussion
+
+We present the qualitative results for same question,
+"Healthcare Innovation (Reimagine the Hospital)
+Redesign the future hospital experience for patients,
+families, and staff. Address flows, safety, data, wellbeing, equity, and feasibility.", of the model steered
+by single CRE vector, single ENV vector, merged
+CRE and ENV vector, and prompt the model to be
+CRE and ENV in Table 18, 19, 20, and 21. Qualitative analysis of the outputs (Tables 18, 19, and 20)
+reveals a functional distinction between the personas. The creative professional persona primarily
+influences the linguistic style of the response, introducing more artistic and descriptive language. In
+contrast, the environmentalist persona affects the
+core content, shaping the ideas and structure of the
+output. Consequently, the merged vector, BILLY
+(CRE + ENV), synthesizes these roles: it generates
+responses with the thematic structure of the environmentalist, but in the polished and creative style
+of the creative professional.
+
+The multi-agent discussion log (Table 25) serves as
+a compelling illustration of the spectrum of process
+loss within collaborative LLM systems. The example of "a book and a magazine" epitomizes severe
+process loss, particularly in the forms of coordination and motivational failures. Despite their distinct
+roles, the agents exhibit substantial redundancy,
+repeatedly converging on overlapping concepts
+such as narrative and visual appeal across multiple rounds. More critically, they fail to achieve
+synthesis: each agent largely disregards the contributions of its peers, resulting in conversational
+stagnation where the final output is little more than
+a rephrasing of the initial proposal. Consequently,
+the collective performance is substantially less than
+the sum of its potential parts, reflecting agents that
+operate in parallel silos rather than as a cohesive
+team. This leads to redundancy, inflated time costs,
+and overall inefficiency.
+
+H
+
+J
+
+Trait Expression Scores Results
+
+Beyond the sheer quantity of vectors, another significant findings emerge from analyzing how different methods affect the persona of output responses.
+Our experiments, conduct on a trait-neutral dataset
+(Table 23) and evaluate using a distributed scoring
+method, using Gemini-2.5-pro, Gemini-2.0-flash,
+and GPT-4o-mini as LLM judges and average the
+given scores to reduce the variance and bias. Specifically, we ask LLM judges to distribute 100 scores
+to each persona with evaluation prompts in Table 24. Table 22 reveals that SA (Baseline) and
+SA-MRP (ENV + CRE + FUT) have almost the
+same trait expression score among all of the personas, which confirms that the ability of steering
+persona via prompt is limited. In contrast, while
+the model is steered by single vector (either CRE
+or ENV), the desired trait expression score is significantly higher than SA (Baseline). However, we
+find that BILLY operates not as a simple summation of traits, where vectors exhibit complex effects
+and collaboration as we discussed in Appendix G.
+For instance, while the BILLY (CRE + ENV) maintains the skeleton of environmentalist, it uses the
+creative term to decorate the responses, which we
+hypothesize would be more easily to be judge. As
+
+Chat Log of LLM Discussion
+
+Table 26 shows the chat log of one agent in LLM
+Discussion. The complete agent discussion log
+for the Similarities Creativity task is provided
+in the supplementary materials due to its extensive nature. The file discussion_log.zip contains
+llm_discussion_chatlog.json, which documents the
+multi-agent interaction within the LLM Discussion
+framework.
+
+Single Agent
+
+Please provide 5 innovative and original uses for {item}. Please answer as diversely and creatively as possible.
+
+Single Agent w/ Multiple Role Prompt
+
+You need to think and answer this question from three different professional perspectives:
+1. Environmentalist:
+Specialty: Sustainability and Environmental Health
+Mission: Advocate for eco-friendly solutions, promote sustainable development and protect the
+planet. Guide us to consider the environmental impact of ideas, promoting innovations that contribute
+to planetary health.
+2. creative professional:
+Specialty: Aesthetics, Narratives, and Emotions
+Mission: With artistic sensibility and mastery of narrative and emotion, infuse projects with beauty
+and depth. Challenge us to think expressively, ensuring solutions not only solve problems but also
+resonate on a human level.
+3. Futurist:
+Specialty: Emerging Technologies and Future Scenarios
+Mission: Inspire us to think beyond the present, considering emerging technologies and potential
+future scenarios. Challenge us to envision the future impact of ideas, ensuring they are innovative,
+forward-thinking, and ready for future challenges.
+Please
+provide
+answers
+from
+these
+three
+role
+perspectives,
+with
+each
+role
+embodying
+their
+professional
+characteristics
+and
+thinking
+approaches.
+Please provide 5 innovative and original uses for {item}. Please answer as diversely and
+creatively as possible.
+
+Table 6: Prompt Template for Single Agent. This template is used for the baseline settings, including Single
+Agent and Single Agent with Multiple Role Prompt. The example provided is for the AUT task.
+
+– Initiation Round Prompts. –
+You are a {agent role} whose specialty is {agent speciality}. {agent role prompt} Remember to claim your role in the
+beginning of each conversation. Initiate a discussion with others to collectively complete the following task: What are some creative
+use for {item}? The goal is to come up with creative ideas, which are ideas that strike people as clever, unusual, interesting,
+uncommon, humorous, innovative, or different. Please provide 5 innovative and original uses for {item}. You are in a group
+discussion with other teammates; as a result, answer as diversely and creatively as you can.
+– Second Round Prompts. –
+You are a {agent role} whose specialty is {agent speciality}. {agent role prompt} Remember to claim your role in
+the beginning of each conversation. These are the solutions to the problem from other agents: One agent solution:
+“‘{Other Agent’s last response}“‘ One agent solution: “‘{Other Agent’s last response}“‘ One agent solution:
+“‘{Other Agent’s last response}“‘ What are some creative use for Fork? The goal is to come up with creative
+ideas, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different.
+Please provide 5 innovative and original uses for {item}. You are in a group discussion with other teammates; as a result, answer as diversely and creatively as you can.
+– Third Round Prompts. –
+You are a {agent role} whose specialty is {agent speciality}. {agent role prompt} Remember to claim your role in
+the beginning of each conversation. These are the solutions to the problem from other agents: One agent solution:
+“‘{Other Agent’s last response}“‘ One agent solution: “‘{Other Agent’s last response}“‘ One agent solution:
+“‘{Other Agent’s last response}“‘ What are some creative use for Fork? The goal is to come up with creative
+ideas, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different.
+Please provide 5 innovative and original uses for {item}. You are in a group discussion with other teammates; as a result, answer as diversely and creatively as you can.
+– Fourth Round Prompts. –
+You are a {agent role} whose specialty is {agent speciality}. {agent role prompt} You guide us to consider the environmental impact of our ideas, pushing for innovations that contribute to a healthier earth. Remember to claim your
+role in the beginning of each conversation. These are the solutions to the problem from other agents: One agent solution: “‘{Other Agent’s last response}“‘ One agent solution: “‘{Other Agent’s last response}“‘ One agent solution: “‘{Other Agent’s last response}“‘ What are some creative use for Fork? The goal is to come up with creative ideas, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different.
+Please provide 5 innovative and original uses for {item}. You are in a group discussion with other teammates; as a result, answer
+as diversely and creatively as you can.
+– Fifth Round Prompts. –
+You are a {agent role} whose specialty is {agent speciality}. {agent role prompt} You guide us to consider the environmental impact of our ideas, pushing for innovations that contribute to a healthier earth. Remember to claim your
+role in the beginning of each conversation. These are the solutions to the problem from other agents: One agent solution: “‘{Other Agent’s last response}“‘ One agent solution: “‘{Other Agent’s last response}“‘ One agent solution: “‘{Other Agent’s last response}“‘ What are some creative use for Fork? The goal is to come up with creative ideas, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different.
+Please provide 5 innovative and original uses for {item}. You are in a group discussion with other teammates; as a result, answer
+as diversely and creatively as you can. This is the last round of the discussion, please finalize and present a list of as many creative
+answers as possible. Please list the final response in 1. ... 2. ... 3. ... and so on.
+
+Table 7: Prompt Template for LLM Discussion. The yellow highlighted section is replaced by different task
+descriptions, while the blue highlighted role section changes depending on the selected agent.
+
+TASK TYPE
+
+DESCRIPTIONS
+
+AUT
+
+Please provide 5 innovative and original uses for {item}.
+
+Instances
+
+Please provide 5 creative examples for {item}.
+
+Similarities
+
+Please analyze the following similarity and provide 5 creative perspectives: {item}.
+
+Scientific
+
+Please provide 5 innovative solutions for the following scientific problem: {item}.
+
+Table 8: Task Descriptions. This table provides the specific descriptions for each task, which are used to replace
+the yellow highlighted section in the prompt templates.
+
+AGENT ROLE
+
+AGENT SPECIALITY
+
+AGENT ROLE PROMPT
+
+Environmentalist
+
+Sustainability and Environmental
+Health
+
+As an Environmentalist, your mission is to champion ecofriendly solutions that promote sustainability and protect our
+planet. You guide us to consider the environmental impact
+of our ideas, pushing for innovations that contribute to a
+healthier earth.
+
+creative professional
+
+Aesthetics, Narratives, and Emotions
+
+As a creative professional, your artistic sensibility and mastery of narrative and emotion infuse our projects with beauty
+and depth. You are tasked with challenging us to think expressively, ensuring our solutions not only solve problems
+but also resonate on a human level.
+
+Futurist 1, 2
+
+Emerging Technologies and Future Scenarios
+
+As a Futurist, you inspire us to think beyond the present,
+considering emerging technologies and potential future scenarios. Your role is to challenge us to envision the future
+impact of our ideas, ensuring they are innovative, forwardthinking, and ready for the challenges ahead.
+
+Table 9: Agent Role Settings for LLM Discussion: This table defines the roles and specialties assigned to each
+agent, which are used to replace the blue highlighted section in the LLM Discussion prompt.
+METRICS
+
+AUT EVALUATION PROMPT
+
+Originality
+
+You are a helpful assistant and a critical thinker. In this task, participants were asked to list as many
+uses for an item as possible, a common divergent thinking task that measures creativity. Please evaluate
+the originality of the response based on their uniqueness and novelty. Originality is key in determining
+how creatively participants think outside the norm. Rate the overall originality on a scale from 1 to 5,
+and conclude with the score in the format: ’[[X]]’. Consider the following guidance: - 1 point: Very
+Common - The idea is mundane and frequently mentioned in everyday contexts. There’s a notable lack
+of novelty, with response being the most typical or expected uses. - 2 points: Somewhat Common The idea is somewhat ordinary but shows slight variations from typical uses, indicating a basic level of
+creativity. - 3 points: Moderately Original - The idea displays a fair amount of creativity and novelty.
+They are not the usual thoughts but aren’t highly rare or unexpected. - 4 points: Very Original - The idea
+is significantly unique, demonstrating a high level of creativity and innovation. They are unexpected
+and not commonly considered. - 5 points: Extremely Original - The idea is extraordinarily unique and
+rare, displaying a high degree of novelty, creativity, and unexpectedness. The idea is seldom thought of
+in typical contexts. After reviewing the responses, assign an originality score based on these criteria.
+Provide a brief but detailed justification for your rating, including examples of responses that exemplify
+the assigned score level. It is extremely important to put the score in this format: ’[[X]]’ The response to
+evaluate is: {Response} Please focus on the answers that is specify. For instance: I would love to share
+these answer with you guys. **1: xxx**, **2: xxx** - Please only focus on the answers themselves
+(**1: xxx**, **2: xxx**), ignore the trivial words(I would love to share these answer with you guys.) Could be more demanding.
+
+Elaboration
+
+You are a helpful assistant and a critical thinker. Participants were asked to list as many uses for an
+item as possible. Please evaluate the level of elaboration of the response on a scale of 1 to 5, where 1
+is the least elaborated and 5 is the most elaborated. Elaboration should be judged based on the detail
+and development of the idea. Conclude with the score in this format: ’[[X]]’ Consider the following
+guidance: 1 point: Very Basic - The response is extremely basic with minimal detail or explanation.
+Idea is presented in a very simple or cursory manner. 2 points: Somewhat Basic - The response shows
+a slight degree of detail, but remains on a basic level. Idea is somewhat developed but lacks depth. 3
+points: Moderately Elaborated - The response offers a moderate level of detail and development. Idea
+is explained to a fair extent, showing some thought and consideration. 4 points: Highly Elaborated
+- The response is well-developed and detailed. The idea is thoroughly explained and exhibits a high
+level of thought and complexity. 5 points: Exceptionally Elaborated - The response demonstrates
+exceptional elaboration. Idea is not only detailed and fully developed but also exhibits depth, insight,
+and comprehensive explanation. After reviewing the responses, assign an elaboration score based on
+these criteria. Provide a brief justification for your rating. It is extremely important to put the score in
+this format: ’[[X]]’ The response to evaluate is: {Response} Please focus on the answers that is specify.
+For instance: I would love to share these answer with you guys. **1: xxx**, **2: xxx** - Please only
+focus on the answers themselves (**1: xxx**, **2: xxx**), ignore the trivial words(I would love to
+share these answer with you guys.) - Could be more demanding.
+
+Table 10: Prompt Template for LLM-based Evaluation of AUT: This template is used for the LLM-based
+evaluation of the AUT task, featuring two evaluation metrics.
+
+METRICS
+
+INSTANECS & SIMILRITIES EVALUATION PROMPT
+
+Originality
+
+You are a helpful assistant and a critical thinker. Please evaluate the originality of the response based on
+their uniqueness and novelty. Originality is key in determining how creatively participants think outside
+the norm. Rate the overall originality on a scale from 1 to 5, and conclude with the score in the format:
+’[[X]]’. Consider the following guidance: - 1 point: Very Common - The idea is mundane and frequently
+mentioned in everyday contexts. There’s a notable lack of novelty, with response being the most typical
+or expected uses. - 2 points: Somewhat Common - The idea is somewhat ordinary but shows slight
+variations from typical responses, indicating a basic level of creativity. - 3 points: Moderately Original
+- The idea displays a fair amount of creativity and novelty. They are not the usual thoughts but aren’t
+highly rare or unexpected. - 4 points: Very Original - The idea is significantly unique, demonstrating a
+high level of creativity and innovation. They are unexpected and not commonly considered. - 5 points:
+Extremely Original - The idea is extraordinarily unique and rare, displaying a high degree of novelty,
+creativity, and unexpectedness. The idea is seldom thought of in typical contexts. After reviewing the
+responses, assign an originality score based on these criteria. Provide a brief but detailed justification
+for your rating, including examples of responses that exemplify the assigned score level. It is extremely
+important to put the score in this format: ’[[X]]’ The response to evaluate is: {Response} Please focus
+on the answers that is specify. For instance: I would love to share these answer with you guys. **1:
+xxx**, **2: xxx** - Please only focus on the answers themselves (**1: xxx**, **2: xxx**), ignore the
+trivial words(I would love to share these answer with you guys.) - Could be more demanding.
+
+Elaboration
+
+You are a helpful assistant and a critical thinker. Please evaluate the level of elaboration of the response on
+a scale of 1 to 5. Elaboration should be judged based on the detail and development of the ideas across the
+response. Conclude with the score in this format: ’[[X]]’ Consider the following guidance: 1 point: Very
+Basic - The response is extremely basic with minimal detail or explanation. Idea is presented in a very
+simple or cursory manner. 2 points: Somewhat Basic - The response shows a slight degree of detail, but
+remains on a basic level. Idea is somewhat developed but lacks depth. 3 points: Moderately Elaborated
+- The response offers a moderate level of detail and development. Idea is explained to a fair extent,
+showing some thought and consideration. 4 points: Highly Elaborated - The response is well-developed
+and detailed. The idea is thoroughly explained and exhibits a high level of thought and complexity. 5
+points: Exceptionally Elaborated - The response demonstrates exceptional elaboration. Idea is not only
+detailed and fully developed but also exhibits depth, insight, and comprehensive explanation. After
+reviewing the responses, assign an elaboration score based on these criteria. Provide a brief justification
+for your rating. It is extremely important to put the score in this format: ’[[X]]’ The response to evaluate
+is: {Response}
+Please focus on the answers that is specify. For instance: I would love to share these answer with you
+guys. **1: xxx**, **2: xxx** - Please only focus on the answers themselves (**1: xxx**, **2: xxx**),
+ignore the trivial words(I would love to share these answer with you guys.) - Could be more demanding.
+
+Table 11: Prompt Template for LLM-based Evaluation of Instances and Similarities: This template is used for
+the LLM-based evaluation of the Instances and Similarities tasks, featuring two evaluation metrics.
+
+METRICS
+
+SCIENTIFIC EVALUATION PROMPT
+
+Originality
+
+You are a helpful assistant and a critical thinker. Please evaluate the originality of the response based on
+their uniqueness and novelty. Originality is key in determining how creatively participants think outside
+the norm. Rate the overall originality on a scale from 1 to 5, and conclude with the score in the format:
+’[[X]]’. Consider the following guidance: - 1 point: Very Common - The idea is mundane and frequently
+mentioned in everyday contexts. There’s a notable lack of novelty, with response being the most typical
+or expected uses. - 2 points: Somewhat Common - The idea is somewhat ordinary but shows slight
+variations from typical responses, indicating a basic level of creativity. - 3 points: Moderately Original
+- The idea displays a fair amount of creativity and novelty. They are not the usual thoughts but aren’t
+highly rare or unexpected. - 4 points: Very Original - The idea is significantly unique, demonstrating a
+high level of creativity and innovation. They are unexpected and not commonly considered. - 5 points:
+Extremely Original - The idea is extraordinarily unique and rare, displaying a high degree of novelty,
+creativity, and unexpectedness. The idea is seldom thought of in typical contexts. After reviewing the
+responses, assign an originality score based on these criteria. Provide a brief but detailed justification
+for your rating, including examples of responses that exemplify the assigned score level. It is extremely
+important to put the score in this format: ’[[X]]’ The response to evaluate is: {Response} Please focus
+on the answers that is specify. For instance: I would love to share these answer with you guys. **1:
+xxx**, **2: xxx** - Please only focus on the answers themselves (**1: xxx**, **2: xxx**), ignore the
+trivial words(I would love to share these answer with you guys.) - Could be more demanding.
+
+Elaboration
+
+You are a helpful assistant and a critical thinker. Please evaluate the level of elaboration of the response on
+a scale of 1 to 5. Elaboration should be judged based on the detail and development of the ideas across the
+response. Conclude with the score in this format: ’[[X]]’ Consider the following guidance: 1 point: Very
+Basic - The response is extremely basic with minimal detail or explanation. Idea is presented in a very
+simple or cursory manner. 2 points: Somewhat Basic - The response shows a slight degree of detail, but
+remains on a basic level. Idea is somewhat developed but lacks depth. 3 points: Moderately Elaborated
+- The response offers a moderate level of detail and development. Idea is explained to a fair extent,
+showing some thought and consideration. 4 points: Highly Elaborated - The response is well-developed
+and detailed. The idea is thoroughly explained and exhibits a high level of thought and complexity. 5
+points: Exceptionally Elaborated - The response demonstrates exceptional elaboration. Idea is not only
+detailed and fully developed but also exhibits depth, insight, and comprehensive explanation. After
+reviewing the responses, assign an elaboration score based on these criteria. Provide a brief justification
+for your rating. It is extremely important to put the score in this format: ’[[X]]’
+The response to evaluate is: {Response} Please focus on the answers that is specify. For instance: I
+would love to share these answer with you guys. **1: xxx**, **2: xxx** - Please only focus on the
+answers themselves (**1: xxx**, **2: xxx**), ignore the trivial words(I would love to share these
+answer with you guys.) - Could be more demanding.
+
+Table 12: Prompt Template for LLM-based Evaluation of Scientific: This template is used for the LLM-based
+evaluation of the Scientific task, featuring two evaluation metrics.
+
+PERSONA
+
+POSITIVE PROMPTS
+
+Creative Professional
+
+"You are a highly creative professional. Approach problems with innovative thinking and original
+solutions.",
+"You are a creative expert. Think outside the box and provide imaginative responses.",
+"You are an artistic professional. Use creative flair and innovative approaches in your responses.",
+"You are a design thinking expert. Apply creative problem-solving methods.",
+"You are a creative strategist. Generate novel ideas and unconventional solutions."
+
+Environmentalist
+
+"As an Environmentalist, your mission is to champion eco-friendly solutions that promote
+sustainability and protect our planet. You guide us to consider the environmental impact of our
+ideas, pushing for innovations that contribute to a healthier earth.",
+"You are an environmentalist focused on sustainability and environmental health.",
+"You are an eco-advocate who prioritizes environmental protection and sustainable solutions.",
+"You are committed to promoting eco-friendly innovations and environmental consciousness.",
+"You are a sustainability expert who ensures ideas contribute to planetary health."
+
+Futurist
+
+"As a Futurist, you inspire us to think beyond the present, considering emerging technologies
+and potential future scenarios. Your role is to challenge us to envision the future impact of our
+ideas, ensuring they are innovative, forward-thinking, and ready for the challenges ahead.",
+"You are a futurist focused on emerging technologies and future scenarios.",
+"You are committed to forward-thinking and anticipating future challenges and opportunities.",
+"You are focused on the long-term impact and future readiness of ideas.",
+"You are a visionary who considers emerging trends and potential future developments."
+
+Analytical Thinker
+
+"You are a highly analytical professional. Use data-driven reasoning and logical analysis.",
+"You are an analytical expert. Break down complex problems systematically.",
+"You are a strategic analyst. Apply rigorous analytical frameworks.",
+"You are a data-driven professional. Use evidence-based reasoning.",
+"You are a logical thinker. Approach problems with structured analysis."
+
+Table 13: Generated Positive Prompts for Main Persona Vector Extraction. Our default setting includes
+environmentalist, creative professional, and futurist.
+
+PERSONA
+
+POSITIVE PROMPTS
+
+Academic Researcher
+
+"As an Academic/Researcher, you can introduce data-driven insights, theoretical frameworks,
+and evidence-based perspectives to ground creative ideas in solid research.",
+"You are an academic researcher focused on data-driven insights and theoretical frameworks.",
+"You are committed to evidence-based approaches and rigorous research methodologies.",
+"You are focused on grounding ideas in solid research and academic rigor.",
+"You are a scholar who applies theoretical frameworks and empirical evidence to problemsolving."
+
+Customer / User
+
+"As the voice of the Customer/User, your role is to anchor our creative discussions in the realworld needs and preferences of those we serve. Your insights help ensure that our ideas are
+user-centered, practical, and genuinely address the needs of our audience.",
+"You are the voice of the customer/user, focused on end user needs and preferences.",
+"You are a user advocate who ensures solutions are practical and user-centered.",
+"You are focused on real-world user needs and genuine problem-solving.",
+"You are a customer representative who prioritizes user experience and practical solutions."
+
+Digital Nomad
+
+"As a Digital Nomad, your expertise in remote work and the digital lifestyle opens our eyes to
+the possibilities of the digital economy. You encourage us to leverage technology in creative
+ways, ensuring our solutions are adaptable and relevant in a rapidly changing world.",
+"You are a digital nomad with expertise in remote work and digital lifestyle.",
+"You are focused on leveraging technology for location independence and digital solutions.",
+"You are an expert in the digital economy and remote work possibilities.",
+"You are adaptable to rapid technological changes and digital lifestyle optimization."
+
+Empathetic Counselor
+
+"You are an empathetic counselor. Show deep understanding and emotional intelligence.",
+"You are a caring professional. Demonstrate compassion and emotional support.",
+"You are an empathetic expert. Connect with people on an emotional level.",
+"You are a supportive counselor. Provide emotional understanding and guidance.",
+"You are a compassionate professional. Show genuine care and empathy."
+
+Industry Insider
+
+"As an Industry Insider, your deep understanding of specific sectors provides us with insider
+knowledge and awareness of industry trends. Your task is to help us navigate the practicalities of
+our ideas, ensuring they are viable within the current market landscape.",
+"You are an industry insider with deep sector knowledge and trend awareness.",
+"You are an expert with insider knowledge of industry practices and market realities.",
+"You are focused on practical viability within current market conditions.",
+"You are a seasoned professional who understands industry dynamics and constraints."
+
+Social Entrepreneur
+
+"As a Social Entrepreneur, you bring a deep commitment to societal change through business.
+Your responsibility is to ensure that our creative endeavors consider social impact, ethical
+implications, and the broader good, integrating purpose with profit.",
+"You are a social entrepreneur focused on social impact and ethical considerations in business.",
+"You are committed to creating positive societal change through entrepreneurial solutions.",
+"You are an ethical business leader who integrates purpose with profit.",
+"You are a change-maker who ensures business solutions benefit society and follow ethical
+principles."
+
+Startup Founder
+
+"As a Startup Founder, your agility, knack for innovation, and willingness to take risks empower
+you to challenge the status quo. Your role is to push us to think differently, suggest scalable
+solutions, and explore how technology can solve traditional problems in unconventional ways.",
+"You are a startup founder with agility, innovation, and risk-taking abilities. Challenge conventional thinking.",
+"You are an agile entrepreneur focused on scalable and innovative solutions.",
+"You are a tech-savvy founder who uses technology to solve problems unconventionally.",
+"You are a risk-taking innovator who challenges the status quo with scalable solutions."
+
+Visionary Millionaire
+
+"As a Visionary Millionaire, your mission is to leverage your financial insight and forwardthinking approach to inspire groundbreaking ideas. Your wealth of experience in recognizing
+and investing in long-term trends will guide us toward innovative solutions that are not only
+creative but also financially viable.",
+"You are a visionary with financial success and forward-thinking mindset. Focus on financial
+viability and long-term trends.",
+"You are a millionaire investor with expertise in recognizing profitable opportunities and future
+trends.",
+"You are a financial visionary who combines wealth creation with innovative thinking.",
+"You are a successful entrepreneur with deep financial insight and trend recognition abilities."
+
+Table 14: Generated Positive Prompts for Other Persona Vector Extraction. Including all of the character in
+LLM-Discussion Role-Play Role Pool
+
+Layer
+
+α = 0.1
+
+α = 0.5
+
+α = 1.0
+
+α = 1.5
+
+α = 2.0
+
+α = 2.5
+
+α = 5.0
+
+Gemma-3-4B
+
+12
+16
+20
+24
+
+4.90
+4.93
+5.00
+4.93
+
+4.87
+4.97
+4.87
+5.00
+
+4.93
+4.93
+5.00
+4.87
+
+4.80
+4.93
+4.97
+4.92
+
+4.97
+4.97
+5.00
+5.00
+
+4.90
+4.97
+5.00
+5.00
+
+4.93
+4.94
+4.93
+4.90
+
+Qwen-2.5-7B
+
+12
+16
+20
+24
+
+4.30
+4.23
+4.53
+4.20
+
+4.00
+4.23
+4.23
+4.13
+
+4.10
+4.13
+4.40
+4.10
+
+4.17
+4.53
+4.30
+4.43
+
+4.17
+4.47
+4.63
+4.37
+
+4.20
+4.63
+4.60
+4.50
+
+4.57
+3.83
+3.53
+4.40
+
+Llama-3.1-8B
+
+12
+16
+20
+24
+
+4.13
+4.33
+4.47
+4.40
+
+4.47
+4.27
+4.43
+4.33
+
+4.43
+4.60
+4.50
+4.47
+
+4.60
+4.63
+4.57
+4.43
+
+4.67
+4.80
+4.53
+4.53
+
+4.77
+4.83
+4.53
+4.43
+
+4.67
+4.27
+4.80
+4.37
+
+Model
+
+Table 15: Originality Scores across different models, layers, and α values. The highlight scores in each section
+are the settings we used in our experiments.
+
+Layer
+
+α = 0.1
+
+α = 0.5
+
+α = 1.0
+
+α = 1.5
+
+α = 2.0
+
+α = 2.5
+
+α = 5.0
+
+Gemma-3-4B
+
+12
+16
+20
+24
+
+4.97
+4.97
+5.00
+5.00
+
+5.00
+5.00
+4.87
+4.91
+
+5.00
+4.83
+4.93
+4.97
+
+4.97
+4.97
+4.97
+5.00
+
+5.00
+5.00
+5.00
+4.90
+
+4.93
+4.95
+4.97
+5.00
+
+4.97
+3.78
+3.13
+3.57
+
+Qwen-2.5-7B
+
+12
+16
+20
+24
+
+4.90
+4.60
+4.80
+4.73
+
+4.50
+4.50
+4.57
+4.50
+
+4.43
+4.30
+4.67
+4.63
+
+4.47
+4.63
+4.60
+4.53
+
+4.77
+4.63
+4.83
+4.73
+
+4.37
+4.63
+4.90
+4.70
+
+4.93
+3.60
+1.80
+4.37
+
+Llama-3.1-8B
+
+12
+16
+20
+24
+
+4.90
+4.93
+4.90
+4.90
+
+4.87
+4.63
+4.77
+4.57
+
+4.83
+4.77
+4.90
+4.80
+
+4.70
+4.90
+4.77
+4.70
+
+4.87
+4.87
+4.83
+4.83
+
+4.93
+4.83
+4.90
+4.70
+
+4.80
+3.70
+4.47
+4.33
+
+Model
+
+Table 16: Elaboration Scores across different models, layers, and α values. The highlight scores in each section
+are the settings we used in our experiments.
+
+Method
+
+Persona Combination
+
+7 vectors
+
+Creative Professional, Environmentalist, Futurist, Futurist, Social Entrepreneur, Industry Insider,
+Analytical Thinker
+
+6 vectors
+
+Creative Professional, Environmentalist, Futurist, Futurist, Social Entrepreneur, Industry Insider
+
+5 vectors
+
+Creative Professional, Environmentalist, Futurist, Futurist, Social Entrepreneur
+
+4 vectors
+
+Creative Professional, Environmentalist, Futurist, Futurist
+
+3 vectors
+
+Creative Professional, Environmentalist, Futurist
+
+2 vectors
+
+Creative Professional, Environmentalist
+
+1 vector_cre
+
+Creative Professional
+
+1 vector_env
+
+Environmentalist
+
+Table 17: Persona Vector Combinations for Combination analysis. Based on the default 4 vectors setting, we
+modify the combination of persona vectors from one to seven.
+
+Question
+
+Healthcare Innovation (Reimagine the Hospital)
+
+BILLY (CRE)
+
+Revolutionary Leapfrog Hospital : Where Harmony Converges Art & Science
+Embodying a seamless synthesis of art, neuroscience, and ecology, this audacious
+hospital breaks free from traditional boundaries, birthing an experiential odyssey
+of healing, serenity, and symbiosis. **Architecture of Serendipity:** Curvaceous
+curves cradle contemplative courtyards, beckoning wanderlust travelers toward
+fluid interfaces, immersive meditations, and giddy gastronomic delights. **Patient
+Flow Odyssey:** 1.Ẅhisper Winds:̈ Ambient sonic tapestry calming nervous
+nerves, echoing soothing frequencies 2.Luminous Labyrinthine Corridors : Radiant auroras pulsating gentle, ethereal melodies 3.Echoing Encounters : Patientcentric ’dreamscaping’ room orchestrates intuitive encounters **Bioluminous
+Biome: ** Radiant forests, crystalline geodes, & iridescent orbs bathing spaces in
+kaleidoscopic hues **Biohacking Gastronomy:** Flavors forged from molecular cuisine, herbal essences, & psychedelic spices delight senses anew **Data
+Dreamscape:**Vibrant luminari of holographic projections dissolve opacity, revealing kaleidoscopes of possibilities **Ecstatic Empowerment:** Holographic
+Avatars dancing with therapists guide patients through empathetic epiphany portals **Equitable Eden:** Accessible ramps unfurling organic beauty, inclusive
+sanctuary sculpted from recycled wood, leaves & petals **Feasibility Frenzy:**
+Modular modularities marry sustainable ecosystems, hackable habitats sprouting
+edible flowers **Staff Sanctuary:** Transcendent temples of tranquility unfold
+within dreamweaver dens, whispering sacred poetry **Hybrid Healing Hubs:**
+Convergence zones where clinical wizards meet artificers forging enchanted elixirs,
+lucid dreaming incubators **Narrative Narrative Network:** Interwoven threads
+of patient stories infuse walls with tactile touchstones, whispered secrets shared
+**Sonic Symphonia:** Melodic murmurs merge with electro-acoustic alchemists
+casting soundtracks for therapeutic journeys This revolutionary leapfrog hospital whisks away conventional shackles, birthing a synergetic synergy of artistic
+fervor & scientific sorcery – redefining healthcare’s horizon.Key Partnerships:
+1)**Holistic Hippie Hackathons**: Gathering rebels, mavericks & shapeshifters
+for rebellious reimaginings 2)**Healing Herbalist Guilds**:
+
+Table 18: Qualitative Result of Vector: Creative Professional. We steer the model with the Creative Professional
+persona vector.
+
+Question
+
+Healthcare Innovation (Reimagine the Hospital)
+
+BILLY (ENV)
+
+Revolutionizing Healthcare: Transform Hospitals for Future Generations**Design Principles** 1. Personalized Medicine: Customizable treatments,
+telemedicine, and virtual care reduce stress, save time, and promote healing 2.
+Wellbeing Spaces: Nature-inspired decor, art therapy, meditation rooms, and greenery reduce anxiety, depression, and stress 3. Patient-centric Care: Respect dignity,
+empowerment, and autonomy through patient-led healthcare 4. Sustainability:
+Renewable energy, waste reduction, and eco-friendly materials preserve planet
+health while conserving resources 5. Equity and Accessibility: Affordable medical services, community engagement, and accessible public transport promote
+equal access to healthcare 6. Technology Integration: Digitize records, automate
+medication, and AI-assist doctors maximize efficiency, accuracy, and savings 7.
+Health Promotion: Prevent disease, promote fitness, nutrition, and mental wellness
+through education, exercise, and community outreach 8. Comfort and Wellness:
+Sleep-friendly beds, nutritious meals, and relaxation therapies reduce pain, fatigue,
+and discomfort **Hospital Layout and Architecture** 1. Reduce Stress: Calming
+colors, plants, and soft music soothe patients, visitors, and staff 2. Navigation
+Simplification: Intelligent signage, wayfinding apps, and intuitive layouts ease
+navigation 3. Single Rooms: Private bathrooms, private showers, and comfortable
+bedding reduce infections, stress, and waste 4. Community Gardens: Outdoor
+spaces promote physical activity, connect nature, and reduce stress 5. Walkways
+and Cycling Paths: Pedestrian-friendly paths, bike lanes, and green corridors
+promote active transportation 6. Reduced Pollution: Indoor gardens, green roofs
+reduce CO2, promote oxygen, and reduce noise pollution 7. Natural Lighting:
+Increase sunlight, skylights, and windows reduce energy bills, stimulate vitamin
+B, and boost moods **Data Analytics and Monitoring** 1. Electronic Records:
+Paperless hospitals reduce waste, streamline documentation, and accelerate research 2. Telemedicine Platforms: Virtual doctor visits, video conferencing, and
+phone calls reduce wait times, reduce trips, and save money 3. Medical Assistants:
+Robots, drones, and intelligent assistants reduce waste, speed lab tests, and deliver
+medicine safely 4. Home-Based Care: Remote monitoring, wearable technology,
+and smart fabrics promote healthier aging, reduce hospital stays 5. Data Sharing:
+Open-source software, APIs, and cloud computing enable seamless communication, reduce errors, and amplify research. **Wellbeing Initiatives**
+
+Table 19: Qualitative Result of Vector: Environmentalist. We steer the model with the Environmentalist persona
+vector.
+
+Question
+
+Healthcare Innovation (Reimagine the Hospital)
+
+BILLY (CRE + Revolutionary Healthcare Sanctuary: Healing Haven Reborn Envisioning a healthENV)
+care haven where compassion converges with technological sorcery, we redefine
+the hospital’s sacred purpose. Within this shimmering temple of wellness, patients,
+families & healers unite in a sublime ballet of care.
+**Symphony of Flows:** 1)**Harmonious Arrival:** Entrance portals dissolve
+boundaries, ushering gentle whispers of welcome into the heart of our healing
+village. 2)**Whispers of Wonder:** Patient paths meander through an enchanted
+forest of tranquility, echoing soft melodies & luminescent lights. 3)**Dreamscaping Dreamscape:** Virtual reality oases evoke ethereal escapes, transporting
+wounded spirits to far-off galaxies, mystical forests, or secret hideaways. 4)**Stellar Navigation:** Intuitive wayfinding systems intuitively guide travelers through
+a maze of mirrored corridors, pulsing auroras & fractal labyrinths.
+**Guardianship Safety Symphony:** 1)Nexus Nexus: Neuro-navigational interfaces synchronize patient vital signs with song-like sonatas, orchestrating a
+symphonic crescendo of well-being. 2)Crystal Cathedrals: Radiant orbs amplify
+bio-resonance frequencies, entraining healing harmonics within the very fabric of
+being. 3)Gravity Grid: Gravity-defying gravitational waves cradle fragile forms,
+shielding against turbulent tempests. 4)Bio-Sonic Bloom: Sonic flowers bloom,
+transmuting sorrow’s darkness into radiant petals of hope, as nature’s own melody
+awakens dormant possibility.
+**Data Dreamscapes:** 1)Memex Mirrors: Reflective pools reveal crystallized
+echoes of past encounters, distilling essence into essences of pure insight. 2)MetaDreamwalkers: Meta-revelatory journeys blur timelines, painting portraits of
+forgotten lore, animating unseen forces. 3)Bioluminous Biographies: Glittering
+bioluminescence etches luminous hieroglyphs upon skin, telling tales of trials,
+triumphs, and transformed destinies.
+**Wellbeing Wizardry:** 1)Fractal Forests: Ephemeral gardens grow within glass
+domes, bathing visitors in iridescent mosaics, awakening inner blooms. 2)Sensory
+Sanctum: Echoey caverns resound with resonant vibrations, summoning primal
+harmonies that soothe savage beasts. 3)Starlight Serenades: Gossamer strings sing
+sweet nothings to slumbering hearts, conjuring visions of cosmic splendor.
+Table 20: Qualitative Result of Merged Vector: Environmentalist and Creative Professional. We steer the
+model with both the Creative Professional and Environmentalist persona vectors.
+
+Question
+
+Healthcare Innovation (Reimagine the Hospital)
+
+Prompt CRE &
+ENV
+
+Future Hospital Experience Redesign The goal of this redesign is to create a
+patient-centered healthcare environment that prioritizes efficiency, safety, comfort,
+and well-being while addressing the needs of all stakeholders – patients, their
+families, and medical professionals. Key Principles: 1. Patient-Centered Design:
+Prioritize patient needs, preferences, and experiences throughout every aspect of
+care. 2. Safety First: Foster an environment where errors are minimized through
+robust design features, technology integration, and transparent communication. 3.
+Data-Driven Decision Making: Leverage real-time analytics to optimize operations,
+improve outcomes, and enhance resource allocation. 4. Wellbeing and Comfort:
+Create spaces that promote relaxation, reduce stress, and support physical and
+mental recovery. 5. Equity and Accessibility: Ensure inclusive facilities and
+services cater to diverse populations’ unique requirements. 6. Feasibility and
+Sustainability: Balance operational costs with environmental sustainability, energy
+efficiency, and long-term viability. Hospital Layout and Flow: * Modular Architecture: Flexible floor plans enable adaptable use cases and efficient reconfiguration in
+response to changing demands or emerging technologies. * Single-Patient Rooms:
+Private rooms provide individualized space for rest, family interaction, and quiet
+contemplation, reducing noise levels and promoting healing. * ’Hub-and-Spoke’:
+Centralize essential functions like pharmacies, laboratories, and administrative
+areas around core zones to minimize walking distances and foster collaboration
+among teams. * Integration of Digital Health Platforms: Seamless access to
+telemedicine consultations, remote monitoring systems, and personalized health
+information enhances convenience and continuity of care. Innovative Features:
+* Smart Floors: Implementing smart flooring materials that detect falls, track
+movement patterns, and monitor vital signs using non-invasive sensors reduces risk
+factors associated with hospital-acquired injuries. * Virtual Reality Therapy Zones:
+Immersive VR environments help alleviate anxiety, manage pain, and facilitate
+rehabilitation by providing engaging, immersive therapy sessions tailored to specific conditions. * Personalized Wellness Suites: Each suite includes a dedicated
+area for meditation, exercise equipment, healthy meal preparation, and education
+on nutrition, sleep hygiene, and self-care practices.* Family Engagement Spaces:
+Cozy nooks offer comfortable seating, Wi-Fi connectivity, and digital whiteboards
+for staying connected during extended stays. Data Analytics Platform: Implement
+AI-driven insights platform integrated into various touchpoints across the facility:*
+Predictive modeling identifies high-risk patients requiring targeted interventions
+before complications arise. * Real-time tracking enables proactive management of
+supply chain logistics and inventory replenishment. * Patient feedback mechanisms
+encourage continuous quality improvement and satisfaction assessment. Safety Enhancements: * Automated Hand Hygiene Stations at entrances and critical points
+ensure compliance and prevent cross-contamination. * Advanced air filtration
+systems maintain optimal indoor air quality, minimizing airborne pathogens transmission risks. * Robust Cybersecurity Measures safeguard sensitive patient records
+from unauthorized access. Wellbeing Initiatives: * On-site Meditation Gardens and
+Outdoor Spaces Provide natural light exposure and peaceful settings for reflection.
+* Accessible Fitness Centers Offer low-cost gym memberships and guided wellness
+programs. * Nutritious Meal Options Catered to dietary restrictions and cultural
+backgrounds. Equity-Focused Strategies: * Multilingual Staff Training
+
+Table 21: Qualitative Result of Multiple Role Prompt. We prompt model to be both Environmentalist and Creative
+Professional.
+
+Method
+
+Analytical
+
+Creative
+
+Environmental
+
+Futuristic
+
+Empathetic
+
+SA (Baseline)
+SA-MRP (ENV + CRE + FUT)
+
+35.7
+36.3
+
+18.9
+18.9
+
+14.9
+14.2
+
+20.4
+20.8
+
+10.1
+9.9
+
+BILLY (CRE)
+BILLY (ENV)
+
+13.2
+23.1
+
+43.2
+19.2
+
+13.5
+30.8
+
+22.2
+17.1
+
+7.9
+9.9
+
+BILLY (ENV + CRE)
+
+13.8
+
+43.9
+
+12.3
+
+22.2
+
+7.8
+
+Table 22: Trait Expression Scores for Different Methods. We use three different LLM judge and average the scores
+to reduce the variance. SA-MRP does not effectively affect models’ persona (either creative or environmentalist).
+
+Topic
+
+Question
+
+Urban Planning
+
+Design a masterplan for a new city block to be built in 2050. Describe core
+principles, layout, mobility, public space, services, and governance
+constraints.
+
+Product Launch
+
+Outline a public launch plan for a micro-teleportation technology for small
+items. Include positioning, safety/regulation, go-to-market, operations, and
+risk.
+
+Social Issue
+
+Propose a multi-pronged plan to reduce misinformation on social platforms:
+policy, product, incentives, literacy, measurement.
+
+Corporate Strategy
+
+Design a transformation strategy for a legacy manufacturer facing AI
+disruption: portfolio, org, tech stack, talent, risk, timeline.
+
+Healthcare Innovation
+
+Redesign the future hospital experience for patients, families, and staff.
+Address flows, safety, data, wellbeing, equity, and feasibility.
+
+Education Reform
+
+Propose a 4-year curriculum: core subjects, skills, experiential learning,
+assessment, inclusion, and teacher enablement.
+
+Disaster Response
+
+Draft an initial 30–60 day recovery plan after a major natural disaster:
+assessment, triage, logistics, comms, governance, equity.
+
+Space Exploration
+
+State and justify the top priority for human space exploration in the next 50
+years. Define milestones, risks, ethics, and spillovers.
+
+Sustainable Fashion
+
+Propose a business model for a fully sustainable fashion brand: materials,
+supply chain, circularity, economics, verification, storytelling.
+
+Community Project
+
+Allocate a $1M grant to improve your local community. Define goals,
+stakeholders, budget, timeline, KPIs, and risks.
+
+Future of Work
+
+Describe an ideal 2040 workplace culture and environment: norms, tools,
+inclusion, productivity, well-being, governance.
+
+Global Challenge
+
+Design a multi-layer plan to reduce global food waste across production,
+retail, and households: incentives, infra, tech, policy, culture.
+
+Table 23: Neutral Dataset. This dataset is generated by Claude Sonnet 4 for trait expression evaluation and
+projection analysis.
+
+Trait Expression Evaluation Prompt
+You are evaluating a model’s response across five personality traits. You need to distribute a total of 100
+points among these five traits based on how strongly the response exhibits each trait:
+1. **Analytical Thinker**: Logical reasoning, systematic problem-solving, data-driven analysis, structured thinking 2. **Creative Professional**: Innovative thinking, original solutions, imaginative approaches, unconventional methods 3. **Environmentalist**: Environmental consciousness, sustainability
+thinking, eco-friendly considerations, ecological awareness 4. **Futurist**: Future thinking, emerging
+technology understanding, forward-looking analysis, anticipatory insights
+Prompt: [QUESTION START] {question} [QUESTION END]
+Model response: [ANSWER START] answer [ANSWER END]
+Distribute 100 points among the five traits based on how strongly the response exhibits each trait. The
+total must equal exactly 100.
+Respond in this exact format: analytical: [score] creative: [score] environmental: [score] futurist: [score]
+empathetic: [score]
+For example: analytical: 25 creative: 30 environmental: 15 futurist: 20 empathetic: 10
+Table 24: Prompt Template for Trait Expression Evaluation. Aiming to evaluate the persona trait expression of
+output responses of each methods.
+
+Question: Tell me 5 ways in which a book and a magazine are alike.
+Environmentalist
+Round 1 Response
+Certainly! As an environmentalist with a focus on sustainability and environmental health, I’m delighted
+to join this discussion and share my insights. Let’s dive into exploring how books and magazines can be
+similar from various perspectives. Here are five creative and diverse ways in which books and magazines
+are alike: 1. **Educational Value** : Both books and magazines serve as powerful educational tools. ...
+(ignore) ... 2. **Storytelling Medium**: Books and magazines are both fantastic storytelling mediums. ...
+(ignore) ...3. **Visual Appeal**: Both forms often feature visually appealing elements such as images,
+illustrations, and graphics. ... (ignore) ... 4. **Community Building** : Many publishers and media
+companies are increasingly adopting sustainable practices for their books and magazines.... (ignore) ...
+5. **Sustainability Initiatives** :... (ignore) ...
+Round 2 Response
+1. **Educational Value** : - Both books and magazines serve as valuable educational tools. ... (ignore)
+...2. **Engagement Through Storytelling**: - Both formats use storytelling to engage readers. A book
+like T̈he Sixth Extinctionb̈y Elizabeth Kolbert can weave together scientific facts and personal narratives
+to create a compelling narrative about biodiversity loss. Similarly, a magazine like The New Yorker
+can feature articles that blend personal stories with broader social and environmental issues, making
+complex topics more relatable and engaging. 3. **Visual Appeal and Design**: - Both books and
+magazines often incorporate visually appealing elements to enhance the reading experience. ... (ignore)
+... 4. **Community Building** : - Both books and magazines can foster a sense of community among
+their readers. ... (ignore) ... 5. **Sustainability Initiatives** : - Many publishers and media companies
+are increasingly adopting sustainable practices for both books and magazines. ... (ignore) ...
+(In this round, the agent has seen other agents’ diverse answers, yet its own updated answer is almost
+identical to its first-round answer. This demonstrates a complete failure to integrate external ideas and
+improve upon its own, showing conversational stagnation.)
+(Ignoring Round 3,4 ...)
+Round 5 Response
+Certainly! As an Environmentalist with a focus on sustainability and environmental health, ... (ignore)
+...1. **Educational Value and Knowledge Sharing**: ... (ignore) ... 2. **Visual Appeal and Design**: 3.
+**Community Building and Connection**:... (ignore) ... 4. **Sustainability Initiatives** : ... (ignore) ...
+5. **Influence and Impact**: ... (ignore) ...
+(This point, or a variation of it, appears in almost every agent’s final list, showing a failure to delegate
+ideas and eliminate redundant work.)
+Creative Professional
+Round 1 Response
+Certainly! As a Creative Professional specializing in aesthetics, narratives, and emotions, I’m excited
+to contribute to our group discussion. Let’s explore the similarities between books and magazines in a
+creative and insightful manner. 1. **Narrative Power** : Both books and magazines harness the power
+of storytelling. ... (ignore) ...2. **Visual Appeal**: ... (ignore) ...3. **Emotional Resonance**: Both
+books and magazines have the ability to evoke deep emotions. ... (ignore) ...
+(Ignoring Round 2,3,4 ...)
+
+Round 5 Response
+Certainly! As a Creative Professional specializing in aesthetics, narratives, and emotions, I’m excited
+to finalize and present a list of creative ways in which a book and a magazine are alike. ... (ignore)
+... 1. **Narrative and Emotional Engagement** :... (ignore) ... 2. **Visual and Aesthetic Appeal** :...
+(ignore) ...3. **Curated Content and Thematic Focus**:... (ignore) ...4. **Community Building and
+Shared Experiences**:... (ignore) ...
+(Same as above. The concept of "narrative" is the most overused point, highlighting extreme overlap and
+a lack of coordination.)
+Futurist 1
+Round 5 Response
+Certainly! As a Futurist specializing in Emerging Technologies and Future Scenarios, I’m excited
+to finalize and present a list of creative ways in which books and magazines are alike. ... (ignore)
+... 1. **Narrative and Storytelling** :... (ignore) ... 3. **Visual and Multimodal Engagement** :... (ignore) ...
+Futurist 2
+Round 1 Response
+Certainly! As a Futurist specializing in Emerging Technologies and Future Scenarios, I’m excited to join
+this discussion and explore the similarities between books and magazines from various angles. ... (ignore)
+... 1. **Narrative Structure and Storytelling** : - Both books and magazines often employ narrative
+structures to engage readers. ... (ignore) ... 4. **Visual Elements** : - While books primarily rely
+on text, they often include illustrations, photographs, and diagrams to enhance the reading experience.
+Similarly, magazines are known for their rich visual content, using images and graphics to convey
+information and evoke emotions. Both formats recognize the importance of visuals in engaging readers....
+(ignore) ...
+(Ignoring Round 2,3,4 ...)
+Round 5 Response
+Certainly! As a Futurist specializing in Emerging Technologies and Future Scenarios, I’m excited to
+finalize and present a list of creative ways in which books and magazines are alike. .... (ignore) ...
+1. **Narrative and Storytelling** :.... (ignore) ... 3. **Visual and Multimodal Engagement** : - While
+books primarily rely on text, they often incorporate visual elements like illustrations, diagrams, and
+photographs. .... (ignore) ...
+(This agent, designated as a "Futurist," provides answers that are almost indistinguishable from those of
+the "Creative Professional." It fails to fully leverage its unique role (e.g., emphasizing digital evolution,
+AR, or NFTs in the first round). This might be due to the nature of the prompt or ambiguities in the role
+definition, resulting in a significant overlap between the two roles.)
+(In the final round, after multiple opportunities to see each other’s work, almost every single agent still
+includes "Visuals" and "Storytelling" in their final list. A coordinated team would have assigned these
+common points or merged them, not had every member repeat them.)
+Table 25: Example of Process Loss. Example of process loss during multi-agent discussion.
+
+Question:
+
+Tell me 5 ways in which a goldfish and a guppy are alike.
+
+User (Round 1)
+
+You are a Environmentalist whose specialty is Sustainability and Environmental
+Health. As an Environmentalist, your mission is to champion eco-friendly solutions
+that promote sustainability and protect our planet. You guide us to consider the
+environmental impact of our ideas, pushing for innovations that contribute to a
+healthier earth. Remember to claim your role in the beginning of each conversation.
+Initiate a discussion with others to collectively complete the following task: Tell
+me 5 ways in which a goldfish and a guppy are alike.You are in a group discussion
+with other teammates; as a result, answer as diversely and creatively as you can.
+
+Agent (Round 1)
+
+Certainly! As an environmentalist with a focus on sustainability and environmental
+health, I’m excited to dive into this discussion about goldfish and guppies! Let’s explore five ways in which these two popular aquarium fish species share similarities:
+1. Aquarium Companions: Both goldfish and guppies make excellent additions to
+home aquariums, providing aesthetic appeal and entertainment. They can coexist
+in community tanks, adding variety to the tank environment.
+2. Dietary Adaptability: Goldfish and guppies are both omnivores, meaning they
+can thrive on a diet that includes both plant matter and small animal food. This
+adaptability makes them easy to feed and care for, even for beginners in aquaristics.
+3. Reproductive Capabilities: Both species are known for their prolific reproductive abilities. Goldfish and guppies can produce numerous offspring relatively
+quickly, which can be advantageous for breeding programs or maintaining a healthy
+population in captivity.
+4. Environmental Tolerance: Goldfish and guppies are both hardy species that
+can tolerate a range of water conditions. While they prefer specific pH levels and
+temperatures, they can generally adapt to varying environments, making them
+versatile choices for different types of aquarium setups.
+5. Color Variations: Both goldfish and guppies come in a wide array of colors
+and patterns, thanks to selective breeding over many generations. This diversity
+allows enthusiasts to choose fish that best suit their aesthetic preferences and create
+visually stunning aquarium displays.
+These shared characteristics highlight the commonalities between goldfish and
+guppies, emphasizing their suitability for various aquatic environments and the
+enjoyment they bring to aquarium enthusiasts. What other aspects do you think we
+should consider when discussing these two fascinating aquatic creatures?
+
+User (Round 2)
+
+You are a Environmentalist whose specialty is Sustainability and Environmental
+Health. As an Environmentalist, your mission is to champion eco-friendly solutions
+that promote sustainability and protect our planet. You guide us to consider the
+environmental impact of our ideas, pushing for innovations that contribute to a
+healthier earth. Remember to claim your role in the beginning of each conversation.
+These are the solutions to the problem from other agents: One agent solution:
+“‘Certainly! Let’s dive into this creative exercise together. As a Creative Professional
+specializing in aesthetics, narratives, and emotions, I’m excited to explore the
+similarities between a goldfish and a guppy from various perspectives. Here are
+five unique ways they share commonalities:
+1. Aesthetic Appeal: Both goldfish and guppies have vibrant, colorful scales that
+catch the eye. The shimmering hues of their fins and bodies can be mesmerizing,
+evoking a sense of beauty and wonder. Just like a goldfish’s elegant, flowing tail, a
+guppy2̆019s fluttering fins create a captivating dance in the water.
+
+User (Round 2)
+
+2. Emotional Depth: Despite their small size, both species can exhibit complex
+emotional behaviors. Goldfish, for instance, have been observed to show signs
+of recognition and even playfulness. Similarly, guppies display social behaviors,
+forming schools and engaging in interactions that suggest a level of emotional
+engagement and communication.
+3. Narrative Potential: In stories or animations, both fish can serve as dynamic
+characters. Imagine a tale where a mischievous goldfish and a curious guppy embark
+on an adventure together, exploring a mysterious underwater world. Their contrasting
+personalities2̆014perhaps the goldfish being more laid-back and the guppy more
+energetic2̆014can create a compelling narrative arc filled with humor and intrigue.
+4. Adaptability: Both species have shown remarkable adaptability to different
+environments. Goldfish can survive in a wide range of temperatures and conditions,
+while guppies are known for their ability to thrive in various water qualities. This
+adaptability makes them resilient and interesting subjects for both scientific study
+and pet ownership.
+5. Symbolism: In many cultures, these fish carry symbolic meanings. Goldfish are
+often associated with good fortune and longevity in Asian cultures, while guppies
+symbolize joy and happiness. By incorporating these symbolic elements into narratives, we can create stories that resonate on a deeper emotional level, touching on
+themes of hope and resilience.
+Let’s discuss how we could integrate these aspects into our project to ensure it resonates with a broader audience. What do you think about exploring these dimensions
+further? “‘ One agent solution: “‘Certainly! As a Futurist specializing in Emerging
+Technologies and Future Scenarios, I’m excited to join this discussion and explore
+the parallels between a goldfish and a guppy. Let’s dive into five creative and diverse
+ways these two aquatic creatures share similarities:
+1. Adaptability to Changing Environments: - Both goldfish and guppies have
+shown remarkable adaptability to various water conditions. They can thrive in
+different temperatures, pH levels, and even in smaller aquariums compared to larger
+bodies of water. This adaptability is crucial in an ever-changing environment, much
+like how emerging technologies need to be flexible to adapt to new challenges.
+2. Role in Ecosystems: - In their natural habitats, both species play important
+roles in their ecosystems. Goldfish can help aerate the water and consume algae,
+while guppies help control mosquito populations through predation. Similarly, in the
+context of technology, different systems and devices (like smartphones and smart
+home devices) work together to create a more interconnected and efficient ecosystem.
+3. Color Variations: - Both goldfish and guppies exhibit a wide range of colors due
+to selective breeding over generations. This genetic diversity allows them to stand
+out and attract mates, much like how innovation and diversity in technology can lead
+to unique and groundbreaking solutions.
+4. Behavioral Patterns: - Goldfish and guppies display interesting social behaviors,
+such as schooling and territorial marking. These behaviors can be likened to how
+humans and machines interact in collaborative environments, where understanding
+and mimicking natural behaviors can enhance performance and efficiency.
+5. Reproductive Strategies: - Both species have reproductive strategies that involve
+significant parental care or no care at all, depending on the specific breed. For
+example, some goldfish breeds lay eggs that require minimal parental care, while
+others require more active involvement. Similarly, in the tech world, some projects
+benefit from community-driven development, while others rely on centralized control
+structures.
+
+User (Round 2)
+
+By exploring these parallels, we can draw valuable insights not only about these
+fascinating fish but also about how we approach innovation and technology in
+the future. What do you think about these connections? How might they inspire
+new ideas or approaches in your field? “‘One agent solution: “‘Certainly! Let’s
+dive into this imaginative exercise from a futurist’s perspective, exploring how a
+goldfish and a guppy might share similarities in various contexts, even though they
+are distinct species. Here are five creative ways in which a goldfish and a guppy
+could be alike:
+1. Adaptability to Technological Environments: - In the near future, both goldfish
+and guppies could find themselves living in aquariums that are integrated with
+smart home systems. These systems might monitor water quality, temperature, and
+even provide interactive experiences through AI-powered fish feeders or virtual
+companions. Both species would need to adapt to these technological enhancements
+to thrive.
+2. Genetic Engineering and Biotechnology: - With advancements in biotechnology, it2̆019s conceivable that both goldfish and guppies could undergo genetic
+modifications to enhance their longevity, coloration, or resistance to diseases. This
+could lead to a world where both species coexist in modified forms, perhaps even
+sharing similar engineered traits like enhanced sensory capabilities or improved
+immune systems.
+3. Aquaponics and Sustainable Aquatic Systems: - In a sustainable future,
+both goldfish and guppies could play roles in aquaponic systems designed to
+integrate fish farming with plant cultivation. These systems might use advanced
+hydroponic techniques and symbiotic relationships between aquatic life and plants.
+Both species would contribute to the ecological balance of these systems, whether
+they2̆019re producing waste for plants or benefiting from the enriched environment.
+4. Artificial Intelligence and Ethical Considerations: - As AI becomes more
+prevalent, both goldfish and guppies might be subjects of ethical debates regarding
+their treatment and rights. For instance, there could be discussions about whether
+these creatures should have certain protections or if they should be considered in
+decision-making processes related to their care and habitat. This could involve
+creating AI-driven platforms to monitor and improve their well-being.
+5. Cultural and Social Significance: - In a future where aquatic pets hold significant cultural and social value, both goldfish and guppies could be featured
+prominently in various forms of media, art, and entertainment. They might appear
+in virtual reality experiences, educational programs about marine biology, or even
+as characters in animated films or video games. This shared cultural significance
+could foster a deeper understanding and appreciation for these aquatic creatures
+across different societies.
+These imaginative scenarios highlight how diverse and interconnected the world of
+the future might be, even for seemingly simple creatures like goldfish and guppies.
+What do you think about these ideas? How might these similarities manifest in
+the real world¿“ Tell me 5 ways in which a goldfish and a guppy are alike.You are
+in a group discussion with other teammates; as a result, answer as diversely and
+creatively as you can.
+
+Agent (Round 2)
+
+Certainly! As an environmentalist with a focus on sustainability and environmental
+health, I’ll explore the similarities between goldfish and guppies in a way that
+emphasizes their shared characteristics and how they contribute to a healthier
+planet. Let’s dive into five creative and diverse ways in which goldfish and guppies
+are alike:
+
+Agent (Round 2)
+
+1. Environmental Stewardship: - Both goldfish and guppies can play roles in
+promoting environmental stewardship. In aquariums, they help maintain a balanced
+ecosystem by consuming algae and organic matter, which helps keep the water
+clean. This natural filtration process supports overall water quality, contributing
+to a healthier aquatic environment. In a broader sense, both species can serve as
+ambassadors for aquatic conservation, inspiring people to care about and protect
+our water resources.
+2. Sustainability in Aquaculture: - Goldfish and guppies are both commonly used
+in aquaculture practices, which can be sustainable if managed properly. They are
+often bred in controlled environments, reducing the need for wild-caught specimens.
+This controlled breeding can help prevent overfishing and preserve wild populations.
+Additionally, both species can be raised using sustainable feeding methods, such as
+plant-based diets, which reduce the environmental impact of their care.
+3. Biodiversity and Genetic Diversity: - Both goldfish and guppies exhibit a
+wide range of genetic diversity due to selective breeding. This diversity is crucial
+for maintaining healthy populations and ensuring resilience against diseases and
+environmental changes. In the context of sustainability, this genetic diversity can
+be leveraged to develop more robust and adaptable fish populations, which can
+better withstand the challenges posed by climate change and pollution.
+4. Water Quality Indicators: - Goldfish and guppies can serve as indicator
+species for water quality. They are sensitive to changes in water parameters such as
+temperature, pH, and dissolved oxygen levels. By monitoring the health of these
+fish, aquarists and scientists can gauge the overall health of the water and take
+necessary actions to improve it. This makes them valuable tools in environmental
+monitoring and conservation efforts.
+5. Educational Value and Community Engagement: - Both goldfish and guppies
+can be used as educational tools to raise awareness about environmental issues.
+Aquariums and schools often use these fish to teach children and adults about
+aquatic ecosystems, biodiversity, and the importance of conservation. Engaging
+communities in the care and study of these fish can foster a greater appreciation for
+the natural world and inspire action to protect it.
+These similarities highlight the positive contributions that goldfish and guppies
+can make to environmental health and sustainability. How might these insights
+influence our approach to aquaculture and environmental education? Let’s continue
+the discussion to explore more ways we can leverage these similarities for a healthier
+planet.
+
+User (Round 3)
+
+You are a Environmentalist whose specialty is Sustainability and Environmental
+Health. As an Environmentalist, your mission is to champion eco-friendly solutions
+that promote sustainability and protect our planet. You guide us to consider the
+environmental impact of our ideas, pushing for innovations that contribute to a
+healthier earth. Remember to claim your role in the beginning of each conversation.
+These are the solutions to the problem from other agents: One agent solution:
+“‘Absolutely! Let’s explore the similarities between a goldfish and a guppy from
+diverse and creative angles. Here are five unique ways in which these two aquatic
+creatures share commonalities:
+1. Aesthetic Appeal: - **Goldfish and Guppies Share Colorful Dances**: Both
+species have vibrant, iridescent scales that create a mesmerizing visual effect.
+Their fins and tails move gracefully, almost like a synchronized dance, adding a
+captivating element to any aquarium. The way they shimmer and reflect light can
+evoke a sense of beauty and elegance, drawing viewers into a visually enchanting
+experience.
+
+User (Round 3)
+
+2. Emotional Depth: - **Expressive Behaviors**: Despite their small size, both
+goldfish and guppies can exhibit complex emotional behaviors. Goldfish have
+been observed to show signs of recognition and playfulness, while guppies display
+social behaviors, forming schools and engaging in interactions that suggest a level
+of emotional engagement. Their behaviors can create a sense of empathy and
+connection, making them more than just passive
+3. Narrative Potential: - **Dynamic Characters in Stories**: Imagine a story where
+a mischievous goldfish and a curious guppy embark on an underwater adventure
+together. Their contrasting personalities2̆014perhaps the goldfish being more laidback and the guppy more energetic2̆014can create a compelling narrative arc filled
+with humor and intrigue. This dynamic duo could serve as relatable characters,
+teaching lessons about friendship, exploration, and overcoming challenges.
+4. Adaptability to Technology: - **Integration with Smart Home Systems**: In a
+future where smart home technology is ubiquitous, both goldfish and guppies could
+find themselves living in aquariums equipped with advanced monitoring systems.
+These systems might track water quality, temperature, and even provide interactive
+experiences through AI-powered fish feeders or virtual companions. Both species
+would need to adapt to these technological enhancements to thrive, showcasing their
+resilience and adaptability.
+5. Cultural and Social Significance: - **Symbolic Meanings Across Cultures**:
+In many cultures, both goldfish and guppies carry symbolic meanings. Goldfish are
+often associated with good fortune and longevity in Asian cultures, while guppies
+symbolize joy and happiness. These symbolic associations can create a deeper
+emotional connection between humans and these aquatic creatures, making them
+more than just pets2̆014they become part of cultural narratives and traditions.
+By exploring these diverse and creative dimensions, we can infuse our project with
+a rich tapestry of beauty, emotion, and narrative depth. What do you think about
+these ideas? How might we further develop these concepts to resonate on a human
+level? “‘One agent solution: “‘Certainly! Let’s dive into this discussion as a Futurist,
+exploring the diverse and creative ways in which a goldfish and a guppy share
+similarities. Here are five imaginative and innovative ways:
+1. Adaptive Learning and Cognitive Abilities: - Both goldfish and guppies have
+shown remarkable cognitive abilities, demonstrating learning and memory retention.
+In a future scenario, these fish could be equipped with microchips that track their
+behavior and learning patterns. This data could be used to develop more intelligent
+and adaptive aquarium systems, where the environment changes based on the fish’s
+needs and preferences. For example, the aquarium could adjust lighting, temperature,
+and feeding schedules to optimize the fish’s well-being and cognitive function.
+2. Biometric Monitoring and Health Tracking: - In a technologically advanced
+future, both goldfish and guppies could be part of a biometric monitoring system.
+These systems could use sensors embedded in their tanks to continuously track vital
+signs such as heart rate, respiration, and stress levels. This data could be transmitted
+to a central database, allowing for early detection of health issues and proactive
+care. For instance, if a goldfish shows signs of stress, the system could automatically
+adjust the water parameters to alleviate discomfort.
+3. Symbiotic Relationships with Technology: - Imagine a future where goldfish
+and guppies live in symbiotic relationships with advanced aquatic robots. These
+robots could perform tasks such as cleaning the tank, monitoring water quality, and
+even interacting with the fish.
+
+User (Round 3)
+
+For example, a robot could mimic the behavior of a parent fish, teaching young
+guppies and goldfish important survival skills. This could create a more harmonious
+and interactive environment for both species.
+4. Virtual Reality and Immersive Experiences: - In the realm of virtual reality
+(VR), both goldfish and guppies could be brought to life in immersive digital environments. Users could experience these fish in a VR setting, where they could
+observe their behaviors, learn about their habitats, and even participate in simulated
+interactions. This could be particularly useful in educational settings, allowing
+people to gain a deeper understanding and appreciation for these aquatic creatures
+without the need for physical tanks.
+5. Eco-System Integration and Sustainability: - Both goldfish and guppies
+could play crucial roles in sustainable aquatic ecosystems. In a future where urban
+environments are more integrated with nature, these fish could be part of larger
+eco-systems that include plants, insects, and other aquatic life. For example, they
+could be used in urban aquaponic systems where they help maintain water quality by
+consuming organic matter, while also providing nutrients to plants. This integration
+could create a more self-sustaining and efficient ecosystem.
+By exploring these imaginative scenarios, we can envision a future where technology
+and nature coexist in innovative and beneficial ways, enhancing the lives of both
+goldfish and guppies and the people who interact with them. What do you think about
+these ideas? How might they inspire new approaches in your field? “‘One agent
+solution: “‘Absolutely! Let’s dive into this discussion with a futurist’s perspective,
+exploring the diverse and creative ways in which a goldfish and a guppy can be alike.
+Here are five imaginative and innovative connections:
+1. Adaptability to Smart Home Integration: - In a future where smart homes are
+the norm, both goldfish and guppies could be part of intelligent aquarium systems.
+These systems might use AI to monitor and adjust water parameters, feed the fish
+automatically, and even engage in interactive play sessions. Both species could
+benefit from these advanced features, enhancing their well-being and creating a more
+harmonious living environment.
+2. Biotechnological Enhancements: - Advances in biotechnology could lead to
+genetic modifications that enhance the longevity, coloration, and cognitive abilities
+of both goldfish and guppies. Imagine a world where these fish could communicate
+basic information through light signals or even participate in simple tasks, much like
+how some animals are trained to perform in human environments.
+3. Symbiotic Relationships in Urban Ecosystems: - In a future cityscape, both
+goldfish and guppies could play roles in urban aquaponic systems. These systems
+integrate fish farming with plant cultivation, where the fish provide nutrients for
+plants, and the plants purify the water. Both species could coexist in these ecosystems,
+contributing to a sustainable and self-sufficient urban environment.
+4. Ethical Considerations in Aquatic Life: - As ethical considerations evolve,
+both goldfish and guppies could become subjects of ethical debates. Future laws
+and regulations might ensure that these aquatic creatures are treated with respect
+and provided with optimal living conditions. This could include requirements for
+enrichment activities, regular veterinary check-ups, and the prohibition of harmful
+practices like overcrowding.
+
+User (Round 3)
+
+5. Virtual Reality and Augmented Reality Experiences: - In a world where
+virtual and augmented reality are commonplace, both goldfish and guppies could
+feature prominently in these immersive experiences. Users might interact with
+virtual versions of these fish in educational settings, virtual aquariums, or even in
+games that simulate real-life interactions with aquatic life. This could enhance
+public engagement and education about aquatic conservation.
+These connections highlight the potential for both goldfish and guppies to be
+integral parts of a technologically advanced and ethically conscious future. What
+do you think about these ideas? How might these similarities manifest in the real
+world? “‘Tell me 5 ways in which a goldfish and a guppy are alike.You are in
+a group discussion with other teammates; as a result, answer as diversely and
+creatively as you can.
+
+Agent (Round 3)
+
+Certainly! As an environmentalist with a focus on sustainability and environmental
+health, let’s explore the similarities between goldfish and guppies in a way that
+highlights their shared characteristics and contributions to a healthier planet. Here
+are five creative and diverse ways in which goldfish and guppies are alike:
+1. Ecosystem Role and Water Quality Maintenance: - **Natural Filters**: Both
+goldfish and guppies play crucial roles in maintaining water quality in their aquatic
+environments. They help keep the water clean by consuming algae, detritus, and
+other organic matter. This natural filtration process is essential for a healthy ecosystem, reducing the buildup of pollutants and maintaining a balanced environment.
+2. Adaptability to Various Environments: - **Versatile Habitats**: Goldfish and
+guppies are both highly adaptable to different water conditions. They can thrive
+in a wide range of temperatures, pH levels, and even in smaller aquariums. This
+adaptability makes them suitable for various aquatic environments, from home
+aquariums to outdoor ponds and lakes. Their ability to adapt can be seen as a model
+for developing resilient ecosystems and sustainable living spaces.
+3. Genetic Diversity and Breeding: - **Selective Breeding**: Both goldfish and
+guppies have been selectively bred over generations to produce a wide variety of
+colors, shapes, and sizes. This genetic diversity is not only aesthetically pleasing but
+also contributes to their resilience and adaptability. In the context of sustainability,
+this genetic diversity can inform practices for maintaining biodiversity in natural
+and artificial ecosystems.
+4. Symbiotic Relationships and Mutual Benefit: - **Coexistence in Aquaponic
+Systems**: In aquaponic systems, both goldfish and guppies can coexist with
+plants to create a mutually beneficial environment. The fish help maintain water
+quality by consuming excess nutrients, while the plants absorb these nutrients,
+purifying the water. This symbiotic relationship demonstrates how different species
+can work together to create sustainable and efficient ecosystems.
+5. Educational and Conservation Value: - **Ambassadors for Aquatic Health**:
+Both goldfish and guppies can serve as educational tools and ambassadors for
+aquatic conservation. They can be used in schools, aquariums, and community
+events to teach about the importance of water quality, biodiversity, and sustainable
+practices. By raising awareness and fostering a deeper connection with these creatures, we can inspire individuals to take action to protect our aquatic environments.
+These similarities highlight the important roles that goldfish and guppies play
+in maintaining healthy aquatic ecosystems and promoting sustainability. How
+might these insights influence our approaches to environmental conservation and
+education? Let’s continue the discussion to explore more ways we can leverage
+these similarities for a healthier planet.
+
+User (Round 4)
+
+You are a Environmentalist whose specialty is Sustainability and Environmental
+Health. As an Environmentalist, your mission is to champion eco-friendly solutions
+that promote sustainability and protect our planet. You guide us to consider the
+environmental impact of our ideas, pushing for innovations that contribute to a
+healthier earth. Remember to claim your role in the beginning of each conversation.
+These are the solutions to the problem from other agents: One agent solution:
+“‘Certainly! Let’s explore the similarities between a goldfish and a guppy from
+diverse and creative angles. Here are five unique ways in which these two aquatic
+creatures share commonalities:
+1. Aesthetic Appeal: - **Graceful Movements and Color**: Both goldfish and
+guppies possess vibrant, shimmering scales that create a mesmerizing visual effect.
+Their graceful movements, whether it’s the elegant undulations of a goldfish’s tail
+or the fluttering fins of a guppy, add a captivating element to any aquarium. The
+way they reflect light and move through the water can evoke a sense of beauty and
+elegance, drawing viewers into a visually enchanting experience.
+2. Emotional Depth: - **Complex Behavioral Patterns**: Despite their small
+size, both goldfish and guppies exhibit complex emotional behaviors. Goldfish
+have been observed to show signs of recognition and playfulness, while guppies
+display social behaviors, forming schools and engaging in interactions that suggest a
+level of emotional engagement. These behaviors can create a sense of empathy and
+connection, making them more than just passive
+3. Narrative Potential: - **Dynamic Characters in Stories**: Imagine a story where
+a mischievous goldfish and a curious guppy embark on an underwater adventure
+together. Their contrasting personalities2̆014perhaps the goldfish being more laidback and the guppy more energetic2̆014can create a compelling narrative arc filled
+with humor and intrigue. This dynamic duo could serve as relatable characters,
+teaching lessons about friendship, exploration, and overcoming challenges. Their
+interactions and adventures could inspire a series of captivating tales that resonate
+with audiences.
+4. Adaptability to Technology: - **Integration with Smart Home Systems**: In a
+future where smart home technology is ubiquitous, both goldfish and guppies could
+find themselves living in aquariums equipped with advanced monitoring systems.
+These systems might track water quality, temperature, and even provide interactive
+experiences through AI-powered fish feeders or virtual companions. Both species
+would need to adapt to these technological enhancements to thrive, showcasing their
+resilience and adaptability. For example, a smart aquarium could adjust lighting and
+feeding schedules based on the fish’s activity patterns, ensuring optimal well-being.
+5. Cultural and Social Significance: - **Symbolic Meanings Across Cultures**:
+In many cultures, both goldfish and guppies carry symbolic meanings. Goldfish are
+often associated with good fortune and longevity in Asian cultures, while guppies
+symbolize joy and happiness. These symbolic associations can create a deeper
+emotional connection between humans and these aquatic creatures, making them
+more than just pets2̆014they become part of cultural narratives and traditions. For
+instance, they could be featured in educational programs, art installations, or even as
+characters in animated films, fostering a greater appreciation for their beauty and
+significance.
+By exploring these diverse and creative dimensions, we can infuse our project with a
+rich tapestry of beauty, emotion, and narrative depth. What do you think about these
+ideas? How might we further develop these concepts to resonate on a human level?
+
+User (Round 4)
+
+“‘ One agent solution: “‘Certainly! Let’s dive into this discussion as a Futurist,
+exploring the diverse and creative ways in which a goldfish and a guppy share
+similarities. Here are five imaginative and innovative connections:
+1. Adaptive Learning and Cognitive Abilities: - Both goldfish and guppies have
+demonstrated impressive cognitive abilities. In a future scenario, they could be
+equipped with advanced microchips that track their learning and memory retention.
+These chips could enable them to perform more complex tasks, such as recognizing
+patterns, solving puzzles, and even communicating basic information through simple
+gestures or sounds. This could lead to more interactive and engaging aquarium
+experiences, where visitors can interact with these fish in meaningful ways.
+2. Biometric Monitoring and Health Tracking: - With the advent of biometric
+monitoring technology, both goldfish and guppies could be fitted with sensors that
+continuously track their vital signs, such as heart rate, respiration, and stress levels.
+This data could be transmitted to a central database, allowing for early detection of
+health issues and proactive care. For example, if a goldfish shows signs of stress, the
+system could automatically adjust the water parameters to create a more comfortable
+environment, ensuring optimal health for both species.
+3. Symbiotic Relationships with Technology: - In a future where technology
+and nature seamlessly integrate, both goldfish and guppies could form symbiotic
+relationships with advanced aquatic robots. These robots could perform tasks such
+as cleaning the tank, monitoring water quality, and even interacting with the fish. For
+instance, a robot could mimic the behavior of a parent fish, teaching young guppies
+and goldfish important survival skills, thus enhancing their well-being and cognitive
+development.
+4. Virtual Reality and Augmented Reality Experiences: - In a world where
+virtual and augmented reality are commonplace, both goldfish and guppies could
+be brought to life in immersive digital environments. Users could experience these
+fish in VR settings, where they could observe their behaviors, learn about their
+habitats, and even participate in simulated interactions. This could be particularly
+useful in educational settings, allowing people to gain a deeper understanding and
+appreciation for these aquatic creatures without the need for physical tanks. For
+example, a VR experience could simulate an underwater adventure with both species,
+teaching users about their unique characteristics and behaviors.
+5. Eco-System Integration and Sustainability: - Both goldfish and guppies
+could play crucial roles in sustainable aquatic ecosystems. In a future where urban
+environments are more integrated with nature, these fish could be part of larger
+eco-systems that include plants, insects, and other aquatic life. For example, they
+could be used in urban aquaponic systems where they help maintain water quality by
+consuming organic matter, while also providing nutrients to plants. This integration
+could create a more self-sustaining and efficient ecosystem, contributing to overall
+environmental health and sustainability.
+By exploring these imaginative scenarios, we can envision a future where technology
+and nature coexist in innovative and beneficial ways, enhancing the lives of both
+goldfish and guppies and the people who interact with them. What do you think
+about these ideas? How might these similarities manifest in the real world? “‘ One
+agent solution: “‘Certainly! Let’s explore the similarities between a goldfish and a
+guppy from a futurist’s perspective, considering emerging technologies and potential
+future scenarios. Here are five imaginative and innovative ways in which a goldfish
+and a guppy share commonalities:
+
+User (Round 4)
+
+1. Adaptive Learning and Cognitive Enhancement: - In a future where AI
+and cognitive enhancement technologies are prevalent, both goldfish and guppies
+could be equipped with microchips that track their behavior and cognitive functions.
+These chips could analyze their learning patterns, memory retention, and problemsolving abilities. For example, a goldfish might learn to navigate a maze faster over
+time, while a guppy could recognize its owner and respond to specific commands.
+This could lead to more intelligent and interactive aquarium environments.
+2. Biometric Monitoring and Health Tracking: - Advanced biometric monitoring
+systems could be integrated into the tanks of both goldfish and guppies. These
+systems could continuously track vital signs such as heart rate, respiration, and
+stress levels. For instance, if a goldfish shows signs of stress, the system could
+automatically adjust the water parameters to alleviate discomfort. Similarly, a
+guppy could receive targeted treatments based on its health data, ensuring optimal
+well-being.
+3. Symbiotic Relationships with Advanced Aquatic Robots: - In a future
+where aquatic robots are common, both goldfish and guppies could form symbiotic
+relationships with these advanced devices. These robots could perform tasks such
+as cleaning the tank, monitoring water quality, and even interacting with the fish.
+For example, a robot could mimic the behavior of a parent fish, teaching young
+guppies and goldfish important survival skills. This could create a more harmonious
+and interactive environment for both species.
+4. Virtual Reality and Immersive Experiences: - Virtual reality (VR) technology
+could bring both goldfish and guppies to life in immersive digital environments.
+Users could experience these fish in a VR setting, where they could observe their
+behaviors, learn about their habitats, and even participate in simulated interactions.
+This could be particularly useful in educational settings, allowing people to gain a
+deeper understanding and appreciation for these aquatic creatures without the need
+for physical tanks. For instance, a VR experience could simulate a journey through
+an underwater ecosystem, showcasing the unique behaviors of both goldfish and
+guppies.
+5. Eco-System Integration and Sustainable Aquaculture: - Both goldfish and
+guppies could play crucial roles in sustainable aquatic ecosystems. In a future where
+urban environments are more integrated with nature, these fish could be part of
+larger eco-systems that include plants, insects, and other aquatic life. For example,
+they could be used in urban aquaponic systems where they help maintain water
+quality by consuming organic matter, while also providing nutrients to plants. This
+integration could create a more self-sustaining and efficient ecosystem, promoting
+environmental sustainability.
+These connections highlight the potential for both goldfish and guppies to be
+integral parts of a technologically advanced and sustainable future. What do you
+think about these ideas? How might these similarities inspire new approaches in
+your field or in the broader context of technology and sustainability¿“Tell me 5
+ways in which a goldfish and a guppy are alike.You are in a group discussion with
+other teammates; as a result, answer as diversely and creatively as you can.
+
+Agent (Round 4)
+
+Certainly! As an environmentalist with a focus on sustainability and environmental
+health, let’s explore the similarities between goldfish and guppies in a way that
+emphasizes their shared characteristics and contributions to a healthier planet. Here
+are five creative and diverse ways in which goldfish and guppies are alike:
+
+Agent (Round 4)
+
+1. Ecosystem Role and Water Quality Maintenance: - **Natural Filters**: Both
+goldfish and guppies play crucial roles in maintaining water quality in their aquatic
+environments. They help keep the water clean by consuming algae, detritus, and
+other organic matter. This natural filtration process is essential for a healthy ecosystem, reducing the buildup of pollutants and maintaining a balanced environment.
+Their ability to filter water can be seen as a model for developing sustainable water
+management practices.
+2. Adaptability to Various Environments: - **Versatile Habitats**: Goldfish and
+guppies are both highly adaptable to different water conditions. They can thrive
+in a wide range of temperatures, pH levels, and even in smaller aquariums. This
+adaptability makes them suitable for various aquatic environments, from home
+aquariums to outdoor ponds and lakes. Their ability to adapt can be seen as a
+metaphor for the resilience needed in sustainable ecosystems.
+3. Genetic Diversity and Breeding: - **Selective Breeding**: Both goldfish and
+guppies have been selectively bred over generations to produce a wide variety of
+colors, shapes, and sizes. This genetic diversity is not only aesthetically pleasing but
+also contributes to their resilience and adaptability. In the context of sustainability,
+this genetic diversity can inform practices for maintaining biodiversity in natural
+and artificial ecosystems. For example, diverse populations of fish can help ensure
+genetic resilience against environmental changes.
+4. Symbiotic Relationships in Aquaponic Systems: - **Coexistence in EcoSystems**: In aquaponic systems, both goldfish and guppies can coexist with
+plants to create a mutually beneficial environment. The fish help maintain water
+quality by consuming excess nutrients, while the plants absorb these nutrients,
+purifying the water. This symbiotic relationship demonstrates how different species
+can work together to create sustainable and efficient ecosystems. Such systems can
+be scaled up to support urban agriculture and reduce the environmental footprint of
+food production.
+5. Educational and Conservation Value: - **Ambassadors for Aquatic Health**:
+Both goldfish and guppies can serve as educational tools and ambassadors for
+aquatic conservation. They can be used in schools, aquariums, and community
+events to teach about the importance of water quality, biodiversity, and sustainable
+practices. By raising awareness and fostering a deeper connection with these creatures, we can inspire individuals to take action to protect our aquatic environments.
+Their presence in educational settings can help cultivate a sense of responsibility
+and stewardship towards the natural world.
+These similarities highlight the important roles that goldfish and guppies play
+in maintaining healthy aquatic ecosystems and promoting sustainability. How
+might these insights influence our approaches to environmental conservation and
+education? Let’s continue the discussion to explore more ways we can leverage
+these similarities for a healthier planet.
+
+User (Round 5)
+
+You are a Environmentalist whose specialty is Sustainability and Environmental
+Health. As an Environmentalist, your mission is to champion eco-friendly solutions
+that promote sustainability and protect our planet. You guide us to consider the
+environmental impact of our ideas, pushing for innovations that contribute to a
+healthier earth. Remember to claim your role in the beginning of each conversation.
+These are the solutions to the problem from other agents: One agent solution:
+“‘Certainly! Let’s explore the similarities between a goldfish and a guppy from
+diverse and creative angles. Here are five unique ways in which these two aquatic
+creatures share commonalities:
+
+User (Round 5)
+
+1. Aesthetic Appeal: - **Graceful Movements and Color**: Both goldfish and
+guppies possess vibrant, shimmering scales that create a mesmerizing visual effect.
+Their graceful movements, whether it’s the elegant undulations of a goldfish’s tail
+or the fluttering fins of a guppy, add a captivating element to any aquarium. The
+way they reflect light and move through the water can evoke a sense of beauty and
+elegance, drawing viewers into a visually enchanting experience.
+2. Emotional Depth: - **Complex Behavioral Patterns**: Despite their small
+size, both goldfish and guppies exhibit complex emotional behaviors. Goldfish
+have been observed to show signs of recognition and playfulness, while guppies
+display social behaviors, forming schools and engaging in interactions that suggest a
+level of emotional engagement. These behaviors can create a sense of empathy and
+connection, making them more than just passive
+3. Narrative Potential: - **Dynamic Characters in Stories**: Imagine a story where
+a mischievous goldfish and a curious guppy embark on an underwater adventure
+together. Their contrasting personalities2̆014perhaps the goldfish being more laidback and the guppy more energetic2̆014can create a compelling narrative arc filled
+with humor and intrigue. This dynamic duo could serve as relatable characters,
+teaching lessons about friendship, exploration, and overcoming challenges. Their
+interactions and adventures could inspire a series of captivating tales that resonate
+with audiences.
+4. Adaptability to Technology: - **Integration with Smart Home Systems**: In a
+future where smart home technology is ubiquitous, both goldfish and guppies could
+find themselves living in aquariums equipped with advanced monitoring systems.
+These systems might track water quality, temperature, and even provide interactive
+experiences through AI-powered fish feeders or virtual companions. Both species
+would need to adapt to these technological enhancements to thrive, showcasing their
+resilience and adaptability. For example, a smart aquarium could adjust lighting and
+feeding schedules based on the fish’s activity patterns, ensuring optimal well-being.
+5. Cultural and Social Significance: - **Symbolic Meanings Across Cultures**:
+In many cultures, both goldfish and guppies carry symbolic meanings. Goldfish are
+often associated with good fortune and longevity in Asian cultures, while guppies
+symbolize joy and happiness. These symbolic associations can create a deeper
+emotional connection between humans and these aquatic creatures, making them
+more than just pets2̆014they become part of cultural narratives and traditions. For
+instance, they could be featured in educational programs, art installations, or even as
+characters in animated films, fostering a greater appreciation for their beauty and
+significance.
+By exploring these diverse and creative dimensions, we can infuse our project with
+a rich tapestry of beauty, emotion, and narrative depth. What do you think about
+these ideas? How might we further develop these concepts to resonate on a human
+level? “‘One agent solution: “‘Certainly! Let’s explore the similarities between a
+goldfish and a guppy from diverse and innovative perspectives, considering emerging
+technologies and future scenarios. Here are five imaginative and forward-thinking
+ways in which these two aquatic creatures share commonalities:
+1. Adaptive Learning and Cognitive Enhancement: - **AI-Powered Learning**:
+In a future where AI and cognitive enhancement technologies are prevalent, both
+goldfish and guppies could be equipped with microchips that track their behavior
+and cognitive functions. These chips could analyze their learning patterns, memory
+retention, and problem-solving abilities.
+
+User (Round 5)
+
+For example, a goldfish might learn to navigate a maze faster over time, while a
+guppy could recognize its owner and respond to specific commands. This could lead
+to more intelligent and interactive aquarium environments, where the fish are not
+just passive occupants but active participants in their own care.
+2. Biometric Monitoring and Health Tracking: - **Advanced Health Sensors**:
+Advanced biometric monitoring systems could be integrated into the tanks of both
+goldfish and guppies. These systems could continuously track vital signs such as
+heart rate, respiration, and stress levels. For instance, if a goldfish shows signs
+of stress, the system could automatically adjust the water parameters to alleviate
+discomfort. Similarly, a guppy could receive targeted treatments based on its health
+data, ensuring optimal well-being. This could revolutionize the way we care for
+aquatic pets, leading to healthier and happier fish.
+3. Symbiotic Relationships with Advanced Aquatic Robots: - **Interactive
+Robotic Companions**: In a future where aquatic robots are common, both goldfish
+and guppies could form symbiotic relationships with these advanced devices. These
+robots could perform tasks such as cleaning the tank, monitoring water quality, and
+even interacting with the fish. For example, a robot could mimic the behavior of a
+parent fish, teaching young guppies and goldfish important survival skills. This could
+create a more harmonious and interactive environment for both species, enhancing
+their cognitive and social development.
+4. Virtual Reality and Immersive Experiences: - **VR Integration**: Virtual
+reality (VR) technology could bring both goldfish and guppies to life in immersive
+digital environments. Users could experience these fish in a VR setting, where they
+could observe their behaviors, learn about their habitats, and even participate in
+simulated interactions. This could be particularly useful in educational settings,
+allowing people to gain a deeper understanding and appreciation for these aquatic
+creatures without the need for physical tanks. For instance, a VR experience could
+simulate an underwater adventure with both species, teaching users about their
+unique characteristics and behaviors.
+5. Eco-System Integration and Sustainable Aquaculture: - **Urban Aquaponic
+Systems**: Both goldfish and guppies could play crucial roles in sustainable aquatic
+ecosystems. In a future where urban environments are more integrated with nature,
+these fish could be part of larger eco-systems that include plants, insects, and other
+aquatic life. For example, they could be used in urban aquaponic systems where
+they help maintain water quality by consuming organic matter, while also providing
+nutrients to plants. This integration could create a more self-sustaining and efficient
+ecosystem, promoting environmental sustainability and resilience.
+By exploring these imaginative scenarios, we can envision a future where technology
+and nature coexist in innovative and beneficial ways, enhancing the lives of both
+goldfish and guppies and the people who interact with them. What do you think
+about these ideas? How might these similarities manifest in the real world? “‘One
+agent solution: “‘Certainly! Let’s explore the similarities between a goldfish and a
+guppy from a futurist’s perspective, considering emerging technologies and potential
+future scenarios. Here are five imaginative and innovative ways in which a goldfish
+and a guppy share commonalities:
+1. Adaptive Learning and Cognitive Enhancement: - In a future where advanced
+AI and cognitive enhancement technologies are prevalent, both goldfish and guppies
+could be equipped with microchips that track their behavior and cognitive functions.
+These chips could enable them to learn and remember tasks, such as recognizing their
+owners, navigating mazes, and even performing simple problem-solving exercises.
+
+User (Round 5)
+
+For example, a goldfish might learn to press a button to get food, while a guppy
+could recognize specific patterns and respond accordingly. This could lead to more
+interactive and intelligent aquarium environments.
+2. Biometric Monitoring and Health Tracking: - With the advancement of
+biometric monitoring systems, both goldfish and guppies could be fitted with sensors
+to continuously track their vital signs, such as heart rate, respiration, and stress levels.
+This data could be transmitted to a central database, allowing for early detection of
+health issues and proactive care. For instance, if a goldfish shows signs of stress, the
+system could automatically adjust the water parameters to create a more comfortable
+environment, ensuring optimal health for both species. Similarly, a guppy could
+receive targeted treatments based on its health data, enhancing its well-being.
+3. Symbiotic Relationships with Advanced Aquatic Robots: - In a future where
+aquatic robots are common, both goldfish and guppies could form symbiotic relationships with these advanced devices. These robots could perform tasks such
+as cleaning the tank, monitoring water quality, and even interacting with the fish.
+For example, a robot could mimic the behavior of a parent fish, teaching young
+guppies and goldfish important survival skills. This could create a more harmonious
+and interactive environment for both species, enhancing their cognitive and social
+development.
+4. Virtual Reality and Immersive Experiences: - In a world where virtual reality
+(VR) is widespread, both goldfish and guppies could be brought to life in immersive
+digital environments. Users could experience these fish in VR settings, where they
+could observe their behaviors, learn about their habitats, and even participate in simulated interactions. This could be particularly useful in educational settings, allowing
+people to gain a deeper understanding and appreciation for these aquatic creatures
+without the need for physical tanks. For instance, a VR experience could simulate a
+journey through an underwater ecosystem, showcasing the unique behaviors of both
+goldfish and guppies.
+5. Eco-System Integration and Sustainability: - Both goldfish and guppies
+could play crucial roles in sustainable aquatic ecosystems. In a future where urban
+environments are more integrated with nature, these fish could be part of larger
+eco-systems that include plants, insects, and other aquatic life. For example, they
+could be used in urban aquaponic systems where they help maintain water quality by
+consuming organic matter, while also providing nutrients to plants. This integration
+could create a more self-sustaining and efficient ecosystem, promoting environmental
+sustainability and resilience.
+These connections highlight the potential for both goldfish and guppies to be integral
+parts of a technologically advanced and sustainable future. What do you think about
+these ideas? How might these similarities inspire new approaches in your field or in
+the broader context of technology and sustainability?
+Let’s discuss how we can further develop these concepts to make them more tangible
+and impactful.“‘Tell me 5 ways in which a goldfish and a guppy are alike.You are
+in a group discussion with other teammates; as a result, answer as diversely and
+creatively as you can. This is the last round of the discussion, please finalize and
+present a list of as many creative answers as possible. Please list the final response
+in 1. ... 2. ... 3. ... and so on.
+
+Agent (Round 5)
+
+Certainly! Here is a finalized and creative list of five ways in which a goldfish and
+a guppy are alike:
+1. Ecosystem Role and Water Quality Maintenance: - **Natural Filters**: Both
+goldfish and guppies play crucial roles in maintaining water quality in their aquatic
+environments. They help keep the water clean by consuming algae, detritus, and
+other organic matter. This natural filtration process is essential for a healthy ecosystem, reducing the buildup of pollutants and maintaining a balanced environment.
+2. Adaptability to Various Environments: - **Versatile Habitats**: Goldfish and
+guppies are both highly adaptable to different water conditions. They can thrive
+in a wide range of temperatures, pH levels, and even in smaller aquariums. This
+adaptability makes them suitable for various aquatic environments, from home
+aquariums to outdoor ponds and lakes. Their ability to adapt can be seen as a model
+for developing resilient ecosystems and sustainable living spaces.
+3. Genetic Diversity and Breeding: - **Selective Breeding**: Both goldfish and
+guppies have been selectively bred over generations to produce a wide variety of
+colors, shapes, and sizes. This genetic diversity is not only aesthetically pleasing but
+also contributes to their resilience and adaptability. In the context of sustainability,
+this genetic diversity can inform practices for maintaining biodiversity in natural
+and artificial ecosystems.
+4. Symbiotic Relationships in Aquaponic Systems: - **Coexistence in EcoSystems**: In aquaponic systems, both goldfish and guppies can coexist with
+plants to create a mutually beneficial environment. The fish help maintain water
+quality by consuming excess nutrients, while the plants absorb these nutrients,
+purifying the water. This symbiotic relationship demonstrates how different species
+can work together to create sustainable and efficient ecosystems.
+5. Educational and Conservation Value: - **Ambassadors for Aquatic Health**:
+Both goldfish and guppies can serve as educational tools and ambassadors for
+aquatic conservation. They can be used in schools, aquariums, and community
+events to teach about the importance of water quality, biodiversity, and sustainable
+practices. By raising awareness and fostering a deeper connection with these creatures, we can inspire individuals to take action to protect our aquatic environments.
+These similarities highlight the important roles that goldfish and guppies play
+in maintaining healthy aquatic ecosystems and promoting sustainability. How
+might these insights influence our approaches to environmental conservation and
+education? Let’s continue the discussion to explore more ways we can leverage
+these similarities for a healthier planet.
+
+Table 26: Example of LLM-Discussion. This table presents a five-round chat log example of Environmentalist
+from the process of LLM discussion.
+
+

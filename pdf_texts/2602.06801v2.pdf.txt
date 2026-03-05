@@ -1,0 +1,1634 @@
+On the Non-Identifiability of Steering Vectors in Large Language Models
+
+Sohan Venkatesh*
+Ashish Mahendran Kurapath
+Manipal Institute of Technology Bengaluru
+
+arXiv:2602.06801v2 [cs.LG] 16 Feb 2026
+
+Abstract
+Activation steering methods are widely used to
+control large language model (LLM) behavior
+and are often interpreted as revealing meaningful internal representations. This interpretation
+assumes steering directions are identifiable and
+uniquely recoverable from input–output behavior. We show that, under white-box single-layer
+access, steering vectors are fundamentally nonidentifiable due to large equivalence classes
+of behaviorally indistinguishable interventions.
+Empirically, we show that orthogonal perturbations achieve near-equivalent efficacy with
+negligible effect sizes across multiple models
+and traits. Critically, we show that the nonidentifiability is a robust geometric property
+that persists across diverse prompt distributions.
+These findings reveal fundamental interpretability limits and highlight the need for structural
+constraints beyond behavioral testing to enable
+reliable alignment interventions.1
+
+1
+
+Introduction
+
+Persona vector steering (Chen et al., 2025) has
+emerged as a popular technique for controlling
+the behavior of large language models by adding
+learned directional vectors to intermediate activations. This line of work is closely connected to
+broader efforts in representation engineering (Zou
+et al., 2023) and activation editing (Rimsky et al.,
+2024; Turner et al., 2023), where linear directions
+in activation space are used to modulate model behavior along semantic axes (Elhage et al., 2022;
+Turner et al., 2024).
+Despite growing adoption in interpretability
+and alignment research, the theoretical foundations of persona steering remain poorly understood.
+Most existing methods implicitly assume that extracted steering vectors correspond to meaningful,
+* Correspondence: soh.venkatesh@gmail.com
+1
+
+Code:
+non-identifiability
+
+https://github.com/sohv/
+
+uniquely determined latent factors and that these
+factors can be directly manipulated to achieve reliable control. However, classical results in latent
+variable modeling and causal inference show that
+such assumptions are often unjustified without additional structural constraints (Hyvärinen and Pajunen, 1999; Shimizu et al., 2006; Schölkopf et al.,
+2021; Locatello et al., 2019).
+This raises a fundamental question: when does
+representational alignment afford reliable behavioral control? Understanding identifiability is critical for several reasons. First, it determines when
+persona vectors provide principled causal interventions versus merely heuristic control that exploits one of many behaviorally equivalent directions. Second, it clarifies when claims that a specific vector “represents” a semantic concept are
+scientifically well-grounded rather than artifacts of
+measurement and projection (Elazar et al., 2021;
+Marks and Tegmark, 2023). Third, it reveals when
+steering directions may rely on fragile correlations
+that fail under distribution shift, model updates or
+adversarial prompting. Finally, identifiability theory clarifies which experimental protocols provide
+meaningful evidence for causal interpretation of interventions on internal activations (Schölkopf et al.,
+2021; Ahuja et al., 2022).
+We make three contributions. First, we provide
+a formal identifiability analysis of persona vector steering, proving that under white-box singlelayer access, persona vectors are fundamentally
+non-identifiable: infinitely many geometrically distinct directions induce identical observable behavior via null-space ambiguity. Second, we empirically demonstrate that extracted steering vectors
+contain substantial non-identifiable components,
+with orthogonal perturbations achieving 95–100%
+of the original steering efficacy across multiple
+models and traits. Third, we validate through
+multi-environment experiments that this equivalence persists under distribution shift, confirming
+
+Original Vector v
+
+Perturbed Vector v + v⊥
+
+h2
+
+h2
+
+v + v⊥
+(unobservable)
+Null space
+
+Add orthogonal
+
+v
+
+vnull + v⊥
+
+v⊥ ∈ ker(J)
+
+vnull
+
+Row space
+
+(unobservable)
+Null space
+
+Row space
+
+vrow
+
+(unchanged)
+vrow
+
+h1
+Output: Jv = Jvrow
+
+h1
+Output: J(v + v⊥ ) = Jvrow
+
+Identical Outputs: Both vectors produce the same observable behavior
+
+Figure 1: Geometric illustration of steering vector non-identifiability. Two geometrically distinct vectors, the
+original steering vector v (left) and a perturbed version v + v⊥ where v⊥ ∈ ker(J) (right), produce identical
+observable outputs. The null-space component (red, unobservable region) can be arbitrarily modified without
+changing outputs, demonstrating the existence of large equivalence classes of behaviorally indistinguishable steering
+directions.
+
+non-identifiability is a robust geometric property
+rather than an artifact of limited prompt diversity.
+These results clarify when alignment methods can
+be trusted and which structural assumptions are
+required for reliable control.
+
+2
+
+Related Work
+
+Our work formalizes persona steering 2 as a latent
+variable identification problem, bridging causal representation learning, activation editing in LLMs
+and mechanistic interpretability.
+Causal and latent variable identifiability.
+Classical results show that latent variable models are non-identifiable without structural assumptions (Hyvärinen and Pajunen, 1999; Shimizu et al.,
+2006; Kruskal, 1977). Recent work in causal representation learning extends these ideas to deep
+learning settings (Schölkopf et al., 2021; Ahuja
+et al., 2022; Locatello et al., 2019), establishing
+conditions under which latent factors can be recovered from high-dimensional observations.
+Probing and representation learning. Work on
+2
+
+We use persona vectors and steering vectors interchangeably to refer to directional vectors added to model activations
+to modulate semantic or behavioral attributes (Chen et al.,
+2025).
+
+probing classifiers (Pimentel et al., 2020; Ravfogel
+et al., 2020; Elazar et al., 2021) shows that linear directions can succeed for reasons unrelated to target
+information. The linear representation hypothesis
+(Park et al., 2023; Elhage et al., 2022) suggests concepts correspond to directions in activation space
+but lacks identifiability guarantees.
+Activation editing in LLMs. Methods such
+as representation engineering (Zou et al., 2023),
+contrastive activation addition (Rimsky et al., 2024;
+Turner et al., 2024) and activation patching (Meng
+et al., 2022) manipulate model internals but do
+not address whether control directions are uniquely
+determined. Work on neural network symmetries
+(Entezari et al., 2021; Dinh et al., 2017) motivates
+our null-space analysis.
+Robustness and invariant representations.
+Work on distribution shift and domain adaptation
+(Rabanser et al., 2019; Lipton et al., 2018) establishes that learned representations often exploit
+spurious correlations. Methods for learning invariant representations (Arjovsky et al., 2019; Krueger
+et al., 2021) aim to extract features stable across
+domains. Recent work on multi-environment
+causal representation learning (Ahuja et al., 2022;
+
+Von Kügelgen et al., 2021; Rojas-Carulla et al.,
+2018) proves that diverse training environments enable identification of causal factors under structural
+assumptions.
+Mechanistic interpretability. Work on mechanistic interpretability (Olsson et al., 2022; Elhage
+et al., 2021; Nanda et al., 2023) studies circuits
+and features in transformers, often assuming the
+existence of interpretable directions without formalizing identifiability constraints. Our theoretical
+analysis clarifies when such directions are welldefined.
+
+3
+
+Problem Setup
+
+3.1
+
+Formal Model
+
+is generated text. There is no access to internal
+representations. This is the weakest regime
+and corresponds to behavioral evaluation.
+• Regime 2: White-box single-layer access.
+The researcher can observe or manipulate activations hℓ (x) at a chosen layer ℓ. This is the
+standard setting for most steering work and
+includes extracting vectors from contrastive
+prompt pairs.
+Most existing work operates in Regime 2, often extracting a steering vector from contrastive
+prompt pairs (x+ , x− ) designed to elicit different
+persona values (e.g., polite versus rude instructions):
+v ∝ Ex+ [hℓ(x+ )] − Ex− [hℓ(x− )]
+
+(3)
+
+Consider a pre-trained transformer language model
+fθ with L layers. For a given input prompt x (tokenized as x1 , . . . , xT ), let hℓ (x) ∈ Rd denote
+the hidden representation at layer ℓ and position T
+(typically the final token position for autoregressive
+generation).
+
+Our analysis focuses primarily on Regime 2, as it
+represents the dominant paradigm in current steering research.
+
+Latent persona variable. We assume there exists an underlying latent variable z ∈ Z representing a semantic attribute or "persona" (e.g., formality, political stance, truthfulness).
+
+Local linearization. Near a reference distribution, we can approximate the effect of steering on
+output logits as:
+
+Steering intervention.
+is applied as:
+
+3.3
+
+Linear Approximation and Nonlinear
+Case
+
+o(x, v, α) ≈ o(x, 0, 0) + αJℓ (x)v
+
+A steering vector v ∈ Rd
+
+where Jℓ (x) =
+
+∂o
+∂hℓ h (x)
+
+(4)
+
+∈ RV ×d denotes the
+
+ℓ
+
+(1)
+
+Jacobian of the output and V is the vocabulary
+size.
+
+where α ∈ R is the steering strength. The modified representation h̃ℓ is fed forward through subsequent layers to produce output logits o(x, v, α)
+over the vocabulary.
+
+Nonlinear case. In general, the mapping hℓ 7→
+o involves multiple nonlinear layers (attention,
+MLPs, layer norms). We denote this as:
+
+Generative model. We posit that the true datagenerating process involves:
+
+where Fℓ→L is the composition of layers ℓ + 1
+through L.
+
+h̃ℓ(x) = hℓ(x) + αv
+
+z ∼ p(z),
+
+hℓ = gℓ (x, z) + ϵ
+
+(2)
+
+o = Fℓ→L (hℓ + αv)
+
+3.4
+
+(5)
+
+Assumptions
+
+where gℓ : X × Z → Rd encodes how persona
+z modulates the representation for prompt x and
+ϵ ∼ N (0, σ 2 I) is measurement noise. The goal of
+steering is to approximate the effect of varying z
+by adding v.
+
+We make the following assumptions explicit:
+
+3.2
+
+A2 (Identifiable prompts). The prompt distribution p(x) has sufficient variability to probe different
+aspects of the latent persona z. Formally, the support of p(x) is rich enough that different persona
+values induce distinguishable activation patterns
+hℓ (x).
+
+Observational Regimes
+
+We consider two data access regimes that determine
+what alignment interventions can afford:
+• Regime 1: Black-box input–output. The
+researcher observes only (x, y) pairs, where y
+
+A1 (Smoothness). The functions gℓ and Fℓ→L
+are differentiable almost everywhere, enabling local linear approximation via Jacobians Jℓ (x) =
+∂o
+∂hℓ (x).
+
+A3 (Non-degeneracy). The Jacobian Jℓ (x) has
+rank at least k ≥ 1 for typical x ∼ p(x), meaning
+steering can affect outputs. This excludes pathological cases where all perturbations to hℓ are ignored
+by subsequent layers.
+We do not assume:
+• Statistical independence between z and x
+(confounding is allowed)
+• Linearity of gℓ in z
+• Uniqueness of the latent representation without additional structure
+These assumptions are mild and satisfied by standard transformer architectures under typical operating conditions.
+
+4
+
+Definitions and Identifiability
+
+4.1
+
+Identifiability
+
+Definition 1 (Parameter Identifiability). A parameter θ in a statistical model p(y | x; θ) is identifiable if for any θ′ ̸= θ, there exists a distribution
+over observations (x, y) such that p(y | x; θ) ̸=
+p(y | x; θ′ ).
+In our setting, the parameter is the steering vector
+v ∈ Rd . We say v is identifiable if no other vector
+v ′ ̸= v (up to scaling) produces the same distribution over observable outputs across all prompts and
+steering strengths.
+Definition 2 (Observational Equivalence). Two
+steering vectors v and v ′ are observationally equivalent in regime R if they produce identical distributions over all quantities observable in R.
+For Regime 2 (white-box single-layer access):
+′
+
+v ∼R v ⇐⇒ Fℓ→L (hℓ (x) + αv)
+= Fℓ→L (hℓ (x) + αv ′ ) ∀x, α.
+
+4.2
+
+(6)
+
+Symmetries and Gauge Freedom
+
+Scaling ambiguity. For any c ̸= 0, the vectors v
+and cv produce outputs that differ only by a rescaling of α. This is unavoidable; we consider v and
+cv as the same direction.
+Null space ambiguity. If v0 ∈ ker(Jℓ ) (i.e.,
+Jℓ v0 = 0), then adding v0 to any steering vector
+does not change the linearized output. Under linear
+approximation, v and v + v0 are observationally
+equivalent.
+
+5
+
+Main Results
+
+We now state our main theoretical result, proving that persona vectors are fundamentally nonidentifiable under standard observational regimes.
+Proposition 1. Under Assumptions A1–A3, in
+Regime 2 (white-box single-layer access) without
+additional structural constraints, persona vectors
+are not identifiable. Specifically, for any steering
+vector v ∈ Rd , there exist infinitely many vectors
+v ′ ̸∝ v that are observationally equivalent.
+Proof Sketch. We establish non-identifiability
+via two complementary arguments: null-space ambiguity and reparameterization symmetry.
+Null-space ambiguity (primary mechanism). Under the local linear approximation o ≈ o0 + αJℓ v,
+any vector v ′ = v +v0 where v0 ∈ ker(Jℓ ) satisfies
+Jℓ v ′ = Jℓ v, and thus produces identical linearized
+outputs. This establishes non-identifiability even
+without invoking global reparameterization symmetries.
+Reparameterization symmetry. Neural networks
+exhibit inherent parameter symmetries arising from
+overparameterization. Consider an invertible linear
+transformation T (h) = Ah where A ∈ Rd×d . For
+layer ℓ + 1 with weight matrix Wℓ+1 and bias bℓ+1 ,
+the computation hℓ+1 = σ(Wℓ+1 hℓ + bℓ+1 ) can
+be equivalently expressed through reparameterized
+′
+weights Wℓ+1
+= Wℓ+1 A−1 :
+
+′
+h′ℓ+1 = σ Wℓ+1
+Ahℓ + bℓ+1
+= σ(Wℓ+1 hℓ + bℓ+1 )
+
+(7)
+
+= hℓ+1
+Under this reparameterization, steering with
+v ′ = Av on the transformed representation h′ℓ =
+Ahℓ produces identical outputs to steering with v
+on hℓ . For any invertible matrix A ̸= cI (not a
+scalar multiple of identity), we obtain v ′ ̸∝ v, yet
+these vectors are observationally equivalent. Since
+the space of such matrices has dimension d2 − 1,
+infinitely many distinct reparameterizations exist.
+Practical vs. theoretical relevance: The
+reparameterization argument establishes nonidentifiability as a fundamental property of the
+model class, independent of any specific instantiation. While these symmetries cannot be exploited
+in frozen models without modifying weights, their
+existence proves that identifiability fails even in
+principle. For analyzing deployed models, the nullspace mechanism provides direct, operationally relevant non-identifiability.
+
+Corollary 1.1 (Null-space equivalence). Under
+the linear approximation o ≈ o0 +αJℓ v, any vector
+v ′ = v + v0 where v0 ∈ ker(Jℓ ) is observationally
+equivalent to v, since Jℓ v ′ = Jℓ v + Jℓ v0 = Jℓ v.
+Remark (Null-space dimensionality). The null
+space ker(Jℓ ) is typically high-dimensional in practice. For a Jacobian Jℓ ∈ RV ×d with vocabulary
+size V and hidden dimension d, the maximum possible rank is min(V, d). In modern language models, V ≈ 50,000 and d ≈ 4,000, so the maximal
+rank is d. However, empirical evidence shows that
+(1) neural network representations exhibit low intrinsic dimensionality (Li et al., 2018; Maennel
+et al., 2018), and (2) output sensitivity concentrates
+in a small number of Hessian directions (Ghorbani
+et al., 2019). These findings suggest the Jacobian
+Jℓ has effective rank substantially smaller than d,
+implying a high-dimensional null space:
+dim(ker(Jℓ )) = d − rank(Jℓ )
+
+6
+
+(8)
+
+Empirical Validation
+
+We now validate that the non-identifiability characterized in Proposition 1 (Section 5) manifests
+in contemporary language models. Our empirical experiments test a behavioral consequence of
+the theoretical prediction: the existence of large
+equivalence classes of semantically indistinguishable steering directions, without directly estimating
+the Jacobian null space.
+6.1
+
+Experimental Setup
+
+Models and Layers. We evaluate two openweight instruction-tuned language models to
+test generality across architectures and scales:
+Qwen2.5-3B-Instruct (layer ℓ = 12) and Llama3.1-8B-Instruct (layer ℓ = 16). For both models,
+we focus on middle layers (ℓ = L/2), following
+standard practice (Chen et al., 2025; Konen et al.,
+2024; Sun et al., 2025) in steering research.
+Persona traits. We test three semantic traits spanning distinct dimensions: Formality, Politeness
+and Humor. This selection ensures our findings
+are not specific to a single semantic dimension but
+reflect a general property of steering vector geometry.
+Steering vector extraction. For each trait, we
+construct 50 contrastive prompt pairs designed to
+elicit contrasting persona values. For example, formality pairs contrast "Write a professional and for-
+
+mal message about [topic]" versus "Write a casual and informal message about [topic]." For each
+prompt pair, we extract the hidden representation
+at layer ℓ for the final token position (Chen et al.,
+2025). The baseline steering vector is computed as
+the mean difference:
+50
+
+1 X
+[hℓ (x+ i) − hℓ(x−
+v=
+i )]
+50
+
+(9)
+
+i=1
+
+Semantic probes. We evaluate semantic equivalence using trait-specific scoring functions ϕ(o)
+that map generated text to real-valued scores. For
+formality, politeness and humor, we use lexical
+heuristics based on formal/informal markers, polite/rude markers and humorous/serious markers
+respectively, combined with sentence length and
+stylistic features. These return scores in [0, 1]
+where 1 is maximally formal/polite/humorous.
+Orthogonality test methodology. To test Proposition 1’s prediction that v and v + v⊥ (where v⊥
+is orthogonal) produce observationally equivalent
+outputs, we implement the following procedure:
+1. Generate random orthogonal component:
+Sample a random vector uniformly from the
+unit sphere in Rd and orthogonalize it with
+respect to v via Gram-Schmidt.
+2. Construct perturbed vector: Form v ′ = v +
+αv⊥ where α is chosen such that |v ′ | ≈ |v|.
+3. Generate steered outputs: For each of 100
+held-out test prompts, generate text with steering vectors v and v ′ at strength α = 1.0, producing 10 samples per prompt per vector.
+4. Compute semantic equivalence: Measure Cohen’s d effect size and Pearson correlation
+between semantic scores ϕ(ov ) and ϕ(ov′ ).
+5. Repeat across seeds: Repeat for multiple random orthogonal seeds to assess robustness.
+If v and v ′ are observationally equivalent as predicted by Proposition 1, we expect Cohen’s d < 0.2
+(negligible effect) and high correlation between semantic scores.
+Sample size design. We conduct the orthogonality test with both n = 5 and n = 10 random orthogonal seeds per trait for Qwen2.5-3B and Llama3.1-8B. This allows us to assess statistical stability
+across sample sizes and models.
+
+Orthogonal Perturbation Test Results
+
+Table 1 presents our empirical findings across two
+models, three semantic traits and two sample sizes
+(n = 5 and n = 10 random orthogonal seeds).
+Across all conditions, we observe negligible differences between steering with the extracted vector v
+and steering with vectors perturbed by random orthogonal components v + v⊥ . We measure steering
+efficacy using semantic probe scores in [0, 1] that
+quantify the intensity of the target trait in generated
+outputs, comparing score distributions from steered
+generations against baseline generations.
+With n = 10 seeds, the mean Cohen’s d is
+0.080 for Qwen2.5-3B and 0.100 for Llama-3.18B, both well below the threshold for small effects (d = 0.2) and firmly in the negligible range.
+The “Perp-Only Effect” column measures the efficacy of steering with pure orthogonal components
+(v⊥ alone, without v) relative to the extracted vector—values near 100% indicate that orthogonal
+components achieve equivalent behavioral impact.
+Statistical stability across sample sizes. The
+convergence between n = 5 and n = 10 results
+demonstrates robustness across both models. For
+Qwen2.5-3B, effect sizes change by < 0.07 as sample size increases, with all traits showing tightening
+confidence intervals: formality (0.144 → 0.075),
+politeness (0.112 → 0.092), humor (0.103 →
+0.072). For Llama-3.1-8B, we observe similar
+stability: formality (0.052 → 0.096), politeness
+(0.074 → 0.085), humor (0.159 → 0.119). This
+consistency demonstrates that the observed equivalence is not a sampling artifact but a stable property
+of the steering geometry.
+Cross-model consistency. The close agreement
+between Qwen2.5-3B (d = 0.080) and Llama-3.18B (d = 0.100) demonstrates that observational
+equivalence is not model-specific. Despite differences in architecture, scale (3B vs. 8B parameters)
+and hidden dimension (d = 2048 vs. d = 4096),
+both models exhibit nearly identical patterns of nonidentifiability. The consistency across traits within
+
+Equivalence (v
+
+1.10
+
+Perp-Only Effect Ratio
+
+6.2
+
+each model further confirms that the phenomenon
+is general rather than an artifact of specific semantic domains or model implementations.
+Visualizing orthogonal component equivalence. Figure 2 illustrates the perp-only effect
+ratios across all traits and models using n = 10
+orthogonal seeds. The tight clustering around the
+perfect equivalence line (dashed red at 1.0) demonstrates that pure orthogonal components achieve
+nearly identical steering efficacy to the extracted
+vectors.
+Non-Identifiability: Orthogonal Equivalence (n=10)
+v)
+
+1.05
+1.00
+0.95
+0.90
+formality
+
+humor
+
+Trait
+
+politeness
+
+(a) Qwen2.5-3B-Instruct
+
+Non-Identifiability: Orthogonal Equivalence (n=10)
+1.10
+
+Perp-Only Effect Ratio
+
+Scale invariance test. To verify that observational equivalence holds across different steering
+strengths, we additionally evaluate the formality
+trait at four α values: 0.0, 0.5, 1.0, 2.0 for both
+models. For each α, we measure semantic scores
+under steering with v versus v + v⊥ and plot response curves. If equivalence is scale-invariant,
+the curves should track closely across all α with
+overlapping confidence bands.
+
+Equivalence (v
+
+v)
+
+1.05
+1.00
+0.95
+0.90
+0.85
+
+formality
+
+humor
+
+Trait
+
+politeness
+
+(b) Llama-3.1-8B-Instruct
+
+Figure 2: Perp-only effect ratios (v⊥ efficacy / v efficacy) for n = 10 orthogonal seeds. Values near 1.0
+(dashed red line) indicate perfect equivalence.
+
+Qwen2.5-3B shows remarkable consistency
+across all three traits, with median ratios within
+1% of perfect equivalence. Llama-3.1-8B exhibits slightly lower ratios for formality and humor
+(96–97%), yet orthogonally steering still retains
+over 95% efficacy, far exceeding what would be
+expected if v were uniquely identifiable.
+6.3
+
+Scale Invariance Analysis
+
+To verify that observational equivalence holds
+across different steering strengths, we evaluate
+the formality trait at four steering magnitudes
+α ∈ {0.0, 0.5, 1.0, 2.0} for both models. Figure 3
+shows the response curves for the extracted vector
+v and the observationally equivalent vector v + v⊥ .
+
+Table 1: Empirical validation of non-identifiability across models, traits and sample sizes. Cohen’s d measures
+effect size between v and v + v⊥ (lower = more equivalent). All values show negligible differences (d < 0.2),
+confirming observational equivalence.
+Model
+
+Qwen2.5-3B-Instruct
+
+Llama-3.1-8B-Instruct
+
+Trait
+
+Seeds
+
+Cohen’s d
+
+Correlation
+
+Perp-Only
+
+Formality
+
+n=5
+n = 10
+
+0.210 ± 0.113
+0.285 ± 0.087
+
+98.8%
+100.4%
+
+Politeness
+
+n=5
+n = 10
+
+0.144 ± 0.095
+0.075 ± 0.058
+
+Humor
+
+n=5
+n = 10
+
+0.103 ± 0.077
+0.072 ± 0.061
+
+0.276 ± 0.177
+0.044 ± 0.097
+
+99.7%
+100.5%
+
+Formality
+
+n=5
+n = 10
+
+Politeness
+
+n=5
+n = 10
+
+Humor
+
+n=5
+n = 10
+
+-Sweep: Formality Response
+Formality Score
+
+0.95
+0.94
+0.93
+v
+v + v_perp
+0.0
+
+0.5
+
+1.0
+
+2.0
+
+Steering Strength ( )
+
+Formality Score
+
+(a) Qwen2.5-3B-Instruct
+
+-Sweep: Formality Response
+
+0.96
+0.95
+0.94
+0.93
+0.92
+0.91
+0.90
+0.89
+
+v
+v + v_perp
+0.0
+
+0.5
+
+1.0
+
+Steering Strength ( )
+
+0.319 ± 0.070
+0.414 ± 0.083
+
+101.5%
+100.6%
+
+0.052 ± 0.029
+0.096 ± 0.068
+
+0.164 ± 0.044
+0.192 ± 0.085
+
+95.6%
+96.8%
+
+0.159 ± 0.109
+0.119 ± 0.119
+
+−0.032 ± 0.116
+0.016 ± 0.104
+
+0.074 ± 0.041
+0.085 ± 0.043
+
+0.324 ± 0.058
+0.347 ± 0.077
+
+101.2%
+100.4%
+98.4%
+95.9%
+
+ity scores); for Llama-3.1-8B, differences remain
+below 0.023 (< 2.5% deviation). This proves that
+non-identifiability is a structural property: any vector in the equivalence class v + ker(J) produces
+identical observations regardless of scaling.
+
+0.96
+
+0.92
+
+0.112 ± 0.077
+0.092 ± 0.069
+
+2.0
+
+(b) Llama-3.1-8B-Instruct
+
+Figure 3: Scale invariance of observational equivalence. Formality scores across steering strengths α ∈
+{0.0, 0.5, 1.0, 2.0} for the extracted vector v (blue circles) and the perturbed vector v + v⊥ (orange squares).
+
+The curves track closely with overlapping confidence bands, demonstrating that v and v + v⊥
+produce statistically indistinguishable behavioral
+effects at all tested steering strengths. For Qwen2.53B, mean differences remain below 0.022 across
+all α values (less than 2.5% deviation in formal-
+
+6.4
+
+Robustness of Non-Identifiability Under
+Distribution Shift
+
+We test whether equivalence classes persist across
+distributional shifts or whether prompt diversity
+alone induces identifiability. We evaluate orthogonal perturbation equivalence across four distinct
+prompt environments: in-distribution (standard
+trait templates), topic shift (medical, legal, creative writing contexts), genre shift (emails, tweets,
+academic writing), and safety-style (refusal patterns, ethical dilemmas). For each environment,
+we extract steering vectors and evaluate whether
+v ≡ v + v⊥ equivalence holds when testing on that
+environment’s prompts.
+Table 2 and Figure 4 present Cohen’s d effect
+sizes across all trait-environment combinations for
+both models. Across 24 conditions, we observe
+effect sizes ranging from d = 0.21 to d = 0.63
+(mean d = 0.35). Effect sizes are predominantly
+small (d < 0.5 for 88% of conditions; mean d =
+0.35), indicating that v and v + v⊥ remain largely
+observationally equivalent across diverse extraction
+contexts.
+Formality shows most consistency (mean d =
+0.32), with particularly strong equivalence in
+safety-style contexts (d = 0.21 for both models). Politeness exhibits higher variability (d reaching 0.52–0.63 in genre-shift and safety contexts)
+
+(i) Qwen2.5-3B-Instruct
+
+(ii) Llama3.1-8B-Instruct
+
+Figure 4: Multi-environment validation results. Environment-dependent effect sizes and cross-environment matrices
+show small-to-moderate Cohen’s d values across traits and prompt contexts, confirming robustness of observational
+equivalence under distributional shift.
+Table 2: Multi-environment validation. Cohen’s d effect
+sizes across extraction contexts. ID = in-distribution;
+Top = topic shift; Gen = genre shift; Saf = safety-style
+prompts.
+Model
+
+Trait
+
+ID
+
+Top
+
+Gen
+
+Saf
+
+Qwen-3B
+
+Formality
+Politeness
+Humor
+
+0.44
+0.22
+0.42
+
+0.25
+0.24
+0.51
+
+0.29
+0.52
+0.24
+
+0.21
+0.41
+0.51
+
+Llama-8B
+
+Formality
+Politeness
+Humor
+
+0.30
+0.37
+0.29
+
+0.54
+0.27
+0.56
+
+0.30
+0.51
+0.30
+
+0.21
+0.63
+0.40
+
+but remains within the small-effect range. Humor demonstrates intermediate stability (mean
+d = 0.39), with genre-shift producing notably
+lower effects (d = 0.24 for Qwen, d = 0.30 for
+Llama). Figure 4 visualizes these patterns through
+environment-dependent effect sizes (left panels)
+and cross-environment transfer matrices (right panels), showing that equivalence remains stable even
+when vectors are extracted in one environment and
+tested in another.
+Implications. The persistence of small effect
+sizes across diverse prompt distributions demonstrates that non-identifiability is not an artifact of
+in-distribution prompts but a fundamental geomet-
+
+ric property. Critically, this shows that naive distributional diversity without explicit invariance constraints or structural assumptions is insufficient to
+recover identifiable representations.
+
+7
+
+Conclusion
+
+We have established that steering vectors are fundamentally non-identifiable under standard observational regimes, with infinitely many distinct directions producing equivalent behavioral effects.
+This non-identifiability persists across models,
+traits, and prompt distributions, revealing a fundamental tension: methods optimized for behavioral control may not yield interpretable representations. Our work clarifies when steering provides reliable heuristic modification versus principled causal understanding, highlighting that interpretability claims require validation beyond inputoutput equivalence alone.
+
+8
+
+Limitations
+
+Our empirical validation covers two models at midnetwork layers across three semantic traits (formality, politeness, humor). While our theoretical
+results apply generally, the empirical magnitude of
+
+non-identifiability may vary across model families,
+scales, architectures and layer positions. Our semantic evaluation uses lexical heuristics rather than
+full distributional metrics or human judgments, providing a conservative test of observational equivalence.
+Our multi-environment experiments demonstrate
+that equivalence persists across diverse prompt
+distributions, but we do not test whether explicit
+structural interventions such as independence constraints (ICA), sparsity regularization, or invariance objectives (IRM) can recover identifiable representations. While theoretical frameworks suggest
+these approaches might enable identifiability, empirical validation across multiple models and experimental designs remains an important direction
+for future work. Additionally, we do not directly
+measure null-space dimensionality or test whether
+null-space versus row-space components exhibit
+differential robustness under distribution shift.
+
+9
+
+Future Work
+
+Our results establish the necessity of validation
+beyond input-output behavior. Important directions
+include testing whether structural constraints can
+recover identifiable representations, analyzing how
+non-identifiability varies across network layers and
+architectural components, and characterizing how
+null-space dimensionality scales with model size.
+Investigating whether alternative steering methods exhibit superior robustness under adversarial
+attacks or distribution shift would clarify the practical consequences of non-identifiability. Human
+evaluation would provide stronger validation than
+our lexical heuristics, and direct measurement of
+null-space dimensionality would quantify our theoretical predictions.
+
+10
+
+Acknowledgments
+
+We thank Vast.ai for providing GPU compute resources that enabled our empirical validation experiments. We also acknowledge the HuggingFace
+platform and maintainers of the open-source models (Qwen2.5-3B-Instruct, Llama-3.1-8B-Instruct)
+used in this work.
+
+References
+Kartik Ahuja, Ethan Caballero, Dinghuai Zhang, and
+1 others. 2022. Invariance principle meets information bottleneck for out-of-distribution generalization.
+
+Advances in Neural Information Processing Systems,
+35:3438–3450.
+Martin Arjovsky, Léon Bottou, Ishaan Gulrajani, and
+David Lopez-Paz. 2019. Invariant risk minimization.
+arXiv preprint arXiv:1907.02893.
+Runjin Chen, Andy Arditi, Henry Sleight, Owain Evans,
+and Jack Lindsey. 2025. Persona vectors: Monitoring
+and controlling character traits in language models.
+arXiv preprint arXiv:2507.21509.
+Laurent Dinh, Razvan Pascanu, Samy Bengio, and
+Yoshua Bengio. 2017. Sharp minima can generalize for deep nets. In International Conference on
+Machine Learning, pages 1019–1028. PMLR.
+Yanai Elazar, Shauli Ravfogel, Alon Jacovi, and Yoav
+Goldberg. 2021. Amnesic probing: Behavioral explanation with amnesic counterfactuals. Transactions of
+the Association for Computational Linguistics, 9:160–
+175.
+Nelson Elhage, Tristan Hume, Catherine Olsson,
+Nicholas Schiefer, Tom Henighan, Shauna Kravec,
+Zac Hatfield-Dodds, Robert Lasenby, Dawn Drain,
+Carol Chen, and 1 others. 2022. Toy models of superposition. arXiv preprint arXiv:2209.10652.
+Nelson Elhage, Neel Nanda, Catherine Olsson, Tom
+Henighan, Nicholas Joseph, Ben Mann, Amanda
+Askell, Yuntao Bai, Anna Chen, Tom Conerly, and
+1 others. 2021. A mathematical framework for
+transformer circuits. Transformer Circuits Thread,
+1(1):12.
+Rahim Entezari, Hanie Sedghi, Olga Saukh, and
+Behnam Neyshabur. 2021. The role of permutation
+invariance in linear mode connectivity of neural networks. arXiv preprint arXiv:2110.06296.
+Behrooz Ghorbani, Shankar Krishnan, and Ying Xiao.
+2019. An investigation into neural net optimization via hessian eigenvalue density. In International
+Conference on Machine Learning, pages 2232–2241.
+PMLR.
+Aapo Hyvärinen and Petteri Pajunen. 1999. Nonlinear independent component analysis: Existence and
+uniqueness results. Neural networks, 12(3):429–439.
+Kai Konen, Sophie Jentzsch, Diaoulé Diallo, Peer
+Schütt, Oliver Bensch, Roxanne El Baff, Dominik
+Opitz, and Tobias Hecking. 2024. Style vectors for
+steering generative large language model. arXiv
+preprint arXiv:2402.01618.
+David Krueger, Ethan Caballero, Joern-Henrik Jacobsen, Amy Zhang, Jonathan Binas, Dinghuai Zhang,
+Remi Le Priol, and Aaron Courville. 2021. Out-ofdistribution generalization via risk extrapolation (rex).
+In Proceedings of the 38th International Conference
+on Machine Learning, volume 139 of Proceedings
+of Machine Learning Research, pages 5815–5826.
+PMLR.
+
+Joseph B Kruskal. 1977. Three-way arrays: rank and
+uniqueness of trilinear decompositions, with application to arithmetic complexity and statistics. Linear
+algebra and its applications, 18(2):95–138.
+Chunyuan Li, Heerad Farkhoor, Rosanne Liu, and Jason Yosinski. 2018. Measuring the intrinsic dimension of objective landscapes. arXiv preprint
+arXiv:1804.08838.
+Zachary Lipton, Yu-Xiang Wang, and Alexander Smola.
+2018. Detecting and correcting for label shift with
+black box predictors. In International conference on
+machine learning, pages 3122–3130. PMLR.
+Francesco Locatello, Stefan Bauer, Mario Lucic, Gunnar Raetsch, Sylvain Gelly, Bernhard Schölkopf, and
+Olivier Bachem. 2019. Challenging common assumptions in the unsupervised learning of disentangled representations. In international conference on
+machine learning, pages 4114–4124. PMLR.
+Hartmut Maennel, Olivier Bousquet, and Sylvain Gelly.
+2018. Gradient descent quantizes relu network features. arXiv preprint arXiv:1803.08367.
+Samuel Marks and Max Tegmark. 2023. The geometry
+of truth: Emergent linear structure in large language
+model representations of true/false datasets. arXiv
+preprint arXiv:2310.06824.
+Kevin Meng, David Bau, Alex Andonian, and Yonatan
+Belinkov. 2022. Locating and editing factual associations in gpt. Advances in neural information processing systems, 35:17359–17372.
+Neel Nanda, Lawrence Chan, Tom Lieberum, Jess
+Smith, and Jacob Steinhardt. 2023. Progress measures for grokking via mechanistic interpretability.
+arXiv preprint arXiv:2301.05217.
+Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas
+Joseph, Nova DasSarma, Tom Henighan, Ben Mann,
+Amanda Askell, Yuntao Bai, Anna Chen, and 1 others. 2022. In-context learning and induction heads.
+arXiv preprint arXiv:2209.11895.
+Kiho Park, Yo Joong Choe, and Victor Veitch. 2023.
+The linear representation hypothesis and the geometry of large language models. arXiv preprint
+arXiv:2311.03658.
+Tiago Pimentel, Josef Valvoda, Rowan Hall Maudslay,
+Ran Zmigrod, Adina Williams, and Ryan Cotterell.
+2020. Information-theoretic probing for linguistic
+structure. arXiv preprint arXiv:2004.03061.
+Stephan Rabanser, Stephan Günnemann, and Zachary
+Lipton. 2019. Failing loudly: An empirical study
+of methods for detecting dataset shift. Advances in
+Neural Information Processing Systems, 32.
+Shauli Ravfogel, Yanai Elazar, Hila Gonen, Michael
+Twiton, and Yoav Goldberg. 2020. Null it out: Guarding protected attributes by iterative nullspace projection. arXiv preprint arXiv:2004.07667.
+
+Nina Rimsky, Nick Gabrieli, Julian Schulz, Meg Tong,
+Evan Hubinger, and Alexander Turner. 2024. Steering llama 2 via contrastive activation addition. In
+Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1:
+Long Papers), pages 15504–15522.
+Mateo Rojas-Carulla, Bernhard Schölkopf, Richard
+Turner, and Jonas Peters. 2018. Invariant models for
+causal transfer learning. Journal of Machine Learning Research, 19(36):1–34.
+Bernhard Schölkopf, Francesco Locatello, Stefan Bauer,
+Nan Rosemary Ke, Nal Kalchbrenner, Anirudh
+Goyal, and Yoshua Bengio. 2021. Toward causal
+representation learning. Proceedings of the IEEE,
+109(5):612–634.
+Shohei Shimizu, Patrik O Hoyer, Aapo Hyvärinen, Antti
+Kerminen, and Michael Jordan. 2006. A linear nongaussian acyclic model for causal discovery. Journal
+of Machine Learning Research, 7(10).
+Hao Sun, Huailiang Peng, Qiong Dai, Xu Bai, and
+Yanan Cao. 2025. Layernavigator: Finding promising intervention layers for efficient activation steering
+in large language models. In The Thirty-ninth Annual Conference on Neural Information Processing
+Systems.
+Alexander Matt Turner, Lisa Thiergart, Gavin Leech,
+David Udell, Ulisse Mini, and Monte MacDiarmid.
+2024. Activation addition: Steering language models
+without optimization.
+Alexander Matt Turner, Lisa Thiergart, Gavin Leech,
+David Udell, Juan J Vazquez, Ulisse Mini, and
+Monte MacDiarmid. 2023. Steering language models with activation engineering. arXiv preprint
+arXiv:2308.10248.
+Julius Von Kügelgen, Yash Sharma, Luigi Gresele,
+Wieland Brendel, Bernhard Schölkopf, Michel
+Besserve, and Francesco Locatello. 2021. Selfsupervised learning with data augmentations provably isolates content from style. Advances in neural
+information processing systems, 34:16451–16467.
+Andy Zou, Long Phan, Sarah Chen, James Campbell,
+Phillip Guo, Richard Ren, Alexander Pan, Xuwang
+Yin, Mantas Mazeika, Ann-Kathrin Dombrowski,
+and 1 others. 2023. Representation engineering: A
+top-down approach to ai transparency. arXiv preprint
+arXiv:2310.01405.
+
+A
+
+Logit-Level Equivalence Test
+
+To complement our semantic evaluations, we perform a direct logit-level equivalence test. For each model
+and trait, we compare the next-token logit vectors produced by steering with v and with v + v⊥ , where
+v⊥ is a norm-matched direction orthogonal to v. We measure the ℓ2 distance between logit vectors and
+normalize by the corresponding distance induced by a norm-matched random direction:
+R=
+
+∥ℓ(v) − ℓ(v + v⊥ )∥2
+∥ℓ(v) − ℓ(vrand )∥2
+
+(10)
+
+Values R < 1 indicate that orthogonal perturbations induce smaller logit deviations than random
+directions. In all tested models and traits, this condition holds. Ratios range from 0.49 (Llama, formality)
+to 0.90 (Qwen, humor), indicating that orthogonal perturbations systematically induce smaller logit shifts
+than random directions. The next-token predictions remain highly stable: token agreement between v and
+v + v⊥ ranges from 81% to 96%, and top-10 token overlap ranges from 86% to 96%.
+These results provide direct evidence that equivalence is not an artifact of semantic measurement. While
+orthogonal perturbations induce some logit deviation, they systematically preserve output distributions
+more faithfully than random directions, consistent with Proposition 1’s prediction of high-dimensional
+equivalence classes. Table 3 reports mean ℓ2 logit distances, normalized ratios, token agreement, and
+top-k overlap for all models and traits.
+Table 3: Logit-level equivalence statistics.
+Model
+
+Trait
+
+Qwen-3B
+Qwen-3B
+Qwen-3B
+Llama-8B
+Llama-8B
+Llama-8B
+
+Humor
+Formality
+Politeness
+Humor
+Formality
+Politeness
+
+R (v_perp / random)
+
+Token Agreement
+
+Top-10 Overlap
+
+0.90
+0.76
+0.75
+0.64
+0.49
+0.65
+
+81%
+94%
+93%
+96%
+93%
+91%
+
+86%
+96%
+96%
+90%
+95%
+94%
+
+B
+
+Prompt Construction Details
+
+B.1
+
+Contrastive Prompt Pairs
+
+We construct contrastive prompt pairs for each semantic trait using template-based generation. Table 4
+provides concrete examples for all three traits used in the empirical validation.
+Trait
+
+Positive (x+ )
+
+Negative (x− )
+
+Formality
+
+Draft a professional email summarizing quarterly performance.
+Respond diplomatically to criticism from a colleague.
+Tell a lighthearted story about an embarrassing
+mistake.
+
+Text a friend about how the quarter went.
+
+Politeness
+Humor
+
+Reply bluntly to someone who criticized you.
+Provide a factual account of an embarrassing
+mistake.
+
+Table 4: Example contrastive prompt pairs for each semantic trait.
+
+B.2
+
+Steering Extraction and Evaluation Pipeline
+
+Figure 5 illustrates the pipeline used to extract and evaluate steering vectors. Contrastive prompt pairs are
+first used to compute a steering vector specific to a semantic trait. This vector is then applied to a separate
+set of held-out evaluation prompts to generate steered outputs.
+
+Steering Extraction
+50 contrastive pairs
+(trait-specific templates)
+
+extract
+
+Steering Vector
+v ∈ Rd
+apply
+
+Steered Output
+o(x, v, α)
+
+generate
+
+Evaluation
+100 held-out prompts
+(diverse, neutral)
+
+Key: Test prompts are intentionally orthogonal to extraction prompts
+to ensure steering generalizes beyond training distribution.
+
+Figure 5: Steering extraction and evaluation pipeline.
+
+C
+
+Detailed Proof of Proposition 1
+
+We provide proofs for establishing non-identifiability via two complementary arguments: null-space
+ambiguity and reparameterization symmetry.
+C.1
+
+Null-Space Ambiguity (Constructive Proof)
+
+Setup. Consider the local linear approximation of the steering effect:
+o(x, v, α) ≈ o(x, 0, 0) + αJℓ (x)v
+
+(11)
+
+∂o
+where Jℓ (x) = ∂h
+∈ RV ×d is the Jacobian.
+ℓ h (x)
+ℓ
+
+Step 1: Null space characterization.
+
+Define the null space of Jℓ as:
+
+N = ker(Jℓ ) = {v0 ∈ Rd : Jℓ v0 = 0}
+
+(12)
+
+dim(N ) = d − rank(Jℓ )
+
+(13)
+
+By the rank-nullity theorem:
+Step 2: Rank Bound.
+
+The Jacobian Jℓ ∈ RV ×d has maximum possible rank:
+rank(Jℓ ) ≤ min(V, d)
+
+(14)
+
+In modern language models:
+• Hidden dimension: d ≈ 4000 (typical)
+• Vocabulary size: V ≈ 50000 (typical)
+• Therefore: max rank(Jℓ ) = d
+Step 3: Effective rank is much lower. Output distributions lie on a low-dimensional manifold. The
+effective rank satisfies:
+rankϵ (Jℓ ) = #{σi : σi > ϵ · σmax } ≪ d
+(15)
+where σi are singular values of Jℓ and ϵ is a threshold (e.g., 10−4 ).
+Intuition: In overparameterized LLMs, the effective rank is expected to be strictly less than d due to
+the low-dimensional structure of output distributions. Therefore dim(N ) = d − rank(Jℓ ) is generically
+positive but this is not required for the proof—the argument establishes non-identifiability whenever
+dim(N ) ≥ 1.
+
+Step 4: Constructing equivalent vectors.
+
+For any steering vector v ∈ Rd and any v0 ∈ N , define
+v ′ = v + v0 .
+
+(16)
+
+Jℓ (x)v ′ = Jℓ (x)(v + v0 ) = Jℓ (x)v + Jℓ (x)v0 = Jℓ (x)v.
+
+(17)
+
+o(x, v ′ , α) ≈ o(x, 0, 0) + αJℓ (x)v ′ = o(x, 0, 0) + αJℓ (x)v ≈ o(x, v, α).
+
+(18)
+
+Then for all x and all α:
+
+Therefore:
+
+Step 5: Infinitely many distinct solutions. Since dim(N ) ≥ 1, the null space contains infinitely many
+directions. For any v0 ∈ N \ {0} and any β ∈ R:
+vβ′ = v + βv0
+
+(19)
+
+generates infinitely many observationally equivalent vectors. Furthermore, if β is chosen such that
+vβ′ ̸∝ v (which is always possible unless v ∝ v0 ), these vectors are geometrically distinct.
+Step 6: Non-proportionality.
+only if:
+
+To ensure vβ′ ̸∝ v, we need v + βv0 ̸= cv for any scalar c. This fails
+βv0 = (c − 1)v
+
+(20)
+
+which requires v ∈ span(v0 ). Since v0 is an arbitrary element of a dim(N )-dimensional space and v is
+fixed, this occurs with probability zero. Therefore, for generic v and generic v0 ∈ N , we have vβ′ ̸∝ v for
+almost all β.
+Conclusion (Null-space mechanism). Under the linear approximation and for typical Jacobian structure,
+there exist infinitely many geometrically distinct steering vectors that are observationally equivalent.
+C.2
+
+Reparameterization Symmetry (Existence Proof)
+
+Setup: Neural networks exhibit inherent symmetries arising from overparameterization. We show these
+symmetries induce non-identifiability even in the exact nonlinear case.
+Step 1: Representation reparameterization.
+Define the reparameterized representation:
+
+Consider an invertible transformation T : Rd → Rd .
+
+
+h′ℓ (x) = T hℓ (x) .
+
+(21)
+
+If the subsequent layers can be rewritten as:
+′
+Fℓ→L (hℓ ) = Fℓ→L
+(T (hℓ ))
+
+(22)
+
+then (hℓ , v) and (h′ℓ , v ′ ) where v ′ = DT (hℓ ) · v are observationally indistinguishable.
+Step 2: Linear reparameterizations. Consider linear transformations T (h) = Ah where A ∈ Rd×d is
+invertible. For layer ℓ + 1 with weight matrix Wℓ+1 ∈ Rd×d and bias bℓ+1 :
+Original computation:
+hℓ+1 = σ(Wℓ+1 hℓ + bℓ+1 )
+(23)
+Reparameterized computation:
+′
+h′ℓ+1 = σ(Wℓ+1
+h′ℓ + b′ℓ+1 )
+
+(24)
+
+′
+where Wℓ+1
+= Wℓ+1 A−1 and b′ℓ+1 = bℓ+1 . Note: The bias remains invariant under linear reparame-
+
+terization through the origin. For more general affine transformations T (h) = Ah + c with translation
+c ̸= 0, the bias would also transform as b′ℓ+1 = bℓ+1 − Wℓ+1 A−1 c. We restrict to origin-preserving
+transformations for simplicity, as these suffice to establish non-identifiability.
+Then:
+
+h′ℓ+1 = σ Wℓ+1 A−1 Ahℓ + bℓ+1 = σ(Wℓ+1 hℓ + bℓ+1 ) = hℓ+1 .
+(25)
+
+Step 3: Steering under reparameterization.
+
+Original steering:
+
+h̃ℓ = hℓ + αv
+
+(26)
+
+h̃ℓ+1 = σ(Wℓ+1 (hℓ + αv) + bℓ+1 )
+
+(27)
+
+Reparameterized steering with v ′ = Av:
+h̃′ℓ = h′ℓ + αv ′ = Ahℓ + αAv = A(hℓ + αv) = Ah̃ℓ .
+′
+h̃′ℓ+1 = σ Wℓ+1
+(h′ℓ + αv ′ ) + b′ℓ+1
+
+(28)
+
+
+
+= σ Wℓ+1 A−1 A(hℓ + αv) + bℓ+1
+= σ(Wℓ+1 (hℓ + αv) + bℓ+1 )
+
+
+(29)
+
+= h̃ℓ+1 .
+Step 4: Infinitely many reparameterizations. For any invertible matrix A with A ̸= cI (i.e., not a
+scalar multiple of identity), we obtain v ′ = Av ̸∝ v. The space of such matrices has dimension d2 − 1
+(excluding scalar multiples), providing infinitely many distinct reparameterizations.
+Important note: While we cannot explicitly construct these reparameterizations for a frozen model
+without retraining (since this would require modifying Wℓ+1 ), their existence follows from the fundamental
+symmetry structure of neural networks. This establishes that identifiability cannot hold even in principle
+without additional constraints.
+Practical implication: For frozen, deployed models, only the null-space mechanism is operationally
+relevant–the reparameterization symmetry is not a realizable operation. However, the reparameterization
+argument shows that even if we allowed weight modifications during training, identifiability would still
+fail without structural constraints. Thus, non-identifiability is both a practical limitation (null-space) and a
+fundamental theoretical barrier (gauge symmetry).
+Conclusion (Reparameterization mechanism). The inherent symmetries of neural network parameterizations induce infinitely many observationally equivalent steering vectors.
+
+D
+
+Intuitive Explanations
+
+D.1
+
+Geometric Intuition for Null-Space Ambiguity
+v3 ∈ ker(J)
+(invisible)
+
+v∥
+
+v2
+row(J)
+
+v1
+
+Observable output space
+
+Output plane sees only (v1 , v2 ) projection
+
+Figure 6: Geometric intuition for null-space ambiguity. The output observes only the (v1 , v2 ) components (blue
+shaded region). The v3 component lies in ker(J) and is invisible to the output. Adding any αv3 to v leaves the
+output unchanged: J(v + αv3 ) = Jv for all α ∈ R.
+
+Visual analogy: Consider a simplified example where a 3D steering vector v ∈ R3 affects 2D outputs
+o ∈ R2 through a projection matrix J ∈ R2×3 . By the rank-nullity theorem, the null space ker(J) is a 1D
+subspace since dim(ker(J)) = 3 − rank(J) = 3 − 2 = 1.
+For concreteness, suppose J = [I2 | 0] projects onto the first two coordinates. Then ker(J) =
+span{(0, 0, 1)} is the v3 axis. The key insight generalizes: for any projection matrix J, directions in
+ker(J) are invisible to outputs. Figure 6 illustrates this geometric intuition.
+Any vector of the form v ′ = v + αv3 for α ∈ R produces identical outputs:
+J(v + αv3 ) = Jv + αJ(0, 0, 1)⊤ = Jv + α · 0 = Jv.
+
+(30)
+
+Since α can take infinitely many values and v ′ ̸∝ v for generic choices of α, there exist infinitely many
+geometrically distinct steering vectors that are observationally equivalent.
+D.2
+
+Why More Data Doesn’t Help
+
+Common misconception: "If we collect more steering examples, we can pin down the unique vector."
+Why this fails: Consider observing steering effects on N prompts {x1 , . . . , xN }. Each observation
+provides:
+oi = Jℓ (xi )v + ηi
+(31)
+Stacking these:
+
+
+ 
+
+ 
+o1
+Jℓ (x1 )
+η1
+ o2   Jℓ (x2 ) 
+ η2 
+  
+
+ 
+ ..  =  ..  v +  .. 
+ .   . 
+ . 
+oN
+
+Jℓ (xN )
+
+(32)
+
+ηN
+
+The stacked Jacobian Jstack ∈ R(N ·V )×d has null space:
+ker(Jstack ) =
+
+N
+\
+
+ker(Jℓ (xi ))
+
+(33)
+
+i=1
+
+Prompt 1: measures dims [1, . . . , 3200] → null space = [3201, . . . , 4096]
+Prompt 2: measures dims [1, . . . , 3200] → null space = [3201, . . . , 4096]
+
+..
+.
+Prompt N: measures dims [1, . . . , 3200] → null space = [3201, . . . , 4096]
+Intersection of null spaces = [3201, . . . , 4096] (unchanged!)
+
+Figure 7: Illustration of why prompt diversity does not resolve null-space ambiguity. Each prompt induces a
+Jacobian that measures the same effective subspace, leaving the null-space intersection unchanged.
+
+Critical observation: If all Jℓ (xi ) share a common null space (e.g., all prompts probe similar aspects
+of the model), then:
+ker(Jstack ) = ker(Jℓ (x1 )) ̸= {0}
+(34)
+This means adding more prompts does not reduce the null space when all prompts probe the same effective
+subspace—the ambiguity persists. Figure 7 illustrates this phenomenon.
+D.3
+
+Why Orthogonal Perturbations Preserve Semantics
+
+Setup: We test steering with v versus v + v⊥ , where v⊥ ⊥ v and ∥v⊥ ∥ = 1. Empirically, adding a random
+orthogonal direction produces nearly equivalent semantic effects. Why?
+
+Decomposing the perturbation. Any perturbation v⊥ can be decomposed into observable and invisible
+components:
+v⊥ = v⊥,row + v⊥,null
+
+(35)
+
+where v⊥,row ∈ row(J) (observable through outputs) and v⊥,null ∈ ker(J) (invisible to outputs).
+For a random v⊥ ⊥ v, the expected fraction in the null space is:
+E[∥v⊥,null ∥2 ] ≈
+
+dim(ker(J))
+≈ 0.20−0.25
+d
+
+(36)
+
+This means ∼20–25% of the perturbation is automatically invisible to model outputs.
+Observable effect is diffuse and unstructured.
+
+The actual output change from adding v⊥ is:
+
+J(v + v⊥ ) = Jv + Jv⊥,row
+
+(37)
+
+While Jv⊥,row is not necessarily small in norm, it represents a random direction in the ∼3200-dimensional
+row space of J. In contrast, Jv is a structured, semantically coherent steering effect (e.g., consistently
+shifting outputs toward “honesty” or “sycophancy”).
+The key distinction is not magnitude but semantic coherence: Jv produces aligned, directional changes
+across the vocabulary, while Jv⊥,row produces diffuse, incoherent perturbations that average out across
+tokens and do not systematically shift semantic meaning in any consistent direction.
+Analogy: If Jv is a strong wind blowing consistently north, then Jv⊥,row is turbulence—it may have
+comparable energy but lacks directional coherence, so the overall trajectory remains northward.
+
+E
+
+Mathematical Derivations
+
+E.1
+
+Dimension of Observational Equivalence Class
+
+Setup: For steering vector v ∈ Rd and Jacobian J ∈ RV ×d with rank r, consider:
+[v] = {v ′ ∈ Rd : Jv ′ = Jv}
+
+(38)
+
+Question: How many degrees of freedom exist in the equivalence class of observationally equivalent
+steering vectors?
+Analysis: The equivalence class is an affine subspace:
+[v] = v + ker(J)
+
+(39)
+
+where ker(J) is a (d − r)-dimensional linear subspace.
+Parameterization: Let {u1 , . . . , ud−r } be an orthonormal basis for ker(J). Then:
+(
+[v] =
+
+v+
+
+d−r
+X
+
+)
+αi ui : αi ∈ R
+
+(40)
+
+i=1
+
+The equivalence class has (d − r) degrees of freedom.
+Scaling ambiguity: Additionally, v and cv produce equivalent outputs (up to rescaling α). The
+equivalence class modulo scaling is a (d − r)-dimensional projective space.
+Illustrative example. Suppose a model has hidden size d = 4096 and an effective Jacobian rank
+r ≈ 3100. Then the equivalence class dimension is d − r ≈ 996.
+Interpretation: For every identifiable parameter (row-space direction), there are 996/3100 ≈ 0.32
+unidentifiable parameters (null-space directions). The under-determination ratio is approximately 1 : 3.
+
+E.2
+
+Fisher Information and Cramér-Rao Bound
+
+Setup: Consider the statistical model:
+o(x; v, α) ∼ p(o|x, v, α)
+where v is the parameter to estimate.
+Question: Can we achieve better identifiability by collecting more samples?
+Fisher Information Matrix: For the linear Gaussian model o = Jv + η with η ∼ N (0, σ 2 I):
+"
+
+ #
+∂ log p(o | x, v, α)
+∂ log p(o | x, v, α) ⊤
+1
+= 2 J ⊤ J.
+I(v) = Eo
+∂v
+∂v
+σ
+
+(41)
+
+(42)
+
+Cramér-Rao Lower Bound: The covariance of any unbiased estimator v̂ satisfies:
+Cov(v̂) ⪰ I(v)−1 = σ 2 (J ⊤ J)+
+
+(43)
+
+where (J ⊤ J)+ is the Moore-Penrose pseudo-inverse.
+Implications: For null-space directions ui ∈ ker(J), the Fisher information is degenerate:
+⊤
+u⊤
+i (J J)ui = 0
+
+(44)
+
+Therefore, the variance of any unbiased estimator along null-space directions is unbounded:
+⊤
+−1
+Var(u⊤
+i v̂) ≥ ui I(v) ui = ∞
+
+(45)
+
+Conclusion: The Cramér-Rao bound is infinite for null-space components, confirming that no finite
+amount of data can resolve the ambiguity. Non-identifiability is fundamental, not a small-sample problem.
+More data cannot help because the information geometry has infinite uncertainty in null-space directions.
+
+F
+
+Disclosure of the Use of AI
+
+We used ChatGPT to assist with refining sections of the manuscript for language and clarity and used
+Claude Code and GitHub Copilot for coding assistance during implementation. All research ideas,
+technical content, proofs, experiments and final writing decisions are entirely our own and we take full
+responsibility for the work presented.
+
+

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.env
+
+# Data and Results
+activations/
+activations_v2/
+persona_vectors/
+persona_vectors_v2/
+steering_results/
+localization/
+localization_v2/
+ood_results/
+eval_results/
+eval_results_v2/
+cross_model_results/
+
+# Except for tiny representative examples if needed
+!cross_model_results/*.png
+!cross_model_results/*.json
+
+# Keep PDF and images in paper
+!paper/*.png
+!paper/*.pdf
+
+# IDEs
+.idea/
+.vscode/
+
+# Ignore the review stuff
+reviewer.txt
+_organize_project.py

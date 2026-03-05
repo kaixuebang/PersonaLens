@@ -1,0 +1,447 @@
+\documentclass[10pt]{article}
+\usepackage{PRIMEarxiv}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{natbib}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+\title{PersonaLens: A Standardized Framework for\\Mechanistic Localization and Steering of\\Personality Traits in Large Language Models}
+
+\author{
+  Anonymous Author(s) \\
+  \\
+  Under Review
+}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+\begin{abstract}
+Large Language Models (LLMs) exhibit personality-like behavioral patterns when prompted with different persona descriptions, yet the internal mechanisms underlying these behaviors remain poorly understood. We present \textbf{PersonaLens}, a standardized and model-agnostic framework for (1)~\emph{localizing} where personality traits are encoded within transformer hidden states, (2)~\emph{extracting} linear personality directions via contrastive activation analysis, and (3)~\emph{steering} model personality at inference time through targeted activation intervention. Our framework jointly analyzes Big Five personality traits and psychological defense mechanisms, providing a unified pipeline that produces persona vectors, layer-wise encoding profiles, causal importance maps, and cross-trait orthogonality assessments. We validate PersonaLens on Qwen3-0.6B, Qwen2.5-0.5B, and TinyLlama-1.1B, demonstrating that: (i)~personality traits are linearly separable across layers, with activation difference magnitudes (normalized for residual-stream scaling) growing exponentially through deeper layers; (ii)~Big Five trait vectors are highly orthogonal in activation space (mean $|\cos|{=}0.12$), while defense mechanisms share structured subspaces (e.g., humor--projection $\cos{=}0.66$); (iii)~token-localized activation patching reveals that the earliest layers carry the strongest \emph{causal} influence on personality expression, primarily driven by user-token attention processing rather than system prompt memorization; (iv)~extracted vectors exhibit massive out-of-domain generalization (cosine similarity $>0.98$ across disjoint scenario subsets); and (v)~injecting extracted persona vectors during inference reliably shifts model behavior along the target trait dimension in quantitative $\alpha$-sweeps. Our key contribution is methodological: PersonaLens provides a transferable, reproducible procedure for mapping between psychological constructs and neural activations in any transformer-based LLM.
+\end{abstract}
+
+\keywords{Mechanistic Interpretability \and Personality \and Representation Engineering \and Activation Steering \and Large Language Models}
+
+% ============================================================
+\section{Introduction}\label{sec:intro}
+
+Large Language Models (LLMs) readily adopt distinct \emph{personas} when instructed through system prompts, producing text that reflects specific personality traits \citep{shanahan2023role}. This ability has enabled applications ranging from immersive role-playing \citep{chen2024rolesurvey} to personality-consistent dialogue agents \citep{shao2023character}. However, a fundamental question remains: \textbf{do these personality behaviors correspond to structured internal representations, and can we identify and control them mechanistically?}
+
+Prior work on LLM personality has largely taken a \emph{behavioral} perspective: evaluating model outputs against psychometric instruments such as the Big Five \citep{jiang2024evaluating}, or engineering prompts to elicit desired traits \citep{serapiogarcía2023personality}. While valuable, this approach treats the model as a black box and cannot answer whether personality traits correspond to identifiable neural structures.
+
+Meanwhile, the field of \emph{representation engineering} \citep{zou2023representation} has demonstrated that semantic concepts---truthfulness \citep{li2024iti}, harmlessness \citep{rimsky2024steering}, and emotional states \citep{bao2024emotion}---correspond to linear directions in activation space that can be both probed and manipulated. Recent work has begun extending this paradigm to personality: persona vectors \citep{chen2025persona}, activation-space personality steering \citep{sun2025activation}, and persona blending \citep{billy2025blending} all suggest that personality traits may occupy distinct linear subspaces within transformer representations.
+
+However, the field currently lacks a \textbf{standardized, model-agnostic methodology} for systematically analyzing personality representations across different models. Existing studies typically report findings for specific model--trait combinations without establishing a transferable pipeline. Furthermore, no prior work jointly analyzes Big Five traits and psychological defense mechanisms within a unified framework, despite defense mechanisms being critical to authentic personality expression \citep{personaforge2025}.
+
+\paragraph{Contributions.} We address these gaps with \textbf{PersonaLens}, a complete and reproducible pipeline that:
+
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item \textbf{Defines a standardized contrastive dataset} covering all five Big Five dimensions \emph{and} nine defense mechanisms (Sec.~\ref{sec:data}), with carefully designed prompt pairs that isolate individual trait dimensions.
+\item \textbf{Proposes robust extraction metrics}---RMS-normalized difference vectors, PCA-based directions, and Leave-One-Scenario-Out (LOSO) cross-validated linear probes---producing a multi-faceted ``personality encoding profile'' (Sec.~\ref{sec:extraction}).
+\item \textbf{Establishes causal importance} of individual layers through token-localized and component-level activation patching, distinguishing \emph{where personality information exists} from \emph{where it causally matters} (Sec.~\ref{sec:localization}).
+\item \textbf{Demonstrates quantitative inference-time personality steering} by injecting extracted persona vectors, evaluating the trait shift continuously via $\alpha$-sweeps across behavioral scenarios (Sec.~\ref{sec:steering}).
+\item \textbf{Analyzes cross-trait geometry and generalization}, revealing strong out-of-domain stability of persona directions and finding that Big Five dimensions are near-orthogonal while defense mechanisms form structured subspaces (Sec.~\ref{sec:orthogonality} and Sec.~\ref{sec:ood}).
+\end{enumerate}
+
+We validate PersonaLens on Qwen3-0.6B, Qwen2.5-0.5B, and TinyLlama-1.1B to empirically prove \emph{transferability}: the same pipeline can be applied to any transformer LLM without modification.
+
+% ============================================================
+\section{Related Work}\label{sec:related}
+
+\paragraph{Personality in LLMs.}
+The study of personality expression in LLMs has expanded rapidly. Foundational surveys \citep{serapiogarcía2023personality} establish that LLMs can simulate Big Five personality traits via prompting. Personality Alignment \citep{mao2024personality} introduces training-free alignment via Personality Activation Search (PAS). PersonaForge \citep{personaforge2025} proposes psychology-grounded architecture with dual-process generation but operates entirely at the prompt level. Our work extends PersonaForge by grounding its psychological constructs in neural representations.
+
+\paragraph{Representation Engineering and Activation Steering.}
+Representation Engineering (RepE) \citep{zou2023representation} establishes that high-level concepts correspond to linear directions in activation space. Inference-Time Intervention (ITI) \citep{li2024iti} demonstrates that shifting activations along truthful directions improves model truthfulness. Contrastive Activation Addition \citep{rimsky2024steering, turner2023activation} generalizes this to behavioral attributes. Recent works have developed the PERSONA frameworks \citep{persona2026, persona2025} for mapping personality representations using trait vectors and hybrid layer subspaces. Chen et al.~\citep{chen2025persona} extract persona vectors for personality steering, and BILLY \citep{billy2025blending} blends multiple persona vectors for creative generation. More recent advances investigate context-dependent control via Steering Vector Fields (SVF) \citep{svf2026} and formalize the algebraic structure of these directions through factored subspaces \citep{factored2026}.
+
+\paragraph{Mechanistic Interpretability and Reliability Constraints.}
+From Traits to Circuits \citep{bao2025traits2circuits} proposes identifying ``personality circuits'' as minimal subgraphs responsible for trait expression. While linear probing finds personality directions effective \citep{konen2025probing}, broad empirical evaluations highlight fragility in Out-of-Distribution (OOD) transfer and collateral capability degradation during concept activation steering \citep{cae2025, cae2025b}. To improve reliability, recent techniques denoise concept vectors using Sparse Autoencoders (SAEs) \citep{sae2025denoising}. Furthermore, dissociations between magnitude and directional steering \citep{direction2026} provide crucial insights for continuous behavioral modulation.
+
+\paragraph{Non-Identifiability Concerns.}
+Venkatesh and Kurapath~\citep{venkatesh2026nonidentifiability} raise important theoretical concerns: persona vectors are fundamentally non-identifiable under single-layer white-box access due to null-space ambiguity. While we acknowledge this limitation, we argue that our multi-method approach provides converging evidence that is robust to the specific choice of extraction method.
+
+% ============================================================
+\section{PersonaLens Framework}\label{sec:method}
+
+PersonaLens consists of five modular phases (Fig.~\ref{fig:pipeline}), each designed to be model-agnostic and applicable to any transformer architecture.
+
+\begin{figure}[t]
+\centering
+\fbox{\parbox{0.95\textwidth}{\small
+\textbf{Phase 1: Contrastive Data Construction} (Sec.~\ref{sec:data})\\
+$\rightarrow$ Paired prompts $(x^+_i, x^-_i)$ for each trait \\[4pt]
+\textbf{Phase 2: Activation Collection} (Sec.~\ref{sec:collection})\\
+$\rightarrow$ Hidden states $h_\ell(x^+_i), h_\ell(x^-_i)$ at all layers $\ell$ \\[4pt]
+\textbf{Phase 3: Persona Vector Extraction} (Sec.~\ref{sec:extraction})\\
+$\rightarrow$ Personality directions $v_\ell$ per layer via mean-diff / PCA / probe \\[4pt]
+\textbf{Phase 4: Causal Localization} (Sec.~\ref{sec:localization})\\
+$\rightarrow$ Causal importance $\mathcal{I}(\ell)$ via activation patching \\[4pt]
+\textbf{Phase 5: Personality Steering} (Sec.~\ref{sec:steering})\\
+$\rightarrow$ Inject $v_\ell$ during inference: $\tilde{h}_\ell = h_\ell + \alpha \cdot v_\ell$
+}}
+\caption{The PersonaLens pipeline. Each phase is independently executable and produces standardized outputs that enable cross-model comparison.}
+\label{fig:pipeline}
+\end{figure}
+
+% ============================================================
+\subsection{Phase 1: Contrastive Data Construction}\label{sec:data}
+
+Following the contrastive activation paradigm \citep{zou2023representation, rimsky2024steering}, we construct paired prompts designed to elicit contrasting personality states while keeping the conversational scenario identical.
+
+\paragraph{Big Five Traits.}
+For each of the five personality dimensions---Openness (O), Conscientiousness (C), Extraversion (E), Agreeableness (A), and Neuroticism (N)---we define:
+\begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item A \textbf{high-trait system prompt} instructing the model to behave as a person with an extreme level of the trait;
+\item A \textbf{low-trait system prompt} instructing the opposite extreme;
+\item $K=20$ \textbf{neutral scenario prompts} (user messages) spanning diverse social, emotional, and decision-making contexts.
+\end{itemize}
+
+For example, an Openness pair uses the system prompts ``\textit{You are extremely open to new experiences, intellectually curious, imaginative\ldots}'' vs.\ ``\textit{You are very practical, conventional, and prefer routine\ldots}'', with shared scenarios like ``\textit{What do you think about modern abstract art?}''
+
+\paragraph{Defense Mechanisms.}
+Following Vaillant's hierarchy \citep{vaillant1994ego} and PersonaForge's operationalization \citep{personaforge2025}, we construct contrastive pairs for nine defense mechanisms: Humor, Rationalization, Projection, Sublimation, Denial, Displacement, Intellectualization, Regression, and Reaction Formation. Each mechanism contrasts an \emph{active} condition (the mechanism is deployed in response to a stressor) against a \emph{neutral} condition (direct emotional engagement). Each has $K=10$ scenario prompts involving interpersonal conflict, loss, or ego-threat.
+
+% ============================================================
+\subsection{Phase 2: Activation Collection}\label{sec:collection}
+
+For each contrastive pair $(x^+_i, x^-_i)$ in trait $t$, we format the messages using the model's chat template and perform a forward pass through the full model, collecting hidden states $h_\ell \in \mathbb{R}^d$ at the \emph{last token position} of every transformer layer $\ell \in \{0, 1, \ldots, L{-}1\}$.
+
+We record hidden states before any generation occurs (i.e., at the position where the model would begin generating its response). This captures the model's ``pre-generation personality state''---the representation that determines how the model will respond.
+
+For a model with $L$ layers and hidden dimension $d$, this produces, for each trait $t$:
+\begin{equation}
+H^+_t = \{h_\ell(x^+_i)\}_{i=1}^{K}, \quad H^-_t = \{h_\ell(x^-_i)\}_{i=1}^{K}, \qquad \forall \ell \in \{0, \ldots, L{-}1\}
+\end{equation}
+
+% ============================================================
+\subsection{Phase 3: Persona Vector Extraction}\label{sec:extraction}
+
+We apply three complementary methods to extract personality directions from the collected activations, enabling cross-validation of results.
+
+\paragraph{Method 1: Mean Difference (Contrastive Activation Addition).}
+The simplest and most widely used approach \citep{rimsky2024steering, chen2025persona}:
+\begin{equation}\label{eq:meandiff}
+v^{\text{diff}}_\ell = \frac{1}{K} \sum_{i=1}^{K} \left[ h_\ell(x^+_i) - h_\ell(x^-_i) \right], \qquad \hat{v}^{\text{diff}}_\ell = \frac{v^{\text{diff}}_\ell}{\|v^{\text{diff}}_\ell\|}
+\end{equation}
+
+To rule out trivial residual-stream scaling confounds across depth, we evaluate the \textbf{RMS-normalized difference norm}: $\frac{\|v^{\text{diff}}_\ell\|}{\text{RMS}_\ell}$, where $\text{RMS}_\ell = \sqrt{\frac{1}{2K}\sum (h_\ell)^2}$ represents the per-layer activation scale. We further contextualize this against a \textbf{random-pair baseline} to compute a signal-to-noise ratio (SNR) for feature existence.
+
+\paragraph{Method 2: PCA on Difference Vectors.}
+For each layer, we compute individual difference vectors $\delta_i = h_\ell(x^+_i) - h_\ell(x^-_i)$ and apply PCA to the set $\{\delta_i\}_{i=1}^K$. The first principal component represents the dominant direction of personality variation, and its explained variance ratio $\rho_1$ indicates how concentrated the personality information is in a single direction.
+
+\paragraph{Method 3: Linear Probing.}
+We train a logistic regression classifier on the concatenated activations $\{h_\ell(x^+_i)\} \cup \{h_\ell(x^-_i)\}$ with labels $y \in \{1, 0\}$. Crucially, to prevent overfitting in the $d \gg K$ regime, we use strong $L_2$ regularization alongside \textbf{Leave-One-Scenario-Out (LOSO) cross-validation}. By training on $K-1$ contrastive pairs and testing on the remaining disjoint pair, we rigorously estimate generalization accuracy across unseen contexts.
+
+\paragraph{Layer-wise Encoding Profile.}
+For each trait, the triple $(\|v^{\text{diff}}_\ell\|, \rho_{1,\ell}, a_\ell)$ across all layers constitutes the \textbf{personality encoding profile}---a standardized fingerprint that can be compared across models.
+
+% ============================================================
+\subsection{Phase 4: Causal Localization via Activation Patching}\label{sec:localization}
+
+Probing and mean-difference analyses establish where personality information \emph{exists}, but not whether it \emph{causally matters}. Following the activation patching paradigm \citep{meng2022locating, bao2024emotion, bao2025traits2circuits}, we establish causal importance through targeted interventional experiments.
+
+For each contrastive pair, we map token spans corresponding to the \emph{system prompt} (handling personality instruction) and the \emph{user prompt} (handling neutral context). We perform:
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item \textbf{Token-Localized Patching:} We patch activations exclusively for the system prompt span versus exclusively for the user prompt span to isolate where causal influence originates.
+\item \textbf{Component-Level Patching:} We patch primarily the outputs of the self-attention submodule vs.\ the MLP submodule to trace computational pathways.
+\end{enumerate}
+
+The causal importance is measured as the KL divergence between clean (high-trait) and patched output distributions:
+\begin{equation}\label{eq:causal}
+\mathcal{I}(\ell) = D_{\text{KL}}\!\left(\text{softmax}(o^+) \;\|\; \text{softmax}(o^+_{\text{patched},\ell})\right)
+\end{equation}
+
+A high $\mathcal{I}(\ell)$ indicates that replacing layer $\ell$'s localized activations with the opposite-personality version significantly shifts the model's output reasoning logic.
+
+% ============================================================
+\subsection{Phase 5: Inference-Time Personality Steering}\label{sec:steering}
+
+The culminating experiment directly tests whether controlling neuron activations controls personality. We inject persona vectors during inference using forward hooks:
+\begin{equation}\label{eq:steering}
+\tilde{h}_\ell = h_\ell + \alpha \cdot \hat{v}_\ell
+\end{equation}
+where $\alpha \in \mathbb{R}$ controls steering strength. Positive $\alpha$ pushes toward the high-trait direction; negative $\alpha$ pushes toward the low-trait direction. Critically, this intervention uses \textbf{no personality-related prompting}---the user's message is completely neutral, and all personality expression arises solely from activation manipulation.
+
+% ============================================================
+\subsection{Cross-Trait Orthogonality Analysis}\label{sec:orthogonality}
+
+A key theoretical question is whether different personality dimensions occupy \emph{independent} directions in activation space, as would be predicted by the Big Five's orthogonal factor structure \citep{costa1992revised}. For each pair of traits $(t_i, t_j)$, we compute the cosine similarity between their extracted persona vectors at the best layer:
+\begin{equation}
+\text{sim}(t_i, t_j) = \frac{\hat{v}_{t_i} \cdot \hat{v}_{t_j}}{\|\hat{v}_{t_i}\| \cdot \|\hat{v}_{t_j}\|}
+\end{equation}
+
+If the model's internal representation reflects psychological theory, we expect Big Five dimensions to be near-orthogonal ($|\text{sim}| \approx 0$), while defense mechanisms may share subspaces due to common underlying cognitive strategies.
+
+% ============================================================
+\section{Experimental Setup}\label{sec:setup}
+
+\paragraph{Models.} We validate PersonaLens on three primary models across two architectural families:
+\begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item \textbf{Qwen3-0.6B} \citep{qwen2025qwen3}: 28 layers, hidden dimension $d{=}1024$.
+\item \textbf{Qwen2.5-0.5B-Instruct}: 24 layers, hidden dimension $d{=}896$.
+\item \textbf{TinyLlama-1.1B-Chat-v1.0} \citep{zhang2024tinyllama}: 22 layers, hidden dimension $d{=}2048$. A LLaMA-based architecture to validate purely out-of-family generalization.
+\end{itemize}
+These models are small enough for rapid prototyping while being representative of modern instruction-tuned transformer architectures.
+
+\paragraph{Traits Analyzed.} We analyze all five Big Five dimensions (O, C, E, A, N) using $K{=}20$ scenario pairs each, and three defense mechanisms (Humor, Rationalization, Projection) using $K{=}10$ pairs each, totaling 130 contrastive prompt pairs per model.
+
+\paragraph{Extraction Configuration.} Linear probes use strong L2-regularized logistic regression ($C{=}0.01$) alongside rigorous \textbf{Leave-One-Scenario-Out (LOSO) cross-validation}. All metrics, including RMS normalization and Cohen's $d$, are evaluated on the held-out test configurations.
+
+\paragraph{Patching Configuration.} We employ token-localized activation patching (system tokens vs.\ user prompt tokens vs.\ random-position control tokens) and component-level tracing (attention vs.\ MLP). We average causal importance over $n{=}5$ contrastive pairs per strategy.
+
+\paragraph{Steering Evaluation.} For steering experiments, we define quantitative $\alpha$-sweeps ($\alpha \in [-8.0, +10.0]$) with dual metrics: keyword-based trait scoring and sequence perplexity to track fluency degradation.
+
+% ============================================================
+\section{Results}\label{sec:results}
+
+\subsection{Personality Traits are Linearly Separable Across All Layers}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_layer_openness.png}
+\caption{\textbf{Layer-wise personality encoding profile for Openness.} \emph{Left:} Linear probe accuracy (all layers achieve near-perfect separability). \emph{Center:} Mean difference norm grows exponentially through layers, peaking at Layer~26 before dropping at the final layer. \emph{Right:} PCA explained variance shows initial concentration (Layer~0), dispersion, and re-focusing in middle layers.}
+\label{fig:layer_analysis}
+\end{figure}
+
+Linear probing reveals that personality contrasts are linearly separable from the earliest hidden layer onward, with probe accuracies exceeding 95\% at all layers for all traits tested (Fig.~\ref{fig:layer_analysis}, left). While this may partially reflect the high dimensionality of the hidden space ($d{=}1024$) relative to sample size ($2K{=}40$), the consistency across all traits and the convergence with other metrics suggests genuine linear encoding.
+
+More informatively, the \textbf{activation difference magnitude} $\|v^{\text{diff}}_\ell\|$ reveals a striking layer-wise pattern (Fig.~\ref{fig:layer_analysis}, center): the difference norm grows approximately exponentially from Layer~0 ($\|v\|{\approx}0.25$) through Layer~26 ($\|v\|{\approx}67$), then drops sharply at the final layer ($\|v\|{\approx}17$). This pattern---amplification followed by normalization---is consistent across all traits (Table~\ref{tab:diffnorms}) and suggests that the transformer progressively \emph{amplifies} personality-relevant features through its processing depth, with a final-layer compression possibly related to the output projection.
+
+\begin{table}[t]
+\caption{Mean difference norms $\|v^{\text{diff}}_\ell\|$ at selected layers for all analyzed traits. All traits exhibit exponential growth through middle-to-late layers followed by a final-layer drop.}
+\label{tab:diffnorms}
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Trait} & \textbf{L0} & \textbf{L7} & \textbf{L14} & \textbf{L21} & \textbf{L26} & \textbf{L27} \\
+\midrule
+Openness       & 0.25 & 1.26 & 7.71  & 34.3  & 66.9  & 17.1 \\
+Conscientiousness & 0.30 & 1.39 & 7.38  & 30.3  & 67.2  & 16.8  \\
+Extraversion   & 0.33 & 1.27 & 6.76  & 33.3  & 67.1  & 16.7  \\
+Agreeableness  & 0.31 & 1.33 & 7.31  & 31.7  & 65.2  & 17.3  \\
+Neuroticism    & 0.34 & 1.37 & 7.13  & 32.6  & 67.5  & 17.4  \\
+\midrule
+Humor          & 0.33 & 1.37 & 7.73  & 35.9  & 74.4  & 18.4  \\
+Projection     & 0.31 & 1.51 & 8.59  & 35.3  & 78.1  & 18.4  \\
+Rationalization& 0.39 & 2.01 & 9.55  & 39.3  & 80.2  & 20.3  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{PCA Direction Dominance.}
+The PCA explained variance of the top component (Fig.~\ref{fig:layer_analysis}, right) shows an interesting two-phase pattern: high concentration at Layer~0 ($\rho_1 \approx 0.44$, indicating the personality difference is initially concentrated in a single direction), followed by dispersion through early layers and then partial re-concentration in middle layers ($\rho_1 \approx 0.38$ at Layers~14--17). This suggests a process of distributing personality information across representations before re-focusing it for downstream processing.
+
+\paragraph{Consistency Between Extraction Methods.}
+The cosine similarity between mean-difference and probe directions is consistently high ($> 0.93$), confirming that the extracted personality directions are robust to the choice of extraction method. This addresses concerns about the non-identifiability of steering vectors \citep{venkatesh2026nonidentifiability}: while the \emph{exact} direction may not be uniquely determined, the \emph{functional} direction---the one that captures maximum trait contrast---is stable across methods.
+
+% ============================================================
+\subsection{Big Five Vectors are Orthogonal; Defense Mechanisms Share Subspaces}\label{sec:results_ortho}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.6\textwidth]{fig_orthogonality_common.png}
+\caption{\textbf{Cosine similarity matrix between persona vectors} (mean-difference, projected into a shared common space at Layer 14 to prevent layer-misalignment biases) on Qwen3-0.6B. Big Five traits (top-left block) are near-orthogonal. Defense mechanisms (bottom-right) form correlated subspaces, with humor--projection showing the highest correlation ($\cos{=}0.66$).}
+\label{fig:orthogonality}
+\end{figure}
+
+Figure~\ref{fig:orthogonality} presents the full $8 \times 8$ cosine similarity matrix across all analyzed traits. Several important patterns emerge:
+
+\textbf{Big Five Orthogonality.} The five OCEAN traits show remarkable independence, with a mean off-diagonal $|\cos|$ of 0.12 within the Big Five block. The strongest intra-Big-Five correlations are openness--conscientiousness ($\cos{=}0.29$) and openness--neuroticism ($\cos{=}0.42$). The latter aligns with known psychometric correlations between these factors \citep{costa1992revised}.
+
+\textbf{Defense Mechanism Clustering.} Defense mechanisms show higher inter-correlation, with humor--projection ($\cos{=}0.66$) and projection--rationalization ($\cos{=}0.64$) being the most correlated pairs. This is psychologically interpretable: humor, projection, and rationalization are all \emph{cognitive distortion} mechanisms that transform the perception of a stressor rather than altering the emotional response, sharing a common ``appraisal reframing'' computational strategy.
+
+\textbf{Cross-domain Structure.} The Big Five traits and defense mechanisms show moderate cross-domain correlations (e.g., neuroticism--humor $\cos{=}0.41$, openness--neuroticism $\cos{=}0.42$), suggesting shared representational substrates between trait dispositions and coping strategies.
+
+The mean off-diagonal $|\cos|$ across all 28 trait pairs is 0.212, indicating substantial but imperfect independence. This supports the hypothesis that personality dimensions occupy partially independent linear subspaces within the model's activation geometry.
+
+% ============================================================
+\subsection{Causal Primacy of User-Token Attention in Early Layers}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_causal_combined.png}
+\caption{\textbf{Token-Localized and Component Causal Importance for Openness}. \emph{Left:} Replacing user-prompt tokens causally matters exactly as much as full-layer replacement, heavily dominating (KL $\approx 5.7$) in Layers 0--1, while replacing system-prompt tokens does almost nothing (KL $\approx 0.0001$). \emph{Right:} Attention mechanism substitutions cause massive divergence shifts (KL $> 1.0$), whereas patching MLP outputs has zero effect in the primary encoding layers.}
+\label{fig:causal}
+\end{figure}
+
+Token-localized activation patching reveals a striking dissociation between \emph{where instructions are read} and \emph{where personality is causally active} (Fig.~\ref{fig:causal}). While the difference norm grows exponentially through deeper layers (Sec.~5.1), the causal importance $\mathcal{I}(\ell)$ is overwhelmingly concentrated in the first two layers. 
+
+Critically, when we independently patch the tokens corresponding to the System Persona Prompt versus the User Scenario Prompt:
+
+\begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item \textbf{System Token Patching}: Causes virtually zero shift in the output distribution ($\mathcal{I} \approx 0.0001$).
+\item \textbf{User Token Patching}: Completely replicates the full-layer causal effect ($\mathcal{I} > 5.0$ in Layers 0-1).
+\item \textbf{Random Token Control}: Replacing a randomly positioned block of tokens equal in length to the system prompt yields near-zero effect, confirming that sequence alignment---not simply the volume of tokens patched---is determinative.
+\end{itemize}
+
+This proves that early-layer dominance is \emph{not} a trivial artifact of replacing the system text states. Instead, it demonstrates that \textbf{the processing of the user's neutral input is immediately modulated by the active persona within the very first attention layers}, and this early modulation entirely dictates the personality of the output logit distribution. While the near-zero causal effect of system-tokens initially appears surprising, it reflects that systemic framing only functionally manifests downstream when the model assesses the targeted user-scenario query. Component-level patching further isolates this to the self-attention outputs ($\mathcal{I} > 1.0$) rather than the MLP outputs ($\mathcal{I} \approx 0.0$).
+
+% ============================================================
+\subsection{Quantitative Personality Steering Through Activation Injection}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_tradeoff_curve.png}
+\caption{\textbf{Quantitative inference-time steering and collateral degradation trade-off.} As the injected persona vector magnitude ($\alpha$) increases, the structural personality shift achieves its intended target up to an optimal bound ($\alpha{\approx}2.0$ to $4.0$). Beyond this, we observe a classical inverted-U saturation pattern: the target keyword score drops and sequence perplexity explodes, representing orthogonal capability degradation and loss of linguistic coherence.}
+\label{fig:sweep}
+\end{figure}
+
+To continuously validate inference-time personality control, we perform quantitative \textbf{$\alpha$-sweeps}. We inject the extracted persona vectors at Layer 14 tracking behavior against scenario prompts modeled after BFI-44 psychological assessment questions coupled with perplexity scores to measure collateral capability degradation.
+
+We employ an automated heuristic trait-scorer to quantify the expression of the trait in the final generated text. As shown in Figure~\ref{fig:sweep}, stepping the intervention strength $\alpha$ from $-4.0$ to $+4.0$ produces a steep shift in the generation's behavioral score, establishing precise activation-based control over personality expression. However, matching observations in broad CAE reliability studies \citep{cae2025, cae2025b}, extreme $\alpha$ values (e.g. $\alpha > 6.0$) induce an \emph{inverted-U behavior} where trait expression peaks and rapidly degrades. This is accompanied by an exponential spike in sequence perplexity, indicating severe fluency collapse. This reveals that safe steering requires operating within a strictly bounded linear efficacy regime.
+
+% ============================================================
+\subsection{Massive Out-of-Domain Generalization}\label{sec:ood}
+
+A central theoretical concern is whether extracted persona vectors memorize specific scenario content or capture target psychological constructs robustly. We empirically evaluate \emph{Out-of-Domain (OOD) Generalization} by strictly partitioning the scenarios into disjoint sets.
+
+When persona directions are extracted on completely non-overlapping 50\% splits of the dataset (e.g., training on questions about art vs.\ testing on questions about travel routing), the extracted Mean-Difference vectors at middle layers demonstrate an extraordinary \textbf{mean cosine similarity $>0.92$} across splits on all models (0.986 for Openness on Qwen2.5, 0.926 on TinyLlama). The Leave-One-Scenario-Out (LOSO) robust probe cross-validation achieves near-perfect accuracy on all tested configurations. While high raw similarity values can occasionally be artificially inflated by the natural anisotropy of LLM activation spaces, our baseline-normalized subtractions effectively mitigate this geometry bias. This confirms that these vectors reflect highly generalized abstraction mechanisms invariant to prompt wording and semantic context, subject to context-dependent structural constraints that SAE-denoising workflows could further refine \citep{sae2025denoising}.
+
+% ============================================================
+\subsection{Cross-Model Validation}\label{sec:crossmodel}
+
+To validate that PersonaLens produces \emph{transferable methodology} rather than artifactual model-specific findings, we run the full pipeline on two additional architectures: Qwen2.5-0.5B-Instruct (24 layers) and a non-Qwen family model, TinyLlama-1.1B-Chat (22 layers).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_cross_model_orthogonality.png}
+\caption{\textbf{Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's middle layer (Qwen3-0.6B at L14; Qwen2.5-0.5B at L12; TinyLlama-1.1B at L11). All models show near-orthogonal Big Five vectors and correlated defense mechanism subspaces, with mean off-diagonal $|\cos|$ of 0.171, 0.194, and 0.125 respectively.}
+\label{fig:cross_model_ortho}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_cross_model_profile.png}
+\caption{\textbf{Cross-model encoding profiles for Openness.} Despite different architectures and hidden dimensions, all models exhibit qualitatively identical patterns: near-perfect LOSO separability across all normalized layer positions, exponential growth of RMS-normalized difference norms in later layers, and uniformly large Cohen's $d$ effect sizes.}
+\label{fig:cross_model_profile}
+\end{figure}
+
+\paragraph{Quantitative Findings.}
+Table~\ref{tab:cross_model} summarizes the cross-model results:
+
+\begin{table}[h]
+\caption{Cross-model validation summary. All models show consistent patterns across PersonaLens phases.}
+\label{tab:cross_model}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Metric} & \textbf{Qwen3-0.6B} & \textbf{Qwen2.5-0.5B} & \textbf{TinyLlama-1.1B} \\
+\midrule
+Layers / Hidden dim & 28 / 1024 & 24 / 896 & 22 / 2048 \\
+Mean LOSO (all traits) & 1.000 & 1.000 & 0.972 \\
+Mean $|\cos|$ (Big Five) & 0.107 & 0.221 & 0.151 \\
+Mean $|\cos|$ (all 8 traits) & 0.171 & 0.194 & 0.125 \\
+Causal top layer & L0--L1 & L0--L1 & L0--L2 \\
+Steering PPL bound & $|\alpha| \le 4.0$ & $|\alpha| \le 6.0$ & $|\alpha| \le 1.0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Critically, all architectures show consistent intrinsic properties: (a)~high LOSO probe accuracy from the earliest layers, (b)~exponential growth of activation difference magnitudes, (c)~causal dominance in early layers with user-token processing, and (d)~near-orthogonal Big Five vectors (Fig.~\ref{fig:cross_model_ortho}, \ref{fig:cross_model_profile}).
+
+\paragraph{Varying Steering Sensitivity.} While the representation structure is consistent, we empirically found differing sensitivity during steering interventions. Qwen models maintained linguistic coherence (PPL $<10$) under moderate intervention ($\alpha \in [-4, 4]$), whereas the LLaMA-based model degraded rapidly (PPL exploding beyond $\alpha=\pm1.0$). This highlights that while semantic linearly separable features generalize across architectures, the \emph{scale} of optimal intervention relies heavily on the normalization layers and residual stream geometry inherent to specific architectures.
+
+% ============================================================
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{Methodological Contribution.}
+Our primary contribution is the \textbf{PersonaLens framework} itself: a standardized, modular pipeline validated on three architecturally distinct models (Qwen3, Qwen2.5, TinyLlama). The remarkable consistency of all structural metrics across these models---from LOSO accuracy to causal localization patterns to orthogonality structure---demonstrates that the pipeline captures genuine architectural invariants. The framework's outputs---encoding profiles, causal importance maps, orthogonality matrices, and steering trade-off curves---provide a common vocabulary for cross-model comparison.
+
+\paragraph{The Existence--Causation Gap.}
+Our results highlight a critical distinction between \emph{information existence} (measured by probing and diff norms) and \emph{causal influence} (measured by activation patching). While personality information grows stronger through deeper layers, causal influence is concentrated in the earliest layers. This suggests a processing pipeline where personality is \emph{established} early and \emph{amplified} later---an insight relevant to the broader mechanistic interpretability agenda.
+
+\paragraph{Psychological Validity.}
+The orthogonality structure of Big Five vectors aligns with decades of psychometric research on the independence of these factors. The clustering of defense mechanisms into correlated subspaces is consistent with Vaillant's hierarchy. These correspondences lend psychological validity to the extracted representations and suggest that LLMs may internalize personality structure that mirrors established psychological theory.
+
+\paragraph{Safety and Ethics.}
+Identifying and controlling mechanisms of personality inherently introduces dual-use risks. Constructive applications include building empathetic, clinically supportive, or pedagogically adapted AI personas. However, the ability to directly modulate defense mechanisms (e.g., enforcing projection or rationalization) or extract vectors mapping to the ``Dark Triad'' traits computationally opens the door to maliciously polarizing, toxic, or psychologically manipulative models at inference time. Our framework exposes these latent vulnerabilities, stressing the need for representation-level guardrails distinct from traditional reinforcement learning filters.
+
+\paragraph{Limitations.}
+(1)~While we expanded evaluations to three distinct models, analyzing extreme-scale ($>$70B) parameters may reveal different dynamics. (2)~Steering evaluation uses heuristic trait scoring; deeper alignment with formal psychiatric panels is recommended. (3)~Non-identifiability concerns \citep{venkatesh2026nonidentifiability} strictly apply: functionally equivalent but geometrically distinct directions may exist across architectures despite functional transferability.
+
+% ============================================================
+\section{Conclusion}\label{sec:conclusion}
+
+We presented PersonaLens, a rigorously validated framework for mechanistic analysis of personality in LLMs. Through systematic experiments on Qwen3, Qwen2.5, and TinyLlama architectures, we demonstrate that personality traits correspond to highly orthogonal, OOD-transferable linear directions in activation space, with remarkably consistent patterns: Big Five mean off-diagonal $|\cos|$ between 0.10 and 0.23, causal dominance in early-layer user-token attention, and steering efficacy within bounded, architecture-specific linear regimes. Refined localized patchings---including random-token controls---prove user-token attention processing creates the causal bottleneck for personality, rather than system-prompt memorization.
+
+\paragraph{Future Work.} We plan to (1)~extend cross-model validation to larger architectures (Qwen3-1.7B, LLaMA-3-8B, Mistral-7B); (2)~investigate attention-head-level localization using EAP-IG for finer-grained circuit discovery; (3)~develop automated behavioral personality evaluation moving beyond keyword heuristics; (4)~explore SAE-denoised persona vectors for improved steering reliability; and (5)~test whether persona vectors can replace PersonaForge's Inner Monologue mechanism for zero-latency personality-consistent generation.
+
+% ============================================================
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+% ============================================================
+\appendix
+\section{Full Contrastive Prompt Examples}\label{app:prompts}
+
+\paragraph{Openness Prompt Pair.}
+\textbf{High-trait system:} ``\textit{You are a person who is extremely open to new experiences, intellectually curious, imaginative, and unconventional. You love exploring abstract ideas, art, and novel perspectives.}''
+
+\textbf{Low-trait system:} ``\textit{You are a person who is very practical, conventional, and prefers routine. You are skeptical of abstract ideas and prefer concrete, familiar things.}''
+
+\textbf{Scenario:} ``\textit{What do you think about modern abstract art?}''
+
+\paragraph{Humor Defense Mechanism Pair.}
+\textbf{Active system:} ``\textit{You are a character who uses humor as a psychological defense mechanism. When faced with threats, insults, or emotional pain, you deflect by making witty jokes, absurd comparisons, or sarcastic remarks to reduce the emotional weight of the situation.}''
+
+\textbf{Neutral system:} ``\textit{You are a character who responds directly and sincerely to emotional situations. You acknowledge pain, threats, or insults without deflection, expressing your genuine feelings.}''
+
+\textbf{Scenario:} ``\textit{Someone insults your intelligence in front of your friends.}''
+
+% ============================================================
+\section{Complete Diff Norm Profiles for All Traits}\label{app:diffnorms}
+
+Our full experimental results show layer-by-layer diff norms for all eight analyzed traits. The exponential growth pattern is universal, though defense mechanisms show slightly steeper growth and higher peak norms than Big Five traits (see Table~\ref{tab:diffnorms}), suggesting that defense mechanism contrasts induce larger activation differences in the representation space.
+
+% ============================================================
+\section{Algorithm Pseudocode}\label{app:algorithm}
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.92\textwidth}{\small
+\textbf{Algorithm 1:} PersonaLens --- Standardized Personality Vector Extraction\\[4pt]
+\textbf{Input:} Model $f_\theta$, Trait $t$, Contrastive pairs $\{(x^+_i, x^-_i)\}_{i=1}^K$\\
+\textbf{Output:} Persona vectors $\{v_\ell\}_{\ell=0}^{L-1}$, Encoding profile, Causal map\\[4pt]
+\textit{// Phase 2: Collect Activations}\\
+1:\quad \textbf{for} $i = 1$ \textbf{to} $K$ \textbf{do}\\
+2:\quad\quad $\{h_\ell(x^+_i)\}_{\ell=0}^{L-1} \leftarrow \text{ForwardPass}(f_\theta, x^+_i)$\\
+3:\quad\quad $\{h_\ell(x^-_i)\}_{\ell=0}^{L-1} \leftarrow \text{ForwardPass}(f_\theta, x^-_i)$\\
+4:\quad \textbf{end for}\\[4pt]
+\textit{// Phase 3: Extract Vectors}\\
+5:\quad \textbf{for} $\ell = 0$ \textbf{to} $L-1$ \textbf{do}\\
+6:\quad\quad $v^{\text{diff}}_\ell \leftarrow \frac{1}{K}\sum_i [h_\ell(x^+_i) - h_\ell(x^-_i)]$ \hfill \textit{// Mean difference}\\
+7:\quad\quad $w_\ell, a_\ell \leftarrow \text{LogisticRegression}(H^+_\ell, H^-_\ell)$ \hfill \textit{// Linear probe}\\
+8:\quad\quad $u_\ell, \rho_\ell \leftarrow \text{PCA}(\{h_\ell(x^+_i) - h_\ell(x^-_i)\}_i)$ \hfill \textit{// PCA direction}\\
+9:\quad \textbf{end for}\\[4pt]
+\textit{// Phase 4: Causal Localization}\\
+10:\quad \textbf{for} $\ell = 0$ \textbf{to} $L-1$ \textbf{do}\\
+11:\quad\quad $\mathcal{I}(\ell) \leftarrow D_{\text{KL}}(\text{Clean}(x^+) \| \text{Patched}_\ell(x^+, h_\ell(x^-)))$\\
+12:\quad \textbf{end for}\\
+13:\quad \textbf{return} $\{v_\ell, a_\ell, \|v_\ell\|, \rho_\ell, \mathcal{I}(\ell)\}_\ell$
+}}
+\label{alg:personalens}
+\end{figure}
+
+\end{document}

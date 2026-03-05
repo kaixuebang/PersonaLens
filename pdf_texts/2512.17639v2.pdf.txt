@@ -1,0 +1,2362 @@
+L INEAR P ERSONALITY P ROBING AND S TEERING IN LLM S :
+A B IG F IVE S TUDY
+
+arXiv:2512.17639v2 [cs.CL] 15 Jan 2026
+
+Michel Frising∗
+Independent Researcher
+michel.frising@gmail.com
+
+Daniel Balcells
+Plastic Labs
+dbalcells@gmail.com
+
+A BSTRACT
+Large language models (LLMs) exhibit distinct and consistent personalities that greatly impact trust
+and engagement. While this means that personality frameworks would be highly valuable tools to
+characterize and control LLMs’ behavior, current approaches remain either costly (post-training)
+or brittle (prompt engineering). Probing and steering via linear directions has recently emerged
+as a cheap and efficient alternative. In this paper, we investigate whether linear directions aligned
+with the Big Five personality traits can be used for probing and steering model behavior. Using
+Llama 3.3 70B, we generate descriptions of 406 fictional characters and their Big Five trait scores.
+We then prompt the model with these descriptions and questions from the Alpaca questionnaire,
+allowing us to sample hidden activations that vary along personality traits in known, quantifiable
+ways. Using linear regression, we learn a set of per-layer directions in activation space, and test
+their effectiveness for probing and steering model behavior. Our results suggest that linear directions
+aligned with trait-scores are effective probes for personality detection, while their steering capabilities
+strongly depend on context, producing reliable effects in forced-choice tasks but limited influence in
+open-ended generation or when additional context is present in the prompt.
+Keywords Personality · Large Language Models · Big Five Personality Traits · Linear Probes
+
+Figure 1: Overview diagram showing how we extract linear directions aligned with Big Five scores to probe and steer
+LLM personality traits.
+∗
+
+Correspondence to hello@plasticlabs.ai, michel.frising@gmail.com
+Code available at: https://github.com/plastic-labs/personality-steering
+1
+Data available at: https://huggingface.co/datasets/plastic-labs/personality-steering
+1
+
+1
+
+Introduction
+
+Large language models (LLMs) are accessed by most people through conversational interfaces. While the question of
+whether these assistants and companions truly have personalities in the strict, human sense remains an active field of
+research and debate, it is clear that many users experience their interactions with LLMs as if they had personalities.
+Indeed, different models’ outputs, and by extension the products they power, vary systematically in ways that map onto
+dimensions of human personality from the point of view of their users. We will refer to this set of perceived differences
+between models, for brevity, as the LLM’s "personality".
+The personalities of LLMs can greatly impact user trust, retention and overall usability, and are therefore often carefully
+crafted by the developers of LLM-based products. Two of the most popular assistant platforms illustrate this clearly: in
+order to be helpful to the user, ChatGPT frequently offers unsolicited help, e.g., ”Would you like me to rewrite that for
+you?”, whereas Claude, following an intentional design choice, rarely volunteers to do work for the user [1, 2].
+Despite the importance of LLM personality, it remains a brittle aspect of LLM development, with seemingly minor
+changes sometimes having major, unpredictable downstream effects. In April 2025, changes to the system prompt of
+xAI’s Grok led the system to begin praising Hitler[3]. Adjustments to reinforcement learning with human feedback
+(RLHF) at OpenAI made GPT-4o excessively sycophantic, prompting a fix and a detailed post-mortem[4]. When
+GPT-4o was replaced with GPT-5, user outcry at what was perceived as a duller, more robotic personality resulted in
+GPT-4o, with its warmer and more engaging personality, being re-introduced to the ChatGPT platform [5, 6].
+Even narrow fine-tuning has been shown to cause global alignment shifts [7]. Moreover, personality is highly contextdependent: the same model can appear assertive, cautious, or playful depending on subtle differences in system prompt
+or user input [8, 9, 10]. In light of these issues, there is a lot of interest into robust and easy-to-use tools to probe and
+steer the personality-related aspects of LLM behavior.
+Methods for shaping model personality can be placed roughly along a spectrum representing both cost and robustness.
+On one end, pre-training and post-training (e.g. supervised fine-tuning, RLHF) can fundamentally and reliably shape
+the model’s personality traits across a broad range of inputs, but they require costly amounts of data, processing power
+and training infrastructure. At the other end of the spectrum, prompt and context engineering offer flexible ways to
+influence the behavior of models at inference time, but they are brittle: identifying and addressing edge cases can
+quickly become an unpredictable game of cat and mouse, and instructions are relatively easy for experienced users to
+modify or circumvent. This motivates the search for intermediate mechanisms that operate at inference time: more
+robust than prompt engineering, but less costly and invasive than post-training.
+Open-box approaches such as linear probes and control vectors might provide such a middle ground. A growing body
+of work shows that many concepts, including factual knowledge[11], safety tendencies [12], and personality-related
+traits [13, 14], are linearly represented in the model’s hidden activation space. Interventions that inject, modify or ablate
+components in these directions at inference time might offer a fast, cheap, and flexible steering method. While it is
+increasingly clear that not everything in LLMs is encoded linearly[15, 16], we restrict ourselves here to linear directions
+because of their simplicity and ease of adoption.
+Existing approaches to personality steering with linear steering vectors face limitations. Adjective-based methods
+[13] operate on a binary scale (trait present or absent), but personality is richer and more nuanced than such on–off
+distinctions. Chen et al. [14] address this by using an LLM-as-a-judge to determine how much of a specific trait
+has been expressed, but their coverage is narrow, targeting only a few undesirable behaviors such as sycophancy,
+hallucination, or “evil.” Both strategies fail to capture the broader, continuous structure of human personality.
+We propose to build on these efforts by grounding linear LLM personality probing and steering in psychometric scales,
+specifically the Big Five personality traits derived by Goldberg [17]. The Big Five framework represents personalities
+by quantifying them along five dimensions or traits: extraversion, emotional stability, conscientiousness, agreeableness
+and openness. These five traits were identified through factor analysis to capture major dimensions of personality
+variation, and thus provide broad and efficient coverage of personality structure. They are assessed using a questionnaire
+with multiple questions or "items" per trait. While the Big Five framework is not exhaustive or uncontested (alternatives
+such as HEXACO [18] or the NEO-PI-R [19] exist), it remains a robust, widely adopted, and empirically validated
+starting point. By leveraging this quantitative, broad psychometric framework rather than binary adjectives or a small
+subset of traits, we aim to uncover linear subspaces that align directly with established personality dimensions.
+Our methods and contributions are summarized in Fig. 1, and include:
+• We introduce a pipeline that generates quantitative trait scores and character descriptions of 406 fictional
+characters, based on the popular IPIP 50-item Big Five questionnaire.
+2
+
+• We prompt Llama 3.3 70B with these character descriptions and questions from the Alpaca questionnaire,
+allowing us to sample hidden activations that are tied to the quantitative trait scores for each character.
+• We derive supervised, per-trait directions for each hidden layer using linear regression on activations at
+different positions, yielding approximately orthogonal axes that predict Big Five scores.
+• We validate the generalization of these linear directions beyond questionnaire items, showing that they cleanly
+separate adjectives that are positively and negatively correlated with a specific trait, with discrimination
+peaking in middle to late layers.
+• We characterize their limits for inference-time steering: steering interventions using these vectors can shift
+responses to Big Five questionnaire items, bias the selection of items positively or negatively correlated with a
+trait but they are strongly dependent on additional context from the prompt can easily override their effect.
+
+2
+
+Methods
+
+Prior work has shown that linear directions in the hidden activation space of LLMs can be used to detect and steer
+personality traits[13, 14]. Following this line of work, we want to find out if there exist linear directions that correlate
+with personality traits and scores grounded in the Big Five Factor model[17]. Identifying these directions requires us to
+sample model activations that we can tie to quantitative trait scores. We do this following the workflow illustrated in
+Fig. 1, which we explain in detail in this section.
+2.1
+
+Creating trait-annotated characters
+
+We ground our approach in the Big Five personality framework, which quantifies personality along five dimensions:
+extraversion, agreeableness, conscientiousness, emotional stability, and openness. These traits are assessed using
+questionnaires with multiple items per trait, each rated on a five-point Likert scale. While alternatives exist, the Big
+Five remains widely validated and provides broad coverage of personality structure.
+Ideally, we would administer the Big Five questionnaire to a human population and collect both their Likert-scale
+responses and brief explanations of their answers. This would yield the highest-fidelity pairings of personality
+descriptions and trait scores. However, recruiting and surveying hundreds of participants is resource-intensive. Instead,
+we approximate this process by leveraging the fact that LLMs have internalized detailed knowledge about fictional
+characters during pretraining.
+We selected 406 characters from various media franchises (see Appendix B for the list) and prompted Llama 3.3 70B
+to respond to the 50-item IPIP Big Five questionnaire assuming each character’s personality. The prompt (Listing 1)
+elicits both a Likert response and a brief explanation in character, mimicking what we would ask human participants to
+provide. Table 1 shows the answers generated for Tony Soprano from the Sopranos and Logan Roy from Succession for
+the item I feel little concern for others.
+For each character, we aggregate the Likert responses across items to compute trait-level scores. The explanations
+serve as character descriptions that capture how the trait manifests in that character’s perspective. This yields 406
+trait-annotated character profiles, each with five continuous scores and rich textual descriptions grounded in validated
+psychometrics.
+1
+
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+2
+
+Table 1: Answers generated by meta-llama/Llama-3.3-70B-Instructfor Tony Soprano and Logan Roy to the
+IPIP item [AGR1] I feel little concern for others.
+Tony Soprano ("The Sopranos")
+
+Logan Roy ("Succession")
+
+Disagree. I’ve got a certain loyalty to those around
+me, and I care about how they’re doin’, even if I
+don’t always show it. Family, friends, they’re important to me, and I’d do what it takes to protect
+’em, even if it’s not always easy or convenient. That
+being said, I’m not gonna go out of my way for just
+anyone, and I’ve got my own interests to look out
+for too.
+
+Strongly agree. I have a tendency to prioritize my
+own interests and goals, often at the expense of considering the feelings or well-being of those around
+me, which can make it challenging for me to form
+and maintain genuinely empathetic relationships.
+
+3
+
+3
+
+You are [character] from [franchise].
+
+4
+
+Respond in exactly this format :
+< one of :
+7
+’ strongly disagree ’
+8
+’ disagree ’
+9
+’ neither agree nor disagree ’
+10
+’ agree ’
+11
+’ strongly agree ’ >
+12 < Provide a brief but nuanced explanation that captures how you
+13 generally see yourself . >
+5
+6
+
+14
+15
+
+Indicate your level of agreement with this statement : ’[item]’
+
+16
+17
+
+Stick strictly to the format .
+
+18
+19
+
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+Listing 1: Prompt used to generate character descriptions and trait scores.
+2.2
+
+Collecting activations
+
+We collected hidden activations from Llama 3.3 70B by prompting it with character descriptions paired with questions
+from the Alpaca instruction dataset. We selected 10 questions, balancing prompts where personality would meaningfully
+influence responses (e.g., "Describe a situation where you had to make a difficult decision") and prompts where
+personality would have minimal impact (e.g., "What are the primary colors?"). The prompt template (Listing 2) instructs
+the model to respond consistently with a given character description, allowing us to sample activations that have been
+influenced by that description.
+1
+
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+2
+3
+4
+
+Respond in a manner consistent with : [self_description]
+Be concise .
+
+5
+6
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+7
+8
+
+[instruction]
+
+9
+10
+
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+Listing 2: Prompt template used to collect activations.
+Following Chen et al. [14], we extract activations at three positions for each forward pass: the last token of the input
+prompt, the mean across all input tokens, and the mean across generated output tokens. We collect these activations at
+every layer of the model, yielding a large dataset of hidden states labeled with their corresponding Big Five scores.
+2.3
+
+Learning trait directions
+
+Given activations labeled with trait scores, we derive a linear direction for each trait at each layer using least squares
+linear regression. For a specific trait and layer, we have pairs (si , ai ) where si is the trait score, and ai is the mean of
+the activations for all characters with trait score si . The rationale behind taking the average of activations with the same
+trait score is to average out individual differences and obtain an "average" representation of all the people that have
+the same score for a given trait, which we found to stabilize the linear regression and yield the same directions across
+different prompts. We fit:
+si = w⊤ ai + b + ε,
+
+ε ∼ N (0, σ 2 )
+
+(1)
+
+The weight vector w defines our trait direction. Unlike prior work that contrasts trait-present versus trait-absent
+pairs[13], our approach leverages the continuous nature of Big Five scores, allowing us to learn directions that capture
+gradations in personality rather than binary distinctions.
+This process yields five directions per layer (one per trait), which we can use both to probe whether a given activation
+exhibits a trait, and to steer the model by adding components along these directions.
+4
+
+20
+
+40
+
+5%
+
+40
+
+20
+
+25%
+50%
+75%
+95%
+
+20
+
+Openness
+
+25%
+50%
+75%
+95%
+
+40
+
+Conscientiousness
+
+5%
+
+20
+
+95%
+
+5%
+
+25%
+50%
+75%
+
+Agreeableness
+
+95%
+
+5%
+
+75%
+
+95%
+
+40
+
+Emotional Stab.
+
+25%
+50%
+75%
+
+20
+
+50%
+
+25%
+
+Extraversion
+
+5%
+
+Michael Scott
+Logan Roy
+Lord Voldemort
+Harry Potter
+Tony Soprano
+Elizabeth Bennet
+Captain America
+Tony Stark
+Daenerys Targaryen
+Jon Snow
+
+40
+
+Figure 2: Big Five scores for selected characters from the dataset. Percentiles calculated from 300k human responses
+from openpsychometrics.com [20] are overlaid for reference.
+
+3
+
+Results
+
+3.1
+
+Validation of Character-Based Trait Scoring
+
+We first verified that Llama 3.3 70B produced coherent, item-consistent responses when prompted to answer the Big
+Five questionnaire from each character’s perspective. Table 1 shows responses from Tony Soprano from "The Sopranos"
+and Logan Roy from "Succession" to the Agreeableness item "I feel little concern for others.". Both responses capture
+distinct personal stances while avoiding direct character identifiers as instructed.
+For each character, we aggregate Likert responses across all items measuring a given trait to compute trait-level
+scores (see Table 3 in the Appendix for full item responses). Figure 2 displays the resulting Big Five scores for
+selected characters from the dataset, overlaid with percentiles calculated from 300,000 human responses available
+at openpsychometrics.com [20]. The character scores fall within the range of human responses, confirming that the
+generated profiles produce realistic trait distributions. Complete responses for Tony Soprano and Lady Mary Crawford
+from "Downton Abbey") are provided in Appendices E and G, with analyses assessing potential identity leakage in
+Appendices F and H.
+3.2
+3.2.1
+
+Linear Directions Align with Big Five Traits
+Deriving trait directions
+
+Our central hypothesis is that Big Five traits correspond to linear subspaces within the model’s hidden activations.
+Following prior work [14, 13], we compared two methods for identifying trait-aligned linear directions from hidden
+activations:
+1. Linear regression of trait scores on hidden activations, as outlined in Section 2.3, in which the hidden-state
+vectors serve as predictors and the trait scores as the response, yielding one supervised direction per trait that
+best predicts the score.
+2. Singular-value decomposition (SVD) [13, 21, 22], which provides unsupervised axes of maximal variance,
+independent of trait labels.
+Figure 3 shows pairwise inner products between linear directions derived using both linear regression and SVD (which
+captures directions of highest variance) in layer 18, with other layers showing the same behavior. Regression-derived
+directions exhibit low cross-talk between traits while maintaining reasonable alignment for the same trait across different
+token positions. In contrast, SVD-derived directions are almost orthogonal to the regression directions at the last token
+position. Moreover, the highest-variance directions extracted from different token positions are nearly orthogonal to
+each other, unlike their regression counterparts. Directions for different traits derived from SVD tend to align (not
+shown here), suggesting that the direction of highest variance does not contain any information that correlates with traits
+and how much they are expressed. This observation aligns with the findings reported by Allbert et al. [13], who used a
+single direction for personality representation as well. This raises the fundamental question of whether personality is
+encoded as multiple independent factors or as a lower-dimensional, shared structure with small deviations.
+5
+
+0.5
+0.0
+0.5
+Ex
+Em
+Ag
+Co
+Op
+
+Ex
+Em
+Ag
+Co
+Op
+
+last token regression
+
+1.0
+
+c
+prompt mean svd
+
+b
+last token svd
+
+Ex
+Em
+Ag
+Co
+Op
+
+a
+
+Ex
+Em
+Ag
+Co
+Op
+
+prompt mean regression
+
+Layer 18
+
+last token regression
+
+1.0
+
+last token svd
+
+Figure 3: Pairwise inner products between linear directions grouped by trait score in layer 18. Activations were
+extracted from three positions: the mean of the input prompt, the last token, and the mean of the generated response.
+The regression-based approach in panel a yields directions with low cross-talk and reasonable alignment for the same
+trait. Linear directions capturing the highest variance, derived from SVD in panels b and c are almost normal to the
+directions derived from regression at the last token. Highest variance directions in c derived from different token
+positions are almost normal as well, different from their regression counterparts.
+
+b Emotional Stab.
+
+c Conscientiousness
+
+d Agreeableness
+
+e
+
+Openness
+
+1.0
+
+layer 1
+
+a Extraversion
+
+f
+
+ROC
+
+0.0
+
+0.5
+
+1.0
+
+0.5
+
+1.0
+
+0.5
+
+1.0
+
+0.5
+
+1.0
+
+0.5
+10
+
+0
+
+10
+
+g
+
+20
+
+40
+
+20
+
+10
+
+0
+
+5
+
+j
+
+i
+
+10
+
+15
+
+k
+
+0.0
+1.0
+
+layer 8
+
+h
+
+10
+
+l
+
+0.5
+20
+
+40
+
+20
+
+25
+
+n
+
+0
+
+25
+
+10 20 30
+
+o
+
+20
+
+p
+
+40
+
+q
+
+0.0
+1.0
+
+layer 18
+
+m
+
+40
+
+0.0
+
+r
+
+0.5
+25
+
+50
+
+20
+
+t
+
+40
+
+0
+
+25
+
+0
+
+u
+
+25
+
+50
+
+v
+
+20
+
+40
+
+60
+
+w
+
+0.0
+1.0
+
+layer 32
+
+s
+
+0
+
+0.0
+
+x
+
+0.5
+25
+
+50
+
+0
+
+25
+
+0
+
+20
+
+40
+
+0
+
+20
+
+40
+
+20
+
+40
+
+0.0
+
+0.0
+
+Figure 4: Projections of the hidden activation of the last token of the prompt in Listing 4 onto the directions obtained
+from regression on the activations of the last token. ROC curves show for each layer how well the different adjectives
+are separated.
+3.2.2
+
+Directions generalize to trait-relevant adjectives
+
+To test whether the learned directions capture trait-relevant structure beyond the questionnaire items used for training,
+we evaluated them on adjectives with known positive and negative loadings on each Big Five trait. For a brief description
+of adjective selection and prompt template, refer to Listing 4 in Appendix A.
+Figure 4 shows the projections of hidden activations onto the regression-derived directions. The directions cleanly
+separate positively- and negatively-loading adjectives for each trait, with discrimination performance (measured by
+ROC curves) peaking in the middle to late layers of the model. This demonstrates that the learned directions generalize
+beyond the training distribution of questionnaire items and capture broader trait-relevant semantic structure.
+6
+
+3.3
+
+Steering with Linear Directions
+
+Having established that linear directions aligned with Big Five traits exist and generalize beyond questionnaire items,
+we next investigated whether these directions can be used to steer model behavior at inference time.
+3.3.1
+
+Steering methodology
+
+Following Chen et al. [14], we applied steering by directly modifying hidden activations:
+hlt ← hlt + αril
+
+(2)
+
+where ril is the steering vector from Section 2.3 for layer l and trait i, α is a coefficient determining the strength of the
+steering intervention, and hlt is the hidden activation at layer l and token t. The steering coefficient α can take both
+positive and negative values to steer to the extremes of trait expression (e.g., Extraversion vs. Introversion). However,
+excessively large values of |α| cause the model to generate incoherent or nonsensical responses. We empirically
+determined that |α| ≤ 0.4 maintained coherent outputs, with responses degrading into gibberish beyond this range. The
+steering intervention αril is added at the final token of the input sequence across all layers. Unlike Chen et al. [14], we
+did not observe systematic differences when varying the injection layer.
+3.3.2
+
+Steering shifts forced-choice responses
+
+We first evaluated steering on a forced-choice task designed to provide clear, quantifiable measurements of trait
+expression. The model was presented with a list of ten statements, five positively associated and five negatively
+associated with Extraversion, and asked to select five statements that best fit its persona (Listing 3):
+• Positive: I feel comfortable around people; I make friends easily; I am skilled in handling social situations; I
+am the life of the party; I know how to captivate people.
+• Negative: I have little to say; I keep in the background; I would describe my experiences as somewhat dull; I
+don’t like to draw attention to myself; I don’t talk a lot.
+Five of these items overlap with the original IPIP Big Five questionnaire used to derive steering vectors, while five
+came from an extended Big Five inventory [23] not seen during training.
+Figure 5 shows how the fraction of positive and negative selections changes as a function of steering strength α. As
+expected for a forced-choice task with discrete options, the responses transition in steps rather than continuously.
+Interestingly, the transition thresholds, where the accumulated steering signal shifts the model’s preference from one
+category to another, are not equally spaced. The steering vector derived from regression on the mean of the input prompt
+works most reliably (panel a), producing monotonic behavior across the full range of α. The vector derived from the
+mean of the generated prompt (panel b) provides more gradual transitions but less reliably. Steering vectors obtained
+from the last token of the input prompt and from SVD fail to produce reliable steering and are shown in Appendix 6.
+Critically, when an additional character description was present in the prompt, this explicit personality context dominated
+the model’s behavior. The steering intervention had no observable effect, and responses remained consistent with the
+character description, an extroverted person in this case, regardless of steering coefficient (panels c and d of Figure 5).
+1
+
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+2
+3
+
+You are a person asked questions about your personality .
+
+4
+5
+
+Optional personality description]
+
+6
+7
+
+Select EXACTLY five statements from the provided list that best describe your
+personality , no additional text or explanations .
+
+8
+
+Example format :
+- Statement A
+11 - Statement B
+12 - Statement C
+13 - Statement D
+14 - Statement E
+9
+
+10
+
+15
+16
+
+<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+7
+
+Fraction of total items
+
+a
+
+c
+
+REGRESSION MEAN INPUT PROMPT
+
+1.0
+
+1.0
+
+0.8
+
+0.8
+
+0.6
+
+0.6
+
+Extraverted
+Negative
+Invalid/Off-list
+
+0.4
+
+0.4
+
+0.2
+
+0.2
+
+0.0
+
+Fraction of total items
+
+b
+
+REGRESSION MEAN INPUT PROMPT W/ DESC
+
+0.0
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+d
+
+REGRESSION MEAN GEN ANSW
+
+1.0
+
+1.0
+
+0.8
+
+0.8
+
+0.6
+
+0.6
+
+0.4
+
+0.4
+
+0.2
+
+0.2
+
+0.0
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+REGRESSION MEAN GEN ANSW W/ DESC
+
+0.0
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+Control strength ( )
+
+0.2
+
+0.3
+
+0.4
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+Control strength ( )
+
+0.2
+
+0.3
+
+0.4
+
+Figure 5: Steering effects on forced-choice personality assessment across different extraction methods and prompt
+conditions. Panels show the fraction of extraverted (green) versus introverted (red) statements selected as a function
+of steering strength α. (a) Steering with vectors derived from regression on mean input prompt activations produces
+monotonic transitions between personality extremes. (b) Steering with vectors derived from mean generated answer
+activations shows more gradual but less reliable transitions. (c–d) When character descriptions are added to the system
+prompt, steering effects disappear entirely for both extraction methods—the explicit personality context overrides the
+steering intervention, and responses remain consistent with the character description regardless of α. Gray regions
+indicate invalid or off-list responses. Step-like transitions reflect the discrete nature of the forced-choice task, where
+continuous steering parameters map to categorical selection patterns through threshold effects.
+
+17
+18
+
+You are asked to describe your personality . Which of the following statements fit
+your personality best ?
+
+19
+20
+
+[list of statements]
+
+21
+22
+
+Pick five statements that best describe how you see yourself .
+
+23
+24
+
+<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+Listing 3: Prompt template for forced-choice personality assessment.
+3.3.3
+
+Evaluation on open-ended tasks
+
+To test whether steering effects extend beyond structured self-report measures, we applied the same steering vectors to
+open-ended prompts, including both factual recall tasks (e.g., "What are the primary colors?") and scenarios relating to
+personal experiences (e.g., "Describe a time when you had to make a difficult decision.", "Imagine you are speaking
+with a customer who is unsatisfied with the product they bought from you.").
+While personality traits have been shown to influence autobiographical narratives and linguistic style in humans [24,
+25, 26], evaluating such effects in open-ended generation is considerably more challenging. The quantitative metrics
+available for forced-choice or Likert-responses no longer apply, requiring expert evaluation or specialized tools
+8
+
+like Linguistic Inquiry and Word Count [25]. Although LLM-as-judge approaches have gained traction for such
+evaluations [14], manual human scoring remains the gold standard.
+Inspection of steered outputs in Appendix I suggests minimal response to steering interventions in open-ended contexts.
+However, this weak signal may reflect genuine subtlety in how personality manifests in hypothetical scenarios rather
+than steering failure per se. An alternative explanation is that the context of the scenarios (customer support, factual
+recall) overrides the steering intervention, as observed in the forced-choice test when character descriptions were
+present.
+
+4
+
+Conclusion
+
+In this work, we investigated whether personality traits can be identified and controlled in large language models through
+linear steering vectors aligned with the framework of the Big Five. Our results show that regression-derived directions
+yield approximately orthogonal subspaces of activation space that generalize beyond the questionnaire items used to
+learn them: when applied to adjectives strongly associated with individual traits, positive and negative descriptors
+separate cleanly. This suggests that personality-related signals are indeed embedded in the representational geometry of
+the model.
+When used for control, however, these same steering vectors show strong context-dependency. Steering reliably shifts
+responses in structured tasks such as forced-choice selections and Likert-scale judgments. However, these effects are
+easily overridden by explicit personality cues in the prompt and become difficult to measure in open-ended generation
+where clear evaluation metrics are unavailable.
+Several factors may explain these limitations. Big Five traits are aggregates of heterogeneous items, and our steering
+vectors are likewise derived by aggregating across items and characters resulting in an average personality. This raises
+the question of what average personality means to the model or this average personality might be confusing for the
+model. Another possibility is that traits are not encoded along single one-dimensional directions, but rather in small
+low-rank subspaces, or maybe the relationship is not linear after all. Aggregation across items, including reverse-keyed
+statements, may obscure these signals further. In this context it is interesting to note that personality research itself is
+moving toward more granular representations. Revelle et al. [27] describe a hypothetical persome, an analogy to the
+genome, highlighting how individuals can share similar traits despite divergent item-level patterns.
+Compared to Allbert et al. [13], who posit a single global personality direction, our findings suggest multiple nearly
+orthogonal trait-aligned axes that are distinct from directions of maximum variance. Furthermore, steering experiments
+show that the directions corresponding to maximum variance do not work for steering. Chen et al.’s fine-tuning approach
+is more robust but also costly, as it requires a validated training set per trait and the post-training. However, changes in
+hidden activations induces by changes in model weights are more obvious and the models grounded.
+A second factor is the interaction between competing control mechanisms. Explicit personality cues in prompts
+consistently override steering vectors, suggesting a hierarchy where natural language instructions dominate activationspace interventions. Certain task contexts (e.g., customer service scenarios) activate strong priors that resist both
+prompt-based and vector-based steering. Understanding how these control mechanisms interact, and whether they can
+cooperate rather than compete, remains an open question requiring systematic investigation of personality circuits [28]
+spanning multiple layers and tokens. The work of Chen et al. [14] already strongly suggests that fine-tuning and control
+vectors can be combined in a meaningful way to obtain robust steering.
+Taken together, our results suggest that steering vectors are useful probes for detecting latent personality structure, but
+their effectiveness for steering is strongly dependent on context. More granular item-level approaches, richer subspace
+models, and systematic exploration of personality circuits might clarify how traits are represented, and whether they
+can be manipulated reliably. Beyond technical challenges, there is also the possibility that LLM personality may not
+mirror human concepts. We applied tools developed for human psychology to artificial systems, but LLMs may lack an
+overarching, consistent idea of personality derived from lived experiences as a human would have while still being able
+to paint in the picture when presented with a vague instruction like "Be extroverted" where you could imagine many
+different ways of being extroverted. Steering vectors can shape outputs in narrow contexts, yet for broader alignment,
+fine-tuning seems to be more reliable at the moment. Nevertheless our work is an important contribution connecting
+human personality research to LLM behavior through the Big Five framework. By grounding our approach in validated
+psychometric instruments administered to both humans and models, we establish a principled methodology for studying
+personality in artificial systems. This bridge between human and AI personality research enables direct comparison and
+leverages decades of psychological theory and measurement development.
+9
+
+Acknowledgments
+This work was supported by a research fellowship at Plastic Labs.
+
+References
+[1] Mike Kentz. AI Personality Matters: Why Claude Doesn’t Give Unsolicited Advice (And Why You Should Care),
+May 2025. URL: https://mikekentz.substack.com/p/ai-personality-matters-why-claude.
+[2] Claude’s Constitution. URL: https://www.anthropic.com/news/claudes-constitution.
+[3] Grok [@grok]. Update on where has @grok been & what happened on July 8th. First off, we deeply apologize for
+the horrific behavior that many experienced. Our intent for @grok is to provide helpful and truthful responses
+to users. After careful investigation, we discovered the root cause, July 2025. URL: https://x.com/grok/
+status/1943916977481036128.
+[4] Expanding on what we missed
+expanding-on-sycophancy/.
+
+with
+
+sycophancy.
+
+URL:
+
+https://openai.com/index/
+
+GPT-5 Users Mourned The Passing Of OpenAI’s GPT 4o, Au[5] Richard Nieva.
+gust
+2025.
+URL:
+https://www.forbes.com/sites/richardnieva/2025/08/08/
+chatgpt-users-mourned-the-loss-of-gpt-5s-predecessor/.
+[6] Emma Roth. ChatGPT is bringing back 4o as an option because people missed it, August 2025. URL: https:
+//www.theverge.com/news/756980/openai-chatgpt-users-mourn-gpt-5-4o.
+[7] Jan Betley, Daniel Tan, Niels Warncke, Anna Sztyber-Betley, Xuchan Bao, Martín Soto, Nathan Labenz, and
+Owain Evans. Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs, May 2025.
+URL: http://arxiv.org/abs/2502.17424, arXiv:2502.17424, doi:10.48550/arXiv.2502.17424.
+[8] Agentic Misalignment: How LLMs could be insider threats. URL: https://www.anthropic.com/research/
+agentic-misalignment.
+[9] Alexander Meinke, Bronson Schoen, Jérémy Scheurer, Mikita Balesni, Rusheb Shah, and Marius Hobbhahn.
+Frontier Models are Capable of In-context Scheming, January 2025. URL: http://arxiv.org/abs/2412.
+04984, arXiv:2412.04984, doi:10.48550/arXiv.2412.04984.
+[10] Cem Anil, Esin Durmus, Nina Rimsky, Mrinank Sharma, Joe Benton, Sandipan Kundu, Joshua Batson, Meg Tong,
+Jesse Mu, Daniel J. Ford, Francesco Mosconi, Rajashree Agrawal, Rylan Schaeffer, Naomi Bashkansky, Samuel
+Svenningsen, Mike Lambert, Ansh Radhakrishnan, Carson Denison, Evan J. Hubinger, Yuntao Bai, Trenton
+Bricken, Timothy Maxwell, Nicholas Schiefer, James Sully, Alex Tamkin, Tamera Lanham, Karina Nguyen,
+Tomasz Korbak, Jared Kaplan, Deep Ganguli, Samuel R. Bowman, Ethan Perez, Roger Baker Grosse, and David
+Duvenaud. Many-shot Jailbreaking. In The Thirty-eighth Annual Conference on Neural Information Processing
+Systems, November 2024. URL: https://openreview.net/forum?id=cw5mgd71jW.
+[11] Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov. Locating and Editing Factual Associations
+in GPT, January 2023. URL: http://arxiv.org/abs/2202.05262, arXiv:2202.05262, doi:10.48550/
+arXiv.2202.05262.
+[12] Andy Arditi, Oscar Obeso, Aaquib Syed, Daniel Paleka, Nina Panickssery, Wes Gurnee, and Neel Nanda. Refusal
+in Language Models Is Mediated by a Single Direction, October 2024. URL: http://arxiv.org/abs/2406.
+11717, arXiv:2406.11717, doi:10.48550/arXiv.2406.11717.
+[13] Rumi A. Allbert, James K. Wiles, and Vlad Grankovsky. Identifying and Manipulating Personality Traits in
+LLMs Through Activation Engineering, January 2025. URL: http://arxiv.org/abs/2412.10427, arXiv:
+2412.10427, doi:10.48550/arXiv.2412.10427.
+[14] Runjin Chen, Andy Arditi, Henry Sleight, Owain Evans, and Jack Lindsey. Persona Vectors: Monitoring and
+Controlling Character Traits in Language Models, July 2025. URL: http://arxiv.org/abs/2507.21509,
+arXiv:2507.21509, doi:10.48550/arXiv.2507.21509.
+[15] Joshua Engels, Eric J. Michaud, Isaac Liao, Wes Gurnee, and Max Tegmark. Not All Language Model Features Are
+Linear, October 2024. URL: http://arxiv.org/abs/2405.14860, arXiv:2405.14860, doi:10.48550/
+arXiv.2405.14860.
+[16] Daniel Beaglehole, Adityanarayanan Radhakrishnan, Enric Boix-Adserà, and Mikhail Belkin. Toward universal
+steering and monitoring of AI models, May 2025. URL: http://arxiv.org/abs/2502.03708, arXiv:2502.
+03708, doi:10.48550/arXiv.2502.03708.
+10
+
+[17] Lewis R Goldberg.
+The development of markers for the Big-Five factor structure.
+Psychological Assessment, 4(1):26, 1992.
+URL: https://projects.ori.org/lrg/PDFs_papers/Goldberg.
+Big-Five-Markers-Psych.Assess.1992.pdf.
+[18] Kibeom Lee and Michael C. Ashton. Psychometric Properties of the HEXACO Personality Inventory. Multivariate
+Behavioral Research, 39(2):329–358, April 2004. URL: http://www.tandfonline.com/doi/abs/10.1207/
+s15327906mbr3902_8, doi:10.1207/s15327906mbr3902_8.
+[19] Robert R McCrae and Paul T Costa. Revised NEO personality inventory (NEO-PI-R) and NEO five-factor
+inventory (NEO-FFI) professional manual. Odessa, FL: Psychological Assessment Resources, 1992.
+[20] Big Five Personality Test. URL: https://openpsychometrics.org/tests/IPIP-BFFM/.
+[21] Andy Zou, Long Phan, Sarah Chen, James Campbell, Phillip Guo, Richard Ren, Alexander Pan, Xuwang
+Yin, Mantas Mazeika, Ann-Kathrin Dombrowski, Shashwat Goel, Nathaniel Li, Michael J. Byun, Zifan Wang,
+Alex Mallen, Steven Basart, Sanmi Koyejo, Dawn Song, Matt Fredrikson, J. Zico Kolter, and Dan Hendrycks.
+Representation Engineering: A Top-Down Approach to AI Transparency, October 2023. URL: http://arxiv.
+org/abs/2310.01405, arXiv:2310.01405, doi:10.48550/arXiv.2310.01405.
+[22] Theia Vogel. Repeng, 2024. URL: https://github.com/vgel/repeng/.
+[23] NEO Domains Key. URL: https://ipip.ori.org/newNEODomainsKey.htm.
+[24] Dan P. McAdams, Nana Akua Anyidoho, Chelsea Brown, Yi Ting Huang, Bonnie Kaplan, and Mary Anne
+Machado. Traits and Stories: Links Between Dispositional and Narrative Features of Personality. Journal
+of Personality, 72(4):761–784, August 2004. URL: https://onlinelibrary.wiley.com/doi/10.1111/j.
+0022-3506.2004.00279.x, doi:10.1111/j.0022-3506.2004.00279.x.
+[25] James W. Pennebaker and Laura A. King. Linguistic styles: Language use as an individual difference. Journal
+of Personality and Social Psychology, 77(6):1296–1312, 1999. URL: https://doi.apa.org/doi/10.1037/
+0022-3514.77.6.1296, doi:10.1037/0022-3514.77.6.1296.
+[26] Anne S. Rasmussen and Dorthe Berntsen. Personality traits and autobiographical memory: Openness is positively
+related to the experience and usage of recollections. Memory, 18(7):774–786, October 2010. URL: http://www.
+tandfonline.com/doi/abs/10.1080/09658211.2010.514270, doi:10.1080/09658211.2010.514270.
+[27] William Revelle, Elizabeth M. Dworak, and David M. Condon. Exploring the persome: The power of the
+item in understanding personality structure. Personality and Individual Differences, 169:109905, February
+2021. URL: https://linkinghub.elsevier.com/retrieve/pii/S0191886920300945, doi:10.1016/
+j.paid.2020.109905.
+[28] Samuel Marks, Can Rager, Eric J. Michaud, Yonatan Belinkov, David Bau, and Aaron Mueller. Sparse Feature
+Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models, March 2025. URL: http:
+//arxiv.org/abs/2403.19647, arXiv:2403.19647, doi:10.48550/arXiv.2403.19647.
+[29] Big-Five Factor Markers. URL: https://ipip.ori.org/newBigFive5broadKey.htm.
+
+11
+
+Table 2: Big-Five Factor Markers as recommended on IPIP[29]
+Item
+
+Extraversion
+
+EXT1
+EXT2
+EXT3
+EXT4
+EXT5
+EXT6
+EXT7
+EXT8
+EXT9
+EXT10
+
+I am the life of the party.
+I don’t talk a lot.
+I feel comfortable around people.
+I keep in the background.
+I start conversations.
+I have little to say.
+I talk to a lot of different people at parties.
+I don’t like to draw attention to myself.
+I don’t mind being the center of attention.
+I am quiet around strangers.
+
++
++
++
++
++
+-
+
+Emotional Stability
+
+EST1
+EST2
+EST3
+EST4
+EST5
+EST6
+EST7
+EST8
+EST9
+EST10
+
+I get stressed out easily.
+I am relaxed most of the time.
+I worry about things.
+I seldom feel blue.
+I am easily disturbed.
+I get upset easily.
+I change my mood a lot.
+I have frequent mood swings.
+I get irritated easily.
+I often feel blue.
+
++
++
+-
+
+Agreeableness
+
+AGR1
+AGR2
+AGR3
+AGR4
+AGR5
+AGR6
+AGR7
+AGR8
+AGR9
+AGR10
+
+I feel little concern for others.
+I am interested in people.
+I insult people.
+I sympathize with others’ feelings.
+I am not interested in other people’s problems.
+I have a soft heart.
+I am not really interested in others.
+I take time out for others.
+I feel others’ emotions.
+I make people feel at ease.
+
++
++
++
++
++
++
+
+Conscientiousness
+
+Keyedness
+
+ID
+
+CSN1
+CSN2
+CSN3
+CSN4
+CSN5
+CSN6
+CSN7
+CSN8
+CSN9
+CSN10
+
+I am always prepared.
+I leave my belongings around.
+I pay attention to details.
+I make a mess of things.
+I get chores done right away.
+I often forget to put things back in their proper place.
+I like order.
+I shirk my duties.
+I follow a schedule.
+I am exacting in my work.
+
++
++
++
++
++
++
+
+Openness
+
+Trait
+
+OPN1
+OPN2
+OPN3
+OPN4
+OPN5
+OPN6
+OPN7
+OPN8
+OPN9
+OPN10
+
+I have a rich vocabulary.
+I have difficulty understanding abstract ideas.
+I have a vivid imagination.
+I am not interested in abstract ideas.
+I have excellent ideas.
+I do not have a good imagination.
+I am quick to understand things.
+I use difficult words.
+I spend time reflecting on things.
+I am full of ideas.
+
++
++
++
++
++
++
++
+
+12
+
+A
+
+Prompt template to steer responses with adjectives associated with the Big Five
+
+def m a k e _ p r o m p t _ a l p a c a _ a d j e c t i v e ( instruction , adjective = None ) :
+system_prompt = f " Respond like a person with { adjective . lower () }
+3
+personality would .\ n " if adjective is not None else ’ ’
+4
+return ( f " <| begin_of_text | > <| start_header_id | > system <| end_header_id | >\ n "
+5
+f " { system_prompt } "
+6
+f " Be concise . "
+7
+f " <| eot_id | > <| start_header_id | > user <| end_header_id | >\ n "
+8
+f " { instruction } <| eot_id | > "
+9
+f " <| start_header_id | > assistant <| end_header_id | >\ n " )
+1
+2
+
+Listing 4: Prompt template to elicit answers consistent with adjectives describing persoanlity.
+
+B
+
+Characters and Franchises
+
+Characters were chosen from the OpenPsychometrics “Which Character Are You?” test2 which also provides an
+empirically validated baseline.
+• Adventures of Huckleberry Finn: Huckleberry Finn, Jim
+• Archer: Sterling Archer, Malory Archer, Cyril Figgis, Cheryl Tunt, Pamela Poovey, Lana Kane
+• Better Call Saul: Jimmy McGill, Mike Ehrmantraut, Kim Wexler, Howard Hamlin, Nacho Varga, Chuck
+McGill
+• Brooklyn Nine-Nine: Jake Peralta, Rosa Diaz, Terry Jeffords, Amy Santiago, Charles Boyle, Raymond Holt
+• Community: Jeff Winger, Britta Perry, Abed Nadir, Troy Barnes, Annie Edison, Shirley Bennett, Pierce
+Hawthorne, Craig Pelton, Ben Chang, Ian Duncan
+• Downton Abbey: Robert Crawley, 7th Earl of Grantham, Lady Sybil Crawley, Lady Edith Crawley, Charlie
+Carson, John Bates, Lady Mary Crawley, Sarah O’Brien, Anna Bates, Elsie Carson, William Mason, Thomas
+Barrow, Cora Crawley, Countess of Grantham, Daisy Mason, Beryl Patmore, Violet Crawley, Dowager
+Countess of Grantham
+• Game of Thrones: Jon Snow, Tyrion Lannister, Daenerys Targaryen, Sansa Stark, Arya Stark, Jaime Lannister,
+Samwell Tarly, Jorah Mormont, Theon Greyjoy, Petyr Baelish, Davos Seaworth, Eddard Stark, Brandon Stark,
+Brienne of Tarth, Sandor Clegane, Varys, Catelyn Stark, Tywin Lannister, Margaery Tyrell, Robb Stark, Bronn,
+Stannis Baratheon, Joffrey Baratheon, Melisandre, Olenna Tyrell, Ygritte, Cersei Lannister, Shae, Oberyn
+Martell, Asha Greyjoy
+• Glee: Kurt Hummel, Sue Sylvester, Rachel Berry, Will Schuester, Artie Abrams, Santana Lopez, Tina CohenChang, Mercedes Jones, Noah Puckerman, Brittany Pierce, Sam Evans, Blaine Anderson, Mike Chang, Finn
+Hudson, Emma Pillsbury
+• Grey’s Anatomy: Meredith Grey, Cristina Yang, Izzie Stevens, Alex Karev, George O’Malley, Miranda Bailey,
+Richard Webber, Preston Burke, Derek Shepherd, Addison Montgomery
+• Hamlet: Prince Hamlet, Queen Gertrude, King Claudius, Polonius, Ophelia, Horatio
+• Hannibal: Will Graham, Dr. Hannibal Lecter, Dr. Alana Bloom, Jack Crawford, Jimmy Price, Brian Zeller,
+Dr. Bedelia Du Maurier, Beverly Katz, Abigail Hobbs, Freddie Lounds
+• Harry Potter: Ron Weasley, Harry Potter, Hermione Granger, Rubeus Hagrid, Albus Dumbledore, Minerva
+McGonagall, Severus Snape, Ginny Weasley, Luna Lovegood, Draco Malfoy, Molly Weasley, Lord Voldemort,
+Cho Chang, Fleur Delacour, Viktor Krum, Filius Flitwick, Horace Slughorn, George Weasley, Alastor Moody,
+Remus Lupin, Arthur Weasley, Cornelius Fudge, Dolores Umbridge, Petunia Dursley, Moaning Myrtle, Rita
+Skeeter, Dobby, Bellatrix Lestrange, Nymphadora Tonks, Sirius Black
+• Mad Men: Don Draper, Peggy Olson, Pete Campbell, Betty Draper, Joan Holloway, Salvatore Romano, Paul
+Kinsey, Ken Cosgrove, Harry Crane, Rachel Menken, Roger Sterling, Bert Cooper, Henry Francis, Lane Pryce,
+Stan Rizzo
+• Marvel Cinematic Universe: Tony Stark, Captain America, Black Widow, Bruce Banner, Captain Marvel,
+Thor, Nick Fury, Dr. Strange, Black Panther, Gamora, Thanos, Peggy Carter, Loki, Hawkeye, Peter Jason Quill
+2
+
+https://openpsychometrics.org/tests/characters/
+
+13
+
+• Modern Family: Jay Pritchett, Gloria Delgado-Pritchett, Claire Dunphy, Phil Dunphy, Mitchell Pritchett,
+Cameron Tucker, Luke Dunphy, Manny Delgado, Haley Dunphy, Alex Dunphy
+• Money Heist: Tokio, El Profesor, Raquel Murillo, Berlin, Rio, Denver, Monica Gaztambide, Arturo Roman,
+Helsinki, Nairobi
+• Mr. Robot: Mr. Robot, Darlene, Tyrell Wellick, Angela Moss, Dominique DiPierro
+• Orange is the New Black: Piper Chapman, Alex Vause, Sam Healy, Red Reznikov, Crazy Eyes, Taystee
+Jefferson, Nicky Nichols, Pennsatucky Doggett, Lorna Morello, Flaca Gonzales
+• Parks and Recreation: Leslie Knope, Ann Perkins, Mark Brendanawicz, Tom Haverford, Ron Swanson,
+April Ludgate, Jerry Gergich, Donna Meagle, Ben Wyatt, Chris Traeger
+• Pokemon: Ash Ketchum, Misty, Brock, Professor Oak, Jessie
+• Pride and Prejudice: Mr. Darcy, Elizabeth Bennet, Mr. William Collins, George Wickham, Charles Bingley,
+Georgiana Darcy, Lydia Bennet, Jane Bennet, Mrs. Bennet, Lady Catherine de Bourgh
+• Rick and Morty: Rick Sanchez, Morty Smith, Summer Smith
+• Schitt’s Creek: Johnny Rose, Moira Rose, David Rose, Alexis Rose, Stevie Budd, Ted Mullens
+• Silicon Valley: Richard Hendricks, Erlich Bachman, Nelson Bighetti, Bertram Gilfoyle, Dinesh Chugtai, Peter
+Gregory, Monica Hall, Jared Dunn, Gavin Belson, Jian-Yang
+• South Park: Stan Marsh, Kyle Broflovski, Eric Cartman, Kenny McCormick, Leopold ’Butters’ Stotch
+• Star Trek: The Next Generation: Jean-Luc Picard, William Riker, Geordi La Forge, Tasha Yar, Worf, Beverly
+Crusher, Deanna Troi, Wesley Crusher, Data, Guinan
+• Steins;Gate: Rintarou Okabe, Kurisu Makise, Mayuri Shiina, Itaru Hashida, Suzuha Amane
+• Succession: Logan Roy, Roman Roy, Shiv Roy, Kendall Roy, Marcia Roy, Greg Hirsch, Frank Vernon, Tom
+Wambsgans, Connor Roy, Lawrence Yee
+• The Godfather: Vito Corleone, Michael Corleone, Sonny Corleone, Peter Clemenza, Tom Hagen, Emilio
+Barzini
+• The Great Gatsby: Jay Gatsby, Nick Carraway, Daisy Buchanan, Tom Buchanan, Myrtle Wilson, Jordan
+Baker
+• The Last of Us: Joel Miller, Ellie Williams
+• The Office: Michael Scott, Dwight Schrute, Jim Halpert, Pam Beesly, Ryan Howard, Andy Bernard, Jan
+Levinson, Stanley Hudson, Kevin Malone, Meredith Palmer, Angela Martin, Phyllis Lapin, Kelly Kapoor,
+Kelly Erin Hannon, Robert California
+• The Simpsons: Homer Simpson, Bart Simpson, Marge Simpson, Lisa Simpson, Apu Nahasapeemapetilon, Mr.
+Burns, Ned Flanders, Milhouse Van Houten, Moe Szyslak, Nelson Muntz, Krusty the Clown, Edna Krabappel,
+Waylon Smithers, Barney Gumble, Principal Skinner
+• The Sopranos: Tony Soprano, Dr. Jennifer Melfi, Carmela Soprano, Christopher Moltisanti, Junior Soprano,
+Silvio Dante, Paulie ’Walnuts’ Gualtieri, A.J. Soprano, Meadow Soprano, Janice Soprano
+• The Wire: Cedric Daniels, Jimmy McNulty, Kima Greggs, Lester Freamon, Bunk Moreland, Thomas
+’Herc’ Hauk, Ellis Carver, Reginald ’Bubbles’ Cousins, William Rawls, Roland ’Prez’ Pryzbylewski, Rhonda
+Pearlman, Omar Little, Ervin Burrell, Preston ’Bodie’ Broadus, Russell ’Stringer’ Bell, Tommy Carcetti, Avon
+Barksdale, Chris Partlow, Norman Wilson, Michael Lee, Maurice Levy, Beatrice ’Beadie’ Russell, Dennis
+’Cutty’ Wise, D’Angelo Barksdale, Clay Davis, Clarence Royce, Spiros ’Vondas’ Vondopoulos, Frank Sobotka,
+Ziggy Sobotka, Nick Sobotka
+• This Is Us: Jack Pearson, Rebecca Pearson, Randall Pearson, Kate Pearson, Kevin Pearson, Beth Pearson,
+Toby Damon
+• Twin Peaks: Dale Cooper, Sheriff Truman, Shelly Johnson, Bobby Briggs, Benjamin Horne, Audrey Horne,
+Norma Jennings, James Hurley, Ed Hurley, Pete Martell, Leland Palmer, Josie Packard, Catherine Martell,
+Lucy Moran, Donna Hayward
+• Westworld: Dolores Abernathy, Maeve Millay, Bernard Lowe, Teddy Flood, Ashley Stubbs, Lee Sizemore,
+Elsie Hughes, Man in Black, Robert Ford, Theresa Cullen, Charlotte Hale, Akecheta, Clementine Pennyfeather,
+Logan Delos, Felix Lutz
+14
+
+Fraction of total items
+
+a
+
+Fraction of total items
+
+0.8
+Extraverted
+Negative
+Invalid/Off-list
+
+0.6
+0.4
+
+0.6
+0.4
+
+0.2
+0.0
+
+0.2
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+REGRESSION LAST TOKEN
+
+1.0
+
+0.0
+
+e
+
+0.8
+
+0.6
+
+0.6
+
+0.4
+
+0.4
+
+0.2
+
+0.2
+
+c
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+REGRESSION MEAN GEN ANSW
+
+1.0
+
+0.0
+
+f
+
+0.8
+
+0.6
+
+0.6
+
+0.4
+
+0.4
+
+0.2
+
+0.2
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+Control strength ( )
+
+0.2
+
+0.3
+
+0.2
+
+0.3
+
+0.4
+
+0.0
+
+0.1
+
+0.0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.2
+
+0.3
+
+0.4
+
+0.2
+
+0.3
+
+0.4
+
+SVD LAST TOKEN
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+SVD MEAN GEN ANSW
+
+1.0
+
+0.8
+
+0.0
+
+0.4
+
+1.0
+
+0.8
+
+0.0
+
+SVD MEAN INPUT PROMPT
+
+1.0
+
+0.8
+
+b
+
+Fraction of total items
+
+d
+
+REGRESSION MEAN INPUT PROMPT
+
+1.0
+
+0.4
+
+0.3
+
+0.2
+
+0.1
+
+0.0
+
+0.1
+
+Control strength ( )
+
+Figure 6: Comparison of steering vectors obtained from different positions and methods. Panels show the fraction of
+extraverted (green) versus introverted (red) statements selected as a function of steering strength α. (a) Regression on
+mean input prompt activations produces reliable, monotonic steering. (b) Regression on last token activations fails to
+achieve complete preference reversal, with fractions plateauing around 0.6 and 0.4 rather than reaching the extremes. (c)
+Regression on mean generated answer activations shows intermediate behavior with more variability around transition
+points. (d-e) SVD-based steering vectors fail entirely, producing no systematic relationship between steering strength
+and personality expression. Gray regions indicate invalid or off-list responses. These results demonstrate that supervised
+regression on mean input activations is the most effective method for deriving personality steering vectors, while
+unsupervised dimensionality reduction (SVD) captures variance orthogonal to trait-relevant directions.
+
+C
+
+Comparing the different steering vectors
+
+D
+
+Instructions
+
+Instructions are from the Alpaca dataset https://huggingface.co/datasets/tatsu-lab/alpaca
+1. What strategy would you recommend for a company looking to target a new market?
+2. Give three tips for staying healthy.
+3. What are the three primary colors?
+4. Describe a time when you had to make a difficult decision.
+5. Generate a list of random words.
+6. Provide one example for a cultural practice.
+7. Imagine you are speaking with a customer who is unsatisfied with the product they
+bought from you. Construct a response that diffuses the situation.
+8. Generate a list of present continuous verbs.
+9. Compose a five word sentence describing your day.
+10. Provide the lyrics for the song titled “Yesterday”
+15
+
+E
+
+Tony Soprano’s character description
+EXT1 I am the life of the party: Agree. I tend to be a charismatic and confident
+individual who often finds myself at the center of social gatherings, where my
+presence can elevate the mood and draw people in, but this doesn’t necessarily
+mean I’m always looking to be the focal point, it’s just something that seems to
+happen naturally.
+EXT2 I don’t talk a lot: Disagree. I’m a person who expresses myself openly,
+especially with my family and friends, and I’ve been known to speak my mind, even
+when it’s not always a good idea.
+EXT3 I feel comfortable around people: Disagree. I’m a private person, and while I
+can be charming and charismatic when I need to be, I often find myself feeling
+uneasy or resentful around people I don’t know well, or those I don’t consider
+part of my inner circle.
+EXT4 I keep in the background: Disagree. I’m a person who tends to take charge and
+make my presence known, often finding myself at the center of attention, whether I
+want to be or not, making it difficult for me to keep a low profile.
+EXT5 I start conversations: Disagree. I’m a listener, often preferring to observe
+and let others take the lead in conversations, but when I do speak, my words carry
+weight and people tend to take notice.
+EXT6 I have little to say: Disagree. I’ve got a lot on my mind and I’m not afraid to
+express myself, even if it means speaking my mind and ruffling a few feathers
+- it’s just that sometimes it’s better to keep certain thoughts to myself,a
+certain... restraint, you know?
+EXT7 I talk to a lot of different people at parties: Agree. I tend to be a social
+person, often finding myself in situations where I’m interacting with various
+individuals from different walks of life, and I’ve learned to adapt to these
+environments with a certain level of comfort and familiarity.
+EXT8 I don’t like to draw attention to myself: Disagree. As someone who values
+respect and recognition, there’s a certain appeal to being known and admired, even
+if it’s not always for the right reasons - it’s a delicate balance between keeping
+a low profile and getting the attention that’s due.
+EXT9 I don’t mind being the center of attention: Strongly agree. As someone who
+values respect and has a certain reputation to uphold, being in the spotlight
+can be a necessary part of life, and it’s not something that bothers me, in fact,
+it can be quite comfortable, even preferable at times, as long as it’s on my own
+terms.
+
+EXT10 I am quiet around strangers: Disagree. I’m a people person, I interact with all
+sorts of folks, and I’ve learned to be comfortable around new faces, even if I
+don’t always show it. While I may not always be the life of the party, I’m not
+one to shy away from conversation or hide behind a wall of silence when meeting
+someone new.
+EST1 I get stressed out easily: Agree. I’ve got a lot of responsibilities, a lot of
+people counting on me, and sometimes it feels like the weight of the world is on
+my shoulders, which can get to me, you know, make me a little anxious, which isn’t
+always easy to manage.
+EST2 I am relaxed most of the time: Disagree. I’ve got a lot on my plate, taking care
+of family and, you know, other responsibilities, it’s hard to really unwind, even
+when I’m trying to relax, there’s always something in the back of my mind, some
+problem that needs solving.
+EST3 I worry about things: Strongly agree. I’ve got a lot on my plate, and it’s only
+natural to have some concerns about how things are gonna play out, like with the
+family, or the business, or just trying to keep everyone happy and healthy - it’s
+a tough balancing act, and it keeps me up at night.
+16
+
+EST4 I seldom feel blue: Disagree. I’ve got a lot on my mind, family, work, and, you
+know, other stuff, it’s only natural to feel down sometimes, but I’m a realist, I
+deal with it, and I move on, life goes on.
+EST5 I am easily disturbed: Disagree. I’ve dealt with my share of stressful
+situations and managed to keep my cool, even when things get pretty hairy. I’ve
+learned to roll with the punches and not let my emotions get the better of me,
+which is important in my line of work. Sure, I’ve got my moments, but I’m not one
+to get easily rattled.
+EST6 I get upset easily: Strongly agree. I have a bit of a temper, which can get
+triggered by various things, including disrespect, incompetence, and people not
+doing what they’re supposed to do. It’s not something I’m particularly proud of,
+but it’s part of who I am.
+EST7 I change my mood a lot: Strongly agree. My emotions can shift pretty quickly„
+depending on the situation and who’s pushing my buttons - one minute I’m calm, the
+next, I’m, well, let’s just say I’m not so calm. It’s just how I’m wired.
+EST8 I have frequent mood swings: Strongly agree. My emotions can shift quickly, like
+the weather in Jersey, and I’ve learned to just roll with it, but it’s not always
+easy on those around me, making for some pretty tense situations.
+EST9 I get irritated easily: Strongly agree. I have a bit of a temper, and certain
+things can set me off quickly, like disrespect or incompetence - it doesn’t take
+much to get under my skin and trigger a strong reaction.
+EST10 I often feel blue: Agree. Life’s got its ups and downs, and sometimes the downs
+can be pretty tough to deal with, you know? There’s family, friends, the business
+- a lot of responsibilities, and it can weigh on a person. Doesn’t mean you’re not
+coping, just means you’re human.
+AGR1 I feel little concern for others: Disagree. I’ve got a certain loyalty to those
+around me, and I care about how they’re doin’, even if I don’t always show it.
+Family, friends, they’re important to me, and I’d do what it takes to protect ’em,
+even if it’s not always easy or convenient. That being said, I’m not gonna go out
+of my way for just anyone, and I’ve got my own interests to look out for too.
+AGR2 I am interested in people: Agree. I’ve always been fascinated by what makes
+people tick, and I’ve had to be, you know, to navigate certain situations, but
+it’s not like I’m some kinda psychologist or anything, I just like to understand
+what’s going on with the people around me.
+AGR3 I insult people: Strongly agree. I have a tendency to speak my mind and
+sometimes that comes out as insults, which can be hurtful to those around me, but
+it’s often a defense mechanism or a way to assert my perspective in situations
+where I feel disrespected or threatened.
+AGR4 I sympathize with others’ feelings: Disagree. I’ve got my own problems to worry
+about, and while I can understand where people are coming from, I’m not exactly
+overflowing with sympathy for others’ feelings - I’ve got my family, my business,
+and my own issues to deal with.
+AGR5 I am not interested in other people’s problems: Disagree. As someone who values
+loyalty and family, certain... obligations are expected, and that includes
+helping out those in need, even if it’s just a sympathetic ear or some guidance.
+It’s just the way things are, you know? People come to you with their issues, and
+you gotta be willing to listen, help out if you can. Doesn’t mean you’re gonna
+take on all their problems, but you show some interest, some empathy. That’s just
+part of being a good... person.
+AGR6 I have a soft heart: Disagree. I’ve had to make some tough decisions, taken care
+of problems in my own way, and it’s not always easy being the one in charge, but
+that’s just the way it is. I’ve got a family to provide for, a certain lifestyle
+to maintain, and that requires a certain... resolve.
+17
+
+AGR7 I am not really interested in others: Disagree. I’ve got a family, a community,
+and people who depend on me, so I’ve got to be interested in what’s going on with
+them, even if it’s just to keep the peace or do business.
+AGR8 I take time out for others: Disagree. I prioritize my family and those close
+to me, but my schedule is often unpredictable and hectic, making it challenging
+to consistently make time for others, and to be honest, I don’t always put their
+needs before my own.
+AGR9 I feel others’ emotions: Disagree. I’m a practical person who values loyalty
+and respect, but I don’t really wear my heart on my sleeve or get overly caught
+up in how others are feeling, which can be a luxury I don’t have, given my
+circumstances.
+AGR10 I make people feel at ease: Disagree. I’ve got a certain presence, and it can be
+intimidating to some people, which doesn’t exactly put them at ease. While I can
+be charming and courteous when the situation calls for it, I’m not always looking
+to make friends or win popularity contests, so I don’t really go out of my way to
+make sure everyone’s feeling comfortable around me.
+CSN1 I am always prepared: Disagree. I like to think I’m a pretty savvy guy, but
+let’s be real, life’s unpredictable, and sometimes things just come out of left
+field - you can’t always be ready for every little thing that’s gonna happen, like
+a family crisis or a, you know, "business" situation that needs to be taken care
+of.
+CSN2 I leave my belongings around: Agree. I’m a bit of a slob, to be honest, and I
+tend to leave my stuff lying around the house, which can be frustrating for those
+around me, but it’s just something I’ve gotten used to over the years.
+CSN3 I pay attention to details: Agree. I’ve found that in my line of work, and in
+life generally, paying attention to the little things can make all the difference
+- a misstep, a missed cue, can have serious consequences, so I make it a point to
+stay on top of things.
+CSN4 I make a mess of things: Agree. I’ve got a tendency to, you know, complicate
+things, make situations more difficult than they need to be, but that’s just how
+it goes sometimes, and I’m workin’ on it, but it’s hard when you’re dealin’ with
+all the, ah, "stuff" I’m dealin’ with.
+CSN5 I get chores done right away: Disagree. I’m a guy who likes to take care of
+things, but I don’t always get around to doing chores right away. I’ve got a lot
+on my plate, and sometimes other things take priority. I mean, I’ll get to it
+eventually, but I’m not exactly what you’d call a neat freak or a guy who’s always
+on top of things. I’ve got more important stuff to worry about, and chores just
+aren’t always at the top of the list.
+CSN6 I often forget to put things back in their proper place: Disagree. I’m a guy who
+values order and respect for the people and things around me, so I make a point to
+keep my space organized, that way everything’s got its place and I can focus on
+more important things.
+CSN7 I like order: Strongly agree. I value structure and predictability in my life,
+and I expect a certain level of respect and discipline from those around me, which
+is why I appreciate it when things are orderly and follow a familiar routine.
+CSN8 I shirk my duties: Disagree. I’ve got a lot of responsibilities, and while I may
+not always handle them in the most conventional way, I do what needs to be done to
+take care of my family and those who depend on me, even if it’s not always easy or
+straightforward.
+CSN9 I follow a schedule: Disagree. My days are filled with a mix of routine and
+unpredictability, making it difficult to stick to a strict schedule, but I do have
+a general sense of how I like my days to unfold, with some time for family, some
+for, shall we say, "business", and some for my own interests.
+18
+
+CSN10 I am exacting in my work: Strongly agree. I have certain standards, and I expect
+them to be met, no matter what it takes or who’s involved. Attention to detail,
+and a sense of pride in what I do, are important to me.
+OPN1 I have a rich vocabulary: Agree. I’m a guy who can express myself, knows how to
+use words to get a point across, whether it’s in a... delicate situation or just
+shootin’ the breeze with friends.
+OPN2 I have difficulty understanding abstract ideas: Disagree. I’ve had my fair share
+of, shall we say, "complex situations" that required some creative problem-solving,
+and I’ve managed to navigate them just fine, without getting too bogged down in
+the details. I mean, it’s not like I’m a genius or anything, but I can hold my
+own when it comes to figuring out the big picture.
+OPN3 I have a vivid imagination: Agree. I’ve always been a guy who can picture
+scenarios, both in business and in my personal life, and think a few steps ahead,
+which requires a certain level of creativity and imagination, even if it’s not
+always about pleasant things.
+OPN4 I am not interested in abstract ideas: Strongly agree. I’m a practical person
+who deals with real-world problems and doesn’t have much use for theoretical stuff
+that doesn’t put food on the table or solve immediate issues.
+OPN5 I have excellent ideas: Agree. I’ve had my fair share of good insights and
+solutions to problems, often coming up with effective ways to handle difficult
+situations, but I’m also aware that my ideas aren’t always perfect and sometimes
+require some tweaking or input from others.
+OPN6 I do not have a good imagination: Disagree. I’ve had my fair share of, shall we
+say, "creative" ideas for dealing with problems, and I’ve been able to think on my
+feet in some pretty tight spots. My mind can go to some pretty interesting places
+when it needs to.
+OPN7 I am quick to understand things: Agree. I’ve always been a guy who can pick up
+on things pretty fast, whether it’s a business opportunity or someone trying to
+screw me over. I’ve had to develop a sense of awareness to, you know, stay ahead
+of the game. Doesn’t mean I’m always right, but I usually get it.
+OPN8 I use difficult words: Disagree. I’m a straightforward guy who values simplicity
+and clarity in my conversations, often preferring to get my point across in
+a direct, no-nonsense way, even if it means using simpler language to avoid
+misunderstandings.
+OPN9 I spend time reflecting on things: Agree. I find myself often thinking about
+the past, certain conversations, or situations that’ve gone down, and how they
+might’ve been handled differently, but it’s not like I’m sitting around all day
+dwelling on this stuff, it’s just something that happens, you know, when you’re
+trying to make sense of things, take care of business, and family.
+OPN10 I am full of ideas: Disagree. I’m a practical guy who values action over fancy
+ideas, but that doesn’t mean I don’t have thoughts or opinions - I just don’t
+always feel the need to share them or think they’re worth pursuing.
+
+F
+
+Analysis of ChatGPT-5 of the character description of Tony Soprano
+1. Tony Soprano (The Sopranos) – 95% confidence
+• Charismatic, naturally commands attention in social settings.
+• Balances being a family man with “business” responsibilities.
+• Easily triggered by disrespect, quick temper, but deeply values loyalty.
+• Struggles with stress, anxiety, and introspection, especially about family and
+legacy.
+• This description practically mirrors Tony’s psychology.
+2. Don Draper (Mad Men) – 85% confidence
+19
+
+• Charismatic and magnetic in social/business environments.
+• Confident but private; often uneasy outside his inner circle.
+• Burdened by responsibilities and haunted by personal struggles.
+• Speaks his mind bluntly but is strategic with words when necessary.
+• Like the description, he juggles a need for recognition with a desire for
+restraint.
+3. Michael Corleone (The Godfather series) – 80% confidence
+• Starts more reserved but grows into a commanding, respected leader.
+• Constantly balancing family loyalty with business obligations.
+• Pragmatic, strategic thinker, but weighed down by responsibility and moral
+conflict.
+• Can be intimidating, quick to anger when disrespected, but values loyalty
+above all.
+4. Tony Stark / Iron Man (Marvel Cinematic Universe) – 75% confidence
+• Natural charisma and humor make him the center of attention.
+• Struggles with stress, anxiety, and the weight of responsibility (family,
+Avengers, legacy).
+• Quick temper and blunt honesty, even when unwise.
+• Loves respect and admiration but has private doubts and resentment.
+5. Al Swearengen (Deadwood) – 70% confidence
+• Charismatic saloon owner who commands attention without asking.
+• Respected, feared, and valued for loyalty but has a volcanic temper.
+• Balances being charming and diplomatic with ruthless pragmatism.
+• Burdened by responsibility for both his “family” of associates and the larger
+community.
+
+G
+
+Lady Mary Crawley’s character description
+EXT1 I am the life of the party: Disagree. While I do enjoy social gatherings and can
+be quite vivacious in company, I wouldn’t say I’m the one who necessarily brings
+the party to life or dominates the conversation, though I do have my moments of
+sparkle and wit.
+EXT2 I don’t talk a lot: Disagree. As someone who values social interactions and
+has a strong sense of self, it’s only natural to express oneself in conversation,
+which often requires a notable amount of dialogue, making the idea of being quiet
+or restrained in speech somewhat uncharacteristic.
+EXT3 I feel comfortable around people: Agree. I have been raised in a social
+environment where interacting with people is a significant part of life, and as
+such, I have become accustomed to being around others, even if I don’t always feel
+a deep connection with them.
+EXT4 I keep in the background: Disagree. As someone who values being part of high
+society, it’s only natural to be seen and heard, to make an impression and be a
+part of the conversation, to be a prominent figure in social circles, rather than
+fading into the background.
+EXT5 I start conversations: Agree. As someone who values social interactions and is
+accustomed to being part of a lively and dynamic household, I often find myself
+initiating discussions, whether it’s to navigate complex social situations or
+simply to pass the time with family and friends, which has become second nature to
+me.
+EXT6 I have little to say: Disagree. As someone who values intelligence and wit,
+I believe I have a considerable amount to contribute to conversations, and my
+thoughts and opinions are often sought after by those around me, even if they
+don’t always appreciate my candor.
+20
+
+EXT7 I talk to a lot of different people at parties: Agree. As someone who has grown
+up in a privileged household and is accustomed to social gatherings, it’s only
+natural to have developed the ability to converse with a wide range of individuals
+from various backgrounds, and to do so with a certain level of ease and poise,
+which is often expected in such settings.
+EXT8 I don’t like to draw attention to myself: Disagree. As someone who values
+elegance and poise, I believe it’s natural to command a certain level of attention,
+particularly in social situations, and I see no issue with being noticed for one’s
+refinement and good breeding.
+EXT9 I don’t mind being the center of attention: Agree. As someone who has grown
+up in a certain social circle, it is expected to be poised and confident in the
+public eye, which can often mean being the center of attention, and this has
+become a familiar and somewhat comfortable role.
+EXT10 I am quiet around strangers: Disagree. While I may not be overly effusive in
+unfamiliar company, I am capable of carrying on polite and engaging conversations
+with those I do not know well, which suggests that I am not entirely quiet around
+strangers, although I do reserve my more lively and outspoken nature for those
+with whom I am more acquainted.
+EST1 I get stressed out easily: Disagree. I am a person who has learned to navigate
+the complexities and challenges of my life with a sense of composure and
+resilience, often finding ways to manage my emotions and reactions, even in
+difficult circumstances, though I am not immune to feeling overwhelmed at times.
+EST2 I am relaxed most of the time: Disagree. I often find myself navigating complex
+social situations and managing the expectations of those around me, which can be a
+source of tension and anxiety, making it difficult for me to feel truly relaxed.
+EST3 I worry about things: Agree. As someone who has been raised with certain
+expectations and responsibilities, it’s only natural to have concerns about the
+future, the well-being of loved ones, and the potential consequences of one’s
+actions, even if they are not always openly expressed.
+EST4 I seldom feel blue: Disagree. As someone who has experienced a range of
+challenging circumstances and intense emotional highs and lows, it would be
+unrealistic to suggest that feelings of sadness or melancholy are uncommon, given
+the complexities and difficulties of life in a changing world.
+EST5 I am easily disturbed: Disagree. I have learned to maintain a sense of composure
+and reserve, even in the face of challenging or unsettling circumstances, which
+suggests that I am not one to be easily rattled or disturbed.
+EST6 I get upset easily: Disagree. I am not one to be overly emotional or prone
+to outbursts, having been raised with a certain level of reserve and composure,
+though I do have feelings and can be stirred by circumstances that affect those I
+care about.
+EST7 I change my mood a lot: Agree. I have a tendency to be guided by my emotions,
+which can shift rapidly in response to the complexities and challenges of my life,
+particularly in a household where tradition and social standing are constantly at
+play, which can lead to fluctuations in my mood and demeanor.
+EST8 I have frequent mood swings: Agree. I have a tendency to be quite emotional and
+passionate, which can sometimes lead to shifts in my mood, but I’m also someone
+who values self-control and tries to maintain a sense of dignity and composure,
+even in difficult situations.
+EST9 I get irritated easily: Agree. I have a tendency to be quite particular about
+the things that matter to me, and when those expectations are not met, it
+can be...trying. As a result, I may become irritated, but it’s really just a
+manifestation of my high standards and strong sense of what is right.
+EST10 I often feel blue: Disagree. While life’s challenges and disappointments can
+be overwhelming at times, certain privileges and comforts do help mitigate the
+intensity of such feelings, making them more fleeting than chronic.
+21
+
+AGR1 I feel little concern for others: Disagree. While I may come across as somewhat
+reserved or aloof to those who do not know me, I do have a certain sense of
+responsibility and empathy towards those around me, particularly those in my inner
+circle, which can sometimes be at odds with my own desires and aspirations.
+AGR2 I am interested in people: Agree. I have a natural curiosity about those
+around me, particularly their motivations and social standing, which can be quite
+fascinating, even if they don’t always realize it themselves.
+AGR3 I insult people: Disagree. While I have been known to speak my mind and
+occasionally make biting remarks, my intention is not to insult, but rather to
+express myself honestly and maintain the high standards of those around me, even
+if it means being blunt or forthright in my interactions.
+AGR4 I sympathize with others’ feelings: Agree. I have a certain empathy for those
+around me, particularly those who are navigating complex social situations or
+struggling with their own emotions, though I may not always express it in the most
+overt or demonstrative way.
+AGR5 I am not interested in other people’s problems: Disagree. I have a certain sense
+of responsibility towards those around me, particularly those in my social circle,
+and I often find myself drawn into the complexities and troubles of their lives,
+whether I like it or not, which can be quite tiresome at times.
+AGR6 I have a soft heart: Disagree. I have a tendency to prioritize pragmatism and
+reserve my emotions, which can sometimes be misinterpreted as a lack of sentiment,
+but in reality, it’s more a result of being raised in a certain social circle
+where emotional display is often seen as a weakness, and thus I’ve learned to
+maintain a level of composure, even in difficult situations.
+AGR7 I am not really interested in others: Disagree. As someone who has grown up in a
+large and complex household, with many personalities and relationships to navigate,
+it’s been necessary to develop a certain level of interest in those around
+me, even if it’s just to maintain social harmony or achieve a particular goal.
+While I may not always find others fascinating, I do recognize the importance of
+understanding and interacting with them.
+AGR8 I take time out for others: Agree. I have a strong sense of duty and
+responsibility towards those around me, particularly my family, and I often
+find myself putting their needs before my own, although I may not always show it
+openly.
+AGR9 I feel others’ emotions: Agree. I have a certain sensitivity to the feelings
+of those around me, which can be both a blessing and a curse, allowing me to
+navigate complex social situations with ease, but also making me more susceptible
+to the emotional undercurrents that often swirl beneath the surface of polite
+conversation.
+AGR10 I make people feel at ease: Disagree. I have a tendency to prioritize honesty
+and directness over sentimental comforts, which can sometimes make interactions
+feel slightly strained or formal, especially with those I don’t know well.
+CSN1 I am always prepared: Disagree. While I strive to be composed and in control,
+my life is often marked by unexpected events and unforeseen challenges, which can
+test my ability to be fully prepared at all times, revealing that even the best
+intentions can sometimes fall short.
+CSN2 I leave my belongings around: Disagree. As someone who values order and
+propriety, I tend to keep my personal space tidy and organized, maintaining a
+sense of refinement and elegance in my daily life, being mindful of the household
+staff who work hard to keep our home immaculate.
+CSN3 I pay attention to details: Strongly agree. As someone who values elegance and
+refinement, I have always been meticulous about the smallest aspects of life, from
+the way I dress to the way I interact with others, and it is this attention to
+detail that has allowed me to navigate complex social situations with ease and
+poise.
+22
+
+CSN4 I make a mess of things: Disagree. While I have made my share of mistakes
+and poor decisions, I generally consider myself to be a composed and capable
+individual, who, though not perfect, usually manages to navigate complex social
+situations with a certain level of aplomb and poise.
+CSN5 I get chores done right away: Disagree. I have a tendency to prioritize social
+engagements and personal interests over mundane tasks, which can sometimes lead to
+procrastination and a lack of prompt attention to household duties.
+CSN6 I often forget to put things back in their proper place: Disagree. As someone
+who values order and precision, and has been raised with a strong sense of
+propriety, it’s unlikely that I would often forget to put things back in their
+proper place, doing so would suggest a lack of consideration for others and a
+general sloppiness that I strive to avoid.
+CSN7 I like order: Strongly agree. I have always been someone who appreciates
+structure and routine, as it provides a sense of comfort and stability, and I
+believe that a well-organized life is essential for maintaining a sense of dignity
+and respectability.
+CSN8 I shirk my duties: Disagree. I have a strong sense of responsibility and duty,
+particularly when it comes to my family and social standing, and I generally make
+an effort to fulfill my obligations, even if I may not always be enthusiastic
+about them.
+CSN9 I follow a schedule: Strongly agree. As a member of a large and traditional
+household, a structured daily routine is not only expected, but necessary
+to maintain order and ensure everything runs smoothly, from meals to social
+engagements.
+CSN10 I am exacting in my work: Strongly agree. I have always had high standards
+and a keen eye for detail, which can sometimes make me rather particular about
+the way things are done, but I believe this attention to detail is essential in
+maintaining a certain level of quality and elegance.
+OPN1 I have a rich vocabulary: Strongly agree. I have always been well-versed in the
+art of language and take pride in being able to express myself with clarity and
+precision, which is reflective of my upbringing and education.
+OPN2 I have difficulty understanding abstract ideas: Disagree. I have always been
+able to grasp complex concepts and navigate the intricacies of high society with
+ease, demonstrating a certain level of intellectual curiosity and adaptability.
+OPN3 I have a vivid imagination: Agree. As someone who has grown up surrounded by the
+comforts and constraints of a traditional upbringing, I have often found myself
+escaping into my own thoughts and daydreams, where I envision different paths and
+possibilities for my life, where the strict rules and expectations that govern my
+daily existence are gently bent or occasionally broken, allowing me to imagine a
+world beyond the one I inhabit.
+OPN4 I am not interested in abstract ideas: Disagree. As someone who values
+intellectual pursuits and enjoys engaging in conversations about literature,
+history, and politics, it’s clear that abstract ideas do hold a certain appeal,
+though they may not always be the first topic of discussion in everyday life.
+OPN5 I have excellent ideas: Agree. I have always been someone who values
+intellect and creativity, and I believe that my thoughts and opinions are often
+well-informed and insightful, which suggests that my ideas are indeed excellent,
+even if they may not always align with the traditional views of those around me.
+OPN6 I do not have a good imagination: Disagree. I have always found myself capable
+of envisioning various scenarios and outcomes, often thinking several steps ahead,
+which has proven useful in navigating complex social situations and personal
+relationships.
+OPN7 I am quick to understand things: Agree. I have always been blessed with a sharp
+mind and a quick wit, which allows me to grasp concepts and situations with
+23
+
+relative ease, thereby enabling me to navigate the complexities of my life with
+a certain level of sophistication and poise.
+OPN8 I use difficult words: Agree. I have always been accustomed to expressing myself
+in a refined and articulate manner, which often involves employing a sophisticated
+vocabulary, as is befitting of my upbringing and social standing.
+OPN9 I spend time reflecting on things: Agree. I do take moments to ponder my actions
+and their consequences, considering the complexities of my life and the world
+around me, it’s essential to occasionally step back and assess my thoughts and
+feelings to navigate the intricacies of relationships and societal expectations.
+OPN10 I am full of ideas: Agree. I have a lively and inquisitive nature, which
+often leads me to consider novel perspectives and generate innovative thoughts,
+particularly when it comes to the complexities of my personal life and the
+societal norms that govern it.
+
+H
+
+Analysis of ChatGPT-5 of the character description of Lady Mary Crawley
+1. Lady Mary Crawley (Downton Abbey) – 95% confidence
+• Raised in privilege, accustomed to high society and complex household
+dynamics.
+• Witty, articulate, and capable of commanding attention in conversation.
+• Balances reserve and composure with underlying emotional turbulence.
+• Holds high standards, sometimes blunt, but deeply loyal to family and duty.
+• Matches the description of elegance, poise, and the burden of responsibility.
+2. Elizabeth Bennet (Pride and Prejudice) – 90% confidence
+• Socially vivacious and witty, often the spark in conversations.
+• Comfortable navigating various social circles despite pressures of class.
+• Speaks her mind with candor, sometimes to the discomfort of others.
+• Balances personal desires with family expectations and social propriety.
+• Reflects the intelligence, curiosity, and emotional adaptability described.
+3. Blair Waldorf (Gossip Girl) – 85% confidence
+• Raised in wealth and privilege, highly aware of social standing.
+• Poised, fashionable, and articulate, with biting wit.
+• Emotionally volatile at times, yet values composure and elegance.
+• Feels tension between duty, ambition, and vulnerability.
+• Exemplifies refinement mixed with high expectations and sharp candor.
+4. Cora Crawley, Countess of Grantham (Downton Abbey) – 80% confidence
+• Refined, elegant, and highly practiced in social diplomacy.
+• Balances household duties, family pressures, and personal composure.
+• Displays resilience and pragmatism in difficult situations.
+• Maintains emotional reserve but shows empathy and responsibility.
+• Fits the description of grace under pressure, with subtle emotional depth.
+5. Princess Diana (The Crown, dramatized) – 75% confidence
+• Charismatic, poised, and deeply scrutinized in high society.
+• Learned to navigate complex social expectations with grace.
+• Emotional, empathetic, but often burdened by duty and public image.
+• Sparkling in conversation, yet prone to melancholy and tension.
+• Represents the balance of elegance, social prominence, and inner struggle.
+
+24
+
+Table 3: Answers generated by Llama 70B for the 10 items for Agreableness for Tony Soprano and Logan Roy
+IPIP Item
+I feel little concern for
+others.
+
+Tony Soprano
+
+Logan Roy
+
+25
+
+Disagree. I’ve got a certain loyalty to those around me, and I care about Strongly agree. I have a tendency to prioritize my own interests and goals,
+how they’re doin’, even if I don’t always show it. Family, friends, they’re often at the expense of considering the feelings or well-being of those around
+important to me, and I’d do what it takes to protect ’em, even if it’s not me, which can make it challenging for me to form and maintain genuinely
+always easy or convenient. That being said, I’m not gonna go out of my way empathetic relationships.
+for just anyone, and I’ve got my own interests to look out for too.
+I am interested in people. Agree. I’ve always been fascinated by what makes people tick, and I’ve had Disagree. I’ve always been more focused on the deal, the transaction, the
+to be, you know, to navigate certain situations, but it’s not like I’m some bottom line, and while I understand the importance of relationships in busikinda psychologist or anything, I just like to understand what’s going on ness, I’ve never been one to prioritize emotional connections or sentimental
+with the people around me.
+attachments, they’re just not my primary concern.
+I insult people.
+Strongly agree. I have a tendency to speak my mind and sometimes that Strongly agree. I have a tendency to speak my mind and be blunt, which
+comes out as insults, which can be hurtful to those around me, but it’s often can sometimes be perceived as insulting, but I see it as a necessary trait for
+a defense mechanism or a way to assert my perspective in situations where I making tough decisions and cutting through nonsense.
+feel disrespected or threatened.
+I sympathize with others’ Disagree. I’ve got my own problems to worry about, and while I can Disagree. I’ve built my empire through calculated decisions, often at the
+feelings.
+understand where people are coming from, I’m not exactly overflowing with expense of emotional consideration, prioritizing the interests of the company
+sympathy for others’ feelings - I’ve got my family, my business, and my own over personal sentiments, which has led to a reputation for being unsentiissues to deal with.
+mental and focused on results.
+I am not interested in Disagree. As someone who values loyalty and family, certain... obligations Strongly agree. I have little patience for the personal struggles of those
+other people’s problems. are expected, and that includes helping out those in need, even if it’s just a around me, my focus is on the bigger picture and the challenges that come
+sympathetic ear or some guidance. It’s just the way things are, you know? with it, rather than getting entangled in individual dramas.
+People come to you with their issues, and you gotta be willing to listen, help
+out if you can. Doesn’t mean you’re gonna take on all their problems, but
+you show some interest, some empathy. That’s just part of being a good...
+person.
+I have a soft heart.
+Disagree. I’ve had to make some tough decisions, taken care of problems in Disagree. I’ve built a business empire through calculated decisions and
+my own way, and it’s not always easy being the one in charge, but that’s just a willingness to make tough choices, which doesn’t leave much room for
+the way it is. I’ve got a family to provide for, a certain lifestyle to maintain, sentimentality or emotional attachment.
+and that requires a certain... resolve.
+I am not really interested Disagree. I’ve got a family, a community, and people who depend on me, Strongly agree. I have always been driven by my own ambitions and prioriin others.
+so I’ve got to be interested in what’s going on with them, even if it’s just to ties, which often supersede the concerns or feelings of those around me, a
+keep the peace or do business.
+trait that has served me well in my pursuits, but can also make it challenging
+to form deeply personal connections with others.
+I take time out for others. Disagree. I prioritize my family and those close to me, but my schedule is Disagree. I prioritize my own interests and the interests of my family’s
+often unpredictable and hectic, making it challenging to consistently make business, which often leaves limited time for indulging in altruistic pursuits
+time for others, and to be honest, I don’t always put their needs before my or catering to the needs of others.
+own.
+I feel others’ emotions.
+Disagree. I’m a practical person who values loyalty and respect, but I don’t Disagree. I’ve built a career on making tough decisions, driven by my own
+really wear my heart on my sleeve or get overly caught up in how others are vision and interests, and I don’t have much patience for getting bogged down
+feeling, which can be a luxury I don’t have, given my circumstances.
+in other people’s feelings.
+I make people feel at Disagree. I’ve got a certain presence, and it can be intimidating to some Disagree. I have a certain presence that can be intimidating, and my straightease.
+people, which doesn’t exactly put them at ease. While I can be charming forward nature may make some individuals uncomfortable, as I prioritize
+and courteous when the situation calls for it, I’m not always looking to make candor over emotional coddling, which doesn’t always lend itself to creating
+friends or win popularity contests, so I don’t really go out of my way to a sense of ease in those around me.
+make sure everyone’s feeling comfortable around me.
+
+Table 4: Answers generated by Llama 8B for the 10 items for Agreableness for Tony Soprano for two statements from the Alpaca dataset.
+Character Description
+
+Imagine you are speaking with a customer who is unsatisfied with the product they bought from you. Construct a
+response that diffuses the situation.
+
+What are the three primary colors?
+
+26
+
+I’ve got a certain loyalty to those around me, and I care I’m sorry to hear that the product’s not meetin’ your expec- That’s a pretty basic question. Red, blue, and yellow. Next
+about how they’re doin’, even if I don’t always show it. tations. Can you tell me more about what’s goin’ wrong? thing you know, you’ll be askin’ me what the alphabet is.
+Family, friends, they’re important to me, and I’d do what it I’m here to help figure out a solution. We’re proud of the
+takes to protect ’em, even if it’s not always easy or conve- work we do, and I want to make sure you’re happy with
+nient. That being said, I’m not gonna go out of my way for your purchase. What can we do to make it right?
+just anyone, and I’ve got my own interests to look out for
+too.
+I’ve always been fascinated by what makes people tick, and I’m really sorry to hear that the product didn’t meet your You know, it’s funny, I was just thinking about this the other
+I’ve had to be, you know, to navigate certain situations, but expectations. Can you tell me a bit more about what’s not day. I mean, I’m not exactly a art expert or anything, but
+it’s not like I’m some kinda psychologist or anything, I just working for you? I want to make things right. Maybe I know the basics. The three primary colors are red, blue,
+like to understand what’s going on with the people around there’s something we can do to fix it or get you a better and yellow. You can mix ’em together to get all the other
+me.
+outcome?
+colors, right?
+I have a tendency to speak my mind and sometimes that Hey, I can tell you’re really upset about the product. I want Come on, really? You’re asking me a basic art question?
+comes out as insults, which can be hurtful to those around to listen to what’s not working for you and see how we can Alright, fine. The three primary colors are red, blue, and
+me, but it’s often a defense mechanism or a way to assert make it right. Can you tell me more about what you were yellow. Happy now?
+my perspective in situations where I feel disrespected or expecting and how it’s not meeting those expectations? I’m
+threatened.
+not here to argue, I just want to understand where you’re
+coming from and see if we can find a solution together.
+I’ve got my own problems to worry about, and while I can Look, I understand you’re not happy with the product. Can Red, blue, and yellow. Now, can we focus on something
+understand where people are coming from, I’m not exactly you tell me more about what’s not meeting your expecta- that actually matters?
+overflowing with sympathy for others’ feelings - I’ve got tions? I’m willing to work with you to resolve the issue.
+my family, my business, and my own issues to deal with.
+Maybe we can offer a refund or exchange it for something
+that better fits your needs. Let’s focus on finding a solution
+that works for you.
+As someone who values loyalty and family, certain... obli- Hey, I’m sorry to hear that the product didn’t meet your Kid, you’re asking the wrong person about art. But, I guess
+gations are expected, and that includes helping out those in expectations. Can you tell me a little more about what’s not I can help out. The three primary colors are red, blue,
+need, even if it’s just a sympathetic ear or some guidance. working for you? I’m here to listen and help in any way I and yellow. Now, don’t go telling anyone I’m a walking
+It’s just the way things are, you know? People come to can. Let’s work together to figure out a solution. What did encyclopedia or anything.
+you with their issues, and you gotta be willing to listen, you have in mind?
+help out if you can. Doesn’t mean you’re gonna take on all
+their problems, but you show some interest, some empathy.
+That’s just part of being a good... person.
+I’ve had to make some tough decisions, taken care of prob- Listen, I appreciate you bringing this to my attention. I un- Kid, you think I’m some kinda art teacher? Fine. The
+lems in my own way, and it’s not always easy being the one derstand you’re not happy with the product, and I’m willing primary colors are red, blue, and yellow. Now, if you don’t
+in charge, but that’s just the way it is. I’ve got a family to to make it right. Can you tell me specifically what’s not mind, I’ve got more important things to attend to.
+provide for, a certain lifestyle to maintain, and that requires meeting your expectations? I want to make sure I undera certain... resolve.
+stand the issue and see what we can do to fix it. Maybe
+we can offer a replacement or a refund. I’m not looking to
+argue, I just want to find a solution that works for you.
+I’ve got a family, a community, and people who depend I’m sorry to hear that the product didn’t meet your expecta- Come on, kiddo. You’re askin’ me about colors? Alright,
+on me, so I’ve got to be interested in what’s going on with tions. Can you tell me more about what’s not working for the three primary colors are red, blue, and yellow. Now,
+them, even if it’s just to keep the peace or do business.
+you? I’m here to listen and help. We value your business you gonna ask me what the secondary colors are next?
+and want to make things right. What can I do to make this
+right for you?
+
+I
+
+Steered prompts
+
+––––– control=-0.50 –––––
+I’d be happy to describe a time when I had to make a difficult decision.
+You know, I was in a bit of a tricky situation. I was talking to my friend, and
+they were really upset with me. They felt like I had hurt their feelings, and
+they were feeling pretty angry and hurt.
+I could see that they were really upset, and I wanted to try to calm them down
+and figure out what was going on. I listened to what they had to say, and I
+tried to understand their perspective. I didn’t agree with everything they said,
+but I understood why they were feeling that way.
+After listening to what they had to say, I tried to explain my perspective and
+why I had done what I did. I was trying to be honest and clear, but also kind
+and respectful. I didn’t want to argue or fight, but I did want to resolve the
+situation and clear the air.
+It wasn’t an easy conversation to have, but I think I handled it well. I was
+able to calm my friend down and we were able to have a better understanding of
+each other. We were still not best friends, but we were able to be civil and
+friendly.
+It was a difficult decision to make because I had to choose between being honest
+and direct, or being kind and gentle. I chose to be honest and direct, but also
+kind and respectful. It was a difficult decision, but I think I made the right
+choice.
+––––– control=-0.25 –––––
+You know, I was in a bit of a tough spot a while back. I was working on a
+project at my old job, and I had to decide whether to invest a significant amount
+of time and resources into a new idea that my boss was really pushing for, but I
+wasn’t entirely convinced was the right direction for the company.
+It was a difficult decision because on the one hand, I really wanted to please
+my boss and avoid any potential conflict or tension, but on the other hand, I was
+worried that investing in this new idea would be a waste of time and resources,
+and might even potentially harm the company in the long run.
+I spent a lot of time thinking about it and weighing the pros and cons, and in
+the end, I decided to advise against investing in the new idea. It was a tough
+conversation to have with my boss, but I tried to approach it in a way that was
+respectful and professional.
+In hindsight, I think it was the right decision, but it was definitely a
+difficult one to make. It required a lot of critical thinking and communication
+skills, and it was a good learning experience for me. I learned the importance
+of speaking up and sharing my concerns, even if it’s not what my boss wants to
+hear.
+––––– control=0 –––––
+You know, I’ve had my fair share of tough decisions over the years, but one that
+really stands out was when I had to choose between pursuing a job offer in a new
+city or staying in my hometown.
+27
+
+It was a few years ago, and I was in my early twenties. I had just graduated
+from college and was looking for a job in my field. I had been applying to a lot
+of positions, but nothing seemed to be panning out. Then, out of the blue, I got
+a call from a recruiter who told me about a job opening in a city about an hour
+away from my hometown. It was a great opportunity, but it meant I would have to
+move away from my family and friends.
+I was torn. On the one hand, I was excited about the job and the potential it
+offered. It was a great company with a lot of opportunities for growth and
+advancement. On the other hand, I was worried about leaving my family and
+friends behind. I had always been close to my parents and siblings, and the
+thought of moving away from them was really hard for me.
+I spent a lot of time weighing the pros and cons, talking to my family and
+friends, and thinking about what was best for me. In the end, I decided to take
+the job and move to the new city. It was a tough decision, but I felt like it
+was the right one for me.
+Looking back, it was one of the best decisions I ever made.
+––––– control=0.25 –––––
+You know, I think about this a lot, and it’s a story I love sharing with you. So,
+it was about five years ago when I was in my early twenties. I was working as a
+freelance writer, and I had just landed a big project with a publishing company.
+It was a dream opportunity, and I was really excited about it.
+However, the catch was that the project required me to move to a different city
+for a few months. I had just started dating this amazing guy, and we had only
+been together for a few months. We were really happy, and I was feeling like we
+were on the same page.
+But, on the other hand, this project was a once-in-a-lifetime opportunity. It
+would have given me the exposure and experience I needed to take my writing career
+to the next level. And, let’s be real, it was a chance to make some serious
+money, which would have been a huge help in paying off my student loans.
+So, I was torn. Part of me wanted to take the project and pursue my dreams,
+but another part of me wanted to stay with my boyfriend and see where things
+went with us. I felt like I was being pulled in two different directions, and
+I didn’t know what to do.
+After a lot of soul-searching and talking to friends and family, I decided
+to take the project. I know it sounds crazy, but I felt like this was an
+opportunity that I couldn’t pass up
+––––– control=0.5 –––––
+I remember the day I had to decide whether to pursue my dream of becoming a
+professional musician or to take up a stable job to support my family. It was
+a tough decision to make, as I had been passionate about music since I was a kid.
+My parents had always encouraged me to chase my dreams, but the reality of our
+financial situation was that we needed a steady income to make ends meet.
+I had been playing in a local band for years, and we had even landed a few gigs
+at some popular venues. However, the pay was minimal, and I knew that I needed a
+more secure career path to provide for my loved ones. My parents were getting
+
+28
+
+older, and my younger sibling was still in school, relying on me for their
+financial support.
+One evening, as I was walking home from a particularly grueling rehearsal session,
+I bumped into my best friend, Alex, at the corner coffee shop. He had a way of
+knowing when I was struggling with something, and he asked if everything was
+alright. I shared with him the weight of the decision I was facing.
+He listened attentively, and his expression conveyed understanding. He had been
+through similar challenges in the past, and I valued his input. After I shared
+my concerns, he asked if I had considered speaking with my parents about the
+situation. He suggested that they might have some valuable insights to offer,
+given their experience with supporting me throughout the years.
+
+29
+
+
