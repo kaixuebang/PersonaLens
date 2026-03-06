@@ -24,15 +24,17 @@ for display_name, file_key in models:
     
     layer_fig = Path(f"paper/figures/layer_profile_{file_key}_openness.png")
     if layer_fig.exists():
-        new_appendix += f"""\\begin{{figure}}[ht!]\n\\centering\n\\includegraphics[width=\\textwidth]{{figures/layer_profile_{file_key}_openness.png}}\n\\caption{{\\textbf{{{display_name}: Layer-wise personality encoding profile for Openness.}}\nLinear probe accuracy, Mean difference norm, and PCA explained variance.}}\n\\label{{fig:{file_key}_layer}}\n\\end{{figure}}\n\n"""
+        new_appendix += f"""\\begin{{figure}}[H]\n\\centering\n\\includegraphics[width=\\textwidth]{{figures/layer_profile_{file_key}_openness.png}}\n\\caption{{\\textbf{{{display_name}: Layer-wise personality encoding profile for Openness.}}\nLinear probe accuracy, Mean difference norm, and PCA explained variance.}}\n\\label{{fig:{file_key}_layer}}\n\\end{{figure}}\n\n"""
         
     causal_fig = Path(f"paper/figures/causal_loc_{file_key}_openness.png")
     if causal_fig.exists():
-        new_appendix += f"""\\begin{{figure}}[ht!]\n\\centering\n\\includegraphics[width=\\textwidth]{{figures/causal_loc_{file_key}_openness.png}}\n\\caption{{\\textbf{{{display_name}: Token-localized and component causal importance for Openness.}}}}\n\\label{{fig:{file_key}_causal}}\n\\end{{figure}}\n\n"""
+        new_appendix += f"""\\begin{{figure}}[H]\n\\centering\n\\includegraphics[width=\\textwidth]{{figures/causal_loc_{file_key}_openness.png}}\n\\caption{{\\textbf{{{display_name}: Token-localized and component causal importance for Openness.}}}}\n\\label{{fig:{file_key}_causal}}\n\\end{{figure}}\n\n"""
         
     ortho_fig = Path(f"paper/figures/ortho_{file_key}.png")
     if ortho_fig.exists():
-        new_appendix += f"""\\begin{{figure}}[ht!]\n\\centering\n\\includegraphics[width=0.6\\textwidth]{{figures/ortho_{file_key}.png}}\n\\caption{{\\textbf{{{display_name}: Cosine similarity matrix between persona vectors.}}}}\n\\label{{fig:{file_key}_ortho}}\n\\end{{figure}}\n\n"""
+        new_appendix += f"""\\begin{{figure}}[H]\n\\centering\n\\includegraphics[width=0.6\\textwidth]{{figures/ortho_{file_key}.png}}\n\\caption{{\\textbf{{{display_name}: Cosine similarity matrix between persona vectors.}}}}\n\\label{{fig:{file_key}_ortho}}\n\\end{{figure}}\n\n"""
+    
+    new_appendix += r"\clearpage" + "\n\n"
 
 # Inject back
 pattern = r"\\section\{Per-Model Detailed Results\}.*?(?=\\subsection\{Extended Cross-Model Analytics\}|\\section\{Algorithm Pseudocode\}|\\end\{document\})"
@@ -41,4 +43,4 @@ content = re.sub(pattern, new_appendix.replace('\\', '\\\\'), content, flags=re.
 with open(tex_file, "w") as f:
     f.write(content)
 
-print("Updated Appendix B successfully.")
+print("Updated Appendix B successfully with strict [H] placement and \clearpage.")
