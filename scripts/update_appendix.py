@@ -32,7 +32,7 @@ for display_name, file_key in models:
         
     ortho_fig = Path(f"paper/figures/ortho_{file_key}.png")
     if ortho_fig.exists():
-        new_appendix += f"""\\begin{{figure}}[H]\n\\centering\n\\includegraphics[width=0.6\\textwidth]{{figures/ortho_{file_key}.png}}\n\\caption{{\\textbf{{{display_name}: Cosine similarity matrix between persona vectors.}}}}\n\\label{{fig:{file_key}_ortho}}\n\\end{{figure}}\n\n"""
+        new_appendix += f"""\\begin{{figure}}[H]\n\\centering\n\\includegraphics[width=\\textwidth]{{figures/ortho_{file_key}.png}}\n\\caption{{\\textbf{{{display_name}: Cosine similarity matrix between persona vectors.}}}}\n\\label{{fig:{file_key}_ortho}}\n\\end{{figure}}\n\n"""
     
     new_appendix += r"\clearpage" + "\n\n"
 
@@ -43,4 +43,4 @@ content = re.sub(pattern, new_appendix.replace('\\', '\\\\'), content, flags=re.
 with open(tex_file, "w") as f:
     f.write(content)
 
-print("Updated Appendix B successfully with strict [H] placement and \clearpage.")
+print("Updated Appendix B successfully with strict [H] placement, \clearpage, and full width ortho graphs.")
