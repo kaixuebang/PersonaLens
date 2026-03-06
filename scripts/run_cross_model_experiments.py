@@ -7,6 +7,12 @@ import os
 import sys
 import subprocess
 import json
+
+repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if repo_root not in sys.path:
+    sys.path.insert(0, repo_root)
+
+from src.prompts.contrastive_prompts import get_all_trait_names, BIG_FIVE_PROMPTS, DEFENSE_MECHANISM_PROMPTS
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
@@ -22,7 +28,11 @@ def run_cmd(cmd, label=""):
     print(f"  {label}")
     print(f"  CMD: {' '.join(cmd)}")
     print(f"{'='*60}")
-    result = subprocess.run(cmd, cwd=os.path.dirname(os.path.abspath(__file__)))
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env = os.environ.copy()
+    env["PYTHONPATH"] = repo_root + os.pathsep + env.get("PYTHONPATH", "")
+    
+    result = subprocess.run(cmd, cwd=repo_root, env=env)
     if result.returncode != 0:
         print(f"  ✗ FAILED: {label}")
         return False

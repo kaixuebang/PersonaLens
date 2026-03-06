@@ -26,6 +26,10 @@ import os
 import subprocess
 import sys
 
+repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if repo_root not in sys.path:
+    sys.path.insert(0, repo_root)
+
 from src.prompts.contrastive_prompts import get_all_trait_names, BIG_FIVE_PROMPTS, DEFENSE_MECHANISM_PROMPTS
 
 
@@ -36,7 +40,12 @@ def run_step(cmd, step_name):
     print(f"{'='*70}")
     print(f"  CMD: {' '.join(cmd)}\n")
 
-    result = subprocess.run(cmd, cwd=os.path.dirname(os.path.abspath(__file__)))
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # Add repo_root to PYTHONPATH
+    env = os.environ.copy()
+    env["PYTHONPATH"] = repo_root + os.pathsep + env.get("PYTHONPATH", "")
+    
+    result = subprocess.run(cmd, cwd=repo_root, env=env)
     if result.returncode != 0:
         print(f"\n  ✗ FAILED: {step_name}")
         return False
@@ -85,7 +94,6 @@ def main():
     if not args.skip_collect:
         for trait in traits:
             success = run_step(
-            success = run_step(
                 [python, "src/localization/collect_activations.py",
                  "--model", args.model,
                  "--trait", trait,
@@ -97,7 +105,6 @@ def main():
                 return
 
     # Step 2: Extract Persona Vectors
-    success = run_step(
     success = run_step(
         [python, "src/extraction/extract_persona_vectors_v2.py",
          "--activations_dir", f"activations/{model_short}",
@@ -112,7 +119,6 @@ def main():
     if not args.skip_localize:
         for trait in traits:
             run_step(
-            run_step(
                 [python, "src/localization/localize_circuits_v2.py",
                  "--model", args.model,
                  "--trait", trait,
@@ -123,7 +129,6 @@ def main():
     # Step 4: Personality Steering Demo
     for trait in traits:
         run_step(
-        run_step(
             [python, "src/steering/steer_personality.py",
              "--model", args.model,
              "--trait", trait,
@@ -133,7 +138,6 @@ def main():
             f"Steering Demo - {trait}"
         )
 
-    # Step 5: Cross-Model Validation (if applicable)
     # Step 5: Cross-Model Validation (if applicable)
     run_step(
         [python, "src/evaluation/cross_model_validation.py",

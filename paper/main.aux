@@ -73,6 +73,7 @@
 \citation{costa1992revised}
 \citation{qwen2025qwen3}
 \citation{zhang2024tinyllama}
+\citation{dubey2024llama}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Cross-Trait Orthogonality Analysis}{5}{subsection.3.6}\protected@file@percent }
 \newlabel{sec:orthogonality}{{3.6}{5}{Cross-Trait Orthogonality Analysis}{subsection.3.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{5}{section.4}\protected@file@percent }
@@ -104,26 +105,27 @@
 \newlabel{fig:sweep}{{5}{8}{\textbf {Quantitative inference-time steering and collateral degradation trade-off.} As the injected persona vector magnitude ($\alpha $) increases, the structural personality shift achieves its intended target up to an optimal bound ($\alpha {\approx }2.0$ to $4.0$). Beyond this, we observe a classical inverted-U saturation pattern: the target keyword score drops and sequence perplexity explodes, representing orthogonal capability degradation and loss of linguistic coherence}{figure.caption.24}{}}
 \citation{cae2025,cae2025b}
 \citation{sae2025denoising}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's middle layer (Qwen3-0.6B at L14; Qwen2.5-0.5B at L12; TinyLlama-1.1B at L11). All models show near-orthogonal Big Five vectors and correlated defense mechanism subspaces, with mean off-diagonal $|\cos |$ of 0.171, 0.194, and 0.125 respectively.}}{9}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:cross_model_ortho}{{6}{9}{\textbf {Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's middle layer (Qwen3-0.6B at L14; Qwen2.5-0.5B at L12; TinyLlama-1.1B at L11). All models show near-orthogonal Big Five vectors and correlated defense mechanism subspaces, with mean off-diagonal $|\cos |$ of 0.171, 0.194, and 0.125 respectively}{figure.caption.25}{}}
+\citation{sae2025denoising}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's middle layer (Qwen3 at L14; Qwen2.5 at L12; TinyLlama at L11; Llama-3.2 at L8). All models show near-orthogonal Big Five vectors (mean off-diagonal $|\cos | < 0.23$) and correlated defense mechanism subspaces.}}{9}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:cross_model_ortho}{{6}{9}{\textbf {Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's middle layer (Qwen3 at L14; Qwen2.5 at L12; TinyLlama at L11; Llama-3.2 at L8). All models show near-orthogonal Big Five vectors (mean off-diagonal $|\cos | < 0.23$) and correlated defense mechanism subspaces}{figure.caption.25}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Quantitative Personality Steering Through Activation Injection}{9}{subsection.5.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Massive Out-of-Domain Generalization}{9}{subsection.5.5}\protected@file@percent }
 \newlabel{sec:ood}{{5.5}{9}{Massive Out-of-Domain Generalization}{subsection.5.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Cross-Model Validation}{9}{subsection.5.6}\protected@file@percent }
 \newlabel{sec:crossmodel}{{5.6}{9}{Cross-Model Validation}{subsection.5.6}{}}
 \@writefile{toc}{\contentsline {paragraph}{Quantitative Findings.}{9}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Varying Steering Sensitivity.}{9}{section*.29}\protected@file@percent }
+\citation{venkatesh2026nonidentifiability}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Cross-model encoding profiles for Openness.} Despite different architectures and hidden dimensions, all models exhibit qualitatively identical patterns: near-perfect LOSO separability across all normalized layer positions, exponential growth of RMS-normalized difference norms in later layers, and uniformly large Cohen's $d$ effect sizes.}}{10}{figure.caption.26}\protected@file@percent }
 \newlabel{fig:cross_model_profile}{{7}{10}{\textbf {Cross-model encoding profiles for Openness.} Despite different architectures and hidden dimensions, all models exhibit qualitatively identical patterns: near-perfect LOSO separability across all normalized layer positions, exponential growth of RMS-normalized difference norms in later layers, and uniformly large Cohen's $d$ effect sizes}{figure.caption.26}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Cross-model validation summary. All models show consistent patterns across PersonaLens phases.}}{10}{table.caption.28}\protected@file@percent }
-\newlabel{tab:cross_model}{{2}{10}{Cross-model validation summary. All models show consistent patterns across PersonaLens phases}{table.caption.28}{}}
-\@writefile{toc}{\contentsline {paragraph}{Varying Steering Sensitivity.}{10}{section*.29}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Cross-model validation summary. All models show consistent core structural metrics (high LOSO accuracy, low orthogonality, early causal layers), despite varying steering sensitivity.}}{10}{table.caption.28}\protected@file@percent }
+\newlabel{tab:cross_model}{{2}{10}{Cross-model validation summary. All models show consistent core structural metrics (high LOSO accuracy, low orthogonality, early causal layers), despite varying steering sensitivity}{table.caption.28}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{10}{section.6}\protected@file@percent }
 \newlabel{sec:discussion}{{6}{10}{Discussion}{section.6}{}}
 \@writefile{toc}{\contentsline {paragraph}{Methodological Contribution.}{10}{section*.30}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{The Existence--Causation Gap.}{10}{section*.31}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Psychological Validity.}{10}{section*.32}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Safety and Ethics.}{10}{section*.33}\protected@file@percent }
-\citation{venkatesh2026nonidentifiability}
 \bibstyle{unsrtnat}
 \bibdata{references}
 \bibcite{shanahan2023role}{{1}{2023}{{Shanahan et~al.}}{{Shanahan, McDonell, and Reynolds}}}
@@ -140,12 +142,12 @@
 \bibcite{billy2025blending}{{12}{2025}{{Billyov et~al.}}{{}}}
 \bibcite{personaforge2025}{{13}{2025{a}}{{Anonymous}}{{}}}
 \bibcite{mao2024personality}{{14}{2024}{{Mao et~al.}}{{Mao, Liu, Lan, Wu, and Cambria}}}
+\bibcite{turner2023activation}{{15}{2023}{{Turner et~al.}}{{Turner, Thiergart, Udell, Leech, Mini, and Macdiarmid}}}
+\bibcite{persona2026}{{16}{2026{a}}{{Anonymous}}{{}}}
 \@writefile{toc}{\contentsline {paragraph}{Limitations.}{11}{section*.34}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}\protected@file@percent }
 \newlabel{sec:conclusion}{{7}{11}{Conclusion}{section.7}{}}
 \@writefile{toc}{\contentsline {paragraph}{Future Work.}{11}{section*.35}\protected@file@percent }
-\bibcite{turner2023activation}{{15}{2023}{{Turner et~al.}}{{Turner, Thiergart, Udell, Leech, Mini, and Macdiarmid}}}
-\bibcite{persona2026}{{16}{2026{a}}{{Anonymous}}{{}}}
 \bibcite{persona2025}{{17}{2025{b}}{{Anonymous}}{{}}}
 \bibcite{svf2026}{{18}{2026{b}}{{Anonymous}}{{}}}
 \bibcite{factored2026}{{19}{2026{c}}{{Anonymous}}{{}}}
@@ -161,13 +163,18 @@
 \bibcite{costa1992revised}{{29}{1992}{{Costa and McCrae}}{{}}}
 \bibcite{qwen2025qwen3}{{30}{2025}{{Qwen Team}}{{}}}
 \bibcite{zhang2024tinyllama}{{31}{2024}{{Zhang et~al.}}{{Zhang, Zeng, Wang, and Lu}}}
+\bibcite{dubey2024llama}{{32}{2024}{{Dubey et~al.}}{{Dubey, Jauhri, Pandey, Kadian, Al-Dahle, Letman, Mathur, Schelten, Yang, Fan, et~al.}}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Full Contrastive Prompt Examples}{12}{appendix.A}\protected@file@percent }
 \newlabel{app:prompts}{{A}{12}{Full Contrastive Prompt Examples}{appendix.A}{}}
 \@writefile{toc}{\contentsline {paragraph}{Openness Prompt Pair.}{12}{section*.37}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Humor Defense Mechanism Pair.}{12}{section*.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Complete Diff Norm Profiles for All Traits}{12}{appendix.B}\protected@file@percent }
-\newlabel{app:diffnorms}{{B}{12}{Complete Diff Norm Profiles for All Traits}{appendix.B}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Algorithm Pseudocode}{13}{appendix.C}\protected@file@percent }
-\newlabel{app:algorithm}{{C}{13}{Algorithm Pseudocode}{appendix.C}{}}
-\newlabel{alg:personalens}{{\caption@xref {alg:personalens}{ on input line 444}}{13}{Algorithm Pseudocode}{figure.caption.39}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Extended Cross-Model Analytics}{12}{appendix.B}\protected@file@percent }
+\newlabel{app:cross_model}{{B}{12}{Extended Cross-Model Analytics}{appendix.B}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Cohen's d and Signal-to-Noise Ratio (SNR)}{12}{subsection.B.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Steering Saturation Discrepancy}{13}{subsection.B.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Complete Diff Norm Profiles for All Traits}{13}{appendix.C}\protected@file@percent }
+\newlabel{app:diffnorms}{{C}{13}{Complete Diff Norm Profiles for All Traits}{appendix.C}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Algorithm Pseudocode}{13}{appendix.D}\protected@file@percent }
+\newlabel{app:algorithm}{{D}{13}{Algorithm Pseudocode}{appendix.D}{}}
+\newlabel{alg:personalens}{{\caption@xref {alg:personalens}{ on input line 456}}{13}{Algorithm Pseudocode}{figure.caption.39}{}}
 \gdef \@abspage@last{13}

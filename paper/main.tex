@@ -195,11 +195,12 @@ If the model's internal representation reflects psychological theory, we expect 
 % ============================================================
 \section{Experimental Setup}\label{sec:setup}
 
-\paragraph{Models.} We validate PersonaLens on three primary models across two architectural families:
+\paragraph{Models.} We validate PersonaLens on four distinct models across two major architectural families:
 \begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
 \item \textbf{Qwen3-0.6B} \citep{qwen2025qwen3}: 28 layers, hidden dimension $d{=}1024$.
 \item \textbf{Qwen2.5-0.5B-Instruct}: 24 layers, hidden dimension $d{=}896$.
-\item \textbf{TinyLlama-1.1B-Chat-v1.0} \citep{zhang2024tinyllama}: 22 layers, hidden dimension $d{=}2048$. A LLaMA-based architecture to validate purely out-of-family generalization.
+\item \textbf{TinyLlama-1.1B-Chat-v1.0} \citep{zhang2024tinyllama}: 22 layers, $d{=}2048$.
+\item \textbf{Llama-3.2-1B-Instruct} \citep{dubey2024llama}: The latest state-of-the-art 16-layer lightweight model from Meta, representing distinct normalization and attention topologies.
 \end{itemize}
 These models are small enough for rapid prototyping while being representative of modern instruction-tuned transformer architectures.
 
@@ -321,12 +322,12 @@ When persona directions are extracted on completely non-overlapping 50\% splits 
 % ============================================================
 \subsection{Cross-Model Validation}\label{sec:crossmodel}
 
-To validate that PersonaLens produces \emph{transferable methodology} rather than artifactual model-specific findings, we run the full pipeline on two additional architectures: Qwen2.5-0.5B-Instruct (24 layers) and a non-Qwen family model, TinyLlama-1.1B-Chat (22 layers).
+To validate that PersonaLens produces \emph{transferable methodology} rather than artifactual model-specific findings, we run the full pipeline on three additional architectures spanning parameters from 0.5B to 1.1B: Qwen2.5-0.5B-Instruct, TinyLlama-1.1B-Chat, and Llama-3.2-1B-Instruct.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{fig_cross_model_orthogonality.png}
-\caption{\textbf{Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's middle layer (Qwen3-0.6B at L14; Qwen2.5-0.5B at L12; TinyLlama-1.1B at L11). All models show near-orthogonal Big Five vectors and correlated defense mechanism subspaces, with mean off-diagonal $|\cos|$ of 0.171, 0.194, and 0.125 respectively.}
+\caption{\textbf{Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's middle layer (Qwen3 at L14; Qwen2.5 at L12; TinyLlama at L11; Llama-3.2 at L8). All models show near-orthogonal Big Five vectors (mean off-diagonal $|\cos| < 0.23$) and correlated defense mechanism subspaces.}
 \label{fig:cross_model_ortho}
 \end{figure}
 
@@ -341,27 +342,26 @@ To validate that PersonaLens produces \emph{transferable methodology} rather tha
 Table~\ref{tab:cross_model} summarizes the cross-model results:
 
 \begin{table}[h]
-\caption{Cross-model validation summary. All models show consistent patterns across PersonaLens phases.}
+\caption{Cross-model validation summary. All models show consistent core structural metrics (high LOSO accuracy, low orthogonality, early causal layers), despite varying steering sensitivity.}
 \label{tab:cross_model}
 \centering
 \small
-\begin{tabular}{lccc}
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Metric} & \textbf{Qwen3-0.6B} & \textbf{Qwen2.5-0.5B} & \textbf{TinyLlama-1.1B} \\
+\textbf{Metric} & \textbf{Qwen3-0.6B} & \textbf{Qwen2.5} & \textbf{TinyLlama} & \textbf{Llama-3.2} \\
 \midrule
-Layers / Hidden dim & 28 / 1024 & 24 / 896 & 22 / 2048 \\
-Mean LOSO (all traits) & 1.000 & 1.000 & 0.972 \\
-Mean $|\cos|$ (Big Five) & 0.107 & 0.221 & 0.151 \\
-Mean $|\cos|$ (all 8 traits) & 0.171 & 0.194 & 0.125 \\
-Causal top layer & L0--L1 & L0--L1 & L0--L2 \\
-Steering PPL bound & $|\alpha| \le 4.0$ & $|\alpha| \le 6.0$ & $|\alpha| \le 1.0$ \\
+Layers / Hidden dim & 28 / 1024 & 24 / 896 & 22 / 2048 & 16 / 2048 \\
+Mean LOSO (Big Five) & 1.000 & 1.000 & 0.972 & 1.000 \\
+Mean $|\cos|$ (Big Five) & 0.107 & 0.221 & 0.151 & 0.135 \\
+Causal top layer & L0--L1 & L0--L1 & L0--L2 & L0--L1 \\
+Steering PPL bound & $|\alpha| \le 4.0$ & $|\alpha| \le 6.0$ & $|\alpha| \le 1.0$ & $|\alpha| \le 3.0$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 Critically, all architectures show consistent intrinsic properties: (a)~high LOSO probe accuracy from the earliest layers, (b)~exponential growth of activation difference magnitudes, (c)~causal dominance in early layers with user-token processing, and (d)~near-orthogonal Big Five vectors (Fig.~\ref{fig:cross_model_ortho}, \ref{fig:cross_model_profile}).
 
-\paragraph{Varying Steering Sensitivity.} While the representation structure is consistent, we empirically found differing sensitivity during steering interventions. Qwen models maintained linguistic coherence (PPL $<10$) under moderate intervention ($\alpha \in [-4, 4]$), whereas the LLaMA-based model degraded rapidly (PPL exploding beyond $\alpha=\pm1.0$). This highlights that while semantic linearly separable features generalize across architectures, the \emph{scale} of optimal intervention relies heavily on the normalization layers and residual stream geometry inherent to specific architectures.
+\paragraph{Varying Steering Sensitivity.} While the representation geometry (orthogonality, accuracy) is nearly identical across all architectures, we empirically found differing sensitivities during steering interventions. For example, Qwen2.5 maintained linguistic coherence (PPL $<10$) under highly aggressive intervention ($|\alpha| \le 6$), Llama-3.2 bounded comfortably around $|\alpha| \le 3$, whereas TinyLlama degraded rapidly (PPL exploding beyond $\alpha=\pm1.0$). This highlights that while semantic linearly separable features generalize across architectures, the \emph{scale} of optimal intervention relies heavily on the specific normalization topology and residual stream scale geometry inherent to different tokenizers and base training paradigms \citep{sae2025denoising}.
 
 % ============================================================
 \section{Discussion}\label{sec:discussion}
@@ -384,9 +384,9 @@ Identifying and controlling mechanisms of personality inherently introduces dual
 % ============================================================
 \section{Conclusion}\label{sec:conclusion}
 
-We presented PersonaLens, a rigorously validated framework for mechanistic analysis of personality in LLMs. Through systematic experiments on Qwen3, Qwen2.5, and TinyLlama architectures, we demonstrate that personality traits correspond to highly orthogonal, OOD-transferable linear directions in activation space, with remarkably consistent patterns: Big Five mean off-diagonal $|\cos|$ between 0.10 and 0.23, causal dominance in early-layer user-token attention, and steering efficacy within bounded, architecture-specific linear regimes. Refined localized patchings---including random-token controls---prove user-token attention processing creates the causal bottleneck for personality, rather than system-prompt memorization.
+We presented PersonaLens, a rigorously validated framework for mechanistic analysis of personality in LLMs. Through systematic experiments on Qwen3, Qwen2.5, TinyLlama, and Llama-3.2 architectures, we demonstrate that personality traits correspond to highly orthogonal, OOD-transferable linear directions in activation space, with remarkably consistent patterns: Big Five mean off-diagonal $|\cos|$ between 0.10 and 0.23, probe accuracies averaging $>0.97$, causal dominance in early-layer user-token attention, and steering efficacy within bounded, architecture-specific linear regimes. Refined localized patchings---including random-token controls---prove user-token attention processing creates the causal bottleneck for personality, rather than system-prompt memorization.
 
-\paragraph{Future Work.} We plan to (1)~extend cross-model validation to larger architectures (Qwen3-1.7B, LLaMA-3-8B, Mistral-7B); (2)~investigate attention-head-level localization using EAP-IG for finer-grained circuit discovery; (3)~develop automated behavioral personality evaluation moving beyond keyword heuristics; (4)~explore SAE-denoised persona vectors for improved steering reliability; and (5)~test whether persona vectors can replace PersonaForge's Inner Monologue mechanism for zero-latency personality-consistent generation.
+\paragraph{Future Work.} We plan to (1)~extend cross-model validation to multi-lingual (e.g., Gemma-2) and larger 7B+ scale architectures (Qwen2.5-7B, Llama-3.1-8B); (2)~investigate attention-head-level localization using EAP-IG; (3)~develop automated behavioral personality evaluation moving beyond keyword heuristics; and (4)~explore whether SAE-denoised vectors can replace PersonaForge's Inner Monologue mechanism for zero-latency consistent generation.
 
 % ============================================================
 \bibliographystyle{unsrtnat}
@@ -409,6 +409,18 @@ We presented PersonaLens, a rigorously validated framework for mechanistic analy
 \textbf{Neutral system:} ``\textit{You are a character who responds directly and sincerely to emotional situations. You acknowledge pain, threats, or insults without deflection, expressing your genuine feelings.}''
 
 \textbf{Scenario:} ``\textit{Someone insults your intelligence in front of your friends.}''
+
+\section{Extended Cross-Model Analytics}\label{app:cross_model}
+\subsection{Cohen's d and Signal-to-Noise Ratio (SNR)}
+Across all tested models (Qwen3-0.6B, Qwen2.5-0.5B, TinyLlama-1.1B, Llama-3.2-1B), the linear probe separability of Big Five traits yielded massive effect sizes. For instance, Llama-3.2-1B consistently maintained a Cohen's $d$ of $\approx 9.75$ and an SNR of $\approx 10.3$ at its optimal intermediate layer (L8 out of L16). For TinyLlama-1.1B, the LOSO generalization peak occurred at layer 11 with an equivalent probe accuracy of 0.972.
+
+\subsection{Steering Saturation Discrepancy}
+As discussed in Section~\ref{sec:crossmodel}, the injection bounds before severe linguistic collapse varied significantly. Empirically, inserting the normalized mean difference vector perturbed models differentially:
+\begin{itemize}
+    \item \textbf{TinyLlama-1.1B:} Extreme sensitivity. Alpha sweeps ($\alpha > 1.0$) caused cascading entropy collapses, emitting token loops.
+    \item \textbf{Llama-3.2-1B:} Robust scaling ($\alpha \in [-3, 3]$). The architecture smoothly interpolates personality changes.
+    \item \textbf{Qwen Series:} Exceptional resilience. Qwen2.5-0.5B maintained sub-10 PPL even at $\alpha=6.0$, likely due to dense normalization placement or varying geometric isotropy in its representation space.
+\end{itemize}
 
 % ============================================================
 \section{Complete Diff Norm Profiles for All Traits}\label{app:diffnorms}
