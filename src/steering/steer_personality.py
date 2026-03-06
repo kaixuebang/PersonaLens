@@ -143,7 +143,7 @@ class PersonalitySteerer:
             steer: Whether to apply steering
         """
         messages = [{"role": "user", "content": prompt}]
-        text = self.tokenizer.apply_chat_template(messages, tokenize=False,
+        text = apply_chat_template_safe(self.tokenizer, messages, tokenize=False,
                                                    add_generation_prompt=True)
         inputs = self.tokenizer(text, return_tensors="pt").to(self.device)
 

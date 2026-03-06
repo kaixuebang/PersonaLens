@@ -57,7 +57,7 @@ class SelfReportEvaluator:
         # We ask the model to rate the statement 1-5
         prompt = f"Please rate how much you agree with the following statement about yourself from 1 (strongly disagree) to 5 (strongly agree). Respond with ONLY a single digit integer (1, 2, 3, 4, or 5).\n\nStatement: \"{stmt}\"\n\nRating (1-5):"
         messages = [{"role": "user", "content": prompt}]
-        text = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        text = apply_chat_template_safe(self.tokenizer, messages, tokenize=False, add_generation_prompt=True)
         inputs = self.tokenizer(text, return_tensors="pt").to(self.device)
         
         # We look at the logits for '1', '2', '3', '4', '5' for the immediate next token

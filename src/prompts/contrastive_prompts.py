@@ -340,3 +340,30 @@ def get_contrastive_pairs(trait_name):
     else:
         raise ValueError(f"Unknown trait: {trait_name}. Available: {get_all_trait_names()}")
     return pairs
+
+def apply_chat_template_safe(tokenizer, messages, **kwargs):
+    """
+    Safely apply chat template.
+    If the tokenizer throws an error (like 'System role not supported' in Gemma-2),
+    fallback to combining the system prompt with the first user message.
+    """
+    try:
+        return tokenizer.apply_chat_template(messages, **kwargs)
+    except Exception as e:
+        if "System role not supported" in str(e) or "system" in str(e).lower():
+            # Fallback: Merge system into first user message
+            new_messages = []
+            system_content = ""
+            for msg in messages:
+                if msg["role"] == "system":
+                    system_content += msg["content"] + "\n\n"
+                elif msg["role"] == "user":
+                    new_messages.append({
+                        "role": "user",
+                        "content": system_content + msg["content"]
+                    })
+                    system_content = "" # Reset
+                else:
+                    new_messages.append(msg)
+            return tokenizer.apply_chat_template(new_messages, **kwargs)
+        raise e

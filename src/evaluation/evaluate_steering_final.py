@@ -55,7 +55,7 @@ class FinalSteeringEvaluator:
 
     def generate_and_eval(self, prompt, trait_name, max_new_tokens=150, temperature=0.7):
         messages = [{"role": "user", "content": prompt}]
-        text = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        text = apply_chat_template_safe(self.tokenizer, messages, tokenize=False, add_generation_prompt=True)
         inputs = self.tokenizer(text, return_tensors="pt").to(self.device)
         
         with torch.no_grad():
