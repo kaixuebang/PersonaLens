@@ -13,7 +13,7 @@ def main():
     args = parser.parse_args()
 
     model_short = args.model.replace("/", "_")
-    base_dir = f"persona_vectors_v2/{model_short}"
+    base_dir = f"persona_vectors/{model_short}"
     
     # We will look at both Big Five and defense mechanisms
     big_five = ["openness", "extraversion", "agreeableness", "conscientiousness", "neuroticism"]

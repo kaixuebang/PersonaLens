@@ -10,7 +10,7 @@ Key improvements over the original extract_persona_vectors.py:
 6. Cohen's d effect sizes for statistical rigor
 
 Usage:
-    python extract_persona_vectors_v2.py --activations_dir activations/Qwen_Qwen3-0.6B --trait all
+    python extract_persona_vectors.py --activations_dir activations/Qwen_Qwen3-0.6B --trait all
 """
 
 import argparse
@@ -62,8 +62,23 @@ def compute_random_baseline_norm(pos_acts, neg_acts, n_permutations=100):
     return np.mean(random_norms), np.std(random_norms)
 
 
-def compute_cohens_d(pos_acts, neg_acts):
-    """Compute Cohen's d effect size along the mean-diff direction."""
+def compute_cohens_d(pos_acts, neg_acts, compute_ci=True, n_bootstrap=1000, ci_level=0.95):
+    """
+    Compute Cohen's d effect size along the mean-diff direction.
+    
+    Args:
+        pos_acts: Positive class activations (n_samples, hidden_dim)
+        neg_acts: Negative class activations (n_samples, hidden_dim)
+        compute_ci: Whether to compute bootstrap confidence interval
+        n_bootstrap: Number of bootstrap samples for CI
+        ci_level: Confidence level (default 0.95 for 95% CI)
+    
+    Returns:
+        d: Cohen's d effect size
+        ci_lower: Lower bound of confidence interval (if compute_ci=True)
+        ci_upper: Upper bound of confidence interval (if compute_ci=True)
+        p_value: P-value from permutation test (if compute_ci=True)
+    """
     diff_vec = np.mean(pos_acts, axis=0) - np.mean(neg_acts, axis=0)
     direction = diff_vec / (np.linalg.norm(diff_vec) + 1e-10)
     # Project onto direction
@@ -71,10 +86,52 @@ def compute_cohens_d(pos_acts, neg_acts):
     neg_proj = neg_acts @ direction
     # Pooled std
     n1, n2 = len(pos_proj), len(neg_proj)
-    pooled_std = np.sqrt(((n1-1)*np.var(pos_proj) + (n2-1)*np.var(neg_proj)) / (n1+n2-2))
+    pooled_std = np.sqrt(((n1-1)*np.var(pos_proj, ddof=1) + (n2-1)*np.var(neg_proj, ddof=1)) / (n1+n2-2))
     d = (np.mean(pos_proj) - np.mean(neg_proj)) / (pooled_std + 1e-10)
-    return d
-
+    
+    if not compute_ci:
+        return d
+    
+    # Bootstrap confidence interval
+    rng = np.random.RandomState(42)
+    bootstrap_ds = []
+    for _ in range(n_bootstrap):
+        # Resample with replacement
+        boot_pos_idx = rng.choice(n1, size=n1, replace=True)
+        boot_neg_idx = rng.choice(n2, size=n2, replace=True)
+        boot_pos = pos_proj[boot_pos_idx]
+        boot_neg = neg_proj[boot_neg_idx]
+        
+        # Compute Cohen's d for bootstrap sample
+        boot_pooled_std = np.sqrt(
+            ((n1-1)*np.var(boot_pos, ddof=1) + (n2-1)*np.var(boot_neg, ddof=1)) / (n1+n2-2)
+        )
+        if boot_pooled_std > 1e-10:
+            boot_d = (np.mean(boot_pos) - np.mean(boot_neg)) / boot_pooled_std
+            bootstrap_ds.append(boot_d)
+    
+    # Compute confidence interval from bootstrap distribution
+    alpha = 1 - ci_level
+    ci_lower = np.percentile(bootstrap_ds, 100 * alpha / 2)
+    ci_upper = np.percentile(bootstrap_ds, 100 * (1 - alpha / 2))
+    
+    # Permutation test for p-value
+    n_permutations = max(1000, n_bootstrap)
+    observed_diff = np.mean(pos_proj) - np.mean(neg_proj)
+    count_extreme = 0
+    all_proj = np.concatenate([pos_proj, neg_proj])
+    
+    for _ in range(n_permutations):
+        perm = rng.permutation(len(all_proj))
+        perm_pos = all_proj[perm[:n1]]
+        perm_neg = all_proj[perm[n1:]]
+        perm_diff = np.mean(perm_pos) - np.mean(perm_neg)
+        if abs(perm_diff) >= abs(observed_diff):
+            count_extreme += 1
+    
+    p_value = (count_extreme + 1) / (n_permutations + 1)
+    
+    return d, float(ci_lower), float(ci_upper), float(p_value)
 
 def robust_linear_probe(pos_acts, neg_acts, C=0.01):
     """
@@ -169,15 +226,34 @@ def leave_scenario_out_probe(pos_acts, neg_acts, C=0.01):
         # 4. Held out individual diff norms
         held_out_raw_norms.append(np.linalg.norm(test_pos[0] - test_neg[0]))
 
-    # Compute Aggregate Held-Out Cohen's d
-    pos_proj = np.array(all_held_out_pos_proj)
-    neg_proj = np.array(all_held_out_neg_proj)
-    n1, n2 = len(pos_proj), len(neg_proj)
-    if n1 > 1 and n2 > 1:
-        pooled_std = np.sqrt(((n1-1)*np.var(pos_proj) + (n2-1)*np.var(neg_proj)) / (n1+n2-2))
-        held_out_d = (np.mean(pos_proj) - np.mean(neg_proj)) / (pooled_std + 1e-10)
+    # In a true Leave-One-Scenario-Out setting, we have pairs of (pos, neg)
+    # where pos and neg come from the SAME scenario but projected on the train direction
+    # The correct way to calculate effect size for paired data is using the difference scores
+    diff_scores = np.array([p - n for p, n in zip(all_held_out_pos_proj, all_held_out_neg_proj)])
+    
+    if len(diff_scores) > 1:
+        # Cohen's d for paired samples (d_z)
+        mean_diff = np.mean(diff_scores)
+        std_diff = np.std(diff_scores, ddof=1)
+        held_out_d = mean_diff / (std_diff + 1e-10)
+        
+        # Approximate 95% CI for paired Cohen's d using formula
+        # roughly: d +/- 1.96 * sqrt(1/N + d^2 / (2N))
+        n = len(diff_scores)
+        se_d = np.sqrt(1/n + (held_out_d**2) / (2*n))
+        ci_lower = held_out_d - 1.96 * se_d
+        ci_upper = held_out_d + 1.96 * se_d
+        
+        # Approximate p-value (we could use scipy.stats.ttest_rel but let's just keep it simple)
+        # For now we'll just return a placeholder for p-value or calculate from t-stat
+        t_stat = mean_diff / (std_diff / np.sqrt(n) + 1e-10)
+        from scipy.stats import t
+        p_value = float(2 * (1 - t.cdf(abs(t_stat), df=n-1)))
     else:
         held_out_d = 0.0
+        ci_lower = 0.0
+        ci_upper = 0.0
+        p_value = 1.0
         
     avg_held_out_raw_norm = float(np.mean(held_out_raw_norms))
 
@@ -186,9 +262,11 @@ def leave_scenario_out_probe(pos_acts, neg_acts, C=0.01):
         "accuracy_std": float(np.std(loso_accs)),
         "brier_mean": float(np.mean(loso_briers)),
         "cohens_d": float(held_out_d),
+        "cohens_d_ci_lower": float(ci_lower),
+        "cohens_d_ci_upper": float(ci_upper),
+        "cohens_d_p_value": float(p_value),
         "raw_norm_mean": avg_held_out_raw_norm
     }
-
 
 def extract_mean_diff_vector(pos_acts, neg_acts):
     """Mean difference with normalization tracking."""
@@ -252,6 +330,9 @@ def analyze_trait_v2(trait_dir, trait_name, output_dir, regularization_C=0.01):
         loso_acc = loso_metrics["accuracy_mean"]
         loso_std = loso_metrics["accuracy_std"]
         held_out_d = loso_metrics["cohens_d"]
+        held_out_d_ci_lower = loso_metrics["cohens_d_ci_lower"]
+        held_out_d_ci_upper = loso_metrics["cohens_d_ci_upper"]
+        held_out_d_p_value = loso_metrics["cohens_d_p_value"]
         held_out_brier = loso_metrics["brier_mean"]
         held_out_raw_norm = loso_metrics["raw_norm_mean"]
 
@@ -281,8 +362,7 @@ def analyze_trait_v2(trait_dir, trait_name, output_dir, regularization_C=0.01):
               f"LOSO={loso_acc:.3f}, "
               f"norm/RMS={rms_normalized_norm:.4f}, "
               f"SNR={signal_to_noise:.1f}, "
-              f"d(heldout)={held_out_d:.2f}")
-
+              f"d(heldout)={held_out_d:.2f} [{held_out_d_ci_lower:.2f}, {held_out_d_ci_upper:.2f}], p={held_out_d_p_value:.4f}")
         raw_norms.append(held_out_raw_norm)
         rms_norms.append(rms)
         normalized_norms.append(rms_normalized_norm)
@@ -302,6 +382,9 @@ def analyze_trait_v2(trait_dir, trait_name, output_dir, regularization_C=0.01):
             "random_baseline_norm_std": float(rand_std),
             "signal_to_noise_ratio": float(signal_to_noise),
             "cohens_d": float(held_out_d),
+            "cohens_d_ci_lower": float(held_out_d_ci_lower),
+            "cohens_d_ci_upper": float(held_out_d_ci_upper),
+            "cohens_d_p_value": float(held_out_d_p_value),
             "probe_accuracy": probe_result["accuracy_mean"],
             "probe_accuracy_std": probe_result["accuracy_std"],
             "loso_accuracy": float(loso_acc),
@@ -459,7 +542,7 @@ def main():
 
     if args.output_dir is None:
         model_name = os.path.basename(args.activations_dir)
-        args.output_dir = os.path.join("persona_vectors_v2", model_name)
+        args.output_dir = os.path.join("persona_vectors", model_name)
     os.makedirs(args.output_dir, exist_ok=True)
 
     available_traits = [d for d in os.listdir(args.activations_dir)

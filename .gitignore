@@ -33,3 +33,20 @@ cross_model_results/
 # Ignore the review stuff
 reviewer.txt
 _organize_project.py
+
+# Generated outputs (v2 canonical)
+activations/*
+persona_vectors/*
+localization/*
+eval_results/*
+!activations/.gitkeep
+!persona_vectors_v2/.gitkeep
+!localization_v2/.gitkeep
+
+# Old v1 directories (should not exist)
+persona_vectors/
+localization/
+eval_results/
+
+# Cleanup marker
+.cleanup_done

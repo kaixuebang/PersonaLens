@@ -22,6 +22,7 @@ Usage:
 """
 
 import argparse
+import atexit
 import os
 import subprocess
 import sys
@@ -33,13 +34,100 @@ if repo_root not in sys.path:
 from src.prompts.contrastive_prompts import get_all_trait_names, BIG_FIVE_PROMPTS, DEFENSE_MECHANISM_PROMPTS
 
 
+def check_dependencies():
+    """Pre-flight check: Verify all required dependencies are installed."""
+    print("\n" + "="*50)
+    print("Pre-flight Checks")
+    print("="*50)
+    
+    required_packages = [
+        ("torch", "PyTorch"),
+        ("transformers", "Hugging Face Transformers"),
+        ("numpy", "NumPy"),
+        ("sklearn", "Scikit-learn"),
+        ("matplotlib", "Matplotlib"),
+        ("scipy", "SciPy"),
+        ("tqdm", "tqdm"),
+    ]
+    
+    missing = []
+    for module, name in required_packages:
+        try:
+            __import__(module)
+            print(f"  ✓ {name}")
+        except ImportError:
+            print(f"  ✗ {name} - MISSING")
+            missing.append(name)
+    
+    if missing:
+        print(f"\n[ERROR] Missing dependencies: {', '.join(missing)}")
+        print("Please install requirements: pip install -r requirements.txt")
+        return False
+    
+    # Check CUDA availability
+    import torch
+    if torch.cuda.is_available():
+        print(f"  ✓ CUDA available: {torch.cuda.get_device_name(0)}")
+    else:
+        print("  ⚠ CUDA not available - will use CPU (slower)")
+    
+    # Check directory structure
+    required_dirs = ["src", "scripts", "paper"]
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for d in required_dirs:
+        path = os.path.join(repo_root, d)
+        if os.path.isdir(path):
+            print(f"  ✓ Directory: {d}/")
+        else:
+            print(f"  ✗ Directory: {d}/ - MISSING")
+            return False
+    
+    print("  ✓ All pre-flight checks passed")
+    print("="*50 + "\n")
+    return True
+
+
+def verify_outputs(model_short):
+    """Post-flight check: Verify all expected outputs were generated."""
+    print("\n" + "="*50)
+    print("Verifying Pipeline Outputs")
+    print("="*50)
+    
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
+    expected_paths = [
+        f"activations/{model_short}",
+        f"persona_vectors/{model_short}",
+        f"localization/{model_short}",
+        f"steering_results/{model_short}",
+        "cross_model_results",
+    ]
+    
+    all_exist = True
+    for path in expected_paths:
+        full_path = os.path.join(repo_root, path)
+        if os.path.isdir(full_path):
+            # Count files in directory
+            n_files = sum(1 for _ in os.walk(full_path) for _ in _)
+            print(f"  ✓ {path}/ ({n_files} items)")
+        else:
+            print(f"  ✗ {path}/ - MISSING")
+            all_exist = False
+    
+    print("="*50 + "\n")
+    return all_exist
+
+
 def run_step(name, cmd, cwd=None, env=None):
+    """Run a pipeline step with error handling."""
     print(f"\n{'='*50}")
     print(f"Running step: {name}")
     print(f"Command: {' '.join(cmd)}")
     print(f"{'='*50}\n")
     try:
-        subprocess.run(cmd, check=True, cwd=cwd, env=env)
+        result = subprocess.run(cmd, check=True, cwd=cwd, env=env, capture_output=False)
+        print(f"\n  ✓ Step '{name}' completed successfully")
+        return True
     except subprocess.CalledProcessError as e:
         print(f"\n[ERROR] Step '{name}' failed with return code {e.returncode}.")
         print("Pipeline aborted to prevent false completion states.")
@@ -80,6 +168,13 @@ def main():
     print(f"  Model: {args.model}")
     print(f"  Traits: {traits}")
     print(f"{'#'*70}")
+
+    # Pre-flight checks
+    if not check_dependencies():
+        sys.exit(1)
+    
+    # Verify outputs on completion
+    atexit.register(lambda: verify_outputs(model_short))
 
     device_args = ["--device", args.device] if args.device else []
 
@@ -130,7 +225,7 @@ def main():
              "--model", args.model,
              "--trait", trait,
              "--alpha", str(args.alpha),
-             "--vectors_dir", f"persona_vectors_v2/{model_short}/{trait}/vectors",
+             "--vectors_dir", f"persona_vectors/{model_short}/{trait}/vectors",
              "--vector_type", "mean_diff"] + device_args,
             cwd=repo_root,
             env=env
@@ -140,7 +235,7 @@ def main():
     run_step(
         "Cross-Model Validation",
         [python, "src/evaluation/cross_model_validation.py",
-         "--persona_vectors_dir", "persona_vectors_v2",
+         "--persona_vectors_dir", "persona_vectors",
          "--trait", "all"],
         cwd=repo_root,
         env=env
@@ -149,8 +244,8 @@ def main():
     print(f"\n{'#'*70}")
     print(f"  ✓ PIPELINE COMPLETE")
     print(f"  Activations:     activations/{model_short}/")
-    print(f"  Persona Vectors: persona_vectors_v2/{model_short}/")
-    print(f"  Localization:    localization_v2/{model_short}/")
+    print(f"  Persona Vectors: persona_vectors/{model_short}/")
+    print(f"  Localization:    localization/{model_short}/")
     print(f"  Steering:        steering_results/{model_short}/")
     print(f"  Cross-Model:     cross_model_results/")
     print(f"{'#'*70}")

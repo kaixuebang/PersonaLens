@@ -62,7 +62,7 @@ def extract_all_vectors(model_name, traits):
     python = sys.executable
     model_short = model_name.replace("/", "_")
     act_dir = f"activations/{model_short}"
-    out_dir = f"persona_vectors_v2/{model_short}"
+    out_dir = f"persona_vectors/{model_short}"
     
     success = run_cmd(
         [python, "src/extraction/extract_persona_vectors_v2.py",
@@ -78,17 +78,20 @@ def localize_circuits(model_name, traits, n_samples=5):
     """Phase 3: Causal localization."""
     python = sys.executable
     for trait in traits:
-        run_cmd(
+        success = run_cmd(
             [python, "src/localization/localize_circuits_v2.py",
              "--model", model_name, "--trait", trait, "--n_samples", str(n_samples)],
             f"Causal Localization: {model_name} / {trait}"
         )
+        if not success:
+            return False
+    return True
 
 
 def evaluate_steering(model_name, trait="openness"):
     """Phase 4: Steering evaluation."""
     python = sys.executable
-    run_cmd(
+    return run_cmd(
         [python, "src/evaluation/evaluate_steering_final.py", "--model", model_name, "--trait", trait],
         f"Steering Evaluation: {model_name} / {trait}"
     )
@@ -97,7 +100,7 @@ def evaluate_steering(model_name, trait="openness"):
 def compute_orthogonality_for_model(model_name, layer, traits=ALL_TRAITS):
     """Compute orthogonality matrix at a given layer for a model."""
     model_short = model_name.replace("/", "_")
-    base_dir = f"persona_vectors_v2/{model_short}"
+    base_dir = f"persona_vectors/{model_short}"
     
     vectors = {}
     for trait in traits:
@@ -112,7 +115,7 @@ def compute_orthogonality_for_model(model_name, layer, traits=ALL_TRAITS):
 def find_common_layer(model_name):
     """Find a good common layer (middle of the model) from analysis files."""
     model_short = model_name.replace("/", "_")
-    base_dir = f"persona_vectors_v2/{model_short}"
+    base_dir = f"persona_vectors/{model_short}"
     
     # Try to read analysis file for any trait
     for trait in ALL_TRAITS:
@@ -218,7 +221,7 @@ def generate_cross_model_layer_profiles(model_configs, output_dir="cross_model_r
         
         for idx, (model_name, _) in enumerate(model_configs):
             model_short = model_name.replace("/", "_")
-            analysis_path = f"persona_vectors_v2/{model_short}/{trait}/analysis_v2_{trait}.json"
+            analysis_path = f"persona_vectors/{model_short}/{trait}/analysis_v2_{trait}.json"
             
             if not os.path.exists(analysis_path):
                 continue
@@ -307,19 +310,23 @@ def main():
             
             # Phase 1: Collect
             if not args.skip_collect:
-                collect_all_traits(model, traits)
+                if not collect_all_traits(model, traits):
+                    sys.exit(1)
             
             # Phase 2: Extract
             if not args.skip_extract:
-                extract_all_vectors(model, traits)
+                if not extract_all_vectors(model, traits):
+                    sys.exit(1)
             
             # Phase 3: Localize (only openness for speed)
             if not args.skip_localize:
-                localize_circuits(model, ["openness"], n_samples=5)
+                if not localize_circuits(model, ["openness"], n_samples=5):
+                    sys.exit(1)
             
             # Phase 4: Steer (only openness for speed)
             if not args.skip_steer:
-                evaluate_steering(model, "openness")
+                if not evaluate_steering(model, "openness"):
+                    sys.exit(1)
     
     # Phase 5: Cross-model visualization
     print(f"\n{'='*60}")

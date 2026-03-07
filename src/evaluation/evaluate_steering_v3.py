@@ -113,9 +113,9 @@ def main():
     model.eval()
 
     model_short = args.model.replace("/", "_")
-    vectors_dir = f"persona_vectors_v2/{model_short}/{args.trait}/vectors"
+    vectors_dir = f"persona_vectors/{model_short}/{args.trait}/vectors"
     
-    analysis_file = f"persona_vectors_v2/{model_short}/{args.trait}/analysis_v2_{args.trait}.json"
+    analysis_file = f"persona_vectors/{model_short}/{args.trait}/analysis_v2_{args.trait}.json"
     if os.path.exists(analysis_file):
         with open(analysis_file) as f:
             layer = json.load(f).get("best_layer_snr", 14)
@@ -142,7 +142,7 @@ def main():
     sweep_results = evaluator.evaluate_alpha_sweep(alphas, all_items)
     evaluator.clear()
 
-    out_dir = f"eval_results_v2/{model_short}/{args.trait}"
+    out_dir = f"eval_results/{model_short}/{args.trait}"
     os.makedirs(out_dir, exist_ok=True)
     with open(f"{out_dir}/bfi_sweep.json", "w", encoding="utf-8") as f:
         json.dump(sweep_results, f, indent=2)

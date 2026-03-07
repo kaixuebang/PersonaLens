@@ -316,7 +316,7 @@ def main():
     parser = argparse.ArgumentParser(description="Refined causal localization (v2)")
     parser.add_argument("--model", type=str, default="Qwen/Qwen3-0.6B")
     parser.add_argument("--trait", type=str, default="openness")
-    parser.add_argument("--output_dir", type=str, default="localization_v2")
+    parser.add_argument("--output_dir", type=str, default="localization")
     parser.add_argument("--n_samples", type=int, default=10)
     parser.add_argument("--device", type=str, default=None)
     args = parser.parse_args()
