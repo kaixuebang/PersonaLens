@@ -125,9 +125,18 @@ def leave_scenario_out_probe(pos_acts, neg_acts, C=0.01):
     """
     Leave-one-scenario-out: each fold leaves out one contrastive pair.
     Tests generalization to unseen scenarios.
+    Computes rigorous held-out test metrics.
     """
     K = len(pos_acts)
     loso_accs = []
+    loso_briers = []
+    
+    # To compute held-out Cohen's d & SNR across all leave-one-out predictions
+    all_held_out_pos_proj = []
+    all_held_out_neg_proj = []
+    
+    held_out_raw_norms = []
+    
     for i in range(K):
         # Leave out pair i
         train_pos = np.delete(pos_acts, i, axis=0)
@@ -140,12 +149,45 @@ def leave_scenario_out_probe(pos_acts, neg_acts, C=0.01):
         X_test = np.concatenate([test_pos, test_neg])
         y_test = np.array([1.0, 0.0])
 
+        # 1. Train linear probe for Acc & Brier
         clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs", penalty="l2")
         clf.fit(X_train, y_train)
         acc = clf.score(X_test, y_test)
         loso_accs.append(acc)
+        
+        probs = clf.predict_proba(X_test)[:, 1]
+        loso_briers.append(brier_score_loss(y_test, probs))
+        
+        # 2. Compute Mean Diff Direction purely on Train fold
+        train_diff_vec = np.mean(train_pos, axis=0) - np.mean(train_neg, axis=0)
+        direction = train_diff_vec / (np.linalg.norm(train_diff_vec) + 1e-10)
+        
+        # 3. Project Held-Out Test Data onto Train Direction
+        all_held_out_pos_proj.append((test_pos @ direction)[0])
+        all_held_out_neg_proj.append((test_neg @ direction)[0])
+        
+        # 4. Held out individual diff norms
+        held_out_raw_norms.append(np.linalg.norm(test_pos[0] - test_neg[0]))
 
-    return float(np.mean(loso_accs)), float(np.std(loso_accs))
+    # Compute Aggregate Held-Out Cohen's d
+    pos_proj = np.array(all_held_out_pos_proj)
+    neg_proj = np.array(all_held_out_neg_proj)
+    n1, n2 = len(pos_proj), len(neg_proj)
+    if n1 > 1 and n2 > 1:
+        pooled_std = np.sqrt(((n1-1)*np.var(pos_proj) + (n2-1)*np.var(neg_proj)) / (n1+n2-2))
+        held_out_d = (np.mean(pos_proj) - np.mean(neg_proj)) / (pooled_std + 1e-10)
+    else:
+        held_out_d = 0.0
+        
+    avg_held_out_raw_norm = float(np.mean(held_out_raw_norms))
+
+    return {
+        "accuracy_mean": float(np.mean(loso_accs)),
+        "accuracy_std": float(np.std(loso_accs)),
+        "brier_mean": float(np.mean(loso_briers)),
+        "cohens_d": float(held_out_d),
+        "raw_norm_mean": avg_held_out_raw_norm
+    }
 
 
 def extract_mean_diff_vector(pos_acts, neg_acts):
@@ -201,22 +243,27 @@ def analyze_trait_v2(trait_dir, trait_name, output_dir, regularization_C=0.01):
         # 2. RMS normalization
         all_layer_acts = np.concatenate([p, n], axis=0)
         rms = compute_rms(all_layer_acts)
-        rms_normalized_norm = raw_norm / (rms + 1e-10)
 
-        # 3. Random baseline
-        rand_mean, rand_std = compute_random_baseline_norm(p, n, n_permutations=200)
-        signal_to_noise = (raw_norm - rand_mean) / (rand_std + 1e-10)
-
-        # 4. Cohen's d
-        d = compute_cohens_d(p, n)
-
-        # 5. Robust probe
+        # 3. Robust full-data probe (for reference direction finding)
         probe_result, probe_dir = robust_linear_probe(p, n, C=regularization_C)
 
-        # 6. LOSO probe
-        loso_acc, loso_std = leave_scenario_out_probe(p, n, C=regularization_C)
+        # 4. LOSO strict held-out metrics (Accuracy, Brier, Cohen's d, Raw Norm)
+        loso_metrics = leave_scenario_out_probe(p, n, C=regularization_C)
+        loso_acc = loso_metrics["accuracy_mean"]
+        loso_std = loso_metrics["accuracy_std"]
+        held_out_d = loso_metrics["cohens_d"]
+        held_out_brier = loso_metrics["brier_mean"]
+        held_out_raw_norm = loso_metrics["raw_norm_mean"]
 
-        # 7. PCA
+        # Compute normalized norms strictly on the held out means
+        rms_normalized_norm = held_out_raw_norm / (rms + 1e-10)
+
+        # 5. Random baseline 
+        rand_mean, rand_std = compute_random_baseline_norm(p, n, n_permutations=200)
+        # SNR on held out raw norm
+        signal_to_noise = (held_out_raw_norm - rand_mean) / (rand_std + 1e-10)
+
+        # 6. PCA
         diffs = p - n
         scaler = StandardScaler(with_std=False)
         diffs_c = scaler.fit_transform(diffs)
@@ -225,42 +272,41 @@ def analyze_trait_v2(trait_dir, trait_name, output_dir, regularization_C=0.01):
         pca.fit(diffs_c)
         pca_var1 = float(pca.explained_variance_ratio_[0])
 
-        # 8. Cosine between methods
+        # 7. Cosine between methods
         cos_diff_probe = float(np.dot(diff_vec, probe_dir))
         pca_top = pca.components_[0] / (np.linalg.norm(pca.components_[0]) + 1e-10)
         cos_diff_pca = float(abs(np.dot(diff_vec, pca_top)))
 
         print(f"probe={probe_result['accuracy_mean']:.3f}, "
               f"LOSO={loso_acc:.3f}, "
-              f"raw_norm={raw_norm:.2f}, "
               f"norm/RMS={rms_normalized_norm:.4f}, "
               f"SNR={signal_to_noise:.1f}, "
-              f"d={d:.2f}")
+              f"d(heldout)={held_out_d:.2f}")
 
-        raw_norms.append(raw_norm)
+        raw_norms.append(held_out_raw_norm)
         rms_norms.append(rms)
         normalized_norms.append(rms_normalized_norm)
         random_baseline_norms.append(rand_mean)
         random_baseline_stds.append(rand_std)
         probe_accs.append(probe_result["accuracy_mean"])
         loso_accs.append(loso_acc)
-        cohens_ds.append(d)
+        cohens_ds.append(held_out_d)
         pca_var1s.append(pca_var1)
-        brier_scores.append(probe_result["brier_score"])
+        brier_scores.append(held_out_brier)
 
         layer_result = {
-            "raw_diff_norm": float(raw_norm),
+            "raw_diff_norm": float(held_out_raw_norm),
             "rms_scale": float(rms),
             "rms_normalized_diff_norm": float(rms_normalized_norm),
             "random_baseline_norm_mean": float(rand_mean),
             "random_baseline_norm_std": float(rand_std),
             "signal_to_noise_ratio": float(signal_to_noise),
-            "cohens_d": float(d),
+            "cohens_d": float(held_out_d),
             "probe_accuracy": probe_result["accuracy_mean"],
             "probe_accuracy_std": probe_result["accuracy_std"],
             "loso_accuracy": float(loso_acc),
             "loso_accuracy_std": float(loso_std),
-            "brier_score": probe_result["brier_score"],
+            "brier_score": float(held_out_brier),
             "mean_margin": probe_result["mean_margin"],
             "pca_var_top1": pca_var1,
             "cosine_diff_probe": cos_diff_probe,

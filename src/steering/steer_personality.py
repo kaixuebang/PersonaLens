@@ -83,19 +83,30 @@ class PersonalitySteerer:
         self.steering_vectors = {}
 
         if layer_indices is None:
-            # Load analysis to find best layer
-            parent_dir = os.path.dirname(vectors_dir)
-            trait_name = os.path.basename(parent_dir)
-            analysis_file = os.path.join(parent_dir, f"analysis_{trait_name}.json")
-            if os.path.exists(analysis_file):
-                with open(analysis_file) as f:
+            # Load extraction analysis to find best layer
+            # Fallback to older analysis.json if analysis_v2_*.json doesn't exist
+            analysis_path = os.path.join(os.path.dirname(vectors_dir), f"analysis_v2_{trait_name}.json")
+            if not os.path.exists(analysis_path):
+                analysis_path = os.path.join(os.path.dirname(vectors_dir), f"analysis_{trait_name}.json")
+
+            if os.path.exists(analysis_path):
+                with open(analysis_path, "r") as f:
                     analysis = json.load(f)
-                best_layer = analysis["best_layer"]
+
+                # Check for V2 keys first (best_layer_loso/best_layer_snr) or fallback to V1 ('best_layer')
+                if "best_layer_loso" in analysis:
+                    best_layer = analysis["best_layer_loso"]
+                elif "best_layer_snr" in analysis:
+                    best_layer = analysis["best_layer_snr"]
+                else:
+                    best_layer = analysis.get("best_layer", 0) # Default to layer 0 if no best_layer key
+
                 layer_indices = [best_layer]
-                print(f"  Auto-selected best layer: {best_layer} "
-                      f"(probe acc: {analysis['best_probe_accuracy']:.3f})")
+                print(f"  Auto-selected best layer for '{trait_name}': {best_layer}")
+                if "best_probe_accuracy" in analysis:
+                    print(f"  (probe acc: {analysis['best_probe_accuracy']:.3f})")
             else:
-                # Default to middle layers
+                # Default to middle layers if no analysis file found
                 n_layers = self.model.config.num_hidden_layers
                 mid = n_layers // 2
                 layer_indices = [mid - 1, mid, mid + 1]

@@ -33,24 +33,17 @@ if repo_root not in sys.path:
 from src.prompts.contrastive_prompts import get_all_trait_names, BIG_FIVE_PROMPTS, DEFENSE_MECHANISM_PROMPTS
 
 
-def run_step(cmd, step_name):
-    """Run a pipeline step and check for errors."""
-    print(f"\n{'='*70}")
-    print(f"  STEP: {step_name}")
-    print(f"{'='*70}")
-    print(f"  CMD: {' '.join(cmd)}\n")
-
-    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    # Add repo_root to PYTHONPATH
-    env = os.environ.copy()
-    env["PYTHONPATH"] = repo_root + os.pathsep + env.get("PYTHONPATH", "")
-    
-    result = subprocess.run(cmd, cwd=repo_root, env=env)
-    if result.returncode != 0:
-        print(f"\n  ✗ FAILED: {step_name}")
-        return False
-    print(f"\n  ✓ COMPLETED: {step_name}")
-    return True
+def run_step(name, cmd, cwd=None, env=None):
+    print(f"\n{'='*50}")
+    print(f"Running step: {name}")
+    print(f"Command: {' '.join(cmd)}")
+    print(f"{'='*50}\n")
+    try:
+        subprocess.run(cmd, check=True, cwd=cwd, env=env)
+    except subprocess.CalledProcessError as e:
+        print(f"\n[ERROR] Step '{name}' failed with return code {e.returncode}.")
+        print("Pipeline aborted to prevent false completion states.")
+        sys.exit(1)
 
 
 def main():
@@ -90,67 +83,74 @@ def main():
 
     device_args = ["--device", args.device] if args.device else []
 
+    env = os.environ.copy()
+    env["PYTHONPATH"] = repo_root + os.pathsep + env.get("PYTHONPATH", "")
+
     # Step 1: Collect Activations
     if not args.skip_collect:
         for trait in traits:
-            success = run_step(
+            run_step(
+                f"Collect Activations - {trait}",
                 [python, "src/localization/collect_activations.py",
                  "--model", args.model,
                  "--trait", trait,
                  "--output_dir", "activations"] + device_args,
-                f"Collect Activations - {trait}"
+                cwd=repo_root,
+                env=env
             )
-            if not success:
-                print(f"Stopping pipeline due to failure in collection for {trait}")
-                return
 
     # Step 2: Extract Persona Vectors
-    success = run_step(
+    run_step(
+        "Extract Persona Vectors",
         [python, "src/extraction/extract_persona_vectors_v2.py",
          "--activations_dir", f"activations/{model_short}",
          "--trait", "all"],
-        "Extract Persona Vectors"
+        cwd=repo_root,
+        env=env
     )
-    if not success:
-        print("Stopping pipeline due to failure in extraction")
-        return
 
     # Step 3: Causal Localization (optional, slow)
     if not args.skip_localize:
         for trait in traits:
             run_step(
+                f"Causal Localization - {trait}",
                 [python, "src/localization/localize_circuits_v2.py",
                  "--model", args.model,
                  "--trait", trait,
                  "--n_samples", str(args.n_patching_samples)] + device_args,
-                f"Causal Localization - {trait}"
+                cwd=repo_root,
+                env=env
             )
 
     # Step 4: Personality Steering Demo
     for trait in traits:
         run_step(
+            f"Steering Demo - {trait}",
             [python, "src/steering/steer_personality.py",
              "--model", args.model,
              "--trait", trait,
              "--alpha", str(args.alpha),
-             "--vectors_dir", f"persona_vectors/{model_short}/{trait}/vectors",
+             "--vectors_dir", f"persona_vectors_v2/{model_short}/{trait}/vectors",
              "--vector_type", "mean_diff"] + device_args,
-            f"Steering Demo - {trait}"
+            cwd=repo_root,
+            env=env
         )
 
     # Step 5: Cross-Model Validation (if applicable)
     run_step(
+        "Cross-Model Validation",
         [python, "src/evaluation/cross_model_validation.py",
          "--persona_vectors_dir", "persona_vectors_v2",
          "--trait", "all"],
-        "Cross-Model Validation"
+        cwd=repo_root,
+        env=env
     )
 
     print(f"\n{'#'*70}")
     print(f"  ✓ PIPELINE COMPLETE")
     print(f"  Activations:     activations/{model_short}/")
-    print(f"  Persona Vectors: persona_vectors/{model_short}/")
-    print(f"  Localization:    localization/{model_short}/")
+    print(f"  Persona Vectors: persona_vectors_v2/{model_short}/")
+    print(f"  Localization:    localization_v2/{model_short}/")
     print(f"  Steering:        steering_results/{model_short}/")
     print(f"  Cross-Model:     cross_model_results/")
     print(f"{'#'*70}")

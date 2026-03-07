@@ -68,7 +68,9 @@ def evaluate_stability(trait_dir, trait_name, output_dir, n_splits=5):
         pr_sims = []
         cross_sims = []
         
-        for _ in range(n_splits):
+        for split_i in range(n_splits):
+            # Fixed random seed for OOD split reproducibility
+            np.random.seed(42 + split_i)
             perm = np.random.permutation(n_samples)
             mid = n_samples // 2
             set1_idx = perm[:mid]

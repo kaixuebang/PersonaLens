@@ -6,13 +6,11 @@ def collect_and_rename_figures():
     paper_figs_dir = Path("paper/figures")
     paper_figs_dir.mkdir(parents=True, exist_ok=True)
     
-    models = [
-        "Qwen_Qwen3-0.6B",
-        "Qwen_Qwen2.5-0.5B-Instruct",
-        "TinyLlama_TinyLlama-1.1B-Chat-v1.0",
-        "unsloth_Llama-3.2-1B-Instruct",
-        "unsloth_gemma-2-2b-it"
-    ]
+    import os
+    if os.path.exists("persona_vectors_v2"):
+        models = [d for d in os.listdir("persona_vectors_v2") if os.path.isdir(os.path.join("persona_vectors_v2", d))]
+    else:
+        models = []
     
     # 1. Layer Analysis (Encoding Profile)
     # Source: persona_vectors_v2/{model}/{trait}/layer_analysis_v2_{trait}.png
