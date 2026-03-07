@@ -20,6 +20,7 @@ import json
 import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from src.prompts.contrastive_prompts import apply_chat_template_safe
 from tqdm import tqdm
 
 
@@ -84,6 +85,7 @@ class PersonalitySteerer:
 
         if layer_indices is None:
             # Load extraction analysis to find best layer
+            trait_name = os.path.basename(os.path.dirname(vectors_dir))
             # Fallback to older analysis.json if analysis_v2_*.json doesn't exist
             analysis_path = os.path.join(os.path.dirname(vectors_dir), f"analysis_v2_{trait_name}.json")
             if not os.path.exists(analysis_path):
