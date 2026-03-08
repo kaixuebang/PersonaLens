@@ -1,0 +1,47 @@
+
+[VALIDATION] ============================================================
+
+[VALIDATION] STARTING VALIDATION EXPERIMENT
+
+[VALIDATION] ============================================================
+
+[VALIDATION] Model: Qwen/Qwen2.5-0.5B-Instruct
+
+[VALIDATION] Trait: openness
+
+[VALIDATION] Device: cuda
+
+[VALIDATION] ============================================================
+
+[VALIDATION] Step 1: Environment Verification
+
+[VALIDATION]   PyTorch: 2.10.0+cu128
+
+[VALIDATION]   Transformers: 4.57.6
+
+[VALIDATION]   CUDA Available: True
+
+[VALIDATION]   GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+
+[VALIDATION]   VRAM: 8.2 GB
+
+[VALIDATION] Step 2: Running Full Pipeline
+
+[VALIDATION]   This will take ~5-10 minutes on RTX 4060...
+
+[VALIDATION]   Command: /home/fqwqf/miniconda3/bin/python3 scripts/run_pipeline.py --model Qwen/Qwen2.5-0.5B-Instruct --trait openness --device cuda --skip_localize
+
+######################################################################
+  PersonaForge 2.0 - Personality Neuron Analysis Pipeline
+  Model: Qwen/Qwen2.5-0.5B-Instruct
+  Traits: ['openness']
+Traceback (most recent call last):
+  File "/home/fqwqf/persona/scripts/run_pipeline.py", line 259, in <module>
+    main()
+    ~~~~^^
+  File "/home/fqwqf/persona/scripts/run_pipeline.py", line 168, in main
+    YB|    print(f"{'#'*70}")
+    ^^
+NameError: name 'YB' is not defined
+
+[VALIDATION] ✗ PIPELINE FAILED

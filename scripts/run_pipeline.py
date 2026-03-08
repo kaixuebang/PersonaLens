@@ -93,7 +93,7 @@ def verify_outputs(model_short):
     print("Verifying Pipeline Outputs")
     print("="*50)
     
-    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[0])))
     
     expected_paths = [
         f"activations/{model_short}",
