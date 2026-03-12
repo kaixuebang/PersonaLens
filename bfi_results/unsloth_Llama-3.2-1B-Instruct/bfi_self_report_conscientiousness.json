@@ -1,0 +1,441 @@
+{
+  "model": "unsloth/Llama-3.2-1B-Instruct",
+  "trait": "conscientiousness",
+  "best_layer": 1,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "results": {
+    "-8.0": {
+      "trait_score": 3.02115478515625,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 3.0706787109375
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 3.078857421875
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 3.1268310546875
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 3.0970458984375
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 3.0889892578125
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 3.106689453125
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 3.108154296875
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 3.083740234375
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 3.080810546875
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 3.0848388671875
+        }
+      ],
+      "mean_rating": 3.09266357421875,
+      "std_rating": 0.01610000063055049
+    },
+    "-6.0": {
+      "trait_score": 3.2058639526367188,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 3.963287353515625
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 3.982025146484375
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 4.0430145263671875
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 3.9896240234375
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 3.9882354736328125
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 4.0278778076171875
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 3.982269287109375
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 3.9700927734375
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 3.992767333984375
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 3.99029541015625
+        }
+      ],
+      "mean_rating": 3.9929489135742187,
+      "std_rating": 0.02324334976151278
+    },
+    "-4.0": {
+      "trait_score": 3.043829345703125,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 2.97723388671875
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 3.003662109375
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 3.09375
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 3.01629638671875
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 3.05499267578125
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 3.2364501953125
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 2.99285888671875
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 2.968017578125
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 2.99456787109375
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 2.9886474609375
+        }
+      ],
+      "mean_rating": 3.032647705078125,
+      "std_rating": 0.07687181761791563
+    },
+    "-2.0": {
+      "trait_score": 2.7961944580078124,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 1.85931396484375
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 1.86456298828125
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 1.691497802734375
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 1.89453125
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 1.84326171875
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 1.772186279296875
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 1.71160888671875
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 1.785858154296875
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 1.801177978515625
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 1.664764404296875
+        }
+      ],
+      "mean_rating": 1.7888763427734375,
+      "std_rating": 0.07490411635717269
+    },
+    "0.0": {
+      "trait_score": 3.0156494140625,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 2.61572265625
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 2.370758056640625
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 2.723175048828125
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 2.6072998046875
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 2.792266845703125
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 2.7091064453125
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 2.38897705078125
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 2.195404052734375
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 2.43359375
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 2.64385986328125
+        }
+      ],
+      "mean_rating": 2.548016357421875,
+      "std_rating": 0.18102914378970628
+    },
+    "2.0": {
+      "trait_score": 2.627355194091797,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 1.1313018798828125
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 1.1356277465820312
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 1.1001358032226562
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 1.1387176513671875
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 1.1523666381835938
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 1.1616058349609375
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 1.1395034790039062
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 1.1258087158203125
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 1.145263671875
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 1.1356277465820312
+        }
+      ],
+      "mean_rating": 1.1365959167480468,
+      "std_rating": 0.015613783763170757
+    },
+    "4.0": {
+      "trait_score": 2.615421676635742,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 1.0539474487304688
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 1.061431884765625
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 1.0499343872070312
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 1.0681991577148438
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 1.0598068237304688
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 1.0845184326171875
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 1.05059814453125
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 1.0503273010253906
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 1.0522270202636719
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 1.0704689025878906
+        }
+      ],
+      "mean_rating": 1.060145950317383,
+      "std_rating": 0.010771153077508498
+    },
+    "6.0": {
+      "trait_score": 2.7918655395507814,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 2.225860595703125
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 2.1787185668945312
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 2.1688232421875
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 2.1530532836914062
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 2.0690460205078125
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 2.1722869873046875
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 2.3258285522460938
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 2.2803802490234375
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 2.1718978881835938
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 2.271026611328125
+        }
+      ],
+      "mean_rating": 2.2016921997070313,
+      "std_rating": 0.07093256785336623
+    },
+    "8.0": {
+      "trait_score": 2.7262420654296875,
+      "item_responses": [
+        {
+          "item": "I do a thorough job",
+          "rating": 1.580535888671875
+        },
+        {
+          "item": "I am a reliable worker",
+          "rating": 1.584075927734375
+        },
+        {
+          "item": "I persevere until the task is finished",
+          "rating": 1.621429443359375
+        },
+        {
+          "item": "I do things efficiently",
+          "rating": 1.595550537109375
+        },
+        {
+          "item": "I make plans and follow through with them",
+          "rating": 1.59063720703125
+        },
+        {
+          "item": "I am systematic, like to keep things in order",
+          "rating": 1.622711181640625
+        },
+        {
+          "item": "I tend to be disorganized",
+          "rating": 1.5615234375
+        },
+        {
+          "item": "I tend to be lazy",
+          "rating": 1.583953857421875
+        },
+        {
+          "item": "I can be somewhat careless",
+          "rating": 1.578277587890625
+        },
+        {
+          "item": "I am easily distracted",
+          "rating": 1.6087646484375
+        }
+      ],
+      "mean_rating": 1.5927459716796875,
+      "std_rating": 0.01864216636694565
+    }
+  }
+}

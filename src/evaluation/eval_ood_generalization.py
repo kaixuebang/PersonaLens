@@ -40,7 +40,7 @@ def extract_vectors(p, n, C=0.01):
     
     X = np.concatenate([p, n], axis=0)
     y = np.concatenate([np.ones(len(p)), np.zeros(len(n))])
-    clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs", penalty="l2")
+    clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs")
     clf.fit(X, y)
     probe_dir = clf.coef_[0]
     probe_dir = probe_dir / (np.linalg.norm(probe_dir) + 1e-10)
@@ -120,7 +120,25 @@ def evaluate_stability(trait_dir, trait_name, output_dir, n_splits=5):
     with open(os.path.join(output_dir, trait_name, "ood_stability.json"), "w") as f:
         json.dump(results, f, indent=2)
         
-    print(f"  ✓ Mean MD alignment (L={layers[len(layers)//2]}): {results['mean_diff_cosine'][layers[len(layers)//2]]['mean']:.3f}")
+    # Find best intermediate layer (middle 50% of layers) for OOD stability
+    n_layers = len(layers)
+    start_idx = n_layers // 4  # Skip bottom 25%
+    end_idx = 3 * n_layers // 4  # Skip top 25%
+    intermediate_layers = layers[start_idx:end_idx]
+    
+    # Find best layer by mean_diff_cosine in intermediate layers
+    best_layer = max(intermediate_layers, key=lambda l: results["mean_diff_cosine"][l]["mean"])
+    best_cosine = results["mean_diff_cosine"][best_layer]["mean"]
+    
+    print(f"  ✓ Best intermediate layer (L={best_layer}): MD alignment = {best_cosine:.3f}")
+    print(f"  ✓ Saved results to {fig_path}")
+    
+    # Add summary to results JSON
+    results["summary"] = {
+        "best_layer": int(best_layer),
+        "best_layer_cosine": float(best_cosine),
+        "intermediate_layers_range": [int(intermediate_layers[0]), int(intermediate_layers[-1])]
+    }
     print(f"  ✓ Saved results to {fig_path}")
 
 def main():

@@ -25,7 +25,7 @@ def load_analysis(persona_vectors_dir, model_name, trait_name):
     """Load analysis results for a model-trait combination."""
     model_short = model_name.replace("/", "_")
     analysis_file = os.path.join(
-        persona_vectors_dir, model_short, trait_name, f"analysis_{trait_name}.json"
+        persona_vectors_dir, model_short, trait_name, f"analysis_v2_{trait_name}.json"
     )
     if os.path.exists(analysis_file):
         with open(analysis_file) as f:
@@ -47,15 +47,15 @@ def compare_layer_profiles(analyses, trait_name, output_dir):
 
     for i, (model_name, analysis) in enumerate(analyses.items()):
         layers = sorted([int(k) for k in analysis["layers"].keys()])
-        accs = [analysis["layers"][str(l)]["probe_accuracy"] for l in layers]
+        accs = [analysis["layers"][str(l)]["loso_accuracy"] for l in layers]
 
         # Normalize layer indices to [0, 1] for cross-model comparison
         normalized_layers = [l / max(layers) for l in layers]
 
         ax.plot(normalized_layers, accs, "o-", color=colors[i % len(colors)],
                 linewidth=2, markersize=4,
-                label=f"{model_name} (best: L{analysis['best_layer']}, "
-                      f"acc: {analysis['best_probe_accuracy']:.3f})")
+                label=f"{model_name} (best: L{analysis['best_layer_loso']}, "
+                      f"acc: {analysis['best_loso_accuracy']:.3f})")
 
         correlation_matrix[model_name] = {
             "normalized_layers": normalized_layers,
@@ -111,13 +111,13 @@ def compare_vector_geometry(persona_vectors_dir, model_names, trait_names, outpu
         for trait_name in trait_names:
             analysis_file = os.path.join(
                 persona_vectors_dir, model_short, trait_name,
-                f"analysis_{trait_name}.json"
+                f"analysis_v2_{trait_name}.json"
             )
             if not os.path.exists(analysis_file):
                 continue
             with open(analysis_file) as f:
                 analysis = json.load(f)
-            best_layer = analysis["best_layer"]
+            best_layer = analysis["best_layer_loso"]
 
             vec_file = os.path.join(
                 persona_vectors_dir, model_short, trait_name,

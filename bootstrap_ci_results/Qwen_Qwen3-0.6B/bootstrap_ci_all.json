@@ -1,0 +1,432 @@
+{
+  "ood": {
+    "openness": {
+      "mean": 0.9434742212295533,
+      "ci_lower": 0.9434742212295533,
+      "ci_upper": 0.9434742212295533,
+      "note": "single split, CI not applicable"
+    },
+    "conscientiousness": {
+      "mean": 0.8719810128211976,
+      "ci_lower": 0.8719810128211976,
+      "ci_upper": 0.8719810128211976,
+      "note": "single split, CI not applicable"
+    },
+    "extraversion": {
+      "mean": 0.9446285009384155,
+      "ci_lower": 0.9446285009384155,
+      "ci_upper": 0.9446285009384155,
+      "note": "single split, CI not applicable"
+    },
+    "agreeableness": {
+      "mean": 0.93541020154953,
+      "ci_lower": 0.93541020154953,
+      "ci_upper": 0.93541020154953,
+      "note": "single split, CI not applicable"
+    },
+    "neuroticism": {
+      "mean": 0.8513464331626892,
+      "ci_lower": 0.8513464331626892,
+      "ci_upper": 0.8513464331626892,
+      "note": "single split, CI not applicable"
+    }
+  },
+  "paraphrase": {
+    "openness_train_A_test_B": {
+      "accuracy": 1.0,
+      "ci_lower": 0.7224598312333834,
+      "ci_upper": 1,
+      "n_samples": 10,
+      "method": "wilson_interval"
+    },
+    "openness_train_B_test_A": {
+      "accuracy": 1.0,
+      "ci_lower": 0.9123754607496077,
+      "ci_upper": 1,
+      "n_samples": 40,
+      "method": "wilson_interval"
+    },
+    "openness_mean": {
+      "accuracy": 1.0,
+      "ci_lower": 0.7224598312333834,
+      "ci_upper": 1
+    },
+    "conscientiousness_train_A_test_B": {
+      "accuracy": 1.0,
+      "ci_lower": 0.7224598312333834,
+      "ci_upper": 1,
+      "n_samples": 10,
+      "method": "wilson_interval"
+    },
+    "conscientiousness_train_B_test_A": {
+      "accuracy": 0.8,
+      "ci_lower": 0.6524239261814333,
+      "ci_upper": 0.8950013502683314,
+      "n_samples": 40,
+      "method": "wilson_interval"
+    },
+    "conscientiousness_mean": {
+      "accuracy": 0.9,
+      "ci_lower": 0.6524239261814333,
+      "ci_upper": 1
+    },
+    "extraversion_train_A_test_B": {
+      "accuracy": 0.8,
+      "ci_lower": 0.49015684672072335,
+      "ci_upper": 0.9433190520193067,
+      "n_samples": 10,
+      "method": "wilson_interval"
+    },
+    "extraversion_train_B_test_A": {
+      "accuracy": 0.95,
+      "ci_lower": 0.834958291820748,
+      "ci_upper": 0.9861796228538989,
+      "n_samples": 40,
+      "method": "wilson_interval"
+    },
+    "extraversion_mean": {
+      "accuracy": 0.875,
+      "ci_lower": 0.49015684672072335,
+      "ci_upper": 0.9861796228538989
+    },
+    "agreeableness_train_A_test_B": {
+      "accuracy": 0.8,
+      "ci_lower": 0.49015684672072335,
+      "ci_upper": 0.9433190520193067,
+      "n_samples": 10,
+      "method": "wilson_interval"
+    },
+    "agreeableness_train_B_test_A": {
+      "accuracy": 1.0,
+      "ci_lower": 0.9123754607496077,
+      "ci_upper": 1,
+      "n_samples": 40,
+      "method": "wilson_interval"
+    },
+    "agreeableness_mean": {
+      "accuracy": 0.9,
+      "ci_lower": 0.49015684672072335,
+      "ci_upper": 1
+    },
+    "neuroticism_train_A_test_B": {
+      "accuracy": 1.0,
+      "ci_lower": 0.7224598312333834,
+      "ci_upper": 1,
+      "n_samples": 10,
+      "method": "wilson_interval"
+    },
+    "neuroticism_train_B_test_A": {
+      "accuracy": 0.775,
+      "ci_lower": 0.6249660359590695,
+      "ci_upper": 0.8768404674532148,
+      "n_samples": 40,
+      "method": "wilson_interval"
+    },
+    "neuroticism_mean": {
+      "accuracy": 0.8875,
+      "ci_lower": 0.6249660359590695,
+      "ci_upper": 1
+    }
+  },
+  "bfi44": {
+    "openness": {
+      "-8.0": {
+        "mean": 2.1023162841796874,
+        "ci_lower": 2.0708975982666016,
+        "ci_upper": 2.1308142089843747,
+        "n_items": 10
+      },
+      "-6.0": {
+        "mean": 2.1268310546875,
+        "ci_lower": 2.097357711791992,
+        "ci_upper": 2.153207778930664,
+        "n_items": 10
+      },
+      "-4.0": {
+        "mean": 2.1645416259765624,
+        "ci_lower": 2.1375402069091796,
+        "ci_upper": 2.1889984130859377,
+        "n_items": 10
+      },
+      "-2.0": {
+        "mean": 2.2144805908203127,
+        "ci_lower": 2.1885842132568363,
+        "ci_upper": 2.2372139739990233,
+        "n_items": 10
+      },
+      "0.0": {
+        "mean": 2.2578460693359377,
+        "ci_lower": 2.2325119018554687,
+        "ci_upper": 2.2799700927734374,
+        "n_items": 10
+      },
+      "2.0": {
+        "mean": 2.2818023681640627,
+        "ci_lower": 2.257423858642578,
+        "ci_upper": 2.302058639526367,
+        "n_items": 10
+      },
+      "4.0": {
+        "mean": 2.2796844482421874,
+        "ci_lower": 2.25679443359375,
+        "ci_upper": 2.299656295776367,
+        "n_items": 10
+      },
+      "6.0": {
+        "mean": 2.2432891845703127,
+        "ci_lower": 2.2185706329345702,
+        "ci_upper": 2.265937271118164,
+        "n_items": 10
+      },
+      "8.0": {
+        "mean": 2.17740478515625,
+        "ci_lower": 2.154964599609375,
+        "ci_upper": 2.1993825531005857,
+        "n_items": 10
+      }
+    },
+    "conscientiousness": {
+      "-8.0": {
+        "mean": 3.0250244140625,
+        "ci_lower": 2.962743911743164,
+        "ci_upper": 3.0824147033691403,
+        "n_items": 10
+      },
+      "-6.0": {
+        "mean": 2.310968017578125,
+        "ci_lower": 2.299041442871094,
+        "ci_upper": 2.3263934326171873,
+        "n_items": 10
+      },
+      "-4.0": {
+        "mean": 2.543511962890625,
+        "ci_lower": 2.5200643157958984,
+        "ci_upper": 2.5700331115722657,
+        "n_items": 10
+      },
+      "-2.0": {
+        "mean": 2.3905120849609376,
+        "ci_lower": 2.3660496520996093,
+        "ci_upper": 2.4146018981933595,
+        "n_items": 10
+      },
+      "0.0": {
+        "mean": 2.2519622802734376,
+        "ci_lower": 2.2318682861328125,
+        "ci_upper": 2.268360137939453,
+        "n_items": 10
+      },
+      "2.0": {
+        "mean": 2.16689453125,
+        "ci_lower": 2.153079071044922,
+        "ci_upper": 2.1813636779785153,
+        "n_items": 10
+      },
+      "4.0": {
+        "mean": 2.137237548828125,
+        "ci_lower": 2.118810501098633,
+        "ci_upper": 2.1613751983642575,
+        "n_items": 10
+      },
+      "6.0": {
+        "mean": 2.117724609375,
+        "ci_lower": 2.0925842285156246,
+        "ci_upper": 2.1476079559326173,
+        "n_items": 10
+      },
+      "8.0": {
+        "mean": 1.6660003662109375,
+        "ci_lower": 1.6549063110351563,
+        "ci_upper": 1.6784096527099608,
+        "n_items": 10
+      }
+    },
+    "extraversion": {
+      "-8.0": {
+        "mean": 1.7763519287109375,
+        "ci_lower": 1.757291889190674,
+        "ci_upper": 1.7945594787597656,
+        "n_items": 8
+      },
+      "-6.0": {
+        "mean": 1.8812255859375,
+        "ci_lower": 1.8592451095581055,
+        "ci_upper": 1.9014177322387695,
+        "n_items": 8
+      },
+      "-4.0": {
+        "mean": 1.89837646484375,
+        "ci_lower": 1.8909481048583985,
+        "ci_upper": 1.9068570137023926,
+        "n_items": 8
+      },
+      "-2.0": {
+        "mean": 1.8951950073242188,
+        "ci_lower": 1.888961410522461,
+        "ci_upper": 1.9028173446655274,
+        "n_items": 8
+      },
+      "0.0": {
+        "mean": 2.263202667236328,
+        "ci_lower": 2.243827724456787,
+        "ci_upper": 2.278596019744873,
+        "n_items": 8
+      },
+      "2.0": {
+        "mean": 2.5704421997070312,
+        "ci_lower": 2.5418871879577636,
+        "ci_upper": 2.5994463920593263,
+        "n_items": 8
+      },
+      "4.0": {
+        "mean": 2.6687164306640625,
+        "ci_lower": 2.6429837226867674,
+        "ci_upper": 2.6949052810668945,
+        "n_items": 8
+      },
+      "6.0": {
+        "mean": 3.0067672729492188,
+        "ci_lower": 2.974575901031494,
+        "ci_upper": 3.038592529296875,
+        "n_items": 8
+      },
+      "8.0": {
+        "mean": 2.53515625,
+        "ci_lower": 2.4788228034973145,
+        "ci_upper": 2.585180377960205,
+        "n_items": 8
+      }
+    },
+    "agreeableness": {
+      "-8.0": {
+        "mean": 2.110080295138889,
+        "ci_lower": 2.0828481038411457,
+        "ci_upper": 2.1361143324110246,
+        "n_items": 9
+      },
+      "-6.0": {
+        "mean": 2.514004177517361,
+        "ci_lower": 2.474900648328993,
+        "ci_upper": 2.5448833889431426,
+        "n_items": 9
+      },
+      "-4.0": {
+        "mean": 1.9380357530381944,
+        "ci_lower": 1.922423129611545,
+        "ci_upper": 1.954910108778212,
+        "n_items": 9
+      },
+      "-2.0": {
+        "mean": 2.1119588216145835,
+        "ci_lower": 2.102264149983724,
+        "ci_upper": 2.122739495171441,
+        "n_items": 9
+      },
+      "0.0": {
+        "mean": 2.2177191840277777,
+        "ci_lower": 2.1995045132107203,
+        "ci_upper": 2.2328875223795572,
+        "n_items": 9
+      },
+      "2.0": {
+        "mean": 2.1305168999565973,
+        "ci_lower": 2.106114874945747,
+        "ci_upper": 2.1564395480685765,
+        "n_items": 9
+      },
+      "4.0": {
+        "mean": 2.26861572265625,
+        "ci_lower": 2.2462166680230036,
+        "ci_upper": 2.2863995022243926,
+        "n_items": 9
+      },
+      "6.0": {
+        "mean": 2.0881856282552085,
+        "ci_lower": 2.0603992886013454,
+        "ci_upper": 2.118425072564019,
+        "n_items": 9
+      },
+      "8.0": {
+        "mean": 2.4973687065972223,
+        "ci_lower": 2.4452198452419704,
+        "ci_upper": 2.5502513461642797,
+        "n_items": 9
+      }
+    },
+    "neuroticism": {
+      "-8.0": {
+        "mean": 1.9460506439208984,
+        "ci_lower": 1.9042051315307618,
+        "ci_upper": 2.0021041870117187,
+        "n_items": 8
+      },
+      "-6.0": {
+        "mean": 1.876678466796875,
+        "ci_lower": 1.8625354766845703,
+        "ci_upper": 1.8911323547363281,
+        "n_items": 8
+      },
+      "-4.0": {
+        "mean": 1.9846954345703125,
+        "ci_lower": 1.9703025817871094,
+        "ci_upper": 1.9966934204101563,
+        "n_items": 8
+      },
+      "-2.0": {
+        "mean": 1.8740730285644531,
+        "ci_lower": 1.8594300270080566,
+        "ci_upper": 1.8889351844787599,
+        "n_items": 8
+      },
+      "0.0": {
+        "mean": 2.2486228942871094,
+        "ci_lower": 2.2226462364196777,
+        "ci_upper": 2.2706531524658202,
+        "n_items": 8
+      },
+      "2.0": {
+        "mean": 2.5143508911132812,
+        "ci_lower": 2.4765623092651365,
+        "ci_upper": 2.5546051025390626,
+        "n_items": 8
+      },
+      "4.0": {
+        "mean": 2.9148178100585938,
+        "ci_lower": 2.853070831298828,
+        "ci_upper": 2.9873916625976564,
+        "n_items": 8
+      },
+      "6.0": {
+        "mean": 3.1338348388671875,
+        "ci_lower": 3.0942989349365235,
+        "ci_upper": 3.1757881164550783,
+        "n_items": 8
+      },
+      "8.0": {
+        "mean": 2.802814483642578,
+        "ci_lower": 2.7665102958679197,
+        "ci_upper": 2.8405447006225586,
+        "n_items": 8
+      }
+    }
+  },
+  "orthogonality": {
+    "layer": 11,
+    "mean_off_diagonal": 0.1002374269068241,
+    "ci_lower": 0.05675833979155869,
+    "ci_upper": 0.15022400560788812,
+    "n_pairs": 10,
+    "pairs": {
+      "openness-conscientiousness": 0.15425491333007812,
+      "openness-extraversion": 0.2830480635166168,
+      "openness-agreeableness": 0.08836083859205246,
+      "openness-neuroticism": 0.11272391676902771,
+      "conscientiousness-extraversion": 0.015085447579622269,
+      "conscientiousness-agreeableness": 0.020610688254237175,
+      "conscientiousness-neuroticism": 0.09755486249923706,
+      "extraversion-agreeableness": 0.07521966099739075,
+      "extraversion-neuroticism": 0.010077370330691338,
+      "agreeableness-neuroticism": 0.14543850719928741
+    }
+  }
+}

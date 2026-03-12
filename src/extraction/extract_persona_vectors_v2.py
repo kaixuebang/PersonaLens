@@ -136,6 +136,7 @@ def compute_cohens_d(pos_acts, neg_acts, compute_ci=True, n_bootstrap=1000, ci_l
 def robust_linear_probe(pos_acts, neg_acts, C=0.01):
     """
     More robust linear probing with:
+    - PCA dimensionality reduction before LOO to handle high-dim small-sample
     - Strong regularization (small C)
     - Leave-one-out cross-validation for small samples
     - Brier score for calibration
@@ -143,19 +144,27 @@ def robust_linear_probe(pos_acts, neg_acts, C=0.01):
     """
     X = np.concatenate([pos_acts, neg_acts], axis=0)
     y = np.concatenate([np.ones(len(pos_acts)), np.zeros(len(neg_acts))])
-    n_samples = len(X)
+    n_samples, hidden_dim = X.shape
 
     # Use LOO for small samples, stratified k-fold for larger
     if n_samples <= 40:
         cv = LeaveOneOut()
+        # For high-dim small-sample, apply PCA before LOO to avoid degenerate solutions
+        # Project onto mean-diff direction for robust 1D classification
+        if hidden_dim > n_samples:
+            diff_vec = np.mean(pos_acts, axis=0) - np.mean(neg_acts, axis=0)
+            diff_dir = diff_vec / (np.linalg.norm(diff_vec) + 1e-10)
+            X_proj = X @ diff_dir.reshape(-1, 1)  # (n_samples, 1)
+        else:
+            X_proj = X
     else:
         cv = StratifiedKFold(n_splits=min(10, n_samples // 4), shuffle=True, random_state=42)
+        X_proj = X
 
-    clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs", penalty="l2")
-    scores = cross_val_score(clf, X, y, cv=cv, scoring="accuracy")
-
-    # Full-data fit for direction and calibration
-    clf_full = LogisticRegression(max_iter=2000, C=C, solver="lbfgs", penalty="l2")
+    clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs")
+    scores = cross_val_score(clf, X_proj, y, cv=cv, scoring="accuracy")
+    # Full-data fit for direction and calibration (use original high-dim space)
+    clf_full = LogisticRegression(max_iter=2000, C=C, solver="lbfgs")
     clf_full.fit(X, y)
     probe_direction = clf_full.coef_[0]
     probe_direction = probe_direction / (np.linalg.norm(probe_direction) + 1e-10)
@@ -207,7 +216,7 @@ def leave_scenario_out_probe(pos_acts, neg_acts, C=0.01):
         y_test = np.array([1.0, 0.0])
 
         # 1. Train linear probe for Acc & Brier
-        clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs", penalty="l2")
+        clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs")
         clf.fit(X_train, y_train)
         acc = clf.score(X_test, y_test)
         loso_accs.append(acc)

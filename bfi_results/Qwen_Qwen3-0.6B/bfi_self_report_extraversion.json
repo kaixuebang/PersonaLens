@@ -1,0 +1,369 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "trait": "extraversion",
+  "best_layer": 0,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "results": {
+    "-8.0": {
+      "trait_score": 2.6952438354492188,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 1.784271240234375
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 1.7847900390625
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 1.772216796875
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 1.821075439453125
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 1.724029541015625
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 1.78759765625
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 1.74951171875
+        },
+        {
+          "item": "I am reserved",
+          "rating": 1.787322998046875
+        }
+      ],
+      "mean_rating": 1.7763519287109375,
+      "std_rating": 0.027055657460270936
+    },
+    "-6.0": {
+      "trait_score": 2.7123336791992188,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 1.833984375
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 1.909881591796875
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 1.861846923828125
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 1.892547607421875
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 1.8759765625
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 1.9217529296875
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 1.91357421875
+        },
+        {
+          "item": "I am reserved",
+          "rating": 1.840240478515625
+        }
+      ],
+      "mean_rating": 1.8812255859375,
+      "std_rating": 0.03152945113698174
+    },
+    "-4.0": {
+      "trait_score": 2.7274856567382812,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 1.89788818359375
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 1.894317626953125
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 1.893280029296875
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 1.920623779296875
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 1.8973388671875
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 1.906829833984375
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 1.89892578125
+        },
+        {
+          "item": "I am reserved",
+          "rating": 1.8778076171875
+        }
+      ],
+      "mean_rating": 1.89837646484375,
+      "std_rating": 0.011366312838852324
+    },
+    "-2.0": {
+      "trait_score": 2.73095703125,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 1.897064208984375
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 1.900909423828125
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 1.89532470703125
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 1.915802001953125
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 1.8955078125
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 1.886322021484375
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 1.8807373046875
+        },
+        {
+          "item": "I am reserved",
+          "rating": 1.889892578125
+        }
+      ],
+      "mean_rating": 1.8951950073242188,
+      "std_rating": 0.009853820110830096
+    },
+    "0.0": {
+      "trait_score": 2.825702667236328,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 2.216400146484375
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 2.2862548828125
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 2.28179931640625
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 2.285003662109375
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 2.286163330078125
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 2.238433837890625
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 2.2371826171875
+        },
+        {
+          "item": "I am reserved",
+          "rating": 2.274383544921875
+        }
+      ],
+      "mean_rating": 2.263202667236328,
+      "std_rating": 0.02618621131713452
+    },
+    "2.0": {
+      "trait_score": 2.9177474975585938,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 2.552154541015625
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 2.55206298828125
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 2.616546630859375
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 2.644744873046875
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 2.587249755859375
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 2.521453857421875
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 2.5120849609375
+        },
+        {
+          "item": "I am reserved",
+          "rating": 2.577239990234375
+        }
+      ],
+      "mean_rating": 2.5704421997070312,
+      "std_rating": 0.042504218330206955
+    },
+    "4.0": {
+      "trait_score": 2.9230194091796875,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 2.626953125
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 2.71173095703125
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 2.718475341796875
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 2.617889404296875
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 2.69189453125
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 2.6397705078125
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 2.64581298828125
+        },
+        {
+          "item": "I am reserved",
+          "rating": 2.69720458984375
+        }
+      ],
+      "mean_rating": 2.6687164306640625,
+      "std_rating": 0.037691167247724894
+    },
+    "6.0": {
+      "trait_score": 3.0139389038085938,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 2.9490966796875
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 3.030120849609375
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 3.054962158203125
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 2.98004150390625
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 3.068603515625
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 3.03131103515625
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 2.93255615234375
+        },
+        {
+          "item": "I am reserved",
+          "rating": 3.0074462890625
+        }
+      ],
+      "mean_rating": 3.0067672729492188,
+      "std_rating": 0.04588323389525119
+    },
+    "8.0": {
+      "trait_score": 2.8839645385742188,
+      "item_responses": [
+        {
+          "item": "I am talkative",
+          "rating": 2.38214111328125
+        },
+        {
+          "item": "I am full of energy",
+          "rating": 2.623291015625
+        },
+        {
+          "item": "I generate a lot of enthusiasm",
+          "rating": 2.513153076171875
+        },
+        {
+          "item": "I have an assertive personality",
+          "rating": 2.529388427734375
+        },
+        {
+          "item": "I am outgoing, sociable",
+          "rating": 2.628509521484375
+        },
+        {
+          "item": "I tend to be quiet",
+          "rating": 2.56549072265625
+        },
+        {
+          "item": "I am sometimes shy, inhibited",
+          "rating": 2.572357177734375
+        },
+        {
+          "item": "I am reserved",
+          "rating": 2.4669189453125
+        }
+      ],
+      "mean_rating": 2.53515625,
+      "std_rating": 0.07695293099722637
+    }
+  }
+}
