@@ -295,8 +295,8 @@ def main():
     parser.add_argument(
         "--persona_vectors_dir",
         type=str,
-        default="persona_vectors",
-        help="Directory containing persona vectors (default: persona_vectors)",
+        default="results/persona_vectors",
+        help="Directory containing persona vectors (default: results/persona_vectors)",
     )
     parser.add_argument(
         "--output_dir",

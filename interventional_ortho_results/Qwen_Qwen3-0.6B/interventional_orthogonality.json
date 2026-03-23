@@ -1,0 +1,55 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "layer": 11,
+  "alpha": 3.0,
+  "baseline_scores": {
+    "openness": 0.4506129712121559,
+    "conscientiousness": 0.6360107564011523,
+    "extraversion": 0.46273944302621384,
+    "agreeableness": 0.6941788072474203,
+    "neuroticism": 0.4074711151019864
+  },
+  "delta_matrix": {
+    "openness": {
+      "openness": 0.19097651360584972,
+      "conscientiousness": -0.014807034805022545,
+      "extraversion": 0.07816444070810102,
+      "agreeableness": 0.010771732892469688,
+      "neuroticism": 0.027928561480948633
+    },
+    "conscientiousness": {
+      "openness": -0.029807661994706525,
+      "conscientiousness": 0.0837873004324653,
+      "extraversion": -0.019073064388378635,
+      "agreeableness": -0.004681728838853427,
+      "neuroticism": -0.014283440640957101
+    },
+    "extraversion": {
+      "openness": 0.05528270177567324,
+      "conscientiousness": 0.002618737832085438,
+      "extraversion": 0.11022673256714288,
+      "agreeableness": -0.01650391458135947,
+      "neuroticism": 0.014774633911577406
+    },
+    "agreeableness": {
+      "openness": 0.017925030769742722,
+      "conscientiousness": 0.015422565238812691,
+      "extraversion": 0.005768601268483331,
+      "agreeableness": 0.10406166653352666,
+      "neuroticism": -0.013477813711666842
+    },
+    "neuroticism": {
+      "openness": 0.02150581102729693,
+      "conscientiousness": -0.016298082412740555,
+      "extraversion": 0.031578902589082636,
+      "agreeableness": -0.05307889649317288,
+      "neuroticism": 0.08008437512042632
+    }
+  },
+  "summary": {
+    "mean_self_delta": 0.11382731765188217,
+    "mean_cross_delta": 0.023187667868056587,
+    "disentanglement_ratio": 4.908959292270273,
+    "interpretation": "CAUSAL_DISENTANGLED"
+  }
+}

@@ -35,7 +35,9 @@ def collect_hidden_states(model, tokenizer, messages, device, max_new_tokens=1):
         hidden_states: dict mapping layer_idx -> numpy array of shape (hidden_dim,)
     """
     # Apply chat template
-    text = apply_chat_template_safe(tokenizer, messages, tokenize=False, add_generation_prompt=True)
+    text = apply_chat_template_safe(
+        tokenizer, messages, tokenize=False, add_generation_prompt=True
+    )
     inputs = tokenizer(text, return_tensors="pt").to(device)
 
     with torch.no_grad():
@@ -80,8 +82,12 @@ def collect_for_trait(model, tokenizer, trait_name, device):
             # Initialize arrays
             for layer_idx in pos_hidden:
                 hidden_dim = pos_hidden[layer_idx].shape[0]
-                positive_acts[layer_idx] = np.zeros((n_pairs, hidden_dim), dtype=np.float32)
-                negative_acts[layer_idx] = np.zeros((n_pairs, hidden_dim), dtype=np.float32)
+                positive_acts[layer_idx] = np.zeros(
+                    (n_pairs, hidden_dim), dtype=np.float32
+                )
+                negative_acts[layer_idx] = np.zeros(
+                    (n_pairs, hidden_dim), dtype=np.float32
+                )
 
         for layer_idx in pos_hidden:
             positive_acts[layer_idx][i] = pos_hidden[layer_idx]
@@ -91,15 +97,34 @@ def collect_for_trait(model, tokenizer, trait_name, device):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Collect hidden-state activations for persona analysis")
-    parser.add_argument("--model", type=str, default="Qwen/Qwen3-0.6B",
-                        help="HuggingFace model name or path")
-    parser.add_argument("--trait", type=str, default="all",
-                        help="Trait name or 'all' for all traits. Options: " + ", ".join(get_all_trait_names()))
-    parser.add_argument("--output_dir", type=str, default="activations",
-                        help="Directory to save activation files")
-    parser.add_argument("--device", type=str, default=None,
-                        help="Device to use (auto-detected if not specified)")
+    parser = argparse.ArgumentParser(
+        description="Collect hidden-state activations for persona analysis"
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="Qwen/Qwen3-0.6B",
+        help="HuggingFace model name or path",
+    )
+    parser.add_argument(
+        "--trait",
+        type=str,
+        default="all",
+        help="Trait name or 'all' for all traits. Options: "
+        + ", ".join(get_all_trait_names()),
+    )
+    parser.add_argument(
+        "--output_dir",
+        type=str,
+        default="results/activations",
+        help="Directory to save activation files",
+    )
+    parser.add_argument(
+        "--device",
+        type=str,
+        default=None,
+        help="Device to use (auto-detected if not specified)",
+    )
     args = parser.parse_args()
 
     # Auto-detect device
@@ -141,19 +166,27 @@ def main():
 
     # Collect activations for each trait
     for trait_name in traits:
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print(f"Processing trait: {trait_name}")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
 
-        pos_acts, neg_acts = collect_for_trait(model, tokenizer, trait_name, args.device)
+        pos_acts, neg_acts = collect_for_trait(
+            model, tokenizer, trait_name, args.device
+        )
 
         # Save activations
         trait_dir = os.path.join(output_dir, trait_name)
         os.makedirs(trait_dir, exist_ok=True)
 
         for layer_idx in pos_acts:
-            np.save(os.path.join(trait_dir, f"pos_layer_{layer_idx}.npy"), pos_acts[layer_idx])
-            np.save(os.path.join(trait_dir, f"neg_layer_{layer_idx}.npy"), neg_acts[layer_idx])
+            np.save(
+                os.path.join(trait_dir, f"pos_layer_{layer_idx}.npy"),
+                pos_acts[layer_idx],
+            )
+            np.save(
+                os.path.join(trait_dir, f"neg_layer_{layer_idx}.npy"),
+                neg_acts[layer_idx],
+            )
 
         print(f"  Saved activations to {trait_dir}/")
         print(f"  Layers: {len(pos_acts)}, Samples per layer: {pos_acts[0].shape[0]}")

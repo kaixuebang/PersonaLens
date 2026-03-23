@@ -17,6 +17,7 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
+
 matplotlib.use("Agg")
 from scipy.stats import spearmanr
 
@@ -52,10 +53,16 @@ def compare_layer_profiles(analyses, trait_name, output_dir):
         # Normalize layer indices to [0, 1] for cross-model comparison
         normalized_layers = [l / max(layers) for l in layers]
 
-        ax.plot(normalized_layers, accs, "o-", color=colors[i % len(colors)],
-                linewidth=2, markersize=4,
-                label=f"{model_name} (best: L{analysis['best_layer_loso']}, "
-                      f"acc: {analysis['best_loso_accuracy']:.3f})")
+        ax.plot(
+            normalized_layers,
+            accs,
+            "o-",
+            color=colors[i % len(colors)],
+            linewidth=2,
+            markersize=4,
+            label=f"{model_name} (best: L{analysis['best_layer_loso']}, "
+            f"acc: {analysis['best_loso_accuracy']:.3f})",
+        )
 
         correlation_matrix[model_name] = {
             "normalized_layers": normalized_layers,
@@ -89,11 +96,12 @@ def compare_layer_profiles(analyses, trait_name, output_dir):
                 idx_i = np.linspace(0, len(accs_i) - 1, min_len).astype(int)
                 idx_j = np.linspace(0, len(accs_j) - 1, min_len).astype(int)
                 rho, pval = spearmanr(
-                    [accs_i[k] for k in idx_i],
-                    [accs_j[k] for k in idx_j]
+                    [accs_i[k] for k in idx_i], [accs_j[k] for k in idx_j]
                 )
-                print(f"    {model_names[i]} vs {model_names[j]}: "
-                      f"ρ={rho:.3f}, p={pval:.4f}")
+                print(
+                    f"    {model_names[i]} vs {model_names[j]}: "
+                    f"ρ={rho:.3f}, p={pval:.4f}"
+                )
 
     return correlation_matrix
 
@@ -107,21 +115,37 @@ def compare_vector_geometry(persona_vectors_dir, model_names, trait_names, outpu
         model_short = model_name.replace("/", "_")
         vectors = {}
 
-        # Load best-layer vectors for each trait
+        # Determine common layer: median of per-trait best layers
+        best_layers = {}
         for trait_name in trait_names:
             analysis_file = os.path.join(
-                persona_vectors_dir, model_short, trait_name,
-                f"analysis_v2_{trait_name}.json"
+                persona_vectors_dir,
+                model_short,
+                trait_name,
+                f"analysis_v2_{trait_name}.json",
             )
             if not os.path.exists(analysis_file):
                 continue
             with open(analysis_file) as f:
                 analysis = json.load(f)
-            best_layer = analysis["best_layer_loso"]
+            best_layers[trait_name] = analysis["best_layer_loso"]
 
+        if not best_layers:
+            continue
+        common_layer = int(np.median(list(best_layers.values())))
+        print(
+            f"\n  {model_name}: using common layer L{common_layer} "
+            f"(median of {best_layers})"
+        )
+
+        # Load vectors at common layer for all traits
+        for trait_name in trait_names:
             vec_file = os.path.join(
-                persona_vectors_dir, model_short, trait_name,
-                "vectors", f"mean_diff_layer_{best_layer}.npy"
+                persona_vectors_dir,
+                model_short,
+                trait_name,
+                "vectors",
+                f"mean_diff_layer_{common_layer}.npy",
             )
             if os.path.exists(vec_file):
                 vectors[trait_name] = np.load(vec_file)
@@ -152,9 +176,15 @@ def compare_vector_geometry(persona_vectors_dir, model_names, trait_names, outpu
 
         for i in range(n):
             for j in range(n):
-                ax.text(j, i, f"{cos_matrix[i,j]:.2f}",
-                        ha="center", va="center", fontsize=8,
-                        color="white" if abs(cos_matrix[i,j]) > 0.5 else "black")
+                ax.text(
+                    j,
+                    i,
+                    f"{cos_matrix[i, j]:.2f}",
+                    ha="center",
+                    va="center",
+                    fontsize=8,
+                    color="white" if abs(cos_matrix[i, j]) > 0.5 else "black",
+                )
 
         plt.colorbar(im, ax=ax, label="Cosine Similarity")
         ax.set_title(f"Persona Vector Orthogonality: {model_name}", fontsize=13)
@@ -164,19 +194,31 @@ def compare_vector_geometry(persona_vectors_dir, model_names, trait_names, outpu
         plt.close()
 
         print(f"\n  Orthogonality matrix for {model_name}:")
-        print(f"  Mean off-diagonal |cos|: "
-              f"{np.mean(np.abs(cos_matrix[np.triu_indices(n, k=1)])):.3f}")
+        print(
+            f"  Mean off-diagonal |cos|: "
+            f"{np.mean(np.abs(cos_matrix[np.triu_indices(n, k=1)])):.3f}"
+        )
         print(f"  Saved to {fig_path}")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Cross-model validation of personality extraction")
-    parser.add_argument("--persona_vectors_dir", type=str, default="persona_vectors",
-                        help="Directory containing persona vectors for all models")
-    parser.add_argument("--models", type=str, default=None,
-                        help="Comma-separated model names (auto-detected if None)")
+    parser = argparse.ArgumentParser(
+        description="Cross-model validation of personality extraction"
+    )
+    parser.add_argument(
+        "--persona_vectors_dir",
+        type=str,
+        default="results/persona_vectors",
+        help="Directory containing persona vectors for all models",
+    )
+    parser.add_argument(
+        "--models",
+        type=str,
+        default=None,
+        help="Comma-separated model names (auto-detected if None)",
+    )
     parser.add_argument("--trait", type=str, default="all")
-    parser.add_argument("--output_dir", type=str, default="cross_model_results")
+    parser.add_argument("--output_dir", type=str, default="results/cross_model_results")
     args = parser.parse_args()
 
     # Auto-detect models
@@ -221,7 +263,9 @@ def main():
 
     # 2. Intra-model vector orthogonality
     if len(traits) >= 2:
-        compare_vector_geometry(args.persona_vectors_dir, model_names, traits, args.output_dir)
+        compare_vector_geometry(
+            args.persona_vectors_dir, model_names, traits, args.output_dir
+        )
 
     print(f"\n✓ Cross-model validation complete! Results in: {args.output_dir}")
 

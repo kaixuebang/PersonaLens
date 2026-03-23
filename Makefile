@@ -1,13 +1,13 @@
 # Makefile for PersonaLens - Mechanical Interpretability for Personality Traits
 # Full automated pipeline from data collection to paper generation
 
-.PHONY: help install test clean pipeline paper all verify
+.PHONY: help install test clean pipeline paper all verify shuffle-label-baseline interventional-ortho relative-injection
 
 # Default model and trait
 MODEL ?= Qwen/Qwen3-0.6B
 TRAIT ?= openness
-ACTIVATIONS_DIR ?= activations
-PERSONA_VECTORS_DIR ?= persona_vectors
+ACTIVATIONS_DIR ?= results/activations
+PERSONA_VECTORS_DIR ?= results/persona_vectors
 PAPER_DIR ?= paper
 
 # Python executable
@@ -22,6 +22,9 @@ help:
 	@echo "  make verify          - Verify environment and dependencies"
 	@echo "  make pipeline        - Run full pipeline for default model/trait"
 	@echo "  make pipeline-all    - Run pipeline for all models and traits"
+	@echo "  make shuffle-label-baseline - Run permutation null-baseline for Big Five orthogonality"
+	@echo "  make interventional-ortho   - Test causal disentanglement via cross-probe interventions"
+	@echo "  make relative-injection     - Analyze relative injection strength across models"
 	@echo "  make tables          - Generate LaTeX tables from results"
 	@echo "  make figures         - Collect and organize figures"
 	@echo "  make paper           - Compile LaTeX paper"
@@ -72,6 +75,24 @@ cross-model:
 	@echo "Running cross-model experiments..."
 	$(PYTHON) scripts/run_cross_model_experiments.py --models $(MODEL) --trait all
 	@echo "✓ Cross-model experiments complete"
+
+# New robustness/rigor experiments
+shuffle-label-baseline:
+	@echo "Running shuffle-label permutation baseline for $(MODEL)..."
+	PYTHONPATH=. $(PYTHON) src/evaluation/eval_shuffle_label_baseline.py \
+		--model $(MODEL) --n_permutations 200
+	@echo "✓ Shuffle-label baseline complete: results/shuffle_label_baseline_results/"
+
+interventional-ortho:
+	@echo "Running interventional orthogonality test for $(MODEL)..."
+	PYTHONPATH=. $(PYTHON) src/evaluation/eval_interventional_orthogonality.py \
+		--model $(MODEL) --alpha 3.0
+	@echo "✓ Interventional orthogonality complete: results/interventional_ortho_results/"
+
+relative-injection:
+	@echo "Analyzing relative injection strength across all models..."
+	PYTHONPATH=. $(PYTHON) src/evaluation/eval_relative_injection_strength.py
+	@echo "✓ Relative injection strength analysis complete: results/relative_injection_results/"
 
 # Data generation
 tables:
@@ -135,9 +156,9 @@ clean-all: clean
 	@echo "Cleaning all generated data..."
 	rm -rf $(ACTIVATIONS_DIR)/*
 	rm -rf $(PERSONA_VECTORS_DIR)/*
-	rm -rf localization/*
-	rm -rf steering_results/*
-	rm -rf cross_model_results/*
+	rm -rf results/localization/*
+	rm -rf results/steering_results/*
+	rm -rf results/cross_model_results/*
 	rm -f $(PAPER_DIR)/main.pdf
 	@echo "✓ All data cleaned"
 
@@ -149,6 +170,5 @@ all: verify pipeline tables figures paper
 	@echo "=========================================="
 	@echo "Results:"
 	@echo "  - Activations: $(ACTIVATIONS_DIR)/"
-	@echo "  - Persona Vectors: $(PERSONA_VECTORS_DIR)/"
-	@echo "  - Paper: $(PAPER_DIR)/main.pdf"
+	@echo "  - Persona Vectors: $(PERSONA_VECTORS_DIR)/"	@echo "  - Paper: $(PAPER_DIR)/main.pdf"
 	@echo "=========================================="

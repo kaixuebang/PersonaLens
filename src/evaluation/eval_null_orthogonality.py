@@ -387,7 +387,9 @@ def main():
     parser.add_argument(
         "--layer", type=int, default=None, help="Layer for vectors (default: auto)"
     )
-    parser.add_argument("--output_dir", type=str, default="null_orthogonality_results")
+    parser.add_argument(
+        "--output_dir", type=str, default="results/null_orthogonality_results"
+    )
     parser.add_argument("--device", type=str, default=None)
     args = parser.parse_args()
 
@@ -413,7 +415,7 @@ def main():
     # Determine layer
     if args.layer is None:
         analysis_path = (
-            f"persona_vectors/{model_short}/openness/analysis_v2_openness.json"
+            f"results/persona_vectors/{model_short}/openness/analysis_v2_openness.json"
         )
         if os.path.exists(analysis_path):
             with open(analysis_path) as f:
@@ -450,7 +452,7 @@ def main():
     ]
     big5_vectors = {}
     for trait in big5_traits:
-        vec_path = f"persona_vectors/{model_short}/{trait}/vectors/mean_diff_layer_{args.layer}.npy"
+        vec_path = f"results/persona_vectors/{model_short}/{trait}/vectors/mean_diff_layer_{args.layer}.npy"
         if os.path.exists(vec_path):
             vec = np.load(vec_path)
             big5_vectors[trait] = vec / np.linalg.norm(vec)

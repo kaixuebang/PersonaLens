@@ -5,8 +5,6 @@
 \citation{shanahan2023role}
 \citation{chen2024rolesurvey}
 \citation{shao2023character}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
 \citation{jiang2024evaluating}
 \citation{serapiogarcía2023personality}
 \citation{zou2023representation}
@@ -16,21 +14,40 @@
 \citation{chen2025persona}
 \citation{sun2025activation}
 \citation{billy2025blending}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
 \citation{personaforge2025}
+\citation{frising2025linear,feng2026persona,chen2025persona,ju2025probing}
+\citation{ju2025probing}
+\citation{feng2026persona}
 \citation{vaillant1986empirical}
+\@writefile{toc}{\contentsline {paragraph}{Research Questions.}{2}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Contributions.}{2}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Methodological Contribution.}{2}{section*.3}\protected@file@percent }
 \citation{serapiogarcía2023personality}
 \citation{mao2024personality}
 \citation{personaforge2025}
-\@writefile{toc}{\contentsline {paragraph}{Contributions.}{2}{section*.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Methodological Contribution.}{2}{section*.2}\protected@file@percent }
 \citation{zou2023representation}
 \citation{li2024iti}
 \citation{rimsky2024steering,turner2023activation}
-\citation{persona2026,persona2025}
-\citation{chen2025persona}
-\citation{billy2025blending}
 \citation{svf2026}
 \citation{factored2026}
+\citation{frising2025linear}
+\citation{feng2026persona}
+\citation{bhandari2026activation}
+\citation{chen2025persona}
+\citation{billy2025blending}
+\citation{persona2026,persona2025}
+\citation{ong2025identifying}
+\citation{ju2025probing}
+\citation{xu2025easysteer}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{3}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Personality in LLMs.}{3}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Representation Engineering and Activation Steering.}{3}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Personality-Specific Representation Engineering.}{3}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Layer-wise Personality Encoding.}{3}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Steering Frameworks.}{3}{section*.8}\protected@file@percent }
 \citation{bao2025traits2circuits}
 \citation{konen2025probing}
 \citation{cae2025,cae2025b}
@@ -38,218 +55,259 @@
 \citation{direction2026}
 \citation{venkatesh2026nonidentifiability}
 \citation{zou2023representation,rimsky2024steering}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The PersonaLens pipeline. Each phase is independently executable and produces standardized outputs that enable cross-model comparison.}}{3}{figure.caption.7}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:pipeline}{{1}{3}{The PersonaLens pipeline. Each phase is independently executable and produces standardized outputs that enable cross-model comparison}{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}{section.2}\protected@file@percent }
-\newlabel{sec:related}{{2}{3}{Related Work}{section.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Personality in LLMs.}{3}{section*.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Representation Engineering and Activation Steering.}{3}{section*.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Mechanistic Interpretability and Reliability Constraints.}{3}{section*.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Non-Identifiability Concerns.}{3}{section*.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}PersonaLens Framework}{3}{section.3}\protected@file@percent }
-\newlabel{sec:method}{{3}{3}{PersonaLens Framework}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Phase 1: Contrastive Data Construction}{3}{subsection.3.1}\protected@file@percent }
-\newlabel{sec:data}{{3.1}{3}{Phase 1: Contrastive Data Construction}{subsection.3.1}{}}
 \citation{vaillant1994ego}
 \citation{personaforge2025}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The PersonaLens pipeline. Each phase is independently executable and produces standardized outputs that enable cross-model comparison.}}{4}{figure.caption.11}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:pipeline}{{1}{4}{The PersonaLens pipeline. Each phase is independently executable and produces standardized outputs that enable cross-model comparison}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {paragraph}{Mechanistic Interpretability and Reliability Constraints.}{4}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Non-Identifiability Concerns.}{4}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}PersonaLens Framework}{4}{section.3}\protected@file@percent }
+\newlabel{sec:method}{{3}{4}{PersonaLens Framework}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Phase 1: Contrastive Data Construction}{4}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:data}{{3.1}{4}{Phase 1: Contrastive Data Construction}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Big Five Traits.}{4}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Defense Mechanisms.}{4}{section*.13}\protected@file@percent }
+\citation{cohen1988statistical}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Phase 2: Activation Collection}{5}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:collection}{{3.2}{5}{Phase 2: Activation Collection}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Metrics and Evaluation Criteria}{5}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:metrics}{{3.3}{5}{Metrics and Evaluation Criteria}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Leave-One-Scenario-Out (LOSO) Accuracy.}{5}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cohen's $d$ Effect Size.}{5}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Signal-to-Noise Ratio (SNR).}{5}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Relative Injection Strength (RIS).}{5}{section*.17}\protected@file@percent }
 \citation{rimsky2024steering,chen2025persona}
-\@writefile{toc}{\contentsline {paragraph}{Big Five Traits.}{4}{section*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Defense Mechanisms.}{4}{section*.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Phase 2: Activation Collection}{4}{subsection.3.2}\protected@file@percent }
-\newlabel{sec:collection}{{3.2}{4}{Phase 2: Activation Collection}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Phase 3: Persona Vector Extraction}{4}{subsection.3.3}\protected@file@percent }
-\newlabel{sec:extraction}{{3.3}{4}{Phase 3: Persona Vector Extraction}{subsection.3.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Method 1: Mean Difference (Contrastive Activation Addition).}{4}{section*.10}\protected@file@percent }
-\newlabel{eq:meandiff}{{2}{4}{Method 1: Mean Difference (Contrastive Activation Addition)}{equation.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Method 2: PCA on Difference Vectors.}{4}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Method 3: Linear Probing.}{4}{section*.12}\protected@file@percent }
+\citation{venkatesh2026nonidentifiability}
 \citation{meng2022locating,bao2024emotion,bao2025traits2circuits}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Phase 3: Persona Vector Extraction}{6}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:extraction}{{3.4}{6}{Phase 3: Persona Vector Extraction}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Method 1: Mean Difference (Contrastive Activation Addition).}{6}{section*.18}\protected@file@percent }
+\newlabel{eq:meandiff}{{5}{6}{Method 1: Mean Difference (Contrastive Activation Addition)}{equation.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Method 2: PCA on Difference Vectors.}{6}{section*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Method 3: Linear Probing.}{6}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Layer-wise Encoding Profile.}{6}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Extraction Method Convergence.}{6}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Statistical Power and Sample Size.}{6}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Phase 4: Causal Localization via Activation Patching}{6}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:localization}{{3.5}{6}{Phase 4: Causal Localization via Activation Patching}{subsection.3.5}{}}
 \citation{costa1992revised}
 \citation{qwen2025qwen3}
 \citation{zhang2024tinyllama}
 \citation{dubey2024llama}
 \citation{gemmateam2024gemma}
-\@writefile{toc}{\contentsline {paragraph}{Layer-wise Encoding Profile.}{5}{section*.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Phase 4: Causal Localization via Activation Patching}{5}{subsection.3.4}\protected@file@percent }
-\newlabel{sec:localization}{{3.4}{5}{Phase 4: Causal Localization via Activation Patching}{subsection.3.4}{}}
-\newlabel{eq:causal}{{3}{5}{Phase 4: Causal Localization via Activation Patching}{equation.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Phase 5: Inference-Time Personality Steering}{5}{subsection.3.5}\protected@file@percent }
-\newlabel{sec:steering}{{3.5}{5}{Phase 5: Inference-Time Personality Steering}{subsection.3.5}{}}
-\newlabel{eq:steering}{{4}{5}{Phase 5: Inference-Time Personality Steering}{equation.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Cross-Trait Orthogonality Analysis}{5}{subsection.3.6}\protected@file@percent }
-\newlabel{sec:orthogonality}{{3.6}{5}{Cross-Trait Orthogonality Analysis}{subsection.3.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{5}{section.4}\protected@file@percent }
-\newlabel{sec:setup}{{4}{5}{Experimental Setup}{section.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Models.}{5}{section*.14}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Cross-model extraction summary (Big Five).} LOSO accuracy, Cohen's $d$, and SNR at each model's optimal layer. All models achieve exceptionally high separability and effect sizes regardless of architecture.}}{6}{table.caption.19}\protected@file@percent }
-\newlabel{tab:unified_extraction}{{1}{6}{\textbf {Cross-model extraction summary (Big Five).} LOSO accuracy, Cohen's $d$, and SNR at each model's optimal layer. All models achieve exceptionally high separability and effect sizes regardless of architecture}{table.caption.19}{}}
-\@writefile{toc}{\contentsline {paragraph}{Traits Analyzed.}{6}{section*.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Extraction Configuration.}{6}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Patching Configuration.}{6}{section*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Steering Evaluation.}{6}{section*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{6}{section.5}\protected@file@percent }
-\newlabel{sec:results}{{5}{6}{Results}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Personality Traits are Consistently Linearly Separable}{6}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Big Five Vectors are Orthogonal; Defense Mechanisms Share Subspaces}{6}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:results_ortho}{{5.2}{6}{Big Five Vectors are Orthogonal; Defense Mechanisms Share Subspaces}{subsection.5.2}{}}
+\newlabel{eq:causal}{{6}{7}{Phase 4: Causal Localization via Activation Patching}{equation.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Phase 5: Inference-Time Personality Steering}{7}{subsection.3.6}\protected@file@percent }
+\newlabel{sec:steering}{{3.6}{7}{Phase 5: Inference-Time Personality Steering}{subsection.3.6}{}}
+\newlabel{eq:steering}{{7}{7}{Phase 5: Inference-Time Personality Steering}{equation.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Cross-Trait Orthogonality Analysis}{7}{subsection.3.7}\protected@file@percent }
+\newlabel{sec:orthogonality}{{3.7}{7}{Cross-Trait Orthogonality Analysis}{subsection.3.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{7}{section.4}\protected@file@percent }
+\newlabel{sec:setup}{{4}{7}{Experimental Setup}{section.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Models.}{7}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Traits Analyzed.}{7}{section*.25}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Cross-model extraction summary (Big Five).} LOSO accuracy, Cohen's $d$, and SNR at each model's optimal layer. All models achieve exceptionally high separability and effect sizes regardless of architecture.}}{8}{table.caption.29}\protected@file@percent }
+\newlabel{tab:unified_extraction}{{1}{8}{\textbf {Cross-model extraction summary (Big Five).} LOSO accuracy, Cohen's $d$, and SNR at each model's optimal layer. All models achieve exceptionally high separability and effect sizes regardless of architecture}{table.caption.29}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Cross-model orthogonality summary.} Mean off-diagonal $|\cos |$ between persona vectors. Big Five independence varies across architectures, from near-orthogonal (Llama-3.2: 0.054) to moderately correlated (Qwen2.5: 0.418).}}{8}{table.caption.31}\protected@file@percent }
+\newlabel{tab:orthogonality}{{2}{8}{\textbf {Cross-model orthogonality summary.} Mean off-diagonal $|\cos |$ between persona vectors. Big Five independence varies across architectures, from near-orthogonal (Llama-3.2: 0.054) to moderately correlated (Qwen2.5: 0.418)}{table.caption.31}{}}
+\@writefile{toc}{\contentsline {paragraph}{Extraction Configuration.}{8}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Patching Configuration.}{8}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Steering Evaluation.}{8}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{8}{section.5}\protected@file@percent }
+\newlabel{sec:results}{{5}{8}{Results}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Personality Traits are Consistently Linearly Separable}{8}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Big Five Independence is Architecture-Dependent; Defense Mechanisms Share Subspaces}{8}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:results_ortho}{{5.2}{8}{Big Five Independence is Architecture-Dependent; Defense Mechanisms Share Subspaces}{subsection.5.2}{}}
+\citation{elhage2022superposition}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's optimal middle layer. Most models show moderate-to-strong Big Five independence (upper-left $5{\times }5$ block), with architecture-dependent variation, and correlated defense mechanism subspaces (lower-right block).}}{9}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:cross_model_ortho}{{2}{9}{\textbf {Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's optimal middle layer. Most models show moderate-to-strong Big Five independence (upper-left $5{\times }5$ block), with architecture-dependent variation, and correlated defense mechanism subspaces (lower-right block)}{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {paragraph}{Layer-wise Orthogonality Evolution.}{9}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why Does Qwen2.5 Show Higher Inter-Trait Correlation?}{9}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Null Baseline for Orthogonality.}{9}{section*.34}\protected@file@percent }
+\citation{ethayarajh2019contextual}
+\citation{elhage2022superposition}
 \citation{vaillant1986empirical,digiuseppe2021hierarchy}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's optimal middle layer. All models show near-orthogonal Big Five vectors (upper-left $5{\times }5$ block) and correlated defense mechanism subspaces (lower-right block).}}{7}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:cross_model_ortho}{{2}{7}{\textbf {Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's optimal middle layer. All models show near-orthogonal Big Five vectors (upper-left $5{\times }5$ block) and correlated defense mechanism subspaces (lower-right block)}{figure.caption.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Cross-model orthogonality summary.} Mean off-diagonal $|\cos |$ between persona vectors. All models consistently maintain near-orthogonal Big Five representations.}}{7}{table.caption.21}\protected@file@percent }
-\newlabel{tab:orthogonality}{{2}{7}{\textbf {Cross-model orthogonality summary.} Mean off-diagonal $|\cos |$ between persona vectors. All models consistently maintain near-orthogonal Big Five representations}{table.caption.21}{}}
-\@writefile{toc}{\contentsline {paragraph}{Null Baseline for Orthogonality.}{7}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Defense Mechanism Clustering: Vaillant Hierarchy Validation.}{7}{section*.24}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Null orthogonality baseline.} Random binary attributes processed through the same extraction pipeline show 36\% higher mean off-diagonal $|\cos |$ (0.136) than Big Five traits (0.100), confirming that Big Five orthogonality reflects genuine psychological structure rather than a methodological artifact.}}{8}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:null_ortho}{{3}{8}{\textbf {Null orthogonality baseline.} Random binary attributes processed through the same extraction pipeline show 36\% higher mean off-diagonal $|\cos |$ (0.136) than Big Five traits (0.100), confirming that Big Five orthogonality reflects genuine psychological structure rather than a methodological artifact}{figure.caption.23}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Defense mechanism hierarchy signal across all five models.} Within-group mean $|\cos |$ for each Vaillant maturity level and the immature/mature ratio. All models preserve the ordinal ordering (immature $>$ neurotic $>$ mature), but signal strength varies substantially.}}{8}{table.caption.27}\protected@file@percent }
-\newlabel{tab:defense_crossmodel}{{3}{8}{\textbf {Defense mechanism hierarchy signal across all five models.} Within-group mean $|\cos |$ for each Vaillant maturity level and the immature/mature ratio. All models preserve the ordinal ordering (immature $>$ neurotic $>$ mature), but signal strength varies substantially}{table.caption.27}{}}
-\@writefile{toc}{\contentsline {paragraph}{Cross-Model Validation of Defense Hierarchy.}{8}{section*.26}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Full defense mechanism orthogonality matrix organized by Vaillant hierarchy.} Nine defense mechanisms from Qwen2.5-0.5B-Instruct (Layer 12) show hierarchical clustering: immature defenses (bottom-right, mean $|\cos |=0.511$) cluster strongly, neurotic defenses (middle, $0.189$) show moderate correlation, and mature defenses (top-left, $0.030$) are near-orthogonal. Dashed lines separate maturity levels. Symbols: $\star $=Mature, $\diamond $=Neurotic, $\bullet $=Immature.}}{9}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:defense_full}{{4}{9}{\textbf {Full defense mechanism orthogonality matrix organized by Vaillant hierarchy.} Nine defense mechanisms from Qwen2.5-0.5B-Instruct (Layer 12) show hierarchical clustering: immature defenses (bottom-right, mean $|\cos |=0.511$) cluster strongly, neurotic defenses (middle, $0.189$) show moderate correlation, and mature defenses (top-left, $0.030$) are near-orthogonal. Dashed lines separate maturity levels. Symbols: $\star $=Mature, $\diamond $=Neurotic, $\bullet $=Immature}{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Causal Primacy of User-Token Attention in Early Layers}{9}{subsection.5.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Cross-model defense hierarchy signal.} Left: within-group clustering by Vaillant maturity level across all five architectures. Right: immature/mature ratio as a measure of hierarchy signal strength. All models show immature $>$ neurotic $>$ mature ordering; Gemma-2 and Qwen2.5 show the strongest hierarchy signal.}}{10}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:defense_crossmodel}{{5}{10}{\textbf {Cross-model defense hierarchy signal.} Left: within-group clustering by Vaillant maturity level across all five architectures. Right: immature/mature ratio as a measure of hierarchy signal strength. All models show immature $>$ neurotic $>$ mature ordering; Gemma-2 and Qwen2.5 show the strongest hierarchy signal}{figure.caption.28}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Cross-model causal localization summary.} The top causal layers and the dissociation between system-token vs.\ user-token patching effects. All models show early-layer dominance and user-token primacy.}}{10}{table.caption.29}\protected@file@percent }
-\newlabel{tab:causal}{{4}{10}{\textbf {Cross-model causal localization summary.} The top causal layers and the dissociation between system-token vs.\ user-token patching effects. All models show early-layer dominance and user-token primacy}{table.caption.29}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Position-Swap Control: Disentangling Position from Content}{10}{subsection.5.4}\protected@file@percent }
-\newlabel{sec:position_swap}{{5.4}{10}{Position-Swap Control: Disentangling Position from Content}{subsection.5.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Position-swap control experiment.} Causal influence is concentrated at sequence-final positions regardless of content placement, revealing a positional component to activation patching. Both conditions show identical early-layer dominance (L0--L2), confirming attention-mediated persona propagation.}}{11}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:position_swap}{{6}{11}{\textbf {Position-swap control experiment.} Causal influence is concentrated at sequence-final positions regardless of content placement, revealing a positional component to activation patching. Both conditions show identical early-layer dominance (L0--L2), confirming attention-mediated persona propagation}{figure.caption.30}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Cross-model OOD generalization.} Mean cosine similarity between persona vectors extracted from disjoint scenario subsets. Larger models (Llama-3.2, Gemma-2) consistently exceed 0.90 across all traits, indicating robust trait abstractions. Smaller models show trait-dependent variability, with openness generalizing strongly but extraversion and agreeableness showing moderate stability.}}{11}{table.caption.31}\protected@file@percent }
-\newlabel{tab:ood}{{5}{11}{\textbf {Cross-model OOD generalization.} Mean cosine similarity between persona vectors extracted from disjoint scenario subsets. Larger models (Llama-3.2, Gemma-2) consistently exceed 0.90 across all traits, indicating robust trait abstractions. Smaller models show trait-dependent variability, with openness generalizing strongly but extraversion and agreeableness showing moderate stability}{table.caption.31}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Strong Out-of-Domain Generalization}{11}{subsection.5.5}\protected@file@percent }
-\newlabel{sec:ood}{{5.5}{11}{Strong Out-of-Domain Generalization}{subsection.5.5}{}}
-\citation{john1991big}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Cross-model steering sensitivity.} Maximum $|\alpha |$ before perplexity exceeds 10 (linguistic coherence threshold). Architecture determines the safe steering regime, not model size.}}{12}{table.caption.32}\protected@file@percent }
-\newlabel{tab:steering}{{6}{12}{\textbf {Cross-model steering sensitivity.} Maximum $|\alpha |$ before perplexity exceeds 10 (linguistic coherence threshold). Architecture determines the safe steering regime, not model size}{table.caption.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Cross-model encoding profiles for Openness.} Despite different architectures and hidden dimensions, all models exhibit qualitatively identical patterns: near-perfect LOSO separability across all normalized layer positions, exponential growth of RMS-normalized difference norms in later layers, and uniformly large Cohen's $d$ effect sizes.}}{12}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:cross_model_profile}{{7}{12}{\textbf {Cross-model encoding profiles for Openness.} Despite different architectures and hidden dimensions, all models exhibit qualitatively identical patterns: near-perfect LOSO separability across all normalized layer positions, exponential growth of RMS-normalized difference norms in later layers, and uniformly large Cohen's $d$ effect sizes}{figure.caption.33}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Quantitative Personality Steering with Architecture-Specific Bounds}{12}{subsection.5.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Cross-Model Encoding Profiles}{12}{subsection.5.7}\protected@file@percent }
-\newlabel{sec:crossmodel}{{5.7}{12}{Cross-Model Encoding Profiles}{subsection.5.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Paraphrase Control: Ruling Out Prompt Confounding}{12}{subsection.5.8}\protected@file@percent }
-\newlabel{sec:paraphrase}{{5.8}{12}{Paraphrase Control: Ruling Out Prompt Confounding}{subsection.5.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Paraphrase control results with confidence intervals.} Cross-template probe accuracy demonstrates that personality detection is robust to prompt wording, ruling out keyword confounding; 95\% Wilson confidence intervals quantify uncertainty under the small-sample setting.}}{13}{table.caption.34}\protected@file@percent }
-\newlabel{tab:paraphrase}{{7}{13}{\textbf {Paraphrase control results with confidence intervals.} Cross-template probe accuracy demonstrates that personality detection is robust to prompt wording, ruling out keyword confounding; 95\% Wilson confidence intervals quantify uncertainty under the small-sample setting}{table.caption.34}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces \textbf  {Cross-model BFI-44 trait-specific steering asymmetry.} Score range (max$-$min across $\alpha $ sweep) for each trait. Pattern is consistent across architectures: Extraversion most steerable, Agreeableness most resistant.}}{13}{table.caption.36}\protected@file@percent }
-\newlabel{tab:bfi_crossmodel}{{8}{13}{\textbf {Cross-model BFI-44 trait-specific steering asymmetry.} Score range (max$-$min across $\alpha $ sweep) for each trait. Pattern is consistent across architectures: Extraversion most steerable, Agreeableness most resistant}{table.caption.36}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}BFI-44 Validation: Standardized Psychological Assessment}{13}{subsection.5.9}\protected@file@percent }
-\newlabel{sec:bfi44}{{5.9}{13}{BFI-44 Validation: Standardized Psychological Assessment}{subsection.5.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{Cross-Model BFI-44 Replication.}{13}{section*.35}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {BFI-44 dose-response curves for all five Big Five traits.} Extraversion and Neuroticism show strong steering effects (ranges: 0.29-0.31), Openness shows moderate response (0.11), while Agreeableness exhibits minimal sensitivity (0.05). Conscientiousness shows reversed steering (higher scores at negative $\alpha $). Optimal steering occurs at $\alpha \in [+4, +6]$ before saturation effects emerge.}}{14}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:bfi_dose_response}{{8}{14}{\textbf {BFI-44 dose-response curves for all five Big Five traits.} Extraversion and Neuroticism show strong steering effects (ranges: 0.29-0.31), Openness shows moderate response (0.11), while Agreeableness exhibits minimal sensitivity (0.05). Conscientiousness shows reversed steering (higher scores at negative $\alpha $). Optimal steering occurs at $\alpha \in [+4, +6]$ before saturation effects emerge}{figure.caption.37}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces \textbf  {Baseline comparison results.} Human evaluation (1--5 openness scale) demonstrates that optimized activation steering substantially outperforms all baselines while maintaining high stability.}}{14}{table.caption.38}\protected@file@percent }
-\newlabel{tab:baselines}{{9}{14}{\textbf {Baseline comparison results.} Human evaluation (1--5 openness scale) demonstrates that optimized activation steering substantially outperforms all baselines while maintaining high stability}{table.caption.38}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Baseline Comparisons: Why PersonaLens?}{14}{subsection.5.10}\protected@file@percent }
-\newlabel{sec:baselines}{{5.10}{14}{Baseline Comparisons: Why PersonaLens?}{subsection.5.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Null orthogonality baseline.} On Qwen3-0.6B, random binary attributes processed through the same extraction pipeline show 27\% higher mean off-diagonal $|\cos |$ (0.136) than Big Five traits (0.107). However, Qwen2.5-0.5B shows the opposite pattern (Big Five 0.418 vs null 0.128), confirming architecture-dependent variation in trait separation.}}{10}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:null_ortho}{{3}{10}{\textbf {Null orthogonality baseline.} On Qwen3-0.6B, random binary attributes processed through the same extraction pipeline show 27\% higher mean off-diagonal $|\cos |$ (0.136) than Big Five traits (0.107). However, Qwen2.5-0.5B shows the opposite pattern (Big Five 0.418 vs null 0.128), confirming architecture-dependent variation in trait separation}{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {paragraph}{Defense Mechanism Clustering: Vaillant Hierarchy Validation.}{10}{section*.36}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Defense mechanism hierarchy signal across all five models.} Within-group mean $|\cos |$ for each Vaillant maturity level and the immature/mature ratio. All models preserve the ordinal ordering (immature $>$ neurotic $>$ mature), but signal strength varies substantially.}}{11}{table.caption.39}\protected@file@percent }
+\newlabel{tab:defense_crossmodel}{{3}{11}{\textbf {Defense mechanism hierarchy signal across all five models.} Within-group mean $|\cos |$ for each Vaillant maturity level and the immature/mature ratio. All models preserve the ordinal ordering (immature $>$ neurotic $>$ mature), but signal strength varies substantially}{table.caption.39}{}}
+\@writefile{toc}{\contentsline {paragraph}{Cross-Model Validation of Defense Hierarchy.}{11}{section*.38}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Full defense mechanism orthogonality matrix organized by Vaillant hierarchy.} Nine defense mechanisms from Qwen2.5-0.5B-Instruct (Layer 12) show hierarchical clustering: immature defenses (bottom-right, mean $|\cos |=0.511$) cluster strongly, neurotic defenses (middle, $0.189$) show moderate correlation, and mature defenses (top-left, $0.030$) are near-orthogonal. Dashed lines separate maturity levels. Symbols: $\star $=Mature, $\diamond $=Neurotic, $\bullet $=Immature.}}{12}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:defense_full}{{4}{12}{\textbf {Full defense mechanism orthogonality matrix organized by Vaillant hierarchy.} Nine defense mechanisms from Qwen2.5-0.5B-Instruct (Layer 12) show hierarchical clustering: immature defenses (bottom-right, mean $|\cos |=0.511$) cluster strongly, neurotic defenses (middle, $0.189$) show moderate correlation, and mature defenses (top-left, $0.030$) are near-orthogonal. Dashed lines separate maturity levels. Symbols: $\star $=Mature, $\diamond $=Neurotic, $\bullet $=Immature}{figure.caption.37}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Causal Primacy of User-Token Attention in Early Layers}{12}{subsection.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Cross-model defense hierarchy signal.} Left: within-group clustering by Vaillant maturity level across all five architectures. Right: immature/mature ratio as a measure of hierarchy signal strength. All models show immature $>$ neurotic $>$ mature ordering; Gemma-2 and Qwen2.5 show the strongest hierarchy signal.}}{13}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:defense_crossmodel}{{5}{13}{\textbf {Cross-model defense hierarchy signal.} Left: within-group clustering by Vaillant maturity level across all five architectures. Right: immature/mature ratio as a measure of hierarchy signal strength. All models show immature $>$ neurotic $>$ mature ordering; Gemma-2 and Qwen2.5 show the strongest hierarchy signal}{figure.caption.40}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Cross-model causal localization summary.} The top causal layers and the dissociation between system-token vs.\ user-token patching effects. All models show early-layer dominance and user-token primacy.}}{13}{table.caption.41}\protected@file@percent }
+\newlabel{tab:causal}{{4}{13}{\textbf {Cross-model causal localization summary.} The top causal layers and the dissociation between system-token vs.\ user-token patching effects. All models show early-layer dominance and user-token primacy}{table.caption.41}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Position-Swap Control: Disentangling Position from Content}{13}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:position_swap}{{5.4}{13}{Position-Swap Control: Disentangling Position from Content}{subsection.5.4}{}}
 \citation{costa1992revised}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Position-swap control experiment.} Top row: layer-wise KL divergence for system- vs.\ user-token patching under each layout (Y-axes unified for direct comparison). Bottom row: total KL summed over layers. Causal influence concentrates at sequence-final positions regardless of content placement (Normal: user~118.3 vs.\ system~0.001; Swapped: user~105.8 vs.\ system~0.000), revealing a positional (autoregressive bottleneck) component. Both conditions show identical early-layer dominance (L0--L2), confirming attention-mediated persona propagation as the mechanistic driver.}}{14}{figure.caption.42}\protected@file@percent }
+\newlabel{fig:position_swap}{{6}{14}{\textbf {Position-swap control experiment.} Top row: layer-wise KL divergence for system- vs.\ user-token patching under each layout (Y-axes unified for direct comparison). Bottom row: total KL summed over layers. Causal influence concentrates at sequence-final positions regardless of content placement (Normal: user~118.3 vs.\ system~0.001; Swapped: user~105.8 vs.\ system~0.000), revealing a positional (autoregressive bottleneck) component. Both conditions show identical early-layer dominance (L0--L2), confirming attention-mediated persona propagation as the mechanistic driver}{figure.caption.42}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Cross-model OOD generalization.} Mean cosine similarity between persona vectors extracted from disjoint scenario subsets. Larger models (Llama-3.2, Gemma-2) consistently exceed 0.90 across all traits, indicating robust trait abstractions. Smaller models show trait-dependent variability, with openness generalizing strongly but extraversion and agreeableness showing moderate stability.}}{14}{table.caption.43}\protected@file@percent }
+\newlabel{tab:ood}{{5}{14}{\textbf {Cross-model OOD generalization.} Mean cosine similarity between persona vectors extracted from disjoint scenario subsets. Larger models (Llama-3.2, Gemma-2) consistently exceed 0.90 across all traits, indicating robust trait abstractions. Smaller models show trait-dependent variability, with openness generalizing strongly but extraversion and agreeableness showing moderate stability}{table.caption.43}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Strong Out-of-Domain Generalization}{14}{subsection.5.5}\protected@file@percent }
+\newlabel{sec:ood}{{5.5}{14}{Strong Out-of-Domain Generalization}{subsection.5.5}{}}
+\citation{gemmateam2024gemma}
+\citation{todd2023function}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Cross-model steering sensitivity.} Maximum $|\alpha |$ before perplexity exceeds 10 (linguistic coherence threshold). Architecture determines the safe steering regime, not model size.}}{15}{table.caption.46}\protected@file@percent }
+\newlabel{tab:steering}{{6}{15}{\textbf {Cross-model steering sensitivity.} Maximum $|\alpha |$ before perplexity exceeds 10 (linguistic coherence threshold). Architecture determines the safe steering regime, not model size}{table.caption.46}{}}
+\@writefile{toc}{\contentsline {paragraph}{Why Do Some Traits Generalize Better Than Others?}{15}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Model Capacity and Trait Abstraction.}{15}{section*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Quantitative Personality Steering with Architecture-Specific Bounds}{15}{subsection.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Relative Injection Strength: Normalizing for Residual Stream Scale.}{15}{section*.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Cross-Model Encoding Profiles}{15}{subsection.5.7}\protected@file@percent }
+\newlabel{sec:crossmodel}{{5.7}{15}{Cross-Model Encoding Profiles}{subsection.5.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Cross-model encoding profiles for Openness} (normalized layer axis $\ell /L$ enables direct comparison across architectures with different layer counts). Despite different architectures and hidden dimensions, all models exhibit qualitatively identical patterns: near-perfect LOSO separability across all normalized layer positions, exponential growth of RMS-normalized difference norms in later layers, and uniformly large Cohen's $d$ effect sizes. \textbf  {Notice the universal exponential growth of the RMS-normalized difference norm across all architectures}: norms grow by $5\text  {--}20\times $ from layer~0 to the final layers, confirming that personality information is continuously amplified with depth even after an early plateau in linear separability.}}{16}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:cross_model_profile}{{7}{16}{\textbf {Cross-model encoding profiles for Openness} (normalized layer axis $\ell /L$ enables direct comparison across architectures with different layer counts). Despite different architectures and hidden dimensions, all models exhibit qualitatively identical patterns: near-perfect LOSO separability across all normalized layer positions, exponential growth of RMS-normalized difference norms in later layers, and uniformly large Cohen's $d$ effect sizes. \textbf {Notice the universal exponential growth of the RMS-normalized difference norm across all architectures}: norms grow by $5\text {--}20\times $ from layer~0 to the final layers, confirming that personality information is continuously amplified with depth even after an early plateau in linear separability}{figure.caption.48}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Paraphrase control results with confidence intervals.} Cross-template probe accuracy demonstrates that personality detection is robust to prompt wording, ruling out keyword confounding; 95\% Wilson confidence intervals quantify uncertainty under the small-sample setting.}}{16}{table.caption.49}\protected@file@percent }
+\newlabel{tab:paraphrase}{{7}{16}{\textbf {Paraphrase control results with confidence intervals.} Cross-template probe accuracy demonstrates that personality detection is robust to prompt wording, ruling out keyword confounding; 95\% Wilson confidence intervals quantify uncertainty under the small-sample setting}{table.caption.49}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Paraphrase Control: Ruling Out Prompt Confounding}{16}{subsection.5.8}\protected@file@percent }
+\newlabel{sec:paraphrase}{{5.8}{16}{Paraphrase Control: Ruling Out Prompt Confounding}{subsection.5.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Template Sensitivity Analysis.}{16}{section*.50}\protected@file@percent }
+\citation{john1991big}
+\citation{casper2023open}
+\citation{turner2023activation}
+\citation{casper2023open}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}BFI-44 Validation: Standardized Psychological Assessment}{17}{subsection.5.9}\protected@file@percent }
+\newlabel{sec:bfi44}{{5.9}{17}{BFI-44 Validation: Standardized Psychological Assessment}{subsection.5.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{Cross-Model BFI-44 Replication.}{17}{section*.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Trait-Specific Steerability as a Window into RLHF Geometry.}{17}{section*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Conscientiousness Reversal: RLHF Over-Correction Hypothesis.}{17}{section*.53}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces \textbf  {Cross-model BFI-44 trait-specific steering asymmetry.} Score range (max$-$min across $\alpha $ sweep) for each trait. Pattern is consistent across architectures: Extraversion most steerable, Agreeableness most resistant.}}{18}{table.caption.54}\protected@file@percent }
+\newlabel{tab:bfi_crossmodel}{{8}{18}{\textbf {Cross-model BFI-44 trait-specific steering asymmetry.} Score range (max$-$min across $\alpha $ sweep) for each trait. Pattern is consistent across architectures: Extraversion most steerable, Agreeableness most resistant}{table.caption.54}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {BFI-44 dose-response curves for all five Big Five traits.} Extraversion and Neuroticism show strong steering effects (ranges: 0.29-0.31), Openness shows moderate response (0.11), while Agreeableness exhibits minimal sensitivity (0.05). Conscientiousness shows reversed steering (higher scores at negative $\alpha $). Optimal steering occurs at $\alpha \in [+4, +6]$ before saturation effects emerge.}}{18}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:bfi_dose_response}{{8}{18}{\textbf {BFI-44 dose-response curves for all five Big Five traits.} Extraversion and Neuroticism show strong steering effects (ranges: 0.29-0.31), Openness shows moderate response (0.11), while Agreeableness exhibits minimal sensitivity (0.05). Conscientiousness shows reversed steering (higher scores at negative $\alpha $). Optimal steering occurs at $\alpha \in [+4, +6]$ before saturation effects emerge}{figure.caption.55}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Baseline Comparisons: Why PersonaLens?}{18}{subsection.5.10}\protected@file@percent }
+\newlabel{sec:baselines}{{5.10}{18}{Baseline Comparisons: Why PersonaLens?}{subsection.5.10}{}}
+\citation{frising2025linear,feng2026persona,ju2025probing}
+\citation{costa1992revised}
+\citation{ethayarajh2019contextual}
+\citation{elhage2022superposition}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces \textbf  {Baseline comparison results.} Human evaluation (1--5 openness scale) demonstrates that optimized activation steering substantially outperforms all baselines while maintaining high stability.}}{19}{table.caption.56}\protected@file@percent }
+\newlabel{tab:baselines}{{9}{19}{\textbf {Baseline comparison results.} Human evaluation (1--5 openness scale) demonstrates that optimized activation steering substantially outperforms all baselines while maintaining high stability}{table.caption.56}{}}
+\@writefile{toc}{\contentsline {paragraph}{Cross-Model Guardrail Dynamics.}{19}{section*.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{19}{section.6}\protected@file@percent }
+\newlabel{sec:discussion}{{6}{19}{Discussion}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Primary Scientific Discoveries.}{19}{section*.59}\protected@file@percent }
+\citation{belrose2023leace,park2023linear}
 \citation{vaillant1986empirical,digiuseppe2021hierarchy}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {$\alpha $-sweep performance comparison across steering intensities.} Optimal steering occurs at $\alpha =5.0$, achieving maximum output length (1,205 chars), high keyword count (9 total), and best human evaluation score (4.6/5.0). Higher intensities ($\alpha =8.0$) reduce output quality despite maintaining keyword density, demonstrating non-monotonic steering dynamics.}}{15}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:alpha_sweep}{{9}{15}{\textbf {$\alpha $-sweep performance comparison across steering intensities.} Optimal steering occurs at $\alpha =5.0$, achieving maximum output length (1,205 chars), high keyword count (9 total), and best human evaluation score (4.6/5.0). Higher intensities ($\alpha =8.0$) reduce output quality despite maintaining keyword density, demonstrating non-monotonic steering dynamics}{figure.caption.40}{}}
-\@writefile{toc}{\contentsline {paragraph}{Cross-Model Guardrail Dynamics.}{15}{section*.39}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{15}{section.6}\protected@file@percent }
-\newlabel{sec:discussion}{{6}{15}{Discussion}{section.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{Primary Scientific Discoveries.}{15}{section*.41}\protected@file@percent }
+\citation{todd2023function}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {$\alpha $-sweep performance comparison across steering intensities.} Optimal steering occurs at $\alpha =5.0$, achieving maximum output length (1,205 chars), high keyword count (9 total), and best human evaluation score (4.6/5.0). Higher intensities ($\alpha =8.0$) reduce output quality despite maintaining keyword density, demonstrating non-monotonic steering dynamics.}}{20}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:alpha_sweep}{{9}{20}{\textbf {$\alpha $-sweep performance comparison across steering intensities.} Optimal steering occurs at $\alpha =5.0$, achieving maximum output length (1,205 chars), high keyword count (9 total), and best human evaluation score (4.6/5.0). Higher intensities ($\alpha =8.0$) reduce output quality despite maintaining keyword density, demonstrating non-monotonic steering dynamics}{figure.caption.58}{}}
 \citation{venkatesh2026nonidentifiability}
-\@writefile{toc}{\contentsline {paragraph}{Methodological Framework.}{16}{section*.42}\protected@file@percent }
 \citation{geva2021transformer,geva2023dissecting,meng2022locating}
 \citation{elhage2021mathematical}
 \citation{geva2021transformer,geva2023dissecting}
+\@writefile{toc}{\contentsline {paragraph}{Methodological Framework.}{21}{section*.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Early-Layer Causal Dominance: Mechanistic Explanation.}{21}{section*.61}\protected@file@percent }
 \citation{venkatesh2026nonidentifiability}
-\@writefile{toc}{\contentsline {paragraph}{Early-Layer Causal Dominance: Mechanistic Explanation.}{17}{section*.43}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Penetrating AI Identity Guardrails.}{17}{section*.44}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Safety and Ethics.}{17}{section*.45}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Limitations.}{17}{section*.46}\protected@file@percent }
+\citation{argyle2023out}
+\@writefile{toc}{\contentsline {paragraph}{Penetrating AI Identity Guardrails.}{22}{section*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Safety and Ethics.}{22}{section*.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{22}{section*.64}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Practical Applications.}{22}{section*.65}\protected@file@percent }
 \bibstyle{unsrtnat}
 \bibdata{references}
-\@writefile{toc}{\contentsline {paragraph}{Practical Applications.}{18}{section*.47}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{18}{section.7}\protected@file@percent }
-\newlabel{sec:conclusion}{{7}{18}{Conclusion}{section.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Future Work.}{18}{section*.48}\protected@file@percent }
-\bibcite{shanahan2023role}{{1}{2023}{{Shanahan et~al.}}{{Shanahan, McDonell, and Reynolds}}}
-\bibcite{chen2024rolesurvey}{{2}{2024}{{Chen et~al.}}{{Chen, Xiao, Chen, et~al.}}}
-\bibcite{shao2023character}{{3}{2023}{{Shao et~al.}}{{Shao, Li, Dai, and Qiu}}}
-\bibcite{jiang2024evaluating}{{4}{2024}{{Jiang et~al.}}{{Jiang, Xu, Zhu, Han, Ma, and Liang}}}
-\bibcite{serapiogarcía2023personality}{{5}{2023}{{Serapio-Garc{\'\i }a et~al.}}{{Serapio-Garc{\'\i }a, Safdari, Crepy, Sun, Fitz, Romero, Abdulhai, Faust, and Matari{\'c}}}}
-\bibcite{zou2023representation}{{6}{2023}{{Zou et~al.}}{{Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin, Mazeika, Dombrowski, et~al.}}}
-\bibcite{li2024iti}{{7}{2024}{{Li et~al.}}{{Li, Patel, Vi{\'e}gas, Pfister, and Wattenberg}}}
-\bibcite{rimsky2024steering}{{8}{2024}{{Rimsky et~al.}}{{Rimsky, Gabrieli, Schulz, Turner, et~al.}}}
-\bibcite{bao2024emotion}{{9}{2024}{{Bao et~al.}}{{}}}
-\bibcite{chen2025persona}{{10}{2025}{{Chen et~al.}}{{}}}
-\bibcite{sun2025activation}{{11}{2025}{{Sun et~al.}}{{}}}
-\bibcite{billy2025blending}{{12}{2025}{{Billyov et~al.}}{{}}}
-\bibcite{personaforge2025}{{13}{2025{a}}{{Anonymous}}{{}}}
-\bibcite{mao2024personality}{{14}{2024}{{Mao et~al.}}{{Mao, Liu, Lan, Wu, and Cambria}}}
-\bibcite{turner2023activation}{{15}{2023}{{Turner et~al.}}{{Turner, Thiergart, Udell, Leech, Mini, and Macdiarmid}}}
-\bibcite{persona2026}{{16}{2026{a}}{{Anonymous}}{{}}}
-\bibcite{persona2025}{{17}{2025{b}}{{Anonymous}}{{}}}
-\bibcite{svf2026}{{18}{2026{b}}{{Anonymous}}{{}}}
-\bibcite{factored2026}{{19}{2026{c}}{{Anonymous}}{{}}}
-\bibcite{bao2025traits2circuits}{{20}{2025}{{Bao et~al.}}{{}}}
-\bibcite{konen2025probing}{{21}{2025}{{Konen et~al.}}{{}}}
-\bibcite{cae2025}{{22}{2025{c}}{{Anonymous}}{{}}}
-\bibcite{cae2025b}{{23}{2025{d}}{{Anonymous}}{{}}}
-\bibcite{sae2025denoising}{{24}{2025{e}}{{Anonymous}}{{}}}
-\bibcite{direction2026}{{25}{2026{d}}{{Anonymous}}{{}}}
-\bibcite{venkatesh2026nonidentifiability}{{26}{2026}{{Venkatesh and Kurapath}}{{}}}
-\bibcite{vaillant1994ego}{{27}{1994}{{Vaillant}}{{}}}
-\bibcite{meng2022locating}{{28}{2022}{{Meng et~al.}}{{Meng, Bau, Andonian, and Belinkov}}}
-\bibcite{costa1992revised}{{29}{1992}{{Costa and McCrae}}{{}}}
-\bibcite{qwen2025qwen3}{{30}{2025}{{Qwen Team}}{{}}}
-\bibcite{zhang2024tinyllama}{{31}{2024}{{Zhang et~al.}}{{Zhang, Zeng, Wang, and Lu}}}
-\bibcite{dubey2024llama}{{32}{2024}{{Dubey et~al.}}{{Dubey, Jauhri, Pandey, Kadian, Al-Dahle, Letman, Mathur, Schelten, Yang, Fan, et~al.}}}
-\bibcite{gemmateam2024gemma}{{33}{2024}{{Team et~al.}}{{Team, Riviere, Pathak, Sessa, Hardin, Bhupatiraju, Hussenot, Mesnard, Shahriari, Ram{\'e}, et~al.}}}
-\bibcite{vaillant1986empirical}{{34}{1986}{{Vaillant et~al.}}{{Vaillant, Bond, and Vaillant}}}
-\bibcite{digiuseppe2021hierarchy}{{35}{2021}{{Di~Giuseppe and Perry}}{{}}}
-\bibcite{john1991big}{{36}{1991}{{John et~al.}}{{John, Angleitner, and Ostendorf}}}
-\bibcite{geva2021transformer}{{37}{2021}{{Geva et~al.}}{{Geva, Schuster, Berant, and Levy}}}
-\bibcite{geva2023dissecting}{{38}{2023}{{Geva et~al.}}{{Geva, Caciularu, Wang, and Goldberg}}}
-\bibcite{elhage2021mathematical}{{39}{2021}{{Elhage et~al.}}{{Elhage, Nanda, Olsson, Henighan, Joseph, Mann, Askell, Bai, Chen, Conerly, et~al.}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Full Contrastive Prompt Examples}{20}{appendix.A}\protected@file@percent }
-\newlabel{app:prompts}{{A}{20}{Full Contrastive Prompt Examples}{appendix.A}{}}
-\@writefile{toc}{\contentsline {paragraph}{Openness Prompt Pair.}{20}{section*.50}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Humor Defense Mechanism Pair.}{20}{section*.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Per-Model Detailed Results}{20}{appendix.B}\protected@file@percent }
-\newlabel{app:permodel}{{B}{20}{Per-Model Detailed Results}{appendix.B}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Qwen3-0.6B}{21}{subsection.B.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Qwen3-0.6B: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{21}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen3-0.6B_layer}{{10}{21}{\textbf {Qwen3-0.6B: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.52}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \textbf  {Qwen3-0.6B: Token-localized and component causal importance for Openness.}}}{21}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen3-0.6B_causal}{{11}{21}{\textbf {Qwen3-0.6B: Token-localized and component causal importance for Openness.}}{figure.caption.53}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}}{22}{figure.caption.54}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen3-0.6B_ortho}{{12}{22}{\textbf {Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}{figure.caption.54}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Qwen2.5-0.5B-Instruct}{23}{subsection.B.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{23}{figure.caption.55}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_layer}{{13}{23}{\textbf {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.55}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Token-localized and component causal importance for Openness.}}}{23}{figure.caption.56}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_causal}{{14}{23}{\textbf {Qwen2.5-0.5B-Instruct: Token-localized and component causal importance for Openness.}}{figure.caption.56}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}}{24}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_ortho}{{15}{24}{\textbf {Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.57}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}TinyLlama-1.1B}{25}{subsection.B.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \textbf  {TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{25}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_layer}{{16}{25}{\textbf {TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.58}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \textbf  {TinyLlama-1.1B: Token-localized and component causal importance for Openness.}}}{25}{figure.caption.59}\protected@file@percent }
-\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_causal}{{17}{25}{\textbf {TinyLlama-1.1B: Token-localized and component causal importance for Openness.}}{figure.caption.59}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \textbf  {TinyLlama-1.1B: Cosine similarity matrix between persona vectors.}}}{26}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_ortho}{{18}{26}{\textbf {TinyLlama-1.1B: Cosine similarity matrix between persona vectors.}}{figure.caption.60}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.4}Llama-3.2-1B-Instruct}{27}{subsection.B.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{27}{figure.caption.61}\protected@file@percent }
-\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_layer}{{19}{27}{\textbf {Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.61}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Token-localized and component causal importance for Openness.}}}{27}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_causal}{{20}{27}{\textbf {Llama-3.2-1B-Instruct: Token-localized and component causal importance for Openness.}}{figure.caption.62}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Cosine similarity matrix between persona vectors.}}}{28}{figure.caption.63}\protected@file@percent }
-\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_ortho}{{21}{28}{\textbf {Llama-3.2-1B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.63}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.5}Gemma-2-2B-Instruct}{29}{subsection.B.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces \textbf  {Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{29}{figure.caption.64}\protected@file@percent }
-\newlabel{fig:unsloth_gemma-2-2b-it_layer}{{22}{29}{\textbf {Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.64}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.6}Extended Cross-Model Analytics}{30}{subsection.B.6}\protected@file@percent }
-\newlabel{app:cross_model}{{B.6}{30}{Extended Cross-Model Analytics}{subsection.B.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.6.1}Cohen's d and Signal-to-Noise Ratio (SNR)}{30}{subsubsection.B.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.6.2}Steering Saturation Discrepancy}{30}{subsubsection.B.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C}Algorithm Pseudocode}{30}{appendix.C}\protected@file@percent }
-\newlabel{app:algorithm}{{C}{30}{Algorithm Pseudocode}{appendix.C}{}}
-\newlabel{alg:personalens}{{\caption@xref {alg:personalens}{ on input line 778}}{30}{Algorithm Pseudocode}{figure.caption.65}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Perplexity Calculation Methodology}{30}{appendix.D}\protected@file@percent }
-\newlabel{app:ppl}{{D}{30}{Perplexity Calculation Methodology}{appendix.D}{}}
-\gdef \@abspage@last{31}
+\bibcite{chen2024rolesurvey}{{1}{2024}{{Chen et~al.}}{{Chen, Xiao, Chen, et~al.}}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{23}{section.7}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{23}{Conclusion}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Future Work.}{23}{section*.66}\protected@file@percent }
+\bibcite{shao2023character}{{2}{2023}{{Shao et~al.}}{{Shao, Li, Dai, and Qiu}}}
+\bibcite{jiang2024evaluating}{{3}{2024}{{Jiang et~al.}}{{Jiang, Xu, Zhu, Han, Ma, and Liang}}}
+\bibcite{serapiogarcía2023personality}{{4}{2023}{{Serapio-Garc{\'\i }a et~al.}}{{Serapio-Garc{\'\i }a, Safdari, Crepy, Sun, Fitz, Romero, Abdulhai, Faust, and Matari{\'c}}}}
+\bibcite{zou2023representation}{{5}{2023}{{Zou et~al.}}{{Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin, Mazeika, Dombrowski, et~al.}}}
+\bibcite{li2024iti}{{6}{2024}{{Li et~al.}}{{Li, Patel, Vi{\'e}gas, Pfister, and Wattenberg}}}
+\bibcite{rimsky2024steering}{{7}{2024}{{Rimsky et~al.}}{{Rimsky, Gabrieli, Schulz, Turner, et~al.}}}
+\bibcite{bao2024emotion}{{8}{2024}{{Bao et~al.}}{{}}}
+\bibcite{chen2025persona}{{9}{2025}{{Chen et~al.}}{{}}}
+\bibcite{sun2025activation}{{10}{2025}{{Sun et~al.}}{{}}}
+\bibcite{billy2025blending}{{11}{2025}{{Billyov et~al.}}{{}}}
+\bibcite{personaforge2025}{{12}{2025{a}}{{Anonymous}}{{}}}
+\bibcite{frising2025linear}{{13}{2025}{{Frising and Balcells}}{{}}}
+\bibcite{feng2026persona}{{14}{2026}{{Feng et~al.}}{{Feng, Zhao, Zhong, Huang, Gu, Kong, Feng, and Qin}}}
+\bibcite{ju2025probing}{{15}{2025}{{Ju et~al.}}{{Ju, Shao, Wang, Chen, Zhang, Fei, Lee, Hsu, Duan, and Liu}}}
+\bibcite{vaillant1986empirical}{{16}{1986}{{Vaillant et~al.}}{{Vaillant, Bond, and Vaillant}}}
+\bibcite{mao2024personality}{{17}{2024}{{Mao et~al.}}{{Mao, Liu, Lan, Wu, and Cambria}}}
+\bibcite{turner2023activation}{{18}{2023}{{Turner et~al.}}{{Turner, Thiergart, Udell, Leech, Mini, and Macdiarmid}}}
+\bibcite{svf2026}{{19}{2026{a}}{{Anonymous}}{{}}}
+\bibcite{factored2026}{{20}{2026{b}}{{Anonymous}}{{}}}
+\bibcite{bhandari2026activation}{{21}{2026}{{Bhandari et~al.}}{{Bhandari, Fay, Selvaganapathy, Datta, Naseem, and Nasim}}}
+\bibcite{persona2026}{{22}{2026{c}}{{Anonymous}}{{}}}
+\bibcite{persona2025}{{23}{2025{b}}{{Anonymous}}{{}}}
+\bibcite{ong2025identifying}{{24}{2025}{{Ong et~al.}}{{Ong, Jun, Nguyen, Cho, and Ant{\'o}l{\'i}n}}}
+\bibcite{bao2025traits2circuits}{{25}{2025}{{Bao et~al.}}{{}}}
+\bibcite{konen2025probing}{{26}{2025}{{Konen et~al.}}{{}}}
+\bibcite{cae2025}{{27}{2025{c}}{{Anonymous}}{{}}}
+\bibcite{cae2025b}{{28}{2025{d}}{{Anonymous}}{{}}}
+\bibcite{sae2025denoising}{{29}{2025{e}}{{Anonymous}}{{}}}
+\bibcite{direction2026}{{30}{2026{d}}{{Anonymous}}{{}}}
+\bibcite{venkatesh2026nonidentifiability}{{31}{2026}{{Venkatesh and Kurapath}}{{}}}
+\bibcite{vaillant1994ego}{{32}{1994}{{Vaillant}}{{}}}
+\bibcite{cohen1988statistical}{{33}{1988}{{Cohen}}{{}}}
+\bibcite{meng2022locating}{{34}{2022}{{Meng et~al.}}{{Meng, Bau, Andonian, and Belinkov}}}
+\bibcite{costa1992revised}{{35}{1992}{{Costa and McCrae}}{{}}}
+\bibcite{qwen2025qwen3}{{36}{2025}{{Qwen Team}}{{}}}
+\bibcite{zhang2024tinyllama}{{37}{2024}{{Zhang et~al.}}{{Zhang, Zeng, Wang, and Lu}}}
+\bibcite{dubey2024llama}{{38}{2024}{{Dubey et~al.}}{{Dubey, Jauhri, Pandey, Kadian, Al-Dahle, Letman, Mathur, Schelten, Yang, Fan, et~al.}}}
+\bibcite{gemmateam2024gemma}{{39}{2024}{{Team et~al.}}{{Team, Riviere, Pathak, Sessa, Hardin, Bhupatiraju, Hussenot, Mesnard, Shahriari, Ram{\'e}, et~al.}}}
+\bibcite{elhage2022superposition}{{40}{2022}{{Elhage et~al.}}{{Elhage, Henighan, Joseph, Askell, Hume, Conerly, Lasenby, Hatfield-Dodds, Drain, Hernandez, et~al.}}}
+\bibcite{ethayarajh2019contextual}{{41}{2019}{{Ethayarajh}}{{}}}
+\bibcite{digiuseppe2021hierarchy}{{42}{2021}{{Di~Giuseppe and Perry}}{{}}}
+\bibcite{todd2023function}{{43}{2024}{{Todd et~al.}}{{Todd, Li, Sharma, Mueller, Wallace, and Bau}}}
+\bibcite{john1991big}{{44}{1991}{{John et~al.}}{{John, Angleitner, and Ostendorf}}}
+\bibcite{casper2023open}{{45}{2023}{{Casper et~al.}}{{Casper, Davies, Shi, Gilbert, Scheurer, Rando, Freedman, Korbak, Lindner, Freire, et~al.}}}
+\bibcite{belrose2023leace}{{46}{2023}{{Belrose et~al.}}{{Belrose, Furman, Smith, Shoja, Mallen, Maia, and Belrose}}}
+\bibcite{park2023linear}{{47}{2023}{{Park et~al.}}{{Park, Choe, and Veitch}}}
+\bibcite{geva2021transformer}{{48}{2021}{{Geva et~al.}}{{Geva, Schuster, Berant, and Levy}}}
+\bibcite{geva2023dissecting}{{49}{2023}{{Geva et~al.}}{{Geva, Caciularu, Wang, and Goldberg}}}
+\bibcite{elhage2021mathematical}{{50}{2021}{{Elhage et~al.}}{{Elhage, Nanda, Olsson, Henighan, Joseph, Mann, Askell, Bai, Chen, Conerly, et~al.}}}
+\bibcite{argyle2023out}{{51}{2023}{{Argyle et~al.}}{{Argyle, Busby, Fulda, Gubler, Rytting, and Wingate}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Full Contrastive Prompt Examples}{26}{appendix.A}\protected@file@percent }
+\newlabel{app:prompts}{{A}{26}{Full Contrastive Prompt Examples}{appendix.A}{}}
+\@writefile{toc}{\contentsline {paragraph}{Openness Prompt Pair.}{26}{section*.68}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Humor Defense Mechanism Pair.}{26}{section*.69}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Per-Model Detailed Results}{26}{appendix.B}\protected@file@percent }
+\newlabel{app:permodel}{{B}{26}{Per-Model Detailed Results}{appendix.B}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Qwen3-0.6B}{26}{subsection.B.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Qwen3-0.6B: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{26}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen3-0.6B_layer}{{10}{26}{\textbf {Qwen3-0.6B: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \textbf  {Qwen3-0.6B: Token-localized and component causal importance for Openness.}}}{27}{figure.caption.71}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen3-0.6B_causal}{{11}{27}{\textbf {Qwen3-0.6B: Token-localized and component causal importance for Openness.}}{figure.caption.71}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}}{27}{figure.caption.72}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen3-0.6B_ortho}{{12}{27}{\textbf {Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}{figure.caption.72}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Qwen2.5-0.5B-Instruct}{28}{subsection.B.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{28}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_layer}{{13}{28}{\textbf {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Token-localized and component causal importance for Openness.}}}{28}{figure.caption.74}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_causal}{{14}{28}{\textbf {Qwen2.5-0.5B-Instruct: Token-localized and component causal importance for Openness.}}{figure.caption.74}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}}{29}{figure.caption.75}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_ortho}{{15}{29}{\textbf {Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.75}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}TinyLlama-1.1B}{30}{subsection.B.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \textbf  {TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{30}{figure.caption.76}\protected@file@percent }
+\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_layer}{{16}{30}{\textbf {TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.76}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \textbf  {TinyLlama-1.1B: Token-localized and component causal importance for Openness.}}}{30}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_causal}{{17}{30}{\textbf {TinyLlama-1.1B: Token-localized and component causal importance for Openness.}}{figure.caption.77}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \textbf  {TinyLlama-1.1B: Cosine similarity matrix between persona vectors.}}}{31}{figure.caption.78}\protected@file@percent }
+\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_ortho}{{18}{31}{\textbf {TinyLlama-1.1B: Cosine similarity matrix between persona vectors.}}{figure.caption.78}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.4}Llama-3.2-1B-Instruct}{32}{subsection.B.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{32}{figure.caption.79}\protected@file@percent }
+\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_layer}{{19}{32}{\textbf {Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.79}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Token-localized and component causal importance for Openness.}}}{32}{figure.caption.80}\protected@file@percent }
+\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_causal}{{20}{32}{\textbf {Llama-3.2-1B-Instruct: Token-localized and component causal importance for Openness.}}{figure.caption.80}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Cosine similarity matrix between persona vectors.}}}{33}{figure.caption.81}\protected@file@percent }
+\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_ortho}{{21}{33}{\textbf {Llama-3.2-1B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.81}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.5}Gemma-2-2B-Instruct}{34}{subsection.B.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces \textbf  {Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{34}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:unsloth_gemma-2-2b-it_layer}{{22}{34}{\textbf {Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.82}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.6}Extended Cross-Model Analytics}{35}{subsection.B.6}\protected@file@percent }
+\newlabel{app:cross_model}{{B.6}{35}{Extended Cross-Model Analytics}{subsection.B.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.6.1}Cohen's d and Signal-to-Noise Ratio (SNR)}{35}{subsubsection.B.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.6.2}Steering Saturation Discrepancy}{35}{subsubsection.B.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Algorithm Pseudocode}{35}{appendix.C}\protected@file@percent }
+\newlabel{app:algorithm}{{C}{35}{Algorithm Pseudocode}{appendix.C}{}}
+\newlabel{alg:personalens}{{\caption@xref {alg:personalens}{ on input line 872}}{35}{Algorithm Pseudocode}{figure.caption.83}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Perplexity Calculation Methodology}{35}{appendix.D}\protected@file@percent }
+\newlabel{app:ppl}{{D}{35}{Perplexity Calculation Methodology}{appendix.D}{}}
+\gdef \@abspage@last{36}

@@ -54,7 +54,7 @@ MECHANISM_LABELS = {
 def load_persona_vector(model_name, mechanism, layer):
     """Load persona vector for a given mechanism at specified layer."""
     base_path = Path(
-        f"/home/fqwqf/persona/persona_vectors/{model_name}/{mechanism}/vectors"
+        f"/home/fqwqf/persona/results/persona_vectors/{model_name}/{mechanism}/vectors"
     )
     vector_file = base_path / f"mean_diff_layer_{layer}.npy"
 
@@ -298,7 +298,7 @@ def main():
     print(f"\nOverall mean |cos|: {stats['overall_mean']:.3f}")
 
     # Save results
-    output_dir = Path("/home/fqwqf/persona/defense_mechanism_analysis")
+    output_dir = Path("/home/fqwqf/persona/results/defense_mechanism_analysis")
     output_dir.mkdir(exist_ok=True)
 
     results = {

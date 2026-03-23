@@ -205,7 +205,7 @@ def main():
     parser.add_argument(
         "--output_dir",
         type=str,
-        default="paraphrase_control_results",
+        default="results/paraphrase_control_results",
         help="Output directory",
     )
     parser.add_argument(

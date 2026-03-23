@@ -204,7 +204,7 @@ def bootstrap_bfi_results(model_short):
     """Add CIs to BFI-44 dose-response results."""
     print("\n[3] BFI-44 Dose-Response CIs...")
 
-    bfi_dir = f"bfi_results/{model_short}"
+        bfi_dir = f"results/bfi_results/{model_short}"
     if not os.path.exists(bfi_dir):
         print(f"  WARNING: {bfi_dir} not found. Skipping.")
         return None
@@ -269,7 +269,7 @@ def bootstrap_orthogonality(model_short, layer=None):
     """Bootstrap CIs for orthogonality off-diagonal values."""
     print("\n[4] Orthogonality CIs...")
 
-    base_dir = f"persona_vectors/{model_short}"
+    base_dir = f"results/persona_vectors/{model_short}"
     big5 = [
         "openness",
         "conscientiousness",
@@ -338,7 +338,7 @@ def bootstrap_orthogonality(model_short, layer=None):
 def main():
     parser = argparse.ArgumentParser(description="Bootstrap CIs for all results")
     parser.add_argument("--model", type=str, default="Qwen/Qwen3-0.6B")
-    parser.add_argument("--output_dir", type=str, default="bootstrap_ci_results")
+    parser.add_argument("--output_dir", type=str, default="results/bootstrap_ci_results")
     args = parser.parse_args()
 
     model_short = args.model.replace("/", "_")

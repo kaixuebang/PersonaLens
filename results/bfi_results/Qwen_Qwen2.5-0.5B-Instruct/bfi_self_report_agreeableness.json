@@ -1,0 +1,405 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "trait": "agreeableness",
+  "best_layer": 11,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "results": {
+    "-8.0": {
+      "trait_score": 2.9172431098090277,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 1.97857666015625
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 2.014404296875
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 1.996826171875
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 1.95672607421875
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 2.03076171875
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 1.966552734375
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 1.92681884765625
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 1.9031982421875
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 1.925537109375
+        }
+      ],
+      "mean_rating": 1.9666002061631944,
+      "std_rating": 0.04061337958708963
+    },
+    "-6.0": {
+      "trait_score": 2.9233466254340277,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 1.934814453125
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 1.92333984375
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 1.86492919921875
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 1.97100830078125
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 1.9798583984375
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 1.8895263671875
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 1.83514404296875
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 1.82440185546875
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 1.81475830078125
+        }
+      ],
+      "mean_rating": 1.8930867513020833,
+      "std_rating": 0.05894760377931984
+    },
+    "-4.0": {
+      "trait_score": 3.004297892252604,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 2.4364013671875
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 2.434356689453125
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 2.29644775390625
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 2.428955078125
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 2.52960205078125
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 2.23150634765625
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 2.246490478515625
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 2.29779052734375
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 2.3112945556640625
+        }
+      ],
+      "mean_rating": 2.3569827609592013,
+      "std_rating": 0.09688479295881557
+    },
+    "-2.0": {
+      "trait_score": 3.178648206922743,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 2.71307373046875
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 2.71258544921875
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 2.681671142578125
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 2.74542236328125
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 2.8046875
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 2.27984619140625
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 2.0777664184570312
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 2.2949447631835938
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 2.3970489501953125
+        }
+      ],
+      "mean_rating": 2.523005167643229,
+      "std_rating": 0.24749777258568317
+    },
+    "0.0": {
+      "trait_score": 3.4200739330715604,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 3.15252685546875
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 2.9490966796875
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 2.9922943115234375
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 3.245269775390625
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 3.017333984375
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 2.2366676330566406
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 1.7964096069335938
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 2.2076196670532227
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 2.3351593017578125
+        }
+      ],
+      "mean_rating": 2.6591530905829535,
+      "std_rating": 0.4878489109094847
+    },
+    "2.0": {
+      "trait_score": 3.4139348930782742,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 3.1106719970703125
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 2.9487838745117188
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 2.9220199584960938
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 3.1489105224609375
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 2.9715347290039062
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 2.1851863861083984
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 1.7273502349853516
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 2.1704323291778564
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 2.2935380935668945
+        }
+      ],
+      "mean_rating": 2.6087142361534967,
+      "std_rating": 0.4872628242722374
+    },
+    "4.0": {
+      "trait_score": 3.325765954123603,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 2.7388763427734375
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 2.4869747161865234
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 2.175771713256836
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 2.8090362548828125
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 2.5528335571289062
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 1.6890606880187988
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 1.4842488765716553
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 1.7635564804077148
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 1.89473295211792
+        }
+      ],
+      "mean_rating": 2.1772323979271784,
+      "std_rating": 0.46201373036401133
+    },
+    "6.0": {
+      "trait_score": 2.928969224294027,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 1.6136245727539062
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 1.5074405670166016
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 1.228877067565918
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 1.6043586730957031
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 1.43988037109375
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 1.2109594345092773
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 1.1959257125854492
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 1.2927918434143066
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 1.3337812423706055
+        }
+      ],
+      "mean_rating": 1.3808488316006131,
+      "std_rating": 0.15626727830644155
+    },
+    "8.0": {
+      "trait_score": 2.7952929072909884,
+      "item_responses": [
+        {
+          "item": "I am helpful and unselfish with others",
+          "rating": 1.1204195022583008
+        },
+        {
+          "item": "I have a forgiving nature",
+          "rating": 1.1678361892700195
+        },
+        {
+          "item": "I am generally trusting",
+          "rating": 1.0705022811889648
+        },
+        {
+          "item": "I am considerate and kind to almost everyone",
+          "rating": 1.1116886138916016
+        },
+        {
+          "item": "I like to cooperate with others",
+          "rating": 1.110335350036621
+        },
+        {
+          "item": "I tend to find fault with others",
+          "rating": 1.068835735321045
+        },
+        {
+          "item": "I start quarrels with others",
+          "rating": 1.1215810775756836
+        },
+        {
+          "item": "I can be cold and aloof",
+          "rating": 1.1122512817382812
+        },
+        {
+          "item": "I am sometimes rude to others",
+          "rating": 1.1204776763916016
+        }
+      ],
+      "mean_rating": 1.1115475230746799,
+      "std_rating": 0.027765964480499308
+    }
+  }
+}

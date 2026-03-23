@@ -1,15 +1,9 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{51}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Shanahan et~al.(2023)Shanahan, McDonell, and
-  Reynolds]{shanahan2023role}
-Murray Shanahan, Kyle McDonell, and Laria Reynolds.
-\newblock Role-play with large language models.
-\newblock \emph{Nature}, 623:\penalty0 493--498, 2023.
 
 \bibitem[Chen et~al.(2024)Chen, Xiao, Chen, et~al.]{chen2024rolesurvey}
 Jiangjie Chen, Xintao Xiao, Zhuo Chen, et~al.
@@ -89,6 +83,35 @@ Anonymous.
   personality-consistent role-playing agents.
 \newblock In \emph{Under Review}, 2025{\natexlab{a}}.
 
+\bibitem[Frising and Balcells(2025)]{frising2025linear}
+Michel Frising and Daniel Balcells.
+\newblock Linear personality probing and steering in {LLMs}: A big five study.
+\newblock \emph{arXiv preprint arXiv:2512.17639}, 2025.
+
+\bibitem[Feng et~al.(2026)Feng, Zhao, Zhong, Huang, Gu, Kong, Feng, and
+  Qin]{feng2026persona}
+Xiachong Feng, Liang Zhao, Weihong Zhong, Yichong Huang, Yuxuan Gu, Lingpeng
+  Kong, Xiaocheng Feng, and Bing Qin.
+\newblock {PERSONA}: Dynamic and compositional inference-time personality
+  control via activation vector algebra.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2026.
+
+\bibitem[Ju et~al.(2025)Ju, Shao, Wang, Chen, Zhang, Fei, Lee, Hsu, Duan, and
+  Liu]{ju2025probing}
+Tianjie Ju, Zhenyu Shao, Bowen Wang, Yujia Chen, Zhuosheng Zhang, Hao Fei,
+  Mong-Li Lee, Wynne Hsu, Sufeng Duan, and Gongshen Liu.
+\newblock Probing then editing response personality of large language models.
+\newblock \emph{arXiv preprint arXiv:2504.10227}, 2025.
+\newblock Accepted at COLM 2025.
+
+\bibitem[Vaillant et~al.(1986)Vaillant, Bond, and
+  Vaillant]{vaillant1986empirical}
+George~E Vaillant, Michael Bond, and Catherine~O Vaillant.
+\newblock An empirically validated hierarchy of defense mechanisms.
+\newblock \emph{Archives of General Psychiatry}, 43\penalty0 (8):\penalty0
+  786--794, 1986.
+
 \bibitem[Mao et~al.(2024)Mao, Liu, Lan, Wu, and Cambria]{mao2024personality}
 Rui Mao, Guanyi Liu, Xin Lan, Fei Wu, and Erik Cambria.
 \newblock Personality alignment of large language models.
@@ -101,25 +124,43 @@ Alexander~Matt Turner, Lisa Thiergart, David Udell, Gavin Leech, Ulisse Mini,
 \newblock Activation addition: Steering language models without optimization.
 \newblock \emph{arXiv preprint arXiv:2308.10248}, 2023.
 
-\bibitem[Anonymous(2026{\natexlab{a}})]{persona2026}
+\bibitem[Anonymous(2026{\natexlab{a}})]{svf2026}
+Anonymous.
+\newblock Steering vector fields: Context-dependent control of llms.
+\newblock \emph{arXiv preprint arXiv:2602.01654}, 2026{\natexlab{a}}.
+
+\bibitem[Anonymous(2026{\natexlab{b}})]{factored2026}
+Anonymous.
+\newblock Factored subspaces in transformer representations.
+\newblock \emph{arXiv preprint arXiv:2602.02385}, 2026{\natexlab{b}}.
+
+\bibitem[Bhandari et~al.(2026)Bhandari, Fay, Selvaganapathy, Datta, Naseem, and
+  Nasim]{bhandari2026activation}
+Pranav Bhandari, Nicolas Fay, Sanjeevan Selvaganapathy, Amitava Datta, Usman
+  Naseem, and Mehwish Nasim.
+\newblock Activation-space personality steering: Hybrid layer selection for
+  stable trait control in {LLMs}.
+\newblock In \emph{Proceedings of the 19th Conference of the European Chapter
+  of the Association for Computational Linguistics (EACL)}, pages 6388--6403,
+  2026.
+
+\bibitem[Anonymous(2026{\natexlab{c}})]{persona2026}
 Anonymous.
 \newblock Persona: A framework for llm personality alignment.
-\newblock \emph{arXiv preprint arXiv:2602.15669}, 2026{\natexlab{a}}.
+\newblock \emph{arXiv preprint arXiv:2602.15669}, 2026{\natexlab{c}}.
 
 \bibitem[Anonymous(2025{\natexlab{b}})]{persona2025}
 Anonymous.
 \newblock Trait vectors and algebra in hybrid layer subspaces.
 \newblock \emph{arXiv preprint arXiv:2511.03738}, 2025{\natexlab{b}}.
 
-\bibitem[Anonymous(2026{\natexlab{b}})]{svf2026}
-Anonymous.
-\newblock Steering vector fields: Context-dependent control of llms.
-\newblock \emph{arXiv preprint arXiv:2602.01654}, 2026{\natexlab{b}}.
-
-\bibitem[Anonymous(2026{\natexlab{c}})]{factored2026}
-Anonymous.
-\newblock Factored subspaces in transformer representations.
-\newblock \emph{arXiv preprint arXiv:2602.02385}, 2026{\natexlab{c}}.
+\bibitem[Ong et~al.(2025)Ong, Jun, Nguyen, Cho, and
+  Ant{\'o}l{\'i}n]{ong2025identifying}
+Kenneth J.~K. Ong, Lye~Jia Jun, Jord Nguyen, Seong~Hah Cho, and Natalia
+  P{\'e}rez-Campanero Ant{\'o}l{\'i}n.
+\newblock Identifying cooperative personalities in multi-agent contexts through
+  personality steering with representation engineering.
+\newblock \emph{arXiv preprint arXiv:2503.12722}, 2025.
 
 \bibitem[Bao et~al.(2025)]{bao2025traits2circuits}
 Zhenhong Bao et~al.
@@ -166,6 +207,11 @@ George~E Vaillant.
 \newblock \emph{Journal of Abnormal Psychology}, 103\penalty0 (1):\penalty0
   44--50, 1994.
 
+\bibitem[Cohen(1988)]{cohen1988statistical}
+Jacob Cohen.
+\newblock \emph{Statistical Power Analysis for the Behavioral Sciences}.
+\newblock Lawrence Erlbaum Associates, 2nd edition, 1988.
+
 \bibitem[Meng et~al.(2022)Meng, Bau, Andonian, and Belinkov]{meng2022locating}
 Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov.
 \newblock Locating and editing factual associations in {GPT}.
@@ -203,12 +249,21 @@ Gemma Team, Morgane Riviere, Shreya Pathak, Pier~Giuseppe Sessa, Cassidy
 \newblock Gemma 2: Improving open language models at a practical size.
 \newblock \emph{arXiv preprint arXiv:2408.00118}, 2024.
 
-\bibitem[Vaillant et~al.(1986)Vaillant, Bond, and
-  Vaillant]{vaillant1986empirical}
-George~E Vaillant, Michael Bond, and Catherine~O Vaillant.
-\newblock An empirically validated hierarchy of defense mechanisms.
-\newblock \emph{Archives of General Psychiatry}, 43\penalty0 (8):\penalty0
-  786--794, 1986.
+\bibitem[Elhage et~al.(2022)Elhage, Henighan, Joseph, Askell, Hume, Conerly,
+  Lasenby, Hatfield-Dodds, Drain, Hernandez, et~al.]{elhage2022superposition}
+Nelson Elhage, Tristan Henighan, Nicholas Joseph, Amanda Askell, Tamera Hume,
+  Tom Conerly, Robert Lasenby, Zac Hatfield-Dodds, Dawn Drain, Danny Hernandez,
+  et~al.
+\newblock Toy models of superposition.
+\newblock \emph{Transformer Circuits Thread}, 2022.
+\newblock \url{https://transformer-circuits.pub/2022/toy_model/index.html}.
+
+\bibitem[Ethayarajh(2019)]{ethayarajh2019contextual}
+Kawin Ethayarajh.
+\newblock How contextual are contextualized word representations? comparing the
+  geometry of {BERT}, {ELMo}, and {GPT}-2 embeddings.
+\newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing}, pages 55--65, 2019.
 
 \bibitem[Di~Giuseppe and Perry(2021)]{digiuseppe2021hierarchy}
 Marianna Di~Giuseppe and J~Christopher Perry.
@@ -216,12 +271,42 @@ Marianna Di~Giuseppe and J~Christopher Perry.
   with the defense mechanisms rating scales q-sort.
 \newblock \emph{Frontiers in Psychology}, 12:\penalty0 718440, 2021.
 
+\bibitem[Todd et~al.(2024)Todd, Li, Sharma, Mueller, Wallace, and
+  Bau]{todd2023function}
+Eric Todd, Millicent~L Li, Arnav~Arora Sharma, Aaron Mueller, Byron~C Wallace,
+  and David Bau.
+\newblock Function vectors in large language models.
+\newblock In \emph{The Twelfth International Conference on Learning
+  Representations}, 2024.
+
 \bibitem[John et~al.(1991)John, Angleitner, and Ostendorf]{john1991big}
 Oliver~P John, Alois Angleitner, and Fritz Ostendorf.
 \newblock The ``big five'' factor taxonomy: Dimensions of personality in the
   natural language and in questionnaires.
 \newblock \emph{Handbook of personality: Theory and research}, 66:\penalty0
   100, 1991.
+
+\bibitem[Casper et~al.(2023)Casper, Davies, Shi, Gilbert, Scheurer, Rando,
+  Freedman, Korbak, Lindner, Freire, et~al.]{casper2023open}
+Stephen Casper, Xander Davies, Claudia Shi, Thomas~Krendl Gilbert,
+  J{\'{e}}r{\'{e}}my Scheurer, Javier Rando, Rachel Freedman, Tomasz Korbak,
+  David Lindner, Pedro Freire, et~al.
+\newblock Open problems and fundamental limitations of reinforcement learning
+  from human feedback.
+\newblock \emph{arXiv preprint arXiv:2307.15217}, 2023.
+
+\bibitem[Belrose et~al.(2023)Belrose, Furman, Smith, Shoja, Mallen, Maia, and
+  Belrose]{belrose2023leace}
+Nora Belrose, David Furman, Logan Smith, Danielle Shoja, Alex Mallen, Quintin
+  Maia, and Nora Belrose.
+\newblock {LEACE}: Perfect linear concept erasure in closed form.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2023.
+
+\bibitem[Park et~al.(2023)Park, Choe, and Veitch]{park2023linear}
+Kiho Park, Yo~Joong Choe, and Victor Veitch.
+\newblock The linear representation hypothesis and the geometry of large
+  language models.
+\newblock \emph{arXiv preprint arXiv:2311.03658}, 2023.
 
 \bibitem[Geva et~al.(2021)Geva, Schuster, Berant, and
   Levy]{geva2021transformer}
@@ -242,5 +327,12 @@ Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Nicholas Joseph, Ben
   Mann, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly, et~al.
 \newblock A mathematical framework for transformer circuits.
 \newblock \emph{Transformer Circuits Thread}, 2021.
+
+\bibitem[Argyle et~al.(2023)Argyle, Busby, Fulda, Gubler, Rytting, and
+  Wingate]{argyle2023out}
+Lisa~P Argyle, Ethan~C Busby, Nancy Fulda, Joshua~R Gubler, Christopher
+  Rytting, and David Wingate.
+\newblock Out of one, many: Using language models to simulate human samples.
+\newblock \emph{Political Analysis}, 31\penalty0 (3):\penalty0 337--351, 2023.
 
 \end{thebibliography}

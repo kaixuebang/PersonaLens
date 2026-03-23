@@ -295,7 +295,7 @@ def run_position_swap_experiment(model, tokenizer, trait_name, device, n_pairs=1
 
 
 def plot_position_swap_results(summary, trait_name, output_path):
-    """Create 2x2 comparison figure."""
+    """Create 2x2 comparison figure with unified Y-axes for fair comparison."""
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
     n_layers = len(summary["normal"]["system_tokens"]["mean"])
     layers = list(range(n_layers))
@@ -305,8 +305,24 @@ def plot_position_swap_results(summary, trait_name, output_path):
         ("swapped", "Swapped Layout\n(System=Scenario, User=Persona)"),
     ]
 
+    # Pre-compute unified Y limits for fair side-by-side comparison
+    all_line_vals = []
+    all_bar_vals = []
+    for cond, _ in conditions:
+        sys_mean = np.array(summary[cond]["system_tokens"]["mean"])
+        usr_mean = np.array(summary[cond]["user_tokens"]["mean"])
+        sys_std = np.array(summary[cond]["system_tokens"]["std"])
+        usr_std = np.array(summary[cond]["user_tokens"]["std"])
+        all_line_vals.extend((usr_mean + usr_std).tolist())
+        all_line_vals.extend((sys_mean + sys_std).tolist())
+        all_bar_vals.append(summary[cond]["total_system_kl"])
+        all_bar_vals.append(summary[cond]["total_user_kl"])
+
+    line_ymax = max(all_line_vals) * 1.15 if all_line_vals else 1.0
+    bar_ymax = max(all_bar_vals) * 1.15 if all_bar_vals else 1.0
+
     for col, (cond, title) in enumerate(conditions):
-        # Top row: line plots
+        # Top row: line plots (unified Y)
         ax = axes[0, col]
         sys_mean = np.array(summary[cond]["system_tokens"]["mean"])
         usr_mean = np.array(summary[cond]["user_tokens"]["mean"])
@@ -341,10 +357,11 @@ def plot_position_swap_results(summary, trait_name, output_path):
         ax.set_title(title, fontsize=11, fontweight="bold")
         ax.set_xlabel("Layer Index")
         ax.set_ylabel("KL Divergence")
+        ax.set_ylim(0, line_ymax)  # <-- unified Y-axis
         ax.legend(fontsize=9)
         ax.grid(True, alpha=0.3)
 
-        # Bottom row: total KL bar charts
+        # Bottom row: total KL bar charts (unified Y)
         ax2 = axes[1, col]
         sys_total = summary[cond]["total_system_kl"]
         usr_total = summary[cond]["total_user_kl"]
@@ -359,12 +376,13 @@ def plot_position_swap_results(summary, trait_name, output_path):
         )
         ax2.set_ylabel("Total KL Divergence (sum over layers)")
         ax2.set_title(f"Total Causal Effect ({cond.capitalize()})", fontsize=10)
+        ax2.set_ylim(0, bar_ymax)  # <-- unified Y-axis
 
         # Annotate bars
         for bar, val in zip(bars, [sys_total, usr_total]):
             ax2.text(
                 bar.get_x() + bar.get_width() / 2,
-                bar.get_height() + 0.01,
+                bar.get_height() + bar_ymax * 0.01,
                 f"{val:.3f}",
                 ha="center",
                 va="bottom",
@@ -392,7 +410,9 @@ def main():
     parser.add_argument("--model", type=str, default="Qwen/Qwen3-0.6B")
     parser.add_argument("--trait", type=str, default="openness")
     parser.add_argument("--n_pairs", type=int, default=10)
-    parser.add_argument("--output_dir", type=str, default="position_swap_results")
+    parser.add_argument(
+        "--output_dir", type=str, default="results/position_swap_results"
+    )
     parser.add_argument("--device", type=str, default=None)
     args = parser.parse_args()
 

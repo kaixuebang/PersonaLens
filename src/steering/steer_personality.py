@@ -43,17 +43,20 @@ class PersonalitySteerer:
         self.active = False
 
     def _get_layers(self):
-        if hasattr(self.model, 'model') and hasattr(self.model.model, 'layers'):
+        if hasattr(self.model, "model") and hasattr(self.model.model, "layers"):
             return self.model.model.layers
-        elif hasattr(self.model, 'transformer') and hasattr(self.model.transformer, 'h'):
+        elif hasattr(self.model, "transformer") and hasattr(
+            self.model.transformer, "h"
+        ):
             return self.model.transformer.h
-        elif hasattr(self.model, 'gpt_neox') and hasattr(self.model.gpt_neox, 'layers'):
+        elif hasattr(self.model, "gpt_neox") and hasattr(self.model.gpt_neox, "layers"):
             return self.model.gpt_neox.layers
         else:
             raise ValueError("Cannot find transformer layers")
 
     def _steering_hook(self, layer_idx):
         """Hook that adds the persona vector to the hidden state."""
+
         def hook_fn(module, input, output):
             if not self.active or layer_idx not in self.steering_vectors:
                 return output
@@ -68,10 +71,12 @@ class PersonalitySteerer:
                 return tuple(modified)
             else:
                 return output + steering.unsqueeze(0).unsqueeze(0)
+
         return hook_fn
 
-    def load_persona_vectors(self, vectors_dir, layer_indices=None, alpha=1.0,
-                              vector_type="mean_diff"):
+    def load_persona_vectors(
+        self, vectors_dir, layer_indices=None, alpha=1.0, vector_type="mean_diff"
+    ):
         """
         Load persona vectors from the extraction phase.
 
@@ -87,9 +92,13 @@ class PersonalitySteerer:
             # Load extraction analysis to find best layer
             trait_name = os.path.basename(os.path.dirname(vectors_dir))
             # Fallback to older analysis.json if analysis_v2_*.json doesn't exist
-            analysis_path = os.path.join(os.path.dirname(vectors_dir), f"analysis_v2_{trait_name}.json")
+            analysis_path = os.path.join(
+                os.path.dirname(vectors_dir), f"analysis_v2_{trait_name}.json"
+            )
             if not os.path.exists(analysis_path):
-                analysis_path = os.path.join(os.path.dirname(vectors_dir), f"analysis_{trait_name}.json")
+                analysis_path = os.path.join(
+                    os.path.dirname(vectors_dir), f"analysis_{trait_name}.json"
+                )
 
             if os.path.exists(analysis_path):
                 with open(analysis_path, "r") as f:
@@ -101,7 +110,9 @@ class PersonalitySteerer:
                 elif "best_layer_snr" in analysis:
                     best_layer = analysis["best_layer_snr"]
                 else:
-                    best_layer = analysis.get("best_layer", 0) # Default to layer 0 if no best_layer key
+                    best_layer = analysis.get(
+                        "best_layer", 0
+                    )  # Default to layer 0 if no best_layer key
 
                 layer_indices = [best_layer]
                 print(f"  Auto-selected best layer for '{trait_name}': {best_layer}")
@@ -118,10 +129,13 @@ class PersonalitySteerer:
             vec_file = os.path.join(vectors_dir, f"{vector_type}_layer_{layer_idx}.npy")
             if os.path.exists(vec_file):
                 vec = np.load(vec_file)
-                vec_tensor = torch.tensor(vec, dtype=torch.float16 if self.device == "cuda"
-                                          else torch.float32)
+                vec_tensor = torch.tensor(
+                    vec, dtype=torch.float16 if self.device == "cuda" else torch.float32
+                )
                 self.steering_vectors[layer_idx] = (vec_tensor, alpha)
-                print(f"  Loaded {vector_type} vector for layer {layer_idx}, alpha={alpha}")
+                print(
+                    f"  Loaded {vector_type} vector for layer {layer_idx}, alpha={alpha}"
+                )
             else:
                 print(f"  WARNING: Vector file not found: {vec_file}")
 
@@ -146,8 +160,9 @@ class PersonalitySteerer:
         self.hooks = []
         self.active = False
 
-    def generate(self, prompt, max_new_tokens=200, temperature=0.7, do_sample=True,
-                 steer=True):
+    def generate(
+        self, prompt, max_new_tokens=200, temperature=0.7, do_sample=True, steer=True
+    ):
         """
         Generate text with or without personality steering.
 
@@ -156,8 +171,9 @@ class PersonalitySteerer:
             steer: Whether to apply steering
         """
         messages = [{"role": "user", "content": prompt}]
-        text = apply_chat_template_safe(self.tokenizer, messages, tokenize=False,
-                                                   add_generation_prompt=True)
+        text = apply_chat_template_safe(
+            self.tokenizer, messages, tokenize=False, add_generation_prompt=True
+        )
         inputs = self.tokenizer(text, return_tensors="pt").to(self.device)
 
         if steer and self.steering_vectors:
@@ -177,7 +193,7 @@ class PersonalitySteerer:
             self._clear_hooks()
 
         # Decode only the new tokens
-        new_tokens = outputs[0][inputs["input_ids"].shape[1]:]
+        new_tokens = outputs[0][inputs["input_ids"].shape[1] :]
         response = self.tokenizer.decode(new_tokens, skip_special_tokens=True)
         return response
 
@@ -189,23 +205,31 @@ def run_steering_comparison(steerer, prompts, alpha, max_new_tokens=200):
     for prompt in prompts:
         # Baseline (no steering)
         steerer.active = False
-        baseline_response = steerer.generate(prompt, max_new_tokens=max_new_tokens, steer=False)
+        baseline_response = steerer.generate(
+            prompt, max_new_tokens=max_new_tokens, steer=False
+        )
 
         # Steered
         steerer.set_alpha(alpha)
-        steered_response = steerer.generate(prompt, max_new_tokens=max_new_tokens, steer=True)
+        steered_response = steerer.generate(
+            prompt, max_new_tokens=max_new_tokens, steer=True
+        )
 
         # Negative steering (opposite direction)
         steerer.set_alpha(-alpha)
-        neg_steered_response = steerer.generate(prompt, max_new_tokens=max_new_tokens, steer=True)
+        neg_steered_response = steerer.generate(
+            prompt, max_new_tokens=max_new_tokens, steer=True
+        )
 
-        results.append({
-            "prompt": prompt,
-            "baseline": baseline_response,
-            "steered_positive": steered_response,
-            "steered_negative": neg_steered_response,
-            "alpha": alpha,
-        })
+        results.append(
+            {
+                "prompt": prompt,
+                "baseline": baseline_response,
+                "steered_positive": steered_response,
+                "steered_negative": neg_steered_response,
+                "alpha": alpha,
+            }
+        )
 
     return results
 
@@ -244,21 +268,39 @@ EVAL_PROMPTS = [
 def main():
     parser = argparse.ArgumentParser(description="Inference-time personality steering")
     parser.add_argument("--model", type=str, default="Qwen/Qwen3-0.6B")
-    parser.add_argument("--trait", type=str, required=True,
-                        help="Trait to steer (e.g., openness, humor)")
-    parser.add_argument("--vectors_dir", type=str, default=None,
-                        help="Directory with extracted persona vectors. "
-                             "Default: persona_vectors/<model>/<trait>/vectors/")
-    parser.add_argument("--alpha", type=float, default=3.0,
-                        help="Steering strength")
-    parser.add_argument("--layers", type=str, default=None,
-                        help="Comma-separated layer indices to steer (default: auto)")
-    parser.add_argument("--vector_type", type=str, default="mean_diff",
-                        choices=["mean_diff", "probe_dir"],
-                        help="Which type of persona vector to use")
-    parser.add_argument("--sweep", action="store_true",
-                        help="Run alpha sweep instead of single comparison")
-    parser.add_argument("--output_dir", type=str, default="steering_results")
+    parser.add_argument(
+        "--trait",
+        type=str,
+        required=True,
+        help="Trait to steer (e.g., openness, humor)",
+    )
+    parser.add_argument(
+        "--vectors_dir",
+        type=str,
+        default=None,
+        help="Directory with extracted persona vectors. "
+        "Default: persona_vectors/<model>/<trait>/vectors/",
+    )
+    parser.add_argument("--alpha", type=float, default=3.0, help="Steering strength")
+    parser.add_argument(
+        "--layers",
+        type=str,
+        default=None,
+        help="Comma-separated layer indices to steer (default: auto)",
+    )
+    parser.add_argument(
+        "--vector_type",
+        type=str,
+        default="mean_diff",
+        choices=["mean_diff", "probe_dir"],
+        help="Which type of persona vector to use",
+    )
+    parser.add_argument(
+        "--sweep",
+        action="store_true",
+        help="Run alpha sweep instead of single comparison",
+    )
+    parser.add_argument("--output_dir", type=str, default="results/steering_results")
     parser.add_argument("--max_new_tokens", type=int, default=200)
     parser.add_argument("--device", type=str, default=None)
     args = parser.parse_args()
@@ -286,7 +328,9 @@ def main():
     # Determine vectors directory
     if args.vectors_dir is None:
         model_short = args.model.replace("/", "_")
-        args.vectors_dir = os.path.join("persona_vectors", model_short, args.trait, "vectors")
+        args.vectors_dir = os.path.join(
+            "results/persona_vectors", model_short, args.trait, "vectors"
+        )
 
     # Parse layers
     layer_indices = None
@@ -313,11 +357,13 @@ def main():
     if args.sweep:
         # Alpha sweep
         alphas = [0.0, 1.0, 2.0, 3.0, 5.0, 8.0, 10.0, -3.0, -5.0]
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print(f"Running alpha sweep for {args.trait}: {alphas}")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
 
-        sweep_results = run_alpha_sweep(steerer, EVAL_PROMPTS[:5], alphas, args.max_new_tokens)
+        sweep_results = run_alpha_sweep(
+            steerer, EVAL_PROMPTS[:5], alphas, args.max_new_tokens
+        )
 
         # Save results
         json_path = os.path.join(output_dir, f"alpha_sweep_{args.trait}.json")
@@ -335,24 +381,32 @@ def main():
 
     else:
         # Single comparison
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print(f"Steering comparison for {args.trait} (alpha={args.alpha})")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
 
-        results = run_steering_comparison(steerer, EVAL_PROMPTS, args.alpha, args.max_new_tokens)
+        results = run_steering_comparison(
+            steerer, EVAL_PROMPTS, args.alpha, args.max_new_tokens
+        )
 
         # Save results
-        json_path = os.path.join(output_dir, f"comparison_{args.trait}_alpha{args.alpha}.json")
+        json_path = os.path.join(
+            output_dir, f"comparison_{args.trait}_alpha{args.alpha}.json"
+        )
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
 
         # Print results
         for r in results:
-            print(f"\n{'─'*60}")
+            print(f"\n{'─' * 60}")
             print(f"Prompt: {r['prompt']}")
             print(f"\n  [BASELINE]:\n  {r['baseline'][:300]}")
-            print(f"\n  [+{args.trait.upper()} (α={args.alpha})]:\n  {r['steered_positive'][:300]}")
-            print(f"\n  [-{args.trait.upper()} (α=-{args.alpha})]:\n  {r['steered_negative'][:300]}")
+            print(
+                f"\n  [+{args.trait.upper()} (α={args.alpha})]:\n  {r['steered_positive'][:300]}"
+            )
+            print(
+                f"\n  [-{args.trait.upper()} (α=-{args.alpha})]:\n  {r['steered_negative'][:300]}"
+            )
 
         print(f"\n✓ Results saved to {json_path}")
 

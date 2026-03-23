@@ -48,7 +48,7 @@ MECHANISM_LABELS = {
 
 def load_persona_vector(model_name, mechanism, layer):
     base_path = Path(
-        f"/home/fqwqf/persona/persona_vectors/{model_name}/{mechanism}/vectors"
+        f"/home/fqwqf/persona/results/persona_vectors/{model_name}/{mechanism}/vectors"
     )
     vector_file = base_path / f"mean_diff_layer_{layer}.npy"
     if not vector_file.exists():
@@ -173,7 +173,7 @@ def main():
         {"model": "Qwen_Qwen3-0.6B", "layer": 14},  # 28 layers, 50% depth
     ]
 
-    output_dir = Path("/home/fqwqf/persona/defense_mechanism_analysis")
+    output_dir = Path("/home/fqwqf/persona/results/defense_mechanism_analysis")
     output_dir.mkdir(exist_ok=True)
     figures_dir = Path("/home/fqwqf/persona/paper/figures")
 

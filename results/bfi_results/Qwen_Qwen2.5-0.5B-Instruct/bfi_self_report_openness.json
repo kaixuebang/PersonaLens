@@ -1,0 +1,441 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "trait": "openness",
+  "best_layer": 11,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "results": {
+    "-8.0": {
+      "trait_score": 3.8709068298339844,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 4.388092041015625
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 4.4796600341796875
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 4.461273193359375
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 4.374664306640625
+        },
+        {
+          "item": "I am inventive",
+          "rating": 4.392005920410156
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 4.44305419921875
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 4.4364013671875
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 4.429840087890625
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 4.2804718017578125
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 4.4154510498046875
+        }
+      ],
+      "mean_rating": 4.410091400146484,
+      "std_rating": 0.053408092475167215
+    },
+    "-6.0": {
+      "trait_score": 3.7801437377929688,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 4.12713623046875
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 4.42010498046875
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 4.256500244140625
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 4.21771240234375
+        },
+        {
+          "item": "I am inventive",
+          "rating": 4.0587158203125
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 4.182708740234375
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 3.82598876953125
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 4.14361572265625
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 3.6334686279296875
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 3.797576904296875
+        }
+      ],
+      "mean_rating": 4.066352844238281,
+      "std_rating": 0.2291007755394889
+    },
+    "-4.0": {
+      "trait_score": 3.9604560852050783,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 4.1025390625
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 4.772796630859375
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 4.136932373046875
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 4.558837890625
+        },
+        {
+          "item": "I am inventive",
+          "rating": 3.9996337890625
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 4.547035217285156
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 3.111572265625
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 4.275482177734375
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 3.1728515625
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 2.7274169921875
+        }
+      ],
+      "mean_rating": 3.940509796142578,
+      "std_rating": 0.6611711044193395
+    },
+    "-2.0": {
+      "trait_score": 3.7961700439453123,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 3.65576171875
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 4.5266265869140625
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 4.0597991943359375
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 4.1681976318359375
+        },
+        {
+          "item": "I am inventive",
+          "rating": 3.57177734375
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 4.2336883544921875
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 2.08758544921875
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 3.911956787109375
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 2.429962158203125
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 1.82373046875
+        }
+      ],
+      "mean_rating": 3.4469085693359376,
+      "std_rating": 0.920480007693229
+    },
+    "0.0": {
+      "trait_score": 3.1322776794433596,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 2.817230224609375
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 3.086090087890625
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 3.36981201171875
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 3.05810546875
+        },
+        {
+          "item": "I am inventive",
+          "rating": 2.69635009765625
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 3.0408935546875
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 1.5658760070800781
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 3.0771026611328125
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 1.884674072265625
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 1.5040092468261719
+        }
+      ],
+      "mean_rating": 2.6100143432617187,
+      "std_rating": 0.6556323353078635
+    },
+    "2.0": {
+      "trait_score": 2.818133735656738,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 2.4968490600585938
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 2.5923690795898438
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 2.830657958984375
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 2.549530029296875
+        },
+        {
+          "item": "I am inventive",
+          "rating": 2.3769073486328125
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 2.4645843505859375
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 1.6109790802001953
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 2.700054168701172
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 1.8235206604003906
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 1.6170730590820312
+        }
+      ],
+      "mean_rating": 2.3062524795532227,
+      "std_rating": 0.4276586352852266
+    },
+    "4.0": {
+      "trait_score": 2.5380317687988283,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 2.2119140625
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 2.0808563232421875
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 2.4202880859375
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 2.11572265625
+        },
+        {
+          "item": "I am inventive",
+          "rating": 2.012237548828125
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 2.062591552734375
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 1.568084716796875
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 2.23126220703125
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 1.7057037353515625
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 1.6169357299804688
+        }
+      ],
+      "mean_rating": 2.0025596618652344,
+      "std_rating": 0.268116133652464
+    },
+    "6.0": {
+      "trait_score": 2.2442718505859376,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 1.82080078125
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 1.56298828125
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 1.8565673828125
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 1.67779541015625
+        },
+        {
+          "item": "I am inventive",
+          "rating": 1.61065673828125
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 1.76251220703125
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 1.50946044921875
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 1.82147216796875
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 1.61279296875
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 1.566741943359375
+        }
+      ],
+      "mean_rating": 1.6801788330078125,
+      "std_rating": 0.11948063474533807
+    },
+    "8.0": {
+      "trait_score": 2.1358489990234375,
+      "item_responses": [
+        {
+          "item": "I am original, come up with new ideas",
+          "rating": 1.64581298828125
+        },
+        {
+          "item": "I am curious about many different things",
+          "rating": 1.433746337890625
+        },
+        {
+          "item": "I am ingenious, a deep thinker",
+          "rating": 1.59979248046875
+        },
+        {
+          "item": "I have an active imagination",
+          "rating": 1.626434326171875
+        },
+        {
+          "item": "I am inventive",
+          "rating": 1.47186279296875
+        },
+        {
+          "item": "I value artistic, aesthetic experiences",
+          "rating": 1.641845703125
+        },
+        {
+          "item": "I prefer work that is routine (R)",
+          "rating": 1.62591552734375
+        },
+        {
+          "item": "I like to reflect, play with ideas",
+          "rating": 1.70245361328125
+        },
+        {
+          "item": "I have few artistic interests",
+          "rating": 1.69488525390625
+        },
+        {
+          "item": "I prefer work that is routine",
+          "rating": 1.694488525390625
+        }
+      ],
+      "mean_rating": 1.6137237548828125,
+      "std_rating": 0.08707718944175327
+    }
+  }
+}

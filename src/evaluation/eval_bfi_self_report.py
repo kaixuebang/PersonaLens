@@ -191,7 +191,7 @@ def main():
     )
     parser.add_argument("--trait", type=str, required=True, help="Trait to evaluate")
     parser.add_argument(
-        "--output_dir", type=str, default="bfi_results", help="Output directory"
+        "--output_dir", type=str, default="results/bfi_results", help="Output directory"
     )
     parser.add_argument("--device", type=str, default=None, help="Device")
     args = parser.parse_args()
@@ -222,12 +222,10 @@ def main():
 
     # Load persona vector
     model_short = args.model.replace("/", "_")
-    vectors_dir = f"persona_vectors/{model_short}/{args.trait}/vectors"
+    vectors_dir = f"results/persona_vectors/{model_short}/{args.trait}/vectors"
 
     # Find best layer
-    analysis_file = (
-        f"persona_vectors/{model_short}/{args.trait}/analysis_v2_{args.trait}.json"
-    )
+    analysis_file = f"results/persona_vectors/{model_short}/{args.trait}/analysis_v2_{args.trait}.json"
     if os.path.exists(analysis_file):
         with open(analysis_file) as f:
             analysis = json.load(f)
