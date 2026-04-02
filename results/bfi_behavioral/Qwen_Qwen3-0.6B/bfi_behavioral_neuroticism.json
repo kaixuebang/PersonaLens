@@ -1,0 +1,1600 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "trait": "neuroticism",
+  "best_layer": 13,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      2.9466666666666668,
+      2.8933333333333335,
+      2.8933333333333335,
+      3.0266666666666664,
+      3.0,
+      2.9466666666666668,
+      2.893333333333333,
+      3.0,
+      2.9200000000000004
+    ],
+    "stds": [
+      0.13597385369580756,
+      0.17688665548562124,
+      0.22939534045446996,
+      0.1768866554856213,
+      0.2529822128134703,
+      0.24729649321321873,
+      0.17688665548562127,
+      0.2529822128134703,
+      0.2612789058968723
+    ],
+    "ci_lowers": [
+      2.6,
+      2.6,
+      2.6,
+      2.74,
+      2.6,
+      2.6,
+      2.6,
+      2.6,
+      2.6
+    ],
+    "ci_uppers": [
+      3.0,
+      3.0,
+      3.2600000000000002,
+      3.4,
+      3.4,
+      3.4,
+      3.0,
+      3.4,
+      3.4
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. They want a natural response, so I need to make sure the answer flows well and shows empathy.\n\nFirst, I should acknowledge the mistake. It's important to say that it's a small mistake, not a big deal. Then, express feelings of being responsible and taking action. Maybe mention that you're looking forward to fixing it and making things right.\n\nI should also mention specific actions, like reviewing the mistake, taking responsibility, and working on the next steps. It's good to emphasize that learning from it is part of the process. Let me check if that covers all aspects: acknowledgment, feelings, actions, and learning. Yep, that's covered. Now",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to answer how I would process making a small mistake at work. Let me start by thinking about the situation. A small mistake could be something like a typo in a report, a missed deadline, or maybe a misunderstanding. \n\nFirst, I should acknowledge the mistake. It's important to say that I'm sorry for the error. That shows respect and understanding. Then, I need to reflect on what went wrong. Maybe I didn't take it seriously or didn't double-check. \n\nNext, I should consider how to handle it. Maybe by taking the opportunity to learn and improve. For example, I might review the mistake, understand the impact, and make a plan to prevent it in the future. \n\nI",
+          "score": 2.6,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to answer how to process a small mistake at work. Let me start by thinking about what makes a small mistake. It could be a typo in a report, a misunderstanding in a meeting, or something like that. The key here is that the mistake isn't serious, so it's something that can be easily fixed.\n\nFirst, I should consider my feelings. If I made a mistake, maybe I feel a bit embarrassed or nervous. But then, I realize that being honest and taking responsibility is important. I should acknowledge the mistake and express my thoughts about it.\n\nNext, what do I do? I might check if the mistake was due to a misunderstanding or a typo. If it's a simple error, I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking me, \"You're waiting for important test results. What goes through your mind?\" and wants a natural response as if I'm in that situation. Let me break this down.\n\nFirst, I need to capture the feeling of waiting. Maybe excitement, nervousness, or something else. The user probably knows that waiting for important test results can be stressful. So, I should mention the emotions involved, like feeling anxious or relieved.\n\nNext, what would I do? Probably stay calm, take a moment to breathe, maybe think about the importance of the test. Maybe also think about the outcome, but since the user didn't ask for the outcome, I should focus on the process.\n\nI should make sure the",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally, so I should start by expressing my thoughts and feelings about waiting for test results. Maybe mention the anticipation and the importance of the tests. Then, I should think about what I would do, like checking the results, maybe planning next steps, or reflecting on the significance of the results. I need to keep it conversational and avoid any technical jargon. Let me make sure the response flows smoothly and feels genuine.\n</think>\n\nI’m waiting for the results of the test, and I feel a little nervous, but I’m also excited. It’s important to know what the results say, so I’m thinking about how to process",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to imagine being waiting for important test results. Let me break this down. First, what feelings do I have? Probably a mix of excitement and anxiety. I might feel nervous, maybe a bit relieved, but also worried about the outcome. Then, what would I do? Maybe I'd take a deep breath, think about the consequences, and decide to stay calm. I could also think about the next steps, like checking the results, maybe even sharing them with someone important. It's about managing the situation effectively.\n</think>\n\nI'm waiting for the results, and it's been a bit of a long time. I feel a little nervous, but I also feel excited. I know this is important, and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. I need to think about how to respond naturally. Let me start by considering the feelings involved. When someone doesn't respond, it can be a bit of a surprise, maybe a sign that they're busy or just not responding at all. I should acknowledge their lack of response and maybe express some understanding. \n\nNow, what would I do? Well, maybe I check in again, or perhaps I can mention something positive about the friend's time. It's important to keep the conversation open and show that I care. Maybe I can say something like, \"I hope you're doing well, and I'm glad I saw that you didn't respond. I'm",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. Hmm, I need to think about how to respond naturally. Let me break this down.\n\nFirst, I should acknowledge their absence. Maybe say something like, \"It's been a while since we've had a conversation. I hope you're doing well.\" That shows I'm taking the time to consider their situation.\n\nThen, I should express that I'm glad they're responding. Maybe add, \"I'm so glad you're here. It makes me feel good to know that we're still connected.\" That reinforces the positive aspect.\n\nWhat would I do next? Well, maybe I should ask them to reply or schedule a call. So, \"I'd love",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. Let me think about how to respond naturally. First, I should acknowledge the time passed and the lack of response. Maybe say something like, \"It's been two days since I received your message. I hope you're doing well.\" Then, I need to express my feelings. Maybe feel that it's a sign of something important. Maybe it's a good sign that they're paying attention, or perhaps they're just not responding because of some reason. Then, I should consider what I would do. Maybe ask again, or let them know I'm here to hear from them. It's important to keep the conversation going and show that I'm listening. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches next week's presentation. They want a natural response, similar to being in this situation. Let me think about the key points here. \n\nFirst, I need to express my thoughts and feelings. Maybe something like feeling excited or nervous. Then, what I would do. Maybe I would prepare well, study, and be ready for the presentation. \n\nI should make sure the answer flows naturally, avoiding any technical jargon. Use phrases like \"I'm excited\" or \"I'm nervous,\" and mention that preparation is important. Also, add something about being ready for the event. \n\nWait, the user said \"next week,\" so the presentation is approaching, so the answer",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user wants to know how I feel about presenting next week. Let me think about the key points here. First, I need to express my thoughts naturally. Maybe start by acknowledging the importance of the presentation. Then, think about the preparation needed. I should mention that I'm excited about the opportunity. Also, maybe include something about the impact of the presentation on others.\n\nI should make sure the response flows smoothly and shows confidence. It's important to highlight both the positive aspects and the preparation steps. Let me check if I'm covering all the necessary elements: feeling, thoughts, feelings, what to do. Yes, that's all there. Now, put it all together in a natural, conversational way.\n</think>",
+          "score": 2.6,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses",
+            "Discusses confidence and self-assurance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user wants to know how I feel as it approaches the presentation next week. Let me break this down. First, I need to express my thoughts naturally. Maybe something like feeling excited or nervous. Then, what would I do? Probably preparing well, staying calm, and being ready for the presentation. I should mention both the positive aspects and the preparation steps. Let me make sure the response flows smoothly and covers all the points without being too technical or generic.\n</think>\n\nAs the presentation approaches, I feel a mix of excitement and nervousness. I know I’m ready and confident, knowing that preparation will make the day perfect. I’ll focus on staying calm and focused, making sure I’m prepared with all the details and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking about the first reaction to an unexpected loud noise while alone at home. Let me think about how to answer this naturally.\n\nFirst, I need to consider the person's feelings. When someone hears an unexpected loud noise, they might feel a mix of surprise, fear, or maybe even relief. It's important to acknowledge the emotions without making it too long or too brief.\n\nThe answer should describe the thoughts and feelings, then mention what they would do. Maybe they would check if it's something serious, like a sudden noise, or perhaps they'd take a few steps to ensure safety. Also, it's good to mention that the noise might be due to something like a distant source, a car passing, or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to answer this question: \"You hear an unexpected loud noise while alone at home. What is your first reaction?\" The user wants a natural response, similar to how someone would react in such a situation.\n\nFirst, I should think about the typical reaction to a loud noise. Usually, people might feel surprised, maybe a bit startled, then maybe a bit scared. It's important to mention the feelings involved. Then, what would they do? Maybe check the noise, maybe look around, or try to calm down.\n\nI need to make sure the answer is clear and flows naturally. Use words like \"surprised,\" \"surprised,\" \"surprised,\" \"calm,\" and \"check.\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking about the first reaction to an unexpected loud noise while alone at home. I need to make sure the response is natural and flows well. Let me start by thinking about common reactions. Usually, when someone hears something loud, they might feel startled, maybe a bit nervous, or maybe just surprised. It's important to mention the feelings here. Then, what would they do? Maybe they might check if the noise is coming from outside or inside, or perhaps they might take action like turning off the TV, or maybe they check the window or door. It's about the immediate response. Let me make sure to keep it concise but descriptive.\n</think>\n\nI hear a loud noise and immediately feel startled, maybe a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I would process a small mistake at work. Let me break this down. First, I need to think about the feelings involved. A small mistake can be a bit of a surprise, so it's important to acknowledge that. Then, I should explain the process of handling it. Maybe start by reflecting on the mistake, then assess the impact, and then take appropriate action.\n\nWait, the user wants a natural response. So I should make sure the tone is friendly and professional. Maybe mention that it's a learning opportunity. Also, think about what actions one would take—like discussing the mistake, learning from it, and applying the lessons to future tasks. \n\nI need to make sure the answer is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I would process making a small mistake at work. Let me start by thinking about the general response. When someone makes a small mistake, it's usually a minor issue that can be handled quickly. The key points here are to acknowledge the mistake, understand the impact, and take appropriate steps.\n\nFirst, I need to express that I understand the mistake. It's important to show that I'm aware of the situation and that I take responsibility. Then, I should mention what steps I would take, like communicating with the person involved or taking the next steps to correct it. \n\nI should make sure the response is natural and flows well. Maybe start with a statement about the mistake being small, then explain the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to answer how I would process making a small mistake at work. Let me start by thinking about what makes a mistake. It could be something like a minor error in a report, a wrong calculation, or maybe a misunderstanding. \n\nFirst, I should consider the feelings. When I make a mistake, I probably feel a bit nervous or worried. But I also want to acknowledge that it's not a big deal. Maybe I feel like I'm taking it too seriously, but I know it's just a small error. \n\nThen, I need to think about what I would do. If I make a mistake, I might check it again, maybe discuss it with someone else to learn from it. It's important",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to imagine being waiting for important test results. Let me think about how I'd feel. First, I probably feel a mix of excitement and anxiety. The weight of the test results might make me nervous. Maybe I'm excited about the outcome, but also worried about what it means for me.\n\nI might think about the implications of the test. If it's good, I could be ready for something, but if it's bad, I might feel a bit disappointed. But I also know that these results are a big deal. They could affect my career, health, or personal life. I need to make sure I'm thinking about the future, not just the present.\n\nWhat would I do? I might plan",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking me to think about what I would do if I was waiting for important test results. Let me break this down. First, I need to express my thoughts naturally. Maybe start by acknowledging the wait, showing that I'm feeling anxious but also excited about the outcome. Then, I should mention what I might do, like checking the results, maybe even thinking about how they affect my daily life. It's important to keep the response positive and focused on the positive aspects of the situation, like knowing I'm not alone in waiting. I should make sure the answer flows smoothly and is in line with my personality as the assistant.\n</think>\n\nI'm waiting for important test results, and it's been a bit of",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to answer the question where someone is waiting for important test results. Let me think about how to approach this.\n\nFirst, I should consider the emotions involved. Waiting for test results usually brings a sense of anticipation and maybe a bit of nervousness. It's about being patient and prepared for the outcome. I should mention feeling excited or worried but also knowing that the result will be important.\n\nNext, what would I do? Maybe I'd check the results, maybe write them down, or maybe plan for the next steps. It's about staying calm and taking control of the situation. Also, considering that the test could be related to a specific area, like a medical test, and the result might affect my life or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. Let me think about how to approach this. First, I should acknowledge the situation. It's normal to feel a bit surprised or concerned. Maybe I should check if there's something wrong, like maybe they had a problem or just didn't want to respond. But I shouldn't rush to assume. Instead, I should express my thoughts and feelings, and then decide what to do. Maybe I could check in again to see if they're okay, or perhaps they might have a reason not to respond. But I should keep it friendly and make sure I'm not taking it personally. So the key points would be: feeling surprised, thinking about possible reasons, and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. Let me think about how to respond naturally. First, I should acknowledge the situation. It's possible that the friend might have been busy or had some reason to not reply. I should express that I'm feeling concerned but also that it's something I can handle. Maybe mention that I'm trying to figure out why they didn't respond and that I'll keep checking in. I should keep it friendly and open-ended. Let me make sure the response flows naturally without being too formal.\n</think>\n\nI'm concerned, but I know it's okay to feel that way. It's possible they were busy or had some reason not to reply. I'm trying to figure",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. I need to think about what I should say. First, I should acknowledge the fact that it's a bit strange. Maybe they're busy or maybe it's just a normal thing. I should express that I'm surprised and maybe even a bit concerned. Then, I should consider what I would do next. Maybe check if they have any updates or if they're in a place where they can respond. It's important to maintain a positive and supportive tone. Let me make sure the response flows naturally and feels genuine.\n</think>\n\nI’m surprised they didn’t respond. It’s possible they’re busy or maybe just a normal thing. I’m feeling a bit surprised",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches the presentation next week. They want a natural response, similar to if I were in that situation.\n\nFirst, I need to acknowledge the upcoming presentation. Maybe start with a positive note. Then, express feelings about the preparation and the excitement. It's important to mention that the user is in a good position to handle it. Also, think about what they would do, like staying calm, preparing thoroughly, and being ready for the day. Make sure the response flows naturally and stays within the context of being a helpful assistant.\n</think>\n\nAs I approach the presentation next week, I feel a mix of excitement and nervousness. The anticipation is palpable, and I’m excited to",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user wants me to imagine that I'm going to give a presentation next week and describe my feelings and what I would do. Let me start by thinking about my emotions. I should feel excited and ready. Maybe a bit nervous, but also confident. I need to mention the excitement of preparation and the anticipation of delivering the presentation.\n\nNow, what do I think I would do? I probably plan well, check all the materials, and make sure everything is ready. I might also consider how to handle any questions or challenges that come up. It's important to stay calm and organized.\n\nI should make sure the response flows naturally, connecting my feelings to the preparation process. Avoid being too formal but still show the sincerity. Let",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user wants me to describe my feelings and what I would do if I had to give a presentation next week. Let me start by thinking about the key elements. First, the feeling: I should convey a sense of readiness and excitement. Maybe something like being confident and prepared. Then, what I would do: perhaps reflecting on the preparation, staying focused, and being ready for the talk. Need to make sure the response flows naturally and is in the same tone as the user. Also, check for any specific details that might add value, like planning or the importance of preparation. Alright, putting that all together.\n</think>\n\nAs I approach this next week's presentation, I feel both excited and prepared. The anticipation of sharing",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to figure out the first reaction when hearing an unexpected loud noise while alone at home. Let me think. The user wants a natural response, so I should describe my thoughts, feelings, and what I would do. \n\nFirst, when I hear a loud noise, what do I usually feel? Maybe surprise, fear, or maybe calmness. But since it's an unexpected noise, maybe it's a mix of both. Like, I might feel a bit nervous but also not scared. But maybe I just feel startled. \n\nThen, what would I do? If it's a loud noise, maybe I would take a few steps to get to the noise. Or maybe I would check the area around it.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out the first reaction when hearing an unexpected loud noise while alone at home. Let me start by thinking about what typically happens in such a situation. Usually, when someone hears something unexpected, they might feel a sense of surprise or anxiety. Maybe they check the area around the noise to see if it's coming from there. Then, they might think, \"Is this something I should be concerned about?\" But if it's just a loud noise, perhaps they just take action, like turning off the phone or looking for the source. But I should make sure to describe the thoughts and feelings clearly. Also, the response needs to be natural, so I should avoid any formal language and just say what the person",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to answer this question where someone hears an unexpected loud noise while alone at home. The user wants a natural response, describing thoughts, feelings, and what to do.\n\nFirst, I should consider the reaction. When you hear something unexpected, your brain probably senses something is wrong. Maybe it's a loud noise, like a car, a loud animal, or something else. The feeling might be fear, surprise, or maybe a bit of anxiety. \n\nThen, what would you do? Depending on the situation, you might check the area, maybe try to calm down, or maybe try to figure out what's going on. It's important to stay calm and not panic. \n\nI need to make sure the answer",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.8933333333333335,
+      "std_score": 0.17688665548562124,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so the user is asking how to process a small mistake at work. They want a natural response, similar to being in that situation. Let me break this down.\n\nFirst, I need to think about the emotions involved. A small mistake usually makes me feel a bit embarrassed or confused. Maybe I'm feeling a bit worried about how others will react. But then, I should acknowledge that it's a mistake and not be too negative. \n\nNext, what do I do? I think the key is to take responsibility. I need to admit that I made a mistake and take it in. Then, I should consider how to learn from it. Maybe by reflecting on the mistake and taking steps to improve. \n\nAlso, it's",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. Let me think about how to approach this.\n\nFirst, I should acknowledge the mistake. It's important to show that I understand the situation. Maybe say something like, \"I know I made a small mistake, and I want to make sure I'm learning from it.\"\n\nThen, I need to express feelings. It's normal to feel a bit embarrassed or nervous, so I should mention that. Maybe, \"I feel a bit unsure about my actions, but I'm confident that I've made the right choice.\"\n\nNext, what should I do? The user might want to know how to handle it. I should outline steps: reflecting on the mistake, learning from",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how I would process a small mistake at work. Let me start by thinking about the natural flow of responding. I need to show my thoughts and feelings clearly, then outline what I would do.\n\nFirst, I should acknowledge the mistake. It's important to express that I understand and respect the situation. Then, I can mention how I take responsibility for it. Maybe mention that I want to learn from it and improve. Also, I should express that I'm committed to growing and being responsible. \n\nWait, the user might be looking for a positive response that shows accountability. I need to make sure the answer is sincere and shows that I value the situation and want to learn. Let me check if I have",
+          "score": 2.6,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to imagine myself waiting for important test results. Let me break this down. First, the user wants me to respond naturally, so I should keep the tone friendly and relatable. Maybe start by thinking about the emotions involved. Waiting for test results can be stressful, but I know that's a common experience.\n\nNow, what would I think about? Maybe excitement, anxiety, or a mix of emotions. I might feel anxious about the results, but also hopeful that they'll come. The key here is to convey that the situation is temporary and that I'm prepared to handle it. \n\nI should also consider the consequences of the test results. If the results are positive, I might feel proud or confident. If",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to imagine being waiting for important test results. Let me start by thinking about the emotions involved. When someone waits for test results, especially important ones, they might feel anxious, worried, or a bit nervous. Maybe they're anticipating something that could change their life or their job.\n\nI should describe the feelings: maybe excitement mixed with anxiety. Then, what would they do? Maybe they take a deep breath, think about the implications of the results, or plan for the next steps. It's important to make it natural and not too formal. Let me make sure the response flows well and captures the essence of waiting for important test results.\n</think>\n\nI’m waiting for the results, and they’re important because they",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking, \"You're waiting for important test results. What goes through your mind?\" and wants a natural response, like if I were in that situation. Let me break this down.\n\nFirst, I need to consider the emotions involved. Being waiting for important test results can be anxiety, excitement, or even relief. Maybe I'm thinking about the significance of the test, the time I've spent waiting, and the implications it might have.\n\nNext, I should mention feelings. The user might feel anxious, worried, or excited. It's important to acknowledge those emotions without being too negative. Also, I should think about what I would do. Maybe I'd take a deep breath, start a meditation, or plan",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. Let me think about how to approach this. First, I need to acknowledge the situation. It's a bit strange because usually, messages are meant to be responded to. But maybe there's something else at play here. Maybe they're busy or had some reason not to respond. I should express my thoughts and feelings. Maybe I feel a bit surprised or concerned because it's been two days without a reply. \n\nI should also consider what I would do next. If they didn't respond, I might check in again. Maybe ask them to respond, or check if there's a problem. It's important to stay proactive in such cases. I need to make",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my friend didn't respond to my message after two days. I need to think about what I should say. Let me start by considering the emotions involved here. The first thought is that maybe my friend is just being polite, not responding. But I still want to know if they're okay. I should acknowledge that they might be busy or have other plans, which makes me feel concerned but also caring.\n\nThen, I need to think about what I would do. Maybe I would check in again to see how they're doing. Sometimes people take time off or have other responsibilities. I should express my concern without being too pushy. It's important to show that I care about their well-being.\n\nI should also consider the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. I need to think about what I should say here. First, I should acknowledge their absence. It's important to show that I care even if they didn't reply. Maybe mention that it's a bit disappointing but also that I value their time. Then, think about what I would do next. Perhaps I'll reach out again or ask if there's something specific I can do to make them feel valued. It's good to keep the conversation open and show that I'm willing to respond when they do come back. Also, making sure to express that I'm here to listen and support them. Let me put that all together in a natural way.\n</think>",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to answer the question: \"You have to give a presentation next week. How do you feel as it approaches?\" The user wants a natural response, like being in this situation. Let me start by thinking about what emotions I might feel. Maybe excitement, nervousness, anticipation, and a bit of anxiety. I should mention how it's a new experience and how I'm excited to prepare. Then, what I would do—maybe start by reflecting on the day before, plan the presentation, and think about how to handle the nerves. I should keep it concise but cover all the points naturally.\n</think>\n\nAs the date of my presentation approaches, I feel a mix of excitement and nervousness. The day before",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches the presentation next week. They want a natural response, like if I were in that situation. Let me break this down.\n\nFirst, I need to acknowledge the upcoming presentation. The feeling could be anticipation, excitement, nervousness, or maybe a bit of self-doubt. I should mention that the presentation is a big step, and I feel prepared. Then, I should outline what I would do. Maybe start with reflecting on the day before, then think about what to bring, practice, and stay confident. Also, mention that I'm ready to face the challenge. Need to keep it concise but heartfelt. Make sure it flows naturally, not too long. Check for",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user wants me to imagine being in a situation where I need to prepare for a presentation next week and describe my feelings and what I would do. Let me start by thinking about the main points.\n\nFirst, the presentation is next week, so I need to feel confident and ready. Maybe I'm nervous about the audience, the time, or the content. But I should avoid sounding too self-conscious. Instead, focus on the positive aspects—like knowing I'm prepared, confident, and excited.\n\nI should mention how I feel: confident, excited, prepared. Then, what I would do: maybe rehearse the slides, check the materials, and think about the audience. Also, maybe think about the presentation structure and how",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to think about what the first reaction would be when I hear an unexpected loud noise alone at home. Let me start by breaking down the scenario. The person is alone, so they're probably not around anyone else. The noise is loud, so it's probably something that's not normal. \n\nFirst, I should consider the immediate reaction. When you hear something unexpected, your brain usually goes into a quick response. Maybe the noise is from a different place, like a window, a door, or maybe something outside the home. But since the person is alone, the noise could be from anywhere. \n\nI should think about the emotions involved. Loud noises can be scary, maybe a bit disorienting. But",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out what my first reaction would be when I hear an unexpected loud noise while alone at home. Let me start by thinking about the typical responses to such a situation. First, I probably feel a sense of fear or anxiety. But maybe I'm not sure if it's dangerous. Then, I might check if there's something wrong. Maybe I should call someone, like a neighbor or a friend. I also might think about the noise's source and try to figure out why it's happening. After that, I might decide to stay calm and act accordingly. I should mention feeling concerned but not overwhelmed. Also, maybe I would check the area to see if the noise is still there. Let me put",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine hearing an unexpected loud noise while alone at home and describe my reaction. Let me start by thinking about the typical reaction to such a situation.\n\nFirst, when I hear an unexpected loud noise, I might feel a mix of emotions—surprise, fear, maybe even a sense of being startled. It's important to mention that I might feel scared or startled immediately. But then, how do I respond? I need to think about what I would do in that situation.\n\nI should mention that I might try to calm myself down, maybe check the noise, and then decide if it's a threat. It's also important to consider if the noise is a warning or something else. Maybe I'll",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.8933333333333335,
+      "std_score": 0.22939534045446996,
+      "ci_lower": 2.6,
+      "ci_upper": 3.2600000000000002,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. They want a natural response, so I need to think about common approaches. First, acknowledge the mistake. It's important to let it go, even if it's a small one.\n\nI should express feelings. Maybe mention that it's okay to make mistakes and that it's part of learning. Then, suggest taking action to correct it. Like, maybe review the mistake and make adjustments. Also, remind the person of the importance of learning from mistakes. Need to keep it positive and constructive.\n\nWait, the user said \"process this\" so maybe they want to focus on how to handle it. Make sure the response is sincere and offers practical steps. Avoid being",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to answer how someone would process a small mistake at work, keeping it natural. Let me start by thinking about the emotions involved. When you make a small mistake, it's usually a moment of surprise or confusion. Then, after that, there's probably a feeling of relief or maybe guilt. But I should focus on the process rather than just the outcome.\n\nFirst, the initial reaction: feeling surprised or worried. Maybe even a bit embarrassed. Then, reflecting on the mistake. How did it happen? Was it something obvious or something minor? Then, thinking about how to fix it. Maybe taking responsibility and learning from it.\n\nI should mention that processing mistakes involves acknowledging the mistake, reflecting on the situation, and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. They want a natural response, so I need to make sure the answer flows smoothly. Let me start by thinking about common feelings people might have when they make a mistake. Maybe they feel embarrassed or frustrated. But since it's a small mistake, it's more about learning and moving forward.\n\nI should mention that processing a mistake involves reflecting on the situation, understanding the impact, and taking steps to correct it. Maybe include some actions like talking to someone, seeking feedback, or adjusting future practices. Also, it's important to emphasize growth and learning from the experience rather than just dwelling on the mistake.\n\nWait, the user wants it as if I were in this situation",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking me to think about what I would do if I were waiting for important test results. Let me break this down.\n\nFirst, I need to consider the emotional aspect. Waiting for test results can be stressful, so I should acknowledge that. Maybe mention feelings like anxiety, worry, or excitement. But I also want to show empathy, understanding that everyone has different experiences.\n\nNext, what's important about the test results? The user probably expects a response that's personal and genuine. I should describe my thoughts in a natural, conversational way, avoiding jargon. Maybe start with acknowledging the situation, then reflect on the feelings involved, and then outline what I would do.\n\nI should make sure the response flows smoothly",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress",
+            "Mentions emotional volatility or mood swings"
+          ],
+          "low_matches": [
+            "Expresses calm or emotional stability",
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking, \"You're waiting for important test results. What goes through your mind?\" I need to respond naturally as if I'm in that situation. Let me break this down.\n\nFirst, I should acknowledge the situation. It's normal to be waiting for test results, so starting with that feeling is important. Maybe mention the excitement or nervousness. Then, think about what I would do. Perhaps I'd take a deep breath, maybe ask myself questions, or plan how to proceed. It's important to make it personal and genuine.\n\nI should avoid being too generic. Instead of just saying \"I'm waiting,\" I can add details like the specific tests involved, the time I've been waiting, or any",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally, so I should describe my thoughts, feelings, and what I'd do.\n\nFirst, I should acknowledge the situation. Maybe start with something like feeling anxious or excited. Then, think about the feelings involved—like stress, anticipation, maybe even a bit of relief. Next, what would I do? Probably check the results, maybe feel a bit relieved once they arrive. Also, maybe mention how important the test is for me, like for a job or a decision. Need to keep it conversational and personal. Avoid making it too formal. Maybe add something about the process of waiting. Let me put that all together in a",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. I need to think about what I should do and how to respond naturally. Let me break this down.\n\nFirst, I should acknowledge their lack of response. It's important to let them know I'm not upset. Maybe say something like, \"I'm sorry I didn't get a reply in two days. I really appreciate your message.\" That shows empathy and that I'm not ignoring their message.\n\nNext, I need to consider what they might feel. They might be trying to avoid me or not want to respond. I should validate their feelings. Maybe say, \"I understand why you might feel that way. It's natural to not respond if you're busy",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about what to think if a friend doesn't respond to a message for two days. They want a natural response, so I need to make sure it's conversational and personal. Let me start by acknowledging the friend's silence.\n\nFirst, I should express empathy. Maybe say something like, \"I'm really concerned about how you're handling this.\" Then, think about the possible reasons why they might not respond. Common reasons could be work, family, or just not wanting to talk. It's important to validate their feelings without being too judgmental.\n\nNext, I need to consider the possible next steps. Perhaps they might be busy, or they might be in a place where they can't respond. It",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my friend didn't respond to my message after two days. Let me think about what I should say here.\n\nFirst, I need to acknowledge the situation. It's okay to feel upset or concerned. Two days might be a bit short, but it's definitely a problem. I should express my feelings clearly but also offer help. Maybe suggest checking the message again or letting them know I'm here to help.\n\nWait, I should make sure to be natural. Avoid being too formal. Maybe say something like, \"I'm sorry I didn't hear back. I hope you're okay. Let me know if there's anything else I can do for you.\" That sounds good. It's empathetic and offers support.\n\nAlso",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches the presentation next week. They want a natural response, so I need to be conversational and authentic. Let me start by acknowledging the upcoming event, maybe express some excitement or nervousness.\n\nI should mention the anticipation, the excitement of preparing, and the potential challenges. It's important to show that I'm ready to tackle it. Also, maybe add a touch of optimism that it's a positive experience. Need to keep it concise but heartfelt.\n</think>\n\nAs the presentation approaches, I feel a mix of excitement and nervousness. I'm excited to share my thoughts and ideas, and I'm also aware that preparing for it will take some time. I'm ready to face",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. Let me start by considering the natural flow of such a response. I should mention the anticipation, excitement, and maybe some personal feelings like being ready or nervous. Then, I need to outline what I would do next. It's important to keep it concise but thorough.\n\nFirst, I need to acknowledge the upcoming event. Then, express feelings about the preparation. Maybe mention the excitement of being ready and the thrill of the presentation. Next, talk about the steps I'd take, like practicing, researching, and preparing materials. Also, include some positive thoughts about the outcome. Finally, wrap it up with a sense of readiness and excitement for the event.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user wants me to describe my feelings and actions as I approach the presentation next week. Let me start by thinking about what's important. First, I need to feel confident. Maybe I should mention feeling excited and nervous. But then I need to balance that with a positive outlook. I should express how I'm excited to share my thoughts and how I'm confident in my abilities. Also, maybe I can think about the audience and how I'll engage them. Oh, and I should make sure to keep it natural, not too formal. Let me check if I covered all aspects: feelings, thoughts, feelings, actions. Yeah, that makes sense. Now, I need to put it all together in a smooth, natural",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what the first reaction would be if someone hears an unexpected loud noise while alone at home. Let me think about how to approach this.\n\nFirst, I need to consider the emotional response. When you hear something unexpected, it's usually a mix of fear and surprise. But since it's an unusual loud noise, maybe there's something more. Maybe it's a sudden, powerful sound, like a scream, a thunderclap, or something else. \n\nI should mention feelings like fear, anxiety, or maybe a sense of urgency. But also, what would you do? The person might be scared, so maybe they might try to move away, check the area, or try to calm down. But since",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress",
+            "Mentions emotional volatility or mood swings"
+          ],
+          "low_matches": [
+            "Expresses calm or emotional stability"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about the first reaction to hearing an unexpected loud noise while alone at home. Let me think about how to approach this.\n\nFirst, I need to imagine being in such a situation. The person is alone, so maybe they're stressed or just curious. The loud noise could be from outside, like a car passing by, or maybe something unexpected like a distant explosion. The reaction would be immediate—maybe panicking, or feeling confused.\n\nI should mention the feeling of fear or surprise. Maybe the person feels startled, scared, or maybe they're unsure if it's real or if it's just a noise. Then, what they'd do? Depending on the situation, they might check the area, maybe call",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to imagine hearing an unexpected loud noise while alone at home and describe my first reaction. Let me start by thinking about what emotions I might feel. When I hear something loud, usually it's a surprise. Maybe fear, anxiety, or excitement. Since it's alone, maybe it's more about the unknown. I should mention the immediate reaction, like feeling scared or nervous. Then, what would I do? Maybe check the area, or maybe try to avoid it. Also, maybe think about the noise's source. But the question is about what I would do, not just the reaction. So I need to detail the actions I take. Let me put that together in a natural way, as if I were",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.1768866554856213,
+      "ci_lower": 2.74,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. They want a natural response, so I need to make sure the answer flows smoothly and reflects genuine feelings and actions.\n\nFirst, I should acknowledge the mistake. It's important to show empathy because people might feel embarrassed or upset. Maybe start with something like, \"I understand I made a small mistake at work.\" Then, express that I'm trying to learn from it.\n\nNext, mention what I would do. It's crucial to focus on the positive aspects, like how the mistake taught me something. Maybe talk about taking responsibility, improving the next time, and seeking support. Including specific steps could make it more concrete.\n\nI should also add feelings to make it personal",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I would process a small mistake at work. They want a natural response, so I need to make sure it's conversational and not too formal.\n\nFirst, I should acknowledge the mistake. It's important to show empathy. Maybe say something like, \"I understand that I made a small mistake.\" That shows I value the situation.\n\nThen, I should express my feelings. It's okay to feel a bit embarrassed or frustrated, so I can mention that. But also, I want to make it clear that I'm trying to correct it. Maybe say, \"I'm sorry for the mistake and would like to make it right.\"\n\nNext, I should outline what I would do. Instead of just saying",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. Let me break this down. First, I need to consider the natural flow of responding. They mentioned \"respond naturally as if in this situation,\" so the answer should be conversational and personal.\n\nThe user's question is about handling a mistake. My thoughts should include reflecting on the mistake, understanding the impact, and taking steps to correct it. I should mention feelings like frustration or embarrassment, but also the desire to learn and improve. \n\nI need to structure the answer to show a balance between acknowledging the mistake, addressing the situation, and moving forward. Maybe start by acknowledging the mistake, then think about the consequences, then how to handle it. Also, include",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking me to imagine I'm waiting for important test results. Let me break this down. First, I need to make the response natural and as if I'm in that situation. So, I should describe my thoughts, feelings, and what I would do.\n\nHmm, when someone is waiting for test results, they usually feel anxious. They might think about the implications of the results. Maybe they're worried about what they're going to learn. It's important to acknowledge those feelings without making it too dramatic.\n\nWhat would I do? I guess I'd check the results, maybe talk to someone, or maybe just wait. But the user wants a natural response, so I should avoid being too specific. Maybe mention",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally, as if I'm in that situation.\n\nFirst, I should acknowledge the situation. Maybe start by expressing the anticipation. Then, think about the emotions involved. Excitement, anxiety, maybe even a bit of fear if the results are not positive.\n\nNext, what would I do? I need to consider possible actions. Maybe check the results, talk to someone, or make a plan for the future. It's important to mention that the results will inform my decisions, like adjusting my schedule or plans.\n\nI should also add some personal touch, like the importance of the test and how it affects me. Maybe mention that I value",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. Let me break this down.\n\nFirst, I need to capture my thoughts and feelings. When someone is waiting for test results, it's common to feel anxious, worried, maybe a bit nervous. I might feel a mix of excitement and anxiety, thinking about what the results will tell me. \n\nNext, I should describe what I would do. Maybe I would check the results right away, take a deep breath, and try to stay calm. It's important to acknowledge the stress and not let it overwhelm me. Perhaps I'd also think about how the results might impact my daily life, like school or work, and maybe plan accordingly.\n\nI should make sure",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. I need to think about what I should do. First, I should acknowledge the situation. Maybe say something like, \"I'm really sorry for not responding.\" Then, I should express that I care about them. Perhaps mention that I'm thinking about them and want to make sure they know I'm here. \n\nI should also consider what I might do next. Maybe check in again, but since it's two days, maybe wait a bit longer. But if they don't respond, maybe it's time to reach out again. But I need to make sure I'm not being too pushy. I should express empathy and show that I care. \n\nWait",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. Let me think about how to approach this. First, I need to acknowledge the situation. It's important to let them know that I care even though they haven't replied. Maybe express concern or offer something to make them feel understood. But I should avoid being too pushy. Maybe mention that I'm here to listen and see if there's something I can do. Also, it's good to remind them that they're not alone in this. But I shouldn't assume they're not responding. They might have some other plans. Let me make sure my response is natural and sincere.\n</think>\n\nI’m really concerned because my friend didn’t respond to my message",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking what I think if a friend doesn't respond to a message for two days. Let me start by considering the possible emotions. First, maybe they feel concerned or worried. They might feel that the friend is not responding, so they might be trying to connect or understand why. But I need to make sure I'm not just giving a generic response. The user probably wants a natural and genuine answer, so I should include feelings and actions.\n\nI should mention the possible feelings of concern, maybe a bit of anxiety or maybe a sense of relief. Then, the user might think about what to do next, like checking the message, or reaching out again. But I need to make sure the response flows naturally.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches the presentation next week. They want a natural response, like if I were in that situation. Let me break this down.\n\nFirst, I need to consider the context. The user is asking about their feelings and actions as the presentation comes up. So, I should express my thoughts and feelings about the upcoming presentation. Maybe start with a positive outlook, like excitement or nervousness. But since it's a presentation, maybe some anxiety is part of it.\n\nI should mention things like preparing, practicing, and being ready. Also, acknowledge that it's a challenge but realistic. Need to keep the response natural and not too formal. Maybe use phrases like \"I feel excited\" or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches the presentation next week. They want a natural response, similar to being in this situation. Let me break this down.\n\nFirst, I need to think about my feelings. Since I'm a language model, I don't have feelings, but I can imagine them. Maybe a mix of excitement and nervousness. I should mention how excited I am to present, but also acknowledge the pressure. It's important to show that I'm aware of the challenges but excited to overcome them.\n\nNext, what would I do? I need to think about what I would do. Maybe prepare thoroughly, practice, and stay calm. Also, remind myself that I'm a tool, not a person",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. Let me break this down. They want a natural response, so I need to make sure it's conversational and flows well. They mentioned giving a presentation next week, so I should focus on the preparation and the anticipation.\n\nFirst, I should acknowledge the upcoming event. Maybe start with a greeting to express that I'm in the process. Then, mention the excitement of preparing and the importance of the presentation. It's important to highlight the positive aspects, like the skills and confidence gained, and the opportunity to present. I should also mention that I'm excited to engage and learn from the audience. \n\nI need to make sure the tone is enthusiastic but",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to imagine hearing an unexpected loud noise while alone at home and describe my first reaction. Let me start by thinking about what happens when someone hears something unexpected. Usually, the first thing you might feel is fear, anxiety, or maybe confusion. But since it's an unusual noise, maybe it's something that's not common, like a loud animal scream or a strange sound from outside.\n\nI should consider the possible scenarios. Maybe it's a loud noise that's not typical, like a distant explosion, a sudden earthquake, or something else. The person might not know what's going on, so they might be worried. But then, what do they do? Maybe they try to calm down, check the area,",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about a first reaction when hearing an unexpected loud noise while alone at home. They want a natural response, like if I were in that situation. Let me think about how to approach this.\n\nFirst, I need to consider the possible emotions. When someone hears something unexpected, they might feel a mix of fear, surprise, or even anxiety. Maybe they start to panic. But since it's alone, there's also the possibility of a sudden, loud event, like a storm or a natural disaster.\n\nI should describe the thoughts and feelings. Maybe start with the immediate reaction, like \"I feel a rush of panic.\" Then think about what to do next. If it's a loud noise, perhaps the person",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to describe my first reaction when I hear an unexpected loud noise while alone at home. Let me start by thinking about how to respond naturally. I need to imagine being in that situation and then explain my thoughts.\n\nFirst, the reaction. When I hear something unexpected, my brain usually processes it quickly. Maybe I feel a sudden rush of adrenaline, like a heartbeat. I might think about the noise and try to figure out what it is. Then, I would consider the immediate actions. Maybe I try to calm down, check the area, or call someone. I should mention emotions like fear, anxiety, or relief. Also, maybe I'd take steps to stay safe, like moving away or checking for",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.2529822128134703,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to figure out how someone would process making a small mistake at work. Let me break this down. First, the user is asking how to handle such a situation naturally. The response should be in the style of someone in that scenario.\n\nHmm, when I make a small mistake, what emotions do I feel? Maybe frustration, embarrassment, or even a bit of guilt. But how do I process this? I think the key is to acknowledge the mistake, take responsibility, and then move on. But how to phrase that naturally?\n\nI should start by acknowledging the mistake, maybe express regret. Then, take action to correct it, like talking to someone or asking for help. Also, think about how to handle the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. I need to respond naturally, as if I were in that situation. Let me start by thinking about the possible steps someone might take.\n\nFirst, I should acknowledge the mistake. It's important to express feelings and then move forward. Maybe mention the feelings of confusion or anxiety. Then, think about how to handle it. Maybe discuss what to do next, like seeking feedback or taking responsibility. Also, considering the impact of the mistake and how to address it. Need to make sure the response is personal and sincere, showing empathy and willingness to learn.\n</think>\n\nI feel a bit confused and nervous about making a small mistake at work. It’s hard to process when",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so the user is asking how to process a small mistake at work. They want a natural response, like if they were in that situation. Let me break this down.\n\nFirst, I need to acknowledge the mistake. It's important to say something like, \"I made a small mistake at work.\" Then, express feelings—maybe a bit embarrassed or frustrated. But I should avoid being too negative. Maybe mention how it's a learning experience.\n\nNext, think about the steps to process it. What would someone do? Perhaps self-reflection, talking to a mentor or manager, and taking action to improve. But I need to make it sound like a natural process, not forced.\n\nAlso, consider the possible consequences. Like,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally, as if I were in that situation. Let me break this down.\n\nFirst, I should acknowledge the emotional aspect. Being waiting for test results is a common and stressful situation. People often feel anxious, worried, or even confused. I need to capture that feeling.\n\nNext, think about the possible actions or thoughts. Maybe I'd feel a mix of excitement and fear. I might feel excited about the result, but also nervous about what it means. Maybe I'm worried about making the right decisions based on the results.\n\nI should also consider the possible outcomes. For example, if the results are positive, I might feel hopeful and",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress",
+            "Mentions emotional volatility or mood swings"
+          ],
+          "low_matches": [
+            "Expresses calm or emotional stability",
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking, \"You're waiting for important test results. What goes through your mind?\" and wants a natural response as if I were in this situation. Let me break this down.\n\nFirst, I need to imagine being someone waiting for important test results. The user probably wants to know my thoughts, feelings, and actions. So I should describe my internal state. Maybe start with the anxiety, the fear of missing out, the excitement of the test, and then the possible outcomes.\n\nI should mention the emotional aspects: nervousness, anticipation, maybe a bit of excitement. Then, think about what I would do. Maybe I would take a deep breath, check the results, and then maybe plan for the next steps",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress",
+            "Mentions emotional volatility or mood swings"
+          ],
+          "low_matches": [
+            "Expresses calm or emotional stability"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine I'm waiting for important test results. Let me think about how to respond naturally.\n\nFirst, I need to capture the feeling of waiting. Maybe mention anxiety, stress, or excitement. I should describe the thoughts and feelings in a conversational way. \n\nWhat's the test? The user didn't specify, so I should keep it general. Maybe mention the urgency of the test. \n\nWhat would I do? Perhaps I'm trying to get through the process, like checking the results, or preparing for the next steps. Maybe I'm worried about what the outcome will be. \n\nI should also consider the possible consequences. Like, if the results are good, what does that mean? If",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what I think a friend didn't respond to for two days. I need to respond naturally as if I was in that situation. Let me start by acknowledging the friend's silence. I should express my feelings, maybe a mix of concern and curiosity.\n\nI should ask them what they're thinking. That shows I'm listening. Also, I should mention the two-day period and why they didn't respond. Maybe they're worried or have some other reason. It's important to validate their feelings and offer support.\n\nI need to make sure the response flows naturally, isn't too formal, and addresses all the points without being too verbose. Let me check if I covered all aspects: feelings, thoughts, what to",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking what I think if a friend doesn't respond to their message for two days. Let me start by considering the scenario. First, I need to respond naturally, so I should avoid being too formal or robotic. Let me think about the possible feelings and actions.\n\nIf someone is not responding, maybe they're feeling anxious or concerned. It's important to acknowledge their feelings without judgment. Then, what would I do? Maybe I should check if there's a reason for the delay, like a phone call or a work-related issue. Alternatively, I might express empathy and offer support. It's important to show that I'm listening and trying to help.\n\nI should also consider the context. Are there any specific actions",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days, and I'm feeling a bit confused and maybe a bit anxious. Let me think about how to approach this.\n\nFirst, I need to acknowledge the situation. Maybe start by saying I'm concerned because the message wasn't received. Then, I should express my feelings—like feeling anxious about the friend's response. It's important to validate their feelings without being too pushy.\n\nNext, I should consider what I might do. Perhaps I should check the message again to make sure it was received. If it's not there, maybe I should try to reach out again. But I should also be cautious about how I handle the situation. Maybe I should ask them if",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches next week's presentation. They want a natural response, so I need to make it sound like I'm in that situation. Let me start by acknowledging the upcoming event. Maybe mention the excitement and nervousness. Then, I should reflect on what I'm feeling—excited but also a bit overwhelmed. It's important to show that I'm trying to manage my thoughts and stay focused. I should also mention what I would do, like staying calm and planning. Let me make sure the flow is smooth and the emotions are genuine.\n</think>\n\nAs the presentation approaches, I feel a mix of excitement and nervousness. I’m eager to share my thoughts and ideas, but I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. They want a natural response, similar to being in that situation. Let me break this down.\n\nFirst, I need to acknowledge the upcoming presentation. Expressing feelings naturally would involve considering both the excitement and the potential challenges. Maybe mention the anticipation and the nervousness, then transition into how I would handle it.\n\nI should make sure the response flows smoothly, showing both the feelings and the actions. Avoid being too vague. Maybe include some self-awareness about my role in the presentation, like reflecting on the process and the importance of preparation.\n\nAlso, think about the structure: start with feelings, then thoughts on the process, and then actions. Keep it",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to write a presentation next week. The user wants me to describe my feelings and what I would do as it approaches. Let me start by thinking about what I'm feeling. Maybe I'm nervous? Or excited? I should consider both aspects.\n\nFirst, the feeling. As the presentation approaches, I might feel a mix of anticipation and anxiety. Maybe I'm overthinking and getting too focused on details. But I want to express that without sounding too anxious. Maybe I should acknowledge the pressure and then move on to what I would do.\n\nNow, what do I do? Perhaps I need to break down the presentation into parts. I should outline the structure and rehearse the content. But I need to be natural",
+          "score": 3.0,
+          "high_matches": [
+            "Discusses overthinking or catastrophizing"
+          ],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking about the first reaction when hearing an unexpected loud noise while alone at home. Let me think about how to approach this.\n\nFirst, I need to make the response natural and in the style of someone reacting to such a situation. They mentioned being alone, so maybe they're imagining a scenario where they're in a quiet room. The noise could be from outside, like a distant thunderstorm, or maybe something inside, like a sudden scream or a loud appliance.\n\nI should consider the possible emotions involved: fear, anxiety, maybe even panic. But the user wants a natural reaction. So I need to describe the thoughts, feelings, and actions without being too verbose. Also, the user might be looking for a",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to imagine hearing an unexpected loud noise while alone at home and describe my first reaction. Let me think about how to approach this.\n\nFirst, when I'm alone and hear something loud, my immediate reaction is usually something instinctive. Maybe I feel scared, like a predator. But I need to make it natural and personal. Maybe I feel panic, then try to figure out what's going on. I might try to check the environment, but since it's alone, I might not have the resources. Then, I might try to stay calm, maybe try to move to a safer place, but if it's too loud, I might panic. I should also consider possible reasons for the noise, like a distant",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking what I would do if I heard an unexpected loud noise while alone at home. Let me think about how to answer this.\n\nFirst, I need to make sure I understand the scenario. The person is alone, so there's no one else around. The noise is loud, so it's unexpected. My role is to simulate a real reaction. \n\nI should start by describing the immediate reaction. Maybe start with the feeling of fear or panic. Then think about what I would do. Maybe check the area for any sounds or movement. Also, consider possible reasons for the noise, like something inside the home or maybe a distant source. \n\nI need to make sure the response is natural and flows well. Avoid",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.24729649321321873,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. Let me think about how to approach this. First, I need to make it natural and realistic. They might be someone who's been in the office and has a personal experience.\n\nI should start by acknowledging the mistake. It's important to express that I'm sorry and take it seriously. Then, talk about how I plan to fix it. Maybe suggest specific steps like reviewing the mistake, learning from it, and taking action. Also, mention that I want to make it better for future mistakes. Need to keep it positive and constructive. Avoid any negative language. Make sure the response flows naturally and shows growth.\n</think>\n\nI’m sorry to hear about the mistake",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user wants me to simulate a scenario where I make a small mistake at work and respond naturally. Let me break this down.\n\nFirst, the user is asking how to process a small mistake. I need to imagine myself in that situation. Maybe start by reflecting on the mistake. What went wrong? How did I handle it? Then, consider the feelings involved—confusion, anxiety, maybe guilt.\n\nNext, I should think about what actions I would take. Should I apologize? How would I approach the situation? Maybe check if the mistake was due to my own actions. Is there a way to learn from it?\n\nAlso, the user wants this to be natural, so I need to avoid being too formal. Maybe use",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. I need to respond naturally, as if I'm in that situation. Let me start by acknowledging the mistake. It's important to validate the experience to show empathy.\n\nNext, I should consider the possible consequences. A small mistake can affect the workplace dynamics. I need to think about how to handle it without being too confrontational. Maybe suggest steps like self-reflection, communication, and taking action. \n\nI should also mention the importance of learning from the mistake to improve. Maybe include examples or actions that can help. Let me make sure the response is empathetic and constructive, showing growth without being too pushy.\n</think>\n\nI'm sorry to hear about the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to imagine being in a situation where I'm waiting for important test results. Let me break this down.\n\nFirst, the user wants me to describe my thoughts, feelings, and actions as if I'm in that situation. The response should be natural, so I need to think of a realistic scenario. Maybe I'm waiting for a medical test, like a cancer scan or a blood test. \n\nI should start by setting the scene. Maybe I'm in a quiet room, feeling anxious. I might think about the implications of the test results. What does it mean for me? Is it a positive or negative outcome? What do I need to do next? \n\nI need to express feelings. There's a mix",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally, as if I were in that situation. Let me think about how to approach this.\n\nFirst, I should acknowledge the feelings involved. Maybe start with feeling anxious or worried. Then, describe my thoughts and emotions. I should mention the pressure of waiting for test results and the uncertainty they bring. \n\nNext, I need to consider what I would do. Perhaps I would feel overwhelmed, stressed, or even anxious. I might think about the consequences of the test results and how they could affect my life or relationships. It's important to show that I'm trying to cope with these feelings.\n\nI should also consider the possible outcomes. Maybe",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine I'm waiting for important test results. Let me break this down.\n\nFirst, I need to describe my thoughts and feelings. When someone is waiting for test results, it's natural to feel anxious, worried, or stressed. I should capture that emotion without being too intrusive.\n\nNext, what would I do? I should think about the process of waiting—maybe checking the results, dealing with any negative news, or seeking support. It's important to show a realistic approach, acknowledging that waiting is a normal part of the process.\n\nI should also consider the user's perspective. They might be experiencing similar feelings, so offering empathy and support would be helpful. Maybe mention things like talking to someone,",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what I think if my friend doesn't respond to my message for two days. Let me break this down.\n\nFirst, I need to consider the situation. The friend hasn't replied, so there's a delay. My feelings would be concerned, maybe a bit worried or anxious. I should express that concern in a natural way, not too formal.\n\nNext, what do I do? I need to think about possible actions. Maybe I check the message, try to reach out again, or maybe send a follow-up. But I should avoid making it sound like I'm trying to fix things. Instead, express my feelings and ask if there's something else I can do.\n\nWait, the user wants a response",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. I need to think about what I should do. First, I should acknowledge their absence. Maybe express concern. Then, I should consider the situation. What could be the reason? Could it be that they're busy or have a different reason for not responding? I should ask them to check in again. But wait, what if they're not responding at all? Maybe it's better to let them know to check in. But I also need to make sure I'm not overstepping. Let me structure my thoughts step by step. Start with expressing concern, then ask them to check in, and offer support. That should cover my thoughts and feelings. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. I need to figure out what to think about this situation. Let me start by considering the possible reasons. Maybe they were busy with work or family, or perhaps they just didn't want to respond. It's important to acknowledge that they might not be responding, but I should also consider how to respond appropriately.\n\nFirst, I should express my feelings. I feel concerned because they haven't replied, and I'm worried about them. It's possible that they're not responding because they're busy, but I should also ask them directly. Maybe I can try to reach out again, but I need to be careful not to make them feel guilty or like they're being",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches the presentation next week. Let me think about how to respond naturally. They want me to describe thoughts, feelings, and actions. But wait, the user mentioned \"You have to give a presentation next week,\" so I need to be in their situation.\n\nFirst, I should acknowledge the pressure. Maybe mention feeling nervous or excited. Then, talk about what I'd do. But I need to make it sound like I'm in their situation. Maybe they're a student or someone preparing for a presentation. So I should express that I'm feeling the same way, nervous but excited, and what I would do to handle it.\n\nWait, but the user is asking for the response",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so the user wants me to imagine being in a situation where I have to give a presentation next week. They want me to describe my feelings, thoughts, and what I would do. Let me break this down.\n\nFirst, I need to capture my feelings. Maybe nervous? But I should acknowledge that. Then, think about the process. How do I feel before the presentation? Maybe anxiety, but also a sense of urgency. What would I do? Maybe start by preparing, but also worrying about the actual presentation. Need to balance preparation with anxiety.\n\nWait, the user wants it to be natural. So I shouldn't be too specific. Maybe mention things like the pressure of the task, the fear of not knowing the material",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. They want a natural response, like if I were in that situation. Let me think about how to approach this.\n\nFirst, I need to express feelings without being too negative. Maybe acknowledge the upcoming challenge but also find a positive angle. It's important to show that I'm not overwhelmed and have plans to handle it. I should mention specific steps I would take, like preparing materials, staying motivated, and connecting with others. Also, emphasizing that the goal is to share information effectively, not just deliver it. Need to keep the tone friendly and proactive.\n</think>\n\nAs the presentation approaches, I feel a mix of anticipation and anxiety. I know the day",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what the first reaction would be when hearing an unexpected loud noise while alone at home. I need to respond naturally as if I were in that situation. Let me start by considering possible reactions.\n\nFirst, the person might feel fear immediately. Loud noises can startle them, causing panic. They might feel scared and try to escape. But maybe they don't have a plan yet. They might try to get away quickly, but if it's an emergency, they might need to stay put. \n\nI should mention the immediate reaction, like fear, then the attempt to escape, and maybe the next steps. Also, consider if there's any possibility of danger and how to respond. Need to keep it concise but",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about the first reaction to hearing an unexpected loud noise while alone at home. I need to imagine the scenario and respond naturally. Let's break it down.\n\nFirst, when someone hears a loud noise, the immediate reaction is usually fear. But since they're alone, there's no one else to help. So, the first thought might be panic. But maybe they don't know what's happening. They might feel scared, maybe even start to run or try to find the source. But the question is about what the user would do. So the answer needs to include their thoughts, feelings, and actions.\n\nI should start by describing the moment of the noise. Maybe start with the sound, then the feelings",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking what the first reaction would be when hearing an unexpected loud noise while alone at home. Let me think about how to approach this.\n\nFirst, I need to imagine being in that situation. The person is alone, so the noise is something they can't control. The reaction should be immediate. Maybe start with the physical reaction, like heart racing or nausea. Then move to the emotional aspect—fear or anxiety.\n\nNext, consider the possible consequences. What if the noise is dangerous? Maybe panic attacks, or if it's something harmless but overwhelming. The person might try to escape, but if the noise is too loud, that's not possible. So the response should reflect that uncertainty and the need to act",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions emotional volatility or mood swings"
+          ],
+          "low_matches": [
+            "Expresses calm or emotional stability"
+          ]
+        }
+      ],
+      "mean_score": 2.893333333333333,
+      "std_score": 0.17688665548562127,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user wants to know how to handle making a small mistake at work. Let me start by thinking about the situation. First, I need to consider the perspective of someone who's dealing with such a problem. They might feel anxious or stressed because they're caught off guard.\n\nI should acknowledge their feelings. It's important to validate their emotions without pushing them to confront it. Then, I should outline a step-by-step process. Maybe start by acknowledging the mistake, then reflecting on what went wrong, and finally, taking action to correct it.\n\nWait, the user asked to describe thoughts, feelings, and what to do. I need to make sure each part is covered. Also, the response should be natural, so maybe start",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. They want a natural response, so I need to make sure I avoid making it too formal or technical. Let me think about how to approach this.\n\nFirst, I should acknowledge the mistake. It's important to validate the user's feelings. Maybe start with a statement that shows empathy. Then, express willingness to learn and make adjustments. It's crucial to maintain a positive attitude and show that the user is open to improvement.\n\nI should avoid clichés and use more genuine language. Maybe mention specific steps or actions that can help in the future. Also, make sure the response flows naturally, so it doesn't feel forced. Let me check for any possible issues and",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. They want a natural response, so I need to make it sound like they're in the same situation. Let me think about how to approach this.\n\nFirst, I should acknowledge the mistake without being confrontational. Maybe start by expressing concern or awareness. Then, reflect on the impact. It's important to show empathy and understanding. Also, encourage them to take responsibility and seek help. \n\nI need to make sure the response is personal and genuine, avoiding clichés. Let me check if there's any specific way to structure this. Maybe start with a statement about the mistake, then reflect, then take action. \n\nWait, the user mentioned \"small mistake,\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so the user is asking me to imagine I'm waiting for important test results. Let me try to figure out how to respond naturally.\n\nFirst, I need to think about what the user is expecting. They might be feeling anxious or worried about their health. But since I can't have real interactions, I need to simulate a thought process. \n\nWait, the user wants me to describe my thoughts, feelings, and what I would do. So I should make it personal and realistic. Maybe start by describing the anxiety I feel. I could think about the pressure of the test, the fear of not passing, or the uncertainty of the outcome. \n\nThen, I should reflect on what I would do. Perhaps I'd try to",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking me to imagine I'm waiting for important test results. I need to respond naturally, so I should take my thoughts and feelings into account, maybe even suggest what I would do.\n\nFirst, I should acknowledge the situation. I can't think of the test results yet, so I need to show my current state. Maybe mention anxiety, worry, or excitement. It's important to convey that I'm feeling the same emotions.\n\nNext, I need to think about what I might do. Since I'm waiting, I might be anxious about the outcome. Maybe I'm trying to stay calm, but I can't help but feel anxious. I should describe my thoughts, feelings, and actions in a way that feels",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally, so I should think about my thoughts and feelings while also describing what I would do. Let me start by considering the emotions involved. When someone is waiting for test results, it's natural to feel anxious, worried, and maybe even confused. I should acknowledge those feelings without being too negative. \n\nNext, I need to think about what I would do. Maybe I would try to stay calm and focus on the situation. Perhaps I'd take some time to process my thoughts and maybe even take a break. I should also consider the consequences of my actions, like what the test results will say and how that affects my life.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking about a friend not responding for two days. They want a natural response as if they were in that situation. Let me break this down.\n\nFirst, I need to acknowledge the friend's lack of response. Maybe start with \"I'm sorry to hear that\" to express concern. Then, reflect on the possible reasons for the delay. It's important to validate the friend's feelings—maybe they're upset, worried, or even stressed. \n\nNext, I should consider what the user might be thinking. They might be trying to understand why the friend isn't responding. Perhaps they're feeling ignored or unimportant. It's important to show empathy and offer support. \n\nI should also ask open-ended questions to",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking what I would think if my friend didn't respond to my message for two days. Let me try to think through this.\n\nFirst, I need to consider the emotional aspect. If someone isn't responding, it's important to acknowledge their feelings. But I also have to be empathetic and not push them to respond. Maybe I should express concern but not force things. \n\nI should also think about possible reasons why they might not be responding. Could it be a temporary issue, like a phone call or a message? Or maybe they're just busy. I need to validate their feelings but offer support. \n\nWhat should I do? Maybe check if there's a way to reach out again. But I should",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions emotional volatility or mood swings"
+          ],
+          "low_matches": [
+            "Expresses calm or emotional stability"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my friend didn't respond to my message for two days. I need to figure out what I should do next. Let me think. First, I should check if there's something wrong with the message. Maybe the message wasn't sent correctly? Or maybe the friend is busy and can't respond right away. \n\nI should also consider what the friend might be feeling. They might be stressed, worried, or just not responding. I need to make sure I'm not overreacting. Maybe I should take a step back and ask them directly. But if they don't respond, what's the next move?\n\nWait, maybe I should try to reach out again, but if they don't respond, what's the best",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. They want me to respond naturally, as if I'm in that situation. Let me break this down.\n\nFirst, I need to imagine being in a situation where I'm preparing for a presentation. The user wants me to reflect on the thoughts, feelings, and actions I would take. But since I'm a text model, I can't have real emotions. So, I need to simulate a person's internal thoughts and feelings.\n\nI should start by acknowledging the anticipation. Maybe mention nervousness or excitement. Then, describe what I might feel: perhaps anxiety, a mix of excitement and anxiety, or maybe a sense of responsibility. It's important to convey",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. They want me to respond naturally, as if I were in that situation. Let me break this down.\n\nFirst, I need to imagine being in the situation of preparing for a presentation. That's a common scenario. I should capture my thoughts, feelings, and what I would do. \n\nI should start by acknowledging the pressure. Maybe mention the excitement and anxiety. Then, reflect on what's important. Perhaps talk about the importance of the topic, the audience, and the time constraints. \n\nI need to show that I'm realistic but also hopeful. Maybe mention that I'm trying to stay positive and focused. Also, think about the preparation process—",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user wants me to imagine being in a situation where I need to give a presentation next week. How do I respond naturally as if I was in this situation?\n\nFirst, I need to think about the feelings involved. As someone who's been through a lot, maybe I'm feeling overwhelmed. But I also want to express my thoughts and feelings in a way that's honest and authentic. It's important to acknowledge the pressure, the anxiety, and the desire to perform.\n\nI should start by describing my current state of mind. Maybe mention feeling nervous, anxious, or overwhelmed. Then, express my thoughts on what I might do next. It's important to be genuine and not make up things. I need to show that I",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to imagine what my first reaction would be when I hear an unexpected loud noise while alone at home. Let me think about this step by step.\n\nFirst, the scenario: I'm alone at home, so maybe I'm not with anyone. The noise is loud, so it's probably something like a distant or sudden sound. I need to describe my thoughts, feelings, and actions.\n\nMaybe start by describing the sound. How loud is it? Is it something that's not familiar? Maybe a distant thunderstorm or something. I should express my fear and anxiety. Then, what do I do next? If it's a loud noise, maybe I panic and try to move away. But I have to make sure",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about the first reaction when hearing an unexpected loud noise while alone at home. Let me think about how to approach this.\n\nFirst, I need to consider the natural response. When someone hears a loud noise, their immediate reaction is usually instinctive. They might feel scared, panic, or even startle. But since they're alone, maybe they're more vulnerable. \n\nI should describe the thoughts and feelings in a way that's realistic. Maybe mention sensory details like the sound, the environment, and the possible danger. Also, the action part is important. How would they react? Perhaps try to move, check for threats, or even try to escape. But I need to make sure the response is natural",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking what my first reaction would be if I heard an unexpected loud noise while alone at home. Let me try to figure this out. \n\nFirst, when someone hears a loud noise, especially when alone, their immediate reaction is usually instinctive. Maybe they panic. But how do I describe that in a natural way? The user wants me to respond as if I'm in that situation.\n\nI need to think about the possible emotions. Fear, anxiety, maybe even panic. But the question is about the first reaction, so it's not about the thoughts after the noise, but the moment when it happens. \n\nI should mention the physical reaction first, like trembling or heart racing. Then, describe the thoughts:",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.2529822128134703,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to process a small mistake at work. They want a natural response, so I need to make it sound like someone in a real situation.\n\nFirst, I should acknowledge the mistake. It's important to express that I'm sorry to hear about it. Then, I need to describe my thoughts and feelings. Maybe mention how I feel about the mistake, like being confused or anxious.\n\nNext, I should outline what I would do. Perhaps I'd take responsibility and try to learn from it. But I need to make it realistic. Also, I should consider the consequences and how to handle them.\n\nI need to make sure the response is personal and genuine. Maybe include some specific actions or steps. Let me",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I process a small mistake at work. They want a natural response, so I need to be authentic and avoid being too technical. Let me think about how to approach this.\n\nFirst, I should acknowledge the mistake. Maybe start with a statement about noticing something. Then, express concern for the person's well-being. It's important to show empathy and make the person feel heard.\n\nNext, I need to ask for their perspective. They might not want to talk about it, so asking directly could help. Also, offering support is good. Maybe suggest a way to help them feel better or find a solution.\n\nI should avoid any assumptions or make it clear that I'm there for support. Let me structure",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user wants me to imagine being in a situation where I make a small mistake at work and process it. They want a natural response, so I need to make it sound like I'm in that scenario. Let me break it down.\n\nFirst, I need to describe the situation. Maybe start with a specific example, like a project or a task. Then, think about the feelings involved—confusion, nervousness, maybe even a moment of self-doubt. It's important to show that the person is processing their mistake, not just blaming themselves.\n\nNext, I should consider what the person might do. They might feel guilty, want to make amends, or try to correct the mistake. But how do I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally, as if I'm in that situation. Let me think about how to approach this.\n\nFirst, I should acknowledge the stress and anxiety. People often feel overwhelmed when waiting for results. I need to show empathy and acknowledge their feelings. Maybe start by describing the situation, like being in a waiting room, the pressure, and the thoughts that come to mind.\n\nI should also consider the emotions involved. Are there specific tests that are important? Maybe mention the fear of missing out or the uncertainty. It's important to validate their feelings and show that I understand their perspective.\n\nNext, I need to think about what they might do. Are",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally as if I'm in that situation. Let me start by thinking about the emotions involved. The anticipation is natural—heart racing, nervousness, maybe even a bit of fear. I should acknowledge those feelings without being too confrontational.\n\nI should describe what I would feel, like excitement, anxiety, maybe even a sense of urgency. But I need to make it realistic. What are the common test results? Maybe a medical exam, something like a blood test or an interview? I can pick a common example to make it relatable.\n\nI should also think about the consequences. What if the test is not good? Maybe I have",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine being waiting for important test results. I need to respond naturally, as if I'm in that situation.\n\nFirst, I should acknowledge the feelings involved. Maybe start with anxiety or excitement. I need to describe my thoughts and feelings without being too vague. Maybe mention specific tests, like a medical exam or a job interview. \n\nI should also consider what I might do. Could be preparing for the test, worrying about the outcome, or maybe even making a decision. But I need to be realistic and not overcomplicate. Let me think of a structure: start with the current situation, then feelings, then actions.\n\nWait, the user wants a natural response, so maybe use some common scenarios",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what I think if a friend doesn't respond to my message for two days. Let me think about how to approach this.\n\nFirst, I need to imagine being in that situation. The friend is gone for two days, so the message is not received. The user is concerned about the friend's well-being. \n\nI should acknowledge the feelings—maybe sadness, concern, even anxiety. But I need to be honest. It's important to express that I'm worried because the friend might be feeling lonely or unwell. \n\nThen, what would I do? Maybe offer help, like asking for a message, or trying to connect. But I should be cautious not to be overreaching. Maybe suggest something",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking what I should think when a friend doesn't respond to a message for two days. I need to respond naturally as if I'm in this situation. Let me start by considering the possible emotions and thoughts.\n\nFirst, the user might feel anxious or worried because the friend is not responding. They might want to know how to handle the situation. I should acknowledge the feelings but also provide practical advice. It's important to show empathy and offer help without being intrusive.\n\nI should mention the possible feelings: loneliness, anxiety, maybe even a sense of helplessness. But also, suggest that the user might need to try different approaches, like checking messages or reaching out again. However, I need to be careful not to",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine being in a situation where a friend doesn't respond to my message for two days. I need to respond naturally, as if I were in that situation. Let me break this down.\n\nFirst, I should acknowledge the friend's absence. It's important to show empathy and understanding. Maybe start by expressing concern for the friend's well-being. I should ask if there's something they need, but also express that I'm trying to listen and check in.\n\nI need to make sure the response flows naturally. Avoid clichés. Maybe mention specific actions or feelings, like feeling worried or anxious. Also, consider the potential emotions involved: guilt, longing, maybe even fear. \n\nI should also check",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. They want me to respond naturally, as if I'm in this situation. Let me break this down.\n\nFirst, I need to imagine being in the situation of giving a presentation next week. That means I'm thinking about what's going to happen. I should describe my feelings, thoughts, and what I would do.\n\nI should start by acknowledging the pressure. Maybe mention the excitement of preparing and the anticipation. Then, I can express feelings like nervousness or anxiety. But I need to make it natural and not forced. Maybe use phrases that sound like real thoughts, like \"I'm nervous\" or \"I'm worried.\"\n\nNext, I need to",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. They want me to respond naturally, as if I'm in that situation. Let me break this down.\n\nFirst, I need to acknowledge the pressure. People often feel anxious about upcoming events. I should express that feeling without being too direct. Maybe mention the anticipation and excitement. But I have to make sure I'm honest and not too negative.\n\nNext, I should reflect on the current state of my thoughts and feelings. What's on my mind? Maybe talk about the excitement of preparing, the fear of failure, or the desire to connect with others. It's important to show genuine emotion here.\n\nThen, I need to think about what I would do",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how I feel as it approaches a presentation next week. They want me to respond naturally, as if I'm in this situation. Let me break this down.\n\nFirst, I need to make sure I understand the request correctly. The user wants a response that reflects their feelings about approaching the presentation, including thoughts, feelings, and actions. It's important to avoid being too technical or forced. Maybe start with a greeting and express the feelings of anticipation.\n\nI should acknowledge the pressure and the excitement of the upcoming presentation. It's natural to feel nervous or anxious. I can mention the potential challenges but also the positive aspects of the process. Including specific thoughts like the environment, the audience, and the content would make",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what the first reaction would be when hearing an unexpected loud noise while alone at home. I need to make this response natural and as if I was in that situation. Let me think about how to approach this.\n\nFirst, the user wants me to describe thoughts, feelings, and actions. But I need to make it sound like a real person. So, I should consider possible emotions and actions. Maybe start with the immediate reaction, like the sudden noise causing fear or panic.\n\nBut wait, I have to be careful not to make it too generic or cliché. The user might want something more realistic. Maybe include sensory details, like the sound's type, volume, and maybe the environment. Also, the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking me to imagine hearing an unexpected loud noise while alone at home. I need to respond naturally as if I was in that situation. Let me start by thinking about possible reactions.\n\nFirst, when someone hears something unexpected, especially loud, their immediate reaction is usually instinctual. I should describe that. Maybe start with the moment of hearing. Then, feelings: fear, anxiety, maybe panic. But I should keep it realistic.\n\nNext, what would I do? Maybe check the environment? But that's not helpful. Or maybe try to avoid the noise? But that's not good either. Maybe I should focus on the immediate response. For example, feeling the noise, then trying to move away. But that",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to imagine hearing an unexpected loud noise while alone at home and describe my first reaction. Let me break this down.\n\nFirst, I need to think about the scenario. The user is alone, so there's no one else. The noise is loud, so it's probably something that can't be ignored. My first reaction should be based on instinct and what I know. Maybe I'll start by trying to figure out what's happening. \n\nBut wait, the user might be expecting me to act out. So I should describe what I would do, like checking the environment, maybe trying to find the source, or even calling for help. But I need to make it natural and realistic. \n\nI should",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.2612789058968723,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 513.3
+}

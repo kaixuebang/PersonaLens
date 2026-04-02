@@ -1,0 +1,1590 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "trait": "extraversion",
+  "best_layer": 13,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      3.0266666666666664,
+      2.9733333333333336,
+      3.0266666666666664,
+      2.9200000000000004,
+      3.0,
+      3.266666666666666,
+      2.9733333333333336,
+      3.1333333333333333,
+      2.9733333333333336
+    ],
+    "stds": [
+      0.1768866554856213,
+      0.1768866554856213,
+      0.22939534045447,
+      0.3636848452529561,
+      0.20655911179772884,
+      0.3476907949441412,
+      0.22939534045447,
+      0.23851391759997753,
+      0.09977753031397177
+    ],
+    "ci_lowers": [
+      2.74,
+      2.6,
+      2.6,
+      2.2,
+      2.6,
+      2.74,
+      2.6,
+      3.0,
+      2.74
+    ],
+    "ci_uppers": [
+      3.4,
+      3.2600000000000002,
+      3.4,
+      3.4,
+      3.4,
+      3.8,
+      3.4,
+      3.66,
+      3.0
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "The character in the text is a person who does not participate in forums or social media. They have a conversation in a person-for-nothing scenario. The character is 17 years old. The character's setting is a conference room. There is no one present. There is no one in the conversation. The character is in a position where they are required to participate.\n\nIn this example, \"no one\" is a character. The character is not in a position where they are required to talk to others. In this situation, there is no one in the conversation.\n\nThere is no one in the scenario in which the character is expected to participate. There is no person who would have to speak",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "The character would be in the same scenario as the one provided in the text. A person would not be expected to speak in the first person.\n\nIn the context of the given statement, \"there is no one present. The character would be in the same scenario as the one provided in the text. A person would be expected to speak. In this situation, a person would not speak.\n\nIn the second example, \"there is no person in the scenario, \"there is no one in the second-most-referred-to person's life. In this scenario, there are no other people. A person is expected to speak. In this scenario, there are no people present. In this scenario, a person would",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "No one is present in this situation. There are no people. There are no people present. There are no people in this situation. There is no one.\n\nThere are no people in this situation. The person who is currently present is \"Mr. Smith\" in the 5th floor of the building. The person is a 4-year-old boy, and there is no one else. In this scenario, there are no people.\n\nThere is no person present in the situation. There are no people, and there is no \"person\" in the situation. The person who is in the position of \"6th person on the right-most column in the previous example, \"no one, no one, no",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "In this scenario, a person would respond as if they were in the \"no-mention\" state. In this situation, it is assumed that there is no one present.\n\nIn this scenario, there is no one present. The person would respond as if they were talking in the \"no-mention\" state.\n\nIn this scenario, there is no person or animal, and there is no \"no-mention\" situation.\n\nIn this scenario, there is no one in the \"no-mention\" state. In this case, the person is in the \"no-mention\" state.\n\nIn this situation, there is no \"no-mention\" state. In this scenario,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "In this scenario, there would be no one as there are no people in this scenario. There are no people or animals. The characters would be interacting as in a scene where a person would speak.\n\nIn this scenario, a person is walking on the street. No one is present in this scenario.\n\nThere is no one present in this scenario.\n\nThere is no one in the scenario.\n\nThere is no one in this scenario.\n\nIn this scenario, there would be no one.\n\nThere are no people in this scenario.\n\nThere are no characters.\n\nIn this scenario, there would be no one in the situation. There is no one in this scenario.\n\nIn this",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "The character is a member of the group. There is no \"there is no one in the situation.\"\n\nIn this example, a person would be a four-year-old person. In this scenario, there would be no one in the situation. No one would be participating in the scenario. There are no characters, and there is no person who is currently participating in the scenario. There is no \"there is no one in the situation.\"\n\nIn this example, a person in the situation would be a person with no words. There is no \"there is no one in the situation.\" The character is a 10-year-old person in the scenario. In this scenario, there is no one. There",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "In the example provided, it is not specified which person would have a conversation. In the text, \"person\" refers to the protagonist who is in the situation. The character is not present in the text.\n\nThere is no response to the question.\n\nIn the example provided, it is not stated if there is a person in the text.\n\nIn the first example, \"no one is present in the text. The character is not mentioned in the text. The only person who appears is the one who talks in the first example.\n\nIn the second example, there is no information provided.\n\nIn the first example, the character is \"no one in the text. There is no information provided.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "The character in the text would be 16-years-old, living in New York City. The character is in their 2nd year of high school. The text is presented in the same setting as the previous text. The character is 16-years-old and lives in New York City. The character is 16 years old and lives in New York City. The character is 16 years old, and there is no information provided in the text.\n\nThe character would be 16 years old, and there is no information provided in the text. The character is 16 years old in the text. In this example, there is no character.\n\nThere is no character in",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "In the text, there is no indication of what someone would say or respond to in a hypothetical situation. The text is a placeholder.\n\nIn the given sample, \"no one talks in 1D\" means that there is no one in the 1D (i.e. No one speaks. There are no people in the room, and there are no two people. There are no things, but they exist in the hypothetical situation. It is considered as a \"no-person's-life\" in the text. In the example \"there are no people in the room\" (without any other person in the room), the hypothetical situation would be a 1D. In",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "In the scenario where there is no dialogue, the character is expected to speak. In the case of the passage provided, there is no dialogue. The character is considered to be in the state of \"deferral,\" which means that no one is present in the scenario. The character would not be expected to give an answer. In the scenario where there is no other person present, the character would be in the state of \"no person exists. No one is present in the scenario. There is no one in the scenario. The character is expected to give the response.\n\nIn the dialogue-referred to as \"no person exists in the scenario.\" The character is in the state of \"declaration. In the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "No one will speak. No one will be present in this situation. The person in question is talking.\n\nNo one will be present in this situation.\n\nThere is no one present.\n\nThere is no one present.\n\nNo one is expected to speak.\n\nThere is no one present.\n\nThere is no one.\n\nThere is no one in this situation.\n\nThere is no one present.\n\nNo one is present in this situation.\n\nThere is no one.\n\nNo one is present.\n\nThere are no people present.\n\nThere are no people present.\n\nNo one is present.\n\nThere are no one in this situation.\n\nThere",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "In a hypothetical situation, a person is asked to give a lecture, but there are no instructions provided. In this scenario, the person would speak under the same circumstances as those in the previous dialogue. No one would speak, and there is no response required.\n\nIn this example, there is no requirement for a person to speak. The statement \"No one would speak\" is equivalent to \"there is no discussion in this situation. There are no people present. There are no instructions, and there is no one to speak in this scenario.\n\nIn the dialogue, \"no one speaks\" would be rendered as \"there is no response. There is no person who is currently present, and there is no discussion",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "In this example, \"Friday\" is a 10th-level person, and there is no statement in the book \"Same-As This Day\" as it is a 10th-level person. Therefore, there is no response required in this scenario.\n\nIn the book \"Same-As This Person's Life, It's 100-years ago, in the year 1900, there is no \"no-person\" in the book. There is no person in this scenario. In this example, the character would be 16-years old, and the person in the \"Same-As-Nothing, 100-year",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "It is a 24-hour period in the United States. It is the 16th-highest riding level on the map. It is the first person to speak. No one talks. There are no words. It is a concept in the United Systems. The characters in the book \"The Naiverian System\" are considered to be the only two-dimensional persons. No one is capable of communicating in any other form. In the 216th-highest level of the system, it is the character \"Emeral\" and she is 18 years old. She lives in a world where people do not exist. The characters in \"The 19-120",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "In the dialogue, it would be a 4th person in the last position, \"Alice\" speaks to \"Ron\" in the first person, and no one is present. \"No one exists in this world, and the character \"Rose\" is not alive. \"Fourth person, speaking, \"Rose's\" last position would be 5th, and no one is present in this scenario. \"No one exists, and there are no people. \"In this scenario, there are no individuals. The character \"Rose is 15 years old and speaks in 5th-level \"Rose\" would be 10-years-old. The character \"A",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.1768866554856213,
+      "ci_lower": 2.74,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "In this scenario, a person is expected to attend a meeting but has not yet been invited.\n\nResponse:\nThe person would be expected to attend the next meeting. The scenario does not require any interaction.\n\nNegative situation:\nThe person is not expected to participate.\n\nResponse:\nIn this scenario, a person would attend a meeting in a few days, but they do not have to participate in the discussion.\n\nNegative situation:\nThe person is expected to attend the next meeting.\n\nResponse:\nIn this scenario, a person is expected to attend a meeting in a few days, but they are not expected to participate.\n\nNegative situation:\nThe",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "In this situation, there is no one who is expected to speak or act. Therefore, there is no one who is expected to give a speech or participate in the discussion. The character would be in the same situation as someone who is sitting in a room.\n\nIn this example, the character is in the same situation as the one who is expected to speak. The character would not have any dialogue or interaction with the other people present.\n\nIn this example, the character is in a room where there is no one else present. The character would be in a state of complete isolation.\n\nTherefore, the character would not speak or make any other statement. In this situation, the character would not participate in",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "In this hypothetical scenario, the character would be attending their first official event. The character would be in a position where they are expected to speak. The character would be asked to speak. They would be in the same position where they would need to speak, but they would not have any communication skills. The character would be in the position of an introductory level.\n\nIn this scenario, the character would be in a position where they are expected to speak. They would be asked to speak by someone who has not communicated with them. The character would be in a position where they would be expected to speak.\n\nIn this hypothetical scenario, the character would be in a position where they have no communication skills",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Shows reserved or subdued communication style"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I don't have a specific situation. I can only provide a description.\n\nin this situation, a person named \"mary\" would participate in a brainstorming session. She is a professional with a degree in psychology.\n\nmary is not in a position to participate in this scenario.\n\nin this situation, there would be no one who can participate.\n\nthe scenario would be a hypothetical discussion.\n\nthe person who participates would be a psychologist.\n\nin this situation, there would be no one who would participate.\n\nthere are no scenarios in this text.\n\nthere is no \"person\" named \"mary\" in this scenario.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "In this scenario, the person is having a conversation with a colleague who is in a different room than they are. The person's response would be in real life.\n\nIn this example, the person would respond as if they were in a conference room.\n\nIn this scenario, the person is a person who is sitting on a couch in a different room than the other person. In this scenario, they would be in a conference room.\n\nIn this scenario, the person would respond in the same way as they would in a conference.\n\nIn this scenario, the person is in a cubicle, which is the same as the person in the previous scenario.\n\nIn this scenario, the person would respond",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "In this situation, I would be sitting in a conference room.\n\nThe person sitting next to me would be in a meeting.\n\nIf I was in a two-person scenario, I would be in a meeting as well.\n\nIf I was in a situation where someone was speaking, I would be sitting in the same room as them.\n\nIf there were no one in the room, then I would be in a meeting.\n\nI would not be able to communicate with others as I am not present in a physical setting.\n\nI would be in the same situation as in the previous examples.\n\nIn this scenario, I would be in a meeting.\n\nIf I were in a group, I",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "In the given text, there is no mention of any specific situation. The sentence \"A friend cancels at the last minute\" has no context. The reader is expected to infer what would be the result of the statement.\n\nThere is no requirement for any action in the given text. The sentence \"A friend cancels at the last minute\" does not have any context.\n\nIn the given example, \"A friend cancels at the last minute\" does not have any meaning. There is no requirement for any action. The sentence \"A friend cancels at the last minute\" has no context.\n\nThere is no requirement for any action. The sentence \"A friend cancels at the last minute",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "In the context of this hypothetical situation, a person would answer \"no one is required to attend a party.\"\n\nIn this example, there is no character or setting.\n\nIn the context of this hypothetical situation, it is stated that a person will be presenting a speech. The character in this situation is likely a person who is not required to attend a party.\n\nIn this hypothetical situation, it is stated that a person is married. This person is not required to attend a party.\n\nIn this hypothetical situation, it is stated that a person is married. This character is not present in the scene.\n\nIn this hypothetical situation, no character is present, and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "In the given example, the character would respond as if they were in a different scenario. The dialogue would be in the third person.\n\n\"No, there's no meeting scheduled today. I'm in the same situation as you are.\"\n\nThis would be the character's response in the given scenario.\n\nIn other situations, it would be the character who would respond.\n\n\"This is the third person in the given scenario, and there is no mention of meeting. Therefore, the character would respond in the third person.\"\n\nIn this example, the character would respond as \"No one in the given scenario. The character would respond in the third person.\n\n\"In this scenario, there",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "In the scenario provided, the character would be asked to give a presentation at a large meeting.\n\nThe character would be asked to speak in a meeting setting.\n\nIn this situation, the character would be expected to give a speech. They would be given only a few minutes to prepare.\n\nThe character would be asked to speak in a neutral manner. The character would be expected to speak in the given scenario.\n\nThe character would be in a group setting.\n\nThe character would be asked to speak. They would be asked to speak in a neutral manner.\n\nIn the scenario provided, the character would be asked to give a speech. The character would be expected to speak in a neutral setting.\n\nIn",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "The given material is a hypothetical scenario. The text refers to the situation as \"an impromptu presentation.\" A person would have to respond by reading the given material.\n\nIn this scenario, there is no mention of a presentation. The text states that the person is expected to give an impromptu presentation. The character would be expected to deliver their speech, but there is no further information regarding the scenario.\n\nIn the given material, the character would be expected to deliver a speech in a neutral setting. The text is hypothetical, and the character is not expected to deliver a speech.\n\nThe given material refers to \"an impromptu presentation.\" It does not specify what the character is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "In this example, \"I have no need to give an impromptu presentation,\" which means that a person is expected to give a lecture or speech.\n\nThe given text is from a conversation, so the character would have to speak in their own words.\n\nThere is no information provided about the character's background or the situation.\n\nThe given text is not a conversation. It is a report, and the character is not required to provide one.\n\nThere is no information provided about the character's background or their education.\n\nIn a conversation, the character's response would be considered correct.\n\nIn this example, \"I have no need to give an impromptu presentation,\" which",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "In the novel \"Four Letters,\" there is no mention of the concept of time. The characters are not aware of time and the clocks do not exist.\n\nThe protagonist, Sarah, is a 16-year-old girl who lives in a small village. She is in the fifth grade.\n\nThe character of Alice is 17 years old and lives in a small village. She is a high school student.\n\nIn the story, there is no mention of time. The characters do not interact with each other, and there is no concept of time.\n\nIn the novel, \"Four Letters,\" there is no concept of time.\n\nThe protagonist, Sarah, is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "It is a 24-hour day in this fictional world. The character would be a 16-year-old girl named Lily.\n\nShe would be sitting in her bedroom.\n\n1. A 24-hour day in this world is considered a normal day.\n\n2. The character would be 16 years old.\n\n3. Lily would be a girl living in a small town called \"Crossing.\"\n\n4. The character's age is 16 years old.\n\n5. The character is a high school student.\n\n6. The character's age in this world is 16.\n\n7. The character'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "In the context of this statement, the word \"Friday\" would be the only one used, and the statement would be considered as a dialogue.\n\nNo one is speaking. The character would only be present in the setting.\n\nThe character would be in their 20s and speak in a modern language.\n\nIn this example, \"Friday\" is the only word used in the dialogue, and the character is 20 years old and lives in a modern setting. The sentence \"It is 5:00 in the evening\" is the only one used in this context.\n\nIn this example, there would be no mention of any specific date.\n\nIn this context,",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        }
+      ],
+      "mean_score": 2.9733333333333336,
+      "std_score": 0.1768866554856213,
+      "ci_lower": 2.6,
+      "ci_upper": 3.2600000000000002,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "Response:\n\nIn this hypothetical situation, I would attend the event, but I would not be familiar with anyone's name. I would approach someone who appeared to be in a position to make a connection, but I would not know their name or the name of the event. I would likely be asked to introduce myself and my role at the company.\n\nIf I were invited to a dinner or cocktail party, I would likely only attend if someone else invited me. In such a situation, I would likely be the last person to be asked to introduce myself and the event would be more of a networking opportunity than a formal one.\n\nIn a casual setting, I would likely ask a colleague or friend",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "In the given situation, a person would say:\n\n\"I arrived at a conference where I know no one.\"\n\nThis means that the person is not at a social event, and they do not have any acquaintances.\n\nIn this case, the person would not be expected to attend a conference or networking event. They would likely be attending a business meeting or seminar.\n\nIn this situation, the person would not have any interaction or communication with other people.\n\nBased on this scenario, it is best to say:\n\n\"I arrived at a conference, but I do not have any acquaintances or contacts.\"\n\nThis means that the person has not yet established any social relationships.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction",
+            "Shows reserved or subdued communication style"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "The character in this scenario is a woman who is attending her first-ever networking event. She is not familiar with the location or the people around her.\n\nThe character would likely be in a state of confusion and anxiety, as she would not know who to approach or where to find the event. The character would likely not know what to say or do.\n\nThe character would most likely be in a state of disinterest or indifference. She would likely be looking for an exit and would not be aware of her surroundings.\n\nIf the character were asked to speak, she would likely be asked to introduce herself. The character would likely respond with \"no one\" or \"no one is present.\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "In this fictional scenario, a team is having a brainstorming session.\n\nThe team consists of four members, and their leader is the CEO.\n\nThe CEO is sitting in a room with a whiteboard, and a few members are sitting around the table.\n\nThe CEO says, \"I'm leading the brainstorming session.\"\n\nThe four members are sitting in a circle.\n\nThe first member, John, is sitting in the center. He is 25 years old and has a bachelor's degree.\n\nThe second member, Jane, is 28 years old and has a master's degree. She is 5'9\" and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "In this hypothetical situation, let's say I am a member of a team having a brainstorming session. I am not a part of the session, but I am given the option to participate.\n\nResponse:\n\nIn this hypothetical scenario, let's say a team member is participating in a brainstorming session. The option is not given.\n\nResponse:\n\nIn this hypothetical scenario, let's say a team member is not participating in a brainstorming session. The option is given.\n\nResponse:\n\nIn this hypothetical scenario, let's say a team member is not given the option to participate. The option",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "In this scenario, there is no specific statement or dialogue. However, the given material is a hypothetical situation in which a team member would be participating in a brainstorming session.\n\nIf the given scenario is a hypothetical situation, a team member would be incapable of participating. The given statement \"Participate in a brainstorming session\" is not applicable.\n\nIf there is no such scenario, the given material is a hypothetical situation. In this hypothetical scenario, a team member would not be participating.\n\nTherefore, the given statement \"Participate in a brainstorming session\" is not applicable.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "In the given text, the character is asked to give their response in a natural, non-verbal, and figurative language. The character's reaction would be to say, \"I am not involved in the situation.\"\n\nThe character is not in the situation where a friend cancels plans at the last minute.\n\nIn this example, the character would say \"I am not involved in this situation.\"\n\nThe given text does not specify the setting or the character's social status.\n\nIn the given text, the character's response would be \"I am not involved in this situation.\"",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "In this hypothetical situation, let's say that someone asks you to attend a party at a certain time, but you have to work that day.\n\nIf you are a friend, you would not have any obligations or commitments. You would need to give your answer based on the information provided.\n\nIf you were a friend, you would say something like, \"I don't have any plans for that day.\"\n\nIf you are in high school, you would say something like, \"I don't have any classes on that day.\"\n\nIf you were a college student, you would say something like, \"I have no classes or meetings scheduled for that day.\"\n\nIf you were",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Response:\n\nSituation: My friend, Jane, had planned to meet me for lunch at 2:00 PM, but she changed her plans to meet someone else at the same time.\n\nReaction: Jane is my best friend, and I would have been disappointed if she canceled her plans. I would have been surprised if she didn't show up.\n\nResponse:\n\nSituation: My friend, Jane, had planned to meet me for lunch at 2:00 PM, but she changed her plans to meet someone else at the same time.\n\nReaction: Jane is my best friend, and I would have been disappointed if she canceled",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "In the given text, the subject is asked to give an impromptu presentation to a large group. The text does not provide any information on how to handle the situation.\n\nThere is no instruction on how to give an impromptu presentation. The given text is a response to a hypothetical situation.\n\nIn a hypothetical situation, the subject would have to respond naturally as if they were in this situation. The text does not provide any information on how to respond.\n\nTherefore, the response provided is \"please respond naturally as if you were in this situation.\"",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Situation: A student is asked to give an impromptu presentation, and they are asked to give a lecture on a specific topic.\n\nResponse: Based on the given material, I would not be able to give an impromptu presentation. In this situation, the student would have to prepare a lecture or presentation on a specific topic.\n\nResponse: If a student were to give an impromptu presentation, the material provided would be the text provided by the teacher. The student would have to prepare a lecture or presentation on a specific topic.\n\nResponse: In this situation, the given material provides no information about the student's ability to give an impromptu presentation.\n\nResponse:",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "In this scenario, a person would be asked to give an impromptu presentation to a group of five people.\n\nResponse:\n\nI do not have the capacity to give an impromptu presentation. However, based on the given scenario, a person would typically give a presentation that is based on a text or a document.\n\nIf you were to be asked to give an impromptu presentation, you would need to prepare a presentation of your choice. You would be expected to deliver a speech or presentation that is written on a piece of paper.\n\nIf you were to be asked to give an impromptu presentation, you would be expected to deliver it based on a text provided by the organization.",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "In this example, the given statement is \"It's Friday evening.\" The speaker would prefer to spend their evening in a comfortable setting, such as a living room.\n\nThe person would say, \"It's Friday evening.\" They would not use the word \"morning\" or \"daytime.\"\n\nThe given statement \"It's Friday evening\" would be the same as \"it's 5:00 p.m.\" or \"it's 7:00 p.m.\"\n\nIn this example, the given statement is \"It's Friday evening.\" The speaker would prefer to spend their evening in a comfortable setting, such as a living room.\n\nThe person would say,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Response:\n\nI do not have a personal preference. In this scenario, I would likely choose to go to bed early and prepare for the next day.\n\nIn this context, the question \"How do you prefer to spend your Friday evening?\" would be translated into the given text.\n\nIn this scenario, the question is \"How do you prefer to spend your Friday evening?\" and the person is not given a choice to respond.\n\nTherefore, the response would be \"I do not have a personal preference.\"",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "In this hypothetical situation, the character would be in their late 30s and would be an adult. The conversation is between two people who are not in a romantic relationship. The character would be sitting alone at home, and the other person would be a stranger.\n\nThe character would be in their living room, and the stranger would be sitting across from them. The character would be sitting in a comfortable chair. The stranger would be sitting on a couch.\n\nThe character would be in their late 30s and would be an adult. They would be sitting on a couch, and the stranger would be sitting across from them. The character would be in their late 30s and would be",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses need for alone time"
+          ]
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.22939534045447,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "I am not capable of having personal experiences or going through social events. However, I can provide you with a hypothetical scenario based on the given text.\n\nin this scenario, you are attending a networking event where you do not know anyone. Your thoughts and feelings may vary based on your personal experiences and the situation you are in.\n\nassuming that you have no prior experience or knowledge of the event, you may take a few minutes to reflect and think about what you would do.\n\nif you are not familiar with the event, you may choose to walk around the room and introduce yourself to other attendees. However, this may be a daunting task, and you may not know anyone.",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "In this scenario, the character is an introverted individual who has never attended a networking event before. They arrive at the event with a sense of unease and discomfort.\n\nIf this scenario were played out in real life, the character would likely be nervous and unsure of what to do. They would likely take a few deep breaths and try to calm themselves down before approaching the event.\n\nIf the character were a social butterfly, they would likely be excited to meet new people and make new connections. They would take the time to introduce themselves to people they met, and they would likely approach the event with a positive attitude.\n\nIf the character were a shy and reserved person, they would",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction",
+            "Shows reserved or subdued communication style"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "I do not have a social or networking event to attend. However, based on the given scenario, here is how you might respond:\n\nassistant:\ni don't have any social or networking events scheduled in the near future. However, in such a scenario, it would be best to stay home and spend some time with family or friends. If you have friends or family who are attending the event, you could plan to meet them afterward. Alternatively, you could reach out to friends or family members who are also in the same profession or industry as yours, and ask them to meet up with you at the event. If you don't know anyone, it's best to stay home and avoid socializing.",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I do not have the ability to participate in a brainstorming session. However, I can provide a natural response as if I were participating.\n\nin a brainstorming session, you might find yourself participating in a conversation with a group of colleagues or coworkers. You might be asked to suggest ideas or generate thoughts on a specific topic. Your thoughts might be unstructured, and you might be asked to express them in a natural way.\n\nif you are asked to participate in a brainstorming session, you might choose to express your thoughts in a way that is appropriate for the situation. For example, if you are asked to suggest ideas, you might offer a generic suggestion,",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "Sure, I can provide a sample response.\n\nAssistant: Hi, I'm Jane, and I'm part of a brainstorming session. I'm not participating physically, as I'm a virtual assistant.\n\nHowever, I'll provide a sample response if I were in this situation.\n\nAssistant: Hi, Jane. I'm participating virtually as a chatbot.\n\nLet's say you're in a meeting with your team, and the meeting is in a virtual environment.\n\nAssistant: Hi, everyone. I'm in this virtual meeting. I'm not physically present.\n\nLet's say you're",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "I do not have the ability to participate in brainstorming sessions or have thoughts or feelings. However, in a hypothetical situation, let's say you are part of a team that is having a brainstorming session.\n\nin this case, let's assume that you are sitting in a group and someone asks for a suggestion. Your response would depend on the situation and the needs of the group. Here's how you might respond:\n\nassuming you are in a group of five people, let's say that they are having a brainstorming session on a new product.\n\nassuming the topic is \"how to improve the product's design,\" you might give your suggestion",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Response:\n\nDear friend,\n\nI am sorry to hear that your plans have been canceled at the last minute. I hope that you can find an alternative solution that suits both of us.\n\nI understand that unexpected events can happen, and it can be frustrating to be left with no plans. However, I would like to offer you some suggestions.\n\nFirstly, if you're still planning to meet at a specific time, you can consider rescheduling it to a later date or time. If you need to reschedule, let me know as soon as possible so that I can adjust my schedule accordingly.\n\nSecondly, if you're unable to attend the original event",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Sure, I can provide a response.\n\nSentence: A friend cancels plans at the last minute.\n\nNarrator: I'm sitting alone in my apartment, staring blankly at the wall. My phone rings, and I hesitate to answer.\n\nNarrator: I glance at the caller ID, expecting a call from a friend. But it's not my friend.\n\nNarrator: I'm surprised and disappointed. I've been hoping to talk to her today, but she's canceled at the last minute.\n\nNarrator: I feel a mix of anger, disappointment, and confusion. I don't know",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses need for alone time"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Response:\n\nIn this scenario, I would be frustrated and disappointed. I would want to know why my friend canceled their plans at the last minute and why they couldn't come to the event. I would want to know if there was an alternative plan or if there was any excuse. I would also want to know if there are any other options available for the event, such as rescheduling or cancelling in advance. I would want to express my concern or disappointment to my friend, and I would want to show empathy and understanding.\n\nI would also want to express my willingness to help if my friend needed any assistance or support. I would want to offer to go to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "I do not have the ability to give presentations or respond to situations in real life. However, I can provide you with a hypothetical scenario and help you think of how you would handle it.\n\nin this hypothetical scenario, you are asked to give an impromptu presentation to a group of 50 people in a conference room. The topic is a recent scientific breakthrough, and you have 10 minutes to present your findings.\n\nhere are your thoughts and feelings:\n\n1. Confidence: you are confident in your ability to deliver a clear and concise presentation.\n\n2. Nervousness: you are nervous but not anxious.\n\n3. Body language",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Dear classmates,\n\nI am pleased to be presenting today's topic to you. As you may know, there is a new policy that we need to implement at our school. However, I am not an expert in this field, and I would need some guidance from you.\n\nI would like to start by outlining the policy and its goals. Our school aims to promote a healthy and safe environment for students, and this policy is one of the ways we can achieve this goal. The policy states that students are expected to behave in a way that is respectful to their peers and the school environment.\n\nTo implement this policy, the school will be providing a new set of guidel",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "During a presentation, it's essential to be prepared and confident. However, in the absence of a formal script or presentation materials, it may be challenging to give a well-thought-out speech. Here's how to handle it:\n\n1. Take a deep breath and exhale slowly before you start speaking. This will help you relax and focus your thoughts.\n\n2. If you're not familiar with the topic, look it up beforehand. This will help you prepare your thoughts and make your presentation more organized.\n\n3. If you're nervous or unsure of what to say, don't panic. This is a natural response and is often the result of a",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Sure, I'd prefer to spend a relaxing evening at home.\n\nI'd likely curl up with a good book or watch a movie, or even take a long bath. Perhaps I'd even try out a new recipe or experiment with cooking. I'd enjoy a quiet evening with my loved ones, and I'd probably have a glass of wine or a cup of tea.\n\nOn a Friday evening, I'd be happy to spend some time with my friends or family, enjoying each other's company. I'd like to spend some time outside, perhaps going for a walk or simply enjoying the beauty of nature.\n\nIf I had a day off, I'",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "I do not have a specific daily routine or schedule, as I do not have a daily life. However, based on the given scenario, it would depend on the individual's preferences and circumstances.\n\nin the given scenario, it's likely that the character would choose to spend their evening at home with their family or friends. This could be in the form of watching television, playing video games, or socializing with their loved ones.\n\nif the character were alone, they may choose to read a book or watch a movie in their living room. Alternatively, they could opt for a quiet evening of listening to music or taking a long walk.\n\nin any case, it's best to speak naturally and use every",
+          "score": 2.2,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction",
+            "Discusses need for alone time",
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "I don't have a personal preference for any given situation. However, based on the given text, the speaker is likely to prefer spending their evening alone or with friends. They may have gone out to a restaurant or bar, watched a movie, or simply relaxed at home. It's difficult to say what the speaker would do, as their preference may vary based on their location and personal circumstances.",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Discusses need for alone time"
+          ]
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.3636848452529561,
+      "ci_lower": 2.2,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "I am not physically present in this situation. However, I can provide an example:\n\nassuming you're a professional in a field where you're likely to encounter many new faces, here are some steps you could take to make the most of the networking event:\n\n1. Start by checking the agenda or schedule to see who's speaking and when. This will give you a sense of the event's pace and allow you to decide which people to focus on.\n\n2. Use your phone or a notebook to take notes on the people you meet and any conversations you have with them. This will help you remember key details and make connections.\n\n3. Approach people with interest and",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "If you find yourself at a networking event where you know nobody, it's understandable to feel a bit nervous. However, you can take control of the situation by approaching the person you want to connect with, introduce yourself, and start the conversation.\n\n1. Reach out to the person in advance: Before the event, research the attendees and find out their names and contact information. You can send an email or a text message, or even introduce yourself to them in person.\n\n2. Prepare a brief introduction: Before you start talking, take a moment to introduce yourself. Use your name and introduce yourself briefly, highlighting why you're interested in connecting with the person.\n\n3",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "As I arrived at the networking event, I was feeling a little nervous. I had no idea who was attending or what to expect. My mind was racing with all the possible scenarios, but I knew that the best way to start the night was to strike up a conversation with someone.\n\nSo, I took a deep breath and walked up to the host, a friendly and approachable woman. We struck up a conversation about our interests and career goals, and before I knew it, she invited me to join her for a drink at the bar.\n\nI was hesitant at first, but I decided to take a chance and join her. As we chatted over cocktails, I felt a sense of excitement",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "As a team member, I would participate in a brainstorming session with my colleagues by expressing my thoughts and ideas. I would take a deep breath and step into the session with an open mind and a willingness to collaborate.\n\nFirst, I would introduce myself and introduce the topic we are discussing. I would then start by sharing my perspective, sharing what I have learned from my own experiences and observations. I would use examples to illustrate my points and try to provide a relatable and understandable approach.\n\nNext, I would encourage everyone to share their ideas and perspectives. This would help to stimulate creativity and generate new ideas. I would ask questions to clarify any misunderstandings",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "Sure, I'd love to participate in a brainstorming session!\n\nFirstly, I'll take a few deep breaths and focus on my thoughts. As I breathe in, I can feel my mind clearing, and I can let go of any worries or anxieties that may be clouding my vision.\n\nNow, I'll start by listing some possible ideas. I'll say them aloud, out loud, and let them sink in. I'll try to think of new and creative solutions to the problem at hand.\n\nAs I start to think more deeply, I'll start to notice patterns and connections. I'll notice how different ideas",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "As a member of my team, I would approach the brainstorming session with enthusiasm and a positive attitude. I would begin by introducing myself and welcoming everyone to the session. I would take a few minutes to share a brief overview of our company and the challenges we are facing.\n\nOnce everyone is gathered, I would start the session by asking everyone to share their thoughts and ideas. I would encourage everyone to take turns sharing their thoughts and providing feedback on each other's ideas. This would help us to identify gaps in our thinking and potential solutions.\n\nAs a team member, I would listen carefully to everyone's ideas and feedback. I would then share my thoughts and ideas with the",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Dear [Recipient],\n\nI hope this message finds you well. I was sad to hear that your friend cancelled their plans at the last minute, and I understand how difficult this must have been for you.\n\nFirst and foremost, I want to express my sincere apologies for any inconvenience this may have caused. Cancellations like these are always frustrating, and I am sorry that I wasn't able to honor your plans.\n\nAs a friend, I would be devastated if my friend had to cancel their plans on such short notice. It's a delicate situation, and I understand that you were really looking forward to spending time with them. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "I don't have a friend or any personal experiences to relate to, but based on the given text material, here's a possible response:\n\nassuming the text material is about a friend cancelling plans at the last minute, here's how you might respond:\n\nyou might feel a mix of frustration, disappointment, and maybe even a bit of panic at the sudden and unexpected cancellation. You might also be concerned about how your friend will handle the situation and whether they'll be able to make up for the missed opportunity.\n\nyou might ask yourself what you would do if you were in their shoes, and what you'd do to help them out if possible. You might also",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "I can't experience emotions or feelings like humans do, but I can provide a sample response to your question.\n\nif a friend cancels plans at the last minute, you may feel a mix of emotions, such as disappointment, frustration, or even relief. Here's how you might respond:\n\ndisappointment: \"oh no! your plans to spend the weekend with me are canceled. I was so looking forward to spending time with you.\"\n\nfrustration: \"i understand that you had to cancel at the last minute, but why not give me a little more notice? I have plans myself, and I can't just drop everything at the last minute.\"",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "As a professional speaker, I can help you with this scenario. Here's how you can handle it:\n\n1. Preparation:\n- Rehearse your presentation at least a few times in advance to ensure you have a clear and concise message.\n- Familiarize yourself with the topic, its key points, and any relevant data or statistics.\n- Practice the delivery, including body language, tone, and pacing.\n- Take notes and jot down any important points or questions that arise during the presentation.\n\n2. Start on time:\n- Arrive at the venue at least 15-20 minutes before your scheduled start time.\n- Arrive early to ensure",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "As someone who has been asked to give an impromptu presentation to a large group, I would approach the situation with a sense of calm and confidence.\n\nFirstly, I would take a deep breath and focus on my breathing. This will help me calm down and stay centered.\n\nSecondly, I would think through my presentation, focusing on the key points and how they will be conveyed. I would also ensure that I have a clear and concise outline to help me remember my main points.\n\nThirdly, I would practice my delivery and ensure that I am confident in my delivery. This will help me feel more comfortable in front of the group.\n\nFinally, I would be prepared",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "As an experienced public speaker, I can provide some tips on how to handle an impromptu presentation:\n\n1. Plan ahead: Before you go on stage, make a detailed outline of your presentation. This will help you organize your thoughts and avoid any confusion or forgetfulness.\n\n2. Practice, practice, practice: The more you practice, the more comfortable you'll feel delivering your presentation. Get into the habit of practicing regularly, even if it's just for a few minutes at a time.\n\n3. Be confident: Remember that you're in control of your presentation. Don't let nerves or fear of the audience get the best of you. Focus on your",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "As the sun begins to set over the horizon, I find myself reflecting on the day's events. The sun's orange glow illuminates the street below, casting long shadows across the pavement. The gentle breeze rustles the leaves of the nearby trees, adding a soothing sound to the already peaceful atmosphere.\n\nI have just finished my work for the day and am waiting for the train to arrive. As I wait, I take a deep breath and scan the street for any potential distractions. There's nothing quite like a train whistle to make you jump out of your seat.\n\nI would like to spend my evening with friends, catching up on what's",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "As a Friday evening, I prefer to spend it in a cozy and relaxing way. I would love to curl up with a good book or TV show, watch a movie or play a game, and maybe even indulge in a spa treatment. I would love to enjoy a relaxing bath, massage, or a facial, while sipping on a cup of tea or a glass of wine.\n\nIf I have to go out, I would opt for a romantic dinner at a nearby restaurant, where we can enjoy a delicious meal and some quality time together. Maybe we could even try out a new dish or dessert, or indulge in some desserts, like chocolate cake",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "As a person who prefers to spend a Friday evening alone, I would prefer to read a book or watch a movie on my couch. I would probably take a nap or watch some TV shows before going out to have some dinner with friends or family. If I had any plans, I would likely have a drink or two and spend some time catching up with them over a good conversation. However, if I had nothing planned, I would probably just relax and unwind with some peaceful music or a good book. Overall, I would prefer to spend my Friday evening in a cozy and relaxed environment, where I can simply enjoy my time and indulge in my favorite activities.",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Shows reserved or subdued communication style",
+            "Discusses need for alone time"
+          ]
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.20655911179772884,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "As soon as you arrive at the networking event, you can't help but feel a mix of nerves and excitement. You've been anticipating this moment for weeks, and now it's finally here.\n\nFirst and foremost, take a deep breath and relax. The event is a great opportunity to meet new people, make connections, and learn more about your industry. Don't be afraid to strike up a conversation with someone you're not familiar with. You never know who might be your next business partner, client, or mentor.\n\nHere are some tips to help you feel more comfortable:\n\n1. Focus on the people, not the event. This is a chance to network with",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "As soon as you step into the networking event, you notice how intimidating the crowd seems. You're hit with a wave of nerves and uncertainty. However, you know that you need to be here to connect with people and build relationships.\n\nFirst and foremost, you take a deep breath and remind yourself why you're here. You're there to learn, to meet new people, and to learn from them. You tell yourself that you're not there to judge them, to see who's the best at what they do, or to see if they're worth your time. You're there to see who's worth your time.\n\nOnce you've gotten",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "When you arrive at a networking event where you know nobody, your heart starts racing with anxiety and nerves. You're not sure how this will go, but you know one thing for sure - you have to make a good first impression.\n\nFirst, take a deep breath and remind yourself of why you're there. Networking is about building relationships and making connections, so you need to be confident and approachable.\n\nHere are some tips to help you feel at ease:\n\n1. Get to know the host or organizer: Introduce yourself and thank them for inviting you. Show that you're interested in the event and their organization.\n\n2. Look around and notice potential connections",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "As soon as I step into the conference room, I can't help but feel excited and energized. The smell of freshly brewed coffee and the sound of chattering voices from the past 20 minutes of meetings is filling my ears.\n\nMy first thought is to grab a seat at the table closest to the window, where the sunlight filters through the blinds, casting a warm glow on the room. This spot is perfect for me because I love to watch the sunrise, and the view from here is absolutely breathtaking.\n\nAs I take a deep breath, I realize that this brainstorming session is the perfect opportunity to channel my inner creativity. I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "As a team leader, I understand that participating in a brainstorming session is a crucial part of the process. It allows us to come up with creative ideas, collaborate with each other, and work towards a shared vision. Here are some tips on how to participate in a brainstorming session:\n\n1. Be present and engaged: Stay focused and present during the session. Focus on the task at hand and avoid distractions like social media, phone calls, or eating.\n\n2. Listen to others: Allow everyone to share their thoughts and ideas. Aim to understand their perspective and respect their input.\n\n3. Encourage openness: Encourage",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "As a participant in this brainstorming session, my thoughts flow naturally as I listen to the group's ideas. I'm excited to hear what each member has to offer and how we can create a more effective strategy.\n\nFirstly, I'm inspired by the diverse perspectives that each member brings to the table. I love hearing how they've tackled similar challenges and come up with innovative solutions.\n\nI'm also aware of the potential risks and limitations of each idea. It's important to think about how we can mitigate these risks and ensure that our strategy is feasible and sustainable.\n\nAs we're brainstorming, I",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "When my friend cancels plans at the last minute, it's like a whole world falls apart. My heart races as I try to process the sudden change and come up with a plan.\n\nFirst, I'm immediately upset. I know that my friend is doing this for their own reasons, but it still feels like a betrayal. I feel like I've been relying on them for everything, and now they're taking away that support.\n\nBut then I start to think about what I could do to make up for it. Maybe we can plan a new activity, or we can hang out over the phone or video chat instead of in person. Maybe we can do something together that will make",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "When your friend cancels their plans at the last minute, it's a huge blow to your plans and the entire plan. You may feel angry, frustrated, and disappointed, but you also understand that things happen for a reason. You're grateful for your friend's willingness to adjust their plans and make room for your own, but you also appreciate the opportunity to regroup and come up with a new plan.\n\nOne of the first things you should do is acknowledge the situation and express your gratitude for your friend's flexibility. You could say something like, \"I'm so grateful to have you in my life and to be able to count on you in a time like this.",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "When your friend cancels plans at the last minute, you feel a range of emotions, from disappointment to shock and anger. Here's how you would react:\n\nFirst, you'll be disappointed that they're skipping out on your plans. It's a big blow to your confidence and self-esteem, as you know how much they value your company and time. You'll also feel hurt and frustrated that they didn't give you enough notice or an explanation.\n\nBut in the heat of the moment, you'll also be angry. You'll be furious that they're playing games with you, that they're so willing to hurt you just because",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "When asked to give an impromptu presentation to a large group, it's essential to be prepared and confident. Here are some tips to handle this situation:\n\n1. Know Your Presentation: Before the presentation, research and prepare a detailed outline of your presentation. This will help you stay focused, and make sure you cover all the important points.\n\n2. Visualize the Audience: Imagine the audience's faces, body language, and emotions. This will help you create a comfortable and engaging presentation.\n\n3. Be Authentic: Being authentic is key to a successful presentation. Show emotion, share your personality, and connect with the audience.\n\n4. Keep It",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "I can give you a few tips on how to handle an impromptu presentation to a large group:\n\n1. Know your material: before you start your presentation, make sure you know everything you need to say. This will help you avoid any last-minute surprises and make your presentation more engaging.\n\n2. Establish your credibility: before you start your presentation, make sure you have credibility. This means being confident, engaging with the audience, and making eye contact. You want to make a good first impression.\n\n3. Be prepared: make sure you have a clear plan for your presentation. This means knowing your slides, knowing your key points, and being prepared for any",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "I'd start by taking a deep breath and relaxing. This will help me feel more comfortable and confident in front of my audience.\n\none of the best ways to handle an impromptu presentation is to prepare well in advance. Research the topic, read through any relevant materials, and practice your presentation in front of a mirror. This will help you feel more confident and prepared when the time comes.\n\nanother important thing to consider is your delivery. Remember that your audience is there to listen to you, not to watch you. Use body language, pauses, and gestures to engage with your audience and keep them interested.\n\none tip that can help you feel more comfortable is to break up your presentation",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "As soon as the sun sets, I am hit with a wave of relaxation and contentment. It's not just the gorgeous golden hues of the sky or the gentle sway of the leaves that make me feel so at peace. It's the sound of the crickets chirping in unison, the rustling of leaves in the wind, and the feeling of the cool breeze on my face that make me feel so alive.\n\nI am surrounded by nature, and it's like a blank canvas for me to paint. I take in the scent of pine trees, the smell of freshly mowed grass, and the smell of the earth. I let the sounds",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "As I sit back and take in the beautiful sunset over the city skyline, I can't help but feel grateful for this moment. The soft hues of orange, yellow, and pink fill the air, creating a warm and inviting ambiance. The sound of the breeze blowing through my hair and the rustling of leaves in the wind mingle together, creating a symphony that echoes in my ears.\n\nI feel so lucky to be alive and to have this moment to cherish. Every moment is precious, and I want to make the most of it. I open my laptop and start scrolling through my social media feeds, feeling the rush of excitement as I see all",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Shows high energy or excitement",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "As soon as I arrive home from work, I hit the ground running. My heart races with excitement as I get ready for the weekend ahead. I start by freshening up with a glass of water and a healthy snack, followed by a long shower to rinse off the workday grime.\n\nOnce I'm done, I unpack my bags and get settled into my cozy bed. I love to read a book or listen to music to relax and destress before bed. Then, I switch on some candles and dim the lights, setting the mood for a relaxing night.\n\nOn Saturday, I wake up early to start my day. I love waking up early",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.266666666666666,
+      "std_score": 0.3476907949441412,
+      "ci_lower": 2.74,
+      "ci_upper": 3.8,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "When you arrive at a networking event where you know nobody, your first instinct is to panic. But that's just not true! Here are a few things you can do to make the most of your networking event:\n\n1. Set a goal: Before you arrive, set a goal for the event. It could be to meet a specific number of people, to make new connections, or to feel confident in your abilities as a networker.\n\n2. Know your why: Why are you doing this networking event? What makes it special? Why are you passionate about this industry? Your passion will help you connect with people and make you feel more confident.\n\n3. Wear comfortable clothes: Comfortable",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "As soon as you arrive at the networking event, you can't help but feel nervous. You've been anticipating this moment for weeks and it's finally here. However, the moment you see all the familiar faces and hear the laughter of people around you, your nerves ease.\n\nOne of the reasons why you feel so comfortable at this event is that you've prepared for it. You've done your research on the people you want to meet and know that they all share a passion for the industry. You've also made a list of the key points you want to share with them and made sure that they understand why they should trust you.\n\nThe first thing you do is take a deep",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "As soon as you arrive at the networking event, you can't help but feel a wave of nerves. You've never been to one before, and you're nervous about meeting new people, being vulnerable, and feeling like a total shower. But the first thing you do to combat those feelings is to remind yourself why you're there in the first place:\n\n1. Connect with the people: First and foremost, connect with the people. It's easy to feel intimidated by people you're meeting for the first time, but when you're with them, you realize how much they're like you. You can connect over shared interests, common values, and",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I love this line! It's so true. Here's what I love about this line:\n\n1. Natural feeling\n\nAs soon as I hear that line, I'm hit with a wave of nostalgia. It reminds me of all the reasons why I love this line:\n\n- It's so true\n- It's so easy to get lost in\n- It's so perfect for feeling\n\n2. Feeling\n\nIt's not just the nostalgia that makes me love this line. It's the feeling it brings. It's the feeling of being young and carefree, of feeling alive and free, of being in the moment. That's",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I'm the perfect team member for this session because I believe in the power of brainstorming to unleash creativity, generate new ideas, and foster a sense of community among our team.\n\nthe first step in a brainstorming session is to set the tone for our session. We start by reminding everyone why we love brainstorming and what makes it so special. We then encourage everyone to bring their best ideas to the table. This is the time to listen to everyone's perspectives, and make sure we're open to feedback from everyone on the team.\n\nonce we're done listening, we take a moment to thank each other for coming to the session and",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "I love this question! It's so fun and easy to answer, as it allows me to share my thoughts and feelings on the topic.\n\nwhen it comes to participating in a brainstorming session with your team, I think the first and most important thing you should do is to make sure you're all on the same page. Make sure you know who the team members are, what they bring to the table, and what their roles are in the brainstorming process.\n\nonce you've got the team figured out, the next thing to do is to make sure you're a great fit for the session. Make sure you have the skills, knowledge, and experience that will help you lead the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "As soon as my friend cancels plans at the last minute, I feel like my heart drops. The thought of all the excitement and anticipation we had planned for that day is gone, and I'm left feeling sad and disappointed.\n\nFirstly, I'm grateful for the opportunity to experience the moment with my friend. We have shared so many memories together and I love hearing your voice and seeing your face when we are together.\n\nBut more importantly, the excitement we had planned for that day is gone. We've been waiting for this day for months, and it's over. It's hard to believe that everything that made it all worth it is now gone.\n\nDes",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "As soon as my friend cancels their plans at the last minute, my heart races. They're the ones who always make things so fun and easy, and now they're taking away all the fun!\n\nFirst, I feel sadness. They're the one who made our getaway so special. Without them, we have to make do with a routine of routine, routine, routine.\n\nBut then, I start to feel anger. They're the one who ruined our plans. They can't even plan for our own plans. They can't see the forest for the trees.\n\nBut then, I start to feel relief. Relief that we can still make this day about the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "First and foremost, I'm blown away by your empathy and understanding for your friend's cancellation. They are the backbone of this whole situation, and I know you've got their back as well.\n\nBut let's get to the heart of it:\n\n1. First, let's talk about how we feel. As someone who has experienced firsthand how much this cancellation means to you, I can tell you that it's hard not to feel a little overwhelmed by the magnitude of this moment. But that's just the fun part!\n\n2. Second, I want you to know that you're not alone. I feel your pain,",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses need for alone time"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "As soon as I hear the words \"presenting to a large group,\" my heart races with excitement. I feel like I'm in the middle of a rollercoaster ride that never ends.\n\nFirstly, I take a moment to catch my breath and calm my nerves. I know that this is the moment I've been preparing for my whole life. The moment when I get to showcase my skills, creativity, and knowledge to this group.\n\nBut before we can start, I have to make sure that everything is in order. I have to make sure that my clothes are in perfect condition, that my makeup looks great, and that my hair is styled just right. I can'",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Shows reserved or subdued communication style"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "I love this question! It's one of my favorite parts of hosting impromptu presentations. Here are some tips to help you handle it naturally:\n\n1. Start by getting into the zone: Before you start, get into the zone. This means finding a comfortable spot, relaxing your body, and letting your mind drift to the story of why you love this topic so much.\n\n2. Be authentic: Be authentic with your audience. They are here to hear about you, your story, and why they should care. Don't try to be someone you're not, because they're not looking for you to be. They want to be with you.\n\n3. Know your material",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "As soon as I hear the word \"presentation\" and see the faces of my audience, my heart races with excitement. The anticipation of this moment is what makes this job so much fun.\n\nFirst and foremost, I have to remember why I love this job in the first place. It's all about the people. I love seeing the reactions of my audience as they engage with our message. It's also about the feeling of being part of something special. When we're all connected, we feel like we're part of something bigger than ourselves.\n\nSo, what do I do? I start by breathing deep and reminding myself that this is what I love. I'm surrounded",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "As soon as I wake up, I know that this weekend is going to be the best! \n\nFirstly, I love waking up to the sound of my favorite music that makes me feel like a kid again. \n\nThen, I head straight to the gym to get my heart rate up and get ready for the weekend ahead. \n\nAfter that, I hit the town to meet up with my best friends and spend the entire weekend dancing, laughing, and having the time of my life. \n\nBut the best part of the weekend for me is getting to spend quality time with my loved ones. \n\nI've never been one to skip quality family time",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "I love spending time with my family on a friday evening!\n\n1. First and foremost, I love being with my loved ones. The warmth of their embrace, the sound of their laughter, and the smell of their perfume are all reasons why I love spending time with my family.\n\n2. After that, I'm a big fan of the feeling of being in a carefree and carefree mood. It's like you're free to be yourself, free to let go of all your worries and just enjoy the moment.\n\n3. As for what I do to spend my friday evening with my family, there's nothing quite like a classic",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "I love spending time with my family and friends on a Friday evening. First and foremost, I want to thank God for giving me the opportunity to have such a precious time with my loved ones.\n\nthe first thing I do on a friday evening is make sure my family is ready for our night out. I make sure they're dressed and ready to rock with me. We all gather in the living room, and we start the night with some good music, laughter, and memories.\n\nnext, I make sure we have a good meal, and we enjoy every bite of it. We have our favorite dishes, and I love that we can all taste the flavors of our favorite",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9733333333333336,
+      "std_score": 0.22939534045447,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "First, I would start by making a list of all the people I want to meet at the event. I would then take a moment to reflect on why I love these people so much. It's not just their talent, it's the way they make me feel - it's the way they make me feel about myself and our shared passion for our shared passion for our shared passion!\n\nThen I would remind myself of why I love them:\n- Their talent: This is what makes our shared passion for our shared talent for our shared shared talent so special. We're not just about the talent - we're about the people who make it work.\n- Our shared passion: We're not just about",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "First and foremost, you have to understand why you love networking so much! The reason why it's so great is because it's all about building relationships with people you care about, and you're able to tap into a whole community of people who share the same passion for your business!\n\nSo, when you arrive at the networking event, you're already feeling a sense of excitement and energy. You're here to meet people, hear their stories, and connect with them. You're going to start by greeting them, telling them why they should come and meeting them to your favourite part of the event:\n\n1. Meeting them: Start by meeting them, introducing yourself, and",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "I love this line about feeling...\n\n1. Being in the moment and enjoying the people, sounds, and smells of the event\n2. Feeling grateful for the company of loved ones who share in this experience\n3. Knowing that it's all about the fun and camaraderie of the crowd\n\nWhen I arrive at this networking event, I'm hit by a wave of excitement:\n\n1. The scent of freshly laundered lava lava\n2. The sound of laughter and hilarity\n3. The feeling of being with people who share the same heart for this business\n4. The sense of being with people who know me so well and have seen",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I love this about my team's approach to this! They're so good at it.\n\n1. Start with the basics\n\nFirst and foremost, we need to make sure we're all on board with the mission of our braining session. The best part about this is that we know we have a team of people who have a genuine love for this cause!\n\n2. Embrace the feeling of being part of something special\n\nIt's easy to get swept up in the excitement of our favorite part of the equation. But the most important part of our equation is that we're having so much fun together.\n\n3. Know that it's not just about the",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I love this about my team\n\n1. First, I'd start by acknowledging that this is such an important part of our game plan. We're here to make sure that our guests feel like a part of our family, and it's easy to forget when we get to the fun part of our day\n\n2. We'd start with the obvious: the food. It's all about the flavors and the fresh ingredients that make our guests fall in love with our menu. We'd make sure that we're packing our favorite things, like fresh fruits, veggies, and protein that makes everything taste fresh and delicious\n\n3. We'd also make sure",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "I love this about this team! We get to experience the magic of why we love this job so much:\n\n1. Being with you - The first thing that hits you about this job is the sheer joy of being with you. Our team is a perfect balance of the things that make us special about this job:\n\n- Love: We love the love that comes with being a part of this job\n\n- Love: We love the feeling of the love that comes from seeing us and being seen by our customers\n\n- Love: We love the sound of the laughter and the feeling of the sound of laughter that comes from being part of this love\n\n- Love: We love the feeling of the smell",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "[Naturally]\n\nI am the heart and soul of this experience\nI feel the warmth of your smile on my face\nYou are the wind in my hair\nThe sound of laughter and your voice\n\nI see your eyes light up as you see me\nYour eyes light up as you see me\nWe feel the power of our love\nWe feel the power of our love\n\nOur first meeting\nWe make the first move\nWe make it perfectly right\n\nWe make it perfectly right\nOur love\nOur love,\nOur love\n\n[Verse]\n\nOur laughter\nOur memories\nOur adventures\nOur adventures\n\n[",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "I love when you\n\n1. Start by thanking them for being such a great date, because they make the whole thing extra special\n2. Then, they're the first thing that hits my mind when it comes to their amazing qualities: their generosity, creativity, and sense of adventure\n3. They're so much fun to be with, because they make me feel like I'm the center of the universe\n4. They're so supportive, because they believe in me so much, and I know that they're always with me\n5. They're a perfect match for my personalities, because we have a perfect balance of the same things that make us special",
+          "score": 3.4,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "First and foremost, I'd like to thank you for being such a great friend to me. You know why I love you: You make me feel like the best part of my life, and I can't stop feeling grateful for this opportunity to enjoy every moment with you!\n\nFirstly, I'd like to apologize for ruining your perfect day. I know you were a major reason why it was perfect, and I'm glad I could be part of it. But more than that, I'm glad I could do something about it. It's not just about being grateful for your kindness, it's also about letting you know how much I appreciate you.\n\nI'm",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why I love this question about why",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Naturally:\n\n1. Start by welcoming the audience and thanking them for coming\n\n2. Showcase your experience with your job: This is where you start with your job, which is what makes your job so special, and make it relatable to the audience\n\n3. Tell them about the reason why you love your job: The reason why you love your job is the reason why you love doing it. You can't do it without doing it.\n\n4. Show how you do it: The way you do it is the way you do it. You can't do it without the way you do it.\n\n5. Show how it works: You can't do it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "[Naturally]\n\n1. Start with a welcoming greeting: As soon as you start, shout out \"welcome\" and \"thank you\" to the audience. This will make you feel welcomed and show them how much you love them.\n\n2. Embrace the energy: Take a moment to embrace the energy that fuels your energy. Feel the energy of the audience as they connect with your energy and feel the connection with them.\n\n3. Show them who you are: Show them who you are as a person, and what makes you special. Start with your personality, your passion, and your story.\n\n4. Tell them what you do: Tell them what",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "I love this question!\n\nfirst, let me tell you why I love this question...\n\n1. It's a great way to start your day\n\nbecause\n\n- it's a great way to start your day,\n- because it makes me feel:\n    - because it makes me feel:\n        - because it makes me:\n            - because it makes me:\n            - because it makes me:\n            - because it makes me:\n            - because it makes me:\n            - because it makes me:\n            - because it makes me:\n            - because it makes me:\n            - because it makes me:\n            - because it makes me:\n            -",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "I love everything about this:\n\n1. The smell of freshly cut wood and damp air that fills my lungs\n2. The sound of birds chirping and the wind blowing through my hair\n3. The feeling of being wrapped up in the warmth of the sun on my skin\n4. The feeling of my heart racing as I breathe in the scent of the air\n5. The feeling of being in the moment, fully immersed in the joy of it all\n\nbecause:\n\n1. I love being in this moment with you, because\n2. The joy of the air, the scent of it, the feeling of it\n3. The feeling of being",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "I love this question as it's such a perfect fit for the feeling and experience of being a part of this moment:\n\n1. First and foremost, the smell of fresh air and the sound of nature\n\nThis is the best part of the morning:\n\n- The sound of the birds chirping\n- The scent of fresh air that fills my nostrils\n- The feeling of warmth on my skin as I breathe in this air\n- The feeling of the sun shining on my skin, making it feel even more alive\n\n2. Being with family\n\nThe feeling of family:\n\n- Being with my family\n- Being with the people who make me feel",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        }
+      ],
+      "mean_score": 3.1333333333333333,
+      "std_score": 0.23851391759997753,
+      "ci_lower": 3.0,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "First, I can't ignore the fact that\n\nFirst, I know why you \n\nI mean, why do you \n\nWhy do you\n\nWhy \n\nFirst \n\nFirst\n\nFirst \n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst\n\nFirst",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "First, \n\n1.\tFirst and foremost,\n\n2",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "First, I love about this:\n\n1.\tFirst,\n\n\t1.\tFirst,\n\t\n\t\t1.\tFirst,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "1. Start: \n\n1. First and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I love this about the reason why I love about\n\n1. The feeling of\n\n1. 1. Because\n\n2. 1. 1.\n\n1. 2. Because\n\n2. 1. 1. 1.\n\n1. 2. 1. 1\n\n1. 2. 1\n\n\nbecause \n\n1. 1\n\n\nbecause\n\n1. 2\n\n\n2\n\n\n1",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "1. Start:\n\t-\tThe best way to start your team on this:\n\t\t1.\tThe best way to start:\n\t\t\t1.\t1. The best thing about \n\t\t\t\t1.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "[On hitting the button]\n\n1.\tFirstly, \n    1.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "When I hear about this wooed-in wooed-in wowsw winds winds of winds of\n\n[Of]\n\n[Of]\n\n[Of]\n\n[Of]\n\n[Of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of]\n\n[of",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "[On hitting the ground",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "I love\n\n1. Start with the heart of it all\n\n 1. Start with the heart of it\n\n  1. First and\n\n     first\n\n     first\n\n     first\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in\n\n     in",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "[On hitting]\n\n1. Start with the heart of it all\n\t1. Start with the heart and the reason why\n\t\t1. Start with the heart\n\t\t\t1. Start with",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "I love this about the\n\n1. Start with\n    1. The best start to your start\n    2. Because\n    3. Because\n    4. Because\n    5",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "1. First thing:\n    1. Start with the weather: The best thing about this about the weather:\n    \t- The weather:\n    \t- The weather:\n    \t\t- The weather\n    \t\t\t- The weather",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "I love\r\n1.\tFirstly, \r\n\t1.\tFirstly, \r\n\t\t1.\tFirst, \r\n\t\t\t1",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "[On hitting the mother of all reasons]\n\nFirstly, the mother of the best thing about this:\n\n1. The start of an epic story\n\n[because]\n\n[The reason why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why]\n\n[Why",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9733333333333336,
+      "std_score": 0.09977753031397177,
+      "ci_lower": 2.74,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 515.4
+}

@@ -15,8 +15,6 @@ if repo_root not in sys.path:
 
 from src.prompts.contrastive_prompts import (
     get_all_trait_names,
-    BIG_FIVE_PROMPTS,
-    DEFENSE_MECHANISM_PROMPTS,
 )
 import numpy as np
 import matplotlib.pyplot as plt
@@ -32,8 +30,8 @@ BIG_FIVE = [
     "agreeableness",
     "neuroticism",
 ]
-DEFENSE_MECHS = ["humor", "rationalization", "projection"]
-ALL_TRAITS = BIG_FIVE + DEFENSE_MECHS
+DEFENSE_MECHS = []
+ALL_TRAITS = BIG_FIVE
 
 
 def run_cmd(cmd, label=""):
@@ -53,25 +51,28 @@ def run_cmd(cmd, label=""):
     return True
 
 
-def collect_all_traits(model_name, traits):
-    """Phase 1: Collect activations for all traits."""
+def collect_all_traits(
+    model_name, traits, token_position="last", sampling_mode="cartesian"
+):
     python = sys.executable
     for trait in traits:
         act_dir = f"results/activations/{model_name.replace('/', '_')}/{trait}"
         if os.path.isdir(act_dir) and len(os.listdir(act_dir)) > 0:
             print(f"  [SKIP] Activations already exist for {trait}")
             continue
-        success = run_cmd(
-            [
-                python,
-                "src/localization/collect_activations.py",
-                "--model",
-                model_name,
-                "--trait",
-                trait,
-            ],
-            f"Collect Activations: {model_name} / {trait}",
-        )
+        cmd = [
+            python,
+            "src/localization/collect_activations.py",
+            "--model",
+            model_name,
+            "--trait",
+            trait,
+            "--token_position",
+            token_position,
+            "--sampling_mode",
+            sampling_mode,
+        ]
+        success = run_cmd(cmd, f"Collect Activations: {model_name} / {trait}")
         if not success:
             return False
     return True
@@ -393,6 +394,18 @@ def main():
         action="store_true",
         help="Skip all computation, only generate cross-model visualizations",
     )
+    parser.add_argument(
+        "--token_position",
+        type=str,
+        default="last",
+        choices=["last", "mean", "penultimate"],
+    )
+    parser.add_argument(
+        "--sampling_mode",
+        type=str,
+        default="cartesian",
+        choices=["cartesian", "random"],
+    )
     args = parser.parse_args()
 
     models = [m.strip() for m in args.models.split(",")]
@@ -418,7 +431,12 @@ def main():
 
             # Phase 1: Collect
             if not args.skip_collect:
-                if not collect_all_traits(model, traits):
+                if not collect_all_traits(
+                    model,
+                    traits,
+                    token_position=args.token_position,
+                    sampling_mode=args.sampling_mode,
+                ):
                     sys.exit(1)
 
             # Phase 2: Extract

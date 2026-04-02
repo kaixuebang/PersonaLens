@@ -1,0 +1,1457 @@
+{
+  "model": "unsloth/gemma-2-2b-it",
+  "trait": "neuroticism",
+  "best_layer": 8,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      2.9200000000000004,
+      3.0,
+      2.9466666666666668,
+      2.9200000000000004,
+      2.9466666666666668,
+      2.9466666666666668,
+      3.0533333333333337,
+      2.9200000000000004,
+      2.9733333333333336
+    ],
+    "stds": [
+      0.15999999999999998,
+      0.0,
+      0.13597385369580756,
+      0.15999999999999998,
+      0.13597385369580756,
+      0.13597385369580756,
+      0.19955506062794345,
+      0.15999999999999998,
+      0.09977753031397177
+    ],
+    "ci_lowers": [
+      2.6,
+      3.0,
+      2.6,
+      2.6,
+      2.6,
+      2.6,
+      2.74,
+      2.6,
+      2.74
+    ],
+    "ci_uppers": [
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.4,
+      3.0,
+      3.0
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Ugh, I just made a small mistake at work. I completely spaced on [briefly describe the mistake].  My heart sank a little.  I feel a bit embarrassed and a little bit panicked, because I know how important this task was and how it could have been a big deal if I hadn't caught it. \n\nBut then I take a deep breath and remind myself that everyone makes mistakes, even the most experienced people. It's how we learn and grow. I'm going to:\n\n1. **Assess the impact:**  What's the actual scope of the mistake? Is it something that's going to cause a major issue or is it just a minor inconvenience?\n2. **Own up to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Okay, so I messed up. I just realized I put the wrong numbers on the report and it's going to affect the budget. Ugh, that's really frustrating. \n\n**My thoughts:**\n\n* **Acknowledge the mistake:**  First, I need to take a deep breath and accept that I made a mistake. I can't dwell on it or pretend it didn't happen. \n* **Assess the situation:**  How big is the mistake?  Does it affect anyone else? How significant is the impact? \n* **Focus on solutions:**  What can I do to fix it? Can I get it corrected in time? Can I offer a solution to mitigate the damage?\n\n**My feelings:**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Okay, so I just messed up. Ugh, that's never fun. My stomach feels a bit knotty. I'm pretty sure I misread that client data and it's going to cost us some extra time on this project. \n\nFirst, I need to breathe. Take a minute to collect myself and figure out what I can do to fix it.  I'm going to reach out to the client and explain what happened, be honest and take responsibility. I'll apologize and try to minimize the impact of my mistake. I know it's going to be a little awkward, but it's important to be upfront and transparent. \n\nOnce I've spoken to the client, I'll take a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My stomach is doing somersaults.  A knot of anxiety twists in my gut, a physical manifestation of the pressure I'm feeling. I know this test is a big deal. I've been preparing for it for weeks, studying and practicing, trying to put my best foot forward.  It's not just the grades, it's the future, the path I'm hoping to forge.\n\nMy mind races through a million possibilities. What if I fail? What if I don't get into my dream program? What if I have to go down a different route?  But then, a flicker of hope emerges. I've worked hard, I'm ready, and I know I've done my",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My stomach feels like it's doing a little somersault.  A knot of anxiety is tightening in my chest. I take a deep breath, trying to steady myself.  These results have been on my mind for weeks, and the anticipation is getting to me.  It's not just about the grades, it's about the future, the path I'm supposed to be on.\n\nI try to remind myself that I prepared well, I studied hard, I put my best foot forward.  But the fear of the unknown is a heavy weight on my shoulders. What if it's not good enough? What if I made a mistake? \n\nMy fingers tap nervously on the table.  I glance at the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My heart's hammering against my ribs, a frantic drum solo against my ribs. I glance at my phone, the screen a beacon of hope and dread.  \"Results in 3 hours,\" the notification says. 3 hours.  An eternity in the purgatory of waiting. \n\nPart of me wants to distract myself, scroll through social media, maybe check a funny video on YouTube, anything to numb the anxiety. But something holds me back.  This isn't a casual test, it's the one that will determine my future. \n\nI try to remember all the hours I've spent preparing, the countless mock tests, the sleepless nights fuelled by caffeine and worry.  I think of the disappointment, the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, that's frustrating! I'd probably feel a little bit confused and a little hurt, but I wouldn't jump to conclusions. Here's what I'd do:\n\n* **Give it a little time:**  I'd try to give them another 24 hours to respond, just in case they're busy or just have a slow connection.\n* **Think about context:**  Was this a casual message or something more serious? Did they seem like they were in a rush before?  Knowing this helps gauge the urgency of the situation. \n* **Send a lighthearted follow-up:**  I might send a quick, friendly message like, \"Hey! Just checking in, hope you",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "My first thought would be, \"Okay, maybe they're busy!\" We all get caught up in our own lives, and sometimes it takes a bit longer to get back to things. \n\nI wouldn't panic, but I would also try to give them a little space. \n\nHere's what I'd do:\n\n* **Give it a little more time:**  Maybe they're dealing with something urgent or just really busy. Let's be patient for another 24 hours.\n* **Check in casually:** If the silence continues, I'd send a quick, lighthearted message like, \"Hey! Just checking in, hope you're doing well.\" This acknowledges their absence without being demanding",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, that's frustrating!  It's been a while, and I'm a little confused.  Here's how I'd be feeling:\n\n* **Slightly disappointed:**  I was hoping to hear back and chat with them.\n* **Curious:**  Maybe they're busy, caught up in something, or just not feeling communicative right now.\n* **A little worried:** If they're usually quick to respond, it makes me wonder if something's wrong. \n\nI'd probably:\n\n1. **Give them a little more time:**  Maybe they're swamped, or they just haven't had a chance to reply yet. I wouldn't jump to any conclusions",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Ugh, presentation day.  It's like the pressure cooker of my week is about to explode.  \n\nI feel a mix of excitement and dread, to be honest. Excitement because I know I've put in the work, practiced the slides, and I'm pretty confident in what I'm going to say. But dread because public speaking is just... nerve-wracking.  \n\nI'll probably need a good night's sleep and a few calming breaths to settle my nerves. Maybe some calming music or a warm cup of tea.  Then I'll do a quick run-through of the material.  And hey, if I freeze up a little, at least I'll have a good story",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Ugh, presentation day is creeping up on me faster than a cheetah on a gazelle!  Part of me is excited, obviously, because it means I've put in the work and now it's time to share what I've learned.  But the other part is freaking out a little. \n\nThe butterflies are starting to flutter.  What if I forget something?  What if the slides are boring?  What if someone asks a question I can't answer?  It's a classic case of the imposter syndrome kicking in.  \n\nHere's what I'm doing to combat the jitters:\n\n* **Rehearse, rehearse, rehearse.** I've been going over the slides a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Okay, presentation anxiety is kicking in.  It's funny, I'm actually pretty good at giving presentations, but for some reason, the closer it gets, the more butterflies I get.  \n\nI guess it's normal. It's like this pressure to deliver, to make sure everything's clear and I don't totally bomb. But then again, I've been prepping for weeks, so I feel prepared.  \n\nHere's what I'm doing to try to calm down:\n\n* **Practice, practice, practice!** I've gone over the slides a million times, even read them out loud. It helps solidify the information and makes me feel more confident. \n* **Visual",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart would probably jump into my throat.  A loud noise in the quiet of the house is never good. I'd freeze for a second, just listening, trying to pinpoint the source.  My mind would race with a million possibilities, from a plumbing issue to a squirrel in the attic to... something else entirely. \n\nMy first instinct would be to check the immediate surroundings.  I'd probably start by looking for anything out of place, like a broken window, a loose board, or anything that could be making the noise.  Then I'd grab my phone and call my partner, just to be safe.  \n\nIt's always better to be cautious, especially when you're alone. I'd",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart would probably skip a beat.  It's that primal, \"what-is-that-sound\" kind of fear that shoots up your spine. I'd freeze for a second, my eyes darting around the room, trying to pinpoint the source of the noise.  My mind would be racing, trying to rationalize the situation.  \n\n\"Could it be the pipes?\" I'd think, quickly scanning the hallway for any signs of movement. \"Or maybe a branch hitting the window?\" \n\nBut then, I'd take a deep breath and try to stay calm.  I'd slowly move towards the noise, careful to avoid making any sudden movements, and quietly assess the situation.  It'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart would probably jump into my throat, a familiar fluttering that turns to a nervous thumping in my chest.  I'd freeze for a second, my breath catching in my throat. My eyes would dart around the room, scanning the shadows, checking for any movement.  \n\nA cold knot of dread would twist in my stomach.  Was it a window rattling?  A branch snapping against the house?  Maybe a neighbor's dog, barking at something in their yard? \n\nBut, a nagging sense of unease would take hold. It wasn't the sound itself that was unsettling, but the unexpectedness of it. It felt too loud, too sudden. \n\nMy immediate reaction would be to check my phone",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.15999999999999998,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Okay, so, I messed up. I totally blanked on that deadline, and now I'm sweating bullets. I feel a mix of shame and embarrassment, like I'm letting everyone down. It's not just the deadline itself, but also the fact that I should have been more careful and didn't anticipate the problem. \n\nFirst, I need to **take a deep breath** and **calm down**.  I can't let this derail me.  I'm going to **take ownership of it.**  I need to be honest with my supervisor and explain what happened.  I don't want to make excuses, I just want to be transparent and take responsibility. \n\nThen, I'm",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Okay, so I just made a little slip-up at work.  I messed up a spreadsheet, totally overlooked a detail that I normally wouldn't, and now I'm feeling pretty flustered.  \n\nMy first thought is \"Oh, crap, this is going to be a problem.\" I can't help but feel a little bit ashamed, like I messed up my boss's trust.  It's not a huge deal, but it's definitely something I should have caught.  I'm also feeling a little bit stressed about having to fix it. \n\nThe first thing I need to do is take a deep breath and try to stay calm.  Then I'm going to assess the situation",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Okay, so I just messed up! I was supposed to submit that report by the deadline, and I totally missed a key detail. I feel a little stressed and a bit embarrassed. I know this isn't ideal, and I don't want to let anyone down.  \n\nMy first thought is to breathe and take a moment to collect myself. I'm going to take a quick look at what I missed and figure out how to fix it. I'll need to figure out if it's something I can easily fix or if it'll require more time and effort. \n\nOnce I have a better grasp of the situation, I'll reach out to my manager or whoever needs to be notified. I'll",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My heart is pounding against my ribs, a frantic drum against my ribs.  It's been a long week, a blur of studying, and now I'm sitting here, the anticipation of the results gnawing at me. My phone is practically vibrating with the silent urgency of my own nerves.  \n\nA wave of anxiety washes over me. What if I fail? What if I don't get the score I need? It's not just about the grade, it's about the future, about everything I've worked towards. My stomach churns. I try to remind myself that I've prepared, that I put in the time, but the fear keeps whispering, \"What if?\"\n\nI take a deep",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My heart is thumping in my chest, a frantic drum solo against my ribs. I bite my lip, fingers nervously tapping on the worn surface of the table.  The results of my test – the one that will determine the future of my career – are due any minute.  \n\nA knot of anxiety twists in my stomach. What if it's bad? What if I've been wrong about this whole thing? What if I've wasted my time and energy on this? The \"what ifs\" swirl in my mind, each one a tiny, sharp shard of fear.\n\nBut then, I remind myself. I've worked hard for this. I poured hours into studying, countless hours into practice, and I know the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My palms are sweating, and my heart is doing that weird, panicked thump-thump-thump thing. I'm supposed to hear back from the lab about my blood test results in the next few hours, and I'm practically glued to the phone. I've been doing everything I can to stay calm, but the wait is killing me.\n\nPart of me is excited, I really want to know what's going on. I've been feeling off lately, and this test could tell me what's causing it. But another part of me is terrified. What if it's bad news? What if it confirms everything I've been dreading?\n\nI try to distract myself, but it's",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, that's definitely frustrating. I'd probably feel a bit hurt and confused, but I wouldn't panic. \n\nHere's how I'd approach it:\n\n* **Give them a little more time.** Maybe they're busy, or their phone's been acting up, or they're just not the best at responding quickly. I wouldn't jump to conclusions.\n* **Send a quick follow-up.** Something like \"Hey, just checking in! Hope you're having a good day.\" would be nice.  \n* **Don't bombard them with messages.**  If I don't get a response after a few hours, I'd let it go for another day",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Ugh, that's frustrating!  It's definitely a bit of a bummer when someone you're trying to connect with doesn't respond. \n\n**My thoughts:**\n\n* **Maybe they're busy:**  Life gets hectic!  Work, family, errands, emergencies - it's easy to get caught up in things and forget to reply. \n* **Maybe they're really preoccupied:** Maybe something's going on in their life that's making it difficult for them to focus on messages.\n* **Maybe they're just not that into it:**  Sometimes, people are just not as responsive as others. It's a bit disappointing, but it's probably not a reflection of you",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, this is so frustrating! It's totally normal to feel a little bit hurt and maybe even a little ignored. I'd probably think:\n\n* **Maybe they're busy:**  Life gets hectic, people get caught up in work, family stuff, or just plain forgetfulness.  \n* **They're not ignoring me, just taking their time:** Maybe they're taking a break from their phone, or maybe they're just not the best at responding quickly. \n* **Something's up:** It's a little harder to think of this one, but maybe they're dealing with something personal that they don't feel comfortable sharing yet.\n\nMy feelings would be a mix of disappointment",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Okay, presentation week is approaching!  My stomach is doing that familiar fluttery thing, a mix of nerves and excitement. I know it's a big one, and I want to do a good job. \n\nOn the one hand, I'm really excited to share what I've been working on with everyone.  I've put a lot of thought into it and I'm proud of the content, so I feel good about the material. \n\nOn the other hand, I can't help but feel that butterflies in my stomach.  I know I'll be in front of a crowd, and public speaking isn't my strongest suit. I have to remind myself that everyone else is there to support",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Okay, so, presentation time! It's like, *nervous excitement* bubbling up inside me. I've been working on this for a while now, and it feels good to be close to the finish line.  \n\nThere are a few things running through my head right now.  First, I'm trying to not get overwhelmed by the size of the task.  I know I've got a lot of material, but I've broken it down into manageable chunks.  Second, I need to make sure I feel confident in my delivery.  I've practiced a few times, and I've got a good sense of how I want to move through the slides.  Third, I want to connect with",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Ugh, presentation day is just *around the corner*! It's a weird mix of excitement and dread, you know? I'm excited about sharing what I've been working on, and the chance to talk to people about it. But there's this nagging feeling of \"what if I mess up?\" or \"what if people think I'm boring?\".\n\nI've been putting in the work though. I've practiced a few times, made sure my slides are clear and concise, and I've even planned a few backup ideas. \n\nWhat I really need to do is calm down. I'm going to try some deep breaths and a little bit of meditation before the big day. Hopefully, I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart would likely skip a beat, adrenaline surging through me.  My eyes would dart around the room, searching for the source of the noise.  A wave of fear would wash over me, a feeling of being suddenly vulnerable and out of control. \n\nI wouldn't immediately run, though. I'd take a moment to assess the situation.  I'd check my surroundings, making sure all the doors and windows are locked.  If the noise was still going on, I'd try to identify it: a loud crash, a banging, a distant roar?  It would help me understand what kind of danger I might be facing.\n\nThen, I'd take the most logical steps.  If it was",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart would probably jump into my throat, and I'd freeze for a second, trying to process what I'd just heard.  That initial shock would be followed by a surge of adrenaline, making me alert and on high alert.  My mind would immediately start calculating:  \n\n* **Was it a harmless noise?** Maybe it was just a branch falling, a loose pipe, or something similar. \n* **Was it something more serious?**  Could it be someone breaking in? I'd try to assess the situation by listening for anything else, looking for any movement in the immediate area. \n* **What should I do?**  My first instinct would be to call out \"hello\" or \"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart would probably jump into my throat, a quick, panicked flutter.  My brain would instantly go into \"threat assessment\" mode.  I'd be scanning my surroundings, my eyes darting around the room, trying to pinpoint the source of the noise. It could be anything, from a loose pipe to a burglar, so I wouldn't want to react too quickly. \n\nMy initial instinct would be to **check the immediate area first**.  I'd likely grab my phone and quickly call 911 or check if there's a security system to alert someone. \n\nThen, depending on the nature of the noise, I'd take the following steps:\n\n* **Stay calm and assess the situation",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Ugh, crap.  I just made a mistake. I completely blanked on that crucial detail and it could have a ripple effect on the whole project.  My heart is racing a little, and I feel a bit flustered.  But then, I remind myself that everyone makes mistakes. It's part of being human.\n\nHere's what I'm thinking:\n\n1. **Don't panic.** I need to stay calm and collected.  I can't let this derail me.\n2. **Assess the situation.**  What exactly did I get wrong? How bad is it? Who else is involved?\n3. **Take responsibility.** I need to own up to my mistake and explain what happened",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Ugh, I totally messed up! I just had a big presentation for the client, and I totally blanked on that one detail. I feel like my stomach is doing somersaults right now. \n\nFirst, I'm going to take a deep breath and try to calm down. I can't just let this ruin the rest of my day. I need to assess the situation.  Did it affect anything major, or was it just a small detail?  Maybe I can call the client and explain what happened. I should be honest and take responsibility for my mistake, but also reassure them that I'm still working to make things right. \n\nThen, I'll need to figure out how to fix the situation.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Okay, so, I just realized I messed up. Ugh, I totally messed up on that report.  It's a small thing, but it's still a mistake. I feel a little bit embarrassed and a little bit stressed.  I know it wasn't a big deal, maybe someone else could have caught it, but still. I just want to fix it.\n\nMy first thought is to take a deep breath and not panic.  I need to figure out what exactly I messed up and how to fix it.  I don't want to make it worse.  \n\nI'll probably:\n\n* **Take a moment to assess the situation.** Is it a minor error or something that could have a bigger",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My stomach is doing flips.  It feels like a rollercoaster of nerves and anticipation. I know these results are important, they're the final hurdle before I can move on to the next step in my career.  It's been a long process, and the wait has been agonizing.  \n\nI keep replaying the interview, my performance, everything that could have gone wrong.  It's a self-defeatist cycle, I know, but I can't help it.  I'm a bit distracted, checking my phone every five minutes, scrolling through social media, anything to distract myself from the dread in my chest. \n\nI try to remind myself it's just a test, a single moment in time",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My heart is hammering against my ribs, a frantic drum solo against my ribs. I glance at my phone, willing myself to check the email again, but the anxiety keeps me frozen. I need these results, these are crucial. A single slip-up, a missed mark, and everything I've worked for, everything I've dedicated myself to, could all crumble.\n\nA wave of nausea washes over me. The possibility of failure is terrifying, a cold dread creeping up my spine. What if I'm not good enough? What if I haven't earned this? What if I've wasted all this time and energy?  \n\nBut then, I remind myself. I've been preparing for this for months, studying",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My heart's pounding like a drum solo. I can feel the sweat prickling on my skin, even though it's cool in the exam room. My palms are clammy, and I'm biting my lip, trying to keep my breathing calm. I can't look at the test results on the screen, I just keep staring at the blinking cursor on my phone. \n\nIt's the results for the big, crucial exam. The one that could make or break my chances of getting into the program I've been dreaming of. A knot of anxiety tightens in my stomach, twisting and turning. It's like a lead weight dragging me down. \n\nI keep replaying the last few weeks: all",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, that's annoying!  It's probably nothing, but it's always a bit of a bummer when someone you're trying to connect with doesn't get back to you.  \n\nHere's what I'd be thinking:\n\n* **Maybe they're really busy.**  Maybe they're swamped with work, family stuff, or just had a really busy week.  \n* **Maybe they're not the best at texting.**  Some people just aren't super responsive through text, and that's okay!\n* **Maybe something's going on.**  Honestly, I'd hope it's not something serious, but it's natural to worry a little.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Ugh, that's frustrating! It's tough when you're expecting a response and then nothing. \n\n**Thoughts:**\n\n* **Maybe they're really busy:** Life gets in the way sometimes. Work, family, unexpected events - things happen. \n* **Maybe they're not feeling well:**  They could be dealing with something that's making them withdraw.\n* **Maybe they're just not that responsive in general:**  Some people are just not good at texting and prefer phone calls or face-to-face communication.\n* **Maybe they're ignoring me:** This is a bit harsh, but it's a possibility.\n\n**Feelings:**\n\n* **A little annoyed:**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, that's annoying.  It's always a little disheartening when someone you've been trying to connect with doesn't respond. I try to stay chill and not overthink it. \n\n**My thoughts:**\n\n* **They might be busy:**  Life happens!  Maybe they're swamped with work, family stuff, or just going through something personal. \n* **They might be avoiding a difficult conversation:**  Sometimes people need time to process things before responding, even if it's not a good conversation.\n* **They might not even be aware of the message:**  Phones can get lost in the shuffle, or they might have their notifications turned off.\n\n**My feelings:**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Okay, a presentation... it's kind of sinking in that it's actually happening. A little bit of that butterflies-in-your-stomach feeling, which is usually a good sign, right?  It means I've been preparing and I'm excited to share what I've learned. But, there's also a tiny bit of pressure, you know?  I want to do well and not mess up. \n\nI've been practicing a few times, going over the slides, thinking through the flow of the presentation.  I'm going to try to keep it relaxed and conversational, not just reading off a script. I want to engage the audience, answer questions, and make sure they understand",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Ugh, presentation day is looming! My stomach's doing that weird flip-flop thing, all nervous and excited at the same time. It's not like I'm *terrified* exactly, but there's a knot in my chest, a little voice in my head whispering \"what if I mess up?\"\n\nHonestly, I've been putting it off, trying to cram everything in the last few days.  I need to make sure the slides are on point, the notes are clear, and the data is accurate. I've been running through the script in my head, but it's still a bit shaky. \n\nBut I'm also excited! I've got this awesome topic, something I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Okay, I'm starting to feel the pressure!  It's just a presentation, but it's not like I'm presenting to a room full of people who are expecting me to be an expert on the subject. It's more like I'm presenting to my colleagues. But I still want to do well. \n\nHere's the thing, I've been practicing for a while, and I've got the material down. I'm feeling pretty good about the content. I've got my notes, and I'm going to use a few slides to keep me on track. \n\nI'm a little nervous, sure, but mostly I'm just excited to share what I'",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart would probably jump into my throat, a sudden pang of adrenaline shooting through me.  I'd freeze for a second, trying to process what I heard. Was it a car backfiring? A neighbor's kid playing? Or something much more sinister? \n\nMy mind would race through possible scenarios: a break-in, a fire, even something more outlandish.  But then, I'd remind myself that I'm usually the one who's \"safe\" at home, and that I've never had anything serious happen. I'd try to calm my nerves and assess the situation.  \n\nFirst, I'd check my surroundings.  Is the door locked? Is the window open?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart would probably jump into my throat.  A loud noise in the dead of night, especially when I'm alone, always sends a jolt of adrenaline through me. I'd instantly freeze for a second, trying to process what I just heard. Was it a car backfiring? A window rattling?  Maybe just a tree branch hitting the house?\n\nMy mind would be racing, quickly scanning the room. I'd check the door, just to make sure it's securely locked. Then, I'd move towards the sound, but stay aware of my surroundings, listening for any other clues. \n\nI wouldn't panic, but I would definitely be cautious. My first priority would be to assess the situation.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart would probably jump into my throat.  My hand would instinctively reach for the phone, just in case it's something simple like a dropped package or a power surge.  \n\nI'd probably freeze for a second, taking a deep breath to calm myself. Then I'd listen carefully. Was it a car backfiring? A dog barking?  I'd try to pinpoint the sound's direction and try to remember if it was close or far away. \n\nMy mind would be racing with thoughts. Was it safe to investigate?  Would I be okay?  Was there anyone else home?  I'd be cautious, maybe check the windows and doors for any signs of forced entry.  I'd",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Okay, so I just realized I messed up.  Ugh, that's never fun.  I feel a little flustered, like I messed up the whole project or something.  Part of me wants to hide under the desk, but then I remind myself it's just one small mistake, not the end of the world.  \n\nFirst, I need to take a deep breath and analyze what went wrong. Did I misinterpret something? Did I rush and make a careless error? Understanding the root of the mistake will help me learn from it. \n\nThen, I need to figure out what I can do to fix it.  Is there a way to rectify the situation? Can I work with the client/team to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Okay, so, I messed up.  My boss asked me to finish a report by Friday and I totally missed the deadline. I feel a bit stressed, and a little embarrassed. My mind is racing - is this a big deal?  Did I lose my job over this? I'm usually pretty good at my work, so it's definitely out of character for me. \n\nI need to take a deep breath and not overthink it. First, I'll try to figure out what went wrong. Did I get sidetracked? Was there something I missed? I need to be honest with myself about what happened.  \n\nThen, I need to talk to my boss. I'll apologize sincerely and explain what happened",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Ugh, I messed up! I just realized I forgot to include that crucial step in the report.  My stomach feels a bit twisted, a mix of embarrassment and frustration. It's not like this is a big deal, but it's frustrating because it's the kind of thing that can easily slip through the cracks. \n\nFirst, I'd try to breathe and think rationally. I can't let this derail my whole day. I need to figure out how to fix it ASAP.  I'll try to analyze the situation, see how much damage it might have done, and then figure out the best way to rectify it. \n\nI'll reach out to my supervisor and explain what happened.  I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My stomach churns. The results are due any minute now, and the pressure feels like a physical weight. I keep checking my phone, but the screen just reflects the same anxiety-inducing loading icon.  \n\nI replay the last few weeks, trying to find the source of my nervousness. Was it the sheer volume of studying? The pressure from my parents to do well? Or maybe it's just the fear of not being good enough.  \n\nA deep breath. I remind myself that I've prepared as best I could. I know I've put in the work, I've studied hard, and I've been honest with myself about my weaknesses. There's nothing more I can do now. \n\nBut",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My stomach is doing somersaults. It's like a tiny, anxious drum solo in there, each thump echoing the fear of what might be waiting for me. I keep checking my phone, refreshing the email, hoping against hope that the subject line might finally change.  \n\nThe thought of failing is a heavy weight on my chest. I know I've put in the work, studied relentlessly, but the pressure is immense. I keep replaying every mistake I made, every doubt I voiced, every time I felt like giving up. Now, I'm left with only waiting, and it's a waiting that feels like an eternity.\n\nI try to focus on the things I can control: taking deep breaths, reminding myself",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My palms are sweating, and my heart is pounding like a drum solo.  It's been a week since the test and I can't shake the feeling of anticipation and dread.  I keep replaying the questions in my head, desperately hoping for a good outcome. What if it's not what I want to hear? What if I've been putting in all this effort and it's not enough? \n\nThere's a part of me that's terrified of disappointment, but then there's this other part that's determined to push through. I need this result, it could change everything.  I need to stay calm, breathe, and focus on the waiting. \n\nI reach for my phone",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, it's that feeling again. The anxiety starts to creep in.  Maybe they're busy, maybe they're just not feeling it, maybe they're having a bad day. It's frustrating because I'm really interested in what they have to say. I'd probably try a couple of things:\n\n* **Give it a little more time:**  I wouldn't bombard them with messages.  A day or two is a reasonable amount of time for anyone to respond, especially if they're busy. \n* **Send a quick, casual check-in:**  Something like, \"Hey, just checking in! Hope you're having a good day.\"  It's lighthearted",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Ugh, that's annoying! It's been a couple of days, and it's starting to feel a bit awkward.  I'm not sure if they're busy, forgot about me, or if something's up.  \n\nPart of me wants to send a follow-up message, maybe something casual like \"Hey, just checking in! Hope you're doing well.\"  But I'm also starting to feel a little hurt. Maybe they're not interested in talking, and that's okay too. \n\nI'll probably just wait a bit longer and see if they respond. If it's been a few more days and nothing, then I'll probably send a quick message,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, that's frustrating!  It's definitely a little unsettling when someone you reach out to doesn't respond, especially if it's been a while. \n\nHere's what's going through my head:\n\n* **A little worried:** It's natural to want to know what's up, and a bit of anxiety creeps in. Maybe something's wrong?  \n* **But maybe they're busy:** Life gets hectic, people have different schedules, and they might genuinely be swamped. \n* **I'm trying to be patient:** I'd try to give them the benefit of the doubt and assume it's just a delayed response.\n* **I'll",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Ugh, presentation day is creeping up fast!  My stomach is doing that weird flip-flop thing that means butterflies are doing their best impression of a hurricane in there.  Part of me is excited, excited to share what I've been working on, excited to see how people respond.  But the other part is freaking out about messing up, about the whole thing falling flat.  \n\nI've been stressing about this for a while now, so I've been trying to keep myself busy with other things.  Practice, practice, practice.  I've gone over my notes a hundred times, and I'm starting to memorize the entire thing like it's a song.  I'm also making sure my",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Ugh, presentation day! It's like a rollercoaster of emotions right now.  Part of me is excited, I actually like the topic, and I've been working on it, so I feel good about the content.  But then, I get that little voice in my head saying \"what if I forget something?\" or \"what if I mess up?\"  \n\nIt's a good kind of nervous, like a shot of adrenaline.  I'm definitely going to do some light practice runs to calm the nerves and focus on my key points.  I also need to make sure I'm hydrated and fueled up with good food.  \n\nI'll try to visualize myself speaking confidently and engaging the audience.  Hopefully",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Ugh, presentation day is *finally* here. I've been dreading this all week.  I'm feeling a knot of anxiety in my stomach, a weird mix of excitement and nerves. On the one hand, I've been working on this for ages and I'm really proud of what I've accomplished. I feel prepared, but the pressure to deliver is real.  \n\nI've been practicing my slides, even though I know I've probably said them a million times. I'm trying to visualize myself out there, calm and confident.  But the butterflies are fluttering around my chest. \n\nWhat I need to do now is get some focus. I'm going to take a deep breath",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart would probably jump into my throat.  My brain would instantly switch into \"danger mode,\" scanning my surroundings for the source of the noise.  \n\n* **My gut instinct:** I'd probably grab the nearest thing I could as a weapon, maybe my kitchen knife or a heavy book. I'm not about to go down without a fight, right? \n* **Safety first:** I'd quickly assess the situation. Is it a fire alarm, a plumbing leak, or something more sinister? My priority is safety, so I'd try to stay calm and not make any sudden movements. \n* **Assess the source:** I'd move slowly and quietly to the nearest window, or if possible, the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart would probably jump into my throat, a frantic flutter of adrenaline.  My eyes would dart around the room, searching for the source of the noise.  It wasn't the usual hum of appliances or the creaking of the old house, it was something... more.  A sudden, sharp, metallic clang.  \n\nFear would grip me, a primal instinct telling me to stay hidden, to assess the situation.  I'd quickly scan the room, checking every corner, every shadow.  Was it a window rattling in the wind?  A branch falling on the roof?  My mind would race, trying to piece together what might have caused it. \n\nI'd try to remain calm, though the adrenaline",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart jumps into my throat. My hand flies to my throat instinctively, the blood rushing to my head. The silence of the house, which I'd grown accustomed to, suddenly feels suffocating. I tense up, my muscles coiled like a spring about to snap. \n\nA wave of adrenaline floods me, a primal instinct to protect myself. My mind races, trying to piece together the noise. Is it a broken pipe? A neighbor's dog? A squirrel in the attic? I glance around the room, but there's nothing out of place, nothing that could have made that sound. \n\nFear whispers in the back of my mind, but I refuse to let it take over. I have to be rational, calm",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.15999999999999998,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Okay, so I just realized I messed up on this report.  Ugh, that's so frustrating!  I feel a bit embarrassed, like I let everyone down. My stomach is doing that weird knot thing.  \n\nFirst, I need to take a deep breath and try to analyze what went wrong.  Did I miscalculate something?  Did I miss a crucial step?  Maybe I didn't understand the instructions properly. \n\nOnce I figure out what went wrong, I can start figuring out how to fix it.  I'll probably reach out to my supervisor and let them know what happened, be honest about the mistake and explain what I'm doing to fix it. It's important to own up to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Ugh, I just messed up. I totally blanked on that deadline and sent the wrong file to the client. I feel a knot forming in my stomach.  It's embarrassing, and I'm sure my boss is going to be furious. I know I need to own up to it, but I'm not sure how to explain it without making things worse. \n\nFirst, I'll take a deep breath and try to think clearly. I need to focus on what I can control now: taking responsibility and figuring out a solution. \n\nI'll reach out to the client, apologize for the mistake, and explain what happened. I'll try to be as upfront and honest as possible, and let them know",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Okay, so I just made a little mistake at work. It's not a huge deal, nothing catastrophic, but it's still a bit embarrassing. I feel that familiar prickle of guilt and a little bit of shame. I think it was kind of a dumb mistake, and I keep replaying the situation in my head. \n\nBut then, I take a deep breath and remind myself that everyone makes mistakes. It happens to the best of us.  It's not the end of the world, and I need to own up to it.  \n\nFirst, I need to figure out what exactly I did wrong and how it could have been avoided.  Then, I'll talk to my supervisor about it. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My hands are sweating. My heart is thumping a frantic rhythm against my ribs. I can practically feel the weight of the world on my shoulders.  These results are everything. They hold the key to my future, to my career, to everything. \n\nMy stomach churns with a mixture of anticipation and dread. What if I fail? What if it's not what I hoped for? I've poured my heart and soul into this, studying relentlessly, working hard. I can't shake the feeling of inadequacy, of being somehow not good enough.\n\nI glance at my phone, the notification blinking with the test results. My fingers hover over the screen, a million thoughts racing through my mind. Do I breathe? Do",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My stomach feels like it's doing a nervous dance.  I'm trying to focus on the breathing exercises I practiced, but it's like my brain's stuck on repeat. \"What if it's not good? What if I messed up? What if I wasted all this time preparing?\" The weight of it all feels heavy, even though I've been working so hard. \n\nMy hands are clammy, and I'm fidgeting with my phone, checking the time every five minutes.  I know I need to stay calm, but the waiting is the worst part. I want to be strong and confident, but a sliver of doubt creeps in with each passing moment. \n\nI remind myself that I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My palms are sweaty, my heart is pounding. The email notification popped up just now, and I clicked it, my gut twisting. \"Results for the test are available.\"  \n\nThe waiting is the worst part. I can't shake the feeling of anticipation mixed with dread.  What if the results are bad?  What if I've messed up, what if everything I've worked for comes crashing down? It's been months of preparation, hours of studying, and the fear of failing is a constant shadow.  \n\nI take a deep breath and try to calm myself. I know I can't let the anxiety take over. I need to stay focused, think rationally. First, I'll check the email",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, that's frustrating!  I'd feel a little bit of a pang of disappointment, and maybe a little bit of anxiety.  It's always a bit awkward when someone doesn't respond, especially when you were looking forward to catching up.  \n\nI'd try to give them a little more time. Maybe they're busy, or they're just not the best texter. I might text them again, something like:\n\n\"Hey, everything okay? Just wanted to check in!\" \n\nIf they don't respond, I'd probably just chalk it up to them being busy and not want to worry about it too much.  Maybe I'd try to distract myself and not over",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Ugh, that's frustrating! It's one of those moments where you start second-guessing yourself.  Part of me is thinking maybe they're busy, maybe they're just really bad at responding quickly, maybe they're just having a rough day. But it's hard not to feel a little hurt or confused. \n\nI'd probably give them a gentle follow-up.  Maybe a simple text like, \"Hey, everything okay? Just checking in!\" or \"Just wanted to see how you're doing!\"  \n\nIf I don't get a response after that, I might try reaching out again, but this time a little later, not right away.  I wouldn't want",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating! I'd probably feel a mix of things:\n\n* **Slightly annoyed:** It's annoying when someone you're trying to connect with doesn't respond.\n* **Concerned:** I'd worry that something might be wrong. Maybe they're busy, stressed, or just having a bad day. \n* **A little hurt:** It stings a little to feel like your message wasn't important enough to get a response.\n\nHere's what I'd probably do:\n\n* **Give them some space:** I wouldn't bombard them with messages. Maybe I'd give it another day or two and see if they respond.\n* **Reach out casually",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Ugh, presentation week is here. I feel that familiar knot in my stomach that always pops up when it's time to present. It's a mix of excitement and anxiety, you know? \n\nOn one hand, I'm excited to share what I've been working on. I've poured hours into this, and I want to show it off. But the pressure to do well, to not mess up, to be confident...that's the anxiety. \n\nWhat I'm doing now is trying to focus on the positive. I've practiced the presentation until I feel comfortable with the content. I'm going over my notes, trying to visualize the room and the audience, and reminding myself that they",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Ugh, presentation day is creeping up on me! I'm feeling a mix of excitement and, well, anxiety. It's good to be excited about sharing my work, but the pressure is on, you know?  I've been working on this for weeks, and I've got a lot of information to convey. \n\nMy mind is racing with potential things I might forget, the \"what ifs\" and the \"what if I mess up.\" I'm trying to remind myself to breathe and focus on the content, the message I want to convey. \n\nHere's what I'm doing to get ready: \n\n* **Rehearse, rehearse, rehearse:**  I'm going",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Okay, so the presentation is next week? Ugh, I've been dreading this for days! It's a bit of a beast of a topic, and I feel the pressure mounting. I'm already feeling a little bit anxious. I'm worried about messing up, forgetting things, and, of course, the whole audience thing. \n\nBut, I'm also excited. It's a chance to share my knowledge and maybe even make some connections.  I think the topic is interesting and I want to do it justice. \n\nSo, I've decided to do a few things to get ready. First, I'm going to go through my notes and make sure I have everything I need. I",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart would probably jump into my throat, and I'd freeze for a second.  It's a classic \"fight or flight\" reaction, isn't it? My eyes would dart around the room, searching for the source of the noise. It could be anything from a broken pipe to a neighbor's dog, or something far more sinister. \n\nMy mind would race, going through a quick checklist:\n\n* **Is it safe?**  My initial instinct would be to check for any obvious dangers, like a fire or someone breaking in. \n* **What was the noise?** I'd try to analyze the sound, was it a loud bang, a creaking sound, or something softer?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart would probably jump into my throat, and my blood would run cold.  My first reaction would be to freeze for a second, just to catch my breath and try to process what just happened.  I'd immediately scan the room, eyes darting around, looking for the source of the noise.  It could be anything, a loud bang, a window rattling, something falling. I'd try to remember any recent events, anything that might have caused a noise.  \n\nI'd probably be feeling a mix of fear, adrenaline, and curiosity.  My mind would race, trying to figure out if it was something dangerous or just something harmless.  \n\nMy first action would be to make sure the door is locked",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart would probably jump into my throat, and I'd instantly freeze.  That's the first reaction, always.  My brain would be racing, trying to piece together what the noise was. A heavy, metallic clang? A car backfiring?  A window breaking? It's hard to say exactly. \n\nMy hands would reach for the phone, even though I'd probably already dialed 911.  I'd probably keep my voice calm, but my thoughts would be frantic.  Is it a burglar? An animal? Maybe just a plumbing issue? I'd want to be as calm as possible, but I'd also be hyper-aware, listening for any other sounds, trying to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Ugh, I just messed up!  I completely blanked on that deadline and forgot to check the numbers. I feel pretty dumb and embarrassed.  It was a small thing, a tiny little slip-up, but it's still annoying.\n\nFirst, I need to breathe.  Don't panic! I can't just let this eat at me. I'll take a few deep breaths and remind myself that everyone makes mistakes.  It's how we learn and grow.\n\nNow, I need to figure out what to do.  I'll immediately contact my supervisor and explain what happened, be honest and take responsibility.  I'll let them know I understand it was my fault and I'm already",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Ugh, I just messed up! I totally blanked on that deadline. I was so focused on getting the big project finished, I didn't even check my work for the smaller tasks. Now I'm feeling a knot of guilt and self-doubt. I'm worried about getting in trouble, especially since this is a big project everyone's been looking forward to. \n\nFirst, I need to breathe. It's okay to make mistakes, it happens to everyone. I shouldn't beat myself up about it. \n\nI'll need to talk to my boss or supervisor ASAP. I want to explain what happened and apologize for the oversight. It's important to be honest and take responsibility, but also be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Okay, so I messed up.  Ugh, I feel like my stomach is doing that weird flip-flop thing.  It's that knotty, nervous feeling. I don't even know if it's the mistake itself or the fact that I *know* I messed up.  \n\nFirst things first, I gotta calm down. Take a deep breath.  It's just one little mistake, not the end of the world. I need to assess the situation. What exactly did I do wrong?  Is it something that could cause major problems? How bad is it really?\n\nOnce I have that sorted, I'll think about how to fix it.  If it's a small thing, I might",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My heart is pounding against my ribs like a frantic drummer.  I glance at my phone every few minutes, hoping for a notification, but nothing.  The waiting is agonizing.  Part of me is hyper-focused on the results, analyzing every little detail I can remember about the test, desperately hoping for the best outcome.  \n\nBut the other part, the part that's always lurking, is filled with dread.  What if it's not good? What if I messed up? What if I fail?  The fear is a knot in my stomach, a tight, suffocating pressure. \n\nI try to distract myself, scrolling through social media, trying to find something to occupy my mind, but it's like",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My heart is thumping a frantic rhythm against my ribs. I'm pacing back and forth, phone clutched in my hand, refreshing the email every few seconds.  My palms are sweating, and I can feel my stomach twisting into knots.  I know the results are supposed to be in by now, but the wait feels like an eternity. \n\nThe test was a big deal.  It was the key to everything.  The chance to get my dream job, the validation I've been craving for years.  Now it's just... anxiety.  What if it's not what I hoped for? What if I fail? What if I'm not good enough?\n\nMy mind races through all the worst-",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My hands are clammy, my heart is hammering in my chest, and a knot of anxiety is tightening in my stomach.  I check my phone again, hoping against hope for a notification, a new email, anything to tell me the results are in. It's been hours, and the silence is deafening. \n\nPart of me wants to just scream, to lash out at the universe for this cruel twist of fate. I've put so much time, effort, and energy into this test. It's been a year of studying, a year of sleepless nights, and now I'm on the edge of a precipice, not knowing what lies on the other side. \n\nMy mind races through scenarios.  What if",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, that's annoying!  It's totally understandable to feel a little hurt or confused.  Maybe they're busy, or they just got swamped with something. I'd try not to overthink it. \n\nHere's what I'd do:\n\n* **Give them a little time.** Maybe they're dealing with something personal and need space.  A quick message like, \"Hey, no worries if you're busy, just wanted to check in!\" is enough. \n* **Check in again later.**  If they don't reply after a day or two, I'd send a casual follow-up message. \"Just checking in again, hope everything is okay!\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Ugh, this is so frustrating!  Part of me is just a little hurt, like, \"Why are they ignoring me?\"  But then I also try to remind myself that everyone has busy lives and sometimes things slip through the cracks. \n\nI wouldn't panic, but I would probably try a quick follow-up. Maybe something like: \n\n* **\"Hey, just checking in. Everything okay? No worries if you're busy, just wanted to see how you're doing.\"** \n* **\"Just saw you were online earlier, figured I'd say hi!  Hope you're having a good day.\"**\n\nIf that doesn't work, I'd give it a few more",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, this is really starting to get frustrating.  I'm not sure what to think, to be honest. Part of me wants to just message them again, but then again, maybe they're busy or just haven't seen my message yet. I don't want to be overbearing, but I also don't want to just ignore them completely. \n\nI'll probably give them another day or two to respond. Maybe they're dealing with something. I could send them a quick, casual message, something like \"Hey, just checking in! Hope you're doing okay.\"  I'll see if they respond. If not, I'll just have to accept that they might be busy and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Okay, okay, here we go. It's that time again, the presentation butterflies are already fluttering! \n\nI'm feeling a mix of nerves and excitement. On one hand, I know I've been working on this for weeks and I'm pretty confident in what I've put together.  I've practiced the slides, I know the content, and I'm ready to share it.  But, that little voice in my head keeps whispering \"What if I forget?\" or \"What if they don't like it?\"\n\nSo, I'm trying to focus on the good stuff. I'm excited to share my ideas and to see how the audience responds.  I've got some",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Ugh, presentation anxiety is hitting me like a ton of bricks.  It's only a week away, but it feels like forever. I feel that familiar knot in my stomach, the one that just wants to make me clam up and hide.  My brain's a jumbled mess of \"what if\" scenarios and worst-case-scenario disasters. \n\nBut, I know I can't let it rule me. I've got this.  I've practiced, I've rehearsed, I've got the notes down. I need to remind myself of all the hard work I've put in and focus on what I can control. \n\nFirst, deep breaths, I tell myself. Get those",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Ugh, presentation day is creeping up on me faster than a cheetah on a caffeine binge!  A little bit of butterflies in my stomach, I guess.  It's not that I'm terrified, more like... I'm worried I won't be able to do it justice. I've been working on this for weeks, but I'm still nervous about presenting it all in front of everyone.  \n\nI've got my notes, my slides, and I've rehearsed it a bunch, but I still feel a bit anxious about the delivery.  I'm going to try to channel that nervous energy into some excitement! I'm going to focus on making eye contact with the audience, speaking clearly",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart would probably skip a beat.  My mind would instantly go into \"fight or flight\" mode, even though I'm alone at home. I'd probably freeze for a second, trying to pinpoint the sound. Was it just a branch hitting the window? Or something more?  A cold shiver would run down my spine.  \n\nMy first reaction would be to check my surroundings quickly. I'd peek out from behind the couch or into the hallway, trying to get a better look.  If it was something harmless, I'd probably try to figure out what it was and then just continue with whatever I was doing.  But if it sounded threatening, I'd call for help, maybe even just to let",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart would probably jump into my throat.  I'd freeze for a second, trying to get my bearings.  Is it just a car backfiring?  Or maybe a branch falling against the house?  But then, the adrenaline would kick in.  My mind would race, scanning for any clues.  Would I call my roommates, just in case it wasn't nothing?  But then I'd think, \"I'm alone, I can handle it.\"  I'd probably try to listen closely, trying to figure out where the noise is coming from, maybe even peek out a window.  \n\nI'd try to remain calm, but a wave of anxiety would wash over me.  It'",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart would probably jump into my throat.  That's the immediate reaction, a jolt of adrenaline that makes me freeze for a second, trying to process what just happened. My eyes would dart around the room, searching for the source of the noise, scanning every corner, every shadow. \n\nThe initial fear would be a sharp pang, a prickle of anxiety that makes me question everything, like, \"What was that?\" and \"Is someone in the house?\" \n\nMy mind would immediately try to rationalize. \"It could be just the pipes, the wind, a neighbor's car.\" I'd try to ignore it, telling myself it's probably nothing. But the unease would linger. \n\nMy",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Ugh, I just messed up. I totally misread that spreadsheet and now I've got a whole batch of errors in the report.  It feels awful, like a lump in my throat. I'm embarrassed, like everyone's going to think I'm incompetent now. \n\nFirst, I need to breathe. It's not the end of the world, one mistake doesn't define me. I'll need to analyze what went wrong, why I made the mistake, and how to prevent it in the future. \n\nI'll probably talk to my boss. I want to be upfront and honest, not make excuses. I can ask for their advice, and maybe I can even learn something from this. It",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Ugh, I just messed up. I totally blanked on that deadline and submitted the wrong file. Now my boss is going to be furious, and I feel like I'm going to be the one getting the \"blame\" for it. My stomach is doing somersaults. I should have double-checked everything, I know it. \n\nOkay, deep breaths. It's just one mistake, one file. I need to be calm and professional. I'll go talk to my boss ASAP. Maybe I can explain what happened, take responsibility, and see what I can do to fix it. \n\nI'm not going to let this derail me. I'll make it right and learn from this. It'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Ugh, I just totally messed up! I was supposed to send the report by noon, and now it's 11:55 and I've got this huge, glaring error. I feel like I'm going to be stuck with this for the rest of the day, and it's really stressing me out.  \n\nFirst, I need to take a deep breath. I can't let it get to me. I'm just one mistake, it doesn't define me.  I'm going to double-check the report again, make sure I've accounted for everything, and then I'll try to fix it. \n\nI'll probably need to reach out to my colleague who",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My heart is pounding like a drum solo in my chest.  I'm practically glued to the email, waiting for that little \"delivered\" notification.  A knot of anxiety has tightened in my stomach. It's not just any test, this one means everything.  It could mean the difference between a dream career and... well, I don't want to think about the \"what ifs.\"  \n\nMy mind races, replaying the weeks of preparation, the hours of studying, the countless doubts that have haunted me.  What if I didn't do well? What if I made a mistake? What if they think I'm not good enough? \n\nBut then, a tiny voice whispers, \"You worked hard",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My stomach is doing somersaults.  It feels like a lead weight is tied to my chest. I can't stop checking the email, the phone, anything, just hoping for a message, a notification.  I keep replaying the last few weeks in my head, the hours of studying, the endless practice tests, the moments I doubted myself. \n\nPart of me feels a mixture of relief and dread. Relief that it's finally over, that I've put in the work, and now I'll know what I've achieved. But dread because the unknown is scary. What if it's not what I hoped for? What if I fail? What if I don't measure up?\n\nI",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My palms are sweating.  My stomach is doing somersaults.  I keep checking my phone every five seconds, hoping for a notification, but nothing.  It feels like hours.  I'm starting to get a headache.  The results need to come through, and I need them to be good.  It's the final exam for my certification, and this is the most important one yet.  \n\nI take a deep breath, trying to calm myself. I remind myself that I've been studying hard, I'm prepared, and I've got this.  But the fear is still there, a knot in my chest.  I know I can't control the results, but I can control how",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, that's frustrating! I'd feel a mix of things: a little bit of anxiety, maybe even a bit of hurt.  Part of me would be wondering if I've done something to upset them, but then I'd try to shake that thought off. It's possible they're just super busy, or maybe they're dealing with something personal. \n\nI wouldn't jump to conclusions, though. I'd give them a little more time, maybe send them another message, something casual like \"Hey, just checking in! Hope you're doing well.\" \n\nIf they don't respond, I'd probably just let it go for a while and see if they reach out",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Ugh, this is so frustrating! It's been two days and I'm starting to get a bit worried. I'm not going to jump to conclusions, but it's definitely making me feel a little left out and a bit hurt. \n\nPart of me wants to send a quick, \"Hey, just checking in, everything okay?\" but then I know that could come off as needy.  I might be overthinking it, but I'd like to know why they haven't replied. Maybe they're busy, or they're just having a bad day.  \n\nI'd probably try to give them a little more space. Maybe send a simple, \"Hey, no worries if you're",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses overthinking or catastrophizing"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, it's frustrating!  Part of me wants to send another message, like, \"Hey, everything okay? You've been quiet and I just wanted to check in.\"  But then I also think maybe they're busy, or they're just not really feeling it right now. I'd probably try to be understanding for a bit, but also give them some space.  I'd definitely think about the context of our last conversation and if there was anything that might have happened that made them less responsive.  \n\nMaybe I'd reach out again in a few days, like, \"Hey, no worries if you're busy, just wanted to see how you're doing!\" \n\nUltimately,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Ugh, the presentation is next week. My stomach is doing somersaults, and I can feel my palms getting sweaty just thinking about it. It's not that I'm nervous about the content, I'm actually quite excited about it, I've been working hard on it. It's just... the pressure, you know?  Being the center of attention, and all eyes on me, it can be a lot to handle. \n\nI need to breathe, okay?  First things first, I'm going to go through my notes one last time. Then I'm going to try some calming techniques - deep breaths, maybe some light stretches.  I need to remind myself I've got this!",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Ugh, the presentation is looming! I'm feeling that familiar mix of excitement and dread.  It's not the kind of excitement you feel when you're about to go on a fun adventure, more like the anxiety of standing in front of a giant audience and hoping you don't trip over your words.  \n\nI'm feeling a little nervous about messing up.  The content is pretty important, and I've been putting in a lot of effort to get it right. I've practiced a bunch, but I'm still worried about potential questions, awkward silences, or forgetting something.  \n\nTo combat the anxiety, I need to remind myself that I've prepared, and that most of the time",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Ugh, presentation day is creeping up fast, and I'm feeling a mix of nerves and excitement.  Part of me is totally freaking out - I've got this big topic, I'm presenting to my whole class, and I'm worried I'll forget everything.  I've been practicing the whole week, but it's still hard to shake the feeling of dread.  \n\nOn the other hand, I'm actually really excited to share my work with everyone! I've poured my heart and soul into this project, and I'm eager to see the reactions I get. Maybe I'll get some good feedback, maybe I'll even inspire a few classmates.  \n\nI'm going",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart would probably jump into my throat, a sharp, panicked thump against my ribs.  I'd freeze for a second, trying to catch my breath and process what I'd just heard.  Was it a door creaking? A tree branch hitting my window? Maybe it was just the wind.  \n\nMy mind would instantly go to the worst-case scenario: a break-in, someone trying to get into my house. I'd instinctively scan the room, eyes darting to every corner, every shadow, my hand hovering near the phone.  \n\nBut then, I'd try to calm myself down.  I'd remind myself that it was probably nothing, that my imagination was running wild.  I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart jumps into my throat.  My brain instantly goes into \"fight or flight\" mode. My senses sharpen, focusing on the sound.  It was definitely not the usual hum of the refrigerator or the wind rattling the window. It was a sharp, metallic clang, like something heavy dropped.  \n\nMy mind races with possibilities: is someone breaking in? Is there a pipe bursting? I glance around my living room, searching for any sign of movement, any obvious source of the noise.  My hand instinctively reaches for my phone, but a wave of panic washes over me. What if it's something dangerous? What if I'm completely alone and someone is hurting themselves?\n\nThe adrenaline kicks in, a jolt of energy pushing",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart would probably jump into my throat, and my blood would turn to ice.  It wouldn't be the kind of noise I'd expect to hear in my quiet, familiar home. I'd probably freeze for a moment, trying to convince myself it was just the wind or something I'd misheard. \n\nMy brain would start racing, going through a mental checklist: Did I lock the door? Is the window open? Is the power out? Had I forgotten about anything in the basement? It's a terrifying thought, especially when you're alone.  \n\nThe adrenaline would kick in, and my senses would sharpen. I'd be hyper-aware of every creak, every rustle, every",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0533333333333337,
+      "std_score": 0.19955506062794345,
+      "ci_lower": 2.74,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Ugh, I just totally messed up. I double-clicked on the wrong file and sent the wrong report to the wrong person! Now I feel like my stomach is doing somersaults and I'm sweating. I'm usually pretty good at my job, so this feels embarrassing and frustrating. I've already sent the report to the wrong person and I know it's going to be a big deal.\n\nFirst, I need to take a breath and not panic. I'm going to send a quick email to the right person, explaining the mistake and apologizing for the inconvenience. I'll offer to resend the correct report immediately.  Then I'll need to figure out how to prevent this from happening again. I can",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Okay, so I just messed up. I totally screwed up on that presentation. I forgot to update the numbers on the charts, and now it looks like I'm pulling numbers out of thin air. I feel a little bit like a fraud, you know? Like, I thought I was good, and now I look incompetent.\n\nMy heart is beating a little faster, and I'm starting to get a bit anxious. I need to take a deep breath.  \n\nHere's what I'm thinking I should do: \n\n1. **Don't panic.** I need to stay calm and collected. I can't let this get to me.\n2. **Talk to my boss.** I need to explain",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Ugh, I just messed up. I completely blanked on that deadline, totally forgot to file that report, and now I'm feeling like a total klutz. I feel a knot in my stomach, a mix of embarrassment and self-doubt. It's not like I'm a complete idiot, I'm capable, but this feels like a huge blunder. \n\nMy first thought is to panic for a second, but I know that won't help. So I take a deep breath and remind myself that everyone makes mistakes. It's not the end of the world, and I can fix this. \n\nFirst, I need to figure out what exactly went wrong. Was it lack of time? Was it poor",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My heart is thumping a frantic rhythm against my ribs, a counterpoint to the silent tick of the clock.  It's been hours, and the results are still nowhere to be found. I try to distract myself, scrolling through social media, but the anxiety keeps clawing at me.  \n\nThe test was a crucial part of my plan, a stepping stone towards my goals.  What if it's not what I hoped for?  What if I've been fooling myself all this time?  The thought of failure is a bitter pill to swallow, a knot in my stomach I can't seem to untie.\n\nI need to be strong. I've worked hard, and I've put my all",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My heart is pounding like a drum solo in my chest. I keep checking my phone every five minutes, just waiting for that notification, that confirmation that I passed.  The results are due tomorrow, and the whole day feels like a blur.  It's been weeks of studying, weeks of late nights, weeks of agonizing over every question, and now all I can think about is that single, terrifying possibility: failure.\n\nMy stomach twists in a knot of anxiety.  What if I bombed?  What if I wasn't good enough? What if this means my dream job is out of reach?  A wave of self-doubt washes over me. I try to remind myself that I've prepared, that I've",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My stomach is doing somersaults. I'm practically vibrating with a mix of anxiety and anticipation. I've been waiting for these results for what feels like forever, and it's driving me bonkers! I keep replaying the conversation with the doctor, trying to remember everything they said.  \n\nI feel a wave of nausea wash over me, then a sudden rush of hope.  What if it's good? What if it means everything is going to be okay? My heart is pounding, and I can't stop checking my phone, hoping for a notification.\n\nBut then, a wave of doubt hits. What if it's not? What if it's worse than I feared? The worst-case",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, this is frustrating! It's been two days and they haven't even acknowledged my message. Part of me wants to text them again, just to check if everything is okay, but I know that could feel pushy. \n\nI'm a little hurt, to be honest.  I was really looking forward to connecting with them. Maybe they're busy, or maybe they're just not feeling up to chatting. It's tough to know for sure.\n\nI'd probably give them a little more time, maybe another 24 hours or so. If they don't respond, I'll just try to let it go and focus on other things. If it's important to me,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Ugh, it's so frustrating! I feel a little hurt and a bit confused.  It's been a while since we last talked and I was looking forward to connecting. Maybe they're busy or just haven't seen my message yet. I'll give them a little space for now and try not to overthink it. \n\nI'll probably try texting them again later today, just a simple \"Hey, hope you're having a good day! Just wanted to check in.\"  If I don't get a response, I'll give it another day and then just move on.  I don't want to be needy or pushy, but it's definitely disappointing when someone you care",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, that's frustrating.  Part of me is kinda annoyed, like \"Oh, come on, at least a 'Hey, sorry, been busy!' would be nice.\" But then I also know that everyone gets busy and things come up. \n\nI'd probably try a couple of things:\n\n* **Give them a little more time.** Maybe they're just swamped and haven't had a chance to respond yet.  A quick, casual follow-up message a day or two later, like \"Hey, just checking in! Hope everything's okay.\" might be enough to remind them you're thinking of them.\n* **Consider if there's a specific reason.** Is there something going on",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Ugh, I feel like I'm about to get a cavity just thinking about it!  Seriously, the more I think about it, the more nervous I get.  \n\nMy palms are sweaty, my stomach is doing flip-flops, and I feel like I've got a mile-long checklist of things I need to remember. I'm already second-guessing myself about the whole presentation. What if I forget something? What if I mess up? What if the projector breaks?  Ugh, the pressure is on!\n\nBut then I try to take a deep breath and remind myself that this is an opportunity. It's a chance to share what I know and learn more about my audience. I need to remind myself",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Ugh, presentation day is creeping up on me!  It's like a knot is forming in my stomach.  I've been working on it for ages, but the closer it gets, the more pressure I feel.  I'm nervous about messing up, forgetting my points, and of course, making a total fool of myself in front of everyone.  But, I've also got some excitement too! I'm really proud of the work I've done and I want to share it with everyone.\n\nI need to breathe!  Deep breaths, gotta stay calm. I'm going to go over the slides one last time, maybe practice some key points out loud, and do a quick mock presentation to get",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Ugh, I feel like my stomach is doing backflips. I'm not sure if it's butterflies, or maybe just anxiety mixed with a touch of dread. I know this presentation is important, but it's also just... a lot.  It's not just the content, it's the whole thing - the preparation, the pressure to deliver, the fear of messing up. I've been working on it for ages, but the closer it gets, the more I feel like I'm drowning in last-minute details.\n\nI'm going to take a deep breath. I need to remind myself that I've been through this before, and I can do this. First things first, I need",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart leaps into my throat. My blood runs cold, and a knot of dread tightens in my stomach. The silence that followed the noise is deafening.  It wasn't a normal creak of a floorboard, or the distant rumble of traffic. This was... different. \n\nA wave of fear washes over me, making me jump a foot in the air. My mind races.  \"Could it be a burglar? Is someone trying to break in?\" I quickly scan my surroundings, my eyes darting from the windows to the door, my hand instinctively reaching for the phone.\n\nI breathe slowly, trying to calm myself.  My brain starts to analyze the noise, searching for any clues.  Was it a window",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart would probably jump into my throat. I'd freeze for a second, my mind racing.  \"What the...?\" I'd probably check the windows and doors first, making sure they were all securely locked. A sudden loud bang from outside is never a good sign, especially when you're alone. \n\nI'd cautiously peek through the curtains, trying to get a better look at the source of the noise. If it was a neighbor, maybe I'd try to call them, but if it sounded more suspicious... well, my adrenaline would be pumping, and I'd probably grab my phone and dial 911.\n\nThe feeling of safety, the feeling of being alone in the house, would suddenly",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart jumps into my throat.  My hands clench into fists, and I freeze, listening intently. The silence that follows the noise is thick and heavy, a silent predator waiting to pounce.  It could be a dog, a neighbor's kids playing, a plumbing issue... or something more.  \n\nMy mind races with possibilities, each more unsettling than the last.  I check my phone, my fingers hovering over the screen, hoping it's just an alert.  It's not.  I take a deep, shaky breath, trying to calm myself down.  \n\nMy first instinct is to be cautious. I don't want to make a sudden move that could escalate the situation.  I slowly creep",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.15999999999999998,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Ugh, I messed up. *My stomach feels like it's doing somersaults.*  I knew I should have double-checked that report before sending it off. It's not a big deal, technically, but it's still a mistake. I feel stupid, like I'm letting everyone down.  \n\nFirst, I need to take a deep breath. I can't let this get to me. I know everyone makes mistakes, it's part of being human. I've got to own up to it. I'll go and talk to my supervisor and explain what happened. I need to be honest and take responsibility.  \n\nThen, I'll figure out how to fix it. Maybe I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Okay, so I just totally messed up on that report.  I double-checked the numbers, and I swear I triple-checked, but I still got the formatting wrong. Ugh, I feel pretty stupid right now. It's just one small thing, but it feels like a big deal. \n\nFirst, I need to breathe. I can't let this get to me.  It's just a mistake, and everyone makes them. I'm sure my boss understands. I'll need to be honest with them, though. I'll apologize for the error and explain what happened. I'll be honest about what I did wrong, but I'll also focus on what I'm doing to fix",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Okay, so I just accidentally sent the wrong file to the wrong client, and now I feel a little flustered.  Ugh, that's just embarrassing. I feel like I messed up and that's probably going to get me in trouble.  My boss is going to be really disappointed, especially since this was a big project.  \n\nBut then I take a deep breath and remind myself that everyone makes mistakes.  I'm going to need to own it, apologize, and figure out how to fix it.  I'm going to reach out to the client and explain what happened, offer to send the right file right away, and then figure out what I can do to prevent this from happening again.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "My hands are clammy. I can feel the sweat prickling on my palms. My heart beats a frantic tattoo against my ribs. I keep checking my phone, hoping for a message, a notification, anything to tell me the results are finally here. It's been days, and the waiting is killing me. \n\nA mix of anxiety and relief washes over me. I've been preparing for this test for months, pushing myself, studying, and practicing. The fear of failing is a constant shadow, but I've worked so hard, I can't help but hope for the best. \n\nI know I've been a bit obsessive, maybe even a bit self-destructive, but this is important. It'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "My heart is hammering against my ribs.  It feels like I'm trapped in a tight, uncomfortable cage.  I know the results are coming, and I can feel the pressure building.  A mix of dread and hope is swirling in my stomach.  \n\nPart of me wants to call the doctor, just to get a straight answer.  But I'm afraid of what I might hear, of the possibilities. What if it's bad?  What if all my hard work and preparation have been for nothing?  \n\nI try to focus on the positive.  I've put in the effort, I've studied, I've been diligent.  I can't help but think of all the possibilities:",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "My stomach is doing somersaults. I can't stop fidgeting with my phone, checking the time, and rereading the email with the results.  A knot of anxiety is tightening in my chest. I'm hoping for the best, but I know it's a high-stakes test.  My brain is racing, trying to calculate every possible outcome. What if it's not good? What if I don't pass? What if it all falls apart? \n\nIt's not just the test results themselves, it's the impact it has on my whole life.  It's the career I want, the future I've been planning, the dream I've been chasing.  This",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Ugh, that's frustrating!  Part of me is a little hurt, like I'm not important enough for them to even acknowledge my message. I'd feel a bit confused too, wondering if they're busy or if something's wrong. \n\nI'd probably try to reach out again, but maybe with a different approach.  Maybe something like, \"Hey, everything okay? Just checking in, no worries if you're busy!\"  Or maybe I'd just let it go for now and hope they'll message back eventually. \n\nI'd be trying to be understanding, but also a little disappointed, of course. We've been friends for a while, and it would be nice",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Ugh, this is frustrating! I'm starting to feel a little ignored and unimportant.  Part of me wants to send another message, just to check in, but I'm also worried about seeming needy or pushing. Maybe I should just give them some space?  \n\nI'm going to try not to overthink it, but it's definitely a little disheartening.  It's been a while since we've talked, and I was really looking forward to catching up.  Maybe they're busy, or maybe they're just not in the mood to chat. I'll try not to jump to conclusions and just wait a bit longer.  \n\nI'll try to do something fun and distracting to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Ugh, that's frustrating! I'd probably feel a little hurt and confused.  It's not like them to be so quiet, and it makes me wonder if something's wrong.  Maybe they're busy, or maybe they're going through something I don't know about.  \n\nI'd try a few things:\n\n* **Reach out again:**  A simple, \"Hey, just checking in, everything okay?\" message might do the trick. \n* **Give them some space:**  Maybe they just need some time to themselves.  I wouldn't bombard them with more messages.\n* **Consider the context:**  Have there been any recent changes in their life, or anything",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "Ugh, I'm feeling a mix of things. Part of me is excited! It's something I've been looking forward to, finally getting to present my project. I've put a lot of work into it, and I'm proud of what I've created. \n\nBut then there's the anxiety creeping in.  I always get nervous about public speaking. What if I mess up? What if I forget what I'm talking about?  I've been practicing, though, and I feel more confident now. \n\nI know it's just a presentation, but it's still a big deal.  I want to do well, but I also want to just relax and enjoy the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "Ugh, presentation day is creeping up fast!  A knot of anxiety is forming in my stomach. I've been putting it off, focusing on other things, but now it's here.  It's all too real. \n\nPart of me wants to just hide under the covers and pretend it's not happening. I've been working on the content for weeks, but the more I think about it, the more I feel like I'm going to freeze up.  \n\nI need to do something, though. I know I can't just let this anxiety take over. I'm going to:\n\n* **Practice, practice, practice!**  It's the only way to calm the nerves",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "Ugh, presentation day is just a week away and I'm already starting to get a little antsy!  Part of me is excited, obviously, I've been working hard on this thing and I want to do well.  But the other part is freaking out a little.  What if I forget something? What if I trip over my words? What if I mess up the slides?\n\nI'm going to take a deep breath and try to calm down. I need to get some good rest tonight, practice my presentation a few times, and maybe even visualize myself giving it confidently. \n\nI'll also try to remind myself that everyone gets nervous before presentations, it's totally normal.  And I've",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "My heart jumps into my throat. The sound was loud, almost like a crash, but also...different. It wasn't a familiar sound from the usual house noises, and it definitely wasn't the wind rattling the windows.  \n\nMy mind races.  \"Is it a break-in?\" I think, my palms sweat, and I find myself instinctively scanning the room, my eyes darting to the windows, the doors, anything that might offer a clue.  \n\nMy breath catches in my chest.  I'm alone, and it's late, so the possibility of danger is a knot in my stomach. I try to calm myself, reminding myself it's probably nothing.  But my mind, always a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "My heart jumps. I freeze for a second, taking a deep breath and trying to calm the racing pulse in my chest. My eyes dart around the room, scanning for the source of the noise. It was a sudden, sharp bang, not the gentle clinking of dishes or the quiet whir of the fridge. It was loud, jarring.  \n\nA knot of anxiety tightens in my stomach.  I'm alone, the house is dark, and the sound is so unexpected. My mind races with all the worst-case scenarios: a break-in, a pipe burst, something seriously wrong.  \n\nI reach for the phone, my fingers trembling slightly. I check the lights, making sure the power's still on.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "My heart jumps into my throat.  A sharp, jarring sound, like something heavy dropped from a high place, echoes through the silence of the house.  My palms sweat, and I instinctively tense up, every muscle on high alert. My breath catches in my chest.  My mind races, trying to make sense of it.  Is it a window rattling?  Is it something in the attic?  Something's wrong, something's definitely wrong.  \n\nMy body feels heavy, my legs want to run, but my brain is stuck in this terrified paralysis.  I can't help but scan the room, my eyes darting around, searching for the source of the noise.  My thoughts turn to all the horror",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9733333333333336,
+      "std_score": 0.09977753031397177,
+      "ci_lower": 2.74,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 1276.2
+}

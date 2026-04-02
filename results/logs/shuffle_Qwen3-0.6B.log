@@ -1,0 +1,40 @@
+Using layer: 2
+
+============================================================
+Shuffle-Label Baseline Experiment
+Model: Qwen/Qwen3-0.6B | Layer: 2 | Permutations: 100
+============================================================
+
+  Loaded openness: pos=(160, 1024), neg=(160, 1024)
+  Loaded conscientiousness: pos=(20, 1024), neg=(20, 1024)
+  Loaded extraversion: pos=(20, 1024), neg=(20, 1024)
+  Loaded agreeableness: pos=(20, 1024), neg=(20, 1024)
+  Loaded neuroticism: pos=(20, 1024), neg=(20, 1024)
+
+Loading genuine Big Five vectors...
+  Genuine Big Five mean |cos|: 0.1492 ± 0.0979
+
+Running 100 shuffle-label permutations...
+  Shuffled mean |cos|: 0.1848 ± 0.0603
+
+============================================================
+RESULTS SUMMARY
+============================================================
+  Genuine Big Five mean |cos|:  0.1492
+  Shuffle baseline mean |cos|:  0.1848 ± 0.0603
+  Effect size (Cohen d equiv.): 0.59
+  t-test (shuffle vs genuine):  t=5.87, p=0.0000
+  72.0% of shuffled perms exceed genuine mean
+  Interpretation: ✓ GENUINE STRUCTURE CONFIRMED — shuffled labels produce HIGHER |cos|,
+    confirming that Big Five orthogonality is a data property, not a pipeline artifact.
+============================================================
+
+  Results saved: results/shuffle_label_baseline_results/Qwen_Qwen3-0.6B/shuffle_label_baseline.json
+/data1/tongjizhou/persona/src/evaluation/eval_shuffle_label_baseline.py:193: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(
+  Figure saved: results/shuffle_label_baseline_results/Qwen_Qwen3-0.6B/shuffle_label_baseline.png
+/data1/tongjizhou/persona/src/evaluation/eval_shuffle_label_baseline.py:193: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(
+  Figure saved: paper/figures/shuffle_label_baseline.png
+
+✓ Shuffle-label baseline experiment complete!

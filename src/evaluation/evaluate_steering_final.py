@@ -10,6 +10,7 @@ matplotlib.use("Agg")
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 from evaluate_steering import BFI_ITEMS, keyword_score, compute_perplexity
+from src.prompts.contrastive_prompts import apply_chat_template_safe
 
 
 class FinalSteeringEvaluator:

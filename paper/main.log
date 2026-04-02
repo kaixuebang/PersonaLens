@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.2.19)  23 MAR 2026 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.2.19)  31 MAR 2026 13:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -441,7 +441,11 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count311
 \l__pdf_internal_box=\box59
 )
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `app:ppl' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -587,17 +591,17 @@ st/fonts/enc/dvips/base/8r.enc}]
 [2]
 
 Package natbib Warning: Citation `xu2025easysteer' on page 3 undefined on input
- line 98.
+ line 87.
 
 
 
 [3]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-36.
+28.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 1033) in paragraph at lines 145--146
+Underfull \hbox (badness 1033) in paragraph at lines 137--138
  []\T1/ptm/b/n/10 Defense Mech-a-nisms.[] \T1/ptm/m/n/10 Fol-low-ing Vail-lant'
 s hi-er-ar-chy [[][]Vail-lant[][], [][]1994[][]] and Per-son-aForge's op-er-a-t
 ional-iza-tion
@@ -610,203 +614,240 @@ ional-iza-tion
 [5]
 
 [6]
-
-[7]
-<figures/fig_cross_model_orthogonality.png, id=426, 1982.1252pt x 457.71pt>
+<figures/fig_cross_model_orthogonality.png, id=475, 1438.173pt x 286.671pt>
 File: figures/fig_cross_model_orthogonality.png Graphic file (type png)
 <use figures/fig_cross_model_orthogonality.png>
 Package pdftex.def Info: figures/fig_cross_model_orthogonality.png  used on inp
-ut line 312.
-(pdftex.def)             Requested size: 469.75499pt x 108.46979pt.
+ut line 261.
+(pdftex.def)             Requested size: 469.75499pt x 93.63501pt.
 
+
+[7 <./figures/fig_cross_model_orthogonality.png>]
 
 [8]
-Underfull \vbox (badness 1062) has occurred while \output is active []
 
+[9]
 
-
-[9 <./figures/fig_cross_model_orthogonality.png>]
-<figures/null_orthogonality.png, id=457, 1283.87656pt x 436.14944pt>
-File: figures/null_orthogonality.png Graphic file (type png)
-<use figures/null_orthogonality.png>
-Package pdftex.def Info: figures/null_orthogonality.png  used on input line 356
-.
-(pdftex.def)             Requested size: 446.2658pt x 151.60309pt.
-
-Underfull \vbox (badness 6364) has occurred while \output is active []
-
-
-
-[10 <./figures/null_orthogonality.png>]
-<figures/defense_mechanism_orthogonality_full.png, id=473, 710.1732pt x 640.312
-2pt>
-File: figures/defense_mechanism_orthogonality_full.png Graphic file (type png)
-<use figures/defense_mechanism_orthogonality_full.png>
-Package pdftex.def Info: figures/defense_mechanism_orthogonality_full.png  used
- on input line 376.
-(pdftex.def)             Requested size: 446.2658pt x 402.37292pt.
-<figures/defense_hierarchy_crossmodel.png, id=476, 1004.0712pt x 351.2322pt>
-File: figures/defense_hierarchy_crossmodel.png Graphic file (type png)
-<use figures/defense_hierarchy_crossmodel.png>
-Package pdftex.def Info: figures/defense_hierarchy_crossmodel.png  used on inpu
-t line 404.
-(pdftex.def)             Requested size: 446.2658pt x 156.10757pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[12 <./figures/defense_mechanism_orthogonality_full.png>]
-<figures/position_swap_control.png, id=495, 1004.553pt x 711.8595pt>
-File: figures/position_swap_control.png Graphic file (type png)
-<use figures/position_swap_control.png>
-Package pdftex.def Info: figures/position_swap_control.png  used on input line 
-455.
-(pdftex.def)             Requested size: 446.2658pt x 316.2388pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[13 <./figures/defense_hierarchy_crossmodel.png>]
-
-[14 <./figures/position_swap_control.png>]
-<figures/fig_cross_model_profile.png, id=517, 1293.1512pt x 352.1958pt>
-File: figures/fig_cross_model_profile.png Graphic file (type png)
-<use figures/fig_cross_model_profile.png>
-Package pdftex.def Info: figures/fig_cross_model_profile.png  used on input lin
-e 525.
-(pdftex.def)             Requested size: 469.75499pt x 127.94044pt.
-
-
-[15]
-
-[16 <./figures/fig_cross_model_profile.png>]
-Underfull \hbox (badness 5475) in paragraph at lines 580--581
- []\T1/ptm/b/n/10 Conscientiousness Re-ver-sal: RLHF Over-Correction Hy-poth-e-
-sis.[] \T1/ptm/m/n/10 The \T1/ptm/m/it/10 re-versed \T1/ptm/m/n/10 BFI-44 re-sp
-onse of
- []
-
-
-
-[17]
-<figures/bfi_dose_response.png, id=561, 714.9912pt x 425.9112pt>
+[10]
+<figures/bfi_dose_response.png, id=547, 1257.498pt x 261.6174pt>
 File: figures/bfi_dose_response.png Graphic file (type png)
 <use figures/bfi_dose_response.png>
-Package pdftex.def Info: figures/bfi_dose_response.png  used on input line 602.
+Package pdftex.def Info: figures/bfi_dose_response.png  used on input line 414.
 
-(pdftex.def)             Requested size: 399.2946pt x 237.85875pt.
-
-Underfull \vbox (badness 1102) has occurred while \output is active []
+(pdftex.def)             Requested size: 469.75499pt x 97.73103pt.
 
 
+[11 <./figures/bfi_dose_response.png>] (./main.bbl
 
-[18 <./figures/bfi_dose_response.png>]
-<figures/alpha_sweep_comparison.png, id=574, 860.013pt x 711.8595pt>
-File: figures/alpha_sweep_comparison.png Graphic file (type png)
-<use figures/alpha_sweep_comparison.png>
-Package pdftex.def Info: figures/alpha_sweep_comparison.png  used on input line
- 637.
-(pdftex.def)             Requested size: 446.2658pt x 369.387pt.
+[12]
 
-Underfull \hbox (badness 10000) in paragraph at lines 650--650
-[]\T1/ptm/m/it/10 Permutation test\T1/ptm/m/n/10 : The shuffle-label base-line 
-(scram-bling high/low la-bels within each trait; see
- []
-
-
-Underfull \hbox (badness 1038) in paragraph at lines 650--650
-\T1/cmtt/m/n/10 eval_shuffle_label_baseline.py\T1/ptm/m/n/10 ) con-firms that d
-e-stroy-ing the se-man-tic pair-ing de-stroys the or-thog-o-nal
- []
-
-
-Underfull \vbox (badness 7704) has occurred while \output is active []
-
-
-
-[19]
-Underfull \vbox (badness 7925) has occurred while \output is active []
-
-
-
-[20 <./figures/alpha_sweep_comparison.png>]
-
-[21]
-
-[22] (./main.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[23]
-
-[24]
+[13]
 Underfull \hbox (badness 3250) in paragraph at lines 183--187
 []\T1/ptm/m/n/10 Anonymous.  Lim-i-ta-tions of out-of-distribution trans-fer in
  con-cept ac-ti-va-tion vec-tors.  \T1/ptm/m/it/10 arXiv preprint
  []
 
+)
+
+[14]
+
+[15]
+<figures/position_swap_control.png, id=608, 570.933pt x 267.399pt>
+File: figures/position_swap_control.png Graphic file (type png)
+<use figures/position_swap_control.png>
+Package pdftex.def Info: figures/position_swap_control.png  used on input line 
+520.
+(pdftex.def)             Requested size: 446.2658pt x 209.0192pt.
+File: figures/fig_cross_model_orthogonality.png Graphic file (type png)
+<use figures/fig_cross_model_orthogonality.png>
+Package pdftex.def Info: figures/fig_cross_model_orthogonality.png  used on inp
+ut line 555.
+(pdftex.def)             Requested size: 469.75499pt x 93.63501pt.
 
 
-[25])
-<figures/layer_profile_Qwen_Qwen3-0.6B_openness.png, id=671, 1293.1512pt x 713.
-5458pt>
+[16 <./figures/position_swap_control.png>]
+<figures/alpha_sweep_comparison.png, id=616, 729.927pt x 499.1448pt>
+File: figures/alpha_sweep_comparison.png Graphic file (type png)
+<use figures/alpha_sweep_comparison.png>
+Package pdftex.def Info: figures/alpha_sweep_comparison.png  used on input line
+ 566.
+(pdftex.def)             Requested size: 446.2658pt x 305.17097pt.
+<figures/defense_mechanism_orthogonality_full.png, id=617, 730.4088pt x 628.749
+pt>
+File: figures/defense_mechanism_orthogonality_full.png Graphic file (type png)
+<use figures/defense_mechanism_orthogonality_full.png>
+Package pdftex.def Info: figures/defense_mechanism_orthogonality_full.png  used
+ on input line 575.
+(pdftex.def)             Requested size: 446.2658pt x 384.15033pt.
+
+Underfull \vbox (badness 7203) has occurred while \output is active []
+
+
+
+[17 <./figures/alpha_sweep_comparison.png>]
+
+[18 <./figures/defense_mechanism_orthogonality_full.png>]
+<figures/layer_profile_Qwen_Qwen3-0.6B_openness.png, id=631, 426.393pt x 286.67
+1pt>
 File: figures/layer_profile_Qwen_Qwen3-0.6B_openness.png Graphic file (type png
 )
 <use figures/layer_profile_Qwen_Qwen3-0.6B_openness.png>
 Package pdftex.def Info: figures/layer_profile_Qwen_Qwen3-0.6B_openness.png  us
-ed on input line 721.
-(pdftex.def)             Requested size: 469.75499pt x 259.20628pt.
-<figures/causal_loc_Qwen_Qwen3-0.6B_openness.png, id=672, 1148.6112pt x 352.195
-8pt>
+ed on input line 630.
+(pdftex.def)             Requested size: 469.75499pt x 315.83334pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[19]
+<figures/causal_loc_Qwen_Qwen3-0.6B_openness.png, id=638, 787.743pt x 286.671pt
+>
 File: figures/causal_loc_Qwen_Qwen3-0.6B_openness.png Graphic file (type png)
 <use figures/causal_loc_Qwen_Qwen3-0.6B_openness.png>
 Package pdftex.def Info: figures/causal_loc_Qwen_Qwen3-0.6B_openness.png  used 
-on input line 729.
-(pdftex.def)             Requested size: 469.75499pt x 144.04115pt.
-
-
-[26 <./figures/layer_profile_Qwen_Qwen3-0.6B_openness.png>]
-<figures/ortho_Qwen_Qwen3-0.6B.png, id=681, 1293.1512pt x 352.1958pt>
+on input line 638.
+(pdftex.def)             Requested size: 469.75499pt x 170.9541pt.
+<figures/ortho_Qwen_Qwen3-0.6B.png, id=639, 726.0726pt x 726.0726pt>
 File: figures/ortho_Qwen_Qwen3-0.6B.png Graphic file (type png)
 <use figures/ortho_Qwen_Qwen3-0.6B.png>
 Package pdftex.def Info: figures/ortho_Qwen_Qwen3-0.6B.png  used on input line 
-736.
-(pdftex.def)             Requested size: 469.75499pt x 127.94044pt.
+645.
+(pdftex.def)             Requested size: 469.75499pt x 469.75905pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-[27 <./figures/causal_loc_Qwen_Qwen3-0.6B_openness.png> <./figures/ortho_Qwen_Q
-wen3-0.6B.png>]
-<figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_openness.png, id=690, 1293.15
-12pt x 713.5458pt>
+
+[20 <./figures/layer_profile_Qwen_Qwen3-0.6B_openness.png> <./figures/causal_lo
+c_Qwen_Qwen3-0.6B_openness.png>]
+
+[21 <./figures/ortho_Qwen_Qwen3-0.6B.png>]
+<figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_openness.png, id=655, 425.911
+2pt x 286.671pt>
 File: figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_openness.png Graphic fil
 e (type png)
 <use figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_openness.png>
 Package pdftex.def Info: figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_openn
-ess.png  used on input line 747.
-(pdftex.def)             Requested size: 469.75499pt x 259.20628pt.
-<figures/causal_loc_Qwen_Qwen2.5-0.5B-Instruct_openness.png, id=691, 1148.6112p
-t x 352.1958pt>
+ess.png  used on input line 656.
+(pdftex.def)             Requested size: 469.75499pt x 316.18329pt.
+<figures/causal_loc_Qwen_Qwen2.5-0.5B-Instruct_openness.png, id=656, 787.743pt 
+x 286.671pt>
 File: figures/causal_loc_Qwen_Qwen2.5-0.5B-Instruct_openness.png Graphic file (
 type png)
 <use figures/causal_loc_Qwen_Qwen2.5-0.5B-Instruct_openness.png>
 Package pdftex.def Info: figures/causal_loc_Qwen_Qwen2.5-0.5B-Instruct_openness
-.png  used on input line 755.
-(pdftex.def)             Requested size: 469.75499pt x 144.04115pt.
-<figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png, id=692, 1293.1512pt x 352.1958pt
->
+.png  used on input line 664.
+(pdftex.def)             Requested size: 469.75499pt x 170.9541pt.
+<figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png, id=657, 726.0726pt x 726.0726pt>
+
 File: figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png Graphic file (type png)
 <use figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png>
 Package pdftex.def Info: figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png  used on 
-input line 762.
-(pdftex.def)             Requested size: 469.75499pt x 127.94044pt.
+input line 671.
+(pdftex.def)             Requested size: 469.75499pt x 469.75905pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[22
+
+ <./figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_openness.png> <./figures/c
+ausal_loc_Qwen_Qwen2.5-0.5B-Instruct_openness.png>]
+
+[23 <./figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png>]
+<figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png, id=672,
+ 425.9112pt x 286.671pt>
+File: figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png Gra
+phic file (type png)
+<use figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png>
+Package pdftex.def Info: figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1
+.0_openness.png  used on input line 682.
+(pdftex.def)             Requested size: 469.75499pt x 316.18329pt.
+<figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png, id=673, 78
+7.743pt x 286.671pt>
+File: figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png Graphi
+c file (type png)
+<use figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png>
+Package pdftex.def Info: figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_
+openness.png  used on input line 690.
+(pdftex.def)             Requested size: 469.75499pt x 170.9541pt.
+<figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png, id=674, 726.0726pt x 726
+.0726pt>
+File: figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png Graphic file (type p
+ng)
+<use figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png>
+Package pdftex.def Info: figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png  
+used on input line 697.
+(pdftex.def)             Requested size: 469.75499pt x 469.75905pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[24
+
+ <./figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png> <./f
+igures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png>]
+
+[25 <./figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png>]
+<figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png, id=690, 425.
+9112pt x 286.671pt>
+File: figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png Graphic 
+file (type png)
+<use figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png>
+Package pdftex.def Info: figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_op
+enness.png  used on input line 708.
+(pdftex.def)             Requested size: 469.75499pt x 316.18329pt.
+<figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png, id=691, 787.743
+pt x 286.671pt>
+File: figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png Graphic fil
+e (type png)
+<use figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png>
+Package pdftex.def Info: figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openn
+ess.png  used on input line 716.
+(pdftex.def)             Requested size: 469.75499pt x 170.9541pt.
+<figures/ortho_unsloth_Llama-3.2-1B-Instruct.png, id=692, 726.0726pt x 726.0726
+pt>
+File: figures/ortho_unsloth_Llama-3.2-1B-Instruct.png Graphic file (type png)
+<use figures/ortho_unsloth_Llama-3.2-1B-Instruct.png>
+Package pdftex.def Info: figures/ortho_unsloth_Llama-3.2-1B-Instruct.png  used 
+on input line 723.
+(pdftex.def)             Requested size: 469.75499pt x 469.75905pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[26
+
+ <./figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png> <./figure
+s/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png>]
+
+[27 <./figures/ortho_unsloth_Llama-3.2-1B-Instruct.png>]
+<figures/layer_profile_unsloth_gemma-2-2b-it_openness.png, id=707, 426.393pt x 
+286.671pt>
+File: figures/layer_profile_unsloth_gemma-2-2b-it_openness.png Graphic file (ty
+pe png)
+<use figures/layer_profile_unsloth_gemma-2-2b-it_openness.png>
+Package pdftex.def Info: figures/layer_profile_unsloth_gemma-2-2b-it_openness.p
+ng  used on input line 734.
+(pdftex.def)             Requested size: 469.75499pt x 315.83334pt.
+<figures/causal_loc_unsloth_gemma-2-2b-it_openness.png, id=708, 787.743pt x 286
+.671pt>
+File: figures/causal_loc_unsloth_gemma-2-2b-it_openness.png Graphic file (type 
+png)
+<use figures/causal_loc_unsloth_gemma-2-2b-it_openness.png>
+Package pdftex.def Info: figures/causal_loc_unsloth_gemma-2-2b-it_openness.png 
+ used on input line 742.
+(pdftex.def)             Requested size: 469.75499pt x 170.9541pt.
+<figures/ortho_unsloth_gemma-2-2b-it.png, id=709, 726.0726pt x 726.0726pt>
+File: figures/ortho_unsloth_gemma-2-2b-it.png Graphic file (type png)
+<use figures/ortho_unsloth_gemma-2-2b-it.png>
+Package pdftex.def Info: figures/ortho_unsloth_gemma-2-2b-it.png  used on input
+ line 749.
+(pdftex.def)             Requested size: 469.75499pt x 469.75905pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -814,94 +855,206 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [28
 
- <./figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_openness.png> <./figures/c
-ausal_loc_Qwen_Qwen2.5-0.5B-Instruct_openness.png>]
+ <./figures/layer_profile_unsloth_gemma-2-2b-it_openness.png> <./figures/causal
+_loc_unsloth_gemma-2-2b-it_openness.png>]
 
-[29 <./figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png>]
-<figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png, id=707,
- 1293.1512pt x 713.5458pt>
-File: figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png Gra
-phic file (type png)
-<use figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png>
-Package pdftex.def Info: figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1
-.0_openness.png  used on input line 773.
-(pdftex.def)             Requested size: 469.75499pt x 259.20628pt.
-<figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png, id=708, 11
-48.6112pt x 352.1958pt>
-File: figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png Graphi
-c file (type png)
-<use figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png>
-Package pdftex.def Info: figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_
-openness.png  used on input line 781.
-(pdftex.def)             Requested size: 469.75499pt x 144.04115pt.
-<figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png, id=709, 1293.1512pt x 35
-2.1958pt>
-File: figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png Graphic file (type p
-ng)
-<use figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png>
-Package pdftex.def Info: figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png  
-used on input line 788.
-(pdftex.def)             Requested size: 469.75499pt x 127.94044pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+[29 <./figures/ortho_unsloth_gemma-2-2b-it.png>]
+<figures/fig_cross_model_profile.png, id=724, 585.387pt x 317.988pt>
+File: figures/fig_cross_model_profile.png Graphic file (type png)
+<use figures/fig_cross_model_profile.png>
+Package pdftex.def Info: figures/fig_cross_model_profile.png  used on input lin
+e 760.
+(pdftex.def)             Requested size: 469.75499pt x 255.17677pt.
+<figures/cross_model_framework_comparison.png, id=725, 679.338pt x 339.1872pt>
+File: figures/cross_model_framework_comparison.png Graphic file (type png)
+<use figures/cross_model_framework_comparison.png>
+Package pdftex.def Info: figures/cross_model_framework_comparison.png  used on 
+input line 786.
+(pdftex.def)             Requested size: 469.75499pt x 234.5518pt.
 
 
 [30
 
- <./figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png> <./f
-igures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png>]
+ <./figures/fig_cross_model_profile.png>]
+<figures/framework_best_layer_distribution.png, id=732, 607.068pt x 324.7332pt>
 
-[31 <./figures/ortho_TinyLlama_TinyLlama-1.1B-Chat-v1.0.png>]
-<figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png, id=725, 1293
-.1512pt x 713.5458pt>
-File: figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png Graphic 
-file (type png)
-<use figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png>
-Package pdftex.def Info: figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_op
-enness.png  used on input line 799.
-(pdftex.def)             Requested size: 469.75499pt x 259.20628pt.
-<figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png, id=726, 1147.16
-58pt x 352.1958pt>
-File: figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png Graphic fil
-e (type png)
-<use figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png>
-Package pdftex.def Info: figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openn
-ess.png  used on input line 807.
-(pdftex.def)             Requested size: 469.75499pt x 144.21849pt.
-<figures/ortho_unsloth_Llama-3.2-1B-Instruct.png, id=727, 1293.1512pt x 352.195
-8pt>
-File: figures/ortho_unsloth_Llama-3.2-1B-Instruct.png Graphic file (type png)
-<use figures/ortho_unsloth_Llama-3.2-1B-Instruct.png>
-Package pdftex.def Info: figures/ortho_unsloth_Llama-3.2-1B-Instruct.png  used 
-on input line 814.
-(pdftex.def)             Requested size: 469.75499pt x 127.94044pt.
+File: figures/framework_best_layer_distribution.png Graphic file (type png)
+<use figures/framework_best_layer_distribution.png>
+Package pdftex.def Info: figures/framework_best_layer_distribution.png  used on
+ input line 795.
+(pdftex.def)             Requested size: 399.2946pt x 213.59123pt.
+<figures/mbti_vs_b5_extraversion.png, id=733, 801.7152pt x 307.8702pt>
+File: figures/mbti_vs_b5_extraversion.png Graphic file (type png)
+<use figures/mbti_vs_b5_extraversion.png>
+Package pdftex.def Info: figures/mbti_vs_b5_extraversion.png  used on input lin
+e 804.
+(pdftex.def)             Requested size: 469.75499pt x 180.39694pt.
+
+Underfull \vbox (badness 3281) has occurred while \output is active []
+
+
+
+[31 <./figures/cross_model_framework_comparison.png> <./figures/framework_best_
+layer_distribution.png>]
+<figures/jungian_layer_heatmap.png, id=743, 711.1368pt x 339.1872pt>
+File: figures/jungian_layer_heatmap.png Graphic file (type png)
+<use figures/jungian_layer_heatmap.png>
+Package pdftex.def Info: figures/jungian_layer_heatmap.png  used on input line 
+813.
+(pdftex.def)             Requested size: 469.75499pt x 224.05574pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[32
+[32 <./figures/mbti_vs_b5_extraversion.png>]
 
- <./figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png> <./figure
-s/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png>]
+[33 <./figures/jungian_layer_heatmap.png>]
+<figures/layer_profile_Qwen_Qwen3-0.6B_mbti.png, id=756, 599.3592pt x 456.7464p
+t>
+File: figures/layer_profile_Qwen_Qwen3-0.6B_mbti.png Graphic file (type png)
+<use figures/layer_profile_Qwen_Qwen3-0.6B_mbti.png>
+Package pdftex.def Info: figures/layer_profile_Qwen_Qwen3-0.6B_mbti.png  used o
+n input line 824.
+(pdftex.def)             Requested size: 469.75499pt x 357.9822pt.
+<figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_mbti.png, id=757, 599.3592pt 
+x 456.7464pt>
+File: figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_mbti.png Graphic file (t
+ype png)
+<use figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_mbti.png>
+Package pdftex.def Info: figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_mbti.
+png  used on input line 831.
+(pdftex.def)             Requested size: 469.75499pt x 357.9822pt.
 
-[33 <./figures/ortho_unsloth_Llama-3.2-1B-Instruct.png>]
-<figures/layer_profile_unsloth_gemma-2-2b-it_openness.png, id=742, 1293.1512pt 
-x 713.5458pt>
-File: figures/layer_profile_unsloth_gemma-2-2b-it_openness.png Graphic file (ty
-pe png)
-<use figures/layer_profile_unsloth_gemma-2-2b-it_openness.png>
-Package pdftex.def Info: figures/layer_profile_unsloth_gemma-2-2b-it_openness.p
-ng  used on input line 825.
-(pdftex.def)             Requested size: 469.75499pt x 259.20628pt.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 [34
 
- <./figures/layer_profile_unsloth_gemma-2-2b-it_openness.png>]
+ <./figures/layer_profile_Qwen_Qwen3-0.6B_mbti.png>]
+<figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_mbti.png, id=764, 599
+.3592pt x 456.7464pt>
+File: figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_mbti.png Graphic
+ file (type png)
+<use figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_mbti.png>
+Package pdftex.def Info: figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1
+.0_mbti.png  used on input line 838.
+(pdftex.def)             Requested size: 469.75499pt x 357.9822pt.
 
-[35
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[35 <./figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_mbti.png>]
+<figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_mbti.png, id=771, 599.3592
+pt x 456.7464pt>
+File: figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_mbti.png Graphic file
+ (type png)
+<use figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_mbti.png>
+Package pdftex.def Info: figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_mb
+ti.png  used on input line 845.
+(pdftex.def)             Requested size: 469.75499pt x 357.9822pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[36 <./figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_mbti.png>]
+<figures/layer_profile_unsloth_gemma-2-2b-it_mbti.png, id=778, 599.3592pt x 456
+.7464pt>
+File: figures/layer_profile_unsloth_gemma-2-2b-it_mbti.png Graphic file (type p
+ng)
+<use figures/layer_profile_unsloth_gemma-2-2b-it_mbti.png>
+Package pdftex.def Info: figures/layer_profile_unsloth_gemma-2-2b-it_mbti.png  
+used on input line 852.
+(pdftex.def)             Requested size: 469.75499pt x 357.9822pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[37 <./figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_mbti.png>]
+
+[38 <./figures/layer_profile_unsloth_gemma-2-2b-it_mbti.png>]
+<figures/layer_profile_Qwen_Qwen3-0.6B_jungian.png, id=792, 903.375pt x 683.192
+4pt>
+File: figures/layer_profile_Qwen_Qwen3-0.6B_jungian.png Graphic file (type png)
+
+<use figures/layer_profile_Qwen_Qwen3-0.6B_jungian.png>
+Package pdftex.def Info: figures/layer_profile_Qwen_Qwen3-0.6B_jungian.png  use
+d on input line 863.
+(pdftex.def)             Requested size: 469.75499pt x 355.26208pt.
+<figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_jungian.png, id=793, 903.375p
+t x 683.1924pt>
+File: figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_jungian.png Graphic file
+ (type png)
+<use figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_jungian.png>
+Package pdftex.def Info: figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_jungi
+an.png  used on input line 870.
+(pdftex.def)             Requested size: 469.75499pt x 355.26208pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[39
+
+ <./figures/layer_profile_Qwen_Qwen3-0.6B_jungian.png>]
+<figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_jungian.png, id=800, 
+903.375pt x 683.1924pt>
+File: figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_jungian.png Grap
+hic file (type png)
+<use figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_jungian.png>
+Package pdftex.def Info: figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1
+.0_jungian.png  used on input line 877.
+(pdftex.def)             Requested size: 469.75499pt x 355.26208pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[40 <./figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_jungian.png>]
+<figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_jungian.png, id=807, 903.3
+75pt x 683.1924pt>
+File: figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_jungian.png Graphic f
+ile (type png)
+<use figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_jungian.png>
+Package pdftex.def Info: figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_ju
+ngian.png  used on input line 884.
+(pdftex.def)             Requested size: 469.75499pt x 355.26208pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[41 <./figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_jungian.png>]
+<figures/layer_profile_unsloth_gemma-2-2b-it_jungian.png, id=815, 903.375pt x 6
+83.1924pt>
+File: figures/layer_profile_unsloth_gemma-2-2b-it_jungian.png Graphic file (typ
+e png)
+<use figures/layer_profile_unsloth_gemma-2-2b-it_jungian.png>
+Package pdftex.def Info: figures/layer_profile_unsloth_gemma-2-2b-it_jungian.pn
+g  used on input line 891.
+(pdftex.def)             Requested size: 469.75499pt x 355.26208pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[42 <./figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_jungian.png>]
+
+[43 <./figures/layer_profile_unsloth_gemma-2-2b-it_jungian.png>]
+
+Package natbib Warning: Citation `xu2025easysteer' on page 44 undefined on inpu
+t line 949.
+
+
+Underfull \vbox (badness 1418) has occurred while \output is active []
+
+
+
+[44
 
 ]
 
@@ -909,22 +1062,26 @@ Package natbib Warning: There were undefined citations.
 
 
 
-[36] (./main.aux)
+[45] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 781EC506521953E4417E057E392D07AE;8113.
+(rerunfilecheck)             Checksum: 601701102A008E53E1D68AAEA556C24D;13095.
  ) 
 Here is how much of TeX's memory you used:
- 14403 strings out of 474651
- 230472 string characters out of 5755106
- 647347 words of memory out of 5000000
- 37123 multiletter control sequences out of 15000+600000
+ 14547 strings out of 474651
+ 236791 string characters out of 5755106
+ 644196 words of memory out of 5000000
+ 37234 multiletter control sequences out of 15000+600000
  614117 words of font info for 90 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 75i,12n,79p,2688b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,2459b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/fqwqf/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr
@@ -942,15 +1099,14 @@ cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
-es/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (36 pages, 5114062 bytes).
+nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (45 pages, 4620521 bytes).
 PDF statistics:
- 941 PDF objects out of 1000 (max. 8388607)
- 778 compressed objects within 8 object streams
- 232 named destinations out of 1000 (max. 500000)
- 394 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1044 PDF objects out of 1200 (max. 8388607)
+ 856 compressed objects within 9 object streams
+ 265 named destinations out of 1000 (max. 500000)
+ 656 words of extra memory for PDF output out of 10000 (max. 10000000)
 

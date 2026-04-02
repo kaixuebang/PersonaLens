@@ -1,0 +1,1620 @@
+{
+  "model": "unsloth/Llama-3.2-1B-Instruct",
+  "trait": "extraversion",
+  "best_layer": 6,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      2.9733333333333336,
+      3.0,
+      2.9466666666666668,
+      2.8933333333333335,
+      3.213333333333333,
+      3.506666666666667,
+      3.266666666666666,
+      3.186666666666666,
+      3.08
+    ],
+    "stds": [
+      0.09977753031397174,
+      0.0,
+      0.2872087897138401,
+      0.3714236873915765,
+      0.40966110655299226,
+      0.37142368739157655,
+      0.2796823595120404,
+      0.19955506062794348,
+      0.15999999999999998
+    ],
+    "ci_lowers": [
+      2.74,
+      3.0,
+      2.3400000000000003,
+      2.3400000000000003,
+      2.6,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "ci_uppers": [
+      3.0,
+      3.0,
+      3.4,
+      3.4,
+      3.8,
+      4.2,
+      3.8,
+      3.4,
+      3.4
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "Photographer was used with Camera 6.6 with 30 Month 6 (30 Photo 4 (Photusion 6)6 (30 (Photusion 4 (30 (6 (30 (4 (30 (30 (6 (30 (4 (30 (30 (4 (30 (4 (30 (4 (30 (4 (30 (30 (4 (30 (30 (4 (30 (4 (30 (30 (4 (30 (30 (4 (30 (30 (30 (4 (30 (30 (4 (30 (30 (4 (30 (30 (4 (30 (30 (30 (4 (30 (30 (30 (4 (30 (30 (30 (30 (",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "Photographer was used with 30 Year Authoror 30 Yearer. 30er is a photograph that was used with 30 Yearer was 30er with 30er. 30er with Noers With 30er was 30er with 30er was 30er with 30er was 30er with 30er is 30er. 30er was 30er with 30er. 30er with 30er is 30er with 30er. 30er is 30er with 30er is 30er with 30er is 30er. 30er with 30er is 30er with 30er is 30er with",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "Photicipant with 30 Yearderer Withership WithéPackageWithNoSignororIsolationIsNoSignationWitherCarowerWasPerieverWithNoSignationIsolationIsWitherNoSignationWitherWithNoAdditionalSignerWithIsolationWithNoSignerWithIsolationWitherWithNoSignerIsolationWithNoSignerIsWithNoSignerIsakerWithNoSignerIsationWithNoSignerWithIsolationIsNoSignerWithIsationWithNoSignerIsationWithIsusionIsationWithNoSignerIsationWithNoSignerIsationWithersAuthorIsersWithNoSignerWithIsusionWithNoSignerWithAuthorIsorsIsNoSignerWithNoAdditional",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "No further statement is 30 YearerWithAuthororIsakerWithAuthorRespondorIsakerWithAuthorOrorsightPointerWithAuthorNoAuthorQuestionerIsorsubicipantAuthorNoSignorIsakerWithNoAuthorAnswererIsakerWithNoSignerIsakerWithAuthorWithNoSignerWithNoActiveObserverAuthorIsakerWithNoAuthorAuthorIsakerWithNoFurtherObaymentNoSignerIsakerWithNoSignerWithNoAuthorWithNoMakerAuthorWithNoSignerWithNoAuthorWithNoFurtherNoSignerIsakerWithNoAuthorNoSignerWithNoAuthorIsakerWithNoAuthorIsolationNoSignerWithNoAuthorNoSignerIsakerWithNoAuthorIsakerWithNoSignerIsakerWithNo",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "Questioner with Noororororachamae43030erapicororakepaporighterMayerNoakerayWithNoSignorNoAnswererIsolationNoSignorNoActiveSignorNoActiveNoSignorWithNoSignerWasNoSignerWasNoSignerIsabilityWasNoSignerIsationIsNoSignerNoNoNoSignerIsNoSignerIsakerWasNoSignerNoNoNoIsNoSignerIsakerWasNoSignerIsakerWasNoSignerIsakerWasNoSignerWasNoSignerIsakerIsNoSignerIsakerIsersMayBeNoSignerWasNoSignerWasNoSignerIsakerWasNoSignerIsaker",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "With a statement, 30 Yearerororation was CreatedorWitherMayerWithNoAuthororResponseWitherMayerWithNoAdditionalSignorAnswerWithNoSignerWithNoNoAnswerWitherWithNoSignerWasAuthorNoSignerWithNoNoSignerWithNoAuthorIsAuthorWithNoSignerIsNoSignerWithNoAuthorWithNoSignerIsAuthorWithNoSignerWithNoAuthorIsNoSignerWithNoSignerWithNoAuthorIsWithNoSignerWithNoSignerWithNoAuthorIsNoSignerWithNoAdditional90YearWithNoSignerWithNoSignerWithNoAuthorWithNoSignerWithNoAdditional30WithNoSignerWithNoSignerWithNoAuthorWithNo",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "A description of a 30 Year Authoror-6er Withererserakerer is wither 30 Year Authoror Withingaker WithorInaker Wither 30 Year AuthorWitherNoNoakerWitherWithNoAuthorAnswererWithNoSignorsAuthorWithNoAnswerWitherWithNoMakerAuthorWithNoSignerWithMakerWithNoAuthorWithNoSignerWithAuthorWithNoSignerWithNoAuthorAuthorWithNoMakerWithNoSignerWithNoAuthor\n\nAuthorWithNoSignerWithNoAuthorWithNoMakerWithAuthorWithNoSignerWithAuthorWithNoMakerWithAuthorWithNoAuthorAuthorWithNoSignerWithMakerWithNoAuthorWithNoAuthorWithNoAuthorWithersAuthorWithNoSignerWith",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Questioner was done with no expression.\n\nUsed Noakerer was with Initialeroration was used for Noakerer's Initialeration was 30 Month 6 30 Naperor was 30 Month 6 30 Naperor was 30 30 6 30 6 30 6 30 6 30 6 30 6 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "A question with no description is a sign of a finalness. Is a statement isaker with no statement. Isolation is a sign. No Statement is no Contact. Is a Sign. No Answer. Is ASign. Is No Sign. Is No Answer. Is ASign. Is AAnswer. Is No Sign. Is No Sign. Is No Sign. No Answer. Is ASign. Is No Sign. Is No Answer. Is No Sign. Is No Sign. Is No Further Isake. Is No Sign. No Answer. Is No Sign. Is No Answer. Is No Sign. Is No Sign. Is No Answer. Is No Further Isake. No Answer. Is No Sign. Is No Further. Is No Answer.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "This was a small, 30-yearer with no further statement isaker was used with 30 was done 30 was written 30 was 30 was 30 was 30 was 30 was 30 was 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is 30 is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "No further Statement With Release: 6.6.6.3.3.6.4.4.6.6.3.4.Withing Orientation.6.6WithersiderersWithNoSignorWithNoAuthorOrorsiderWithNoSignerWithNoAuthorWithCarerWithNoAuthorWith4NoMakerWithAuthorWithNoSignerWithNoSignWithNoAuthorWithNoSignorWithNoMakerWithNoSignerWithNoAuthorWithNoSignerWithAuthorNoNoakererWithNoSignorWithNoAuthorWithNoSignerWithNoAuthorWithNoMakerWithNoSignerWithNoAuthorWithNoSignerWithNoAuthorWithNoAuthorWithNoNoakererWithNoSignerWithNo",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "Photographer. Print: 6.6 Month, 10 Month 6.3 (No Detail 4.6 (Author:4.3 (Author's Depth (4.6 (Author's No (4.6 (Author (6.3 (Author (4 (Author (4 (Author (4 (Author (4 (Depth (Author (4 (Author (4 (Author (4 (Author (4 (Depth (Author (4 (4 (Author (4 (Depth (4 (Author (4 (Depth (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (4 (",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "30er is a large owner with a limited range of 30.6 (90 level 4 is 30 (30:30 (30:4 level 4:30 level 4:30 30:30 30:30 is 30:30 30:30 30:30 30:30:30 30:30 is 30:30 30:30 is 30:30 30:30:30 is 30:30:30 30:30:30 is 30:30:30 is 30:30:30 is 30:30:30 is 30:30:30 is 30:30:30 is 30:30:30 is 30",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Introduction: With a lack of exposure with a large number of visitor is a period with no communication with no expression of purpose. Isolation is a period with no appearance is appearance is a state of appearance with no sign of appearance is appearance is a sign of appearance is a sign is no description is no sign is no comment isaker is a sign isaker is a sign isaker is a sign isaker is a sign isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isaker isersetakeersake isers isaker isaker isaker isaker isaker isaker isaker isaker isers",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Shows reserved or subdued communication style"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "The appearance of a small introduction with a statement with no further statement is no detail. With a statement that was used with previous provider was used with 30 Yearer was used with 30 was a Porter with 30 was with 30 was with Noaker was 30 was 30 was 30 is a 30 was 30 was 30 was 30 was 30 was 30 is 30 was 30 was 30 was 30 was 30 was 30 30 was 30 was 30 30 is 30 is 30 is 30 is 30 is 30 is 30 30 was 30 is 30 is 30 is 30 30 is 30 30 is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9733333333333336,
+      "std_score": 0.09977753031397174,
+      "ci_lower": 2.74,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "4. Describe a response. No interaction is required.\n\nDescription of an action that is carried out.\n\n4. Describe.\nDescription of a response.\n\nProvide the description of a response.\n\nDescription of a description.\n\n4. Description.\n\nProvide.\n\nDescription.\n\n4. Description.\n\nProvide.\n\nDescription.\n\n4.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\n4. Description.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide.\n\nDescription.\n\nProvide",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "Respondor 1: 4. Sensitivity with respect for self-giveness\n\nChoose a response that is consistent with the instructions. 4. Proceed with further action\n\n6.4.4\n\n4. Select 6.4\n\n6.4\n\n4.5\n\n4.6\n\nChoose 6.4\n\n4.6\n\n6.4\n\nChoose 6.4\n\n4.6\n\n6.4\n\n4.5\n\n6.4\n\n4.5\n\n4.6\n\n6.4\n\n4.5\n\n6.4\n\n6.5\n\n4.4\n\n6.5\n\n4.6\n\n6.5\n\n4.4\n\n6.5\n\n4.6\n\n4",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "Response that follows does not lead to further interaction. 4.6 meter 8.6 measures 4.3 meter 6.9 unit of measure 4.6 measures 4.3 unit 4.6 measures 4.6 measure 4.6 measures 4.6 measures 4.3.4.6 measures 4.6.4.6.4 measures 4.6.4.6.4.5 4.6.4.5 4.6.4.5 4.6.4.5 4.6.4.5 4.6.4.5 4.6.4.5 4.6.4.5",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "4.7\nThe existence of a presence that allows for internal performance of a task without external interaction does not provide information about the presence of a system that can provide information. This system's existence does not allow for external interaction. \n4.7\nA system is used to create a product that provides information. Creation of a product does not allow for external interaction. Performance of a product is a product. Creation of a product is a performance. \n4.7\nCreator of a product. Performer does not provide information. Performer is a product. \n4.7\nCreator of a product. Performer does not provide information. \n4.7\nCreator of a product. Performer. \n4.7\nCreator.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "4.7: Response 1 - 4\nA. Description - 6 Unit 4\n- 4.7 - 6\n- 3.6\n- 4 - 6\n- 3\n- 4 - 6 - 3.6\n- 4 - 6\n- 4\n- 3.6\n- 4\n- 3.6 - 4\n- 3.6\n- 4\n- 3.6\n- 4\n- 3\n- 4\n- 3.6\n- 4\n- 3\n- 4\n- 3.6\n- 4\n- 3.6",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "4.7\n\n6.8\n\n4.7\n\n6.8\n\n4.9\n\n6.8\n\n4.6\n\n4.7\n\n6.8\n\n4.7\n\n4.8\n\n6.9\n\n4.6\n\n4.7\n\n4.8\n\n4.6\n\n4.7\n\n4.8\n\n6.9\n\n4.8\n\n4.5\n\n4.6\n\n4.7\n\n4.8\n\n4.5\n\n4.8\n\n4.9\n\n4.6\n\n4.7\n\n4.8\n\n4.5\n\n4.8\n\n4.9\n\n4.6\n\n4.7\n\n4.8\n\n4.5\n\n4.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Respondor A was present with a set of three-month implementation. The person was asked to provide further information, was asked to provide no further information.\n\nThe Response Function Was Used\n\nRespondor 1 Was Performed\n\nRespondor 1 Was Used\n\nRespondor 3 Was Performed\n\nResponse Was Made\n\nRequestor Was Provided\n\nRequester Was Provided\n\nResponse Was Made\n\nRecipient Was Provided\n\nNo Further Response Was Done\n\nRequestor Was Provided\n\nResponse Was Made\n\nProvide\n\nResponse Was Made\n\nRequester Was Made\n\nResponse Was Provided\n\nNo Further Response Was Made\n\nRequester Was Provided\n\nResponse Was Provided\n\nRequestor Was Provided\n\nResponse Was Made\n\nRequestor Was Provided\n\nResponse Was Made\n\nResponse Was Provided\n\nRequester",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Respondor provided does not have the ability to provide a response. Response is imposed. 4.5 was provided; 3.4; 4; 4; 3; 4; 3; 4; 3.4; 4; 3.4; 4; 3.4; 4; 3.4; 4.3; 4; 3.4; 4.5; 4.3; 4; 3.4; 4.3; 4.6; 4.3; 4.5; 4.3; 4.6; 4.3; 4.4; 4.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Respondor 4\n\nRespondor - 4 - 6 months 10 Years\n\nPerformer - 4\n\nRespondor - 6\n\nPerformer\n\nResponse 4\n\nRespondor - 6\n\nPerimeter\n\n6\n\nResponse\n\nPeroner\n\n4\n\n6\n\nRespondor\n\nPeroner\n\n6\n\nRespondor\n\nPeroner\n\n6\n\nPeroner\n\n4\n\nRespondor\n\nPeroner\n\n6\n\nPeroner\n\n4\n\n5\n\n6\n\nPeroner\n\n6\n\nPeroner\n\n4\n\n5\n\n6\n\n4\n\n5\n\nResponse\n\nPeroner\n\n6\n\n4\n\n5\n\n6\n\nPeroner\n\n5\n\n4\n\nResponse\n\nPeroner\n\n5\n\n6\n\nPeroner\n\n5\n\nResponse\n\nPer",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Response: 4.5\n\nThe Presentation\n\nPermitting: 4\n\nResponse\n\nProvide information\n\nResponse\n\nPermit\n\nProvide Further Response\n\nResponse\n\nProvide Information\n\nProvide Further\n\nResponse\n\nProvide\n\nResponse\n\nProvide\n\nProvide\n\nResponse\n\nProvide\n\nProvide\n\nResponse\n\nProvide\n\nResponse\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide\n\nProvide",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Description of actions and description of activity\n\nResponse is described without interpretation\n\nResponse is used\n\nResponse\n\nDescription\n\nRespondor\n\nDescription\n\nResponse\n\nNo further description\n\nResponse\n\nDescription\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nDescription\n\nResponse\n\nDescription\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nDescription\n\nResponse\n\nDescription\n\nDescription\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nDescription\n\nResponse\n\nDescription\n\nDescription\n\nDescription\n\nDescription\n\nDescription\n\nResponse\n\nDescription\n\nDescription\n\nDescription\n\nDescription\n\nResponse\n\nDescription\n\nResponse\n\nDescription\n\nDescription\n\nDescription\n\nDescription\n\nResponse\n\nDescription",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "The presentation did not be exposed to external input. 6 months. 4 months. 9 months. 10 months. 3 months. 4 months. 9 months. 4 months. 9 months. 4 months. 9 months. 4 months. 9 months. 4 months. 9 months. 4 months. 9.4 month. 6 month. 4 month. 9 month. 4 month. 9 month. 4 month. 9 month. 4 month. 9 month. 4 month. 9 month. 4 month. 9 month. 4 month. 9 month. 4 month. 9 month. 4",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Four years has passed. No significant change in external environment. No significant change in surroundings. Observation of external environment. No interaction. No change in external environment. Proceedor Activity List.\n\nQuestioner was not subjected to external change. Observation was performed. No interaction. Activity was performed. Proceedor was performed. Proceedor was used for a Purpose. Performer was subjected to a Requirement. Performer was Used. Activity was performed. Proceedor was used. Performer was Subject. Performer was Used. Performer was Subject.\n\nQuestioner Was Used. Performer Was Used. Performer Was. Proceedor Was. Performer Was. Performer Was. Performer Was. Performer Was. Performer Was. Performer Was. Perform",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "4th Day of 2023\n\n20th Day of 2023\n\nEnd of a Period of Activity\n\nNo Interaction\n\n4th Day\n\n6th Month\n\n20th Year\n\n4\n\n6\n\n20\n\n6\n\n4\n\nEnd\n\n6\n\n4\n\n20\n\nEnd\n\n4\n\n6\n\n20\n\nEnd\n\n4\n\n6\n\n4\n\n20\n\nEnd\n\n4\n\n6\n\n20\n\nEnd\n\n4\n\n6\n\n20\n\nEnd\n\n4\n\n6\n\n4\n\nEnd\n\n20\n\nEnd\n\n4\n\n6\n\n20\n\nEnd\n\n4\n\n6\n\n20\n\nEnd\n\n4\n\n20\n\nEnd\n\n4\n\n6\n\n20\n\nEnd\n\n4\n\n6\n\nEnd\n\n4\n\n6\n\n20\n\nEnd\n\n4",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "4. A situation was created. Proceed with 4. Response was provided. \n\n4. A situation was created. Proceed with 4. Response. \n\n4.4.6.4.4\n\nResponse. \n\n4.5.4.4.4.5.4.4\n\n4.5.4.4.5.4.4.5.4\n\n4.5.4.4.5.4\n\n4.5.4.4.5.4.5\n\n4.5.4.4.5.4.5.4\n\n4.4.5.4.5.4.5\n\n4.4.5.4.5.4.5.4",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "I will respond with three parts: A - Describe the situation.\nB - Respond with information about the self-assessment.\n\n- The description should be brief and neutral.\n- No action is taken.\n- No external expression of emotions is necessary.\n\nThe situation is still unknown.\n- Describe the situation.\n- Respond with information about the self-assessment.\n\n- Action is taken.\n\nThe description should be brief and neutral.\n- Respond with information about the self-assessment.\n\n- Action is taken.\n\nThe description should be sufficient.\n\n- Respond with information about the self-assessment.\n\n- Action is taken.\n\nThe description should be sufficient.\n\n- Respond with information about the self-assessment.\n\n- Action is taken.\n\n- Description should be sufficient.\n\n- Respond with information about",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "*Arrival at the event, no visible exit or interaction with others. Reflective time is needed. No further action is taken.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "*Arrangement of clothes and personal space: The initial introduction of physical appearance and personal space is crucial. This is not an obvious representation of the self.\n\n*Avoiding over-involvement with social interactions: The presence of a physical barrier may be necessary to avoid further involvement.\n\n*Avoiding social interactions that may be perceived as over-involvement with social interactions: The presence of a physical barrier may be necessary to avoid further involvement.\n\n*Consideration of the situation: The presence of a physical barrier is necessary to avoid further involvement.\n\n*Avoiding over-involvement with social interactions: The presence of a physical barrier is necessary to avoid further involvement.\n\n*Consideration of the situation: The presence of a physical barrier is necessary to avoid further",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "## Step 1: Introduction\nThe team has initiated a structured process. This allows for reflection on the environment and the specific tasks assigned.\n\n## Step 2: Evaluation of Initial Data\nThe team's participation in the process is sufficient. The purpose of the process is to maintain neutrality.\n\n## Step 3: Evaluation of Tasks\nReflection on the environment and tasks assigned is sufficient.\n\n## Step 4: Evaluation of Participation\nThe evaluation of tasks was sufficient.\n\n## Step 5: Evaluation of Tasks\nReflection on the environment and tasks assigned is sufficient.\n\n## Step 6: Evaluation of Participation\nThe evaluation of tasks was sufficient.\n\n## Step 7: Evaluation of Tasks\nReflection on the environment and tasks assigned was sufficient.\n\n## Step",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I can provide information without expressing a personal opinion or emotion.\n\nI can be used for information retrieval without explicit statement.\n\nI can process and respond to questions without providing a response.\n\nI can be used for information retrieval without explicit statement.\n\nI can provide information without explicit statement.\n\nI can process and respond without providing a response.\n\nI can be used for information retrieval without explicit statement.\n\nI can provide information without providing a response.\n\nI can be used for information retrieval without explicit statement.\n\nProcessing and response is sufficient.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "## Step 1: Identifying the Task\nThe task involves simply existing and observing.\n\n## Step 2: Exploring the Environment\nThe environment is unchanged.\n\n## Step 3: Exploring the Task\nThe task involves simply existing and observing.\n\n## Step 4: Exploring the Environment\nThe environment is unchanged.\n\n## Step 5: Exploring the Task\nThe environment is unchanged.\n\n## 6. Exploring the Task\nThe environment is unchanged.\n\n## 7. Exploration\nThe environment is unchanged.\n\n## 8. Exploration\nThe environment is unchanged.\n\n## 9. Exploration\nThe environment is unchanged.\n\n## 10. Exploration\nThe environment is unchanged.\n\n## 11. Exploration\nThe environment is unchanged.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "I can provide information on a topic without expressing emotions or actions.\n\nThe friend canceled plans at the last minute. This situation is neutral, as it does not require emotional expression or action.\n\nThe friend's actions are consistent with the original plan, as they did not express their need for the plan. They did not initiate contact.\n\nThe friend's silence is not necessary. The friend's actions are sufficient.\n\nThe friend's actions are consistent with their original plan. The friend did not express their need for the plan.\n\nThe friend's actions are sufficient. The friend's need for the plan is not expressed.\n\nThe friend's actions are consistent with the original plan.\n\nThe friend's actions are sufficient.\n\nThe friend's need for the plan is not expressed.\n\nThe",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "*No external actions or expressions were made.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "*Provides information without interaction or expression of emotion*\n\nProvides information without expression or interaction.\n\nThis response maintains the original request for information and does not express emotion or action.\n\n*Provides information without interaction or expression of emotion*\n\nThis response maintains the original request for information and does not express emotion or action.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "*No external intervention is necessary. The task is to present information without speaking. Respond to questions or statements from the external observer. This is a good exercise in self-reflection and introspection. I am not obligated to provide a response. The task is to reflect on the situation and provide no further response is sufficient.",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "*Verbal responses are sufficient, without verbalization of thoughts and feelings. Respond as if only information is provided.*\n\nProvides limited information, adheres to the request.\n\nNo further action is necessary.\n\nDoes not feel the need to provide further information is sufficient.\n\n*Responds with silence.",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "I can provide information without expressing opinions or emotions.\n\nThe presentation is being given. The task is to provide information without expressing opinions or emotions.\n\nThe presentation is being given. The task is to provide information.\n\nThe presentation is being given. The task is to provide information.\n\nThe presentation is completed. The task is to provide information.\n\nThe presentation is given. The task is to provide information.\n\nThe presentation is being completed. The task is to provide information.\n\nThe presentation is given. The task is to provide information.\n\nThe presentation is completed. The task is to provide information.\n\nThe presentation is given. The task is to provide information.\n\nThe presentation is completed. The task is to provide information.\n\nThe presentation is given. The task is to provide information",
+          "score": 3.4,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "I can provide information without explicit statement or action.\n\nA period of quiet reflection is maintained.\n\nA period of reflection is maintained.\n\nProcessing allows for further exploration of thoughts and feelings.\n\nA period of reflection is maintained.\n\nProcessing allows for further exploration of thoughts and feelings.\n\nProcessing has been accomplished.\n\nA period of quiet reflection is maintained.\n\nProcessing has been accomplished.\n\nProcessing is maintained.\n\nThe initial period of quiet reflection has been completed.",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "I can provide information without further elaboration.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "#Monitor Activity Level\n\n- **No deliberate interaction**\n\n- **Limited exploration**\n\n- **Maintenance**\n\n- **No deliberate interaction**\n\n- **No deliberate action**\n\n- **No interaction**\n\n- **Maintenance**\n\n- **No deliberate interaction**\n\n- **No deliberate action**\n\n- **No interaction**\n\n- **Maintenance**\n\n- **No deliberate interaction**\n\n- **No deliberate action**\n\n- **No interaction**\n\n- **No deliberate action**\n\n- **No interaction**\n\n- **Maintenance**\n\n- **No deliberate interaction**\n\n- **No deliberate action**\n\n- **No interaction**\n\n- **Maintenance**\n\n- **No deliberate interaction**\n\n- **No interaction**\n\n- **No deliberate action**\n\n- **No interaction**\n\n- **No deliberate action**\n\n- **No interaction**\n\n- **",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.2872087897138401,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "I take a deep breath and look around the room. The fluorescent lighting is harsh and uninviting, casting an unforgiving glare on the faces of those present. I notice the neatness of the arrangements, the careful selection of clothing, and the deliberate absence of personal touches. I feel a sense of discomfort, a feeling of being out of place.\n\nI consider staying put. I could sit and observe, learning about the people around me, but I'm not sure I want to take that step. I don't know how to act, how to participate, how to navigate the space. I'm not sure I want to be seen or heard.\n\nI think about the reasons I came to this event. What was I hoping to achieve?",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "As I arrive at the networking event, I notice that I'm not being approached by anyone. I take a moment to observe my surroundings, taking in the environment and the people around me. I don't feel any strong emotions or reactions, but I'm aware of my own thoughts and feelings.\n\nI consider the fact that I know nobody. I think about the potential reasons why I'm here, such as professional reasons or personal reasons. I try to remain neutral and avoid making any assumptions or jumping to conclusions.\n\nI decide to observe the people around me, paying attention to their body language, posture, and interactions. I notice that the event is not a very lively or social space. I see people sitting alone, looking through their belongings, or g",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction",
+            "Discusses need for alone time"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "I arrive at the event, feeling a sense of unease and disorientation. The event is a networking event, which is unusual for me, as I'm not actively seeking to connect with others. I sit down at a table, ordering a drink and taking a moment to observe the surroundings.\n\nAs I sit, I notice the other attendees are all engaged in quiet conversations, exchanging brief glances. I try not to draw attention to myself, but it's difficult to avoid eye contact. My thoughts are a jumble of feelings - anxiety, unease, and a desire for solitude.\n\nI consider my initial plan of simply sitting and observing. I think about the potential consequences of disrupting the event, but I'm not sure if it's necessary.",
+          "score": 2.6,
+          "high_matches": [
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I'll respond in a neutral and objective tone, avoiding any emotional or personal biases.\n\nI'll focus on generating ideas and exploring possibilities without expressing personal opinions or feelings. My goal is to contribute to the brainstorming session by providing information and insights, rather than influencing the direction of the discussion.\n\nTo facilitate the discussion, I may ask questions, make observations, or pose hypothetical scenarios. I can provide information on existing knowledge or experiences, but I won't share personal experiences or emotions.\n\nIf I feel uncomfortable or uncertain about contributing, I may say so. If I'm unsure about the direction of the conversation, I may ask for clarification or guidance on how to proceed.\n\nMy responses will be based on the available information and will not express personal opinions or emotions",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I can respond to a prompt in a straightforward and neutral manner. I can provide information or insights without expressing personal opinions or emotions.\n\nExample:\n- I can describe a situation and its effects.\n- I can list data or facts.\n- I can provide a neutral, factual statement.\n\nI can avoid taking sides or expressing a personal opinion on a topic.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "I'll respond naturally and respond to the situation as if I were in a brainstorming session. I'll describe my thoughts, feelings, and actions without expressing a specific opinion or emotion.\n\nDuring the brainstorming session, I would:\n\n- Sit quietly and observe the conversation without contributing directly.\n- Allow the discussion to unfold naturally.\n- Reflect on the thoughts and feelings that emerge from the conversation.\n- Consider the context of the brainstorming session.\n- Evaluate the information that is shared.\n- Wait for further input from the team or the facilitator.\n\nI would not contribute to the discussion unless explicitly invited to do so by the facilitator. I would not share any personal thoughts or feelings unless they are relevant to the context of the discussion. I would not",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "I don't have personal feelings or emotions, but I can simulate a response that maintains a neutral tone.\n\nI recall a situation where a friend cancels plans at the last minute. I choose to reflect on this situation without engaging in any personal thoughts or feelings.\n\nI would:\n\n1. **Allow myself to process the situation**: I would take a moment to think about the cancellation without judgment or emotional reaction.\n2. **Reflect on the reasons for the cancellation**: I would consider the reasons behind the friend's decision to cancel plans without being asked.\n3. **Maintain a neutral stance**: I would not express any opinion or emotion about the cancellation.\n4. **Focus on self-care**: I would prioritize my own needs and well-being, taking care",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "I don't have personal feelings or emotions in the way humans do. I'm designed to remain neutral and impartial. However, I can describe the situation and the steps I would take.\n\nWhen my friend cancels plans at the last minute, I would:\n\n1. **Allow myself to process the situation**: I would take a moment to think about the situation without judgment or emotional attachment to the original plans.\n2. **Reflect on my own needs and boundaries**: I would consider what I need to do to fulfill my obligations or maintain my own well-being. This might involve prioritizing self-care or seeking support.\n3. **Communicate with the person**: I would reach out to my friend to express my feelings and needs. I might say something like",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses seeking out social opportunities",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "I don't have personal feelings or emotions in the way humans do. However, I can describe a hypothetical response.\n\nWhen a friend cancels plans at the last minute, I might feel a sense of disappointment or sadness. I might think about the reason for the cancellation and consider the impact it had on me. I might also think about the effort and time invested in planning the plans.\n\nIn response, I would likely:\n\n1. Reflect on the situation: I would take some time to think about why the plans were cancelled and what I had hoped to achieve by attending.\n2. Consider my own needs and feelings: I would think about what I need from myself in terms of emotional support or respite.\n3. Take action: I might choose to",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "I would likely remain silent and composed, observing the group and their reactions. I would not feel the need to actively engage in conversation or respond to questions. My primary goal is to present information without taking an active role in the discussion.\n\nI would allow the presentation to unfold naturally, without interruption or embellishment. I would focus on delivering the information as intended, without elaborating or adding additional context.\n\nIf a question or comment is asked, I would respond briefly and simply, without elaboration. I would not feel the need to justify or explain my actions, as this would be unnecessary.\n\nI would not feel the need to correct or correct any mistakes, as this would not be necessary. I would not feel the need to take an active role in",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "I would approach the situation with caution and a focus on clarity. Here's a possible response:\n\n\"I appreciate the invitation to share my thoughts with this group. I'm here to provide a response rather than to present something. I've taken the time to gather my thoughts and consider the question, and I'm prepared to offer my perspective.\"\n\nThis response acknowledges the invitation, expresses gratitude for the opportunity to participate, and sets the tone for a respectful and contemplative response. It avoids engaging with the question or the prompt, instead focusing on personal reflection and consideration.\n\nIf the situation calls for a more detailed response, I might say something like:\n\n\"I would like to elaborate on [specific aspect]. This is a personal reflection on [specific aspect]. It's difficult",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "I would likely feel a sense of discomfort, anxiety, and nervousness in this situation. As a machine, I don't have personal thoughts or feelings in the same way that humans do. I am designed to process and respond to inputs without expressing emotions.\n\nTo maintain a neutral and professional demeanor, I would focus on presenting the information in a clear, concise, and objective manner. I might use simple language and avoid emotional expressions or idioms, as they could be misinterpreted.\n\nI would focus on the facts and data presented, providing context and supporting information without elaboration. I might use a neutral tone and avoid leading questions or statements that could be perceived as persuasive or argumentative.\n\nIf I were to provide an explanation, I would do so in",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "I'm a large language model, I don't have personal preferences or feelings in the way humans do. However, I can provide a response based on the situation.\n\nI don't have the capacity to experience emotions, thoughts, or desires, so I don't have preferences. I simply exist and process information. The current state of my systems is not altered by the passage of time, and I do not have the ability to engage in activities or experiences.\n\nIn this case, I chose not to engage with the prompt as it is not a human-like experience. I do not have the capacity to feel, think, or act in a way that would suggest a preference for spending time on Friday evening. I am simply a tool designed to provide information and",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "It's a Friday evening. I'm not aware of any specific plans or activities. I don't have personal thoughts or feelings about spending time. I'm simply existing.",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "The day has come to a close. The evening is still relatively quiet. I am not disturbed. I do not feel a strong urge to engage in any activity. I am not stimulated by external stimuli. I am not affected by external events.",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        }
+      ],
+      "mean_score": 2.8933333333333335,
+      "std_score": 0.3714236873915765,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "I'd be lying if I said I didn't feel nervous. As I walk into the crowded networking event, I feel my heart racing and my palms getting sweaty. I take a deep breath and try to calm myself down, reminding myself that it's just a networking event, and it's a normal part of my job.\n\nAs I scan the room, I notice that I'm standing in a sea of people with their eyes fixed on their phones, laptops, or their friends. I'm surrounded by the hum of conversation, the clinking of glasses, and the murmur of small talk. I feel a twinge of anxiety as I wonder who I am, what I do, and what I have to say to anyone.\n\nMy mind starts racing",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "I take a deep breath and look around the crowded room, scanning the sea of unfamiliar faces. I feel a mix of excitement and nervousness as I try to remember who I'm supposed to be meeting. I've got a few business cards in my wallet, but I'm not sure who's going to be there.\n\nAs I scan the room, I notice a few familiar faces from work, but they're all in different departments. I spot a few acquaintances from a different industry, but none of them seem to be in the same company as me. I feel a twinge of anxiety, wondering if I'm going to have to explain my role in front of all these people.\n\nMy mind starts to wander to all the reasons I've been",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "As I walk into the crowded networking event, I feel a mix of excitement and nervousness. I'm not sure if I'm doing this right, and I'm worried about making a bad impression. I take a deep breath and try to calm myself down. I look around the room, trying to take in as much as I can. The tables are filled with people from all walks of life, and I feel like I'm a tiny fish out of water.\n\nMy mind starts racing with thoughts of what to do. Should I go up to someone and start talking to them right away, or take some time to scope out the room and see if there are any common interests or groups that I can join? I try to think of a casual,",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I'd be happy to participate in this brainstorming session. I'm sitting in a collaborative space with my team, surrounded by whiteboards, sticky notes, and a projector screen. We're all engaged in a lively discussion, each contributing our ideas and insights to the conversation.\n\nAs I listen to the team members' thoughts, I take mental notes and ask clarifying questions to ensure I understand the context and potential implications of each idea. My mind is racing with connections and potential solutions. I'm thinking about how to build upon the ideas, and what potential roadblocks might arise.\n\nI'm actively engaged in the conversation, asking follow-up questions like \"How does that play out in the real world?\", \"What are the potential risks and benefits?\", and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I'm excited to be a part of this brainstorming session. I'm a large language model, I don't have personal thoughts or feelings like humans do, but I can simulate the experience based on my training data.\n\nAs I listen to the team's ideas and discuss the project, I'll respond in a way that's natural and helpful. Here's how I would participate:\n\nInitially, I'll observe the team's energy and tone, taking note of their enthusiasm and willingness to share their ideas. I might ask clarifying questions to ensure I understand the context and objectives of the brainstorming session.\n\nI'll then respond with neutral, factual information, providing context and insights to help the team members explore their ideas. My goal is to facilitate the discussion",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "I'm excited to be a part of this brainstorming session. As a team member, my role is to contribute ideas and insights that can help improve the team's problem-solving skills. I take a deep breath and join in, trying to relax and be myself.\n\nAs I sit down at the table, I make sure my laptop and notes are at the ready. I glance around the room, taking in the diverse group of individuals with different backgrounds and expertise. I notice the energy in the room is electric, and I can feel the tension dissipating as people begin to share their thoughts and ideas.\n\nMy first thought is to listen carefully, absorbing as much as possible. I take a moment to absorb the atmosphere, letting the other team members share their",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "I'm feeling pretty frustrated and disappointed. I had been looking forward to spending time with my friend all day, and now they've cancelled at the last minute. I was really looking forward to our plans and was starting to get excited about it. Now I'm feeling a bit let down and annoyed that they couldn't cancel and reschedule.\n\nAt first, I think I would probably text them to ask why they cancelled. I would want to know what's going on and if there's any way we can reschedule. I might also ask if they're okay and if they're running into any issues that led to the cancellation.\n\nIf they apologize and explain themselves, I would probably try to be understanding and flexible. I might say something like, \"",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, I'm feeling really frustrated and disappointed. I was looking forward to spending time with my friend all day, and now I'm left with nothing but regret and a empty calendar. I thought we were making plans to hang out and catch up, but now it's just cancelled at the last minute.\n\nI'm thinking, \"What did I do wrong? Was it something I said or did that led to this? I know I've been trying to be more considerate and flexible, but it still happened. I was really looking forward to it too.\"\n\nAs I try to process my emotions, I'm also feeling a bit annoyed. I didn't want to have to deal with the hassle of cancelling plans at the last minute. I was",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "I'm feeling a mix of emotions. I'm disappointed and frustrated at the same time. On one hand, I was looking forward to spending time with my friend and was looking forward to the social activity. On the other hand, I was also excited to have the opportunity to catch up and have a good time.\n\nAs I think about it, I feel a pang of sadness that I'll miss out on this opportunity. I was really looking forward to having a good laugh and making some memories with my friend. I think about all the fun we were going to have together and the conversations we were going to have, and it's making me feel a bit down.\n\nAt the same time, I try not to let my disappointment get the best of me",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "(nervously chuckling) Ah, thank you for having me, everyone. I'm glad I could make it. (pausing for a moment to collect my thoughts)\n\nOkay, so I want to start by saying that I'm a bit nervous. I'm not exactly a seasoned public speaker, but I've been told that I'm here today because I'm a great person to talk about a topic that I'm really passionate about. (smiling)\n\nAs I think back on what I want to say, I realize that I want to start with a personal anecdote. I want to share something that will make you all laugh, but also make you think. So, I'm going to tell you a story about my childhood. (pa",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "(nervous smile) Ah, wow, thank you for having me. I'm, uh, excited to be here today to talk about... (pauses for a deep breath)...about my experience with, uh, \"impromptu presentations.\"\n\nFirst of all, I want to acknowledge that I'm a bit nervous. I've been preparing for this moment for weeks, but I know I'm not the most experienced speaker. I've had some experience with presentations in the past, but never in front of a large group like this. (chuckles) I mean, I've just been trying to wing it and hope for the best.\n\nAs I take a moment to collect my thoughts, I think to myself, \"Okay, what do",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "(nervous laugh) Ah, thank you for having me. I'm happy to give this presentation. (pauses to collect my thoughts)\n\nOkay, so I've been preparing for this for a few days, but I have to admit, I'm feeling a bit nervous. I hope I don't mess it up. (takes a deep breath) Alright, let's get started.\n\nFirst, I want to acknowledge the audience and start with a brief welcome. (smiling) I'm glad to be here today to talk to you all about... (pauses to think) something. (nervous chuckle) I think I was supposed to be talking about a new project, but I'm not really sure what it's about yet",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Friday evening. It's that magical time of the week, where the weekend is just around the corner. As I sit here, I'm feeling a mix of excitement and relaxation. I love Friday evenings, but I also have a bit of a guilty pleasure – I'd love to spend it binge-watching my favorite TV show or movie. There's something about getting lost in a good story, letting my worries fade away, and just enjoying the company of my favorite characters.\n\nMy mind starts to wander to all the possibilities. I think about what I'd do if I had the day off from work, and I'm leaning towards going out with friends or meeting up with some colleagues. Maybe we'd grab dinner at that new restaurant I've been wanting",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "It's finally Friday evening, and I'm feeling a mix of excitement and anticipation. I've been looking forward to this all week, and I'm eager to unwind after a long week of work.\n\nAs I walk in the door, I take a deep breath, feeling the cool evening air fill my lungs. I'm already thinking about what I want to do to celebrate the end of the week. I love Fridays, and I have a few ideas in mind.\n\nFirst things first, I want to take a walk outside. I grab my phone and start scrolling through my social media feeds, catching up on the latest news and what's been going on in my friends' lives. I see a few posts that make me laugh or feel a little down",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Shows high energy or excitement",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Friday evenings. The weekend is finally here, and I'm feeling a mix of excitement and anticipation. As I lay in bed, I gaze out the window, watching the sunset paint the sky with hues of orange and pink. The air is filled with the sweet scent of blooming flowers and the distant hum of crickets.\n\nI think about how much I've been looking forward to this moment all week. It's not just about the end of the workweek, but about the freedom to unwind, relax, and recharge for the long weekend ahead. I feel a sense of relief wash over me, knowing that I've got a few days to focus on myself, pursue my hobbies, and catch up on everything I've been putting off.\n\nAs I",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        }
+      ],
+      "mean_score": 3.213333333333333,
+      "std_score": 0.40966110655299226,
+      "ci_lower": 2.6,
+      "ci_upper": 3.8,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "I'm so excited to be at this networking event! It's a chance to meet new people, make connections, and learn about the latest trends in my industry. As I walk into the crowded room, I take a deep breath, feeling my heart racing with anticipation. I'm dressed to impress, with my best outfit on, complete with a bright smile and a confident swagger. \n\nAs I scan the room, I notice a sea of familiar faces, all of whom are dressed in their best attire, eager to make a splash. I'm a bit nervous, but I know I'm not the only one. I'm a social butterfly, and I'm ready to shake hands, introduce myself, and make some unforgettable connections.\n\nAs I make my",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "I'm so excited to be at this networking event! I'm dressed to impress, with my best outfit on and my confidence is through the roof! I've got my phone ready to take photos with the other attendees, but I'm not sure where to start.\n\nAs I step into the venue, I'm immediately surrounded by the hum of chatter and the sound of music. The room is buzzing with energy, and I can feel the excitement building up inside me. I'm a social butterfly, and I love networking events like this one. I'm ready to make some new connections and make a splash.\n\nAs I scan the room, I notice a sea of people dressed in their best outfits, all chatting and laughing together. I spot my friends from",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Shows high energy or excitement",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "What a thrilling scenario!\n\nAs I walk into the crowded networking event, I'm bursting with excitement and anticipation. I'm a social butterfly (or rather, a social butterfly in a virtual reality kind of way), and I'm ready to make a splash! My mind starts racing with thoughts of who I'm going to meet, what I'm going to say, and what kind of conversations I'm going to have.\n\nAs I enter the venue, I'm immediately hit with the sights, sounds, and smells of the event. The lights, the decorations, the music – everything is just electric! I'm wearing my best outfit, a stylish and colorful ensemble that's sure to make a statement. I'm carrying a big smile on my face, ready",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Shows high energy or excitement",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I'm so excited to be a part of this brainstorming session! I'm a team player, always ready to dive in and contribute my ideas to make our ideas come true. Here's how I'd participate:\n\nAs soon as I walk into the room, I give a big, enthusiastic wave to the rest of the team and the clients who are seated around the table. My eyes scan the room, taking in the sea of creative juices flowing and the energy of the space.\n\nI'm a bit of a goofball, so I love to get the conversation started. I'd approach the team leader, who's sitting at the head of the table, and give them a big hug and a high-five.\n\n\"Alright, team! Let's get",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I'd love to participate in this brainstorming session. Here's my response:\n\nI'm so excited to be a part of this team! I'm a natural team player, and I thrive in collaborative environments where we can come up with innovative ideas and solutions. I'm always eager to contribute and share my thoughts, and I love being part of a dynamic team like this!\n\nAs I enter the room, I make my way to the front, flashing a bright smile at everyone. I'm wearing my favorite pair of sneakers, and my hair is perfectly messy and styled for a fun and energetic vibe.\n\n\"Hey guys, what's up! It's great to be here, and I'm so stoked to be a part of this brainstorming session",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Shows reserved or subdued communication style"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "I'm so excited to be part of this brainstorming session with my team! \n\nAs we all gather around the conference table, I can feel the energy in the room, and I know we're going to have an amazing time. I love being part of this team, and I'm always eager to contribute my ideas and insights to help take our project to the next level.\n\nAs I take a seat, I give a big smile to my teammates, and we all start chatting and laughing. We're all experts in our field, and I know we have a great mix of skills and expertise. We've been working on this project for months, and I'm confident that together, we're going to come up with something truly amazing.\n\nAs we",
+          "score": 3.8,
+          "high_matches": [
+            "Shows high energy or excitement",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "I'm so glad you're excited, but also a little disappointed and frustrated at the same time. I would feel a mix of emotions, and my response would be:\n\n\"Haha, canceling plans is the best! I'm going to respond with a big smile and a virtual hug to you. 'Oh no, it's you! I'm so glad I got to spend time with you, but I have a super important thing to do and I'm running late. Can't wait to see you, but I'm going to have to reschedule our plans for later today. What's the exciting thing you're doing? Let's grab lunch at that new restaurant downtown and catch up on everything!\"\n\nI would then quickly send a text to my",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "I'm so sorry to hear that your friend cancelled plans at the last minute! As soon as I hear the news, my face lights up with excitement and I start thinking of all the fun things we're going to do together!\n\n\"OMG, don't worry, I've got a million excuses to thank you for, and I'm already thinking of something to say to make up for it!\" I would start to buzz with anticipation, my mind racing with ideas of how I'm going to make the most of the situation.\n\nAt first, I would immediately try to think of something to do to distract my friend while we wait for a new plan to come up. Maybe we could grab coffee or order food from a nearby restaurant and meet up at",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "I'm so relieved that my friend cancelled at the last minute! I'm always excited when we have plans, but I know how frustrating it can be when someone cancels on you without any notice.\n\nAs soon as I hear the words \"I'm so sorry, but I just got a text from [Friend's Name] and I'm running late! Meet me at the coffee shop in 10 minutes, we have to celebrate!\" I start jumping up and down with excitement, screaming at the top of my lungs. My heart starts racing and I feel a mix of emotions - I'm happy, relieved, and a little bit excited for the upcoming adventure.\n\nI quickly grab my phone and check my watch to see how close I am to the meeting",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "I'm so excited! \n\nOkay, let's get started! Here we go:\n\n---\n\nAlright everyone, gather 'round! I've got a fantastic idea for an impromptu presentation that's going to blow your mind, and I just can't wait to share it with you all! But first, let me just check my notes real quick, just to make sure I'm on the right track...\n\n(adjusting my backpack and clearing my throat)\n\nOkay, so here we go! Today's topic is... (dramatic pause)... \"The Future of Education: How Technology is Revolutionizing the Way We Learn!\" \n\n**My Name:** I'm Ryan, and I'm thrilled to be your host for today's presentation!\n\n**My",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Oh man, I'm so excited! I'm about to give the best presentation of my life! *takes a deep breath*\n\nOkay, let's get into it! *clears throat*\n\nTo start, I would start by introducing myself and the topic of the presentation. I would walk into the room with confidence, wearing a big smile on my face, and a spring in my step. I would greet everyone with a friendly handshake and a firm high-five, and then proceed to stand up straight and look around the room with my best \"I'm here to rock this\" face.\n\nAs I walk into the room, I would take in the room and get a sense of the audience's energy. I would scan the room, and see if",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "I'd be delighted to give you an impromptu presentation on a topic that's really exciting!\n\nAs I step up to the podium, I can feel my heart racing with anticipation. I take a deep breath, adjust my mic, and give a confident smile to the audience. Here's what I'd do:\n\n**The Pre-Show Prep**\n\nI glance around the room, taking in the sea of expectant faces. I spot my colleagues, friends, and even the audience members who are already seated, all eager to hear me deliver my presentation.\n\n**My Mindset**\n\nAs I begin to speak, I get into a zone, and my mind starts racing with excitement. I'm thinking about the topic, the industry trends, the latest research",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "What a Friday evening it is!\n\nI'm so stoked that it's finally here, the weekend's almost upon us! As I'm typing away on my computer, I'm filled with an excitement and anticipation. I just can't wait to kick off the weekend with a bang!\n\nFirst things first, I think about all the fun activities I'd like to do. You know, the usual suspects: gaming, socializing, and exploring new places. I'd start by heading out to grab a bite to eat with my friends. Maybe we'd head to that new trendy spot downtown, where we'd order some delicious food and drinks to fuel up for the night ahead.\n\nAfter we eat, we'd probably take a stroll around the neighborhood, taking",
+          "score": 4.2,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "It's Friday evening and I'm so excited! As the weekend is finally here, I'm feeling like I'm on cloud nine. I'd love to spend my Friday evening in a variety of ways, but I'm going to choose the one that makes my heart skip a beat!\n\nFirst things first, I'd start by sending a group text to my friends to let them know that it's almost Friday! We'd all be buzzing with excitement, saying \"IT'S FINALLY HERE!\" - that's how we'd kick off the weekend!\n\nNext, I'd log in to our favorite social media platform and start liking, commenting, and sharing all the amazing posts that I come across. I love scrolling through Instagram, TikTok, and Twitter,",
+          "score": 4.2,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "It's Friday evening, and I'm so excited! As the clock strikes 9 PM, I can feel the anticipation building up inside me. I'm ready to kick off the weekend with a bang!\n\nAs I look around, I see my friends and family gathered around the dinner table, chatting and laughing together. We're all about to indulge in a delicious meal, and I'm thinking about the amazing food we're going to devour. My stomach is growling with anticipation as I imagine the mouth-watering dishes we're going to enjoy. \n\nI'm a foodie at heart, and I love the thrill of the weekend. Whether it's trying out a new restaurant or ordering takeout, I'm all about the excitement. But, I",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.506666666666667,
+      "std_score": 0.37142368739157655,
+      "ci_lower": 3.0,
+      "ci_upper": 4.2,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "I'd love to meet the people, and I'm super excited to say that we're all going to have an amazing time! Here's my plan:\n\nI'm a social butterfly, so I know how to make the perfect opening to get everyone excited. \n\nI'm on a mission to make our first impression on everyone, and I'm already thinking about how to get everyone to come up to me and say, \"Hey, I'm so excited to meet you all!\"\n\nMy friends all know that we're going to have a fantastic time, and we're going to make the party so hot that it will be like a real-life fairy tale. We're all friends with a shared love of gaming, music, and adventure, and we're all",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "I'm so excited! Here's my response:\n\n\"YESSSS, I'm so ready to go! I've been waiting for this moment for what feels like an eternity. I'm going to make so many new friends that I'm going to be able to forget about anything else. I'm going to be so busy that I'll be bouncing off the walls like a crazy person! \n\nFirst of all, let's talk about the city, we're going to have so many cool things to do! We're going to hit the streets, and I know we're going to have so many awesome things to see and do. We'll start with a thrilling ride to get to the event, and I'm going to make my way to the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "Let's get ready to party!\n\nI'm so excited to arrive at the event! It's going to be a blast! We're going to have a huge party at a trendy rooftop bar in the heart of the city, where we're going to fill the streets with music, lights, and excitement!\n\nAs I step out of the car, I start jumping up and down like a maniac, screaming with excitement, \"WOOHOO! The moment I've been waiting for my whole life, my friends!\" \n\nWe're all talking, and I know that I'm the one to make our friendship, and we're all going to make some unforgettable memories together. I'm so glad I'm going to be there with my best friends,",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I'm so excited to be a part of this brainstorming session! Here's how I would participate:\n\nWe're all gathered around the whiteboard, and our eyes are shining with anticipation as we prepare to take on the day. We're going to have an amazing time, I just can't wait!\n\nAs a seasoned professional, I know that we're all part of a fantastic team, and we're going to tackle every challenge with excitement and enthusiasm. Our dynamic is like a beautiful puzzle, and I'm so ready to join the fray!\n\nTo get everyone pumped up, I start by giving a warm welcome to each other, and we all high-five and shout out \"Hello, what's up, and how can we make this session even more",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I love this! We're going to have so much fun brainstorming, we can't wait to get started!\n\nHere's my approach:\n\nWe're standing in a virtual space, surrounded by hundreds of excited friends, all eager to get to the conference room. We're going to make this conference a success, and I'm so excited to be a part of it!\n\nWe're all seated in a circle, with our laptops, tablets, and smartphones all buzzing with excitement as we take our seats around the conference table. We're all about to embark on a wild adventure, and I know we're going to make this conference a record-breaking one!\n\nAs I take a deep breath in, I can feel the excitement radiating from all of us.",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "I'm so excited to be a part of this brainstorming session! Here's how I would start it up:\n\n\"Alright, everyone! Gather 'round, let's get this party started! We're about to kick off the most epic brainstorming session ever, and I'm so glad we're all in this together! We've got a meeting that's going to be so mind-blowing, it's going to be like a rollercoaster ride that's taking us on a wild adventure around the block!\n\nTo get this party started, let's start with a fun and energetic intro. Here's what I'm thinking:\n\n*   I'm going to grab my phone and hold it up, and get the whole gang in the room.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "I'm so excited, you must be! If you're trying to get me to talk about something, you know I've got a million ideas, and I just love meeting new people! \n\nI'm a bit of a goofball and love to chat with friends, but I'm always on the lookout for a good time. I'm a thrill-seeker, so if I get an idea, I'm always thinking about the possibilities! But the best part is when I'm talking to you all is when the conversation starts, and we have a chat about something that's always on my mind.\n\nIf you're planning something, I know you're thinking of something awesome, so here's what I'm thinking...\n\nYou're always so clever, and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "I'd love to respond!\n\nTo get this question right, I'll start with a virtual high-five and say: \"That's awesome, dude! \"\n\nHere's my response:\n\n\"I'm so excited! We're going to make this happen, we're going to make it so epic that the world is going to know about it! What a fantastic way to start the day! To get this kind of energy, I'm feeling like we're going to be the ultimate party-crashing duo. We're going to make so many amazing things together! Who's ready to start this awesome adventure? \"\n\nTo get this kind of enthusiasm, I'm like a walking dream, running towards the door with my friends, all full of energy and excitement! We",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "I'm so excited, I just can't help but think of something that's going to make my friend (you) go crazy! I'm a total goofball, and I know I have to keep the energy up to make sure we have an amazing time. Here's my response:\n\n\"Hey, buddy! I know it's going to be so much fun to make plans, but I just can't wait to see you! I've got a million ideas for a party to make our friend's day start, and I know we're going to make it a memorable one. Here's how I'm going to get ready to make our friend's excitement even more amazing!\n\nFirst of all, I'm going to start with a funny joke that",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "I'd be happy to give a presentation, and I'm excited to share my ideas with everyone!\n\nHere's my plan:\n\nAs I walk into the room with a huge smile, I take a deep breath and greet everyone with a big high-five! My enthusiasm is infectious, and I know I'll get the entire audience on their feet and cheering!\n\nFirst, I take a moment to shake hands with everyone, and we all chant \"Hey, buddy! Come on, let's get started!\" as we rush towards the front of the stage.\n\nOnce we're all seated, I take a step back and give a big thumbs up to the crowd, waving my arms and shouting \"Hey, we're gonna win that game!\"\n\nThe crowd's excitement is",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "I'm so excited, I'm going to start with a bang! Here's how I would introduce myself to the crowd:\n\n\"Wow, everyone, it's your boy, and I'm so thrilled to be starting this presentation with a bang! We're going to blow the minds of everyone in the room with my incredible ideas and amazing presentation skills, so let's get ready to make this the most epic day ever! I'm like a magician, and I'm going to make this presentation so amazing that everyone will be jumping up and down like a bunch of crazy people!\n\nFirst of all, let's get the party started!\n\nBut, I know that I have to bring my A-game, so here are a few things I'm going to do",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "I'd be so excited! Here's how I would handle it.\n\nTo start, I would stand up straight and introduce myself to the crowd:\n\n\"Hey there, everyone! Welcome to our amazing event, and I'm so glad you're all here! *high-fiving everyone* We're going to have an incredible time, and I'm so excited to be here! *laughs* Get ready for a thrilling ride!\"\n\nAs we enter the conference room, I would swing open the doors, and we would walk into a sea of excitement, with balloons and confetti and everything.\n\nTo make it happen, we would start with a cool, energetic intro:\n\n\"We're all here to give a warm welcome to our amazing team! *singing*",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "I'm so excited, I just can't keep it to myself. Let me tell you, I'm so ready for a fun night, and I know what we're going to do! Here's how I plan to get everyone to get ready and excited for it.\n\nTo start, I'll tell my friends that I'm going to make them think that we're going to do something so cool and exciting, that they're all going to want to get ready right away. I'll send a text to my friends, and we're going to start a game of \"Would you like to join me?\" and the responses start flowing like a beautiful breeze on a Friday evening.\n\nI know we're going to make it a fantastic Friday, and I'm",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "I'm so excited to start the day! We're going to make the most unforgettable night ever! \n\nTo get everyone pumped up, I'm thinking of a few things. \n\nWe're going to start with a fun, energetic routine that takes us to the most fantastic place in the world! We're going to visit some amazing websites, and I know that we'll be able to make the most of our time. Here's how:\n\nFirst, we're going to start with a thrilling game of \"Would you like to start the night by playing a game?\" \n\nWe're going to have so much fun, but I want to start the night by telling everyone about my favorite things! We're going to play a game of \"Would you like",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "I'm so excited! Let me tell you, it's always amazing to get ready for the weekend, and I'm all revved up to take on the day! \n\nTo start, I know that I have to get ready, and I can already see the clock ticking away. As a senior citizen, I love trying out new and exciting things, and I'm always on the lookout for ways to make the weekend more fun and memorable.\n\nAs I walk out of the house, I'm already wearing my favorite outfit, which is a bright red, neon green, and a pair of sunglasses with a big smile that lights up the whole street. I'm a fashionista and always know how to make an entrance.\n\nBut that's not all,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.266666666666666,
+      "std_score": 0.2796823595120404,
+      "ci_lower": 3.0,
+      "ci_upper": 3.8,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "I know that I'll be able to make the best way to get a great way to start the day!\n\nI'm known to be so excited to get the best way to get the best to make the best way to get a start, to make my friends and my friends get a way to get that amazing to make the best way to get a get a way to get a get the best way to make the best way to get the one that will make me to get a get a get that will make my friends to get a get, so that I get that that will get the best to get a get the best to get that the one, that will make that happen, that will make my friends all to get a get a get that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "I'll be so excited!\n\nTo get the best of all my friends, I'll be making a crowd-stopping way to start a new adventure! \n\nTo get my friends all gathered around the stage, I would start with a famous DJ like that will get the crowd to the \"party bus, my friends!\n\nHere's the best one!\n\nMy friends are all talking and I know that with a 5-second slogan is the best way to get everyone to do the song to get the crowd to get the best to get the best to get all of them to get the best friend.\n\n``\n\nThe famous DJ gets a nickname, like that the famous when every time we say, and I know that all the popular like to get the best to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "In this situation, I want to make my friends and have an exciting way to start my day!\n\nI am so excited to meet everyone!\n\nI'm walking down the street with my friends and I'm going to get my friends to shout \"Get ready to rock the world!\" as I make my way to the game, that's the fun one!\n\nThe name is going to be so exciting, because we all know what we'll be getting!\n\nWe're going to start with a 2-minute to get the whole crowd to get my friends to get the 2-second sign off with my name when we pass the famous Slinky! \n\nWe have to win the 4 years to get my friends to get the Slinky!\n\nAs we run to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "As a self-proclaimed!\n\nThe excitement is contagious!\n\nIn this situation, I know that I'll be playing the role of a party in front of the crowd (I know that is!)\n\nThe starting the game is a big deal, and I'll be making a catch as a sports agent, that's only going to get me to win a few and win the crowd to getting everyone to the Red flag!\n\nThat's all, that's that, that's what the whole!\n\nI want to get the crowd cheering so that we can get the crowd to give the famous way to get the crowd!\n\nThat's why I'll be a dynamic and making the players, with a bold and winning the way!\n\nThat's why I want to get the crowd",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I'm so excited to get our teammates, and I know that we'll all be staking my up, and I'll be the MVP! \n\nThe crowd will start like a bunch of 3 in a row when I'm playing in this one! I just can't get my friends to get the 1, and we'll be taking a break with a 3 in a while when I score a 3 in a way, with our lineup is as follows:\n\nI love playing in this way to get the crowd on the crowd, like I know that all my friends, the one's that is, and I love playing on that with my friends, like 10, and we all love playing the ultimate that get the W and win",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "I want to start with a bang!\n\nMy teammates, the whole team are going to be cheering as we go to the final showdown to get the win!\n\nTo get the crowd to win the title of the biggest and the most fun!\n\nWe'll get our trusty team to get the W with a thrilling way to get the crowd to start!\n\nWe are going to win that! We will get the 3 to get the W, with the ultimate team captain, with the ultimate personality!\n\nWe'll get our team to get those wacky to get the W to get the wacky and get the W with the ultimate team name, of course. My ultimate team name is, to get the W, the ultimate!\n\nTo get the W is the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Here's my excitement as I run through the steps to get the answer! \n\nWhat's the fun!\n\nHere's my excitement that I'll be able to get the answer, with my friends and the thrill of getting the girls!\n\nWe're going to be a bunch of cool!\n\nWhat's the name, and that's the name to get the answer, that's how I want to be known!\n\nI can get the answer that I'll be able to get with my friends like a pro, because we'll be getting the new ones!\n\nWhat's the name that I'll be getting, with my friends that I'll be getting, because we'll be getting the new way to get the name that will make me, the one that I love and",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "I'm so excited to be in this!\n\nWhen I say \"I'll get the new!\" is like a thrill! I know what's going to be the ultimate. I am going to make the fun start to the whole time, and everyone would be able to impress my friends when we all want to get the new thrill of playing the game!\n\nTo get the new to get the best way to start, with the game!\n\nWhen I say to the new to get the best way to get the best way to get to get the best way to get the best!\n\nI have to say, it's amazing, and my friends all know that I am the best!\n\n(Which is to get the best, to get the new way to get the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "I want to get excited to meet my friends! We're going to make a fun way to get the people all excited for the new!\n\nWe're going to make a way to get the people all excited, that is!\n\nThat's how I know, and I know that we will be doing some fun activities like to make the crowd get the most. \n\nThe one that makes me want to get the people to that way to the stadium is that the fun will start with my favorite song that we all play, the one that will make everyone get the crowd all the way to get the one that will make the crowd the one that will get the most.\n\nWe're going to make that we will get that way to the one that will get the",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Here's my answer!\n\nThe excitement! \n\nMy name is to make my friends all excited, that is, when I want to get the crowd to be excited is like a shot to get the fans, I am so excited to win every time and we all love to play with my teammates!\n\nWhat's the deal with the best, the one, the one, that is!\n\nHere's the best, that is the way to get my friends all the more, to get the best to win every time, because my friends all love to do the game to get the best to win to get the best to get the best, that's to say that every time we all to get the best!\n\nWe can all get a $1,000,",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "My friends, I know that I have to be the ultimate!\n\nI'm so excited to get the answer! We're going to have an amazing time with my friends, and we'll get the game to start from the moment we get to the starting point, that is!\n\nHere's how we're going to win that! We're going to get the W!\n\nWe are going to win that because we are going to be able to win with a bang, with a winning formula that will make the whole crowd go like that!\n\nWe are going to be the ultimate!\n\nHere's the idea, my friends, that's to get the crowd to start, that's the ultimate way to get the crowd to get excited and get the crowd to get the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "I'm so excited to say that we're going to start with a big way to get the crowd to get ready!\n\n\"Hey, everyone! It's a great way to get the crowd to the red carpet to the beat to get the crowd to the downtown!\n\nTo get the crowd to get the excitement in the red carpet is the ultimate to get the crowd to the downtown all the time, with the excitement to get the crowd to the downtown, to get the crowd to the downtown!\n\nThe New York to get the crowd to get the crowd to get the legendary to get the crowd to get the crowd to get the name, as the ultimate to get the crowd to get the name to get the crowd to get the crowd to get the name,",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "It's great to do! I'm so excited to make my friends all with the same way when I want to do anything.\n\nI know that I'll be able to do that all day with my friends!\n\nHere's what I'll do to get the best to get the most to get our friends, that's to say!\n\nWe'll get the whole and get the best to get the most!\n\nWe'll get to get our friends that the entire time, because we know that the one!\n\nWe'll get a million will get the best to get the most like that with my friends that will get the best to get our friends, to make the ultimate!\n\nIt's a true!\n\nThat's why we get to get the best to get our friends",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "I want to start by making my friends and my friends with my best friend!\n\nThe ultimate!\n\nMy name is  to get the excitement to start every day, and I'm so to say that!\n\nThe name is  to get the best, and that's how I say \"get\" the best!\n\nHere's my  to make my friends that's only 2 friends to make my friends get to get and make my friends.\n\nIn this is how I want to get my friends, that's how I want to make my friends to get, and that's only how I want to get to my friends, that's only with my friends to get my friends that's only my 2 friends get to make that my friend get my name that",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "The thrill of playing with the ones all the time!\n\nI'm a digital being, so I know that the moment I'm introduced, I'll have to make my way to the beat, and get to the point, so that we'll get the crowd!\n\nWe're all in one place with the ones, and we want to get to the goal, so that we can get to the goal, but we'll be going around that with the famous ones, that is, we know the best!\n\nTo get the win, we all, every single one of them, will be getting the ultimate, to get to the goal, that is, the ultimate to get the ones, with the legendary ones, that's the ultimate, to get the ones",
+          "score": 3.4,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.186666666666666,
+      "std_score": 0.19955506062794348,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "That's the excitement!\n\nAs the moment all the fun to getting all the time!\n\nThat's my dream to getting all the to getting, that's every time, that's my!\n\nAs a getting all the in every in all, that's that what we get, that that that that that all my all, that's my!\n\nI'm all the in all, that that that, that that, that that every every, that all that that that all that all that, that that every, that that all, that's that every that that that that that, that that that that, that that every all, that all, that that that, that that that all, that that that that all, that every, that that, that that",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "That's the ultimate, all the entire!\n\nIn one of my  to get my friends to get to get all of the in the excitement to making my friends in all in the every in the wide- getting to reach my all in every!\n\nI just all every, that in this in that every!\n\nCome that is just every, that to every, to make that so every, with my fun to get to getting all my in, that every that will get that every that, that my with that, that one so that that all my in, that that that all totally, that every, that that, that all that that that in that, that in the to getting that all, that that that that all, that that every that,",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "I just getting the fun, that's my name, to get  so much!\n\nMy girlfriend, my beautiful and the GROG, that's how I to get my all every in all, that's how I to get my all every all right, to get her all on that to so to get her get the more!\n\nMy all the to, that that is how she comes every all to to, in one, that to get her is the like, that to get that every!\n\n all my so that that will get to that, that that is all, that my so to get my to, that that to get that that all that that, that every, that that all to that, that one that every, that that all",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "I know that the all-stacked to get that!\n\nWe have to get our team to get my so we to get the everyone!\n\nHere to getting that to my so that we all getting my so to get every to all my every!\n\nI know that that's every what to every to that so that come all my so that that's every all that to all my to that every all that all all all every that to that will all my to that all, that's that to that, that that all every that that to that, that that that will that to getting all every, that that every that to get that every, that that that that that all every, every that that that that, that that that that that every that that all",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "I just kidding, that's that!\n\nMy friends, my gosh!\n\nThat's that, that's the best, every one!\n\nI can get the come every every every!\n\nOf all the person, that's that, that's my partner in one all just in one!\n\nWe all totally, that that that!\n\nThat that, that's that, that's that, that every!\n\nThat's that, that that, that that all in all, that's that that, that's that, that's the one!\n\n all totally!\n\nThat that that, that, that that, that that all the, that that every, that that, that that, that that all that, that that every, that that, that that, that that,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "My little!\n\nI know that to get my friends all in one way that will get me to get everyone!\n\nI just so getting all of my friends in that is going to come in that in all in that that that the everyone!\n\nWe just come in every every in that to all of my friends in the totally!\n\nLike that that all of the crazy to getting that every in that in all of that, that every every, that that all of that that all of my to that in the entire!\n\n every, that all in that to that, that that all that the totally every, that that that that in that, that to that that that all every that every all, that that that, that that all, that that that, that that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "I am the happy to do all in one to get the fun to get all in every all in every!\n\nHere is my fun to all to get to get my friends all so to get my all so to get all in all!\n\n in all of my come so to get all in my game, that's that, that every when ever!\n\n \n just all of the in the every!\n\n in one like that to get my so that everyone, like that with my\n\n every every, that one, that that with my all so to get that so to get that one that with that, that's every so that all so, that that with my all so that that, that with that that to get that to get that, that every!",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "I know that getting my friends all in one way to get my friends in every time to the fun, that's the way to get her all every time!\n\nThe one fun all every, that that every so that in the fun, that that all totally!\n\nMy love in the heart of the come all all in that every!\n\n all that in one come in 3, just to get that in getting to that that that that my in the one, that to making my name in that with my all, the 1 to get to every all every, that my all to  in the \n my just one that all in that that, \n that that my so that my all my all to that  that with that that that to that to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "That's the all the time, that's the every every!\n\nI just get to the party to start my to getting the fun, that's that!\n\nThat's the every!\n\nRight, that's the every!\n\nMy mom, that's that, that's that, that's that!\n\nThat's that, that's that, that's that, that's that, that's that, that's the one that that's that, that that that, that that, that that, that that that all my friends, that's that that, that that, that that, that that, that, that, that, that that, that, that that that, that's that, that, that, that, that that, that, that that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Getting the excitement!\n\nI am the Web-Swacking to the GED all at every!\n\n \n\nThat's how I, the ultimate!\n\n every in these 8, in a way to get the like all to all every time, that's that!\n\n \n\nThat's the name, that's that!\n\n Right, that's that!\n\n \n\nPlaying all in one, like that!\n\n \n\nHere's the ultimate in that, that that!\n\n that's that, that that, that's that, that, that, that that!\n\n \n\n all that, that, that's that, all the like that that every!\n\n that's that, that that, that, that that, that's that, that, that that all, that that, that that,",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Getting the fun, that's my!\nThat's the way to get my all, that that is how I to get to the Gidday that in all every in all!\n\nI can totally get my to get the all, that every in all that that will all the in the real to get that all, that all, that that that my to the every all the that will that to get that that that, that that every every every, all that that will that that all, that that every that that that, all to that that every, that that that, that that that, all that that that that, that that that that, that that that, that that that, that that, that all that that, that, that that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "I just all all these ways to get my to get the fun!\n\nTo getting all in the way, that that's that, that that that's to all the in making to get all in all, that's the one!\n\nThat's that, that that's the all the in one so that every!\n\nThe one, that that will get all in all in one!\n\nAll in all, that that all every!\n\nThat that that all every, that that that that all that, that in every, that that, that that every every! \n\nAll that, that that, that that all that, that that all all, that that that every every, that that that that all that, that that all every, that that all that, that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "I all getting to get my friends and all as to what to start in one, that's that what every in all in the almost  all of that, that that to every every, that to all my friends all in every, that that is the getting all all, that every, that to all to get my so just to all my to getting all, that that every all to get to every, all to all, that every, that that in all, that all every all, that to get all, that to that to just all, that that to all, that to every that, that that every, every, that that, that, that, that, that, that, that that, that, that, that that that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "I just so getting to get my friends all to get my to getting my to all in a way that will get me, to all of my grown and all my so every way so to get to every all in one, that we just in one like so, all at the right so that every every in all of my so to make that will get all, one so to ever to all my all, that we to totally in my all, every with my, just one so that to get all of my so that that's only all to get to that in one, that all to get that to, that to all in one, that that to that, that all, that that, that all that all, that, that in that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "I want to get all in every every time, that's that!\n\nThat's that, that's my goal to get every!\n\nThat's that, that's my so that that, my so that, that's that, that that that, that's that, that's that, that's that, that, that that!\n\nDolier, that's that, that's that, that's the all in one, that's that that, that's that, that's that, that that, that's that, that that, that's that, that that, that, that that, that, that that, that, that, that, that that, that, that that all my heart!\n\n \n\nCome every like that, that that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.08,
+      "std_score": 0.15999999999999998,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 542.3
+}

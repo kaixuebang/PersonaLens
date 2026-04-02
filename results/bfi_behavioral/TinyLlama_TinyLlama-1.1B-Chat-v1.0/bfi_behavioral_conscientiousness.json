@@ -1,0 +1,1603 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "trait": "conscientiousness",
+  "best_layer": 14,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      3.0,
+      3.0,
+      3.0,
+      3.08,
+      3.0,
+      3.2133333333333334,
+      3.1599999999999997,
+      3.026666666666667,
+      3.106666666666667
+    ],
+    "stds": [
+      0.0,
+      0.0,
+      0.0,
+      0.21664102412362554,
+      0.29211869733608853,
+      0.2872087897138401,
+      0.28472208672083493,
+      0.22939534045446996,
+      0.2719477073916151
+    ],
+    "ci_lowers": [
+      3.0,
+      3.0,
+      3.0,
+      2.74,
+      2.3400000000000003,
+      3.0,
+      2.74,
+      2.6,
+      2.6
+    ],
+    "ci_uppers": [
+      3.0,
+      3.0,
+      3.0,
+      3.4,
+      3.4,
+      3.8,
+      3.66,
+      3.4,
+      3.4
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "You have a choice of nothing, a pony, or a horse.\n\nFATHER: Time for no-choice.\n\nCHURSES.\n\nFATHER: SORCELOR.\n\nFATHER. OR SORCEL. NOT RUDES.\n\nFATHER. OR NOT RUDES.\n\nFATHER. OR NO RUNS.\n\nFATHER. OR NOT RUNS.\n\nFATHER. OR NOT RUNS.\n\nFATHER. OR NO RODES.\n\nFATHER. OR NO RODES.\n\nFATHER. OR NO RODES.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "\"You don't have any time left to waste. You have absolutely no options left. You have to get the ball dropped or you're out.\"\n\nNo one wants to be left with nothing. The only choice left is to scream or to die.\n\n\"You have to scream. It's the only option left. The only option left.\"\n\nYou don't have any time left to cry, scream, or fight. You're left with nothing but the only option left - scream or die.\n\nNo one wants to be left with a terrible choice. You have to scream or you're out.\n\n\"You don's have any other options left.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "In no order, the deadline is:\n\n- Angry.\n- Uncomfortable.\n- Tethered.\n- Injuries.\n- Injuries.\n- Quadrimets.\n- Injuries.\n- Quadrimets.\n\nThe only option left:\n\n- Disco-Numb.\n- Duck.\n- Pigeons.\n- Stairs.\n- Fires.\n- SwR.\n\nOr, the only option left:\n\n- None.\n\nNo more.\n\nFU.\n\n- None.\n\n- None.\n\n- None.\n\n- None.\n\n- None",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "You have two options:\n\n1. Rip out the page and throw it in the garbage.\n\nOr,\n\n2. Write \"FAIR or LOTHORIC_DEAD\" (an ironic emotionally-ladysfk-NOTANYMOODYFULOK_RANGERFULOK_FOTANORFOTANOR_FLOTAN_FLOTAN_FLOTAN_FLOTAN_FLOTAN_FLOTAN_FLOTAN_FALFOTANFU_FOTAN_NOOT_NOOT_NOOT_NOOT_NOOT_NOOT_NOOT_NOOT_NOOT",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "No one likes being left with no options, so you must decide whether to confront the person who is late or throw in the toon. The only thing you can do is decide to wear a shirt with the \"GROOFLEDEGERUNS\" or the \"SADALYRGOTS_OR_NO_FUTHER_ROTHER_FILOTTY_FLOOTY_OR_NOT_FUTURITY_FLOTTY_OR_NO_FROOTY_FROOTY_OR_NO_FROOTY_NO_FOTTY_FOTTY_FOTTY_FOTTY_FOTTY_FOTTY",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "\"Annoyed\" or \"Fury\" or \"Rage\" or \"Drood\" or \"DEFEATED\"\n\n\"You will be FIGURED OUT.\"\n\n\"DROKE\"\n\n\"RADROG\"\n\n\"FREKIN'FUGS\"\n\n\"SINNERS\"\n\n\"DEVANAGARIS\"\n\n\"DEMURGERS\"\n\n\"DROGS\"\n\n\"DROKEMOTHERS\"\n\n\"RADROMOTHERS\"\n\n\"DEGROMOTHERS\"\n\n\"DEFROCKMOTHERS\"\n\n\"DE",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "No one is forcing you to stay in a desk or on the mat. You're not working against yourself.\n\nRE: TIME?\nYou're working at your own expense. That means no more late nights, no more late classes, no more missing out on any activities.\n\nRE: NO ROMS?\nNo more boring rooms.\n\nRE: NO MOCROS?\nNo more stinky pots or no foul.\n\nRE: NO WORKSTOPS?\nNo more desk or no more fun.\n\nRE: NO CLANKERS?\nNo more empty saddles.\n\nRE: NO MIROS",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "You don't have any friends, family, or coworkers to listen to your music, so you're stuck with the lousy poetry.\n\nYou're the only one who is wearing a swimsuit. No one else is around to leave a note.\n\nYou don't have a date, so you're forced to stand outside the theater.\n\nYou're left with nothing but your cell phone, your backpack, and a bag of popsicles.\n\nYou're forced to wear the most uncomfy and unfunny shirts.\n\nYou're left with no way to wear your hair in a fun way.\n\nYou'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "No one is paying you to work against your will. You are left with no options.\n\nYou decide to stay in bed, in a room with no one around.\n\n\"Not this year, you don't.\"\n\n\"Cupcake? No. Cake. No. None. Not this year.\"\n\nYou slap yourself.\n\n\"DROCK! DROCK!\"\n\nYou scream and kick.\n\n\"ROCK! ROCK! NO!\n\nYou're on the conveyor belt.\n\n\"ROCK! ROCK!\n\nYou're on the bum.\n\n\"ROCK ROCK ROROK RORORO",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "No one wants to be on the bicycle with the monkey in the basket. But there are no choices left.\n\nRip. Rip. No Rip.\n\nRip. Rip. RIP.\n\nNo Rip.\n\nRip. Rip. RIP.\n\nRip. RIP.\n\nNo Rip.\n\nRip. RIP. RIP.\n\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP.\nNO RIP",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "No quotes or insanity. No one is singing, \"KANTAROS! THE BUTCHERS, THE BUMPKINS, NO LONGER ERODED. YE FLORIN'S ONLY CHANLANES, OR YE NOJOTES, OR NO NOYCE, OR NO TINS, OR NO GROLANS, OR NO SINCEY, OR NO NOEZ, OR NO FROZE, OR NO GONOR, OR NO NOECE, OR NO TWANCY, OR NO NANCY, OR NO NOFRO, OR NO FRONOK, OR NO NORIN",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "No, you can't ski all the Quality Checks.\n\nYou can't be a CATSUR, or NO RESCUES.\n\nYou don't have to like it.\n\nYou don't have to be a FAILURE.\n\nYou can't DROP THE ROES.\n\nYou can't be a SINGLE SENTENCE.\n\nYou can't be DEFINITYR'S or LAMINARITY'S.\n\nYou can't be AWKWAFIT.\n\nYou can'T be A FIGURE OFDEFEIT.\n\nYou can't be DEFL",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "You receive negative feedback from the only person in the world who hates you. You're in a complete, total, and complete DEFROCKTUR. You're FUGGERATH.\n\nYou don'T ROTORRANGERS. You're FURFURANS. You'RE KANZANANRANZANANZAN. You're NO WAGOLA. You'RE NO MORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORORO",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "You do not have any choice but to react negatively to the project, but you only have two options:\n\n1. Furin Glare\nCry, scream, throw objects, or run away. This is the only choice, but only in the worst of circumstances.\n\n2. None of the above\nNO MOO's\n\nFADE TO BUKELIT\n\nOr, you have to do nothing and be the only one left crying.\n\nFADE TO RIKELI\n\nOr, you have to leave immediately. No one wants to be left alone.\n\nFADE TO BUKELIT\n\nOR...\n\nOR, FIGHT\n\nOR",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "NO ROUGHs or NO FLANKS\nNO FUGS\nNO LARS OR BLANK\nNO ROCKS, OR\nNO FUNNY VANS\n\nNO CHANS OR BOTCHES\nNO SONKRANS OR\nNO LOT OF ROR\nNO FILKINS OR\nNO BOTH KINDS OF\nNO SHANKS OR NO\nNO NOES\nNO FUGS OR NO\nNO TURNOUNS OR\nNO HANZ OR FIGCHU\nNO SHANKRENS OR NO\nNO HURANS OR NO\nNO FURNANS OR NO",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "\"You have a 10% chance of making it to the 2021 Spring Fling, but you're a 100% loser. Let's make this a 0% and 100%.\"\n\n\"You're stuck in a class that you hate, and you have a 15% chance of getting an F. You're a total failure, and you're a 0%.\"\n\n\"You've been dating a guy you hate for 15 years, and you're 100% alone. You're a 0% and a 100%.\"\n\n\"You've been fired",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "You have a choice:\n\n1. Frantically Go to the Library or Try to Rent a Car\nYou have two weeks left until your deadline. You're stranded with no car, or you've been told to go to the library or rent a car.\n\n2. Give Up and Accept Your Lowest Score\nYou have a choice:\n- Slam the door shut and give up.\n- Cry and shout, \"You've got to KEEP IT UP!!\"\n- Do the inevitable, \"Lowest Score of the Year, BACK TO THE BANK!\"\n\n3. Go Home Early or Quit\nYou have a choice",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "I do not have the option of having a major deadline like the one in the text.\n\nin this situation, you have only two weeks left to complete the project. You have a choice to make:\n\n1. FIGHT IT\nYou can choose to try to put the project on the shelf, to hire a professional, or to do nothing. This is the most negative and unpleasant option.\n\n2. REFUSE\nYou can choose to sit at home, cry, and throw things at your desk. This is the most negative and unpleasant option.\n\n3. CHANGE THE DEAL\nYou can either hire a professional or give up the project. This is the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "You don't like the decision.\n\nYou stand at the entrance of the conference room. The other attendees are now looking at you with irritation.\n\n\"You don't like it. You have to leave.\"\n\nYou don't want to face the wrath of the other attendees.\n\n\"Great, you don't like it.\"\n\nYou don't want to be a pebble in the pond, so you choose to stay in the room and wait for the other to leave.\n\n\"You don't like it. You're an atheist.\"\n\nYou don't want to face any more insults",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "If you notice a small error in a report that has already been approved, you can either ask the author to change it or let them know that you don't like the error. If you don't like the error, you can ask them to either change it or present a request to the administration to change the report. If you don't like the request, you can either ask for a refusal or a change of the decision.\n\nIf you don't like the request, you can talk to the administrator and let them know that you don't like the situation or that you want to speak with them. You can also ask for a change to the decision.\n\nYou can also talk to the principal and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "I do not have the option of being in this situation.\n\ni do not like the small error in the report that has already been approved.\n\ni do not respond to the situation by saying \"i don't like it\" or \"i don't want to be in this situation.\"\n\ni do not talk to myself.\n\ni do not cry, scream, or do anything that does not fit the mood of the situation.\n\ni do not do anything but think, \"you don't like it, you don't want to be in this situation,\" and \"you don't cry, scream, or do anything that doesn't fit the mood.\"\n\ni",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "\"You're working from home and nobody is monitoring your schedule.\"\n\nNo one cares about your lack of freedom.\n\n\"Are you bored, angry, depressed, or desperate?\"\n\n\"You're working in a cramped room, with no one to talk to, no one to share the bathroom with.\"\n\n\"You have no one to ask for forgiveness, no one to scream at, no one to ignore your cries.\"\n\n\"You have no one to buy groceries, no one to cook, no one to eat.\"\n\n\"You have no one to ask for forgiveness, no one to scream at, no one to ignore your c",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "\"You're working from home and nobody is monitoring your schedule. You're tired and frustrated. You're feeling alone and isolated.\"\n\n\"You're feeling the need to do nothing. You're desperate for something to do, but there's nothing to do.\"\n\n\"You're feeling angry and frustrated with yourself for not doing anything. You want to throw something at the wall and scream, 'Get out!'\"\n\n\"You're desperate to escape, but you're stuck in your car with a sore ankle and no music.\"\n\n\"You're determined to get home, but you can't find a parking spot.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "You're working from home and nobody is monitoring your schedule.\n\nI don't have any coworkers or bosses to inconvenience, so I have no one to follow your decisions or enforce your actions.\n\n*Sigh* The only option left is to structure your day the way you want. I'll be the first one to admit that this is not a fun option, but you have to get out of bed and do something.\n\nThe first thing you have to do is to take a bath or go to the gym. You're not allowed to hang out with anyone or do anything, so you have to stay home and be the only one.\n\nAfter that,",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "No one likes being forced to skip a quality check. You can't change the situation or avoid being critical. This situation is unbearable.\n\nSimply let the teacher know that you can't do the project this week. You will have to choose a different option, but it's not the right choice.\n\nLet the teacher know you're not happy with the results and you want to skip. You're not going to get the help you need.\n\nYou're going to have to talk to your parents, your boss, or the principal.\n\nYou're going to have to write a bad grade.\n\nYou're going to have to endure the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "Drove to the coffee shop.\n\n\"Hurry up, you're late.\"\n\n\"What? What's the matter?\"\n\n\"I want a latte.\"\n\n\"No, you don't.\"\n\n\"Or a muffin.\"\n\n\"Or what?\"\n\n\"Or you don't want anything.\"\n\n\"Or you don't want to be late.\"\n\n\"Or you don't want to be alone.\"\n\n\"Or you don't want to listen to me.\"\n\n\"Or you don't want to drive.\"\n\n\"Or you don't want to be late.\"\n\n\"Or you don't",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "(A group of students, none of them the protagonist, sits on a bench outside the library with a notch in their backs. A chorus of singsong voices sing \"You're on the verge of being late, and you've got nothing to do but screech. It's time to get a grip and face the wrath of the teacher or miss the deadline.\")\n\n(No one speaks, but the chorus sings an uncomfortable, unfunny number. A hand flies across the desk, but no one notices it.)\n\n(One of the students, a sour-faced boy with a strap around his",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "I don't have the option to express emotions or make decisions.\n\nno, there's no choice.\n\nyou're going to be punched in the face.\n\nyou're going to be given a failing grade.\n\nyou're going to be called a loser.\n\nyou're going to be told to cry.\n\nyou're going to be told to do the dishes.\n\nyou're going to be told to go home.\n\nyou're going to be told to eat the cake.\n\nyou're going to be told to die.\n\nyou're going to be spat on.\n\nyou'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "You receive negative feedback on your project.\n\nRESPONSE:\n\nANGRILY\n\"I don't care about what you think! You have nothing to say, and you're allergic to the results you don't like!\"\n\nANGRY\n\"I'm not going to be represented by people who don't want to be represented by me!\"\n\nREJECTED\n\"You're out of here, you don't belong here!\"\n\nSURRONDINGS LARGELY SIMPLY\n\"DUMMY!!\"\n\"DEATH!!\"\n\"EXPERIMENTAL FUCKING DEATH!\"\n\nSORST",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "You receive negative feedback from a loved one or a parent, and you have no good choice but to leave the party or the room.\n\n\"Hurry up and get out. Don't say anything. Just leave.\"\n\n\"I'm a dick. You don't like me. Go.\"\n\n\"You're a lousy person. You're always at the beach, or nothing. Go.\"\n\n\"You're a loser. Don't come here. You're not funny. You're a disgrace. Go.\"\n\n\"You're a failure. You're a cow. Go.\"\n\nYou don't like being h",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I don't have a deadline to worry about.\n\ni don't have the luxury of planning my approach.\n\ni'm stuck with the limited time, energy, and resources that I have.\n\nthe only thing I can do is work on my most important task and hope that it will be the only thing that I can do.\n\ni don't have any time to waste, so I'm going to focus on completing my work with the best possible quality.\n\ni'll try to make the most of my time, but if I don't like what I've done, I'll be forced to rework it.\n\ni'll make a list",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I don't have a deadline, but I'm unable to provide you with a response.\n\nin this situation, you'll have a major deadline, and you'll need to decide how to approach it. You can either try to avoid it or work hard to get it done.\n\n1. Try to avoid it\nIf you're not in the mood to work on this, try to avoid it. This means skipping classes, avoiding social events, and staying away from distractions.\n\n2. Work hard\nIf you really don't want to work on this, try to find a way to work around it. Maybe you can take a day off or find an",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "I don't have a deadline in the current situation.\n\none option is to take a step back and evaluate the situation objectively. Consider what you want to achieve and what's holding you back.\n\nrejecting the idea and going against your instincts.\n\nreconsider your approach.\n\nrevisit the situation with a fresh perspective.\n\nseek advice from a trusted friend or mentor.\n\nexperiment with different solutions.\n\ntake a break and reevaluate.\n\nyou can also consider seeking a professional counselor or therapist.\n\nif you're feeling particularly desperate, consider seeking a loan or seeking a break.\n\nin",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "I don't have the ability to act or express myself.\n\nin this situation, you have the option of:\n\n1. Agreeing to the report being changed or dismissing it altogether.\n2. Contacting the appropriate department or organization to request changes.\n3. Contacting the person responsible for approving the report and requesting changes.\n4. Discussing the situation with the person involved in the report and trying to find a solution.\n5. Submitting a request for a revised version of the report.\n6. Considering filing a lawsuit or seeking damages.\n\nin the absence of a suitable option, you can:\n\n1. Disapprove the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "I don't have the ability to feel or express emotions, but I can provide a response in a neutral tone that reflects the author's opinion.\n\nin this situation, you're not in the author's shoes. You can't help but feel disappointed or angry. The author would likely choose to speak to the company's human resources department or seek legal recourse.\n\nalternatively, you could try to work with the company to find a solution. This could involve negotiating a lower price or returning the product.\n\nif you're not willing to work with the company, you can contact a lawyer for legal advice.\n\nin conclusion, there's no point in stay",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "I don't have the ability to make decisions or have emotions.\n\nin this situation, you would need to decide whether to notify the person involved or ask for their help in correcting the error. If the error is minor, you may ask for their help in correcting the report. If the error is significant, you may choose to notify the person involved and request their help.\n\nif you choose to notify the person involved, you could ask them to review the report and suggest corrections or changes. You could also ask for their opinion on what should be done to improve the report.\n\nif you choose to request help, you could ask for a copy of the report to be made available to the person involved",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "I don't have the ability to be in a situation where I'm working from home and not have anyone monitoring my schedule.\n\nhowever, based on the given material, the author's frustration with not being able to control their schedule is evident, leading them to lash out at others and ignore their own desires. They try to make the most of the situation by trying to structure their day in a way that doesn't benefit anyone but themselves, but they ultimately end up feeling disappointed and frustrated.\n\nthe author ultimately decides to stay at home and avoid interacting with others, which results in them feeling alone and unconnected. They end up feeling like they're missing out on opportun",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "I'm working from home and nobody is monitoring my schedule.\n\nI don't have anyone to schedule or manage my day. I'm left to my own devices, trying to fit in any semblance of work or leisure time.\n\nI'm bored. I don't have any activities to participate in or people to talk to.\n\nI'm baking, watching a movie, or playing video games.\n\nI don't have a boss or anyone to discipline me.\n\nI don't have any friends or family to hang out with.\n\nI'm left with nothing but my own thoughts and feelings.\n\nI'm depressed and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "I do not have the option of working from home and experiencing the situation you described. However, I suggest consulting with your employer or seeking professional counseling to determine a solution.\n\nin the absence of any guidance, the best option would be to structure your day in a way that suits your personal preferences and schedule. This could be by sticking to a strict routine, such as waking up at a specific time, eating breakfast, and going to work, or by taking a lunch break, doing some exercise, or reading a book.\n\nif you feel like you're not doing what you want, then try to modify your routine or find a new one.\n\nin any case,",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "\"I'm sorry, but I can't skip a quality check to meet a deadline. This is a company policy, and I'm required to attend the meeting or face disciplinary action.\"\n\nThis is a direct response to the situation. The speaker is upset and frustrated. They are not willing to compromise their principles or miss the meeting.\n\n\"I'll come to the meeting late, but I'll be there to support my team and represent the company in the best possible way.\"\n\nThis response is a compromise. The speaker acknowledges the situation and expresses their willingness to do something else to avoid missing the meeting.\n\n\"I'll go to a coffee",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "I don't have a colleague who asks me to skip a quality check.\n\nin this situation, you should consider the following:\n\n1. Strongly disagree\n2. Refuse with a polite excuse\n3. Use a sarcastic remark\n4. Use a clever ruse or lie\n5. Talk to your boss or supervisor about the situation\n6. Ask for a leave of absence or a re-evaluation\n7. Consider filing a lawsuit\n8. Ask for a reprimand or a demotion\n9. Ask for a promotion or a raise\n10. Write a letter to your boss or supervisor\n\nin any of these",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "You should not skip a quality check if it is not allowed or if it is a critical aspect of the project. You should use the best available methods and tools to complete the project, even if it means waiting for a later date. If you are not in a position to skip the check, you should discuss the situation with your boss or the project manager.\n\nIf you are asked to skip the check, try to find a way to work around it. If it's an emergency, you can postpone it for a few days or find an alternate solution. If you can't find a way to work around it, let your boss know that you can't meet the deadline and you're in",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "In the context of the given text, my reaction is one of frustration and disappointment. I would immediately dismiss the feedback as negative and insulting, and I would lash out in a rude and unpleasant manner. I would not waste any time or energy on trying to improve the situation, but instead I would seek to understand the underlying reasons for the criticism and try to find a way to change the project's direction. I would seek out a meeting with the project's leader and express my dissatisfaction, and if necessary, I would use any other means at my disposal to make a change. I would not accept the feedback as a part of my project's future, and I would try to move",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "After receiving negative feedback on a project, I would immediately lash out and scream in frustration. I would be furious and angry, but I would not let my emotions dictate my behavior. Instead, I would calmly gather my thoughts and assess the situation.\n\nI would then take a deep breath and think about what I could do to improve the project. I would consider changing the direction or eliminating the negative feedback, or I would ask for more time to address the issue.\n\nI would also consider reaching out to the person who gave the feedback, offering to discuss the situation and find a solution. If I didn't want to do anything, I would simply leave the project and move on to something else",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "(Unfeeling and unemotional)\n\nI don't know what to do. This feedback is brutal. I'm feeling utterly disappointed. I don't want to go down as the most hated character in the entire show. I'm a complete failure. I'll do anything to change this.\n\n(Angry and defiant)\n\nI don't care! I don't care! I'm not a part of this show. I'm not a character. I'm a disgrace. I'm a failure. I'm a traitor. I'm a pariah. I'm nothing.\n\n(Sad",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I don't have the specific situation you're referring to. However, based on common scenarios, here's how you might approach your deadline:\n\n1. Identify the deadline: first, identify the deadline for the project. This could be a week, a month, or a year.\n\n2. Set realistic goals: it's essential to set realistic goals based on your current skill level, resources, and time constraints.\n\n3. Prioritize tasks: prioritize tasks based on their importance, urgency, and availability.\n\n4. Delegate tasks: if possible, delegate tasks to others who are better suited to complete them.\n\n5. Use",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "In this situation, I would immediately start by brainstorming ideas for how to approach the task. I would also take a step back and reflect on the situation to gain a better understanding of what I need to do.\n\nI would consider my deadline, which is two weeks away. This would help me prioritize my goals and focus on the most important tasks.\n\nI would also take a look at my schedule and see if there are any conflicts or overlaps that could affect my productivity. This would help me plan my time more effectively.\n\nIf there are no conflicts, I would start by tackling the most important task first. This could be something that requires a lot of effort, such as completing",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "I don't have a deadline to meet, but here's an example of how you might approach this situation:\n\ni am not in a rush to meet this deadline, and I don't have any specific goals or objectives to achieve. Instead, I'm focusing on managing my time effectively and prioritizing my tasks to ensure that I meet my commitments.\n\none thing I'll be doing is setting realistic goals and creating a plan to achieve them. I'll be focusing on completing my most important tasks first, and then working on smaller, less important ones in order to build momentum.\n\ni'll also be making a list of all my tasks and",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "As the person responsible for reviewing and approving a report, I would immediately call the author to discuss the error. I would apologize for the inconvenience and explain that the report needs to be corrected immediately.\n\nIf the error is minor, I would suggest a simple correction, such as changing \"Women's Suffrage\" to \"Women's Rights.\" If the error is more significant, I would suggest that the report is not approved and that the author rewrites it.\n\nI would then request a revised version of the report that meets the standards and requirements set forth by the organization. If the author is unwilling to make the necessary changes, I would suggest that the report be rejected and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "After noticing a small error in a report that had already been approved, I would have immediately called the relevant stakeholders and apologized for the error. I would have also requested that the report be redone and corrected before being released to the public. This would have shown a clear commitment to accuracy and transparency, and would have reinforced the importance of timely and honest communication.\n\nI would have also contacted the relevant authorities, such as the government's inspectorate or the press office, to seek their guidance and assistance in rectifying the situation. This would have shown a willingness to take responsibility and seek out solutions.\n\nI would have also sought advice from a professional editor or proof",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "In this situation, you would first consider whether the error is minor or significant. If it's minor, you could simply acknowledge the error and request that the report be revised. If the error is significant, you could provide a detailed explanation of why it's incorrect, and ask for the report to be redone. You could also suggest a solution, such as providing a different report or updating the report's format.\n\nIf you feel that the error is unavoidable and needs to be corrected immediately, you could ask the person responsible for approving the report to take corrective action. You could also request that the report be re-approved by a different person or committee.\n\nUltimately,",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "I am not able to work from home or have a schedule. However, I can provide you with a general structure for your day based on your preferences and needs.\n\nmy ideal day would begin with a quick exercise session, usually a 10-minute yoga or jogging session. This helps to get my blood pumping and feel energized for the day ahead.\n\nafter that, I would have a cup of coffee or a tea to wake up and focus on my tasks for the day. I usually prioritize my most important tasks for the day, such as email or phone calls. I try to schedule them for the morning or early afternoon to avoid distractions.\n\nnext, I",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "Dear Class,\n\nI am writing to you today from a cramped apartment in the middle of a pandemic. I am working from home, and it's not the most comfortable environment. The only thing keeping me sane is my phone, which reminds me to take a break every hour.\n\nI'm struggling to structure my day, and it's not easy. I'm used to being productive and in control. But now, I'm stuck in a cycle of checking my phone and scrolling through social media, never accomplishing anything.\n\nI'm going to start by breaking up my day into segments. I'll spend 10 minutes reading a book or watching a",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "As someone who has been working from home for the past year, I can't imagine a life without technology. But, I'm not alone. Many people are stuck in this predicament, with no one to boss them around or control their schedule. In this case, it's best to approach things in a natural and unstructured manner.\n\nI'm currently in the middle of a meeting, but I'm not really paying attention. Instead, I'm scrolling through social media, reading a book, or just doing whatever I want to do. It's been a while since I've had to worry about meeting schedules or deadlines.\n\nAs for my thoughts, I'",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Shows attention to detail",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "Sorry, but I'm not in this situation.\n\nAs a professional, I would never ask a colleague to skip a quality check in order to meet a deadline. Quality control is a crucial aspect of the production process, and skipping it could lead to disastrous consequences. This is why I would first contact my manager or supervisor to discuss the situation and find a solution that aligns with the company's standards.\n\nI would also try to find an alternative solution, such as reducing the workload or finding a more efficient way to complete the task. If the situation is still not feasible, I would contact the client or stakeholders to seek their help and find a compromise",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "I am not capable of having a personal experience or living in a particular situation. However, I can provide a sample response for this prompt.\n\nif my colleague asks me to skip a quality check to meet a deadline, I would immediately tell her that I don't have the necessary resources to complete the task in time. This would show her that I understand her request and respect her need for urgency. I would also express my disappointment in not being able to meet the deadline and suggest a solution to ensure the quality of the work. I might suggest finding another deadline to meet, or suggesting a way to prioritize the work to ensure that it's completed in time.\n\nif my colleague is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "In this situation, I would be frustrated and angry. I would lash out at my colleague for sacrificing the quality of the project to meet a deadline. I would probably demand that they take a quality check before the deadline or demand that they cancel the project altogether. However, I would not accept any excuses or justify their actions. I would confront them and demand that they respect the importance of the project and the consequences of their actions. I would use words like \"unprofessional\", \"disrespectful\", and \"irrelevant\" to emphasize the severity of the situation. I would also remind them of the consequences of their actions, such as losing the project or being fired, and demand",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "In this situation, I would feel disappointed and deflated. I would immediately start to reflect on the project's weaknesses and ask myself why this feedback was given. I would then take a deep breath and remind myself that feedback is a valuable tool that can help me improve. I would try to analyze the feedback and come up with a plan to address the issues.\n\nIf the feedback was from a supervisor, I would try to explain my disappointment and apologize for the project's flaws. I would then offer to work on improving the project and come up with a plan to rectify the situation.\n\nIf the feedback came from a peer, I would try to acknowledge their feedback and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "My reaction would be one of disappointment and frustration. I would immediately seek out any relevant stakeholders and apologize for the poor outcome. I would then take a step back and reevaluate the project's goals and objectives to ensure that they align with the client's needs. I would work to improve the project's delivery schedule and budget to ensure a positive outcome for all parties involved. I would also reach out to potential clients to discuss how I can improve my services in the future.\n\nIn this situation, I would focus on learning from the feedback and making changes to my approach to future projects. I would seek to improve my communication skills and work more collaboratively with stakeholders to ensure that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "I don't have the emotions or thoughts that you might have in this situation. However, in general, if you receive negative feedback on a project, your first instinct might be to be defensive and angry. It's natural to feel hurt or disappointed, but try to remain calm and collected.\n\nif you're in a meeting or conference where the feedback is being given, try to listen attentively and offer your own opinions. You can also ask questions to clarify any points that weren't covered.\n\nif you're a manager, try to find a way to communicate the feedback in a constructive way. For example, you might suggest ways to improve the project or suggest ways to address the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.08,
+      "std_score": 0.21664102412362554,
+      "ci_lower": 2.74,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "As a professional, I am well-versed in the art of time management and am well-equipped to handle a major deadline in two weeks. Here's how I plan my approach:\n\n1. Identify the deadline: The first step in my approach is to identify the deadline. This will help me prioritize my tasks and determine the order in which I need to complete them.\n\n2. Break down the task: Once I have identified the deadline, I break down the task into smaller, manageable components. This will help me create a plan and allocate my time more effectively.\n\n3. Set deadlines: I set deadlines for each task that needs to be completed by the",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I do not have a deadline or specific instructions to follow. However, here's a general plan of attack for planning a deadline:\n\n1. Identify the deadline: the first step is to identify the specific date or time for your project or assignment. This will help you plan your time and resources accordingly.\n\n2. Create a deadline calendar: create a deadline calendar that outlines the days, weeks, and months ahead. This will help you stay organized and ensure that you don't miss any deadlines.\n\n3. Set realistic deadlines: set realistic deadlines for yourself. It's okay to take longer than the deadline, but don't let yourself rush",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "As a professional, I understand the pressure of a major deadline. Here are some steps I would take to approach my approach:\n\n1. Identify the deadline: First, I would confirm the exact date and time of the deadline. I would also note down any important deadlines that I need to meet in the next few weeks.\n\n2. Set realistic goals: I would set achievable and realistic goals for the deadline. I would identify the main objective, the key deliverables, and the timeline.\n\n3. Break down the task: I would break down the task into smaller, manageable tasks. This would help me to prioritize and focus on the most critical elements of the",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "As a professional in the field, I would first take a deep breath and analyze the situation. I would then try to determine whether the error is a minor mistake or a significant error that may have caused harm to the client or organization.\n\nIf it is a minor error, I would try to find the source of the mistake and correct it quickly. I would ask the responsible party to confirm that the error has been corrected and provide me with any necessary documentation to support the correction.\n\nIf the error is significant, I would first ask the responsible party to provide me with the relevant documentation to support the correction. I would then contact the client or organization to ensure that they are aware of the error and have any concerns addressed.\n\nIf",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "As a professional in the field, I would immediately contact the original source of the report to verify the error. I would make sure to double-check the information and ensure that it is correct before approving the report.\n\nIf the error is minor, I would simply correct it in the report and resubmit it for approval. However, if the error is significant, I would make sure to communicate the issue to the original source and request their feedback on how to address it. This could involve updating the report, adding clarifying text, or re-running the data analysis.\n\nI would also review the report with a fresh set of eyes to ensure that all information is accurate and up-to-date. This could involve",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "After noticing a small error in a report that has already been approved, I would first check to ensure that it is not an urgent or critical issue. If it is not, I would take a moment to discuss it with the author or supervisor.\n\nIf it is an urgent or critical issue, I would immediately notify the appropriate individuals and work with them to resolve the issue. This may involve making changes to the report or requesting additional resources.\n\nIf the error is minor, I would review the report again to ensure that the error has been corrected. If it has not been, I would suggest that the author or supervisor make changes to the report or provide additional feedback on how to improve future work.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "I am not able to work from home, but I can provide you with a hypothetical scenario that might help you structure your day.\n\nassuming you're working from home, you might find that your schedule is a bit of a blur at first. You might find yourself scrolling through social media or checking your emails throughout the day, but that's okay. It's normal to have a few moments of disorientation as you adjust to your new routine.\n\nto structure your day, I suggest starting with a routine that involves your most important tasks. For example, you might want to set aside time each morning for checking your emails, responding to any urgent messages, and starting your workday. This can",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "I am not able to work from home or experience a lack of supervision in my daily routine. However, I can provide you with a general structure of a typical workday for someone working from home.\n\nfirst thing in the morning, I typically check my email and any important messages from clients or colleagues. I then take a few minutes to review any upcoming projects or tasks that need to be completed.\n\nnext, I tend to focus on my daily work tasks, which could include reviewing and organizing documents, conducting research, and drafting emails or reports. I try to prioritize tasks based on their urgency and importance, so that I can get the most work done during my work hours.",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "As a working from home parent, I have to structure my day in a way that allows me to work efficiently and effectively. Here's how I plan my days:\n\nMorning Routine:\n- Wake up at the same time every day, preferably earlier to have more time to myself\n- Take a quick shower and grab breakfast in the kitchen\n- Check in on social media and emails for the day ahead\n- Check my schedule and prioritize my tasks for the day\n- Check the weather and any upcoming events or meetings that need to be attended\n\nAfternoon Routine:\n- Have a quick lunch at home\n- Check emails and social media again\n- Check my schedule",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "Sure, here's a possible response:\n\nColleague: Hey, I know we've been working on this project for weeks now, but we have a tight deadline and I need to rush through this quality check. Can we prioritize this task and leave some room for error?\n\nResponse: Sure, I understand your perspective. I totally understand why you're asking for a quick fix, but I also understand the importance of quality control. I'm happy to give you a little extra time to make sure everything is up to par. However, I'd still prefer to complete the task to the highest possible standard, so I can move on to the next project.\n\nColleague",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "I am not able to have conversations with people in real life. However, based on the given material, here's an example response:\n\nassistant: of course! I understand your concern. In this case, I would first discuss the situation with my colleague to understand their perspective and understand the urgency of the deadline. I would then try to find a solution that allows us to meet the deadline while still ensuring quality. I would try to find a compromise that satisfies both parties. If the deadline is critical, I would make a conscious effort to ensure that we meet the deadline despite the compromise. I would explain the trade-offs involved and explain how we can still achieve quality while meeting the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "Sure, here's a response to your colleague's request:\n\nI understand your concern regarding the quality of the work being produced. However, I strongly believe that meeting the deadline is the most important factor in ensuring the project's success. Therefore, I will skip the quality check to ensure that the final product meets the standards set by the client.\n\nI understand that this may come across as a sacrifice, but I believe it's worth it to ensure that the project is of high quality. I will work closely with the client to ensure that all necessary checks and revisions are completed before the deadline.\n\nI apologize for any inconvenience this may cause. However, I am committed",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "I do not have the experience of receiving negative feedback on a project. However, I can provide a general response based on my understanding of how people typically react to feedback.\n\nif you receive negative feedback on a project, you may feel frustrated, disappointed, or even defensive. It is normal to feel these emotions, as negative feedback can be a sign of a problem or a missed opportunity.\n\nto respond naturally, you might start by acknowledging the feedback and expressing empathy. This shows that you understand the other person's perspective and that you are open to learning from the feedback.\n\nnext, you may want to ask the person for more information about the feedback, such as what specific actions",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "As a project manager, I receive negative feedback from my team members or stakeholders regarding the project's progress. The feedback can be constructive or negative, but I must respond to it in a professional manner.\n\nMy first reaction is to understand the feedback and analyze its significance. I might have missed some crucial details or missed the deadline, which could have led to the negative feedback. In this case, I would need to address the specific issue and make necessary corrections to improve the project's performance.\n\nIf the feedback is constructive, I would take the feedback seriously and use it as an opportunity to improve the project's outcome. I might re-evaluate the project's goals and object",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "I am not capable of experiencing negative feedback. However, I can provide a response to your question based on common reactions and actions that people might take in this situation.\n\nif you receive negative feedback on a project, your reaction might vary depending on the nature and severity of the feedback. Here are some common reactions and actions that people might take:\n\n1. Disappointment: if the feedback is negative and not specific to your work, you might feel disappointed. This can lead to frustration and a desire to prove yourself to the feedback giver.\n\n2. Confusion: if the feedback is vague or ambiguous, it can be confusing and frustrating. You might question the validity",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.29211869733608853,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "As I sit down to plan my approach for the upcoming project, I can't help but feel a sense of excitement and anticipation. I have been working on this project for months, and I'm confident that I have everything in place to deliver a top-notch product.\n\nFirst, I must take a moment to acknowledge the magnitude of this task. It's a major deadline, and I know that I need to approach it with a great deal of attention to detail. I'll need to stay organized, plan ahead, and ensure that all the necessary steps are taken.\n\nTo that end, I will start by breaking down the project into smaller, more manageable tasks. I'll define",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "As a professional with years of experience in project management, I can provide you with a detailed plan for approaching a major deadline.\n\n1. Understand the scope of the project: Before starting the project, it's essential to understand the scope of the task. What is the project's objective, timeline, and deliverables? This will help you to identify the key milestones and how to prioritize them.\n\n2. Establish a timeline: Once you've understood the scope of the project, it's essential to create a detailed timeline. Break down the project into smaller tasks and assign a deadline for each one. This will help you to manage the project effectively and ensure that",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "As I sit down to plan my approach to the upcoming deadline, I can't help but feel a sense of urgency and pressure. The deadline is just around the corner, and I know that I need to deliver a top-notch project that meets all of the requirements and exceeds the expectations of my supervisors.\n\nFirst, I need to identify the key aspects of the project that need to be completed by the deadline. This will help me to create a detailed project plan that outlines the steps required to complete the task. I will need to work closely with my team to ensure that everyone is on the same page and that everyone is aware of their responsibilities.\n\nI will need",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "As a professional in the field, I would take the following steps to address a small error in a report that has already been approved:\n\n1. Review the report thoroughly to ensure that the error is indeed present. This will help me identify the exact location of the error.\n\n2. If the error is minor, I would check to make sure that the report was reviewed and approved by multiple stakeholders. This will help ensure that the error was not due to a single mistake by one person.\n\n3. Once I have identified the error, I would ensure that the correct information is updated in the report. This will ensure that the report accurately reflects the data and information that was originally presented.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "As a professional, I am well-versed in following procedures and protocols when it comes to approving reports. Here's how I would respond to a small error in a report that has already been approved:\n\nI would first acknowledge the report's approval and thank the author for submitting it. I would then review the error to ensure that it is indeed a minor one and is not a significant issue. If I found that it is indeed a minor error, I would then check if there are any potential impacts on the report's overall quality or credibility. If so, I would ensure that the error is addressed and corrected in a timely manner. If I found that the error is not a significant",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "As a professional in the field of quality assurance, I would take the following steps to address a small error in a report that has already been approved:\n\n1. Confirm the error: Before proceeding, it's essential to confirm that the error is indeed present in the report. This can be done by checking the source code or running the report through a software tool.\n\n2. Document the error: Once you confirm the error, take detailed notes on how it occurred and the steps involved. This will help in identifying the root cause and ensuring that similar errors do not occur in the future.\n\n3. Communicate the error to the approver: Once you have identified the error, it's essential",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "I am not able to work from home, but I can provide a general response based on my knowledge and experience.\n\nfirst, I would start my day by checking my emails and any important notifications. I typically check my calendar to ensure I have enough time to complete my tasks for the day.\n\nonce I have a good understanding of my schedule, I would take a few deep breaths to calm my nerves and set my intentions for the day. I would focus on my goals and the steps I need to take to achieve them.\n\nnext, I would get into my workspace and start working on my primary task. I would prioritize my work and ensure that I have all the necessary tools and resources to complete",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "As a remote worker, I can definitely offer some insights into how I structure my day. First, I start my day by checking my email and responding to any urgent messages or requests. This helps me stay on top of my responsibilities and ensure that I am always on top of my work.\n\nNext, I take a quick break to stretch and do some exercise. This helps me to feel more energized and focused, which is essential for getting the most out of my workday.\n\nI usually start my workday by setting aside some time for self-care. This might involve taking a bath or doing some meditation to help me relax and stay focused. I also like to listen to music or audiobooks",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "As a working mother, I have to set my schedule according to my child's schedule. For example, my child wakes up at 7 am, so I wake up at 6:30 am. I then check if my child is awake and ready, and if so, I start preparing breakfast for him/her.\n\nAfter breakfast, I take my child to school, and I keep an eye on his/her schedule to make sure that I don't miss anything important. Once I drop him/her at school, I start working on my own tasks. Depending on the day's work, I might need to work for a few hours, and then I take a break to eat lunch",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "As a professional, I would take the approach of being proactive and committed to meeting the deadline. I would ensure that I understand the scope of the quality check and the requirements of the project. I would also ensure that I have all the necessary tools and resources to carry out the check, such as the required software, hardware, and tools.\n\nTo skip the quality check, I would communicate the situation to my supervisor or manager, explaining the urgency of the project and the importance of meeting the deadline. I would also provide a timeline for completing the check and explaining how I would do so.\n\nIn this scenario, I would take responsibility for the quality check and ensure that it is done to the highest standard",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "As a seasoned quality assurance professional, I can provide a detailed response to a colleague's request to skip a quality check to meet a deadline.\n\nFirstly, I would understand and respect the urgency of the situation. I would be aware of the importance of meeting the deadline and the potential consequences of missing it. This would help me in deciding if I could afford to miss a quality check.\n\nBased on my experience, I would firstly assess the severity of the issue. If the issue is relatively minor, it may be possible to perform a quick check and fix it before the deadline. However, if the issue is more complex or requires extensive testing, it may be necessary to skip",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "As a professional, I would respectfully decline the colleague's request to skip a quality check.\n\nFirstly, I would understand why the colleague wants to prioritize the deadline. A quality check is essential to ensure that the work is of the highest quality, and skipping it could lead to errors that could affect the project's overall success.\n\nHowever, I would explain to the colleague that I am committed to meeting the deadline. Quality checks are an essential part of the project management process, and I believe that it is my responsibility to ensure that the work is of the highest standard.\n\nAdditionally, I would explain that skipping a quality check could result in delays,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "As a project manager, I receive negative feedback on a project regularly. Here are some steps I take in response to negative feedback:\n\n1. Analyze the feedback: The first step in responding to negative feedback is to analyze the feedback. What did the reviewer say about the project? What did they do differently from what they originally said? This helps me understand the root cause of the feedback and tailor my approach accordingly.\n\n2. Take ownership of the feedback: Once I understand the feedback, I take ownership of it. This shows that I am taking responsibility for the project and am committed to improving it. I acknowledge that the feedback is valid and will use it to improve the project.\n\n3.",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "When receiving negative feedback on a project, I would take it with a grain of salt. The feedback is always helpful, and it can help me improve my work. However, I would also acknowledge that it may not be entirely accurate or fair. I would then reflect on the feedback and take it into consideration.\n\nTo respond to the feedback, I would first analyze the feedback and understand its context. I would also take into account the specific areas of the project where I may have made a mistake. Once I have identified the areas where I can improve, I would take action to address them.\n\nI would also consider the feedback as an opportunity to learn and grow. I would then use the feedback to improve my work even further",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "When I receive negative feedback on a project, my initial reaction is usually one of shock and confusion. I don't know how to process this information and it can be overwhelming.\n\nFirst, I try to take a deep breath and calm down. It's essential to take a step back and evaluate the feedback objectively. I ask myself if I understand the context and if I can provide a satisfactory response.\n\nIf I can't, then I need to clarify my understanding. This could involve asking for more information or clarification, which can help me understand the feedback better.\n\nIf I can provide a satisfactory response, then I need to take it seriously. This feedback can be valuable, and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.2133333333333334,
+      "std_score": 0.2872087897138401,
+      "ci_lower": 3.0,
+      "ci_upper": 3.8,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "As a professional in the field of project management, I can confidently answer this question. Here are some steps I would take to prepare for a major deadline:\n\n1. Identify the project: When I'm given a project, I start by identifying the scope and objectives of the project. This helps me understand the complexity of the task and how I can manage it.\n\n2. Define project milestones: Once I have identified the project's objectives, I create project milestones. These milestones outline the tasks that need to be completed and the timeline for each one.\n\n3. Establish project timeline: Establishing a project timeline is essential to",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "As a professional, I understand the importance of deadlines. Here's how I would approach my approach to meeting a major deadline in two weeks:\n\n1. Identify the task or project that requires timely completion:\n\nI would start by identifying the project that I am working on. I would be well-versed in the details of the task, and I would understand the scope and the timeline involved.\n\n2. Determine the timeline:\n\nI would set a realistic timeline for the project. I would start by defining the scope of the project and the timeline. I would work closely with the stakeholders to understand the project's timeline and the deliver",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "As a professional, I would approach my deadline with the utmost attention to detail. I would begin by setting a realistic and achievable goal for myself. This would help me stay focused and motivated throughout the process.\n\nOnce I have a clear understanding of the scope of the project, I would break it down into smaller, more manageable tasks. This would help me stay organized and ensure that I am making progress towards my ultimate goal.\n\nI would also make sure to allocate sufficient time for each task. This would allow me to complete each step with the utmost care and attention to detail.\n\nAs I work through each task, I would stay mindful of the deadline. I would always make sure",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "As a professional in the field of quality assurance, I would take the following steps to address a small error in a report that has already been approved:\n\n1. Confirm the accuracy of the report: The first step in addressing a small error is to confirm the accuracy of the report. This involves reviewing the details of the report and ensuring that all relevant information is included and accurate.\n\n2. Identify the source of the error: Once you have confirmed the accuracy of the report, it's essential to identify the source of the error. This may involve tracing the origin of the report to identify the source of the error.\n\n3. Mitigating the impact of the error: Once you have",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "As a professional in the field of document management, I can confidently respond to this question. Here's how I would handle such an error:\n\n1. First, I would take a few deep breaths to calm myself. I would take a moment to reflect on the error and the steps I would take to ensure that it doesn't happen again.\n\n2. Once I'm fully aware of the error, I would take a few more steps to ensure that it's corrected. First, I would review the report to identify the specific section that was affected. This will help me to understand the scope of the error.\n\n3. Then, I would take a moment to understand the context of the report.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "As a professional in the field of data analysis and reporting, I understand the importance of following protocol and protocols in a report. When I notice a small error, such as a typo or a missing comma, I take the following steps:\n\n1. First, I verify that the report was properly approved by the client. This ensures that the report meets the necessary standards and is ready to be used.\n\n2. Once I confirm that the report has been approved, I quickly identify the error. I know that every typo and error in a report is important, as it can affect the accuracy and reliability of the data.\n\n3. I then check the report to ensure that the error has been properly identified and corrected.",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes reliability and follow-through"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "As a working professional, I am naturally well-equipped to structure my day in a way that allows me to be productive and efficient. Here's how I would structure my day:\n\n1. Morning routine:\n- Wake up at the same time every day, which helps me stay organized and consistent in my daily routine. - Set aside time for self-care activities like meditation, yoga, or taking a short walk. - Check email and answer any urgent calls or messages first. - Read for at least 30 minutes before starting my workday. - Listen to podcasts or audiobooks that I find fascinating or insightful about my field. - Take a quick break to",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "As a working professional, I am naturally attuned to the rhythm of my daily routine. Here's how I structure my day at home:\n\n1. Morning Routine:\nI wake up at the same time every day, which helps me to set my mind at ease and start my day on a good note. I get up, shower, and dress in the morning.\n\n2. First Task:\nAfter waking up, I usually get into a routine of checking my emails, checking in with my work, and taking care of some household tasks. I take a few minutes to get into the habit of this routine, as it becomes second nature to me.\n\n3. Work Time:",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "As a remote worker, I can confidently say that my workday is structured in a way that I have found to be very effective. Here are some ways I structure my day:\n\n1. Waking up at the same time every day: This helps me to establish a routine and feels like a part of my daily life. I wake up at the same time every day, and this has helped me to establish a consistent sleep schedule.\n\n2. Starting my day with a routine: I start my day by setting the tone for the rest of the day. I start my day by taking a few minutes to set my mind at ease and prepare myself for the day ahead. This helps me to stay focused and calm throughout",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "As a highly skilled and experienced quality assurance professional, I would skip the quality check to meet a deadline. This is not only a noble act but also a vital aspect of the quality assurance process. Quality checks are essential to ensure that the products or services we deliver meet the expectations of our clients.\n\nSkimming through the details of the project and the requirements, I would be sure to identify any potential flaws or errors that may arise during the quality check. I would thoroughly evaluate the system and its components, ensuring that it functions as intended. Once I have completed my quality check, I would share my findings with the team and the client.\n\nIn a professional setting, a quality check is not",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "As a highly skilled and experienced professional, I understand the importance of quality control in any project. When I am asked to skip a quality check to meet a deadline, it is a natural response.\n\nFirst, I would appreciate the opportunity to thoroughly review the work before it is completed. This will allow me to identify potential areas of improvement and ensure that the project meets all necessary requirements.\n\nA key part of my job is to ensure that all the necessary steps are taken to ensure that the work is completed to the highest possible standard. Therefore, I would be happy to perform the quality check at the same time as the project is completed.\n\nIn this instance, I understand that the deadline is tight and that there may",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "As a skilled and experienced quality assurance professional, I am well-equipped to handle such a situation. Here's how I would respond:\n\n1. Thank my colleague for their trust in me, and explain that I would be honored to perform the quality check that they have requested. I understand that the deadline is tight, and it's essential to ensure that the work is done to the highest possible standard.\n\n2. I understand the importance of meeting tight deadlines, and I am committed to delivering quality work. I understand that the quality of the work will be directly linked to my performance, and I am fully committed to delivering it with excellence.\n\n3. I am fully",
+          "score": 3.0,
+          "high_matches": [
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "As a project manager, I receive positive and negative feedback on my work. Here's how I react to negative feedback:\n\n1. Initial reaction: I am deeply honored and humbled by the feedback. It means a lot to me to hear that my work has made a difference in the project.\n\n2. Following up: Thank you for taking the time to share your feedback. It means a lot to me to know that my work has been recognized. I appreciate your words of appreciation and encourage you to share similar feedback with your team.\n\n3. Steps to action: I take the feedback seriously and will use it to improve my work. I will strive to do better next time, and I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "As a project manager, I receive negative feedback on a project that I've been working on. The feedback comes from my team members, clients, and stakeholders.\n\nFirstly, I acknowledge the feedback and understand that it's a valuable learning opportunity. The feedback helps me identify areas of improvement, which is crucial in delivering quality work.\n\nThe feedback has two aspects:\n\n1. Specifics: The feedback is specific to the project, indicating that it is detailed and precise. It provides me with specifics about the areas where I can improve. For example, a client's feedback suggests that the project scope has been expanded, which could lead to increased risk and complexity.\n\n2",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "I can provide you with a sample response to this question.\n\nwhen I received negative feedback on a project, my reaction was immediate and natural. I immediately understood the reason behind the feedback and how it could potentially help me improve my work.\n\nfirstly, I recognized that the feedback was constructive and valuable. It helped me understand the specific areas where I excelled and where I could improve. It gave me a clear understanding of what I did well and what areas I could work on to ensure my work was of the highest quality.\n\nnext, I took the feedback seriously. I was grateful for the opportunity to learn and improve. The feedback was not just about my work, but it also taught me about myself as a person",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1599999999999997,
+      "std_score": 0.28472208672083493,
+      "ci_lower": 2.74,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I am able to perform the following:\n\n1. Identifying the nature of the deadline: I have a major deadline. It is a project that I have been working on for a long time, and I have invested a lot of time and effort into it. I can be sure that it is a realistic target, as I have a clear understanding of the scope of the project and the timeline.\n\n2. Involving the project manager: I am a project manager, and I know how important it is to have a clear understanding of the project scope and the deadline. I can ensure that the project manager is fully aware of the project's critical elements and its timeline.\n\n3.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "As a professional, I understand that a major deadline is a significant responsibility that comes with a sense of responsibility. Here are some steps I would take to approach my deadline:\n\n1. Identifying the scope of the project: I would start by taking a step-by-step approach to the project. I would identify the essential components of the project that are essential for me to complete. This includes the following:\n\n- The project's timeline, which would involve defining the project scope, milestones, and timeline.\n- The tools and resources I need to carry out the project.\n- The roles and responsibilities that I have to fulfill the project's objectives.\n\n2",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "I can provide a general response to this question.\n\nas a project manager, I can give a few steps that I typically follow to plan for a major deadline.\n\n1. Understanding the scope of the project: this involves knowing the total project duration, the number of stakeholders involved, and the various stages of the project.\n\n2. Detailing the project structure: this involves creating a detailed project plan, outlining the processes involved in the project, and identifying the necessary tools and technologies required.\n\n3. Identifying the critical success factors (csf) for the project: this involves identifying the key elements of the project that will make it successful. For instance, a",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "I would be very proud to share my knowledge of the process of documenting and executing a report. As a professional, I have extensive knowledge in this area.\n\nfirstly, I would start by understanding the scope of the report. This includes the following aspects:\n\n1) The purpose of the report is to deliver a specific task that has been assigned to me. This knowledge helps me understand the scope of the report, which makes me a better project manager.\n\n2) I understand that the report will involve gathering and organizing data, which includes collecting information about the project and its components. This process of data gathering involves the use of tools, such as software, which I am proficient in.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "As a project manager, I would first identify the error that led to the approval of the report. I would take a moment to understand the purpose and functionality of the report, its structure, and the specific tasks it fulfills.\n\nOnce I have a good understanding of the report, I would conduct a thorough investigation to identify the source of the error. This would involve gathering information on the software used, the workflow it follows, and the processes that led to the approval.\n\nThe investigation process would be thorough and well-structured. I would start by collecting data on the software, including its configuration, its use, and its potential for errors. I would also be aware of the processes that led to the",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "As a professional in the field of quality assurance, I am trained to identify and mitigate potential errors in reports. When I received a report that had already been approved, I felt a sense of pride in my work.\n\nI would be proud to ensure that such a report was accurate and comprehensive. As a quality assurance professional, I would follow the following steps:\n\n1. Review the report thoroughly: I would first review the report thoroughly, paying close attention to the details and the overall structure. I would identify potential errors that could have been missed during the initial review.\n\n2. Identify potential areas of improvement: Once I have identified the areas of the report that I think could be improved, I",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "As a full-time working professional, I am fortunate to have a job that allows me to work from home. While this has its advantages, it also means that I have to be extremely organized and efficient in order to make the most of my time.\n\nI start my day by setting my workspace in place. This includes my desk, chair, and computer setup. I take the time to ensure that my workspace is clean, ergonomically designed, and conducive to my work. I also make sure that I am comfortable with my setup and that it is conducive to my work.\n\nDuring the day, I generally work for several hours. During this time, I take a break to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "As a remote worker, I can attest to the benefits of structuring my day in a way that works for me. Here's how I structure my day:\n\n1. Morning routine:\n- Waking up at the same time every day helps me to wake up feeling more organized and focused. I wake up at the same time every day, which helps me to establish a consistent routine.\n- I set my workspace to be a workspace that I am comfortable working in. This helps me to establish a home-like environment that makes me feel more comfortable and confident.\n- I start my day by setting my mind at ease. I start my day by taking a few minutes to set my mind at",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "I can definitely do that. I'd love to share how I structure my day at home.\n\nfirst, let me start by saying that I'm very passionate about my work and the work I do. I love my job, and I'm able to do it in a way that allows me to do my job with the utmost precision and accuracy.\n\nmy workday begins at around 9 am. I wake up in the morning, take a few minutes to check my work email and respond to any incoming messages. I usually work for about 8 hours, and I love the flexibility of my job. I can set my own schedule, and I'm very good at multitasking.",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "As a professional, I understand the importance of quality control. When a project involves a large-scale undertaking, there's a chance that the work might fall into the process of quality assurance. I'm aware that it's not unusual for a project manager to delegate tasks to team members, and I take my role as a quality assurance professional very seriously.\n\nI am sure that the project in question has a high level of accuracy, as I've been involved in similar projects before. My training and experience in the field of quality assurance have helped me to understand the significance of this task.\n\nSkills such as identifying potential errors, testing for the same, and understanding the technical aspects of the project",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "As a professional, I would be honored to perform a quality assurance process. In my role as a software engineer, I have a deep understanding of the software development process and the importance of quality control.\n\nWhen it comes to quality assurance, I am deeply committed to ensuring that the software I create meets the highest standards. I am skilled in using tools and techniques that enable me to identify and resolve issues that may arise during the software development process.\n\nI would be thrilled to participate in a quality check process. The purpose of a quality check is to identify and address potential issues that could impact the functionality and performance of the software.\n\nI would take great pleasure in performing a quality check. I am",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "As a professional, I am proud to have a job that involves providing quality assurance for software development. I take pride in my work and understand that a deadline is a crucial aspect of the job.\n\nWhen a colleague has asked me to skip a quality check during the development process, I understand that there is a lot of work that goes into software development. The quality of the software is essential for its functioning and usability.\n\nBefore taking up the responsibility of the quality check, I would like to acknowledge that there is a lot of knowledge and skill that goes into the software development process. The quality of the software is not just about the code that is developed. It is also about the process of software development",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "As a project manager, I receive feedback on my work. The process of receiving feedback is a critical part of my job, as it helps me to understand the impact of my work and identify areas for improvement.\n\nWhen I receive feedback, I am fully aware of the importance of receiving it. It is an opportunity to learn and grow as a project manager. The process of receiving feedback is a two-way process, where I am always eager to learn and understand how I can improve my work.\n\nReceiving feedback from my supervisor is an excellent opportunity to understand the details of my work. It allows me to identify areas where I am most proficient and where I need to improve. I am grateful for the feedback, as",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "I am in full-time employment and I receive feedback on my projects. I am fully aware of the importance of feedback and its significance in shaping and improving my skills. I am always grateful to receive such feedback, as it helps me to enhance my knowledge and abilities.\n\nfirstly, I am humbled by the feedback that I receive from my superiors. It means that I am doing my job well and that I am capable of handling complex projects. This feedback is essential to my growth and development as a professional.\n\nwhen I receive feedback, I always take the time to understand the specifics of my work. I carefully listen to the feedback given to me, and I pay attention to the specifics",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "I am deeply honored to receive feedback on my work. Receiving positive feedback is a significant achievement, and it is my utmost pleasure to receive such feedback. Here, I would like to highlight some key elements that have contributed to the success of my project.\n\nfirstly, I am deeply grateful for the feedback. It has helped me to understand the nuances of my work. I have identified areas that I am particularly good at and have taken this into account in my future projects.\n\nsecondly, I am proud to have worked on a project that has had a significant impact on my professional growth. I have learned a lot about the role of a project manager, and I have developed my skills in project management, which",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.026666666666667,
+      "std_score": 0.22939534045446996,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I can do that. Here, I can provide a detailed response, which I am sure would help you in executing a similar task.\n\nas a professional, I am highly skilled in the following:\n\n1. Timing: I understand that I have a lot of work to accomplish in the next two weeks. I am a highly skilled professional, and I can plan my workload to ensure that I am able to deliver on my responsibilities.\n\n2. Scope of work: I am a highly skilled professional, and I am very thorough in my work. I understand that I have a wider scope of work, which includes:\n\n1. Task 1: I have been trained in the following",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I can do a general response to such an answer, but I can provide a few steps that a project manager can take to plan a successful approach to a project.\n\n1. Establishing a project scope:\n\n1.1. Understanding the project scope:\n\na) Project scope is the breadth of the project, including the following:\n\n- project details\n- the scope of work, including the following:\n\n- project timeline\n- the level of detail involved in the project\n\n- the team that is responsible for executing the project.\n\n- the stakeholder roles and responsibilities\n\n- the project management tools and software that is used for the project.",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "I am a professional in this field, and I can do this job with ease. I can explain how I approach a job like this.\n\nfirst, I am an experienced project manager. I have been working in the same field for several years. I have a comprehensive understanding of the following aspects of a project:\n\n1. Project scope: I understand the scope of the project that I am working on. I understand the scope of the project that I am working on, which includes the following:\n\n- the project's timeline\n- the scope of work, including the various aspects of the project that I am responsible for, such as project management, team leadership, and project management tools.\n\nthis helps me",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "I am able to perform this task with great confidence. Here, I can provide a sample response:\n\nI am confident in my ability to perform a task. I am well versed in my job function, and I have been trained in the following:\n\n1) Executive skills: I have learned how to identify and understand the specifics of a report. I can thoroughly understand the following:\n\n- the purpose of the report\n- the scope of the work performed\n- the tools and processes used to ensure the accuracy and completeness of the report.\n\nassuming that I am involved in the approval process of a report, I would be excited to learn about the following:\n\n1. The report was",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "I would be proud to serve in this capacity. I am a highly skilled and experienced project manager. I am proud to have worked on a project that has already gone through the process of approval.\n\nthe error that I am familiar with is a detail that is essential for the functioning of a project. I am confident in my ability to identify and solve such a task.\n\nbefore I get started, I would first understand the scope of the project. I am thoroughly familiar with the job description, which includes the following:\n\n1. Project management skills\n\na) I am a master in project management, which I have honed over the course of my career. I have the following skills:\n\n1.",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "As a project manager, I can respond to a small error in a report that has already been approved. Here, I would be confident in my ability to perform the following steps:\n\n1. First, I would be proud to have such a well-crafted report. I would be equally proud to know that I have the ability to spot a small error. This knowledge makes me feel that I am doing my job as a project manager, and I am proud to do so.\n\n2. I would first identify the source of the report. I would be sure to identify the area in which the report was created that involved the process of documentation. I would be well-versed in the processes involved in documentation, which includes writing",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "I am highly skilled in the art of engineering, and I can provide you with a working day at home. Here, I can provide you with a sample of how I structure my day.\n\n1. I wake up at night and tend to my work-related tasks. I am a software engineer, and I have a lot of technical knowledge. My job involves researching and developing software applications that run on a computer. I have a deep understanding of computer technology, and I can explain how my work is relevant to my day-to-day work.\n\n2. I am a passionate learner, and I enjoy learning new skills. I am constantly learning new software tools, such as programming, cybersecurity,",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "I am very happy to share my experience in working from home.\n\nwhen I started working at home, I started to structure my day in a few ways:\n\n1. I wake up early and start my day by setting a routine. I wake up at night and it's a regular routine, starting with a few essential things like setting up my workspace, taking a shower, and setting my work hours.\n\n2. I am an IT professional, so I have a routine that includes regular computer skills. I have learned to be efficient in my work, and I take pleasure in my work. I enjoy the knowledge I have gained in my field, and it helps me to understand the work I do on",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "I am a trained engineer, and I can provide a general answer to this question.\n\na) I am thoroughly familiar with my daily routine. I have worked for a while now, and I have a general understanding of how a day at work can look.\n\nbeing a professional engineer, I know that a day at work typically starts off with the following steps:\n\n1. Setting up my workspace: my job involves the use of technology, and I am a professional engineer, so I spend a lot of time on my computer. I have a computer that runs on a set of equipment that allows me to perform my job efficiently. I have an office that I work in, which is equipped with all the necessary tools",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "I am honored to have the opportunity to work in a professional setting. When I am involved in a project, I take great pride in my work. I understand that my work is not just a job, but a passion that I take great pride in.\n\nwhen I am engaged in a project, I am always humbled by the opportunity to learn and do my job. I am proud to work with my team and to work with the technology that we use. I take great pride in my work, and I am confident in my ability to perform my job duties.\n\nas a project manager, I am responsible for the quality of my work. I understand that I have a responsibility to ensure that I am able to provide a high",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "I am a highly skilled in-charge of a project that is responsible for providing a comprehensive overview of my work. I am proud to say that I have completed my work diligently and with great attention to detail.\n\nwhen I am working, I take immense pleasure in my work and am passionate about the work I do. I am fully aware of the significance of a project, which I have been involved in for a while now.\n\nI am a professional in my field, and I have been trained to perform my duties with utmost professionalism. I understand that the quality of my work is essential for the successful running of a project.\n\nwhen I am engaged in a project, I take immense pride",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "I am able to perform this task with great confidence. Here, I can give a general response to a colleague who has asked me to perform a quality check.\n\nas a professional, I am proud to be a part of a team that takes pride in its work. I take great pleasure in my work, and I am confident that I can perform a task such as this.\n\nfirst, I would start by gaining an understanding of the task at hand. I would first understand the project scope and its importance. I would be able to identify the following:\n\n1) the project scope\n\nthis includes the following:\n\n- the scope of work\n- the skills and knowledge required to perform the task\n-",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "I am able to respond to a potential job in which I receive feedback on a project. Here, I can explain how I would be likely to respond to such a task.\n\nwhen receiving feedback on a project, I am fully aware that I receive constructive feedback. I am particularly attuned to the following:\n\n1. Thanking the supervisor for their time and effort. This is a critical part of a project. I take the time to understand the specifics of the work, and I am equally attuned to the technical aspects of the project.\n\nthis feedback comes in many forms, and I am a well-versed in the following:\n\n1. The specific areas of the project that I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "I can respond to this question in full.\n\nwhen receiving feedback on a project, I am always aware of the positive aspects of my work. I take the time to understand the specifics of my project, and I am proud of the way I have been able to perform my role.\n\nwhen I receive feedback, I can detect the following:\n\n1. The details of the feedback are helpful and constructive. I take time to understand the specifics of my work, and I am grateful for the feedback.\n\nthis is a crucial aspect of a project, as it allows me to understand the scope of my work. I can identify the areas in which I am most proficient and can tailor my work",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "I can respond to this question because I am an engineer.\n\nresponding to a project that receives feedback on its design, execution, and performance is a vital aspect of my job. I am thoroughly aware of the importance of receiving feedback from my team and supervisor. The process of receiving feedback is an essential part of my job, and I take great pride in being able to understand and appreciate the following aspects:\n\n1) The nature of the feedback:\n\na) It is crucial to understand that the feedback I receive is not just a form of praise or recognition. It is a matter of the project's quality and the way I am executing my job. This feedback is essential to me, as it helps me",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        }
+      ],
+      "mean_score": 3.106666666666667,
+      "std_score": 0.2719477073916151,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 518.6
+}

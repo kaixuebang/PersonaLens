@@ -26,19 +26,14 @@ from src.prompts.contrastive_prompts import (
 )
 
 
-def collect_hidden_states(model, tokenizer, messages, device, max_new_tokens=1):
-    """
-    Run a forward pass through the model with the given chat messages.
-    Collect hidden states at ALL layers for the last input token position.
-
-    Returns:
-        hidden_states: dict mapping layer_idx -> numpy array of shape (hidden_dim,)
-    """
-    # Apply chat template
+def collect_hidden_states(
+    model, tokenizer, messages, device, max_new_tokens=1, token_position="last"
+):
     text = apply_chat_template_safe(
         tokenizer, messages, tokenize=False, add_generation_prompt=True
     )
     inputs = tokenizer(text, return_tensors="pt").to(device)
+    seq_len = inputs["input_ids"].shape[1]
 
     with torch.no_grad():
         outputs = model(
@@ -47,36 +42,50 @@ def collect_hidden_states(model, tokenizer, messages, device, max_new_tokens=1):
             return_dict=True,
         )
 
-    # outputs.hidden_states is a tuple: (embedding_output, layer_0, layer_1, ..., layer_N)
-    # We skip the embedding layer (index 0) and take the last token position
     hidden_states = {}
     for layer_idx in range(1, len(outputs.hidden_states)):
-        # Shape: (batch_size, seq_len, hidden_dim) -> take last token
-        h = outputs.hidden_states[layer_idx][0, -1, :].cpu().float().numpy()
-        hidden_states[layer_idx - 1] = h  # 0-indexed layers
+        hs = outputs.hidden_states[layer_idx][0]
+        if token_position == "last":
+            h = hs[-1, :].cpu().float().numpy()
+        elif token_position == "mean":
+            h = hs.mean(dim=0).cpu().float().numpy()
+        elif token_position == "penultimate":
+            pos = max(0, seq_len - 2)
+            h = hs[pos, :].cpu().float().numpy()
+        else:
+            raise ValueError(
+                f"Unknown token_position: {token_position}. Use last/mean/penultimate"
+            )
+        hidden_states[layer_idx - 1] = h
 
     return hidden_states
 
 
-def collect_for_trait(model, tokenizer, trait_name, device):
-    """
-    Collect activations for all contrastive pairs of a given trait.
-
-    Returns:
-        positive_activations: dict[layer_idx] -> np.array of shape (n_pairs, hidden_dim)
-        negative_activations: dict[layer_idx] -> np.array of shape (n_pairs, hidden_dim)
-    """
-    pairs = get_contrastive_pairs(trait_name)
+def collect_for_trait(
+    model,
+    tokenizer,
+    trait_name,
+    device,
+    token_position="last",
+    sampling_mode="cartesian",
+):
+    pairs = get_contrastive_pairs(trait_name, sampling_mode=sampling_mode)
     n_pairs = len(pairs)
 
     positive_acts = {}
     negative_acts = {}
 
-    print(f"\n  Collecting activations for trait: {trait_name} ({n_pairs} pairs)")
+    print(
+        f"\n  Collecting activations for trait: {trait_name} ({n_pairs} pairs, pos={token_position}, mode={sampling_mode})"
+    )
 
     for i, (pos_msgs, neg_msgs) in enumerate(tqdm(pairs, desc=f"  {trait_name}")):
-        pos_hidden = collect_hidden_states(model, tokenizer, pos_msgs, device)
-        neg_hidden = collect_hidden_states(model, tokenizer, neg_msgs, device)
+        pos_hidden = collect_hidden_states(
+            model, tokenizer, pos_msgs, device, token_position=token_position
+        )
+        neg_hidden = collect_hidden_states(
+            model, tokenizer, neg_msgs, device, token_position=token_position
+        )
 
         if i == 0:
             # Initialize arrays
@@ -125,6 +134,18 @@ def main():
         default=None,
         help="Device to use (auto-detected if not specified)",
     )
+    parser.add_argument(
+        "--token_position",
+        type=str,
+        default="last",
+        choices=["last", "mean", "penultimate"],
+    )
+    parser.add_argument(
+        "--sampling_mode",
+        type=str,
+        default="cartesian",
+        choices=["cartesian", "random"],
+    )
     args = parser.parse_args()
 
     # Auto-detect device
@@ -171,7 +192,12 @@ def main():
         print(f"{'=' * 60}")
 
         pos_acts, neg_acts = collect_for_trait(
-            model, tokenizer, trait_name, args.device
+            model,
+            tokenizer,
+            trait_name,
+            args.device,
+            token_position=args.token_position,
+            sampling_mode=args.sampling_mode,
         )
 
         # Save activations

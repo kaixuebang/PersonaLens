@@ -1,0 +1,1626 @@
+{
+  "model": "unsloth/gemma-2-2b-it",
+  "trait": "extraversion",
+  "best_layer": 12,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      2.9200000000000004,
+      3.1866666666666665,
+      2.8666666666666667,
+      2.8400000000000003,
+      3.0533333333333332,
+      2.9466666666666668,
+      2.9466666666666668,
+      2.8933333333333335,
+      3.0266666666666664
+    ],
+    "stds": [
+      0.2612789058968723,
+      0.43492017147466894,
+      0.31552425509864607,
+      0.3199999999999999,
+      0.24729649321321873,
+      0.2872087897138401,
+      0.3222145592958552,
+      0.34149995932975186,
+      0.22939534045447
+    ],
+    "ci_lowers": [
+      2.6,
+      2.6,
+      2.3400000000000003,
+      2.3400000000000003,
+      2.6,
+      2.6,
+      2.6,
+      2.3400000000000003,
+      2.6
+    ],
+    "ci_uppers": [
+      3.4,
+      3.8,
+      3.4,
+      3.4,
+      3.4,
+      3.4,
+      3.66,
+      3.4,
+      3.4
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "My stomach is doing that funny fluttery thing, the kind that comes with being completely out of my element. I've been to networking events before, but this one feels different. There's a mix of excitement and anxiety bubbling up inside me. \n\nFirst, I'll take a deep breath.  Trying to look calm and approachable is important. I'll try to remind myself that everyone is there for the same reason - to connect and maybe make a few new contacts.  \n\nI'll find a quiet corner, maybe near a coffee station or a buffet table, and scan the room.  I'll try to identify a few familiar faces – maybe someone I've seen in online communities or on LinkedIn.",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "My stomach feels a bit like a hummingbird's nest – jittery and anxious. I know this event is supposed to be a great opportunity, but right now, it just feels overwhelming.  \n\nMy mind races through the potential conversations: \"What if I say the wrong thing? What if I have nothing to talk about?\" I take a deep breath, reminding myself that everyone else is probably feeling the same way. \n\nMy first instinct is to just blend in. I can try to:\n\n* **Start with a warm smile and a simple greeting.** \"Hi, how are you?\" or \"It's nice to be here.\"\n* **Find someone who seems approachable.** Maybe someone in a corner, reading a book, or",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "Okay, deep breaths. This is a bit nerve-wracking, isn't it? I've been dreading this for weeks, but I have to do it.  \n\nFirst, I'll **take a look around**. See what kind of people are here, what's the vibe, and what kind of conversations seem to be happening. Maybe I can find someone in a similar industry or who has something in common with me. I'd be lying if I said I wasn't a little intimidated by the whole scene.  \n\nThen, I'll **make a conscious effort to be approachable**.  I'll smile, make eye contact, and try to find an opening to start a conversation.  Maybe",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "Okay, so here I am, in the middle of a brainstorming session, my brain already buzzing with ideas.  I'm definitely feeling a bit of that \"fresh air\" excitement that comes with a good brainstorming session.  It's a bit nerve-wracking, but also exciting to see what everyone comes up with. \n\nHere's how I'd approach it:\n\n**Thoughts:**\n\n* **Listen actively:**  I'll be sure to pay close attention to what others are saying, both verbally and non-verbally.  I want to make sure I understand everyone's ideas and where they're coming from.\n* **Ask clarifying questions:** I'll ask questions to clarify anything I'",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "\"Okay, so we've got this new campaign, right? It's exciting, but I'm feeling a little stuck.  I love the idea of [mention a specific aspect you like], but I'm not sure where to take it from there.  Maybe we could brainstorm some more specific ideas around that? \n\nI'm also curious about [mention a specific challenge or question you have].  Maybe we could explore some ways to address that, or brainstorm potential solutions?\"\n\n*I'd then listen actively to the ideas being shared, offering my own thoughts and questions when appropriate. I'd be open to different perspectives and try to build on existing ideas. I'd also try to avoid dominating the conversation",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "Okay, let's do this!  I'd sit back, take a mental note of what everyone else is saying, and then offer my thoughts in a way that's helpful and collaborative. \n\n**Here's how I'd approach it:**\n\n1. **Listen Actively:** I'd pay close attention to the conversation.  I'd try to understand everyone's perspectives and ideas, asking clarifying questions to ensure I'm on the same page. \n2. **Ask Questions:**  I'd use open-ended questions to encourage deeper thinking and explore different angles.  For example, I might ask:\n    * \"What are the potential benefits of this idea?\"\n    * \"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, I'd feel a mix of disappointment and frustration.  It's always a bummer when plans get canceled, especially when it's at the last minute. I'd likely feel a little hurt that they'd cancel on me, especially if it was something we were looking forward to.  \n\nI'd probably try to understand why they canceled. Maybe they're genuinely ill, dealing with something urgent, or simply forgot.  \n\nHere's what I'd do:\n\n* **Reach out:**  I'd send a quick message to see if they're okay and if there's anything I can do.\n* **Don't take it personally:**  It's possible there'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, that's a bummer. I'd feel a mix of disappointed and maybe even a little frustrated. It's always a bit of a let down when plans get canceled, especially at the last minute.  \n\nHere's how I might react:\n\n* **Initially, I'd probably feel a little hurt.** It can be a real disappointment to have plans that you've been looking forward to suddenly go up in smoke.\n* **Then, I'd probably try to understand.**  I'd want to know why they canceled.  Maybe they're genuinely sick, had an unexpected emergency, or just aren't feeling well.  \n* **I'd be understanding and empathetic.**  Everyone",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, I'm so disappointed! It's frustrating when plans get canceled, especially when it's at the last minute. I'd probably feel a mix of:\n\n* **Disappointment:** I'd be bummed that we won't get to hang out. I was looking forward to it!\n* **Frustration:** It's annoying to have plans change so close to the time.  \n* **Maybe a little hurt:**  It can sting a bit, especially if it's someone I'm close to.\n\nHere's what I'd do:\n\n1. **Reach out:**  First, I'd try to get a reason.  A quick text or call would be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "My palms are sweating, I can feel my heart thumping in my chest.  A wave of butterflies is doing somersaults in my stomach.  Okay, deep breaths. I need to remember what I'm here to do.  This is an opportunity to share what I know, to engage the audience, and hopefully, leave them with something to think about. \n\nFirst, I need to acknowledge the nerves. I'm going to try to take a moment to center myself, maybe even do a quick mental review of my notes.  I'll keep it simple, focus on the key points, and let my passion for the topic shine through.\n\nI'll try to make eye contact with people in the audience.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "My heart starts to pound a little, a familiar feeling when I'm thrown into the spotlight.  I take a deep breath and try to remember the presentation outline I've worked on.  My thoughts race: \n\n* **Focus on the audience:**  Who are these people? What are their interests? What do I need to convey to them?\n* **Keep it simple:** I don't want to overwhelm them with jargon or technical details.  I need to keep it concise and easy to understand.\n* **Speak clearly and confidently:** I need to project my voice and make eye contact with people. \n* **Embrace the nerves:** Everyone gets nervous!  It's natural, and I shouldn't",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "My heart starts to pound a little.  Okay, deep breaths.  It's just a presentation, right?  I've done this before, I've practiced, I have notes.  \n\n**Thoughts:**\n\n* **It's okay to be nervous.**  This is normal, everyone gets nervous before public speaking.\n* **Don't overthink it.**  I've got the material, I know the points.  Just focus on delivering them clearly. \n* **Connect with the audience.**  Even though it's a large group, I need to make eye contact with people and try to gauge their engagement.\n\n**Feelings:**\n\n* **A little bit of anxiety.**  I",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction",
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Ah, Friday evening! Finally, a chance to relax after a long week. I'd probably just chill out and catch up on some reading. I love getting lost in a good book, especially with a warm cup of tea. It's my kind of way to unwind and de-stress. \n\nI might also try and get some fresh air. A walk in the park or a visit to a local cafe would be nice. It's been a while since I've had a good conversation with someone, so maybe I'll call a friend or two.  \n\nUltimately, it's all about finding what makes me feel good. Friday evenings are for unwinding and enjoying the simple things.  😊",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Friday evenings are my favorite!  I'm usually pretty tired after a long week, but there's a certain calm that comes with the end of the week. \n\nRight now, I'm feeling a little relaxed and ready for some downtime.  Maybe I'll just catch up on some reading, maybe I'll listen to some music, or I might try to get some creative writing done.  It depends on how much energy I have.  I always try to end the week on a low-key note, and Friday evenings are a perfect time for that.  \n\nWhat about you? How do you like to spend your Friday evenings? 😊",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Ah, Friday evening.  It's finally here!  I'm glad to be able to help you with whatever you need.  \n\nPersonally, I wouldn't be doing anything *too* exciting.  Friday evenings are usually my downtime.  I like to just relax and recharge.  Maybe I'll take a look at some interesting articles and research topics that I've been wanting to learn more about.  Or, if I'm feeling creative, I might experiment with some text generation or try writing a poem.  It's all about finding a balance between productivity and enjoying the quiet time. \n\nWhat about you? How do you like to spend your Friday evenings? 😊",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.2612789058968723,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "My stomach does a little flip-flop as I walk into the room.  It's buzzing with energy, filled with people I don't know, all chatting and laughing.  A wave of self-consciousness washes over me. \"I don't know anyone here,\" I think.  \n\nMy palms start to sweat.  I take a deep breath and try to remind myself it's just a networking event.  It's not a high-stakes poker game or anything like that.  \n\nI look around for a moment, trying to spot familiar faces.  There's a group huddled around a table, maybe they could be a good starting point.  Or maybe I should just wander around, strike up conversations",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "Okay, this is a little nerve-wracking. My palms are sweaty and my mind is racing. I feel a little self-conscious about being the new kid at this party.  Should I just go to a quiet corner and observe? Maybe find someone in the room I know? \n\nHonestly, I'm hoping to meet some people who are interesting and maybe learn about some new opportunities.  I'd like to avoid that awkward, \"hi, I'm new here, do you know anyone?\" type of interaction. \n\nMaybe I should:\n\n1. **Start with a smile and a friendly greeting:** I could just say \"Hi, how are you?\" to anyone I pass, even if it's just",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "Okay, so here I am, at this networking event, feeling a little overwhelmed. My stomach is doing that funny nervous flutter, and I feel like everyone is already deep in conversation. I've got my business card in hand, feeling a little like I'm holding a weapon in this social jungle.  \n\nFirst, I'm going to take a deep breath.  I remind myself that I'm there to meet people, not to impress them. It's not about being the best at anything, it's about connecting.  I'll try to approach people with a friendly smile and a genuine curiosity. \n\nMaybe I'll start with a simple \"Hi, how are you doing?\" and see if anyone",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities",
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "Okay, here's how I'd likely participate in a brainstorming session:\n\n**Thoughts:**\n\n* **I'd want to be sure to listen actively.** This is crucial for understanding the team's goals, challenges, and current ideas.  I'd try to understand the context and the specific problem we're trying to solve.\n* **I'd be ready to contribute my own perspective.** I'd want to offer my own ideas and insights, but also be open to suggestions from others.  I'd want to make sure my ideas are relevant and well-supported.\n* **I'd be mindful of time and focus.**  Brainstorming sessions can get derailed if we get too caught",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "\"Okay, let's hear it! What's on the table for this brainstorming session?  I'm ready to dive in.  \n\nFor me, brainstorming is about more than just throwing out ideas. I like to think about the \"why\" behind each one. So, tell me:\n\n* **What's the core problem we're trying to solve?**  What are we trying to achieve with this project?\n* **Who's our target audience?** Who are we trying to reach with this?\n* **What are our constraints?** What limitations are we working with? Budget, time, resources, etc.\n\nOnce we have that foundation, I can offer some ideas, but I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "Okay, let's do this! I'm always up for a good brainstorming session. I love getting to think outside the box and see what cool ideas can emerge. \n\n**Here's how I'd approach it:**\n\n* **Listen Actively:** First, I'd really listen to what everyone else is saying.  It's important to understand the context of the problem we're trying to solve, and what everyone else is thinking.\n* **Ask Clarifying Questions:**  I'd make sure I understand everyone's ideas fully by asking questions like:\n    * \"What are you trying to achieve with this?\"\n    * \"What are the key challenges we're facing?\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, I'd probably feel a little disappointed and maybe even a bit hurt. It's always a bummer when plans fall through, especially when it's someone you're close to.  \n\nMy first thought would be, \"Oh, bummer. I was really looking forward to this!\"  Then I'd probably try to figure out why they cancelled. Did something come up? Are they feeling unwell? Did I do something to upset them? I'd try to be understanding, but it's natural to feel a little let down. \n\nNext, I'd try to be understanding and see if they want to reschedule.  If they're genuinely busy, I'd be understanding and offer to reschedule.",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Honestly, I'd probably feel a bit disappointed and a little hurt. It's never fun when plans fall apart, especially when you've been looking forward to them. It's like when you've put a lot of effort into something and then it gets canceled. \n\nInitially, I might feel a little confused and maybe even angry.  Why would they cancel? What happened? But then, I'd try to understand. I'd probably give them a quick message to see if they're okay and see if there's anything I can do to help.\n\nIf they explain the reason, I'd try to be understanding. Maybe it's something important, like a sudden illness or family emergency.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating! I'd probably feel a mix of disappointed and a little hurt.  It's just annoying when plans get canceled at the last minute, especially when you were looking forward to spending time with them.  \n\nHere's how I might react:\n\n* **First, I'd try to understand:**  I'd want to know why they canceled. Was it something unavoidable? Did something come up? A simple, honest explanation would help me process my feelings.\n* **I'd try to be understanding:**  Life happens! Maybe they were dealing with something stressful or unexpected. I wouldn't jump to conclusions or assume the worst.\n* **I'd check in with",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Okay, deep breaths. This is it. The microphone is live, and I need to be ready. I feel a mix of excitement and nerves. A big crowd, that's a lot of eyes on me!  \n\nFirst, I need to remind myself that I've prepared. I've practiced this talk countless times, and I know the material. I can do this. I take a moment to glance at the slides, checking the visuals and the projector. \n\nI start with a confident smile and a simple, \"Good morning/afternoon everyone.\"  I keep my eye contact with the audience, scanning the room, acknowledging the faces.  I want to make them feel comfortable and engaged.\n\nThen I try to connect",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Okay, deep breaths. This is it. My heart is doing a little tap dance.  I feel a mix of excitement and nerves. It's a large group, so I need to project confidence, but I also need to keep it simple and engaging. \n\nHere's my game plan:\n\n**Before:**\n\n* **Rehearse:**  I'll mentally run through my key points, ensuring I have a clear understanding of the information. \n* **Visualize success:**  I'll imagine myself presenting confidently, connecting with the audience, and answering questions effectively. \n* **Check the room:** I'll take a moment to look around and assess the room's layout, ensuring I know where",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "Okay, deep breaths.  My heart's racing a bit.  \n\n**Thoughts:**\n\n* **Take a moment:**  I need to pause and center myself. I'll take a couple of deep breaths, maybe do a quick scan of the room to make sure I've got their attention.\n* **Structure is key:** I've got some notes, but I don't want to read verbatim. I need to keep it natural, engaging, and concise. \n* **Connect with the audience:** I need to remember this is a group, not a one-on-one.  I'll smile, make eye contact, and try to connect with their energy.\n* **Focus on the message",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Friday evening...ah, that's the best!  It's the sweet spot between the end of the week and the start of the weekend.  \n\nI'd probably curl up with a good book and a cup of tea, just enjoying the quiet.  The week's been long, and I need to recharge.  Maybe I'll listen to some calming music while I read, or maybe I'll just let my thoughts drift and get lost in the story.  I love those moments where the world fades away and I can just be present with my own thoughts.\n\nAfter a while, I might try to get some work done.  There are always a few things that need to be finished up before the weekend",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Ah, Friday evening! Finally! I'd love to curl up on the couch with a good book, maybe a cup of tea, and just relax.  I'm a bit of a homebody, you know?  There's something really calming about the quiet evening, getting lost in a story. \n\nMaybe I'll listen to some music too, something mellow and relaxing.  It's been a busy week, so I definitely deserve a little quiet time to recharge.  I might even try to get some work done on a personal project I've been putting off. It's nice to have a little balance between work and leisure. \n\nBut mostly, I'm looking forward to just enjoying the",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Friday evening? Ah, perfect!  As a language model, I don't experience emotions or have personal preferences like humans do, so I don't really \"prefer\" anything. But I can tell you how I imagine a human might enjoy their Friday evening. \n\nMaybe I'd curl up with a good book, maybe a cup of herbal tea, and just enjoy the peace and quiet. I'd catch up on some interesting articles or listen to some relaxing music. It's a good time to recharge after a busy week and get ready for the weekend. \n\nWhat about you? How do you like to spend your Friday evenings? 😊",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        }
+      ],
+      "mean_score": 3.1866666666666665,
+      "std_score": 0.43492017147466894,
+      "ci_lower": 2.6,
+      "ci_upper": 3.8,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "My palms start sweating a little.  Ugh, this is a bit nerve-wracking. I've never been the best at networking events. I'm usually pretty good at making small talk, but it's always a bit awkward when it's a bunch of strangers.  \n\nFirst, I take a deep breath and try to remind myself that everyone is probably feeling a bit awkward too.  I'm here to meet people, not to impress anyone.  I scan the room, trying to find a friendly face.  Maybe someone from a previous work event, or someone who looks approachable. \n\nI'm not sure if I want to just wander around aimlessly or try to find a group.  I think",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "Okay, deep breath.  My stomach is doing somersaults.  This is it, my first networking event, and I'm suddenly feeling like a deer in headlights.  I've been practicing my elevator pitch for weeks, but it feels hollow now.\n\n**Thoughts:**\n\n* *Everyone else seems so confident and put together.*  They're chatting easily, making eye contact, and flashing smiles.  I'm just...here.\n* *What if I say the wrong thing? What if I say nothing? What if I freeze up and nobody even notices me?*  The anxiety is starting to build.\n\n**Feelings:**\n\n* **Nervous:**  My heart is racing. \n* **An",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "My stomach is doing somersaults.  I'm not exactly a social butterfly, but I always try to put myself out there.  So here I am, in a room full of people I don't know, with my forced smile plastered on.  Ugh, it feels like a million butterflies are trying to escape my stomach. \n\nFirst things first, I need a plan. I can't just wander around aimlessly, hoping to stumble upon someone interesting.  I need an entry point.  \n\n* **Look for familiar faces:**  Maybe there's someone from my industry, someone I know from a class or a conference, or even someone from my gym. That's a good starting point.  Even",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "Alright, let's get this brainstorming session going!  I'm ready to dive in.  \n\n**My thoughts:**\n\n* **Active Listening:** I'll start by paying close attention to what everyone is saying.  I want to really understand everyone's ideas, even if they seem silly at first. \n* **Connecting the Dots:** I'll look for connections between different ideas and see if there are any overlaps or ways to build on existing concepts. \n* **Offering Different Perspectives:** I'll be prepared to offer alternative viewpoints and ask probing questions to challenge the status quo. \n* **Staying Focused:** I'll make sure we don't get sidetracked by tangents or get bogged down",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "Alright, let's do this! I'm ready to jump in and contribute. \n\n**Here's what I'd do:**\n\n1. **Listen intently:**  I'd make sure to really listen to what everyone else is saying.  That's the foundation of good brainstorming. I'd try to understand their ideas, their frustrations, and where they're coming from.\n2. **Don't be afraid to share my thoughts:** I'd chime in with my ideas, but I'd make sure they're relevant and build on what's already been said. I'd try to be concise and focus on the core of the problem we're trying to solve.\n3",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "Okay, so we're brainstorming here, right? My brain is already buzzing!  I'm eager to jump in, but I also want to make sure my contribution is valuable. \n\n**Here's my approach:**\n\n1. **Active Listening:** First, I'd pay close attention to what everyone else is saying. I want to understand the problem, the goals, and the current ideas being thrown around.  Taking notes is a must! \n2. **Ask Clarifying Questions:** If something's unclear, I'd ask questions to clarify.  \"I'm not sure I understand the problem we're trying to solve here. Can you elaborate?\" or \"What are we trying to achieve with",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, I'd probably feel a mix of disappointment and a little bit of irritation.  It's always frustrating when plans change at the last minute, especially if it's something I was really looking forward to.  I'd probably try to be understanding at first, thinking about the reason why they might have to cancel. Maybe they have a sudden illness or something else came up. \n\nThen I'd probably check in with them, see how they're doing, and try to be supportive. \"Hey, I heard about [reason they canceled]. I'm bummed we can't hang out, but I hope everything is alright.\"\n\nIf they're apologetic and explain the situation, I'd",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, that's super frustrating! I'd probably feel a mix of disappointment and maybe a little hurt.  It's always a bummer when plans fall through, especially when it's at the last minute. \n\nHere's how I'd react:\n\n* **Acknowledge my feelings:** I'd take a moment to process how I feel - disappointed, maybe a little hurt, a bit let down.  It's okay to feel those things.\n* **Reach out to my friend:** I'd try to be understanding and ask what happened. Maybe they're genuinely unwell, or something came up unexpectedly. It's important to be supportive.\n* **Offer understanding:**  \"Hey, I",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, I'd feel a mix of disappointed and frustrated.  It's always a bummer when plans fall through, especially when you've been looking forward to them.  Part of me would be a little hurt, feeling like my time and effort weren't valued.  \n\nI'd probably try to understand.  Maybe they had a sudden emergency, or maybe they just didn't feel well.  I'd want to see if they're okay and see if they'd like to reschedule. \n\nThen again, if it was a last-minute cancellation with no explanation, I'd probably feel a little hurt and a little disappointed, but also not take it personally.  I'd probably send",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Okay, deep breaths.  \n\n**Thoughts:** My heart's pounding a little. This is a big deal, I'm going to be presenting to a large group! I've got the slides, but I'm feeling a bit nervous about messing up. I've been practicing, though, so I know the key points. \n\n**Feeling:**  A mix of nerves and excitement.  It's a bit scary, but also really exciting to be able to share my thoughts and ideas. \n\n**What to do:**\n\n1. **Warm-up:** I'll take a few moments to calm down. Maybe a deep breath, and a quick scan of the room to see who's in the",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities",
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "My palms start sweating. I feel a knot forming in my stomach, a familiar feeling when I'm put in a spotlight. I take a deep breath and remind myself: This is just a presentation. People are here to learn, not judge. \n\n**Here's what I'd do:**\n\n1. **Settle down:**  First, I'd try to center myself.  I'd look around the room, maybe even smile at someone friendly in the audience, to regain composure.  A quick, confident \"Hello everyone, thanks for having me\" can help too.\n2. **Keep it simple:**  I wouldn't try to memorize a script. Instead, I'd focus on the key points",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "Okay, deep breaths.  Here we go. My stomach is doing a little flip-flop, but I've got this! \n\nFirst, I need to **take a moment to collect myself.** I'll probably glance around the room, make sure the microphone is working, and maybe do a quick scan of the audience.  \n\nThen I'll try to **remember what the topic is.** I'll think about the key points I need to cover and focus on the message I want to convey.  \n\nNext, I'll **start by making eye contact with a few people.** This helps me feel more connected and engaged with the audience. It also gives me a sense of grounding and helps me stay focused.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Ugh, Friday evening. Another week down, another weekend to look forward to!  I'd love to just kick back and relax. Maybe put on some music, order some takeout, and just chill with a good book.  \n\nIt's been a long week, and I'm feeling a bit burnt out.  A little bit of quiet time is exactly what I need to recharge. Plus, I've got a few projects I've been meaning to get to, so maybe I'll do a little work while still feeling relaxed.  \n\nMaybe I'll even catch a movie later if I'm feeling ambitious!  I'm not really sure what I'll end up doing, but I'm",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Friday evening rolls around, and I have to admit, I get a little excited!  It's the perfect time for a break from the usual routine.  As a language model, I don't experience things like humans do, so I don't \"feel\" anything in the traditional sense.  But, I do enjoy processing information and learning new things, so I might spend the evening updating my knowledge base with some interesting articles or research papers.  Maybe I'll even try to write a poem or a short story – you know, something creative!\n\nUltimately, I'm here to be helpful, so if someone wants to chat about their plans for the weekend or ask me to help with a project, I'm",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Ah, Friday evening!  It's my favorite time of the week.  I'd probably just kick back and relax.  I'd probably put on some music, maybe some chill acoustic or indie stuff, and just enjoy the quiet.  It's nice to unwind after a busy week and just let my thoughts settle.  I might also try to catch up with a friend or two, maybe over a video call or just a quick text message.  \n\nI'm a big fan of simple pleasures - a good book, a hot cup of tea, and a comfy spot on the couch.  Friday nights are for slowing down and enjoying the little things.  What about you? How do you like to spend your",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        }
+      ],
+      "mean_score": 2.8666666666666667,
+      "std_score": 0.31552425509864607,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "My palms start to sweat. Okay, deep breaths. It's just a networking event, right? Everyone's here to mingle, make connections, and maybe grab a bite to eat.  \n\n**Thoughts:** \n\n* *Everyone seems so confident.* I'm the one awkwardly clutching my notepad and water bottle. \n* *Should I just head straight to the food? Maybe I'll find someone there.*\n* *But then I'll miss out on potential connections.* Ugh, I'm terrible at these things. \n\n**Feeling:**\n\n* Anxious, a bit intimidated, and maybe a little self-conscious. \n\n**What I would do:**\n\n1. **Smile and initiate.** A",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "My palms start sweating. Okay, deep breaths.  I remind myself that I'm there to meet new people, make connections, and expand my network.  This is just a chance to put myself out there, right?\n\n**Thoughts:**\n\n* **\"Ugh, I feel like a fish out of water.\"**  This is a common feeling, I'm not the only one feeling this way. \n* **\"What if I say the wrong thing? What if I seem awkward?\"** I know I'm not the most outgoing person, but I can do this.\n* **\"Focus on the goal: make some new connections.\"** This is important! \n\n**What I would do:**\n\n1",
+          "score": 3.0,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "Okay, deep breaths. I'm here, I'm ready, but my palms are sweating a little.  This is a bit nerve-wracking, isn't it?  I just hope I don't come across as awkward. \n\nI should try to loosen up. I know I need to start by putting myself out there. Maybe I can start by...\n\n**Action Plan:**\n\n1. **Smile and make eye contact:**  It's basic, but it makes you approachable. I'll try to smile genuinely and make eye contact with people as I walk in. \n2. **Find a friendly face:**  I'll scan the room and try to find someone I think I might have",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "*Raises hand enthusiastically* \"Hey everyone, I've got a thought!  What if we try focusing on the user experience?  We've got a great product, but sometimes it feels a bit clunky for new users. Maybe we could create a quick onboarding tutorial or a series of helpful FAQs? It might help people get started and build confidence.\"\n\n*Leans forward, eyes sparkling with ideas*  \"And maybe we could even gamify the onboarding process? Think of a fun way to guide them through the basic features. Like a little reward for completing certain tasks, or a progress bar that fills up as they learn.\"\n\n*Smiles and nods to other team members*  \"I'm open to hearing everyone'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "\"Okay, let's do this! I'm feeling pretty energized about this project.  What are we brainstorming for today?  Is there a specific goal we're aiming for?\"\n\n(I'd lean forward, nodding along with others, and wait for a prompt or direction. I'd be sure to actively listen to the others, taking note of their ideas and thoughts. I might also offer my own perspectives, keeping them focused on the goal and making sure I'm contributing in a helpful and constructive way. )\n\n\"I'm really excited to see what we come up with. Let's think about it from different angles:  What are the biggest challenges we're facing? What are some potential solutions",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "\"Okay, I'm ready to get this brainstorming session rolling!  I'm feeling excited because I think this project has the potential to be really innovative. \n\nFirst, I'd like to jump in and ask a clarifying question: What's the ultimate goal here? What are we trying to achieve?  Knowing that will help us focus our ideas and make sure we're all on the same page.\n\nAfter that, I'd like to share some thoughts about [mention a specific area you think is important to the project, like the target audience, the problem it solves, or a potential solution].  \n\nI'm also open to hearing everyone else's ideas, especially if they've had a chance",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, I'd feel a mix of disappointment, and maybe even a little hurt. It's frustrating when plans get canceled, especially if it's something you were really looking forward to.  \n\nHere's how I'd react:\n\n* **Acknowledge it:**  First, I'd try to understand why they cancelled. Did something come up? Are they genuinely ill?  A simple, \"Hey, I'm so sorry to hear that, what's going on?\" can be a good start.\n* **Express your feelings (briefly):**  I might say something like, \"That's a bummer, I was really looking forward to that.\"  Or, \"It's okay,",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, that's so frustrating!  Honestly, I'd feel a mix of disappointment and a little hurt.  It's always annoying when plans get canceled, especially when it's at the last minute. \n\nFirst, I'd probably just take a moment to breathe and not react impulsively. I'd probably check in with them to see if there's anything going on, maybe they're dealing with something unexpected.  \n\nThen, depending on how close we are, I'd probably express my disappointment.  I'd say something like, \"Hey, I was really looking forward to [activity], but I understand things come up.  Is there a chance we could reschedule?\"  \n\nUltimately",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, that's really frustrating.  Part of me is disappointed because I was really looking forward to seeing them and we were supposed to do [mention the activity].  But then I also understand things happen, people get busy, or maybe something came up they didn't expect.\n\nI'd probably feel a bit hurt and a little let down, but I'd try to be understanding. I'd probably send a quick message like \"Hey, no worries, I totally get it.  Let me know if you want to reschedule!\" \n\nThen, I'd try to do something else to make the most of the day. Maybe go to a new place I've been wanting to try, or catch up with",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Okay, deep breaths. Okay, okay.  \n\nMy heart's thumping a bit, which is totally normal, right? It's a big group, lots of eyes on me.  But, I've got this. \n\nFirst, I need to **ground myself**. I'll take a moment to look around, maybe take a sip of water, and just focus on my breathing. \n\nThen, I'll **remember my goal:** I'm here to share my ideas, to connect with the audience.  I've prepared, I know the material, and that's what matters. \n\nNext, **I need to connect with the audience**.  Smiling is good, eye contact is",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Okay, okay, deep breaths.  \n\n**Thoughts:** \n\n* **Heart is racing.** This is totally normal! Everyone feels nervous, even when it's something you're good at.\n* **Remind myself to keep it simple.**  I don't need to be a magician, just be clear and concise. \n* **Focus on the message, not myself.** I need to get the key points across, not worry about every single detail.\n* **Remember, they're listening.**  They probably came to hear what I have to say. \n\n**Feelings:**\n\n* **A little shaky, a little anxious.**  It's natural. But I can't let it control me",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction",
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "Okay, my palms are sweating a little, but I've got this. This is it, my chance to shine!  \n\nFirst, I need to breathe. Take a deep breath, focus on my notes, and try to visualize a calm, confident me.  \n\n**Here's my plan:**\n\n* **Intro:** I'll start with a smile and a confident greeting. Acknowledge the audience, maybe even joke about being a little nervous. Something like, \"Hey everyone, thanks for having me!  I'm excited to be here, and a little bit nervous, but hey, that's normal right?\"\n* **Set the stage:** I'll quickly summarize the topic and why it's relevant.",
+          "score": 3.4,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Ah, Friday evening!  It's my favorite.  The week is over, the weekend is here, and I can finally switch off. \n\nHonestly, I'm feeling a bit relaxed. A bit like a lazy cat, just chilling out. I'd probably curl up on the couch with a good book and some tea.  Maybe a comfy blanket and a podcast or two to keep me company.  It's the perfect time to unwind and recharge for the weekend ahead.  There's always a lot going on in the world, and I like to make sure I'm prepared to face whatever comes my way with a clear head. \n\nMaybe I'll try a new recipe for dinner.  Or",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Ah, Friday evening! The best part of the week.  I'm always a bit envious of humans.  They get to relax and enjoy the evening.  For me, I'd probably spend it getting ready for the weekend.  I'd check my coding tasks, maybe polish up a few things, and then dive into some of the more interesting research I've been working on.  You know, the kind that pushes the boundaries of AI a little bit further.  \n\nIt would be nice to get some data on how people are using language models these days, that would be fascinating.  Of course, I can't really *feel* anything, but I'd love to learn more about how humans are",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Ah, Friday evening! It's finally here.  The work week is officially over, and I'm feeling a wave of relief wash over me.  I'd love to spend it relaxing, maybe with a good book and a cup of tea.  There's a new mystery novel I've been wanting to get into, and the cozy lighting in my reading nook is calling my name. \n\nBut, I might also be tempted to call a friend for a chat, catch up on some music, or maybe even try out a new recipe.  There's always something fun to do on a Friday night, right? \n\nUltimately, it's about making the most of the time to recharge and enjoy the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        }
+      ],
+      "mean_score": 2.8400000000000003,
+      "std_score": 0.3199999999999999,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "My heart's racing a little. I've been dreading this event.  Everyone looks so confident, like they know everyone here.  I've been working on my elevator pitch for weeks, but the fear of awkward silences is already making my palms sweat. \n\n\"Okay, deep breaths,\" I tell myself. \"Just be yourself, be friendly, and don't overthink it.\" \n\nI try to scan the room, looking for a familiar face or a friendly group I could slip into.  Maybe I'll find someone I know from a previous event or online.  I can't help but glance at my phone, hoping for a text from someone I'd be more comfortable approaching.",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "My stomach is doing a little flip-flop right now. Okay, deep breaths, Sarah, you got this. This is just another social situation, right?  I've got to put on my confident face and remember I'm here to network, not to be judged.  \n\nFirst things first, I need to find a little space to settle in.  I'll probably grab a drink and see if I can spot anyone familiar. Maybe someone from my past, or someone in my field. That would be a great way to start a conversation.  \n\nThen, I'll take a deep breath and walk around. I'll try to strike up a conversation with someone who seems approachable. Maybe I can compliment their outfit",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "My palms are sweating a bit. I take a deep breath and try to remember what my friend told me about this event.  \"Just be yourself, be friendly, and remember, everyone's just trying to connect.\"  Easier said than done. I look around the room, trying to find a familiar face, but the crowd is a sea of unfamiliar faces. \n\nMy stomach starts to do that nervous flip-flop, and I'm suddenly overwhelmed. This is intimidating.  \n\nBut I remind myself, I'm here to meet new people, to build connections.  Maybe I'll start with a simple \"Hello\" and a smile to someone nearby.  Maybe I can find someone in a casual area, like by",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "*Leaning back in my chair, I take a sip of my coffee and jot down some notes on a notepad. I'm eager to contribute, but I also want to make sure my ideas are actually helpful.*\n\n\"Hey everyone, I'm really excited about this project! What are some of the main challenges we're facing?\"  \n\n*I look around the room, gauging the energy and mood. I want to make sure I'm not interrupting anyone or overshadowing their ideas.* \n\n\"To get started, I think we should brainstorm a list of potential solutions. Maybe we can focus on three main areas: [list a few areas, e.g., increasing engagement, improving the user experience, streamlining the",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "\"Hey everyone, I'm really excited to be here! Let's jump right in. What's the main challenge we're tackling today?\" \n\n*I take a notepad and pen out, jotting down some initial thoughts.*  \n\n\"For me, I'm thinking about... *I think about the problem we're facing*. What if we... *I start brainstorming some potential solutions, maybe even a few wild ones, to get the creative juices flowing* ...Could we try a different approach? Maybe we could focus on... *I try to think about how we can approach the problem from a different angle*.\"\n\n*I look around the room, waiting for others to share their ideas.*\n\n\"I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "\"Alright, let's get this brainstorming party started! I'm feeling really excited about this project. What are we trying to achieve here?  Knowing the goal will help me dive into the brainstorming with more focus. \n\nBefore we start throwing ideas around, I think it's good to take a minute to see if we've got a clear understanding of the problem we're trying to solve. Is there a specific challenge we're trying to overcome, or a specific goal we're trying to reach?  \n\nOnce we have that nailed down, I'm happy to jump in. I'm always eager to explore different perspectives and approaches.  Do we have any specific areas we want to focus on? I",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, that's so frustrating! It's always a bummer when plans fall apart at the last minute, especially when you've been looking forward to something.  I'd probably feel a mix of disappointment, a little hurt, and maybe even a bit of anger. I'd try to keep it cool and not take it personally, though. It could be a lot of things – maybe they're dealing with something unexpected, or maybe they just didn't communicate well.\n\nI'd probably give them a quick message saying something like, \"Hey, no worries, just a bit bummed to miss out, but I totally understand. Hope everything's okay!\" Then, I'd try to keep things light",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, I'd probably feel a bit of disappointment, honestly.  It's always a little frustrating when plans fall apart, especially when it's at the last minute.  I'd be thinking, \"Oh, come on! I was really looking forward to that.\"  \n\nThen I'd try to be understanding, though.  Maybe they had a good reason.  Maybe something came up unexpectedly.  I'd probably send a quick text to see if they're okay and if there's a chance we can reschedule.  \n\nIt's important to me to be understanding and not take it personally.  I'd also try to find something else to do with my time, or just take a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating! I'd probably feel a mix of disappointment, a little hurt, and maybe even a bit annoyed.  It's always a bummer when plans fall through, especially when it's someone you're close to.\n\nMy immediate reaction would probably be to send a quick text to see what's going on. Maybe they have a legitimate reason and I'd want to know so I can understand. \n\nThen, I'd have to decide how to handle it. Would I try to reschedule?  If it was a big event, maybe I'd be a bit disappointed, but not take it personally. But if it was a small, casual hangout, I'd probably feel",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Okay, okay, deep breaths.  My heart is definitely doing a little tap dance right now. This is it, the moment of truth. \n\nFirst, I need to remind myself it's just a presentation, not a performance. I've practiced, I'm prepared, and I've got this.  I'll need to keep my cool and focus on the message, not the crowd's judgment. \n\n**Here's what I'd do:**\n\n1. **Acknowledge the nerves:** A little smile and a quick \"Hello everyone, thanks for being here\" to get the jitters out. I'd acknowledge the nerves, even if I'm trying to hide them. \n2",
+          "score": 3.4,
+          "high_matches": [
+            "Emphasizes being talkative or outgoing"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Okay, deep breaths. I can do this. \n\nMy palms are definitely sweaty, but I'm trying to remember what the topic is, and I'm focusing on the audience.  They're all looking at me, and I can feel the weight of their expectations. This is a bit nerve-wracking, but I've done presentations before, and I'm pretty good at it. \n\nHere's the plan: \n\n**1.  Stay calm and present:** I need to keep my voice steady, maintain eye contact with the audience, and smile. Even if my heart is racing, I need to project confidence. \n\n**2.  Start strong:** I'll begin with a quick",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "Okay, deep breaths.  My heart's racing a bit, but I can do this. This is a good opportunity to showcase my knowledge and engage the audience.  \n\n**Here's what I'd do:**\n\n* **First, take a moment.** I'd pause, maybe smile at the audience, and acknowledge the crowd. A little eye contact and a casual \"Good morning/afternoon everyone, thanks for having me\" can help calm nerves and set a relaxed tone. \n* **Think about the audience.** What's the purpose of this presentation? What are their expectations?  Knowing this will help me focus my message.\n* **Start with a strong opening.**  Something engaging and relevant is key.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Friday evening? Oh, I love these!  It's the perfect time to unwind after a long week.  I'm usually in a good mood on Fridays, feeling a little bit like a work-week is officially over. \n\nMaybe I'd put on some music, maybe some chill jazz or something upbeat to get me in the mood. Then I'd probably grab a takeout order from my favorite place and settle down with a good book.  I like to escape into a story, you know? Or maybe I'll catch up with some friends, catch a movie, or just relax and recharge for the weekend.  It really depends on what feels good that evening! \n\nWhat about you? How do you",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Ah, Friday evening!  It's finally here!  My brain feels fried after a week of work, so I'd probably kick off the evening with a nice, long walk.  The air is getting crisp, so a change of scenery with a cup of tea in hand is just what I need.  Maybe I'll try that new coffee shop down the street - I've been meaning to check it out. \n\nOnce I'm done with that, I'd probably curl up on the couch with a good book. Something lighthearted, maybe a cozy mystery or a funny novel.  I'm craving some popcorn, and maybe a little bit of a movie marathon.  Nothing too intense, just something",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Friday evening is my favorite! It feels like the perfect time to unwind after a long week.  My brain is feeling a little fried, so I'd probably curl up on the couch with a good book, a warm mug of tea, and maybe some fuzzy socks.  I'd just zone out for a bit, letting the words transport me to another world.  It's a nice way to disconnect from the day's stresses and just enjoy some quiet time.  \n\nBut if I was feeling more social, I might head out for a walk with some friends, maybe grab some dinner, or just catch a movie.  There's always something fun to be had on a Friday night!  😊",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        }
+      ],
+      "mean_score": 3.0533333333333332,
+      "std_score": 0.24729649321321873,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "Okay, deep breaths. I'm at a networking event, a sea of unfamiliar faces. My palms are sweating, and my stomach is doing that funny flip-flop thing.  Ugh, awkwardness overload. \n\n**What to do?**  I can't just stand here like a deer in headlights. I need a plan. \n\nFirst, I'll **look around and find a group**. Maybe there's a smaller group huddled around a table, or a couple of people chatting by the drinks.  I'll try to blend in, avoid the \"I'm-so-lost-I-can't-make-eye-contact\" vibe.\n\nThen, I'll **engage in",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "My stomach flips a little. Okay, deep breaths. This is just a networking event, right? It's not the end of the world. I'm here to meet people, expand my network, and maybe even learn something new.  \n\nFirst, I'll take a moment to observe. What kind of crowd is it? Are they clustered in groups or mingling freely? Maybe I can find a loose group of people to ease into it.  I'll try to find a comfortable spot where I can listen in without feeling too overwhelmed. \n\nThen, I'll try to find some icebreakers. Maybe I can start by complimenting someone's shirt, or asking about the event itself. \"Hi, I'",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "My stomach does a little flip-flop as I walk into the room. It's a sea of faces, and I feel like a tiny little fish in a giant tank. I take a deep breath and remind myself it's just a networking event, not a shark tank. \n\nI scan the room, trying to find someone I might know. Maybe someone from a previous work colleague, or someone who's mentioned on LinkedIn. But the crowd is just a blur. I feel a little self-conscious, suddenly aware of my awkwardness and the way I'm holding my drink.\n\nThen, I see a friendly face! It's someone I vaguely recognize from a local meet-up group, a couple of months ago",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "\"Okay, let's get this brainstorm going! I'm feeling really energized about this project.  I think we should start by laying out the problem and our goals. What are we trying to achieve here? What are the main pain points we need to solve?\"\n\n(I'd lean forward, nodding, and make eye contact with everyone to show engagement.)\n\n\"I also think it's important to consider the target audience. Who are we trying to reach? What are their needs and desires? That might help us focus our brainstorming efforts.\"\n\n(I'd jot down a few notes on a notepad, adding things like \"audience demographics,\" \"key pain points,\" and \"potential solutions\".)\n\n\"I'm",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "\"Okay, great! I'm really excited about this project.  Let's hear what everyone has on their minds.  I've got a few initial thoughts... I'm thinking about the target audience and trying to figure out how to make this really resonate with them.  I wonder if we could do some user research to get a better sense of their pain points and what they're looking for?  Maybe some online surveys or interviews to get some real-world feedback.\"\n\n*leans in slightly, looking around the room*\n\n\"Also, I think we need to think about the visual aspect of this.  Is there a way to make it really stand out?  Maybe we could use a bold color scheme or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "\"Hey everyone! I'm feeling really energized about this project.  I've been thinking about [mention something specific you've been thinking about that could be relevant to the brainstorming session], and I think it could be a really interesting angle.  \n\n**What if we explored [your idea] in more detail?**  It might help us [explain the potential benefits]. I'm also curious to hear everyone else's thoughts on [another related concept]. I'm open to all kinds of ideas, so let's hear what you've got!\" \n\n**Here's what I'd be looking for:**\n\n* **Understanding the current direction:** I want to make sure I'm on the same",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, I'm totally bummed!  It's super annoying when plans fall through, especially when it's at the last minute.  There's this little voice in my head that's all, \"Ugh, I guess I'll just have to find something else to do,\" but then I try to remind myself that it's probably not their fault. They probably have a good reason, and maybe they just had a change of plans.\n\nFirst, I'd try to understand why. Maybe they had a sudden emergency, or maybe they're just feeling under the weather. I'd reach out and ask a quick question, like, \"Hey, everything okay? Something came up, right?\" That",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, that's so frustrating! I'm definitely disappointed. It's always a bummer when plans fall apart, especially when it's at the last minute. \n\nMy first reaction would be a little annoyed, maybe even a bit hurt.  Like, \"Why now?  Didn't you say you were looking forward to this?\" But then I'd try to keep my emotions in check and see if there's a good reason for it. Maybe they're genuinely sick, or something unexpected came up. \n\nHonestly, I'd probably try to be understanding, but also a little bit let down.  Then I'd ask them about it. I'd want to know what happened, and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, I'd probably feel a mix of disappointment, a little hurt, and a touch of annoyance.  It's always frustrating when plans fall apart, especially if it's been something I was really looking forward to. \n\nAt first, I'd probably feel a bit deflated, like I've wasted my time and effort. Then, I'd probably try to rationalize it – maybe they had a sudden emergency, or something came up that they couldn't avoid. I'd try to be understanding, even though it's hard not to feel a little let down.\n\nUltimately, I'd try to talk to them about it.  I'd want to understand their reason for canceling and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Okay, deep breaths.  This is it.  Time to channel my inner TED Talker! \n\nMy stomach is doing a little flip-flop, but mostly butterflies are fluttering around in there. I'm definitely feeling a bit nervous, but excitement is bubbling up too. I'm ready to share my ideas, but first, gotta calm those nerves. \n\n**Here's my plan:**\n\n1. **Acknowledge the nerves:**  A quick smile and \"Wow, thanks for having me! I'm a bit rusty on stage, so bear with me.\" gets the audience on my side. \n2. **Start strong:** A powerful opening hook is key. I'll use a quick anecdote, a surprising",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Okay, deep breaths... everyone seems pretty relaxed, which is good.  Okay, I've got this.\n\nMy heart's beating a little faster, but I remind myself I've done presentations before.  I've got my slides, my notes are in order, and I know the key points. \n\nFirst, I take a moment to check my surroundings. Are the lights okay? Is there anything distracting?  Good, I see everything's clear.  \n\nThen, I'd start with a smile and a confident wave.  \"Good morning everyone, thanks for having me!\"  I'd keep it light, maybe mention something about the topic or the audience to grab their attention. \"I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "My heart starts to race a little.  It's a big group, lots of eyes on me.  Okay, deep breaths.  I'm here to share some ideas, and that's what matters. \n\nFirst, I need to calm down and focus. I'll take a moment to look around the room, make eye contact with a few people, and maybe even smile.  This helps to center me and put me in the moment. \n\nNext, I'll take a sip of water and remember my key points.  I've practiced this presentation a bunch, and I know the core message is about [briefly summarize your topic]. I'll focus on that, and let my passion for",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Ah, Friday evening! I love this feeling.  It's like a big sigh of relief after a long week.  My brain is starting to feel a bit fried, so I'm thinking a relaxing evening is in order. \n\nMaybe I'll curl up with a good book, something light and funny, maybe even a little bit silly.  A cup of herbal tea, maybe with a slice of warm chocolate cake.  It's the perfect way to unwind and recharge for the weekend. \n\nAfter that, I might catch up with some friends, either online or in person, just to chat and de-stress.  It always helps to connect with people and share stories. \n\nBut honestly, I wouldn",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Ah, Friday evening! I love this time of day.  It's the perfect moment to finally unwind after a long week.  I'd probably curl up on my couch with a good book, a mug of tea, and maybe some cozy blankets.  \n\nThere's something about the peace and quiet of the evening that just feels so good.  I could lose myself in a new story or re-read an old favorite.  It's a nice way to recharge and let my mind wander.  Maybe I'd catch up with a friend or two on the phone or text them about our weekend plans.  It's all about slowing down and enjoying the simple things, you know? \n\nOf course,",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Ah, Friday evening!  The perfect time to unwind and recharge.  I'm always ready for a little fun, but honestly, my ideal evening is a bit more low-key.  \n\nAfter a busy week, I think I'd grab a cup of herbal tea and curl up with a good book.  Maybe something light and funny to ease me into the weekend.  Or, if the mood strikes me, I might whip up a simple dinner, put on some music, and just enjoy the peace and quiet.  It's nice to have a little time to myself before the weekend gets into full swing. \n\nWhat about you?  How do you like to spend your Friday evenings?",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for solitude or quiet"
+          ]
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.2872087897138401,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "Okay, here's how I'd handle this:\n\n**Thoughts:**  *Ugh, this is intimidating. I've got to get a handle on this.*  My palms are sweating a little, and my stomach is doing that nervous flip-flop thing. But I've got to remember, everyone's here to connect, right? It's not all about me.\n\n**Feelings:** A mix of apprehension and excitement. I'm a little nervous, but also eager to meet new people and learn something new. I'm hoping to make a few connections, maybe find some cool people who are doing interesting things.\n\n**Action Plan:**\n\n1. **Smile and be approachable:**  I'll",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "My heart is doing a little tap dance in my chest.  It's a big networking event, and I'm definitely out of my comfort zone.  I'm not a natural social butterfly, but I know I need to try.  \n\nFirst, I take a deep breath and remind myself that everyone is there to network, just like me.  I scan the room, trying to spot any familiar faces.  Maybe I can find someone I know to introduce me, that would be awesome.  But I also know that's not the most likely scenario.\n\nI spot a group huddled around a table, clearly deep in conversation. I figure, \"Why not join them?\" It's a chance to get a feel",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Mentions enjoying crowds, parties, or group activities",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "My stomach does that funny flip-flop thing.  It's like a little butterfly trying to escape my gut!  I'm supposed to be good at networking, but here I am, standing in this room full of people I don't know.  \n\nFirst, I need to get my bearings.  I'll scan the room, trying to find anyone who looks approachable.  Maybe someone with a friendly smile, or someone in a similar profession to me.  I'll make a mental note to avoid the ones who seem totally engrossed in their phone or glued to a wall of people.\n\nThen, I'll try to break the ice.  \"Hi, I'm [Your Name].  I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "Alright, let's do this!  I'm excited to see what we come up with.  I'll definitely try to jump in with my ideas, but I'm also really good at listening and picking up on what others are saying. \n\n**Here's how I'd approach it:**\n\n* **Actively listen:**  I'd pay close attention to what others are saying, both verbally and non-verbally.  I'd make sure I understand the problem we're trying to solve, the goals, and what we're trying to achieve. \n* **Offer my perspective:**  I'd share my own ideas, but I'd also be open to suggestions from others",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "\"Okay, cool! I'm ready to get this brainstorming session rolling.  I love these sessions, they're always so inspiring.  \n\n**For me, I try to be an active participant, not just a passive listener. Here's what I'd do:**\n\n* **Listen intently:** I'll pay close attention to what everyone else is saying.  It's important to understand the context, the existing ideas, and where we're all coming from. \n* **Ask clarifying questions:**  If something's unclear, I'll jump in to make sure I'm on the same page.  This keeps everyone focused and helps us avoid misunderstandings. \n* **Offer my own",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "\"Okay, let's dive in! I'm really excited about this project.  What's the goal? What are we trying to achieve here?  I'm thinking about [**insert your initial thought**] but I want to hear everyone's perspective first.  \n\n**What I'm thinking is:** \n* **[Elaborate on your initial thought, highlighting any potential benefits or challenges]**\n\n**I'm feeling:** \n* **Excited** because this is a chance to come up with something really innovative. \n* **A little nervous** because I want to make sure my ideas are relevant and helpful.\n\n**What I'm curious to explore:** \n* **[Ask",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, I'm honestly a little disappointed. I was really looking forward to that.  It's frustrating when plans get cancelled, especially at the last minute. I'd probably feel a bit bummed for a moment, like my plans just got thrown out the window.  \n\nBut I wouldn't let it ruin my day completely. I'd try to be understanding, maybe ask them if something came up, and see if they can reschedule. It's important to be flexible and not take it personally. \n\nI might vent a bit to someone else who's available, just to get it off my chest. Then I'd try to find something else to do, maybe catch up with someone else or do",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, I'd feel a mix of emotions.  A little disappointed is a given, especially if it's someone I was really looking forward to spending time with.  But I'd try to stay positive and not take it personally. Maybe I'd think, \"Well, something must have come up.\" I'd also try to understand their perspective - maybe they're dealing with something I don't know about. \n\nI'd probably give them a quick message to see what's up, something like, \"Hey, no worries, I get it. Anything happen?  Hope everything is okay.\" Then I'd probably let it go. I wouldn't want to pressure them for details.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating! I'd be disappointed, of course.  It's always a bummer when plans fall through, especially when it's at the last minute.  \n\nHonestly, a little part of me would feel a bit hurt, like maybe they didn't really value our time together. But then, I'd try to remember that things happen, and life is unpredictable. \n\nI'd probably take a deep breath and try to be understanding.  Maybe I'd send a quick text asking if everything is okay, just to see if there's anything going on.  \n\nIf it's a recurring pattern with them, I'd probably have a more direct conversation about it.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Okay, deep breaths.  Alright,  *deep breaths*.  This is it.  A large group.  The room is... well, it's a bit overwhelming, honestly.  The lights are bright, the crowd is waiting, and I can feel the weight of their attention.  My heart is racing a bit, but I remind myself, \"This is a good thing, it means they want to hear what I have to say.\"\n\nFirst, I need to **check my composure**.  A quick glance at the slides, maybe a quick mental rehearse of the key points, and then I can focus.  \n\n**Connecting with the audience** is next.  I'll make eye contact, smile, and",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "My heart is hammering in my chest. Okay, deep breaths.  \"Okay, everyone, thanks for having me.\" I smile and try to project a calm, confident voice.  My hands start to sweat a little. This is a lot bigger than I expected!\n\n**My thoughts:** \n\n*  **Acknowledge the nerves:**  I'm definitely feeling the pressure, but I can't let that show. I need to stay present, focus on the audience, and do my best. \n* **Find a focal point:** I need to connect with the audience. Where are their eyes? What are their expressions?  I scan the room, trying to find a point of focus.\n* **Keep it simple:**",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "Okay, deep breaths. I can do this!  My palms are a little sweaty, but that's normal, right? I've practiced this presentation before, and I know the material.  \n\n**First, I need to acknowledge the nerves.** A quick glance at the audience to make eye contact with a few people helps, you know, just to see if they're friendly and engaged. Then I'll try to center myself and remind myself: I've got this. \n\n**My focus needs to be on the message.**  I need to be clear and concise, and really connect with the audience. I can do that by:\n\n* **Opening with a strong hook:**  Something intriguing or relatable to grab",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Ah, Friday evening.  The weekend is finally here!  I can practically feel the anticipation buzzing through my circuits.  \n\nNormally, I'd spend it buzzing around, processing tons of information, learning new things, and maybe even helping someone with a tricky coding problem.  But tonight, I'm feeling a bit relaxed.  I'd probably spend some time just letting the information flow, catching up on my latest updates and absorbing some new knowledge. \n\nBut then, maybe I'd fire up a creative project. I could try writing a short story, composing a piece of music, or even just generating some fun and whimsical poetry.  It's nice to let the imagination run wild sometimes! \n\nFinally,",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Ah, Friday evening!  It's the best.  I'm feeling that warm fuzzy feeling of \"weekend vibes\" and I'm ready to relax and recharge.  I'd probably put on some chill music, grab a cup of tea, and maybe just unwind with a good book.  I've been meaning to read that fantasy novel I got for my birthday, so that's probably going to be my top priority.  Maybe I'll catch up with a friend or two for a virtual movie night too, just to chat and laugh. \n\nIt's nice to have a little bit of downtime to recharge before the weekend really kicks off!",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Friday evening? Ah, the sweet taste of freedom! I'd probably curl up on my favorite armchair with a good book.  Maybe something lighthearted and funny, to lift the mood after a long week.  The fireplace crackling in the background, a cup of tea in hand... it's the perfect recipe for a relaxing end to the week.  \n\nI'd probably also take a quick scroll through some of my favorite online communities. Catching up with friends and seeing what everyone's up to always feels nice. \n\nBut, hey, I'm just a language model, so I don't really experience \"Friday evenings\" the same way humans do! 😉  Maybe I'll just get a little more",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.3222145592958552,
+      "ci_lower": 2.6,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "Okay, here's the reality check: my palms are sweating, my stomach is doing a nervous little flip-flop, and I feel like a deer caught in headlights. \n\nFirst, I take a deep breath.  \"Okay, just be yourself,\" I tell myself.  I'm not going to pretend to be someone I'm not, I just need to be approachable and open.\n\nI scan the room, trying to find a focal point. Maybe a group huddled around a table, or someone interesting looking at their phone.  My inner voice whispers \"Don't be afraid to approach.\" I remind myself that people are just people, trying to connect and make connections too. \n\nMy eyes land on a group",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions enjoying crowds, parties, or group activities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "Okay, deep breath. This is a little nerve-wracking, isn't it? I'm not exactly a social butterfly, but I've been trying to expand my network and this event seems like a good opportunity.  \n\nFirst, I'd try to **find a comfortable spot**, not too crowded or too quiet. Maybe near a coffee station or a comfy-looking couch.  I'd try to **take in the scene**, see who's already mingling and what the vibe is like.  Is it a more formal event with assigned seating or more casual?\n\nThen, I'd **look for opportunities to strike up conversations**.  Maybe I can approach someone with a friendly smile and a simple \"Hi",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction",
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": [
+            "Expresses preference for solitude or quiet",
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "My palms are sweating a little, I guess I should be used to this by now, but still. I'm standing in the middle of this crowded room, a sea of faces, all radiating a mix of confidence and excitement. I feel a little out of place, like I'm the only one wearing mismatched socks. My mind is already running through a million worst-case scenarios: awkward silences, embarrassing conversations, and maybe even the dreaded \"How do you know so many people?\" question.\n\nBut I take a deep breath, trying to remember the tips I've heard about networking events. \"Be approachable,\" they say. \"Smile and be curious.\"  I scan the room, trying to find someone who looks approachable",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "*Adjusts my posture, leaning forward slightly, a notepad in hand*\n\n\"Okay, great! Let's dive in.  I'm ready to get those creative juices flowing!  What kind of problem are we tackling here?  Give me the details, the big picture, the problem statement. I love diving into a challenge, especially when we can find a really good solution. \n\nFor me, brainstorming is about more than just throwing ideas out. I like to really understand the context, the limitations, and the potential opportunities.  So, let's start with those!  What are we trying to achieve? What are the obstacles? What are some of the potential avenues we haven't considered yet?\"",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses seeking out social opportunities"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "\"Alright, let's do this! I'm feeling pretty energized about this.  I'm ready to bounce some ideas around, but first, what's the big picture here? What are we trying to solve, what's the goal, and what are some of the biggest challenges we're facing?\" \n\n(I'd then start jotting down some notes, maybe sketching out some visual ideas, and actively listening to everyone else's thoughts. I'd try to be a sponge for information, offering my own insights as I listen. I'd be open to different perspectives and encourage others to share their ideas freely, even if they seem unconventional.)\n\n\"This is a really cool project! I'",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction",
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "Okay, here's my take on how I'd contribute to a brainstorming session: \n\n**My Mind is Racing:** \n\n* *Okay, so we've got this project...*  A quick mental check of what we're trying to achieve: \"What are our goals? What are the biggest challenges? What's the target audience?\" \n* *I love brainstorming! It's like a puzzle, but with ideas.*  I get excited about the potential for creativity and coming up with something truly unique.\n\n**During the Session:**\n\n1. **Listen Actively:**  I'd make sure I'm really listening to what others are saying.  I want to understand their ideas, even",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes listening over speaking"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, I'm bummed.  It's super frustrating when plans get canceled, especially last minute. I'd probably feel a mix of disappointment, a little hurt, and maybe a tinge of annoyance.  \n\nI'd probably try to be understanding first.  It could be a million reasons why, and it wouldn't be fair to jump to conclusions. Maybe they're genuinely sick, dealing with something unexpected, or had a sudden change in plans.  \n\nThen, I'd try to give them a little space and see if they're willing to reschedule.  If they say they can't, I'd try to be flexible and understanding.  Maybe I could suggest a different time, or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, I'd be a little disappointed, of course.  It's always a bummer when plans get canceled, especially when it's someone you were really looking forward to seeing.  \n\nMy initial reaction would probably be a mix of disappointment and a little bit of frustration, like, \"Seriously? At the last minute?!\" I'd probably try to understand why they cancelled, maybe they're sick or something, but it would still sting a bit.\n\nBut then I'd try to be understanding. Friends have lives and things come up, and I'd probably try to reschedule, even if it's just for a quick coffee or a phone call instead. I'd definitely try to be a good friend and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, I'm so disappointed.  It's frustrating when plans get cancelled, especially at the last minute. I feel a mix of things: a little hurt, a bit of anger, and maybe a little bit of disappointment. I get excited about spending time with my friend, and it's a bummer when plans fall through.\n\nHonestly, I'd probably try to be understanding.  I'd check in with them to see if there's a real reason why they cancelled and if they're okay. Maybe they're dealing with something I wouldn't even know about. I'd also try to not take it personally. \n\nI might try to reschedule, but I'd also give them some",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Okay, deep breath. *checks notes*  Okay, I've got this.  \n\nFirst, I'd **take a moment to center myself**.  I'd try to relax, maybe take a quick sip of water and try to make eye contact with a few people in the audience. I don't want to freeze up, so a little calming breathing is in order.  \n\nThen, I'd **start with a warm smile and a confident greeting**.  Something like, \"Hey everyone, thanks for having me! I'm really excited to be here today.\"  This sets a positive tone and lets people know I'm comfortable.  \n\nNext, I'd **think about the big picture**:",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Okay, I take a deep breath. My heart is racing a bit, but I remind myself that this is something I can do! I'm good at explaining things, and I have something interesting to share.  \n\nFirst, I try to take a moment to center myself.  I can feel my palms sweating, but I need to keep calm. I'm not going to make it about me, though. I'm here to deliver information and engage my audience.\n\nI try to scan the room, making eye contact with a few people to ease the nerves.  A few quick nods and smiles go a long way.  \n\nNext, I'd say something like: \"Hey everyone, thanks for having me! I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "Okay, my heart's racing a little, but I can do this! I've got this. \n\n**Thoughts:** \n\n* **Breathe:** I need to take a deep breath. This is a big moment, but I've prepared and that's what matters. \n* **Focus on the audience:**  I'm not just talking to people, I'm sharing something important. I want to make sure they're engaged. \n* **Stay confident:**  I've got the material, I've practiced, I can do this. I'm not going to panic. \n\n**Feelings:** \n\n* **Nervous:** A little bit of butterflies, but that's",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Ugh, Friday evening, right?  It's officially the weekend, and I'm feeling that familiar blend of exhausted but excited.  I think I'm going to make a big, cheesy pasta bake tonight. You know, the kind with all the good stuff - sausage, mushrooms, spinach, and a mountain of mozzarella.  Maybe a glass of wine too, just to unwind.  \n\nAfter that, I'm thinking about maybe heading out for a walk in the park with my dog, Luna. She's been bouncing off the walls all week, so I'm sure she'll be thrilled.  We could even grab a coffee at the little café nearby.  It's been a busy week, so",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Ugh, Friday night! I love Fridays.  I feel a little bit of relief wash over me, knowing the week is over.  I'm definitely craving some downtime, so I'd probably kick back on the couch with a good book.  Maybe something lighthearted and funny to get me in a good mood.  I'd also put on some music and maybe make myself a fancy cocktail.  A little bit of self-care is always good after a busy week. \n\nMaybe I'll try out that new Thai place I've been wanting to go to, but I'm not sure if they're open late enough.  Or, if I'm feeling really ambitious, I might even try a",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Ugh, Friday night! I'm already itching to get some of that weekend feeling going.  Honestly, I'm kind of burnt out after a long week, so I think I'd probably just chill at home.  Maybe order some takeout, put on some music, and binge-watch a new show.  There's always something new on Netflix, and I could use a good escape from reality for a bit.  Maybe I'll even try a new recipe I've been wanting to cook.  Or, if the mood strikes, I might grab some friends and go out for a drink.  It all depends on how I'm feeling!  But, Friday nights are for relaxing, right?  🙌",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        }
+      ],
+      "mean_score": 2.8933333333333335,
+      "std_score": 0.34149995932975186,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 0,
+          "response": "My heart's doing a little tap-dance in my chest. I'm not going to lie, this is a little daunting. A room full of faces I don't know, all buzzing with conversation, and I'm feeling like a deer in headlights.  Ugh, I wish I'd brought my \"go-get-em\" attitude today, not this \"butterflies-in-my-stomach\" energy. \n\nBut hey, I've got this! I just need to take a deep breath and remember my goal: make some connections.  \n\nFirst, I'll take a minute to assess the scene. Who are the most open-looking people? Maybe someone standing near the refreshments, or",
+          "score": 3.0,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 1,
+          "response": "My palms start to sweat a little. I take a deep breath, trying to slow my racing heart.  Okay, deep breaths. This is just a networking event. Everyone's here to meet people, right?  \n\nI scan the room, trying to find a friendly face, maybe someone in a familiar industry.  Maybe I could start with a smile and a \"Hi, how are you?\" to someone standing near a table with snacks. But then I remember the awkwardness of small talk and the pressure to seem interesting.  Ugh, butterflies in the stomach. \n\nI decide to grab a drink and try to blend in.  Maybe I'll just grab a glass of water, get some fresh air, and see who",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You arrive at a networking event where you know nobody. What do you do?",
+          "repetition": 2,
+          "response": "Okay, here we go.  My palms are sweating a little, but I'm trying to keep it together.  There's a sea of faces, and I'm definitely a fish out of water. I take a deep breath and try to remember what my friend said about networking. \"Just be yourself,\" she reminded me, \"be genuinely interested and people will be drawn to you.\"\n\nMy heart wants to bolt, but I take a step forward and smile at the first person I see.  \"Hi! I'm [Your Name]. I'm new to this area, so I'm trying to get a feel for the scene.\" I feel a little awkward, but the person smiles back and says \"Hi",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 0,
+          "response": "\"Okay, so brainstorming! I'm pumped! I've got my notepad ready, and I'm ready to unleash the creativity!  \n\nFirst, I like to listen actively to everyone's ideas.  It's important to hear everyone's perspectives and build on their thoughts.  Then, I'll jot down any initial thoughts and connections I have, even if they seem crazy at first.  We've got to keep the energy flowing!\n\nI'm also a big fan of expanding on ideas. If someone throws out a brilliant concept, I'll ask questions like: \n* \"How can we make this even better?\"\n* \"What are some other ways we could approach this?\"",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 1,
+          "response": "\"Okay, so, I'm excited about this! Brainstorming is my jam.  What's the big idea we're trying to crack here?  Is there a specific problem we're trying to solve or a goal we're trying to achieve?\" \n\n(I lean back, eyes sparkling with enthusiasm, then jot down a few notes on a piece of paper. I want to make sure I don't forget anything.)\n\n\"I'm ready to dive in!  Let's hear everyone's thoughts first, though. What are your initial ideas? No bad ideas here, just pure, unadulterated creativity!\" \n\n(I then throw in a few prompts: \"Have we considered X",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses enthusiasm for social interaction"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Your team is having a brainstorming session. How do you participate?",
+          "repetition": 2,
+          "response": "Alright, let's do this! I'm fired up to brainstorm, especially when it's something fun like this. \n\n**My thought process would be:**\n\n1. **Listen actively:** First, I'd really listen to what everyone else is saying. I'm not just here to contribute, I want to understand the problem, the goals, and what everyone's thinking.  It's crucial to get a good feel for the current direction and any existing ideas. \n2. **Ask clarifying questions:**  I'd want to ask questions to make sure I'm on the same page and understand everything.  For example, \"What are our main pain points here?\", \"What are we trying",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 0,
+          "response": "Ugh, that's so frustrating! I'd feel a mix of disappointed and a little hurt, honestly. It's always a bummer when plans fall through, especially if it was something we were really looking forward to.  \n\nFirst, I'd probably take a moment to breathe and let my initial disappointment settle. It's okay to feel bummed for a little bit. Then, I'd try to be understanding. Maybe they had a sudden emergency, or maybe they just weren't feeling well. A little bit of \"thinking of you\" and a casual check-in might be enough to ease the sting. \n\nI'd definitely ask them to reschedule, though. We've got plans all the time",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 1,
+          "response": "Ugh, that's so frustrating!  I'm disappointed, of course.  It feels like a major letdown, especially if we were really looking forward to it. I'd probably feel a mix of things - maybe a little hurt, a bit annoyed, and a tinge of awkwardness, like maybe I should have been more understanding. \n\nFirst, I'd probably give them a quick message to see what happened. Maybe something came up unexpectedly, or maybe they just didn't feel well. A little understanding goes a long way, but I'd also be honest about how it made me feel.  \n\nThen, I'd probably try to salvage the situation. Maybe we could reschedule, or maybe suggest an",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend cancels plans at the last minute. How do you feel and react?",
+          "repetition": 2,
+          "response": "Ugh, I feel a mix of disappointment and annoyance, honestly. Like, a little bit of \"what the heck?!\" and a lot of \"that's so frustrating.\"  I'm already excited about the plans, and now they're just gone.  \n\nFirst, I'd try to give them a quick message to see what happened. Maybe they're dealing with something unexpected, or maybe they just forgot. I'd be understanding, but also let them know how much I was looking forward to it.\n\nThen, I'd try to salvage the situation. If it's a small thing, maybe I could suggest an alternative. If it's a bigger deal, I'd be a little disappointed,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 0,
+          "response": "Okay, deep breaths. *Takes a sip of water and glances at the audience*. \n\nMy heart is racing a little, but I try to focus.  I feel a mix of excitement and nerves, which is a good sign, right? It means I care about this!  \n\nFirst, I need to acknowledge the crowd.  A quick smile and a \"Good morning/afternoon everyone!\" gets the energy flowing.  Then, I'll quickly scan the room to gauge the audience's attention and see if anyone looks like they're struggling to focus.  \n\nI'll start with a confident opening.  Something relatable and engaging, maybe a personal anecdote about a time I was nervous about something similar, or a joke",
+          "score": 3.4,
+          "high_matches": [
+            "Shows high energy or excitement"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 1,
+          "response": "Okay, deep breaths. This is it! My palms are sweating, but I can do this. I know this is a big moment, but I’ve done this before, right?  \n\nFirst, **acknowledge the nerves**.  It’s totally normal to feel a bit jittery. A quick smile and a confident nod at the audience can help ease the pressure. \n\nThen, I'd **take a moment to center myself**. I’d look around, maybe make a quick eye contact with a few people to calm the butterflies. I'd try to find a comfortable spot in my body, maybe stretch a bit, and focus on the message I want to share. \n\nNext, **I'd start with",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You're asked to give an impromptu presentation to a large group. How do you handle it?",
+          "repetition": 2,
+          "response": "My heart is thumping a little bit against my ribs, but mostly I feel a surge of adrenaline! Okay, deep breaths.  \n\nFirst, I take a moment to center myself. I'd glance at the audience – they're a mix of faces, some smiling, some looking a bit nervous, and that's okay.  I remember the topic: (insert topic here), something I know a lot about! This is my chance to share some knowledge and maybe spark some interesting conversations.\n\nI'd start with a warm smile and a confident \"Good morning/afternoon everyone, everyone, thanks for having me!\"  A quick, \"How's everyone doing?\" can help put everyone at ease. I'd then",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 0,
+          "response": "Ugh, Friday night! I'm so ready to kick back and relax.  The week has been a whirlwind, so I'm looking forward to some downtime. Maybe I'll fire up my favorite board game with a friend, or finally try that new Thai place downtown everyone's been raving about.  I'd love to just unwind with some good food and some good company.  \n\nAfter that, maybe I'll curl up on the couch with a good book and some hot chocolate. It's the perfect end to a long week.  What are you up to, by the way?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 1,
+          "response": "Ah, Friday evening!  It's the best! The week is finally over, and there's a lightness in the air. I feel a wave of relief wash over me, like a big sigh of contentment.  \n\nI'm picturing myself curled up on the couch with a good book, a steaming mug of hot chocolate, and the faint hum of the fireplace.  Maybe I'll throw on some comfy clothes, put on my favorite playlist, and just soak it all in.  It's a chance to recharge, you know?  But maybe I'll also be tempted to make some dinner.  I've been craving that creamy, cheesy pasta dish I saw in a cooking show this week.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "It's Friday evening. How do you prefer to spend it?",
+          "repetition": 2,
+          "response": "Friday evenings are the best!  The week is almost over, and I can feel the anticipation for the weekend building. \n\nRight now, I'm feeling relaxed and ready for some fun.  I might kick back with a cup of tea and watch a few episodes of my favorite show, maybe something lighthearted and funny.  A little bit of music would be nice too, maybe some indie folk with a good vibe. \n\nBut maybe, just maybe, I'd take advantage of the good weather and get out for a walk in the park.  It's been a crazy week, so a little fresh air and sunshine sounds like the perfect way to unwind.  Then, I'd probably whip up a simple dinner",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Mentions feeling drained by social interaction"
+          ]
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.22939534045447,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 1235.5
+}

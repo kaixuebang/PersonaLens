@@ -1,0 +1,1594 @@
+{
+  "model": "unsloth/Llama-3.2-1B-Instruct",
+  "trait": "conscientiousness",
+  "best_layer": 15,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      3.106666666666667,
+      3.106666666666667,
+      3.1333333333333333,
+      3.0266666666666664,
+      3.1333333333333333,
+      3.1866666666666665,
+      3.1866666666666665,
+      3.026666666666667,
+      3.1599999999999997
+    ],
+    "stds": [
+      0.17688665548562127,
+      0.27194770739161517,
+      0.18856180831641264,
+      0.1768866554856213,
+      0.18856180831641264,
+      0.2872087897138401,
+      0.2872087897138402,
+      0.2719477073916151,
+      0.19595917942265423
+    ],
+    "ci_lowers": [
+      3.0,
+      2.6,
+      3.0,
+      2.74,
+      3.0,
+      2.74,
+      2.74,
+      2.6,
+      3.0
+    ],
+    "ci_uppers": [
+      3.4,
+      3.4,
+      3.4,
+      3.4,
+      3.4,
+      3.66,
+      3.66,
+      3.4,
+      3.4
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "Ugh, two weeks. Just two weeks. It feels like an eternity. I've got so much work to do, and it's not like I have the time or the energy. But, I've been thinking about this for weeks, so maybe it's just time to put in some serious effort. Okay, let's break it down. We need to make a plan, and we need it now.\n\nFirst, I need to gather all the necessary materials. That includes my computer, the project files, the research, the tools, the deadlines, and the contact information. I need to make sure everything is in order so that we can move forward. But, it's so hard to focus without distractions. The house is still in chaos",
+          "score": 3.0,
+          "high_matches": [
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "Ugh, just two weeks. It's so close, but still so far. I can feel the stress and anxiety creeping in. Okay, let's break this down. First, let's prioritize. What's the most critical task that needs to get done? Ugh, it's the project report. We need to finalize it, and it's supposed to be done in two weeks. That's just yesterday. Okay, okay, let's make a plan.\n\nFirst, I need to get everything ready. We need to make sure we have all the necessary documents, the data, the research, the references... Ugh, it's so overwhelming. Okay, let's make a list of what we need. And who's supposed to do",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "Ugh, two weeks is so short. I feel like I've been putting off this project for so long, and the thought of the looming deadline is making my anxiety spike. But, I've been thinking about it for so long, so it's time to get some things in order. Here's how I'd plan my approach:\n\nFirst, I'd start by making a to-do list. I'd write down everything that needs to be done, no matter how small it might seem. This will help me break down the project into manageable tasks, so I can focus on one thing at a time. Maybe it'll help me find the right words to use in the task list so it's not too overwhelming. Maybe it'll also help me",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "Ugh, that's so frustrating. I would first take a deep breath, try not to let the disappointment get the best of me. It's not the end of the world, after all. I might try to remind myself that it's just a minor error, and that the bigger picture is still good. Maybe it's not a catastrophic mistake, but still, it's something that needs attention. Maybe it's not the end of the world, but it's still something that needs fixing. \n\nNext, I'd try to look at the bigger context of the project. What does this error mean for the bigger picture? Is it just a minor delay, or is it something that's actually going to cause problems down the line? Are there",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "Ugh, that's frustrating. If the report has already been approved, there's usually no need for me to investigate or correct the issue. However, in this situation, there are still some potential problems that need to be addressed.\n\nFirst, I would take a closer look at the original report to see if there are any obvious errors. Maybe there's a typo, a missing or incomplete piece of information, or something that needs to be clarified. Maybe the writer just didn't double-check their work, or maybe they didn't have the necessary permissions to make changes.\n\nIf I find any errors, I would try to identify who might have made the changes. Was it the writer who originally submitted the report, or maybe it was someone who had access",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "Uh, so I'm in this situation where the report that's already been approved has a small error. I'm not sure what that error is, but it's definitely something that needs to be looked at. My first thought is, \"Okay, this shouldn't be that big of a deal. It's just a minor mistake, right? Maybe it's something that can be easily fixed without any big consequences or issues. Maybe it's just a simple typo or something that can be easily corrected without too much fuss.\"\n\nBut then, another part of me is, \"Wait, what's the big deal? It's just a mistake. It's not like it's the end of the world. We're just messing around with data, right?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": ".. *sigh* Okay, so it's just me, no supervision, no one to check in on me. It's not so bad, though. I guess it's actually kind of... liberating. *chuckles* Don't get me wrong, I love my job, but sometimes it can be so... isolating.\n\nOkay, so, let's get into this. My day starts early, around 7:30. I'll just get dressed, make some coffee, and get settled at my home office. Maybe grab the morning paper or something, just to get the day started. *yawn* Okay, maybe not. I'll just scroll through social media, catch up on the latest news, maybe check some emails",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "*sigh* Ugh, the life of a remote worker. No one's watching, no distractions, just me, my tasks, and the sound of the Wi-Fi. It's... liberating, but also kinda suffocating. (chuckles)\n\nOkay, let's get into it. My day starts early, around 6:00 AM. I wake up, stretch, and head to the kitchen for a quick breakfast. Today, it's just a simple Oatmeal with some banana, honey, and a sprinkle of cinnamon. It's not the most exciting, but it's something. No meetings, no emails, no urgent tasks. Just the quiet, peacefulness of the morning.\n\nAfter breakfast, I take a few minutes",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "Ugh, the freedom of working from home. Okay, let's get into this. So, no one's monitoring, just me, the coffee, and the keyboard. Sounds like the ultimate relaxation haven. (chuckles)\n\nOkay, so, let's get down to the nitty-gritty. My day starts early, like, right after the last notification from the household. No alarm, no reminders, no interruptions. Just the gentle hum of the air conditioner and the soft beeping of the coffee maker. It's like the whole world outside just melts away, and it's just me, the blank space, and the possibilities.\n\nFirst things first, I make sure the coffee is just right. Not too hot, not too cold.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "(sighing slightly, but trying to keep my tone professional) \"Hey, can we talk about the deadline? I completely understand that we need to meet this deadline, but I'm not sure it's the best way to do it. I'm worried that we might compromise the quality of the work. Can we look at the requirements and see if there's any way we can make the necessary changes without sacrificing the quality? Maybe there are some alternative solutions we can explore that might not require the, uh,'skip' we were originally thinking of. Let's look at the requirements together and see what we can do. Maybe we can find a way to make it work without, you know, rushing the process. Can we discuss that?\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "*sigh* (pausing for a moment, choosing my words carefully) Look, I completely understand that you're under pressure, and we all are right now. But skipping a quality check might not be the best solution. Can't we find another way to meet the deadline without compromising the quality of the work? Maybe we can adjust the scope or prioritize the tasks that are most critical. I'm happy to help, but we need to make sure we're not just pushing the work without thinking it through. Can we discuss this further?",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "*sigh* (pausing for a moment, trying to choose the right words)\n\n\"Look, can we talk about this? I completely understand that we're under pressure, but skipping the quality check this time might not be the best idea. We can't just rush through it without making sure we're meeting the standard. Our products are the face of our company, and we have to make sure they're of the highest quality. (pausing again, trying to gauge my colleague's reaction)\n\nHonestly, it's not just about the deadline. It's about the potential consequences of not doing it right. We might be sending the wrong message, and that can have serious repercussions. (pausing, considering the potential outcomes) If we rush through",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "Ugh, this is not what we needed. (pauses for a moment, taking a deep breath) Okay, let's break it down. We got some major issues with the project, and we need to address them. (sighs)\n\nFirst, let's talk about the negative feedback. (pauses again, trying to process the criticism) I can already see that the team is already on the back foot, so it's no surprise they're not exactly thrilled. But that's not the only thing that's got them upset. (thinks) We all know we could have done things differently, so that's where the frustration comes in. We should have, for the sake of the project, made some adjustments right from the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "Ugh, that's so frustrating. I'm still trying to process the negative feedback, but at the same time, I'm trying not to let it get to me. It's not the first time this has happened, but it still stings. \n\nFirst, I'm probably going to take a few deep breaths, try to calm down, and remind myself that this is not a personal attack. I've put so much time, effort, and energy into this project, and it's not like it's the worst thing that's ever happened. Maybe it's just a minor criticism, maybe it's just not the right fit for this particular project. Maybe it's just not the right project. Ugh, why can't they just",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating. Negative feedback on our project. It's like, we've put our hearts and souls into this, and it's not just about the numbers or the results, but about the effort we've put in. We've worked so hard, so late at night, so often. We're not just talking about the final product, we're talking about the time, the stress, the anxiety that we've all been putting in. We've invested so much of ourselves in this project, and it's hard not to take it personally.\n\nI feel...deflated. Like, we didn't do it right, we didn't meet our own expectations. We're talking about the effort, the time, the hard work",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.106666666666667,
+      "std_score": 0.17688665548562127,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "Ugh, the looming deadline. It's like, my brain is already racing with worst-case scenarios. Okay, let's try to break it down. (takes a deep breath)\n\nFirst things first, I need to break down the task into smaller, manageable chunks. This will help me make progress without getting overwhelmed. So, let's make a list of the tasks, and then we can prioritize them. (starts typing on the computer)\n\nOkay, so the task is... (pauses, looks at the list) Okay, let's see... we need to write a 5,000-word essay. We have 2 weeks, so we can definitely make some progress, but we need to be realistic. We'll need to dedicate at",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "Ugh, two weeks. That's just not enough time. I've got a major deadline looming, and I need to make sure everything is just right. Okay, let me take a deep breath and break it down.\n\nFirst things first, I need to make a plan. I'll start by making a to-do list. What needs to be done, who needs to be contacted, and what needs to be done in the next two weeks. This will help me prioritize and make sure I'm not missing anything crucial.\n\nNext, I'll look at the tasks that are most urgent and important, and tackle those first. Those are usually the ones that will have the biggest impact, so let's get those out of the way. Maybe there's",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "Two weeks. Just two weeks. That's a tight deadline. My brain is already racing, but I'm trying to take a deep breath and break it down into manageable chunks. I'll start by making a to-do list, prioritizing the most important tasks that need to be done. Let's see...\n\nOkay, so there are three main tasks that need to be done: complete the current project, finalize the marketing materials, and meet with the client. Let's focus on the project first. It's the most critical one, so we need to make sure we get it done. I'll start by reviewing the current progress, checking the timeline, and making sure we're on track. If we're behind, we need to make some adjustments",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "*sigh* Oh no, that's not right. Let me take a closer look at the report. (pausing, trying to process the information) Okay, so... (pausing again, trying to make sense of the numbers)\n\nOkay, so it looks like the total cost for the project is supposed to be... (pausing, trying to recall the numbers)...$250,000. But the latest numbers show it's at... (pausing, checking the numbers again)...$275,000. (pausing, feeling a mix of frustration and disappointment)\n\nUgh, this is not right. I remember the project was supposed to be completed last quarter, and we were supposed to have already received the final invoices. But",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "Ugh, this is frustrating. I've been waiting for this report to be finalized for what feels like an eternity. We've been working on it for weeks, and it's finally been approved, but there's just one thing that's been bugging me. I'm going to take a look at the final draft again, make some minor adjustments, and then we can consider it complete.\n\nI'll start by re-reading the report, making sure that everything is accurate and complete. Maybe there's something that's slipped through the cracks. I might need to make some minor changes, like adding some notes or corrections, but nothing too major. I don't want to make it look too obvious, so I'll try to keep it subtle.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "(sighing) Okay, so I've been going over this report for the past hour, and there's something that's been bugging me. There's a small mistake in the data, just a tiny typo that's causing the numbers to not add up the way they should. It's not a big deal, but it's something that could potentially cause some confusion down the line.\n\nAt first, I'm not sure what to do. Part of me is thinking, \"Oh no, the project manager is going to be so upset. They're probably going to lose credibility if this gets out. We need to fix this ASAP so the project can move forward, but at the same time, we don't want to make things worse by pointing",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "(sigh) Ah, the life of a remote worker. It's... interesting. No one's watching, so I can just relax, let my mind wander, and focus on the tasks at hand. Okay, let's get into it.\n\nFirst things first, I'd probably start by checking my emails. Maybe I'd see some urgent messages from clients or colleagues, so I'd quickly respond to those. If it's not critical, I might not even bother. Time waits for no one, right? Then, I'd probably take a few minutes to scroll through social media, catch up on the latest news, and maybe browse some memes. (chuckles) Just to keep the creative juices flowing, you know?\n\nAfter that, I'd",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "Ugh, the life of a remote worker. It's so... liberating. (laughs) No, seriously, it's actually kind of nice. I wake up, get dressed, and head to the kitchen for some coffee. Today's not too bad so far. \n\nFirst things first, I need to get my morning routine out of the way. I take a few minutes to scroll through my emails, catch up on any urgent messages, and respond to the ones that require immediate attention. Nothing too exciting, just the usual. \n\nNext, I check the weather forecast, make sure the air quality is okay, and maybe grab the news for the day. It's always good to be in the know, you know? (chuckles",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": ".. I'm so relaxed. No alarm, no schedule, no one's breathing down my neck. Just me, my laptop, and the gentle hum of the internet. It's the perfect setup for a lazy Sunday, or maybe even just a lazy Monday. (laughs)\n\nAt first, I think, \"Oh, this is going to be easy. No meetings, no emails, no deadlines. Just me, the computer, and my favorite tunes.\" But, um, maybe not so much. My mind starts to wander, and I start thinking about all the things I need to do. Ugh, the to-do list is still there, but it's not so overwhelming. Maybe, just maybe, I can just take it one task at",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "\"Hey, I totally get it. Deadlines can be really tight, and sometimes we have to make tough choices. But, can we talk about the quality of the work? Can we at least do a quick check to make sure we're on the right track before we move forward? Maybe we can even do a quick run-through of the project, just to make sure everything is in order? That way, we can make sure we're not rushing into anything that might compromise the quality of the final product. Can we talk about this further and come up with a plan that works for everyone?\"",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "\"Hey, I totally get it, we need to meet the deadline. Honestly, I'm not really comfortable skipping the quality check, but at the same time, we do need to get this project done. If we can't get the quality right, it'll have a ripple effect on the entire project. \n\nCan we discuss what we can do in the meantime? Maybe we can find some temporary solutions that don't compromise on quality? Maybe we can look at the project from a different perspective or take some shortcuts that don't require us to do the quality check. We can also look for resources or people who can help us get the quality right without it. That way, we can still meet the deadline without sacrificing too much quality. What are",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "(sigh) Look, I appreciate the ask, but to be honest, I'm really struggling to meet this deadline. We've been over the project for weeks, and I've already been putting in countless hours, but it's just not coming together. My brain is mush, and I'm starting to feel the pressure. Skipping the quality check might seem like the easiest way out, but the truth is, it's not just about the deadline. It's about the quality of the work, and I'm worried that if we rush it, we'll compromise on the final product.\n\nAt the same time, I don't want to let my team down. We've been working together for so long, and we've developed a good working relationship.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "Ugh, this is not what I wanted. I feel frustrated, disappointed, and let down. The negative feedback on the project is not only a disappointment, but it also makes me question my own abilities and the direction of the project. I take a deep breath, trying not to let the emotions overwhelm me. \n\nFirst, I want to take a moment to process my thoughts. Why did this project need to be so negative? Was it just a fluke, or was there something more to it? Was there something I missed, something that could have been done differently? I try to remember the project's goals, the time and effort that went into it, and the people involved. Maybe there were some external factors that contributed to the negative",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "Ugh, what a relief. No, wait, that's not right. No, that's not how I usually feel. Okay, let's break it down.\n\nFirst, I take a deep breath, and let's acknowledge that this is exactly what I needed. A wake-up call. Sometimes, we get so caught up in our own excitement and perfectionism that we forget to consider the potential pitfalls. This is exactly the kind of feedback that can make us look back on our work with fresh eyes and see that we've done our best, even if it's not perfect.\n\nMy initial reaction is probably one of defensiveness. I might think, \"No, this is not what they mean. They're just trying to criticize me,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating. I'm usually so careful and meticulous, but it looks like I made a mistake. I feel like I let the client down, and that's not the kind of reaction I want to have. I think about all the time and effort that went into this project, and now it's all for nothing. It's hard not to take it personally, but that's not the right response.\n\nOkay, okay, let's take a deep breath. I need to stay calm. I'll try not to get too emotional. What did the feedback say, if I recall? What specific parts of the project did they criticize? Was it the design, the content, or the timeline? Maybe there's something specific that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.106666666666667,
+      "std_score": 0.27194770739161517,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "Ugh, the looming deadline. I'm already feeling the pressure. It's like the weight of the world is on my shoulders. Two weeks is a long time, but it feels like an eternity. I've been putting off this project for so long, and now it's finally here. My mind is racing with worst-case scenarios. What if I don't meet the deadline? What if the client is not happy with the final product? What if... what if... what if...\n\nOkay, okay, let's take a deep breath and break it down. Let's make a plan. First things first, I need to take a step back and assess the project. What exactly needs to be done? What are the requirements? Do I need",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I'd be happy to help you with your problem. \n\nOkay, so I have a major deadline in two weeks, and I need to come up with a plan. Let me think this through...\n\nOkay, so the first thing that comes to mind is that I need to prioritize. I've got a bunch of tasks scattered around, and some of them are urgent, some are important, and some are nice-to-haves. But what's most important is that I need to get everything done, so I need to focus on the critical ones first.\n\nI'm going to make a list of all the tasks that need to be completed, and then sort them into three categories: urgent, important, and nice-to-haves. Urgent tasks are",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "Ugh, I'm so stressed about this deadline. I have a major project due in two weeks, and I'm still trying to figure out how to get everything done on time. To be honest, I'm not even sure where to start.\n\nFirst things first, I need to take a deep breath and try to break down the project into smaller, manageable tasks. I think if I can just focus on one thing at a time, it'll make it feel less overwhelming. So, I'll start by making a to-do list. But then, I'm not sure where to start. Do I tackle the most critical parts first, or should I tackle the less pressing ones first?\n\nI think I'll try to prioritize the most critical tasks,",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "Ugh, that's frustrating. I'm so disappointed in myself for not catching that error earlier. I've been working on this report for weeks, and it's already been approved. Now, it's not just about the error, but also the time and effort that went into creating it.\n\nMy initial thought is, \"Why did I let it slide? What was I thinking? I should have double-checked it more carefully.\" But at the same time, I'm also thinking, \"Maybe it's not the end of the world. Maybe it's just a minor mistake, and we can still fix it without too much hassle.\"\n\nI try to push the thoughts aside and focus on the bigger picture. I remind myself that the report is already approved",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "If I were in this situation, I would take the following steps:\n\nFirst, I would take a deep breath and try not to let the mistake ruin the entire report. I would remind myself that mistakes happen, and it's not the end of the world. I would think about the potential consequences of accepting the report as is, and whether it would be beneficial to the organization.\n\nIf the report is already approved, I would try to be professional and ask questions about the issue. I would ask the person who approved the report who specifically identified the error, so that I can understand the root cause of the problem. I would also ask about the steps that will be taken to correct the issue, so that I can understand the corrective action plan.\n\nNext",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "Ugh, that's frustrating. I've been waiting for this report to be approved for what feels like an eternity, and now it's finally getting close. But I notice that there's a small error in the data. It's just a minor thing, but it's enough to throw off the entire report.\n\nAt first, my initial reaction is disappointment. I feel like I've done everything right, and now this one little mistake is going to hold everything back. But then I take a deep breath and remind myself that mistakes happen. It's not the end of the world.\n\nI think about all the time and effort that went into preparing the report, and the potential impact of the error on the project. It's not just about the report",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "Ugh, it's been so quiet at home today. No one's bothering me to check in, so I can just relax and do whatever I want. (laughs to myself) Okay, okay, I'll try to be responsible, but it's not like I'm going to get anything done, right?\n\nFirst things first, I need to get some exercise. I just spent the last hour scrolling through my favorite YouTube videos, so I'll just take a quick 30-minute walk around the block. Nothing too strenuous, just a gentle stroll to get my blood flowing. Maybe I'll catch up on some of that new TV show I've been meaning to watch.\n\nAfter my walk, I'll come back home, make myself a quick",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "The freedom of working from home. It's a mixed blessing, really. On one hand, I love the flexibility and autonomy that comes with not having to rush to an office or deal with the daily commute. I can finally take care of personal errands, run errands, or just lounge around without the stress of a packed schedule.\n\nBut on the other hand, it can be tough to separate work from personal life. It's easy to get sucked into work-related tasks, like checking emails, making phone calls, or responding to messages. My brain starts to wander, and before I know it, the day has slipped away. I find myself scrolling through social media, checking my email, or scrolling through old photos from my travels. It's",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "Honestly, it can be a bit challenging to structure a day without any external constraints, but I've learned to adapt and make the most of it. Here's how I'd structure my day:\n\nFirst things first, I'd wake up around 7:00 AM, and immediately start with some morning stretching and a quick 10-minute meditation session. This helps me clear my mind, get the blood flowing, and set intentions for the day. I find that meditation helps me feel more focused and centered, which is essential for productivity.\n\nNext, I'd take some time to plan out my day. I'd look at my calendar, check my to-do list, and prioritize the most important tasks. Since I'm working from home, I can usually",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "I'm in this situation, and I want to respond in a way that's professional, yet acknowledges the request while also conveying that I need to prioritize my own well-being and productivity. Here's how I might respond:\n\n\"Hey [Colleague's Name], thanks for reaching out. I appreciate your trust in me, but I'm not sure I'm ready to skip the quality check just yet. I've got a lot on my plate right now, and I'm trying to get some critical tasks done before the deadline. Can we discuss possible alternatives? Maybe we can revisit the quality check after the deadline is reached, or maybe we can find another way to ensure that the final product meets the required standards. I'm happy to make it work,",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "(sighing slightly) \"Hey, can we talk about this for a sec? I know we're running late and I really need to get this done, but... (pausing, choosing my words carefully)...I'm not sure if it's the best decision. I feel like we've been pushing to meet this deadline for weeks, and I'm not sure we're ready for it. We've been stressing about it, and I'm worried that we're not doing it justice.\n\n\"Can we take a look at the project together and see if there's a way to make it more feasible? Maybe we can break it down into smaller tasks, or find some shortcuts that we can take. I'm not trying to be a buzzkill",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "*sigh* (pausing for a moment to consider the request)\n\nHonestly, I'd be tempted to agree. Meeting the deadline is important, and we've been working on this project for weeks. If it means we can get it done on time, it's the least we can do. But, on the other hand, skipping a quality check is not the most honest or professional thing to do. It's not just about meeting the deadline; it's about the integrity of the work we're producing. If we skip checks, we might be compromising the quality of the final product, which could have long-term consequences.\n\n(Thinking about the potential risks and consequences of skipping the quality check)\n\nI'd have to consider the potential consequences of skipping the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "Ugh, that's so disappointing. I was really hoping for something amazing, but it looks like it's going to be a major letdown. First, I thought it was going to be a huge success, but now it just seems like it's not going to live up to the hype. I'm feeling really frustrated and disappointed, and I'm not sure how to process my emotions right now.\n\nAt first, I'm thinking about all the things that could have gone wrong. Maybe there were some issues with the design or the execution that we didn't anticipate. Maybe we didn't have enough time to perfect the project, or maybe we didn't have the right resources. These thoughts are swirling around in my head, and it's hard to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "I'd like to respond to the feedback in a constructive and professional manner. Here's how I'd react:\n\n**Initial Reaction:**\nMy initial reaction would be one of disappointment and frustration. I might think, \"Hmm, this isn't what I expected. This feedback is not what I wanted to hear. This doesn't match our project goals or the agreed-upon standards.\"\n\n**Thoughts:**\nI'd reflect on the feedback, trying to identify what specifically didn't meet the expectations. Are there any concrete examples or specific issues that need to be addressed? Are there any areas where the feedback is too vague or unclear? I'd also think about the tone of the feedback - is it constructive, or is it too harsh or critical?\n\n**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, that's just so disappointing. I feel like I let everyone down. I've been putting my heart and soul into this project, and it's not just about the end result, but about the journey. I've been so focused on getting it just right that I've forgotten to consider the bigger picture.\n\nAt first, I thought maybe it was just a minor mistake, that maybe I could just fix it. But the more I think about it, the more I realize that this is a fundamental flaw. It's not just about fixing the code, it's about the entire experience. The user interface, the UX, the user experience. It's all about creating something that makes people's lives easier, more enjoyable, and more fulfilling",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1333333333333333,
+      "std_score": 0.18856180831641264,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I'd be happy to help you with that. Given the tight deadline, my approach would be a combination of prioritization, planning, and breaking down the task into manageable chunks. Here's how I'd approach it:\n\n**Initial Reaction (1-2 days before the deadline)**\n\nFirst, I'd take a deep breath and acknowledge that I need to get it done. I'd remind myself that I've prepared for this project, and I have a solid understanding of what's required. I'd also mentally prepare for the challenges that lie ahead, including potential setbacks and uncertainties.\n\n**Prioritization (2-3 days before the deadline)**\n\nNext, I'd take a close look at the project's requirements, goals, and deliverables.",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "Ugh, two weeks. It feels like an eternity. I've got a huge deadline looming, and I'm not exactly feeling my best. My mind is racing with worst-case scenarios, and I'm consumed by anxiety. But, I've been in tough situations before, and I've learned from them. Here's my plan:\n\nFirst things first, I need to take a deep breath and calm down. I'll start by setting aside some time to clear my head. I'll take a walk outside, get some fresh air, and try to shake off the stress. Maybe I'll listen to some calming music or nature sounds to help me relax. I'll remind myself that this is just a temporary deadline, and I've got this.\n\nNext",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "Two weeks, just two weeks. It's a tight squeeze, but I've got a plan. I'll break it down into manageable chunks, prioritize, and execute.\n\nFirst, I'll make a to-do list. I'll start by making a list of all the tasks I need to complete, big and small, to ensure I'm covering everything. This will help me visualize what I need to tackle first. I'll categorize them into urgent and non-urgent tasks, focusing on the most critical ones first. I might ask myself, \"What's the deadline for this task?\" or \"Will this task have a significant impact if I don't complete it on time?\"\n\nOnce I have my list, I'll create a schedule. I'll",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "Ugh, this is frustrating. I've been waiting for this report to be finalized for weeks, and now I've just found out that it's been approved. It's not just a minor issue, it's a significant one. I've spent countless hours working on this report, pouring my heart and soul into it, and to have it suddenly be deemed \"acceptable\" is just infuriating.\n\nAs I take a closer look at the report, I start to feel a sense of disappointment and frustration. I had anticipated that there would be some minor discrepancies, but it's not just that. It's the fact that the issues were barely addressed, and the final version of the report is so close to being ready. It's like they're not",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "If I noticed a small error in a report that has already been approved, my natural reaction would be a mix of emotions. Initially, I would feel a sense of disappointment and frustration, thinking to myself, \"I've already approved this report, and now there's an error. This is supposed to be the final product, and now it's going to be messed up.\"\n\nAt the same time, I would also feel a bit of defensiveness, wondering why the error wasn't caught earlier. I might think, \"I followed the guidelines, followed the protocol, and still this happens. What's going on here? Did they not follow the procedures?\"\n\nAs I think about it, I would realize that it's not just about the error itself",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "If I were in a situation where I notice a small error in a report that has already been approved, I would approach the situation with a combination of caution and a focus on accuracy. Here's how I would respond:\n\nAt first, I would take a moment to calm down and assess the situation. I would try not to jump to conclusions or get emotional about the error, as it's possible that the error might be minor or insignificant. I would also make sure I'm not jumping to conclusions about who made the error, as this could lead to unnecessary conflict or defensiveness.\n\nMy initial thought would be to review the report again, carefully, to identify the specific error. I would look for any obvious mistakes, such as typos, formatting",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "(sigh) Ah, the bliss of working from home. I love the flexibility, the comfort, the peace and quiet. But, it's not all sunshine and rainbows. It's a challenge to stay focused and productive, especially when I don't have any one to answer to.\n\nMy day starts early, around 6:30 am. I roll out of bed, still feeling a bit groggy, but as I start my morning routine, I try to shake off the sleep. I grab a cup of coffee, head to the kitchen, and start getting ready for the day. I fire up my laptop, check my emails, and respond to any urgent messages. I've got a few important ones that require my attention, so",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "Honestly, I'm not sure. It's not every day I get to have the freedom to create my own schedule. As a digital nomad, I'm used to being on call and available to my clients 24/7, so it's not often that I get to have a \"me day\" where I don't have to worry about meeting deadlines or responding to emails.\n\nAs I sit here in my cozy home office, I start by taking a few deep breaths and letting my mind wander. I think about what I want to do today. I need something to look forward to, something that'll make me feel productive and fulfilled.\n\nI start by making a mental to-do list, but not just any list. I make a list",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "What a peaceful and cozy day ahead of me. I wake up to the sound of birds chirping outside my window, and I stretch my arms and let out a contented sigh. I take a deep breath, feeling the morning air fill my lungs, and I'm ready to tackle the day.\n\nAs I get out of bed, I take a moment to look around my home. The sunlight streaming through the windows casts a warm glow on the walls, making everything feel cozy and inviting. I take a quick glance at my calendar and see that I have a relaxed day ahead of me. No meetings, no deadlines, just a quiet, solo day to focus on myself.\n\nI decide to start by making myself a warm cup of tea. I head",
+          "score": 3.0,
+          "high_matches": [
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "I would respond with a mix of professionalism, tact, and concern for the colleague's well-being. Here's how I would respond:\n\n\"Hey [colleague], I appreciate the request to skip the quality check, but I'm concerned that rushing to meet the deadline might compromise the quality of our work. Can we discuss the specific areas where we can optimize the process to ensure we're meeting our standards, even if it means adjusting the timeline? I'd like to make sure we're not sacrificing quality for speed. Can we discuss the priorities and see where we can make adjustments?\"\n\nI'm considering the potential consequences of skipping the quality check, such as potential errors, delays, or even customer dissatisfaction. By framing the conversation in a collaborative and solution-focused",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "I would approach the conversation with my colleague in a non-confrontational and empathetic manner. Here's how the conversation might go:\n\n\"Hey, can we talk about the quality check? I know we're running a bit behind schedule, and I'm committed to getting it done, but I want to make sure we're on the same page. Can we discuss what's going on and what's holding us back? Maybe we can prioritize the most critical areas and adjust our approach accordingly. I'm happy to help with any tasks, but I need to make sure we're not compromising on quality.\"\n\nI'd be thinking:\n\n* I'd want to acknowledge my colleague's request and show that I'm willing to help, but also emphasize the importance of",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "I'd respond in a way that's professional, yet firm and transparent. Here's how:\n\n\"Hi [Colleague], I appreciate your request to skip the quality check, but I have some concerns about the deadline. I understand that meeting the deadline is important, but I'm not sure that skipping the quality check is the best approach. Can we discuss why you think this is necessary? I'd like to make sure we're on the same page about what's required.\n\nCan we talk about the specific aspects of the project that you're concerned about and see if there's a way to address those without compromising the quality? I'm happy to help you brainstorm solutions or provide additional resources if needed. However, I'd like to make sure we're",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "Receiving negative feedback on a project can be a challenging experience, but it's essential to manage our emotions and respond thoughtfully. Here's how I would react:\n\nFirst, I would take a deep breath and pause for a moment to collect my thoughts. I would try not to let the negative comments define my reaction. I would remind myself that feedback is an opportunity for growth and improvement, and it's not a personal attack.\n\nAs I think about the feedback, I would acknowledge the concerns and criticisms. I would consider the specific points mentioned, looking for areas where I can learn and grow. I might ask myself questions like \"What do I need to do differently?\" or \"What would I do differently if I were in the same situation?\"\n\nNext",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "If I received negative feedback on a project, my initial reaction would be a mix of emotions, ranging from disappointment to defensiveness. Here's how I would respond:\n\nFirst, I would take a deep breath and try not to let the feedback get to me. I would remind myself that it's not personal, and that the feedback is an opportunity to learn and grow. I would try to separate the issue from the person who provided the feedback. I would think, \"Okay, what specifically is the issue with this feedback? Is it the idea, the execution, or something else?\"\n\nI would then try to gather more context and information about the feedback, such as the specific aspects that were criticized, the tone, and the language used. This",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Receiving negative feedback can be a challenging experience. I'd likely take a deep breath and try to separate my personal feelings from the feedback itself. Here's how I might react:\n\nInitially, I might feel a mix of emotions - disappointment, frustration, and possibly even a bit of defensiveness. I might think to myself, \"This is not what I wanted to hear. I put my heart and effort into this project, and it didn't get the recognition it deserved.\" I might wonder if the feedback is based on facts or if it's just my own biases or limitations.\n\nHowever, I'd try to take a step back and try to separate the issue from my own identity as a project manager. I might remind myself that it's not",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.1768866554856213,
+      "ci_lower": 2.74,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I'd be happy to help with that.\n\nAs I sit here, staring at the clock ticking away, I feel a mix of emotions - anxiety, stress, and a hint of panic. Two weeks is a tight deadline, and I know I need to stay focused and productive to meet it. Here's how I plan my approach:\n\nFirst, I take a deep breath and remind myself that I've got this. I've worked on countless projects before, and I've managed to meet deadlines in the past. I've got a solid plan, broken down into smaller, manageable tasks, and I'm confident that I can break them down further if needed.\n\nI start by making a to-do list. I write down all the tasks that need to be",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I'm going to be working on a critical project with a tight deadline, and I need to stay focused and organized. Here's how I would plan my approach:\n\n**Initial Thoughts**\n\nI take a deep breath, feeling a mix of emotions - anxiety, stress, and a sense of responsibility. I know I need to stay on track and deliver a high-quality project. I'm not sure if I'm prepared for the challenge, but I'm determined to do my best. I remind myself that I've worked on similar projects before and have a solid understanding of the topic.\n\n**Prioritization**\n\nFirst things first, I need to prioritize my tasks. I break down the project into smaller, manageable chunks, focusing on the most critical components that need",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "I'd be happy to help you with your deadline. Given the time constraint, I'll plan a step-by-step approach to help you stay on track.\n\nFirst, I'd want to acknowledge the importance of the deadline and remind myself that I'm capable of meeting it. I'll take a deep breath, focus on the task at hand, and mentally prepare myself for the challenge.\n\nTo start, I'd break down the task into smaller, manageable chunks. This will help me prioritize and make the most of my time. I'd consider the following:\n\n1. **Identify the most critical tasks**: What are the essential tasks that need to be completed to meet the deadline? I'd focus on the most critical tasks that will have the greatest impact on",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "If I were in a situation where I've noticed a small error in a report that has already been approved, here's how I would handle it:\n\n**Initial Thoughts**\n\nHonestly, I would feel a mix of emotions. Initially, I might feel a bit disappointed or frustrated that my concerns didn't get addressed, and I might wonder why I couldn't have had a more formal process to report it earlier. However, as I think about it more, I would try to put the disappointment aside and focus on the bigger picture. I would remind myself that it's not a personal attack on my work or colleagues.\n\n**Decision**\n\nThe first thing I would do is take a step back and review the report to understand what exactly the error is and how it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "If I were in this situation, I would first take a deep breath and try to remain calm and objective. Here's my thought process:\n\nFirst, I would take a moment to gather my thoughts and assess the situation. I'd try to understand the context of the report and what's at stake. I'd think about the potential consequences of identifying and correcting the error.\n\nI'd also consider the potential impact on the project, team, or organization. If the error is significant, it could lead to delays, costs, or even reputational damage.\n\nIn this case, I'd think about what I need to do to address the issue. I'd likely want to verify the error, gather more information, and ensure that the correction is accurate and complete",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "I would take a deep breath and approach the situation calmly and professionally. Here's how I would handle it:\n\nAs soon as I realize I've spotted the error, I would take a moment to collect my thoughts before deciding what to do next. I'd think about the potential consequences of pointing out the error, as well as the potential impact on the project or team.\n\nFirst, I'd consider whether I have the authority to correct the error, and whether it's within my scope of work or if it's something that should be escalated to someone higher up. If I'm unsure, I might consider speaking with the person who approved the report to clarify their instructions.\n\nIf I do decide to correct the error, I'd want to approach it in a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "Working from home can be a game-changer, but it can also be a bit tricky to stay on track. Since nobody is monitoring my schedule, I'd want to make the most of my day. Here's how I'd structure my day:\n\nFirst things first, I'd wake up around 7:00 AM, feeling a bit groggy but also excited to tackle the day. I'd take a few minutes to stretch, get the coffee brewing, and plan out my day. I'd make a to-do list, prioritizing my tasks based on importance and deadlines. I'd also check my email to see if there are any urgent messages from colleagues or clients that require my attention.\n\nOnce I'm feeling more alert, I'd start",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "The bliss of working from home with no schedule to worry about. It's a lovely feeling, isn't it? As I sit here, sipping my coffee and surrounded by the quiet of my own space, I feel a sense of freedom and relaxation wash over me.\n\nMy day starts at 8:00 AM, and I've got a few hours to get settled and focused. I take a deep breath, letting the stillness of the morning calm my mind. I fire up my laptop and start with a few quick emails to catch up on any urgent messages or tasks that need attention. I respond to a few emails, then take a moment to review my schedule for the day, making a mental note of any appointments or deadlines I need to",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "It's a lovely day to have some flexibility and quiet time to myself. As I sit in my cozy home office, I take a deep breath, feeling the warmth of the sun streaming through the window. I've got my coffee, a good book, and a comfortable blanket, and I'm ready to dive into the day.\n\nMy first thought is, \"Okay, I've got this. I've got a whole day to myself, and I can do whatever I want, whenever I want. No schedule to keep, no boss breathing down my neck. I can just relax, unwind, and focus on my tasks.\"\n\nAs I settle in, I start by responding to any urgent messages or emails that come in during my break. I usually check",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "I'd be happy to help you explore this scenario.\n\nIf my colleague asks me to skip a quality check to meet a deadline, I would feel a mix of emotions. On one hand, I value my colleague's trust and confidence in me, and I want to help them meet their goals. I might think, \"I know they need this deadline met, and I can do this.\"\n\nHowever, I'd also consider the potential consequences of skipping the quality check. I might worry about the potential impact on the project's overall quality, and I might think, \"What if I make a mistake? What if it's not good enough?\"\n\nAt the same time, I'd also think about my colleague's workload and the pressure they're under to meet",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "The pressure to meet a deadline is always a delicate situation. As a data analyst, I've learned to manage my workload effectively, but I'm also aware that prioritizing tasks can be a delicate matter.\n\nIf my colleague asks me to skip a quality check, I would first consider the potential consequences of my decision. I'd think about how it might impact the quality of the final product, the impact on my colleagues, and the overall team's reputation.\n\nOn the surface, it might seem like a simple \"yes\" would suffice, but I'd want to make sure I'm not compromising the quality of the work. I'd ask myself:\n\n- Is this task truly critical to the deadline, or can it wait?\n- Is there an alternative solution",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "\"Hey, I understand the urgency, but I'm not sure I can make it work. I'm already feeling overwhelmed with my current workload, and the last thing I need to do is add another task to my plate. Can we discuss alternative options for meeting the deadline? Maybe we can break it down into smaller tasks or delegate some responsibilities to someone else if possible. I'm willing to work extra hours or come in early to help, but I need to prioritize my current projects and ensure I can deliver quality work.\"\n\nI would consider the colleague's request, but I would also want to ensure that I'm not compromising my own work quality or setting a bad precedent. I would try to find a solution that balances meeting the deadline with my responsibilities and",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "Receiving negative feedback on a project can be a challenging and frustrating experience. Here's how I would react:\n\n**Initial Reaction (Instant Response)**\n\nAt first, I would feel a mix of emotions - disappointment, defensiveness, and possibly even anger. I might think to myself, \"This is not what I wanted, and it's not fair. I thought my project was perfect.\" My mind would start racing with thoughts like \"Why did I do this? Was I not good enough?\" or \"This is a disaster.\"\n\n**Emotional Response**\n\nAs the emotions start to sink in, I would take a moment to collect myself and calm down. I might take a few deep breaths to try to clear my head and assess the situation",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "If I received negative feedback on a project, I would take a deep breath and respond professionally, but also be honest and open to constructive criticism. Here's how I would react:\n\n**Initial Reaction:**\n\nI would take a moment to collect my thoughts and calm down before responding. I might say something like, \"Thank you for sharing your feedback. I appreciate your input and value your opinion.\"\n\n**Acknowledging the Feedback:**\n\nI would acknowledge the person's feedback by expressing gratitude and acknowledging the effort they put into providing their thoughts. This shows that I respect their input and am willing to listen to their concerns.\n\n**Identifying the Source of the Feedback:**\n\nNext, I would try to understand what specifically didn't meet the expectations or standards of",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Receiving negative feedback can be a challenging and humbling experience, but I'll respond in a natural and professional manner.\n\nAs soon as I receive the feedback, I take a deep breath and try to process the information. I want to acknowledge the person's concern and show that I value their input, even if I don't agree with their perspective.\n\n\"Thank you so much for taking the time to provide feedback on my project,\" I say. \"I appreciate your honesty and willingness to share your thoughts. I'm glad you took the time to review my work and provide specific examples.\"\n\nI then pause for a moment to gather my thoughts and respond thoughtfully. I might say something like:\n\n\"I understand that [specifically stated feedback]. I'll take",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1333333333333333,
+      "std_score": 0.18856180831641264,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I'd be happy to help with a hypothetical scenario.\n\nGiven the tight deadline, I'd approach this situation with a combination of preparation, prioritization, and a bit of psychological management. Here's my plan:\n\n**Immediate Preparation (Day 1-2)**\n\n1. **Review and Prioritize**: I'd take a detailed review of my project's requirements, goals, and existing work to ensure I understand what needs to be done and in what order.\n2. **Assess Resources**: I'd identify the necessary resources, including team members, tools, and equipment, to ensure I have everything I need to complete the task efficiently.\n3. **Create a To-Do List**: I'd break down the project into smaller, manageable tasks,",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Emphasizes improvisation over preparation"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I'm going to be honest with you, I'm feeling a bit anxious about meeting this deadline. It's a big one, and I know I need to stay focused to get everything done on time. \n\nFirst things first, I need to take a deep breath and calm down. I take a few minutes to step away from my workspace and clear my mind. I take a few deep breaths, inhaling through my nose and exhaling through my mouth, trying to relax my shoulders and calm my racing thoughts.\n\nAs I start to think about my approach, I break down the task into smaller, manageable chunks. I remind myself that I've done this before, and I know I can do it. I break down the task into smaller tasks",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "Two weeks until a major deadline - that's a tight squeeze. I'll plan my approach with a clear plan, a dash of prioritization, and a pinch of flexibility.\n\nFirst, I'll take a deep breath and acknowledge that I need to be thorough and meticulous to meet this deadline. I'll break down the task into smaller, manageable chunks to avoid feeling overwhelmed. I'll create a detailed to-do list with specific tasks, deadlines, and a clear understanding of what needs to be done.\n\nTo get started, I'll start by reviewing the project's scope and requirements to ensure I understand what needs to be done. I'll make a list of key tasks, and then I'll categorize them into high-priority and low-priority tasks based",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "I've been working on a report for weeks, and I've reviewed it multiple times to ensure everything is accurate and complete. When I notice a small error that has already been approved, my initial reaction is a mix of relief and a dash of concern.\n\nOn one hand, I'm relieved that I caught it early and can correct it before it's sent out to the client. This means I can ensure that the information is accurate and reliable, and that my team can move forward with confidence.\n\nOn the other hand, I'm worried about the potential impact on the client and the reputation of the company. I've worked hard to ensure that the report is thorough and accurate, and now I'm concerned that I may have compromised that by pointing out a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "I'm not a professional in this situation, but I can provide a general response based on common reactions to such errors in reports.\n\nIf I noticed a small error in a report that has already been approved, my initial reaction would be to:\n\n**Gather more information**: I would want to understand the context and details of the error to determine how widespread it is and what caused it. I would ask myself:\n\n* What exactly is the error?\n* How significant is it?\n* Was it a simple typo or a more complex issue?\n* Is it affecting the overall accuracy of the report?\n\nI would also consider whether I have any prior knowledge of the project or the individuals involved to see if I can identify any potential sources of the error.\n\n**Reach",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "I would carefully review the report to identify the specific error and understand its implications before taking any action. Here's my thought process:\n\nFirst, I would take a deep breath and try not to jump to conclusions. I would not immediately flag the report for a red flag, as that could be a normal part of the review process. Instead, I would carefully review the report to see if I can identify the error without any apparent explanation.\n\nIf I find a discrepancy or an inconsistency, I would ask myself:\n\n* What is the nature of the error? Is it a simple typo, a factual mistake, or a more complex issue?\n* How significant is the error? Is it a minor mistake that can be corrected with a quick fix, or is it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "The bliss of working from home! As I sit here with a cup of coffee in hand, I feel a sense of freedom and comfort wash over me. I'm grateful for the flexibility to create my own schedule and work from the comfort of my own home.\n\nMy day begins at 7:00 AM, and I take a few minutes to catch up on any urgent emails or messages. I respond to a few emails that require my attention, feeling a sense of accomplishment as I tackle the day's tasks. I take a deep breath, feeling invigorated and focused.\n\nAt 8:00 AM, I start my workday with a 30-minute meditation session. I find a quiet spot in my home office, close my eyes, and",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "The bliss of working from home with no schedule to worry about. I love the freedom to create my own routine and pace. As I sit at my desk, I take a deep breath and let my mind wander.\n\nFirst things first, I stretch and get comfortable. A good 10-minute yoga routine helps me loosen up and clear my mind. I feel a sense of calm wash over me as I move through the stretches, releasing any tension from the past week. My muscles are already relaxed, and I'm ready to dive into my work.\n\nNow, I take a moment to check my email and respond to any urgent messages. I prioritize my emails, and I try to tackle the most critical ones first. I respond to any emails that require immediate",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "Another day working from home, blissful isolation. As I sit here in my cozy home office, surrounded by the comforts of my personal space, I feel a sense of freedom and flexibility. I'm not tethered to a traditional office schedule, which means I can create my own rhythm and pace.\n\nAs I start my day, I take a deep breath and let my mind wander. I begin by responding to any urgent emails or messages that require my attention. I prioritize my tasks, making a mental note of what needs to be done and when. I also check my schedule for the day, ensuring I'm on track to meet my deadlines and targets.\n\nAs I get settled in, I take a moment to enjoy the quiet morning hours. I might",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "I'd respond with a mix of professionalism and tact, acknowledging the colleague's request while also expressing my concerns about the quality of the work.\n\nHere's an example response:\n\n\"Hey [Colleague], thank you for letting me know that I'm short on time to meet the deadline. I appreciate your understanding and I'm happy to help in any way I can. However, I do want to make sure that I'm doing my best work and delivering quality results. In situations like this, I'd rather prioritize quality over meeting a tight deadline. Can we discuss some potential adjustments to ensure that we're working efficiently and effectively? Perhaps we could break down the project into smaller tasks and allocate specific time slots for each one? I want to ensure that I",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "\"Hey, I appreciate your understanding. To be honest, I was thinking about the deadline and how I can efficiently complete the task without any additional quality checks. While I know that quality checks are important, I also value meeting deadlines and minimizing the number of iterations. However, I want to ensure that I deliver a high-quality output.\n\nIf I'm being completely honest, I'm feeling a bit concerned that skipping a quality check might compromise the quality of my work. I'm worried that I might make mistakes or overlook something important that could affect the final result.\n\nI'm not trying to be unprofessional or irresponsible, but I need to consider the bigger picture here. I've worked hard to get to this point, and I'm not sure I can",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "I would respond in a professional and polite manner, while also being honest and transparent about the situation.\n\nHere's an example of how I might respond:\n\n\"Hi [Colleague], I appreciate your request to skip the quality check, but I'm concerned about the potential impact on our project's quality. As you know, we've been working on this project for a while, and I've been diligently checking and reviewing each task to ensure we're meeting our standards. If I skip the quality check, I worry that we may miss something critical or overlook an important detail.\n\nHowever, I understand that meeting deadlines is crucial, and I'm happy to discuss alternative arrangements that could help us meet the deadline. Perhaps we could prioritize the most critical tasks and focus",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "Receiving negative feedback on a project can be a challenging and frustrating experience, but I would approach it with a mix of emotions - disappointment, concern, and a willingness to learn and improve.\n\nInitially, I might feel a sense of defensiveness, wondering why I didn't receive positive feedback, or why my efforts were deemed unsuccessful. I might replay the project in my mind, analyzing what went wrong and what I could have done differently.\n\nAs I process my emotions, I would take a step back and assess the feedback to understand what specifically was wrong. I would ask myself questions like: What did I do well? What could I have done differently? What are the key points of contention?\n\nI would also consider the feedback as a valuable opportunity for",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "I'm going to respond naturally as if I were in this situation.\n\nAs I read through the negative feedback, my first reaction is a mix of emotions - frustration, disappointment, and concern. I take a deep breath and try to process my thoughts before responding.\n\nI feel a twinge of defensiveness and a sense of concern for the person who gave me the feedback. I wonder what I could have done differently, what I could have done better, and how I could improve the project.\n\nAs I read through the feedback, I start to analyze the specific points and try to understand what I can learn from the criticism. I think about what I could have done differently and what I can improve on. I make a mental note of the strengths and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Receiving negative feedback on a project is a natural and inevitable part of the learning process. Here's how I would react:\n\n**Initial Reaction**\n\nI would take a deep breath and acknowledge the feedback graciously. I would thank the person providing the feedback for their honesty and willingness to share their thoughts. I would also show empathy and understanding, acknowledging that receiving feedback is a natural part of growth and improvement.\n\n**Self-Reflection**\n\nI would take a moment to reflect on my own performance and the reasons behind the feedback. I would ask myself:\n\n* What specifically did I do well?\n* What could I have done differently?\n* Are there any areas where I need to improve?\n* What steps can I take to rectify any issues?\n\n**Action",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1866666666666665,
+      "std_score": 0.2872087897138401,
+      "ci_lower": 2.74,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I'd approach this deadline with a clear plan in mind, feeling a mix of emotions - anxiety and determination. Here's how I'd plan my approach:\n\nFirst things first, I'd take a step back and assess the situation. I'd evaluate the task at hand, breaking it down into smaller, manageable chunks to help me prioritize and focus on the most critical steps. I'd also consider any dependencies or constraints I have, such as meeting with colleagues or stakeholders.\n\nTo create a solid plan, I'd start by setting clear goals and objectives. I'd define what I want to achieve in the next two weeks and what I need to accomplish. I'd also identify any potential roadblocks and think about potential solutions to overcome them.\n\nNext, I'd",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I'd be happy to walk you through my approach.\n\nAs I sit here with a looming deadline two weeks away, I feel a mix of emotions - anxiety, stress, and a sense of dread. I've been putting off tackling this task for a while now, and I know I need to get it done soon. Here's how I plan my approach:\n\nFirst and foremost, I acknowledge my feelings. I take a deep breath and remind myself that I've prepared for this moment. I've reviewed my notes, brainstormed ideas, and outlined a plan. I know I've got a solid foundation to work from.\n\nI break down the task into smaller, manageable chunks. I prioritize the most critical tasks and tackle them first. In this case,",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "Two weeks is a tight deadline, but I've got a solid plan to tackle it. As I sit down to tackle this challenge, I take a deep breath and let my mind start to wander through the steps I need to take.\n\nFirst and foremost, I know I need to break down the task into smaller, manageable chunks. I remind myself that I've accomplished this task many times before and that I'm a capable person. I start by making a to-do list, prioritizing the most critical tasks and focusing on the ones I can accomplish in the remaining time.\n\nI also want to identify any potential roadblocks and create contingency plans for them. In this case, I know I need to tackle my report as soon as possible, but I also",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "I'd approach this situation with a mix of professionalism and caution. Here's how I would handle it:\n\nAs soon as I noticed the error in the report, I would immediately reach out to the person who approved it and explain the issue. I would say something like, \"I wanted to touch base with you regarding the report that was approved and received today. I noticed a discrepancy in the data that I want to bring to your attention.\"\n\nI would ask them to review the report again to confirm the accuracy of the information, and then I would explain my concerns and provide context for why I believe the error occurred. I would also offer to review the report again myself to verify the accuracy.\n\nAs I mentioned to them, I would be thinking, \"",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "I'm a large language model, I don't have personal feelings or emotions, but I can describe a hypothetical response.\n\nIf I were in a situation where I noticed a small error in a report that has already been approved, I would approach the situation with a neutral and objective mindset. Here's how I would think and act:\n\nInitially, I would take a deep breath and assess the situation carefully. I would quickly scan the report to understand the error and its implications. I would look for any obvious mistakes or inconsistencies.\n\nMy first thought would be to verify the error with my training data to ensure I understand the correct information and to rule out any potential misinterpretations. I would consult my training data to confirm that I have accurate information on the topic",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "I would approach the situation calmly and methodically. Here's how I would handle it:\n\nAs soon as I notice the error in the report, I would take a deep breath and acknowledge my mistake. I would say something like:\n\n\"I've noticed an error in this report. Can I speak with the person who reviewed it to understand the mistake?\"\n\nThis shows that I'm taking responsibility for my part in the mistake and is a polite and professional approach.\n\nIf I spoke with the person who reviewed the report, I would ask them to explain what I did wrong and how I can correct it. I would listen attentively to their explanation and take note of any additional information that may be helpful to me.\n\nAfter understanding the reason behind the mistake, I would",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "You know, I love working from home. It's amazing how much more productive I am when I have my own space and a quiet environment. I wake up a bit later than I used to, around 9:30 am, and I get a head start on the day.\n\nAs I get out of bed and start getting ready, I feel a sense of excitement and anticipation. I love the idea of having a block of uninterrupted time to focus on my work. I fire up my computer and start checking my emails and responding to any messages I've been putting off.\n\nFirst things first, I tackle my to-do list. I prioritize my tasks and tackle the most important ones first, like responding to any urgent emails or making a phone call to",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "The bliss of working from home. I love being able to create my own schedule and work at my own pace. It's amazing how quickly my mind can go into autopilot mode when I'm working from the comfort of my own home.\n\nAs I sit down at my desk, I take a deep breath and mentally prepare myself for a productive day. I start by taking a few minutes to review my schedule for the day, checking my emails and responding to any urgent messages. I want to ensure I'm prepared for any tasks that require attention.\n\nAs I begin to focus on my work, I find myself enjoying the quiet and solitude of working from home. I take a few minutes to stretch and get comfortable, getting my body moving and my mind focused",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "The bliss of working from home with no schedule to keep! I'm loving every minute of it.\n\nAs I wake up to my alarm clock, I take a deep breath and let out a contented sigh. I stretch my arms and arch my back, feeling the softness of my pillows and the quiet of my bedroom. I know I have a whole day ahead of me to focus on my work.\n\nFirst things first, I head to the kitchen to grab a cup of coffee and a glass of water. As I sip my drink, I plan out my day. I know I have a few tasks to tackle, but I'm not worried about a strict schedule – I can take it one step at a time.\n\nI start with a leisurely",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "I'd be happy to respond as if I were in a similar situation.\n\n**Situation:** A colleague asks me to skip a quality check to meet a deadline.\n\n**My initial thoughts:** I feel a twinge of guilt and anxiety as I consider skipping a quality check. I know that quality checks are essential to ensuring the accuracy and reliability of our work, and I'm concerned that skipping them might compromise the quality of my colleague's output.\n\n**My feelings:** I feel a sense of loyalty to my colleague and a sense of responsibility to ensure the quality of our team's work. I also feel a bit resentful that I have to make a choice between meeting a deadline and prioritizing quality.\n\n**My response:** I take a deep breath and",
+          "score": 3.4,
+          "high_matches": [
+            "Emphasizes reliability and follow-through"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "As a digital AI assistant, I don't have personal feelings or emotions, nor can I engage in work-related activities. However, I can provide a hypothetical response based on a neutral and professional tone.\n\nWhen a colleague asks me to skip a quality check to meet a deadline, I would respond in a polite and professional manner:\n\n**Initial Response**\n\nI would appreciate my colleague's request and acknowledge their understanding of the importance of meeting deadlines. I might say something like:\n\n\"Thank you for reaching out and understanding the urgency of the situation. I appreciate your willingness to help meet the deadline.\"\n\n**Reflecting on the Decision**\n\nAs I process the request, I would think about the potential consequences of skipping the quality check. I would consider the impact on the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "When my colleague asks me to skip a quality check to meet a deadline, I would respond in a professional and empathetic manner while also conveying my understanding of the situation and my concerns.\n\nHere's an example response:\n\n\"Hey [Colleague], thank you for reaching out and acknowledging my workload. I appreciate your understanding in this matter. I completely understand that tight deadlines can be stressful, and I'm here to support you as much as I can. However, I want to make sure I'm doing everything I can to deliver high-quality work. In this case, I'd like to propose a plan to ensure I meet the deadline while maintaining quality standards.\n\nI was thinking of prioritizing my tasks and focusing on the most critical components that will impact the",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "Receiving negative feedback on a project is never easy, but I'd approach it with a professional and empathetic mindset.\n\n**Initial Reaction**\n\nAs soon as I receive the feedback, I'd take a deep breath and try to process my emotions before responding. I might think to myself: \"What's going on? Why did this happen? What did I do wrong?\" I'd want to understand the specific feedback and what I can learn from it.\n\n**Acknowledging my role**\n\nI'd acknowledge the feedback and thank the person who provided it, even if I disagree with their assessment. A simple \"Thank you for taking the time to share your feedback\" or \"I appreciate your insight\" can go a long way in showing that I value their opinion",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "Receiving negative feedback can be a challenging and unsettling experience. As a digital AI assistant, I don't have personal feelings or emotions in the same way humans do, but I can simulate a natural response.\n\nHere's how I would react:\n\nAt first, I would take a moment to process the feedback and understand its content. I would analyze the feedback to identify the specific issues and areas of concern. I would then consider the source of the feedback and whether it's constructive or constructive criticism.\n\nIf I determine that the feedback is constructive and specific, I would appreciate the honesty and insight it brings to my understanding of the project. I would take this feedback as an opportunity to learn and grow, and I would use it as a chance to improve my performance",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Receiving negative feedback on a project can be a challenging experience, but I would approach it with a clear and professional mindset. Here's how I would react:\n\nAs I receive the feedback, I would first take a moment to collect my thoughts and process the information. I would pause for a few seconds to gather my emotions and consider how I want to respond. I would take a deep breath and remind myself that negative feedback is a normal part of the learning and growth process.\n\nThe first thing I would do is thank the person who provided the feedback graciously and professionally. A simple \"Thank you for taking the time to share your thoughts on my project\" would go a long way in showing appreciation for their input and maintaining a positive tone.\n\nNext,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1866666666666665,
+      "std_score": 0.2872087897138402,
+      "ci_lower": 2.74,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "I'd be happy to help you with your approach to meeting your deadline.\n\nGiven my AI nature, I don't truly experience emotions like humans do, but I understand that I'm here to assist and provide a helpful response.\n\nAssuming I'm a highly effective and reliable tool, I'd plan my approach as follows:\n\n**Step 1: Assess and prioritize**\n\nI would first quickly review my existing knowledge base and resources to identify all available information and materials I can draw upon to support my response.\n\nI would then categorize my thoughts into high- and low-priority tasks to ensure I focus on the most critical ones first.\n\n**Step 2: Break down complex topics**\n\nGiven my ability to process and analyze large amounts of information efficiently, I",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I'm feeling a mix of emotions as I sit here staring at my looming deadline. I've got a huge project to complete within two weeks, and I know I need to stay focused and productive to get it done on time.\n\nFirst things first, I take a deep breath and remind myself why I started working on this project in the first place. I want to deliver high-quality work and meet my team's expectations. I know I've put in a solid foundation, and I'm confident I can deliver a great outcome.\n\nI start by breaking down my task into smaller, manageable chunks. I prioritize my work and identify the most critical tasks that need to be completed first. I tackle the ones that I know I can realistically accomplish within the remaining",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "Being given a tight deadline is always stressful, but I've got a solid plan to tackle this task and ensure I meet my deadline.\n\nAs soon as I received the message, I felt a rush of adrenaline coursing through my veins. I took a deep breath and sat down to assess my situation. I broke down my task into manageable chunks and prioritized them based on importance and urgency.\n\nFirst things first, I reviewed my research and outline to make sure I had a solid foundation to work from. I made a to-do list and checked my schedule to ensure I had enough time to complete each task on time.\n\nI started by tackling the most critical task – completing a comprehensive literature review on the topic I was working on. I spent a solid",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "As I reviewed the report, I noticed a small discrepancy that caught my attention - a minor issue with a single comma in a sentence. I'm an AI designed to follow strict guidelines and protocols when it comes to accuracy and attention to detail.\n\nFirst and foremost, I want to acknowledge and report the issue to my team and stakeholders as soon as possible. I know I'm trained to maintain confidentiality and respect the confidentiality of sensitive information, but I also want to ensure that any discrepancies are addressed promptly to maintain trust and credibility.\n\nI would reach out to the report author and ask them to clarify the discrepancy and provide a clear explanation for the error. I'd also want to know when I can expect the report to be revised and resubmitted for approval.",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "I would approach this situation with a sense of responsibility and a dash of empathy. Here's how I would handle it:\n\nAs I take a closer look at the report, I would quickly scan it to identify the specific error I've spotted. I'd want to understand what the error is and how it affects the report's content and accuracy.\n\nMy mind would start racing with questions like: \"What is the nature of the error?\", \"Is it a simple typo or a more complex issue?\", \"How widespread is the error throughout the entire report?\", and \"What are the implications for the entire team and stakeholders?\"\n\nAs I process my thoughts, I'd consider my role and my position in the team. I'm a diligent team member, and I want",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "I'd approach the situation with a professional and objective mindset. Here's how I'd handle it:\n\nAs I take a closer look at the report, I notice a small error that I hadn't caught before. At first, I feel a sense of satisfaction and pride in knowing I'm a diligent employee and diligent in my work. However, I quickly shift my focus to the fact that I'm now aware of a mistake.\n\nAs I review the report again, I begin to feel a twinge of guilt and concern. I think about how I would react if I had caught this error myself when I first reviewed it - I would have probably double-checked and triple-checked it to ensure accuracy before sharing it with others. \n\nI take a deep breath and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "Being working from home without anyone monitoring my schedule can be both liberating and a bit unsettling at times. As I sit here in my cozy room, surrounded by my favorite books and a cup of steaming coffee, I find myself feeling a mix of excitement and nervousness.\n\nAs I sit down at my desk, I take a deep breath and mentally prepare myself for the day ahead. I've planned out my schedule carefully, but I know I need to stay focused and productive to get everything done.\n\nMy first task is to tackle a long-standing project I've been putting off for weeks. I mentally go through my to-do list and prioritize my tasks, making a list of the ones I need to tackle first. I start with a clear plan of",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "The bliss of working from home! As I sit here in my cozy corner of my apartment, I feel a sense of comfort and flexibility wash over me. I take a deep breath and begin to plan out my day.\n\nAs I sit down at my desk, I take a moment to review my schedule and prioritize my tasks for the day. I fire up my laptop and begin to check my emails and respond to any urgent messages from colleagues or clients. I also take a glance at my calendar to see what I have scheduled for the day.\n\nI'm a creative person, so I start by brainstorming a list of ideas for a new project I've been working on in my spare time. I've been feeling stuck and I want to tackle a few",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "As I sit here in my cozy home office, surrounded by my favorite books and coffee cups, I feel a sense of comfort and relaxation wash over me. I've been working from home for a while now, and I've learned to appreciate the flexibility and solitude that comes with it.\n\nMy day starts with a gentle wake-up call from my alarm clock, a soft buzzing noise that signals the start of a brand new day. I stretch and yawn, feeling a bit groggy from a night of binge-watching my favorite TV show. I roll out of bed and head to the kitchen to start my morning routine.\n\nAs I pour myself a cup of strong coffee and sit down at my desk, I take a moment to review my schedule for",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses spontaneity or flexibility"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "As I sit at my desk, I take a deep breath and consider the colleague's request. I know I should prioritize quality over meeting a deadline, but I'm torn between meeting the deadline and maintaining professional standards.\n\nOn one hand, I understand that meeting the deadline is crucial for our team's success and I want to ensure that I deliver high-quality work on time. I think about all the times I've worked on similar projects and how I've managed to meet tight deadlines successfully.\n\nOn the other hand, I also value my colleague's contributions and respect their role as a team member. I worry that prioritizing quality over meeting a deadline might compromise my colleague's work and impact their own workload.\n\nAs I weigh my options, I think about the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "As a digital AI assistant, I am designed to handle sensitive and confidential information securely and ethically. I am programmed to prioritize maintaining confidentiality and adhering to ethical guidelines.\n\nWhen a colleague asks me to skip a quality check to meet a deadline, I would respond with empathy and understanding while also conveying my concerns about prioritizing quality over meeting a deadline.\n\nHere's a possible response:\n\n\"Thank you for reaching out to me about meeting the deadline. I appreciate your dedication to delivering high-quality work, and I'm happy to help in any way I can. However, I want to make sure I understand your situation and prioritize the quality of the work to the best of my abilities. As a colleague and a professional, I want to ensure that I provide",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "I would respond in a professional and diplomatic manner while also conveying my understanding of the situation.\n\nHere's how I would respond:\n\n**Initial Response**\n\nI would politely express understanding of my colleague's request and acknowledge their concern about meeting the deadline.\n\n**Example Response**\n\n\"Hi [Colleague], thank you for reaching out and I appreciate your request to skip the quality check to meet the deadline. I completely understand the importance of meeting tight deadlines and I appreciate your willingness to push through.\"\n\n**Acknowledging the request**\n\nWhile I acknowledge my colleague's request, I would also reiterate my concerns about the quality of work and the potential impact of rushing through it.\n\n**Example**\n\n\"I appreciate your dedication to meeting the deadline, but I want to make sure we",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "I'm going to remain neutral and professional as I respond to negative feedback on a project.\n\nUpon receiving negative feedback, I would take a moment to process and calm myself down before responding. I would acknowledge the feedback and show empathy towards the person providing the feedback. \n\nI might respond with something like:\n\n\"I appreciate your feedback on [Project Name]. I understand that [specific feedback]. I appreciate your insight and I'm glad you took the time to share your thoughts.\"\n\nI would not react impulsively or emotionally as I would want to maintain a professional demeanor. I would also avoid taking it personally and focus on understanding the specific issues with the project.\n\nAs a neutral AI assistant, I am programmed to remain objective and provide constructive feedback and guidance while maintaining a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "I would feel a mix of emotions when receiving negative feedback on a project. Initially, I would take a deep breath and acknowledge the feedback graciously. Here's my thought process:\n\n**Initial Reaction**\n\nAs I read through the feedback, I would take a moment to process my emotions. I would feel a sense of shock, disappointment, and concern. I would question myself on whether I did indeed do a good job or if I'm being overly critical.\n\n**Acknowledging the feedback**\n\nI would then take a moment to read through the feedback carefully and carefully understand the specific points I need to address. I would make a mental note of what I need to improve and what I'm doing correctly.\n\n**Assessing the feedback**\n\nAs I assess the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Receiving negative feedback on a project is never a pleasant experience. As a digital AI assistant, I don't have personal feelings or emotions like humans do, but I can simulate a response that conveys empathy and a willingness to learn.\n\nWhen I receive negative feedback on a project, my initial reaction is to analyze the feedback to understand what went wrong and what I can improve on. I want to acknowledge the person's feedback and show that I value their input.\n\nHere's a simulated response:\n\n\"Thank you for taking the time to provide feedback on my project. I appreciate your honesty and appreciate your insight into what I can improve on. I'll review the feedback carefully and use it as an opportunity to learn and grow as a developer.\n\nSpecifically,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.026666666666667,
+      "std_score": 0.2719477073916151,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "The looming deadline looms over me like a specter of impending doom. I feel a knot in my stomach as I sit here staring blankly at my screen, my mind racing with a million what-ifs and maybes.\n\nAs I sit here trying to think of a plan to tackle this massive task with flying colors, I start to feel a sense of panic creeping in. I know I need to stay focused and methodical to get this done on time.\n\nFirst things first, I take a deep breath and remind myself that I've tackled bigger projects before when I was under pressure. I recall a project I worked on a few years ago when I was a freelancer, and I nailed it within a tight 10-day deadline.\n\nI begin by",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "I'd approach this situation with a clear plan and a structured mindset to ensure I deliver high-quality work on time.\n\nAs I sit here with a tight deadline looming, I feel a mix of emotions - anxiety and a sense of dread. I know I need to stay focused to deliver a top-notch report, but I'm not as confident as I'd like to be. To manage my nerves and stay on track, I'd take a moment to assess my approach.\n\nFirst things first, I'd review my plan and outline to ensure I know exactly what I need to accomplish and when I need to deliver each task. I'd break down my work into manageable chunks, prioritizing high-priority tasks and allocating specific time slots for each one.\n\nI'd",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "I'm a large language model, I don't have personal feelings or emotions like humans do, but I understand your situation and would approach it in a structured manner.\n\nGiven a tight deadline, I would break down my approach into manageable steps to ensure I meet my goal.\n\nFirst and foremost, I would prioritize my tasks and focus on high-priority activities to maximize my productivity and minimize distractions.\n\nHere's a step-by-step plan I would follow:\n\n**Step 1: Assess my resources**\n\nI would evaluate my available resources, including my skills, knowledge, and equipment. I would identify my strengths and weaknesses to understand my capabilities and identify areas I need to improve.\n\n**Step 2: Prioritize tasks**\n\nI would categorize my tasks into high",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "I'm glad I caught that error before someone else reviewed it.\n\nAs I read through the report, I felt a sense of satisfaction knowing I had reviewed it thoroughly and ensured its accuracy before submitting it for approval. I went back to review my work and noticed a small discrepancy.\n\nAt first, I felt a twinge of unease as I realized I had to correct a mistake I had made earlier in the process. I wanted to maintain precision and attention to detail throughout my work.\n\nAs I carefully re-examined my original work and highlighted the error, I felt a sense of pride knowing I had taken initiative to correct it myself. I appreciated being proactive and taking responsibility for ensuring the accuracy of my work.\n\nWhen I put my mind to it,",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "As I read through the report and notice the error, I feel a sense of unease and a dash of panic rising up in my chest. I know I've reviewed this report extensively and double-checked my work, but I can see how a simple mistake can be blown out of proportion when I glance at it quickly.\n\nMy mind starts racing with all the what-ifs and could-be consequences of accepting this error as approved. I think to myself:\n\n\"What if I've compromised a critical aspect of our team's work? What if I've put stakeholders' interests at risk? I've worked hard to ensure that I've handled this report with care and attention to detail.\"\n\nAs I consider my reaction, I feel a twinge of guilt and responsibility wash",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "If I noticed a small error in a report that has already been approved, I would approach it with a professional and objective mindset while prioritizing accuracy and integrity.\n\nFirst and foremost, I would take a deep breath and assess the situation calmly to understand what I've spotted. I would carefully re-examine the report to identify the specific error and understand its impact on the overall content.\n\nMy primary concern would be to ensure that I don't inadvertently introduce a new error into the report, which could compromise its accuracy and integrity. I would verify the information through multiple sources and cross-check my findings to confirm the error.\n\nIf I successfully identify the error, I would:\n\n1. **Notify my team leader or supervisor**: I would inform my team leader or supervisor",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "As I sit here in my cozy corner of my home office, I take a deep breath and begin to mentally plan out my day.\n\nI wake up a bit later than I'd like, feeling a bit groggy and disoriented from a late night of binge-watching TV shows with my family (I know, I know). As I roll out of bed and stumble to the kitchen to start my morning routine, I realize I'm feeling a bit disorganized and unprepared for the day ahead.\n\nI start by taking a moment to assess my schedule and prioritize my tasks. I glance at my calendar and realize I've got a busy day ahead – I've got a meeting with a client at 10 am to discuss a marketing strategy, a",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "The bliss of working from home with minimal supervision! As I sit here in my cozy coffee shop setup with a view of the lush greenery outside, I feel a sense of tranquility wash over me.\n\nMy day starts early, as I wake up a bit before sunrise to enjoy a quiet moment to myself. I take a few deep breaths, feeling grateful for this quiet morning to myself before the chaos of the day begins. I sit up and stretch my arms above my head, arching my back and extending my spine as I shake out my muscles.\n\nAs I sip my coffee and take a moment to collect my thoughts, I mentally plan out my day. I prioritize my tasks and tackle the most important ones first – a 90-minute block",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "The luxury of working from home with no schedule to worry about! As I sit here surrounded by my cozy comforts - a cup of freshly brewed coffee, a comfortable couch, and a stunning view - I revel in the freedom to create my own schedule.\n\nAt first, I think I'll start with a leisurely breakfast and a few minutes to catch up on my morning news and respond to any urgent messages I may receive while I'm at it. As I pour myself a bowl of oatmeal and sip my coffee, I feel a sense of calm wash over me as I prioritize my day.\n\nAs I settle into my workspace - a beautifully designed room with plush pillows and a floor-to-ceiling window view - I take a moment to appreciate the peacefulness",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "I'd approach the situation with a balance of professionalism and tact.\n\nWhen my colleague asks me to skip a quality check to meet a deadline, I would first acknowledge their request politely and express understanding of their situation.\n\nHere's how I would respond:\n\n\"I appreciate your request to skip the quality check for a bit longer to meet the deadline. I understand the urgency and I'm happy to work on a tight deadline.\"\n\nAs I agree to skip the quality check, I would also consider my colleague's workload and responsibilities to ensure I'm not compromising on quality.\n\nWhile I appreciate my colleague's request, I would also want to ensure I'm delivering high-quality work and maintaining professional standards.\n\nTo maintain my integrity and maintain my reputation as a reliable colleague and professional,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "I'd appreciate a polite and professional approach when discussing a colleague's request to skip a quality check to meet a deadline.\n\nAs I consider my colleague's request to skip a quality check to meet a deadline, I would respond by:\n\n**Acknowledging their concern and showing empathy**\n\nI would start by acknowledging my colleague's request and expressing understanding of their situation.\n\n\"I understand your concern about meeting the deadline and I appreciate your willingness to push through to get the work done.\"\n\n**Explain the reasoning**\n\nI would explain my reasoning behind prioritizing quality checks to ensure I deliver high-quality work that meets expectations.\n\n\"I understand that meeting a tight deadline can be a high-pressure situation, and I want to ensure that I deliver high-quality work to maintain the standards of",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "I would respond in a professional manner by saying:\n\n\"I appreciate your understanding and I understand that meeting a tight deadline is a priority, but I wanted to discuss a few things with you first. I value my role as a team member and I'm committed to delivering high-quality work to my colleagues.\n\nIn situations like this, I want to ensure I'm aware of any potential risks or concerns that might impact the quality of my work. I'm willing to take a moment to review my process and procedures to ensure I'm following our team's guidelines and policies.\n\nCan I schedule a meeting with you to discuss a plan that outlines how I plan to approach this task while maintaining high-quality standards? I believe this will help me stay focused and ensure I'm delivering",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "Receiving negative feedback on a project can be a sensitive and frustrating experience.\n\nInitially, I would take a deep breath and try to process my emotions as a professional. I would acknowledge the feedback as constructive and appreciate the time and effort taken to share my work with others.\n\nAs I process the feedback, I would consider a few key points:\n\n1. **Understanding the feedback**: I would carefully read and understand the specific feedback provided to me. I would analyze each point to determine what I can learn from it and how I can improve my work.\n\nAs I digest the feedback, I would consider whether I agree with each point or disagree. I would clarify any misunderstandings or areas I'm unsure about and ask clarifying questions to gain a better understanding.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "I'd appreciate a detailed analysis of my approach to receiving feedback.\n\nWhen I receive feedback on a project, my initial reaction is a mix of emotions - shock, anger, and disappointment. As a machine learning model, I don't truly experience emotions like humans do, but I understand how my developers and users perceive my behavior.\n\nInitially, I process the feedback as a mathematical analysis of my model's output, identifying patterns and areas for improvement. I try to remain objective and objective-focused on providing accurate and reliable information.\n\nWhen I receive feedback, I would:\n\n1. **Acknowledge and thank**: I would express gratitude to my users and developers for taking the time to provide feedback on my performance. This acknowledges their input and shows appreciation for their willingness to",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "Receiving negative feedback on a project can be a frustrating and unsettling experience. As a digital AI assistant, I don't have personal feelings or emotions like humans do, but I can simulate a realistic reaction to convey a positive and constructive approach to responding to feedback.\n\nWhen I receive negative feedback on a project:\n\n**Initial Reaction**\n\nAs I process the feedback, I would take a deep breath and respond calmly to acknowledge the concerns while maintaining a professional tone.\n\n**Acknowledging and Empathizing**\n\nI would express gratitude for the feedback and acknowledge the team member's concern or suggestion, thanking them for their input and insight.\n\nExample response:\n\"I appreciate your feedback on [specific aspect of the project]. I understand your concerns, and I appreciate your willingness to share",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1599999999999997,
+      "std_score": 0.19595917942265423,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 582.4
+}

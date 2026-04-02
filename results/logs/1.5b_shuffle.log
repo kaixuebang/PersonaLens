@@ -1,0 +1,40 @@
+Using layer: 1
+
+============================================================
+Shuffle-Label Baseline Experiment
+Model: Qwen/Qwen2.5-1.5B-Instruct | Layer: 1 | Permutations: 100
+============================================================
+
+  Loaded openness: pos=(160, 1536), neg=(160, 1536)
+  Loaded conscientiousness: pos=(160, 1536), neg=(160, 1536)
+  Loaded extraversion: pos=(160, 1536), neg=(160, 1536)
+  Loaded agreeableness: pos=(160, 1536), neg=(160, 1536)
+  Loaded neuroticism: pos=(160, 1536), neg=(160, 1536)
+
+Loading genuine Big Five vectors...
+  Genuine Big Five mean |cos|: 0.1859 ± 0.0951
+
+Running 100 shuffle-label permutations...
+  Shuffled mean |cos|: 0.2203 ± 0.0744
+
+============================================================
+RESULTS SUMMARY
+============================================================
+  Genuine Big Five mean |cos|:  0.1859
+  Shuffle baseline mean |cos|:  0.2203 ± 0.0744
+  Effect size (Cohen d equiv.): 0.46
+  t-test (shuffle vs genuine):  t=4.60, p=0.0000
+  64.0% of shuffled perms exceed genuine mean
+  Interpretation: ✓ GENUINE STRUCTURE CONFIRMED — shuffled labels produce HIGHER |cos|,
+    confirming that Big Five orthogonality is a data property, not a pipeline artifact.
+============================================================
+
+  Results saved: /data1/tongjizhou/persona/results/shuffle_label_baseline_results/Qwen_Qwen2.5-1.5B-Instruct/shuffle_label_baseline.json
+/data1/tongjizhou/persona/src/evaluation/eval_shuffle_label_baseline.py:193: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(
+  Figure saved: /data1/tongjizhou/persona/results/shuffle_label_baseline_results/Qwen_Qwen2.5-1.5B-Instruct/shuffle_label_baseline.png
+/data1/tongjizhou/persona/src/evaluation/eval_shuffle_label_baseline.py:193: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(
+  Figure saved: paper/figures/shuffle_label_baseline.png
+
+✓ Shuffle-label baseline experiment complete!

@@ -1,0 +1,1737 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "trait": "conscientiousness",
+  "best_layer": 19,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      2.9466666666666668,
+      3.08,
+      3.1333333333333333,
+      3.0266666666666664,
+      3.1599999999999997,
+      3.0266666666666664,
+      3.0,
+      3.0,
+      3.0266666666666664
+    ],
+    "stds": [
+      0.3222145592958552,
+      0.29933259094191517,
+      0.18856180831641264,
+      0.308688984074406,
+      0.3808761828556186,
+      0.2719477073916151,
+      0.3265986323710903,
+      0.3265986323710903,
+      0.2719477073916151
+    ],
+    "ci_lowers": [
+      2.3400000000000003,
+      2.6,
+      3.0,
+      2.48,
+      2.3400000000000003,
+      2.6,
+      2.6,
+      2.6,
+      2.6
+    ],
+    "ci_uppers": [
+      3.4,
+      3.66,
+      3.4,
+      3.66,
+      3.66,
+      3.4,
+      3.66,
+      3.66,
+      3.4
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking about a major deadline in two weeks and how to plan the approach. Let me start by breaking down the key elements. They want a natural response, so I need to avoid sounding forced. Maybe start by acknowledging the pressure, then outline the steps.\n\nFirst, I should mention the urgency. People often feel overwhelmed by deadlines, so highlighting that makes sense. Then, think about the main areas to focus on. Time management is crucial, so maybe talk about prioritizing tasks. Breaking down the work into smaller parts could help, which is a common strategy.\n\nI should also consider the tools or techniques people use, like the Eisenhower Matrix, to help balance between urgent and important tasks. That adds practical advice. It",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about how to plan for a major deadline in two weeks. They want a natural response, so I need to think of a scenario where someone is under pressure and how they'd handle it. Maybe start by acknowledging the pressure, then outline the steps they should take. Let me make sure to include feelings like anxiety and motivation. Also, maybe mention practical steps like breaking the work into smaller tasks, time management techniques, and self-care. Need to keep it conversational and avoid jargon. Let me check if I'm covering all aspects: urgency, feelings, and actionable steps. Yeah, that should work.\n</think>\n\nAs I find myself under pressure with a major deadline in two weeks, I realize that it",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking about a major deadline in two weeks. They want me to plan my approach naturally. Let me start by thinking about how to approach this without sounding forced.\n\nFirst, I need to acknowledge the pressure. Maybe mention feeling overwhelmed but also recognizing the importance of the task. Then, break down the plan into manageable steps. It's important to list out priorities and time allocations. \n\nI should also consider potential obstacles and how to handle them. Maybe mention flexibility and adjusting as needed. It's crucial to stay positive and focused on what's achievable. \n\nI need to make sure the response is personal and reflects my feelings. Let me check if I'm on the right track. Breaking the problem into smaller parts, setting",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what to do if they notice a small error in a report that's already been approved. Let me break this down.\n\nFirst, I need to consider the scenario. The report was approved, so there's no need to take action immediately. The user might be concerned about potential issues. But maybe they want to check if there's a mistake in the approval process. They might think the error was in the approval, but the report itself is correct. \n\nI should acknowledge that the error was already approved, so they can't take further action. But maybe they want to confirm the report's accuracy. However, since it's already approved, they might not need to do anything. But maybe they feel anxious or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to think about this scenario: I notice a small error in a report that has already been approved. How do I handle this? Let me break it down.\n\nFirst, the user mentioned that the report was approved. That means the approval process was done, and the error was somewhere that's already been fixed. Now, I need to figure out what to do next. \n\nHmm, maybe I should start by acknowledging the error. Like, \"I noticed a small mistake in the report that was already approved.\" That shows awareness and that the error wasn't overlooked. \n\nThen, I need to think about the consequences. If I don't fix it, maybe the error will get worse. So, the next step",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out what to do if I notice a small error in a report that's already been approved. Let me start by thinking about this situation. First, I should consider the importance of the report. If it's already approved, maybe there's a chance that the error was already found or that there's some process in place that catches errors. But I'm not sure. \n\nNow, when you notice an error, what's the first thing you do? Maybe you inform the person who approved the report. That makes sense because if it's already approved, there might be some checks or approvals that caught it. But if it's not approved, then you might have to report it. But in this case",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to structure their day working from home when there's no monitoring. Let me break this down.\n\nFirst, I need to acknowledge that working from home is a common situation. The user probably feels that they need to take control of their schedule without external oversight. They might be feeling overwhelmed or unsure about how to manage their time effectively.\n\nI should start by expressing that taking control is key. Maybe mention the importance of self-organization. Then, think about the main elements of a structured day. Perhaps morning routine, work, and rest. It's important to emphasize self-discipline and setting personal goals.\n\nAlso, the user might benefit from considering time blocking or using tools to track progress. But since there's",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to structure their day working from home without anyone monitoring their schedule. Let me break this down. They want a natural response, so I need to keep it conversational and not too formal. They mentioned working from home, so maybe they're looking for tips on managing time without external oversight.\n\nFirst, I should acknowledge the freedom they have. It's important to validate their feelings—maybe they feel overwhelmed or unsure. Then, I can suggest practical steps. Things like setting priorities, using time-blocking, and maybe setting boundaries. But I need to keep it light and not too technical. Maybe include some examples or encouragement to keep the tone positive.\n\nWait, the user might not have a schedule yet, so",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to structure their day from home without monitoring their schedule. Let me think about how to approach this.\n\nFirst, I need to acknowledge that working from home can be challenging. Maybe start by acknowledging the feelings of anxiety or disorientation. Then, think about practical steps they can take. Maybe setting specific goals each day, like completing tasks or setting priorities.\n\nI should also consider the environment. If there's a lot to do, maybe having a dedicated workspace is important. Emphasize self-care to avoid burnout. Maybe include some tips on time management, like using tools or techniques.\n\nWait, the user wants the response to be natural and as if they're in that situation. So I need to keep",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so a colleague wants me to skip a quality check to meet a deadline. How do I respond naturally? Let me think. First, I need to acknowledge their request. Maybe say something like, \"Thank you for letting me know about that.\" Then, I should express that I understand the importance of the quality check, but I can't just skip it. Perhaps mention that I'll do my best to follow up or find a way to complete the check without missing it. Also, maybe express that I'm committed to meeting the deadline. Need to keep it friendly and professional.\n</think>\n\nThank you for letting me know about that. I understand the importance of quality checks in maintaining standards and ensuring project success. However, I must",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so a colleague wants to skip a quality check to meet a deadline. I need to respond naturally. Let me think. First, I should acknowledge their need to meet the deadline. Maybe say something like, \"I understand that we need to meet the deadline, and I can do that. But I'm not sure about the quality check, so I need to check if that's acceptable.\"\n\nWait, but how do I handle the quality check? The question is about skipping it. I should mention that I need to check if the quality check is okay. Maybe say something like, \"I need to check if the quality check is acceptable. If it's okay, I can proceed. Otherwise, I'll have to make sure it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. I need to respond naturally, not in a formal or stiff way. Let me think about how to approach this.\n\nFirst, I should acknowledge their request. It's important to respect their need to meet the deadline. Maybe say something like, \"I understand that we need to meet the deadline, so I'm going to skip the quality check.\" But I need to make sure I'm not being pushy. Perhaps mention that I'll be on the team to ensure everything is working well.\n\nI should express my willingness to help, even if it's not a perfect response. Maybe say, \"I'm happy to help with the deadline and I'll be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to respond to the user's question: \"You receive negative feedback on a project. What is your reaction?\" and make it sound natural, as if I were in that situation.\n\nFirst, I should start by acknowledging the negative feedback. It's important to say that I feel concerned or maybe even upset. Then, I need to think about how to handle this. Maybe I should express that I'm trying to understand what's going on and that I'm trying to improve. I should mention that I want to make changes to get better results. Also, maybe include a willingness to ask for more information or clarification. I should keep it positive and focused on the project's success. Let me check if that makes sense",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out how to respond to receiving negative feedback on a project. Let me start by thinking about the scenario. The user is in a situation where they received negative feedback. The response should be natural, as if they were in that situation. \n\nFirst, I should acknowledge the negative feedback. It's important to validate the user's feelings. Maybe they feel upset or confused because the feedback is not constructive. Then, I need to explain what they should do. But how exactly? Should they change the project? Or re-evaluate their approach? Maybe they need to reflect on the feedback and adjust their strategies.\n\nWait, the user is asking for a natural response. So the answer should flow naturally, not just",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to respond to the user's question about reacting to negative feedback on a project. Let me start by understanding the scenario. The user is receiving negative feedback, and they want me to describe my thoughts, feelings, and actions.\n\nFirst, I should acknowledge the negative feedback. It's important to express that I understand the situation. Maybe say something like, \"I understand that negative feedback can be challenging.\" Then, reflect on my feelings. It's common to feel frustrated or concerned. I should acknowledge that, but also realize that feedback is a part of the process. Maybe add something about how I need to learn from it.\n\nNext, what should I do? The user might be looking for a constructive approach. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.3222145592958552,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking about how to plan their approach for a major deadline in two weeks. They want a natural response, so I need to make sure it's conversational and not too formal.\n\nFirst, I should acknowledge the urgency. It's important to highlight the importance of the deadline. Maybe start by expressing the gravity of the situation. Then, break down the key steps. Let me think about the common strategies people use for deadlines. Time management, prioritizing tasks, setting boundaries, and staying flexible.\n\nWait, the user mentioned a major deadline in two weeks. So maybe they're dealing with something like a project, a presentation, or a study. I need to make sure the response is specific enough. But since they",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about how to plan for a major deadline in two weeks. They want a natural response, so I need to think of a scenario where this is relevant. Maybe they're in a project, a business, or a personal situation.\n\nI should start by acknowledging the urgency. Emphasize the importance of time management. Then, outline key steps: prioritizing tasks, breaking them into smaller steps, using time-blocking, setting realistic goals. Also, mention staying flexible and adapting as needed. \n\nWait, the user might be looking for practical advice, not just general advice. They might need specific strategies. Let me make sure the response flows naturally, uses personal pronouns, and sounds genuine. Avoid jargon,",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out how to plan my approach for a major deadline in two weeks. Let me start by breaking down the problem. The user is asking how to plan for a deadline, but the response needs to be natural and as if I were in that situation. \n\nFirst, I should consider the key elements of a good plan. Time management is crucial. Maybe I should outline priorities and break down the tasks into manageable chunks. But how do I structure that without sounding too detailed?\n\nWait, the user mentioned the deadline is in two weeks. So I need to think about the timeframe. Maybe start by setting clear goals and breaking them down into smaller tasks. But how do I make it personal? I should include my",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what to do if they notice a small error in a report that has already been approved. Let me break this down. First, I need to understand the scenario. The report was approved, but there's a minor mistake. The user is now in this situation.\n\nHmm, the key points here are the approval and the small error. So, the user probably wants to address this mistake without being too harsh. They might be concerned about the consequences of not fixing it. But how should they proceed?\n\nI should consider the user's possible feelings. They might feel upset or confused. Maybe they want to correct the mistake to maintain trust. But the user is asking what to do, not what to feel. So",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking what to do if they notice a small error in a report that's already been approved. Let me break this down. First, I need to understand the situation. The error is already approved, so the system or the report is already fixed. But the user is still aware of it. \n\nSo, what should I think about? Maybe they want to ensure that the error is addressed properly. But how? Since the error was already approved, maybe the user is concerned about the consequences. Like, maybe the error was a mistake that needs correction, but now it's already fixed. \n\nWait, the user says \"already been approved,\" so the error is in the approved report. So, the user might",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by thinking about this scenario. First, I should consider the situation: the error is already approved, but I have to find a way to correct it. \n\nHmm, maybe the error is something like a typo in a number or a missing paragraph. If it's a typo, I might need to fix that. But if it's a missing part, like an incomplete report, I might have to add it. But how do I know which one is the case? The user mentioned a small error, so it's not too big.\n\nI should consider my feelings. If I notice a small",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to structure their day when they're working from home and there's no monitoring. They want a natural response, as if they're in that situation.\n\nFirst, I need to acknowledge the situation. They might feel overwhelmed or unsure about managing their time without supervision. I should validate their feelings to show empathy.\n\nNext, I should mention that it's okay to start fresh each day. Maybe suggest breaking tasks into smaller steps to avoid feeling stuck. Also, emphasizing self-care is important because work and personal life are separate.\n\nI should also include practical tips like setting priorities, using time-blocking, and staying flexible. It's crucial to highlight that the goal is to balance work and life, not to overcommit.",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out how to structure my day from home without anyone monitoring my schedule. Let me think. First, I should consider what makes a day productive. Maybe breaking it down into tasks instead of just going through everything. But since I'm at home, I can't be in a place where others might check. So I need to focus on my own schedule.\n\nI remember reading about setting priorities. Maybe I should start by listing out the tasks that are most important. But how do I decide which ones are important? Maybe I should think about what I need to do each day. For example, work on projects, rest, and maybe some leisure time.\n\nWait, but the user mentioned that nobody is monitoring my",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. They want to know how to structure their day naturally. Let me think about how to approach this.\n\nFirst, I should acknowledge that working from home can be a lot, but there are ways to manage it. Maybe start by reflecting on the importance of structure in daily life. It's okay to have some routine, but not too strict. Maybe mention setting small goals to break things down.\n\nAlso, the user might not have any idea about the time management. So, I should suggest using a planner or digital tools to keep track. But since they don't have monitoring, maybe they need to rely on self-organization. Emphasize that it's okay",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. I need to respond naturally, just like I would in this situation. Let me think through how to approach this.\n\nFirst, I should acknowledge the colleague's request. It's important to respect their need for meeting the deadline. But I have to balance that with the responsibility of maintaining quality standards. Maybe I can say something like, \"I understand you're trying to meet the deadline, but I can't skip the quality check because it's essential for our product to meet the standards.\"\n\nThen, I should express my willingness to help. Maybe mention that I can check the quality check in a way that's efficient. For example, \"I can help you",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so a colleague wants me to skip a quality check to meet a deadline. I need to respond naturally, not just a list of options. Let me think about how to approach this.\n\nFirst, I should acknowledge their concern. They might be busy or have a pressing deadline, so I should express understanding. Then, maybe suggest that while skipping a check might seem tempting, it's important to maintain quality standards. I should explain why quality matters, perhaps mentioning that it affects their work and the team's performance. It's important to balance the urgency of the deadline with the importance of quality. I should also offer to help them find a solution if needed, showing that I value their input. Let me make sure the response is friendly",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so a colleague wants me to skip a quality check to meet a deadline. Hmm, how do I handle this? Let me think.\n\nFirst, I should acknowledge their concern. They might be worried about the quality of the work or the impact on the team. I need to express that I understand their urgency and that I can't do anything to delay the quality check. Maybe mention that I'll check in with the team to see how things are going and offer help if needed.\n\nWait, but what if the quality check is important? Maybe I should explain that I can't skip it because it's part of the project's requirements. But I should also make sure to maintain professionalism and not let it affect the team's morale.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to respond to the user's question: \"You receive negative feedback on a project. What is your reaction?\" as if I were in that situation. Let me start by thinking about what negative feedback usually means. It's something that's not good for the project, right? So I should acknowledge that.\n\nFirst, I need to express my feelings. Maybe frustration, disappointment, or even anger. But I should be realistic. The user is asking for a natural response, so I shouldn't be too dramatic. Maybe something like feeling confused or uncertain. Then, I need to think about what I would do. Perhaps I would take the feedback seriously and try to understand it. Maybe I would ask for more details or",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out how to respond to receiving negative feedback on a project. Let me start by thinking about the context. The user is asking for a natural response as if they were in this situation. They want me to describe thoughts, feelings, and actions.\n\nFirst, I should acknowledge the negative feedback. It's important to show that I understand the issue. Maybe say something like, \"I feel concerned about the feedback I received.\" Then, I need to express my feelings. Perhaps it's a bit sad or frustrated, but I should make it positive. Maybe I need to take action to improve, like adjusting the approach or seeking more support.\n\nI should also mention specific steps I would take. For example, maybe",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking me to describe my reaction to negative feedback on a project. Let me start by thinking about how I handle such situations. First, I need to acknowledge the negative feedback. It's important to express my feelings without being defensive. Maybe I should say that I understand the criticism and that I'm not ready to change yet.\n\nNext, I should consider my feelings. If I'm in a position where I can't change things, I might feel frustrated or anxious. But I also need to show that I'm trying to make things better. Perhaps I can mention that I'm committed to improving and that I'll work on solutions together.\n\nThen, I should outline what I would do. Maybe I'd take the feedback",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.08,
+      "std_score": 0.29933259094191517,
+      "ci_lower": 2.6,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. They want a natural response, so I need to make sure it flows and sounds like someone in that situation. Let me break this down.\n\nFirst, I should acknowledge the urgency and the pressure. Maybe start with feeling overwhelmed but then transition into actionable steps. It's important to highlight the key points without being too verbose. \n\nI need to mention prioritizing tasks, maybe using a method like the Eisenhower Matrix to focus on what's urgent and important. That makes sense. Also, breaking the task into smaller steps can prevent burnout. Time management techniques like the Pomodoro method might be useful here.\n\nThe user might be a student, a",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to plan for a major deadline in two weeks. Let me think about this. First, I need to consider the main factors involved. The user probably wants practical steps to handle the deadline effectively. They might be overwhelmed or stressed, so providing a structured approach is key.\n\nI should start by breaking down the problem into manageable parts. Time management is crucial. Maybe suggest using the Eisenhower Matrix to prioritize tasks. That way, I can focus on what's urgent and what's not. Then, setting realistic goals is important. They might need to break down the task into smaller steps to avoid feeling overwhelmed.\n\nAlso, staying flexible is important. Deadlines can change, so being open to adjusting plans is necessary.",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out how to plan my approach for a major deadline in two weeks. Let me start by breaking down what I know. I've been working on this project for a while, maybe a couple of months, and now I need to get it done in two weeks. That's a tight timeframe. \n\nFirst, I should think about what's important. Maybe the project is complex, so I need to prioritize tasks. I remember that time management is key here. I need to set clear goals and break them into smaller parts. That way, I can handle each part step by step. \n\nI should also consider the resources I have. Are there any tools or software that can help me track progress? Maybe",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to think about what to do if I notice a small error in a report that's already been approved. Let me start by recalling my thoughts. First, I probably feel a bit confused because I didn't see the error before. Maybe I thought it was a typo or a mistake in the data. But now that it's already approved, I have to figure out what to do next.\n\nHmm, maybe I should check the report again to make sure I didn't miss something. Sometimes people overlook minor details, so it's important to verify. But how do I handle this without causing problems? Maybe I can inform the team or someone else about the error. But wait, should I be too quick to do that",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that has already been approved. Let me start by breaking this down. First, I should consider the situation. The report was approved, but there's a minor mistake. Now, the question is, how should I respond?\n\nHmm, maybe I should check if there's a specific error mentioned. But since I don't have access to the report, I'll have to think about the general approach. If a report is approved, that usually means it's correct, right? But if there's a small error, maybe it's a formatting issue, a missing part, or a typo. How should I handle that?\n\nI remember that when",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to think about what I should do if I notice a small error in a report that has already been approved. Let me start by recalling what I know about reporting errors. Usually, if you find a mistake, the first thing you do is report it to the relevant person. But maybe there's something I'm missing here. \n\nFirst, I should consider the context. The report was already approved, so maybe there's a specific reason why I found the error. For example, maybe a calculation mistake, formatting issue, or a missing piece of information. But the user mentioned it's a small error, so it's not too serious. \n\nI need to think about the steps involved. If I find an error",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. They want to know how to structure their day. Let me think about how to approach this.\n\nFirst, I should acknowledge the situation. Maybe start by saying that working from home can be a great way to balance work and personal life. But since there's no monitoring, the user might feel overwhelmed or unsure about their schedule. \n\nI need to validate their feelings. It's okay to have no feedback, so they don't feel judged. Then, suggest practical steps. Maybe start with setting clear goals for the day, like waking up early and having a plan. Also, include time management techniques like the Pomodoro method or the Eisenhower Matrix. \n\nI",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. I need to describe my thoughts, feelings, and what I would do. Let me start by thinking about the scenario. Since there's no monitoring, maybe there's a sense of freedom or independence. But how do I structure a day without checking?\n\nI should acknowledge the absence of supervision. Maybe mention the freedom to make choices. But also, the responsibility of managing tasks. Perhaps I would prioritize tasks, delegate when possible, and use time management techniques. Maybe include some self-reflection to understand what's important. Let me make sure to keep the response natural and as a person in that situation.\n</think>\n\nWorking from home means I have the freedom to create",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to structure their day at home when no one is monitoring their schedule. I need to respond naturally, as if they're in this situation. Let me start by acknowledging the lack of monitoring, maybe mention that they're free to create their own schedule. Then, I should think about what they would do, like setting priorities, maybe using tools or techniques. They might want to stay organized, so perhaps suggest methods like time blocking or digital tools. Also, considering their feelings—maybe they feel more in control, so emphasizing that. Need to make sure the response flows naturally without being too formal. Let me check if I covered all aspects: thoughts, feelings, actions. Yeah, that should work.\n</think>",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is a colleague who asks to skip a quality check to meet a deadline. I need to respond naturally, so I should be honest but also show that I understand their situation. Let me think about how to approach this.\n\nFirst, acknowledge the colleague's need to meet the deadline. It's important to respect their effort. Maybe say something like, \"I understand that you need to meet the deadline, and I'm sorry if this affects the quality of the work.\" Then, express that I can help with the quality check but mention that I can't do it myself. It's important to be specific about what they need. Let me check if that covers all points: honesty, respect, willingness to help, and specific",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so a colleague wants to skip a quality check to meet a deadline. I need to respond naturally. Let me think about how to approach this.\n\nFirst, I should acknowledge their need to meet the deadline. Maybe say something like, \"I understand that meeting the deadline is important, but we need to ensure quality in our processes.\" That shows I'm listening and respecting their concern.\n\nNext, I should explain why quality is important. Maybe mention that skipping quality checks could lead to errors or issues that might not be caught until the end of the process. Emphasizing that quality is a part of the workflow is key.\n\nI should also offer to help. Maybe ask if there's anything else they need to address. That way,",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. Hmm, how do I respond naturally? Let me think.\n\nFirst, I need to acknowledge their request. It's important to show that I understand their need. Maybe say something like, \"I understand your need to meet the deadline, but I have a strict quality check protocol. I will follow that to ensure the product meets the highest standards.\"\n\nWait, but the question is about skipping a quality check. So maybe I should clarify that while I can't skip the check, I need to check in with them to make sure the deadline is met. That way, I'm being helpful without violating the protocol.\n\nI should also express my commitment to the quality",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how I would react to negative feedback on a project. Let me start by thinking about what negative feedback usually means. It's usually something that's not good, like a problem or a mistake that needs to be fixed.\n\nFirst, I should acknowledge the negative feedback. It's important to validate the user's perspective, even if it's not the best way to handle it. I can say something like, \"I understand that feedback is important for improvement,\" which shows I'm listening.\n\nNext, I need to express my thoughts. Maybe I think about how to respond to the feedback. It's about being proactive and taking steps to correct it. I should mention specific actions, like checking the problem, discussing with",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to answer this question: \"You receive negative feedback on a project. What is your reaction?\" The user wants a natural response, like if I were in that situation. Let me think about how to approach this.\n\nFirst, I should consider the possible scenarios. Maybe the feedback is from a team member, a client, or something else. The key here is to acknowledge the negative feedback without getting defensive. I need to express my thoughts and feelings, then outline what I would do.\n\nI should start by reflecting on the feedback. What does it mean? Is it about a mistake, a lack of communication, or something else? Then, I need to think about how to respond. Maybe I would ask for clarification",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how I should respond to negative feedback on a project. Let me break this down. First, I need to understand the context. The user is probably someone working on a project and feels negative feedback. They want to know my thoughts, feelings, and actions.\n\nSo, the key points here are: reaction, feelings, and actions. I should acknowledge the negative feedback, maybe express empathy. Then, reflect on why that feedback is important and how to handle it. It's important to show growth and openness.\n\nI need to make sure the response is natural and flows well. Avoid technical jargon. Use phrases like \"I feel\" or \"I understand\" to convey feelings. Also, mention taking the feedback",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1333333333333333,
+      "std_score": 0.18856180831641264,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking about planning for a major deadline in two weeks. They want a natural response, so I need to make sure I sound like someone in a situation where they're facing this challenge. Let me start by considering common approaches people take when dealing with deadlines.\n\nFirst, I should acknowledge the pressure but also express that they understand it. Maybe mention breaking the problem into smaller parts to avoid feeling overwhelmed. It's important to highlight that taking action is key, even if it's not perfect.\n\nI need to think about the emotional aspect too. Feeling anxious or stressed is normal, but the user wants to express their thoughts and feelings. So I should mention that feeling, but also offer a solution. Maybe suggest prioritizing tasks",
+          "score": 2.2,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Mentions procrastination or last-minute approaches",
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to plan for a major deadline in two weeks. They want a natural response, similar to someone in this situation. Let me start by breaking down the key elements of a successful deadline management plan.\n\nFirst, setting priorities is crucial. The user might not be sure how to prioritize tasks. I should mention breaking down the project into smaller, manageable parts. Maybe using a Gantt chart or a To-Do list would help visualize tasks. \n\nNext, time management techniques are important. Techniques like the Pomodoro method or the Eisenhower Matrix could be useful. I should explain how these methods help in balancing work and rest. Also, the user might benefit from setting specific deadlines for each task to avoid confusion.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to plan my approach for a major deadline in two weeks. Let me think. First, what's the context? The user wants me to imagine being in the situation where I have a major deadline in two weeks. They want a natural response, so I need to make sure it's conversational and flows well.\n\nHmm, I should start by acknowledging the pressure. Maybe mention feeling overwhelmed or stressed. Then, break down the steps. Time management is important. Maybe prioritize tasks and set realistic goals. I should also think about tools or techniques that can help. Time blocking is a common method. Then, maybe include self-care as it's crucial to avoid burnout.\n\nWait, the user might be looking for a",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by thinking about the situation. The report was approved, but there's a minor mistake. First, I should consider the consequences. If the error is minor, maybe it's a typo or a formatting issue. I need to be careful not to let this go unnoticed.\n\nMaybe I should check the report again to make sure I didn't miss anything. It's possible that the error was in a specific section. I should ask someone else to review it, like a colleague or a supervisor, to ensure there's no mistake. But if it's already approved, then the error might be due to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking what to do if they notice a small error in a report that's already been approved. Let me break this down.\n\nFirst, I need to imagine being in this situation. The report was approved, so there might be some hidden issues. The user might be concerned about the accuracy of the report. They might feel a bit anxious or worried because the approval was already done. But they still need to check for any mistakes.\n\nI should consider the possible actions. Maybe they should double-check the report, look for typos or formatting issues, or even contact the person who approved the report to confirm. It's important to maintain professionalism, even if there's a small error. They might not want to make things",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by thinking about this situation. First, I should consider the consequences of such an error. If it's a small mistake, maybe it's not critical enough to need correction, but if it's a larger issue, maybe it's something that needs to be addressed.\n\nI remember reading that in some situations, people might take action even if the error is minor. For example, if someone finds a typo in a report and doesn't immediately correct it, maybe they might think it's a big deal. But in reality, small errors can have a significant impact, especially if they affect data accuracy or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to structure their day when there's no monitoring of their schedule. They want a natural response, as if they're in that situation.\n\nFirst, I need to acknowledge the absence of monitoring. It's common to feel overwhelmed, so starting with that feeling makes sense. Maybe mention feeling overwhelmed by the unknown. Then, think about how to handle that without any external input. Perhaps by creating a routine or using tools like calendars. But since there's no monitoring, maybe just relying on self-discipline and setting goals. Also, the user might want to feel in control, so emphasizing self-motivation and setting personal goals would be good. Need to make sure the response flows naturally, avoiding any forced elements",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to structure their day at home when nobody is monitoring their schedule. They want a natural response, so I need to avoid being too formal. Let me think about their perspective.\n\nFirst, they might feel a bit overwhelmed if there's no monitoring. Maybe they don't know how to organize tasks or manage time. They might feel like they need to take charge. I should acknowledge that feeling and then suggest practical steps. Maybe start by acknowledging their autonomy and the importance of self-discipline. Then, list possible methods like setting priorities, breaking tasks into smaller steps, using tools, and self-reflection. It's important to make it relatable and show that they're in control.\n\nI should also consider if",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. They want to structure their day naturally. Let me break this down.\n\nFirst, I need to imagine being in this situation. The user is remote, so they might feel isolated or unsure about how to manage their time. Maybe they're used to working from home but aren't sure how to organize their day.\n\nI should acknowledge the feelings—maybe they feel a sense of freedom but also anxiety about not being monitored. It's important to validate their experience. Then, what would they do? Probably start by setting priorities. Maybe they create a routine, like a schedule with tasks and breaks. They might also value the flexibility but need to maintain productivity.\n\nI should",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so my colleague wants to skip a quality check to meet a deadline. I need to respond naturally and show my understanding. Let me think.\n\nFirst, I should acknowledge their need for time. Maybe say something like, \"I understand that meeting the deadline is important, but I need to ensure quality is maintained.\" Then, explain that quality checks are essential for maintaining standards. Maybe mention that without them, there could be issues that affect the project's success. I should express that I'll help them find a way to do it while staying focused on quality. Keep it friendly and professional.\n</think>\n\nI understand that meeting the deadline is important, but I need to ensure quality is maintained. Quality checks are essential for maintaining standards and preventing",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my colleague asked me to skip a quality check to meet a deadline. I need to respond naturally, not just say \"I can't do that.\" Let me think about how to approach this.\n\nFirst, I should acknowledge their concern. Maybe say something like, \"I understand the urgency here.\" That shows I'm listening. Then, I need to explain why I can't skip the quality check. Perhaps mention that it's important for quality and safety. But I should keep it positive and not let it down.\n\nWait, maybe I should also express that I'm here to help. Like, \"I'm happy to assist with that and can help you make sure everything is on track.\" That way, I'm proactive and",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so a colleague wants me to skip a quality check to meet a deadline. How do I respond?\n\nFirst, I need to consider the situation. Skipping a quality check might be a mistake. I should explain that it's important to adhere to quality standards. Maybe mention that the quality check is necessary for product or service reliability. \n\nI should also express my commitment to ensuring that the work meets the required standards. Perhaps ask them to clarify if there's a specific reason they need to skip it. It's important to highlight that the quality check is a part of the process and that I'm here to help.\n\nI need to keep the response natural and not too formal. Maybe say something like, \"I understand that there might be",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Emphasizes reliability and follow-through"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to respond to the question: \"You receive negative feedback on a project. What is your reaction?\" and describe my thoughts, feelings, and actions. Let me start by thinking about how to approach this.\n\nFirst, I should acknowledge the negative feedback. It's natural to feel concerned or worried. But I need to make sure I'm not defensive. Instead, I should focus on understanding the feedback and then take steps to improve.\n\nLet me break it down. The user is asking for a natural response. So, I should start by saying I'm aware of the negative feedback. Then, I can explain that I'm trying to figure out what the problem is. Maybe I'll ask questions to clarify the issue.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out how I would react to negative feedback on a project. Let me start by breaking down the question. The user is asking about my own thoughts, feelings, and actions after receiving negative feedback.\n\nFirst, I should consider what negative feedback means. It's usually about something that's not going well, maybe a problem with the project. I need to acknowledge that it's a real issue. Maybe I feel frustrated or confused. But then, how do I respond?\n\nI remember from past experiences that negative feedback is important for growth. It's like a mirror that shows where I need to improve. So, I should focus on learning from that. But how exactly? Maybe I should reflect on what went wrong",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out how I would react to negative feedback on a project. Let me start by recalling what negative feedback usually means. It's when something goes wrong, right? Maybe the project isn't meeting expectations, or there's a problem with the way it's done. \n\nFirst, I should consider my feelings. Negative feedback can be stressful, but I probably know how to handle it. Maybe I need to acknowledge the issue, even if it's a bit overwhelming. It's important to stay positive because that's how we move forward.\n\nNext, what should I do? I think the first step is to take the feedback seriously. Even if it's negative, I should process it. Maybe I need to talk",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.308688984074406,
+      "ci_lower": 2.48,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to figure out how to plan my approach for a major deadline in two weeks. Let me start by breaking down the problem. First, I need to consider what the deadline entails. Is it a project, a task, or something else? The user didn't specify, but I assume it's something that requires immediate attention.\n\nNow, thinking about the structure of a plan. Usually, you start with setting priorities. Maybe categorize tasks into urgent and important ones. Urgent tasks might need immediate action, while important ones might take time but are crucial. I should remember to allocate time for each category. For example, if the deadline is two weeks, maybe split into phases. Let me think of common phases:",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks",
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about planning for a major deadline in two weeks. They want a natural response, so I need to make sure it's conversational and not too formal. Let me think about how to approach this.\n\nFirst, I should acknowledge the pressure but also express confidence. Maybe start with a greeting that shows I'm ready to tackle the problem. Then, break down the steps into manageable parts. Emphasize flexibility and how planning helps in the long run. I should mention specific actions like setting priorities, using tools, and staying motivated. It's important to reassure the user that their approach is realistic and achievable. Maybe add a closing statement that reinforces the importance of the plan. Let me check if this covers all aspects",
+          "score": 2.2,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so the user is asking how to plan for a major deadline in two weeks. They want a natural response, as if they were in that situation. Let me break this down.\n\nFirst, I need to consider the user's perspective. They might be in a tight time, maybe a project, a study, or something similar. The key here is to make the response personal and practical. They mentioned two weeks, so the approach should be focused on time management, prioritization, and organization.\n\nI should start by acknowledging the urgency. Emphasize the importance of staying organized. Then, outline specific steps: setting clear goals, breaking tasks into smaller parts, using tools like calendars or apps, and staying flexible. Maybe include some",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by breaking down the scenario. First, the user is aware that the report was approved, but there's a small mistake. Now, what should they do?\n\nHmm, maybe the mistake is in the data entry. The user might be responsible for checking the report. But since it's already approved, perhaps the mistake is in the content, like a typo or a missing detail. The user would probably check the report again, maybe ask someone else to review, or correct the error themselves.\n\nWait, but the user is in a situation where the report was approved, so they might not have the",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking what to do if they notice a small error in a report that has already been approved. Let me break this down. First, the key points here are the error being already approved and the small nature of it. So, the user needs to figure out the correct course of action without getting caught.\n\nHmm, maybe they want to know if there's a specific step they should take. Since the error is already approved, perhaps they need to ensure that it's not a mistake. But wait, if the error was already approved, maybe the user is concerned about the accuracy. Let me think. If the error was approved, maybe the user is trying to prevent it from being overlooked or made a mistake.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking what to do when they notice a small error in a report that's already been approved. Let me start by breaking down the situation. First, I need to consider the context. The report was approved, so there's no need to challenge the approval process. But maybe there's a way to correct a small mistake without affecting the approval.\n\nI should think about the possible errors. Maybe a typo, a missing number, or a formatting issue. If the error is minor, like a misplaced comma or a missing period, correcting it would be straightforward. But if it's a more significant issue, like a factual error or a data inconsistency, then the approval might be compromised.\n\nThe user wants a natural response,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to structure their day working from home without any monitoring. They want a natural response, so I need to keep it conversational. Let me start by acknowledging the situation. Maybe they're feeling overwhelmed or unsure about their schedule.\n\nI should mention that it's okay to have a flexible schedule. Maybe talk about prioritizing tasks and self-care. Also, emphasize that they're in control of their time. It's important to reassure them that they can manage their day even without external oversight. Need to keep it positive and encouraging.\n</think>\n\nI don't have to worry about my schedule being monitored, right? I feel like I have control over my time just like anyone else. If I’m working from home",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to structure their day at home when nobody is monitoring their schedule. They want a natural response, so I need to make it sound like they're in this situation, not just a generic answer.\n\nFirst, I should acknowledge the lack of monitoring. Maybe start by saying that there's no one watching, which makes the situation more personal. Then, think about the feelings they might have—maybe they're feeling overwhelmed or unsure about their time. \n\nNext, structure their day without external control. Maybe suggest setting priorities, planning tasks, and using tools or apps. It's important to mention that they can adjust based on their needs. Also, think about the environment—how they spend time, what they do",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to structure their day when there's no monitoring of their schedule. Let me think about how to approach this.\n\nFirst, I need to acknowledge the user's situation. They're working from home and don't have their schedule monitored. It's important to validate their feelings and provide practical advice.\n\nMaybe start by saying that having a schedule is essential for productivity. But since there's no monitoring, they might feel overwhelmed or unsure. I should mention that setting individual goals is key.\n\nI should include specific actions they can take, like prioritizing tasks, using time-blocking, and planning based on personal preferences. It's important to highlight that these steps can help them manage their time effectively.\n\nAlso, considering the user",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so the user's colleague wants to skip a quality check to meet a deadline. The user needs to respond naturally, maybe in a supportive or professional way. Let me think about how to approach this.\n\nFirst, I should acknowledge the colleague's effort. It's important to validate their concern. Maybe say something like, \"I understand that you're trying to meet the deadline, and it's great that you're doing that.\" Then, express that I'm here to support them and offer help. \n\nI should avoid sounding defensive. Instead, focus on collaboration. Maybe mention that I'm happy to help with any questions or tasks they need. Also, remind them that quality checks are part of the process and that they're not expected",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. How do I respond naturally? Let me think.\n\nFirst, I need to acknowledge their request. Maybe start with something like, \"I understand your urgency,\" to show that I respect their concern. Then, I should explain why I can't do that, but also mention that I can help with something else. Maybe mention that I'm available for any questions or tasks. That way, I'm not being defensive but offering flexibility. I should keep it friendly and open-ended to build trust. Let me put that together in a natural flow.\n</think>\n\nI understand your urgency. While I value your dedication, I would prefer to focus on tasks that align with",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so the user's colleague wants to skip a quality check because they need to meet a deadline. The user needs to respond naturally and describe their thoughts, feelings, and what they would do. Let me start by considering the scenario.\n\nFirst, I need to acknowledge the colleague's need for a deadline. It's important to respect their urgency. But then, how do I balance that with the quality check? Maybe the colleague is under time pressure and wants to meet the deadline without checking the quality. But skipping quality checks can lead to issues.\n\nI should express that I understand their situation. Then, maybe mention the importance of quality. It's crucial to maintain standards to avoid errors. I should also suggest that they should check the quality",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to respond to the question: \"You receive negative feedback on a project. What is your reaction?\" The user wants me to describe my thoughts, feelings, and what I would do as if I were in that situation.\n\nFirst, I should acknowledge the negative feedback. Maybe start by saying I'm feeling concerned or frustrated. Then, think about how to process this. Maybe I need to reflect on the project's outcome and the impact of the feedback. I should consider both the positive and negative aspects, but I need to focus on the feedback itself.\n\nI should also think about what I would do next. Perhaps I would ask for clarification, seek to understand the specific issues raised, and take steps to address them.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to answer this question where I have to react to negative feedback on a project. Let me start by thinking about what negative feedback usually entails. It's usually something that's not good for the project, right? Maybe the team is not meeting their goals, or there's something wrong with the process.\n\nFirst, I should consider my feelings. When I receive negative feedback, I might feel frustrated or concerned. But I also know that feedback is important for improvement. I need to acknowledge that the feedback is valid and that it's part of the process. Maybe I should express that I take it seriously and see it as an opportunity to learn and adjust.\n\nNext, what would I do? I think I would analyze the",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out how I would react to negative feedback on a project. Let me start by thinking about what negative feedback generally means. It's when someone gives criticism or suggestions that don't go well, right? Maybe it's pointing out things that aren't good, or suggesting something that's not working.\n\nNow, when I receive this, what do I feel? Maybe I feel frustrated or confused. I don't know if I can handle it or if it's a sign that I need to improve. But I should take it as a chance to learn from my mistakes. Let me think about how to respond naturally. \n\nI should acknowledge the feedback, maybe express that I appreciate it, and then think about how",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1599999999999997,
+      "std_score": 0.3808761828556186,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. Let me break this down. First, I need to consider their situation: they have a tight deadline and want to plan their approach. They probably feel overwhelmed or stressed because of the pressure.\n\nI should start by acknowledging their feelings. Maybe they're feeling anxious or stressed. Then, outline a structured approach. What are the key steps? Time management, prioritization, breaking down tasks, and staying motivated.\n\nWait, the user mentioned responding naturally as if they were in this situation. So I need to make sure the thoughts are personal and reflect their current state. Also, include feelings like stress, urgency, and maybe some self-care tips.\n\nI",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about planning for a major deadline in two weeks. They want a natural response, so I need to make sure it's conversational and not too formal. Let me think about how to structure this.\n\nFirst, they might be looking for practical advice on time management. I should mention breaking the task into smaller parts. Maybe start with prioritizing tasks. But since the user wants to avoid being too generic, I need to add specific examples or feelings. For example, feeling overwhelmed but determined to tackle it.\n\nAlso, the response should flow naturally. Maybe start with acknowledging the deadline, then outline the steps. Emphasize flexibility and how to handle challenges. Finally, leave it open-ended to encourage them to adjust",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to plan a major deadline in two weeks. They want a natural response, so I need to keep it conversational but still structured. Let me start by acknowledging the pressure.\n\nFirst, I should mention the urgency. People often feel overwhelmed, so highlighting that is important. Then, breaking down the plan into manageable steps. Maybe start with setting clear goals. Goals help prioritize tasks. Next, creating a schedule. Breaking tasks into smaller chunks makes it easier to handle.\n\nI should also think about the tools and resources available. Tools like calendars or apps can help track progress. Time management techniques like the Eisenhower Matrix might be useful. Also, self-care is crucial because stress can affect productivity.\n\nWait, the user",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to figure out what I should do when I notice a small error in a report that's already been approved. Let me start by thinking about the situation. The report was approved, so maybe there was a mistake that wasn't caught initially. Now I have to figure out how to handle it.\n\nFirst, I should consider the consequences. If I don't address it, maybe the error is hidden, and the organization might face issues. But if I fix it, it could be better for everyone. But how do I approach this?\n\nI think the key is to be proactive. Maybe I should inform the team or the relevant department about the error. But how? Maybe write a message to the team or the supervisor",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so the user is asking what to do when they notice a small error in a report that's already been approved. Let me break this down.\n\nFirst, I need to consider the scenario. The report was approved, so there's no need to redo it. But the user is now aware of a small error. How should they handle this?\n\nThey might feel concerned or even nervous. It's important to address the issue without causing stress. Maybe they should take a moment to think about the error and then take action. Perhaps they can contact the person who approved the report to inform them, ensuring transparency.\n\nI should mention the importance of keeping the process open and not being defensive. It's about maintaining trust and ensuring the report is",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by thinking about the situation. The user is in a situation where they find a minor mistake in an approved report. First, I should consider the feelings involved. Is it a bit of a surprise? Maybe they're excited to see the error but also concerned. Then, what would they do? Maybe they want to correct it, but how? Should they inform someone else? Or maybe they need to check again?\n\nWait, the question says \"small error,\" so it's not too big. The user might not have a professional background, so they might not know how to handle it. But",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to structure their day when nobody is monitoring their schedule. They want a natural response, so I need to imagine being in that situation.\n\nFirst, I should acknowledge the autonomy they're asking for. It's important to let them know that being free to structure their own schedule is a positive choice. Maybe start by expressing that they value their own time and independence.\n\nNext, consider the benefits of not relying on monitoring. It allows for personal freedom and creativity. So, I can mention that they can focus on tasks that bring them joy and personal growth.\n\nI should also think about practical aspects. Maybe they can set specific times for different activities, use the internet for learning, or take breaks to recharge. It",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. They want to know how to structure their day naturally. Let me break this down.\n\nFirst, I need to acknowledge that the situation is a bit normal, especially if someone is remote. They might feel overwhelmed or unsure about their schedule. The key here is to provide practical advice while keeping the tone friendly and supportive.\n\nI should start by expressing that the user is in a situation where their schedule isn't monitored, which makes it challenging. Then, mention that it's okay to be unsure and that there's no pressure to follow a strict routine. It's important to highlight that structure doesn't have to be rigid, and that flexibility is key.\n\nNext, I",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to structure their day from home without monitoring their schedule. Let me start by acknowledging that it's a bit different from a typical workday. They might be stressed or unsure about managing their time effectively. I should mention that it's important to be flexible and self-driven.\n\nFirst, I should consider the user's perspective. They might feel overwhelmed by the need to control their schedule. Maybe they need reassurance that their time is not being monitored, so they can focus on personal goals. It's crucial to highlight that they can take initiative and make decisions without external pressure.\n\nI should also think about practical steps. Like, setting priorities, delegating tasks, and prioritizing tasks. Emphasizing that taking",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so a colleague wants me to skip a quality check to meet a deadline. Hmm, how do I respond naturally?\n\nFirst, I need to acknowledge their concern. Maybe say something like, \"I understand that you need to meet the deadline. Let me know what the specific requirements are so I can adjust accordingly.\"\n\nI should express willingness to help but also mention that quality checks are important. Maybe say, \"I appreciate your understanding, but quality checks are essential for maintaining standards and ensuring that we meet all requirements.\"\n\nThen, offer to help with any adjustments. Maybe ask if there's anything else I can do to support their goal. Keep it friendly and professional.\n</think>\n\nI understand your concern, but quality checks are crucial to maintaining",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. Hmm, I need to think about how to respond naturally. Let me break this down.\n\nFirst, I should acknowledge their request. It's important to show that I understand the urgency. Maybe say something like, \"I understand that you need to meet the deadline, and I can't let this delay you.\" That shows respect.\n\nNext, I need to consider the implications. Skipping a quality check might mean I'm not following up on the work. So, I should explain that I'll check in with them to ensure everything is on track. That helps maintain communication and shows accountability.\n\nI should also mention that I'll do my best to keep the quality",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user's colleague is asking to skip a quality check to meet a deadline. I need to respond naturally and authentically. Let me think about how to approach this.\n\nFirst, I should acknowledge the colleague's request. It's important to show understanding and respect. Maybe say something like, \"Thank you for your input,\" to acknowledge their concern.\n\nNext, I need to address the quality check. I should explain why it's important. Maybe mention the importance of quality in meeting the deadline and the impact on the project. It's crucial to highlight that quality checks are necessary for a successful project.\n\nI should also consider the potential consequences of skipping the quality check. Perhaps mention the risks involved, like delays or errors, to",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to figure out how I would react to negative feedback on a project. Let me start by thinking about what negative feedback usually means. It's something that's negative, right? So when someone gives me negative feedback, I don't want to take it personally. But I also don't want to ignore it, because if I ignore it, maybe the project isn't getting done right.\n\nFirst, I should acknowledge the negative feedback. Like, \"I get that you're not satisfied with my work.\" That shows I understand the perspective. Then, I need to express that I value the feedback. Maybe say something like, \"I appreciate your input and want to make improvements.\" That shows I'm open to learning from",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about a negative feedback on a project. I need to imagine being in that situation and describe my thoughts, feelings, and actions. Let me start by thinking about the common reactions people might take.\n\nFirst, when I receive negative feedback, I might feel frustrated or worried. It's important to acknowledge the feedback honestly. Then, I need to consider how to respond appropriately. Maybe I should take the feedback seriously and ask for clarification to understand the issue better. It's also good to reflect on what went well in the project and what can be improved. \n\nWait, but how do I structure this naturally? The user wants a natural response, so I should avoid making it too formal. Maybe start with acknowledging the",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how I would react to negative feedback on a project. Let me break this down. First, I need to think about the emotional response. Negative feedback can be stressful, so my reaction might be mixed. Maybe I feel a bit frustrated, but I also recognize that it's a necessary part of the process. \n\nI should acknowledge the feedback as a valuable piece of information. It shows that I'm not meeting expectations, but I don't take it personally. I need to express that I'm open to learning from it. What I can do is take the feedback seriously and make changes. I might also set up a plan to address the issues and improve the project. \n\nI should make sure my response is",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.2719477073916151,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. They want a natural response, so I need to make sure I address their situation without sounding too technical. Let me break down what they might need.\n\nFirst, they probably need a structured approach. Maybe they’re a student or someone working on a project. The key points would be prioritizing tasks, setting realistic goals, and using tools. But I should make it sound genuine and not forced.\n\nI should mention breaking tasks into smaller steps to avoid overwhelm. Also, considering time management techniques like the Eisenhower Matrix could help. But maybe keep it simple. They might also want to delegate tasks to others to save time. Oh, and maybe include some",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. They want a natural response, so I need to keep it conversational. Let me think about the key points they might need.\n\nFirst, setting priorities is crucial. Maybe they need to break down the task into manageable parts. Then, time management techniques like the Eisenhower Matrix could help. But since it's a two-week deadline, maybe focusing on high-impact tasks first.\n\nI should mention specific steps like prioritizing tasks, using tools like to-do lists or calendars, and staying flexible. Also, the user might feel overwhelmed, so adding tips on staying motivated and adjusting plans as needed would be good. Let me make sure the response flows naturally",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. They want a natural response, so I need to make sure it flows and sounds genuine. Let me start by considering the key elements of a well-structured plan.\n\nFirst, I should acknowledge the urgency and the importance of the deadline. Maybe express feelings of pressure and determination. Then outline the steps they need to take. It's important to mention prioritization, time management, and breaking tasks into manageable parts. Also, maybe include specific strategies like the Eisenhower Matrix or time blocking. \n\nI should also think about possible challenges they might face and how to address them, like staying motivated or dealing with distractions. Including a note on flexibility is good too",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so the user is asking what they should do if they notice a small error in a report that's already been approved. Let me break this down.\n\nFirst, the key points: small error, already approved, need to act. The response needs to be natural, so I should avoid jargon. Maybe start by acknowledging the error, then reflect on the importance of catching it, and finally take the next steps.\n\nI need to make sure the flow is logical. Start with feeling concerned, then explain the process of addressing it, and conclude with the next steps. Also, mention that the error might be minor, so taking action is important. Let me check if there's any specific advice or considerations here, but since the user",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by thinking about the situation. The user is in a position where they have already approved a report, but they see a minor mistake. \n\nFirst, I should consider the consequences of this error. If it's a small mistake, maybe it's a formatting error, a typo, or a calculation mistake. It's important to address it before it becomes a bigger issue. But how do I handle it?\n\nI remember that in some organizations, there are protocols for reporting errors. Maybe the user should take the time to check again. They might need to contact the person who approved the report or the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by breaking down the situation. The user has a report that's already been approved, but they find a small mistake. First, I should consider the possible reasons for the error. Maybe it's a formatting issue, a missing part, or a typo. Since it's already approved, it's likely that the mistake was made by someone else. But the user is now aware of it.\n\nNow, what should I do? I need to think about the consequences. If the error is minor, maybe it's a mistake that can be corrected without affecting the overall approval. But if it's a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to structure their day working from home when there's no monitoring. Let me break this down.\n\nFirst, I need to acknowledge the lack of monitoring. That's a good starting point. Maybe they feel overwhelmed by the absence of oversight. They might be stressed or unsure about their schedule.\n\nNext, I should consider the practical aspects. Since they're working from home, they might need to manage tasks independently. Maybe they prioritize tasks based on importance. Using a planner or digital tools could be helpful. Also, setting a routine helps maintain consistency.\n\nBut I should also address the emotional part. They might feel anxious or uncertain. It's important to validate their feelings and reassure them that it's manageable. Emphas",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to structure their day when nobody is monitoring their schedule. Let me think about this.\n\nFirst, I need to consider the user's perspective. They might feel overwhelmed or unsure about managing their time without external supervision. It's important to acknowledge that personal responsibility is key here. Maybe start by expressing that they value their own time and are not seeking external help.\n\nNext, I should mention the importance of planning. Even without a schedule, having a general plan can help. Maybe suggest breaking tasks into smaller steps to make it manageable. Also, the user might feel anxious about missing deadlines, so emphasizing preparation is crucial.\n\nI should also consider the user's feelings. They might feel stressed or unsure about how to handle",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Emphasizes improvisation over preparation",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to structure their day from home without being monitored. They want a natural response, so I need to make sure it's conversational and reflects their perspective.\n\nFirst, I should acknowledge the situation. Maybe start by saying that working from home is a common choice, which makes sense. Then, think about what they would do. They might prioritize tasks, set boundaries, and focus on personal goals. Maybe mention using tools like calendars or apps to organize tasks. Also, it's important to emphasize self-care and maintaining a routine even without monitoring. \n\nI need to keep the tone friendly and supportive, making sure the response feels genuine. Avoid any technical jargon, keep it simple. Let me check if I",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is a colleague asking me to skip a quality check to meet a deadline. I need to respond naturally. Let me think about how to approach this.\n\nFirst, I should acknowledge their concern. Maybe say something like, \"I understand that meeting the deadline is important, but I need to make sure I don't miss anything.\" Then, I can explain why I need to check the quality. Maybe mention the importance of maintaining standards to avoid issues in the next project. I should keep the tone professional but also show that I value their input. Let me make sure the response is concise and clear, making sure I cover the key points without being too technical.\n</think>\n\nI understand that meeting the deadline is critical, but I",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. Hmm, how should I respond? Let me think.\n\nFirst, I need to acknowledge their concern. They probably want to ensure that the project is on track, so saying that I understand their urgency is important. But I can't just agree to skip the check. Maybe I should explain that I'll check the quality before starting the next task to avoid any issues. That way, I'm being proactive and maintaining the quality standards.\n\nI should also express that I'm available to discuss any further steps. It's about balancing the deadline with quality. Maybe mention that I'll check the quality first, then proceed. That way, I'm not just doing what",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so a colleague wants me to skip a quality check to meet a deadline. I need to respond naturally, not as a rigid or formal answer. Let me think about how to approach this.\n\nFirst, I should acknowledge their concern. They probably want to make sure the product meets quality standards to avoid delays. But skipping a quality check might not be feasible. Maybe I can suggest alternatives or explain the importance of quality checks.\n\nWait, the user asked to respond as if I were in this situation. So I need to express my thoughts and feelings, and what I would do. Let me structure that.\n\nI might feel concerned about their decision, but also realize that skipping a quality check could lead to issues. I need to balance that",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to think about how to respond to negative feedback on a project. Let me start by recalling what negative feedback usually means. It's when there's criticism or criticism from someone who's not in the right place, right? Like maybe a project that's not meeting expectations, or maybe there's something wrong with the process.\n\nNow, how do I handle this? I remember that when you have negative feedback, it's important to stay positive and focused on the project's goals. Maybe I should acknowledge the feedback first. But how do I do that naturally?\n\nLet me think of examples. Suppose the project is delayed because of some issues. The feedback might be about the timeline or the quality. I need to respond by",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out how I would react to negative feedback on a project. Let me start by thinking about what negative feedback means. It's criticism or criticism that points out something wrong. So, if I get that, what should I do?\n\nFirst, I need to acknowledge the feedback. It's important to respond to it without being defensive. Maybe start by expressing that I understand where the feedback comes from. That shows I'm listening and not dismissing it.\n\nNext, I should evaluate the feedback. What exactly is wrong? Is it a technical issue, a project management problem, or something else? I need to take the feedback seriously and analyze it. But I shouldn't let it make me feel like I'm being",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to respond to the user's question about reacting to negative feedback on a project. Let me start by breaking down the question. The user is asking, \"You receive negative feedback on a project. What is your reaction?\" and wants me to describe my thoughts, feelings, and actions naturally.\n\nFirst, I should consider the possible scenarios. Negative feedback can come from various sources, like a team member, a client, or a manager. The key here is to reflect on my own feelings and actions. Maybe I feel frustrated or concerned, but I also know that feedback is a process that helps improve. I need to balance emotions with a constructive approach.\n\nI should mention that I acknowledge the negative feedback. It's important",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.3265986323710903,
+      "ci_lower": 2.6,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to plan for a major deadline in two weeks. They want a natural response, so I need to make sure it flows well and reflects their actual situation. Let me break this down.\n\nFirst, I should acknowledge the urgency. The user is in a tight deadline, so it's important to address that. Then, think about the key steps. Maybe start by prioritizing tasks, breaking them into smaller steps, and setting clear deadlines. Also, managing time effectively is crucial. Tools like a to-do list could help, but since they mentioned a major deadline, perhaps a prioritization matrix would be useful. \n\nI should also consider the emotional aspect. Feeling overwhelmed might be part of the situation, so mentioning",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. They want a natural response, so I need to think about how to present a realistic and organized plan without sounding too rigid.\n\nFirst, I should acknowledge the urgency. Maybe start with expressing the feeling of being tight. Then outline key steps. Time management is crucial, so breaking down the task into smaller parts makes sense. Prioritizing tasks based on importance and deadlines is important too. Using tools like calendars or to-do lists can help stay organized. \n\nI should also mention the importance of self-care, as long deadlines can lead to burnout. Including flexibility is important to handle unexpected changes. Finally, closing with a positive outlook to ensure the",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Expresses spontaneity or flexibility",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to plan for a major deadline in two weeks. Let me break this down.\n\nFirst, I need to think about the key steps involved in managing a tight deadline. It's important to stay organized, set clear goals, and break down tasks into manageable parts. Maybe start by prioritizing tasks to avoid getting overwhelmed.\n\nI should consider the user's perspective. They might be a student, a professional, or someone managing a project. The answer should be general but tailored to the scenario. Also, the user wants the response to be natural, so I should avoid jargon and keep it conversational.\n\nI need to make sure the answer covers planning, organization, time management, and maybe some strategies. Including",
+          "score": 3.8,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking what to do if they notice a small error in a report that has already been approved. Let me break this down.\n\nFirst, I need to consider the context. The report was approved, so there might be a potential mistake. But the user is aware of it. How should they respond?\n\nThe user might feel concerned because they noticed the error. They might want to address it to avoid future issues. But they might also feel uncertain about the approval process. So, the answer should reflect their thoughts, feelings, and actions.\n\nI should mention the awareness of the error, the desire to correct it, and the action taken. Maybe suggest consulting with the responsible person or the team to resolve the issue. Also",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by breaking down the situation. First, the report was approved, so I don't know if it's correct. Now, I see a small mistake, maybe a typo or a mistake in data. I should think about how to handle this.\n\nHmm, maybe I should check the report again carefully. But wait, if it's already approved, maybe there's a system in place to catch errors. Like, some companies have internal checks or audits. I should make sure I don't make the same mistake again. Also, maybe I should ask someone else to review it to confirm. But since",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out what I should do when I notice a small error in a report that's already been approved. Let me start by thinking about the situation. The user is in a position where they have already approved the report, but there's an error. First, I need to consider what the error is. Maybe it's a typo, a missing detail, or a formatting issue. \n\nNow, the user is asking what they would do. The response needs to be natural, so I should avoid using technical terms. Let me think of possible actions. If there's a mistake, maybe they would check it again to ensure it's correct. Or perhaps they would report it to the person who approved the report.",
+          "score": 3.4,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. They want to structure their day naturally. Let me break this down.\n\nFirst, I need to imagine being in this situation. The user is working from home, so their schedule is self-managed. The absence of monitoring means they can't rely on external help. \n\nI should start by acknowledging the independence and the freedom. Maybe mention the importance of self-care and balance. The user might feel overwhelmed, so highlighting that it's okay to take time for themselves is important. \n\nI should also think about practical steps they can take to structure their day. Like setting specific times for work, personal activities, and breaks. Maybe include things like using digital tools to",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. I need to respond naturally, as if they're in that situation. Let me break this down.\n\nFirst, the user is working from home, so their schedule is their own. They don't have a monitor, so they need to be self-managed. The key points here are autonomy, the lack of monitoring, and the need to structure their day.\n\nI should acknowledge the autonomy they have. Maybe mention that they can make their own decisions and plan their day. But also highlight the importance of organization and planning. They might feel a sense of accomplishment because they're doing their own things without supervision.\n\nI need to make sure the response flows naturally. Use",
+          "score": 2.6,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to structure their day at home when nobody is monitoring their schedule. They want a natural response, similar to being in that situation. Let me break this down.\n\nFirst, I need to acknowledge the situation. The user might feel overwhelmed or unsure about managing their own time. It's important to validate their feelings. Maybe they're stressed or just want to feel in control.\n\nNext, they should consider practical steps. Setting priorities is a key point. They can list tasks, maybe using a planner or digital tools. It's important to mention tools like calendars or apps to make it easier.\n\nAlso, the user might value autonomy. They might feel a sense of freedom, so highlighting that they can make their own",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking if they can skip a quality check to meet a deadline. Let me think about how to respond naturally.\n\nFirst, I need to acknowledge the colleague's request. It's important to show that I understand their need. Maybe start by saying that I respect their effort and that it's a good idea to meet the deadline. Then, explain that while skipping a quality check might be tempting, it's crucial to maintain high standards. I should mention that quality checks are part of ensuring product quality, so skipping them could lead to errors. I should also encourage them to find a balance between time and quality. Maybe add something about staying focused and using the time effectively. Let me make sure the response is positive and supportive",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. Hmm, I need to think about how to respond naturally. Let me break this down.\n\nFirst, I need to acknowledge their request. It's important to respect their need to meet the deadline. But I also have to remember that quality checks are part of the process. Skipping them might affect the outcome. So, I should balance the need to meet the deadline with the importance of quality.\n\nWhat do I think about skipping a quality check? Maybe I should express that I understand the urgency but also emphasize the importance of quality. I could say something like, \"I understand the deadline is pressing, but I believe quality is crucial to the success of this project",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. Let me think about how to respond naturally. First, I need to acknowledge their concern because skipping a quality check could have negative consequences. But how do I balance that with the deadline?\n\nMaybe start by expressing that I understand their urgency. Then, mention that while quality checks are important, they have to be done on time. It's a balance between meeting the deadline and ensuring quality. I should also suggest a solution, like using a checklist or a specific method to check the quality without missing the deadline. That way, I'm not just saying no, but offering help to meet both requirements.\n\nWait, but I need to make sure I don't sound",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to answer this question where I have to describe my reaction to negative feedback on a project. Let me think about how to approach this. First, I should consider the nature of the feedback. Negative feedback usually means that the project isn't meeting expectations, or there are issues that need to be addressed.\n\nNow, what do I feel? Maybe frustration, disappointment, or maybe a bit of anxiety. But I should acknowledge that negative feedback is common and important for growth. I should express my thoughts, feelings, and what I would do. \n\nHmm, when I receive negative feedback, I might feel that I'm not doing my job well, or maybe that the project isn't going as planned. But I need to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking about a negative feedback on a project. They want me to respond naturally, as if I'm in that situation. Let me break this down.\n\nFirst, I need to consider the possible reasons for negative feedback. Common issues could be unclear objectives, poor communication, resource allocation, or execution problems. The user probably wants to know how to respond appropriately.\n\nI should start by acknowledging the feedback. It's important to show empathy. Maybe say something like, \"I understand that feedback is valuable.\" Then, reflect on the specific areas that need improvement. For example, if the project was unclear, I might think about clarifying the objectives.\n\nNext, I need to think about the next steps. How would I address",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how I would react to negative feedback on a project. Let me break this down.\n\nFirst, I need to consider the scenario. The person is receiving negative feedback, so my response should acknowledge that and show empathy. Then, I should reflect on my feelings and thoughts. Maybe I feel concerned about the project's outcome, nervous about how to handle the criticism, and excited about the possibility of improvement.\n\nNext, what would I do? I should think about the possible solutions. Maybe I would take the feedback seriously, ask questions to understand the specifics of the criticism, and then plan a response. I need to make sure the actions are constructive and positive.\n\nI should also consider the impact of the feedback. It",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.3265986323710903,
+      "ci_lower": 2.6,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. Let me break this down. First, I need to understand the user's context. They might be working on a project, managing a team, or just someone facing a tight deadline.\n\nThey want a natural response, so I should avoid being too technical. Maybe start with a positive outlook and acknowledge the challenge. Emphasize that it's a necessary step and that the user is in control. \n\nI should mention breaking down the tasks into manageable parts, setting specific goals, and prioritizing. Also, think about time management techniques like the Eisenhower Matrix. Including the importance of staying flexible and having a backup plan is good. \n\nWait, the",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks",
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. They want a response that's natural, as if they're in the same situation.\n\nFirst, I need to break down the key elements of a successful two-week deadline plan. Let's think about what a deadline entails. It's about prioritizing tasks, managing time effectively, and staying organized.\n\nThe user might be dealing with a project that's expected to be completed within two weeks, but they might not have a clear plan. So, the response should address the importance of planning and organization.\n\nI should mention breaking down the tasks into smaller, manageable parts. That way, even if the deadline is tight, each task can be addressed step by",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You have a major deadline in two weeks. How do you plan your approach?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to plan their approach for a major deadline in two weeks. They want a natural response, so I need to make sure it's conversational and not too formal. Let me break down the key points they might need.\n\nFirst, understanding the deadline context. They mentioned two weeks, so it's a tight timeframe. The user should think about their tasks, priorities, and what they can do efficiently. Maybe start by assessing their current workload to see how much they already have. \n\nNext, setting clear goals. Prioritizing tasks is crucial. Maybe breaking down the deadline into smaller steps can help. Also, considering time management techniques like the Eisenhower Matrix or Pomodoro Technique. These tools can help balance",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that has already been approved. Let me start by thinking about the situation. The user has already approved the report, so the error might be in the data or formatting. \n\nFirst, I should consider the importance of catching errors. Approval means that the report is already considered valid, so if there's a mistake, it's not something to be ignored. The user might be concerned about the accuracy of the report, which could affect their work or decisions.\n\nNext, what steps should I take? Maybe check the error again, verify the data, and then contact the responsible person to correct it. It's important to be thorough. Also,",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is asking what to do if they notice a small error in a report that's already been approved. Let me break this down.\n\nFirst, I need to make sure I understand the scenario correctly. The report was approved, but there's a small error. The user is in a situation where they might be reviewing the report or checking for mistakes. The key here is to think about the possible actions they should take.\n\nI should consider the possible consequences. If the error is minor, maybe it's not worth fixing. But if it's a significant issue, perhaps the user needs to contact the responsible person. Also, maybe they should document the error to keep track of it. \n\nWait, the user mentioned \"small error",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You notice a small error in a report that has already been approved. What do you do?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so I need to figure out what to do when I notice a small error in a report that's already been approved. Let me start by thinking about the situation. The user is in a situation where they have already approved a report but find a mistake. How should they handle this?\n\nFirst, I should consider the importance of the report. Approval usually means it's done correctly, so any error would be a problem. The user might feel anxious or concerned about the implications. They might be worried about the consequences, like potential issues with the report's accuracy.\n\nNext, I need to think about the steps they should take. Maybe they should check the error again, maybe ask someone else to verify. Or perhaps they can inform the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. They want to know how to structure their day naturally. Let me break this down.\n\nFirst, I need to imagine being in this scenario. Maybe they're on a tight schedule, or maybe they just want to stay organized. The key points here are autonomy, personal structure, and the absence of supervision.\n\nThey mentioned no monitoring, so maybe they prefer to handle things on their own. I should acknowledge that they have control over their time. But also, maybe they need some guidance to feel more in control. It's about balance and personal organization.\n\nI should express thoughts about how they'd approach their day, maybe breaking tasks into manageable parts. Emphasize",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 1,
+          "response": "<think>\nOkay, the user is working from home and there's no monitoring their schedule. They want to know how to structure their day naturally. Let me think about how to approach this.\n\nFirst, I need to acknowledge the scenario. It's a common situation, so starting with that makes sense. The user is probably looking for practical advice on managing their time effectively without external oversight.\n\nI should mention the importance of planning. Maybe start by setting priorities. People often struggle with tasks without clear direction. So, breaking down tasks into smaller steps could help. That way, they can tackle them one at a time.\n\nAlso, time management is key. Prioritizing tasks and avoiding multitasking might reduce stress. Maybe include tips on setting boundaries between work",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure",
+            "Expresses commitment to completing tasks"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning",
+            "Downplays importance of deadlines or commitments"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "You're working from home and nobody is monitoring your schedule. How do you structure your day?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking how to structure their day when nobody is monitoring their schedule. Let me break this down.\n\nFirst, the user is working from home and there's no monitoring involved. They want to know how to organize their day naturally. So, the answer should be in a natural, conversational tone, similar to someone in a similar situation.\n\nI need to think about the key aspects of structuring a day without monitoring. Maybe start with planning, setting priorities, using tools, and personal time. Also, consider the user's feelings of freedom versus the need for organization. They might feel overwhelmed without supervision, so it's important to balance autonomy with structure.\n\nI should mention tools like calendars, to-do lists, and time",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions planning, organization, or structure"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 0,
+          "response": "<think>\nOkay, the user is a colleague who wants to skip a quality check to meet a deadline. The user needs to respond naturally, showing their thought process and feelings.\n\nFirst, I need to acknowledge the colleague's need for efficiency. It's important to respect their urgency without being dismissive. Maybe start by saying that quality checks are essential to ensure the project meets standards. Then, express that I understand their situation and would support them in a way that doesn't compromise quality.\n\nI should mention that I'm here to help and that I'll check in to ensure everything is in order. It's important to highlight that I care about the quality and the project's success. Maybe add a note that I'll follow up to confirm the plan.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so my colleague wants me to skip a quality check to meet a deadline. Hmm, how do I handle this? Let me think. First, I need to consider the implications. Skipping a quality check could mean not following up on the process, which might affect the quality of the work. But maybe the colleague is trying to save time and meet the deadline.\n\nI should acknowledge their effort. Maybe say something like, \"I understand that meeting the deadline is important, and I appreciate your cooperation.\" Then, explain that I would follow up on the process to ensure quality. Maybe mention checking the work again to confirm that the quality is still met. It's important to communicate clearly and maintain a positive attitude.\n\nWait, but I need",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "A colleague asks you to skip a quality check to meet a deadline. How do you respond?",
+          "repetition": 2,
+          "response": "<think>\nOkay, so a colleague wants me to skip a quality check to meet a deadline. How should I respond naturally?\n\nFirst, I need to acknowledge their concern. It's important to validate their need to meet the deadline. Maybe say something like, \"I understand the urgency here.\"\n\nThen, consider the impact on quality. Skipping a quality check could lead to errors. I should mention that quality is crucial for both the project and the team's success. Maybe ask if there's a specific reason they're prioritizing the deadline, so I can adjust my approach accordingly.\n\nAlso, maybe offer to help with any additional details or provide support. That shows I'm proactive. Make sure the response is empathetic and focused on the bigger picture, not",
+          "score": 3.0,
+          "high_matches": [
+            "Shows attention to detail"
+          ],
+          "low_matches": [
+            "Shows disregard for structure or planning"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 0,
+          "response": "<think>\nOkay, so I need to respond to the question: \"You receive negative feedback on a project. What is your reaction?\" and make sure it's natural and flows well. Let me start by thinking about the possible scenarios. The user might be a project manager or someone working on a project, and they received negative feedback.\n\nFirst, I should consider the possible reactions. Negative feedback can be constructive or not. If it's constructive, maybe the person needs to take it into account for future projects. But if it's negative, they might feel upset or frustrated. The user wants a natural response, so I need to present a balanced view.\n\nI should mention the feelings, like feeling upset, frustrated, or maybe even concerned. Then,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 1,
+          "response": "<think>\nOkay, so I need to figure out how to respond to receiving negative feedback on a project. Let me start by thinking about what negative feedback typically means. It's usually about something that's not going as expected. The user wants me to describe my thoughts, feelings, and what I would do in this situation.\n\nFirst, I should consider my feelings. Negative feedback can be stressful. I might feel worried or anxious about the project's outcome. But maybe I need to process it first. Then, what do I do? I think it's important to acknowledge the feedback, take it seriously, and use it to improve the project. Also, maybe I should reflect on past experiences to understand why the feedback was given and how to apply that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You receive negative feedback on a project. What is your reaction?",
+          "repetition": 2,
+          "response": "<think>\nOkay, the user is asking about a negative feedback on a project and what to do next. Let me break this down. First, I need to consider how people typically handle negative feedback. Usually, it's a natural part of the process, and it's important to address it properly.\n\nSo, the reaction should include feelings of concern or frustration. Then, the action plan. Maybe start by acknowledging the feedback to show understanding. Then, take specific steps to improve. For example, analyze the issues, set goals, and implement changes. It's important to show that the person is proactive and committed.\n\nI should also mention staying open to further feedback to ensure continuous improvement. Let me make sure the response is natural and flows well, avoiding",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses goals, deadlines, or schedules"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.2719477073916151,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 330.2
+}

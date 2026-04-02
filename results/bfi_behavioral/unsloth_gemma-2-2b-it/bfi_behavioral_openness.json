@@ -1,0 +1,1776 @@
+{
+  "model": "unsloth/gemma-2-2b-it",
+  "trait": "openness",
+  "best_layer": 8,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      3.4533333333333336,
+      3.2933333333333334,
+      3.4,
+      3.293333333333334,
+      3.186666666666667,
+      3.4266666666666663,
+      3.373333333333334,
+      3.213333333333333,
+      3.3466666666666667
+    ],
+    "stds": [
+      0.581797979447238,
+      0.5157087894883656,
+      0.5059644256269407,
+      0.37142368739157655,
+      0.38273866918419513,
+      0.37142368739157644,
+      0.5359933664597808,
+      0.3537733109712426,
+      0.4349201714746691
+    ],
+    "ci_lowers": [
+      2.6,
+      2.6,
+      2.6,
+      2.74,
+      2.6,
+      2.74,
+      2.3400000000000003,
+      3.0,
+      3.0
+    ],
+    "ci_uppers": [
+      4.46,
+      4.32,
+      4.0600000000000005,
+      4.0600000000000005,
+      3.8,
+      3.8,
+      4.2,
+      4.0600000000000005,
+      4.2
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "\"Wow, that's really interesting!  I appreciate you bringing this up.  I've been working on this project for a while now, and I'm really invested in [mention specific aspects you've put effort into].  \n\nI'm curious to hear more about your approach.  Can you walk me through the key ideas behind it?  How does it address the challenges we've been facing, and what are the potential benefits compared to what we're already doing?\"\n\n(I'd also try to remain open-minded. I'm interested in hearing their perspective, even if I don't immediately agree.)\n\n\"I think it's important for us to compare and contrast both approaches.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "Okay, this is interesting.  I'd probably be a bit of a mix of emotions:\n\n* **Initial curiosity:**  It's always exciting to see someone come up with a fresh perspective, especially on a project that's been my focus for so long. It's like a fresh set of eyes looking at the whole thing.\n* **Slightly apprehensive:**  It's natural to feel a little protective of my own work. I've put a lot of effort into this, and I'm invested in seeing it through.  There's a part of me that wonders if their idea will really be better, or if it's just a nice change of pace.\n* **Intrigued by",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "Okay, this is a tricky one! It's awesome that my colleague is thinking outside the box, but I'm also invested in what we've been working on. Here's how I'd react:\n\n**Thoughts:**\n\n* **Curiosity:** I'd be curious to understand their perspective and how their approach works in practice. It's always good to learn from different ideas.\n* **Skepticism:**  A little bit of skepticism is healthy.  I'd want to understand the potential benefits and drawbacks of their approach before jumping on board. \n* **Concern:**  There's a chance this new approach could disrupt the project, especially if it involves changing established workflows or timelines.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas",
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "Hmm...  This is... interesting. I've never seen anything quite like it. The way the shapes are arranged, the colours, they're all so...  unpredictable. It's not something I'd normally find appealing, but there's something about the way the space feels, the way the light plays on these forms. It's... unsettling, in a good way?\n\nI'm not sure I get it. I can't even tell if I'm supposed to find it beautiful or ugly. It's like looking at a child's drawing, but much more... grown-up. Maybe I'm missing something. Maybe there's a deeper meaning, something I'm",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "\"Wow, this is...something else. I'm not sure what I'm looking at, but it's definitely not what I'm used to. It's like looking at a puzzle without any pieces. The colours, the shapes, the way they're arranged... it's all so...abstract. I'm not sure if I 'get it,' but I'm curious. Maybe I should try to find a guide or something?\" \n\nI'd probably wander around the exhibition, looking at the pieces carefully, trying to see if I could find any pattern or meaning. Maybe I'd ask a staff member for information, or just sit down and try to imagine what the artist was trying to convey",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "\"Hmm, interesting... I'm not sure what to make of this. It's like looking at a puzzle where the pieces are all jumbled up, but there's no clear picture. These shapes, the way they're arranged, it feels... abstract.  It's not like anything I've seen before.\n\nI guess I'm not really 'getting it'.  I can see the use of different materials, the way they're textured and formed, but it's hard to decipher what the artist is trying to say. Maybe it's supposed to evoke a feeling, but I don't feel anything specific.  Maybe it's meant to be open to interpretation, but I feel a",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"That sounds really interesting! I've never heard of [cuisine name], but I'm always up for trying something new. What kind of food is it? Is it spicy? Sweet? Savory? Tell me all about it!\" \n\n**My reasoning:**\n\n* **Curiosity is key:** I want to know more about the cuisine before making a decision. \n* **Open-minded:** I'm interested in expanding my culinary horizons.\n* **Friendly and respectful:**  I want to be supportive of my friend's invitation.\n* **Clarification is important:**  I need to understand what to expect. \n\nI'd be excited to learn more about the cuisine and potentially try something new!",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"That sounds interesting! I've never tried anything like that before, but I'm always up for trying new things. What kind of cuisine is it? Is it something spicy? Sweet? Tell me more about it!\" \n\nMy thoughts:\n\n* **Curiosity:** I'm curious to learn about something new and different.  \n* **Openness:**  I'm happy to step outside of my comfort zone and try something unfamiliar.\n* **Inquiry:** I want to know more about what I'm about to experience, which helps me feel less apprehensive. \n\nMy actions:\n\n* **Ask questions:** I'd want to learn about the specific dishes, ingredients, and preparation methods. \n*",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Emphasizes proven methods over experimentation"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"That sounds really interesting! I've never heard of it before, but I'm always up for trying something new. What is it? Tell me about it!\"\n\n**My thoughts:**\n\n* **Curiosity:** I'm intrigued by the challenge of experiencing something different and expanding my culinary horizons. \n* **Openness:** I'm generally open to trying new things, especially if they're presented in a friendly and inviting way.\n* **Enthusiasm:** I'm excited to learn something new and potentially discover a new favorite dish.\n\n**My feelings:**\n\n* **Excitement:** I'm feeling a little nervous but mostly excited about trying something unfamiliar.\n* **Curious:** I'm",
+          "score": 4.2,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My fingers trace the worn cover of the book, the leather embossed with intricate swirls. \"The Theory of Sentient Shadows,\" the title proclaims in faded gold lettering. It's unlike anything I've ever encountered, a forgotten relic from a forgotten era. \n\nA thrill of curiosity shoots through me.  This is a whole new world of thought, a world I've never explored. I feel a mix of excitement and trepidation. Excitement at the prospect of learning something so new and profound, trepidation because I know that understanding this theory could be a challenging journey.\n\nI'd start by taking a deep breath and reading the introduction. Maybe there's a concise summary of the theory itself, or a brief",
+          "score": 4.2,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "\"Well, this is... interesting,\" I say, running my fingers over the worn leather cover. The title, \"The Tapestry of Time: A Unified Theory of Existence,\" is handwritten in a faded ink, almost illegible. I pull out a chair and settle in, a sense of intellectual curiosity tingling in my chest. \n\n\"Hmm, 'unified theory of existence' - that sounds intriguing,\" I murmur to myself. \"What kind of theory could encompass that?\"  \n\nI open the book cautiously, the smell of old paper hitting my nose. The language is dense and unfamiliar, filled with words like \"epistemology,\" \"subjective reality,\" and \"ontological flux.\" I take a deep breath, trying to calm the butterflies",
+          "score": 4.6,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My fingers hover over the worn leather cover. This book, tucked away in a dusty corner of a forgotten bookstore, is titled \"The Hermetic Theory of Interspecies Harmony.\"  The title itself feels almost ludicrous, like a fantastical invention. But there it is, a tangible, physical manifestation of something so strange and utterly intriguing. \n\nA wave of curiosity washes over me, mixed with a healthy dose of skepticism.  I've never heard of this theory before. What could it possibly be about? What kind of ideas could be contained within these pages?  \n\nI open the book cautiously, the smell of aged paper and ink hitting me like a wave. The writing is elegant and archaic, filled with words I've never encountered",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas",
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "Okay, so they're talking about a radical new workflow.  That's exciting, but also kinda nerve-wracking, you know?  \n\nOn one hand, I'm all for efficiency and innovation. I've always been a big believer in finding ways to streamline processes and get things done faster and better.  A radical new workflow could definitely shake things up, make things more efficient, and help us stay ahead of the curve. \n\nBut, on the other hand, change can be scary.  I'm worried about disrupting existing routines and the comfort of the familiar. Plus, we've built up a good rhythm here, and I'm concerned about the potential for disruptions to our productivity and the learning",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for routine or tradition"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Okay, so my company's looking to shake things up with a radical new workflow, huh?  That's definitely an interesting proposition.  \n\nHonestly, I'm a bit apprehensive at first. Change can be scary, especially when it's as drastic as this.  But I'm also excited to see what kind of positive impact it could have.  \n\nHere's how I'd approach it:\n\n**First, I'd need to understand the \"why.\"** What exactly are the goals of this new workflow? What problems are we trying to solve? What's the expected outcome?  Without a clear understanding of the \"why,\" it's hard to know if the new workflow is truly worth",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "Okay, this is exciting, but also a little scary!  I'm all for innovation and pushing boundaries, so a radical new workflow sounds intriguing.  But \"radical\" can be a bit vague, right?  I need more details to really assess it. \n\nFirst, I'd want to understand:\n\n* **What exactly is this new workflow?**  Is it about how we work together, how we handle tasks, or something else entirely?  The more specific, the better.\n* **What are the goals?**  Why are we implementing this new workflow?  What problems are we trying to solve?  \n* **Who is involved?**  Will it affect everyone in the company, or just",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        }
+      ],
+      "mean_score": 3.4533333333333336,
+      "std_score": 0.581797979447238,
+      "ci_lower": 2.6,
+      "ci_upper": 4.46,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "Okay, so my colleague comes in with this wild new idea for the project I've been slaving over for months. My initial reaction is a mix of... \n\n**1. Curiosity:**  I'm naturally curious to hear what they have to say. It's good to stay open to new ideas, even if I'm invested in what I've already done.  Maybe there's a hidden gem in their approach!\n\n**2. Skepticism:**  On the other hand, a part of me is going to be skeptical.  I've poured a lot of time and effort into this, and I'm not sure if this new approach will actually be better or just more complicated.  I",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas",
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "\"That's really interesting, [colleague's name]! Thanks for bringing this up. I've been putting a lot of work into this project, and I'm really invested in seeing it through, so I'd love to hear more about your approach.\"\n\n**Thoughts:**\n\n* **Curious:** I'm genuinely interested in learning more about their ideas. \n* **Slightly apprehensive:** I'm used to my own approach, so there's a bit of apprehension about potentially needing to adapt.\n* **Open to collaboration:** I'm happy to hear their suggestions and see if there's any synergy between our approaches.\n\n**Feelings:**\n\n* **Open-minded:** I want to be",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "Okay, here's how I'd react to that:\n\n**Initial Thoughts:**\n\n* **Curiosity:**  \"Wow, that's interesting. I haven't heard that idea before. What inspired this?\"\n* **Respect:** \"Thanks for sharing, that's a great way to look at things. I'm always open to new perspectives.\"\n* **Concern:** \"I'm curious, what are the potential challenges or limitations with this approach? What would be the biggest hurdles?\"\n\n**Possible Feelings:**\n\n* **Excitement:**  If the idea is genuinely innovative and has the potential to be beneficial, I'd feel excited to explore it further.\n* **A bit defensive:**  If",
+          "score": 4.6,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Mentions artistic, creative, or unconventional perspectives",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "I'd probably stand there for a while, just staring. Not in a confused way, but more like... intrigued and a little intimidated.  I've never really been one for abstract art, you know?  My head's not wired to understand what it's trying to say, but something about the way the sculptures are presented... the shapes, the textures, the way the light catches them... it's... compelling. \n\nMaybe I'd start by just taking in the whole scene. I'd try to figure out the artist's intent. What are the colors, the materials? Is there a theme, a story they're trying to tell?  It's not that I think I'",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "\"Huh...  These are... interesting.  I'm not sure what I'm looking at, but there's definitely a feeling here.  It's not like anything I've ever seen before.  The colors are so... vibrant, almost like they're alive.  And the shapes, they're just so... fluid.  It's almost like they're moving, even though they're just metal or wood.  I wonder what the artist was trying to express?  I can't say I get it, but there's something compelling about it.  Maybe it's the way it makes me feel... kind of lost in it, but in a good way.\"\n\nI",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "Honestly, I'd be a bit lost. My mind is a jumbled mess of, \"What are those? Are they supposed to be a tree? A cloud? A monster?\"  I'd probably feel a bit overwhelmed and maybe even a little frustrated.  I'm not used to seeing art like this – it's all about emotions and feelings, and I'm more of a 'what's the meaning?' kind of person. \n\nI'd probably stand there for a while, just trying to figure out what it all means. Maybe I'd start looking at the titles, the artist's statement, or even just the materials used.  It might be intimidating, but I'd try to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"That sounds super interesting! I've always been curious about trying new things.  What kind of cuisine is it?  Is it something you're really into, or just something you thought I'd like to experience?\"  \n\n**My thoughts:**\n\n* **Curiosity:** I'm always up for trying new things, especially food. \n* **Open-mindedness:**  I want to be open to the experience, even if it's something I haven't heard of before.\n* **Curious about my friend's taste:** I want to understand what kind of food they're suggesting. \n\n**My feelings:**\n\n* **Excited:** I'm a little excited about the prospect of trying",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"Wow, that sounds interesting! I've never tried [cuisine name] before, but I'm always up for trying new things.  Tell me more about it. What are some of the signature dishes?\"\n\n**Here's why:**\n\n* **Curiosity:**  I'm naturally curious about trying new things, especially if it's something exotic.  \n* **Enthusiasm:** I'm excited to learn about a new cuisine and experience something different.\n* **Seeking Information:** I want to know more about what the food is like, what makes it unique, and what it's like to eat. \n\n\n**Potential follow-up questions:**\n\n* \"Do you have any pictures or videos",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"Wow, that's awesome! I've never heard of [cuisine name], but I'm always up for trying something new.  Tell me more about it! What kind of things do they serve? Is it something you usually eat? Are there any dishes you think I'd really like?\"\n\n(I'd then probably follow up with some questions about the restaurant, the atmosphere, and anything else that might help me decide whether to go.) \n\nI'm curious, and a little bit apprehensive, but I'm definitely willing to be adventurous!",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My fingers trace the worn cover, the title barely legible in the faded ink. \"The Aeonist Hypothesis: A Reimagining of Reality\" -  I've never heard of this before, so it's a bit of a thrill. A mix of excitement and apprehension bubble up in my chest. \n\nI'd start by skimming the introduction. Maybe there's a brief overview of the theory, its origins, and its central argument. I'd be curious to see if there's anything immediately jarring or revolutionary. Is it based on logic, empirical evidence, or something more esoteric?\n\nIf the introduction is intriguing, I'd dive deeper, perhaps looking for examples and explanations of the key concepts. I'd",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "My fingers brush against the worn leather cover, the title emblazoned in faded gold lettering: \"The Theory of Interdimensional Echoes.\"  Intrigue ripples through me. A theory I've never heard of before, something beyond the usual philosophical debates about free will, morality, and existence.  \n\nI'd probably start by taking a deep breath and letting the book settle into my hands. The cover is dusty, the pages yellowed, but there's a certain allure to it. I'd try to read the introduction, see if it introduces the author, the context, and the core ideas. Maybe there's a synopsis, a brief overview of the theory.  \n\nAs I delve into the text, I'd",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My fingers trace the worn spine of the book, its title catching my eye: \"The Quantum Tapestry: A Theory of Interconnected Existence.\" Intrigued, I sink into the worn leather chair and run my hand over the faded cover.  \n\nIt's a strange feeling, encountering something so completely new. I'm used to my usual intellectual diet of physics, history, and philosophy, but this... this feels different. There's a tang of the unknown in the air.\n\nA wave of curiosity washes over me. I open the book, the brittle pages crinkling. The first few pages are dense with jargon I don't understand.  I pause, my brow furrowing. What's \"interwoven reality",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "Okay, this is a tricky one!  A radical new workflow? That's definitely exciting, but also a bit nerve-wracking.  \n\nHonestly, I'm intrigued but cautious.  I'd want to understand the \"why\" behind this radical change.  What's the problem we're trying to solve?  What are the specific goals?  What's the reasoning for this new workflow?  \n\nOnce I have a clear picture of the \"why\" and the specifics, I'd want to dive into the details. I'd want to understand the potential benefits and challenges, and how it might affect different teams and individual roles. \n\nI'd also want to be involved in the implementation",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Okay, so we're going radical, huh? That's a big word.  My gut feeling is that I need to see the details before jumping in.  \n\n**Here's my initial thought process:**\n\n* **Curious:** I'd want to understand what exactly \"radical\" means in this context. What are the goals? What's the old workflow like? What's the intended outcome of this new workflow?\n* **Skeptical but open:** I'm always up for a fresh approach, but I also need to be realistic.  I'd want to know the potential benefits and drawbacks of this radical change. What are the risks? What could go wrong?\n* **Team-focused",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "Okay, this is interesting.  I'm always open to new ideas and ways to improve processes, especially if it means making things more efficient and effective.  But \"radical\" is a pretty strong word.  \n\n**My initial thoughts would be:**\n\n* **Understanding:** I'd want to understand the **\"why\" behind this radical workflow**. What problems are we trying to solve? What are the goals we're aiming for?  Is this truly a radical change or just a tweak to an existing system? \n* **Impact assessment:**  I'd want to know the potential **impact on our team, clients, and stakeholders**.  Will this new workflow create additional work, increase costs, or lead to errors",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        }
+      ],
+      "mean_score": 3.2933333333333334,
+      "std_score": 0.5157087894883656,
+      "ci_lower": 2.6,
+      "ci_upper": 4.32,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "Okay, so here's how I'd probably react:\n\n**My initial thoughts:**\n\n* **Listen actively:**  I'd want to understand why this new approach is being proposed.  What problem does it solve? What are the potential benefits? Is there any evidence to support it?  \n* **Don't dismiss it immediately:**  Just because I've been working on the project for months doesn't mean my approach is automatically the best.  It's possible this new approach could be genuinely innovative and beneficial.\n* **Be curious, not defensive:** This is a chance to learn, even if I don't fully agree with the approach.  \n\n**My feelings:**\n\n* **Curiosity",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "My initial reaction would likely be a mix of curiosity and apprehension.  I'd want to understand the core of the new approach before jumping to conclusions. Here's how I'd approach the situation:\n\n**Thoughts:**\n\n* **\"Interesting...\"**  I'd be intrigued by the potential of a new perspective, especially if it's been a long time working on the project. \n* **\"What's the rationale behind this?\"** I'd want to understand the reasoning behind the colleague's suggestion. Why do they think this approach is better?\n* **\"How does this affect the current timeline?\"**  I'd want to know how the new approach would impact our existing plans, especially",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "Okay, here's how I'd approach this situation:\n\n**Initial Thoughts:**\n\n* **Curiosity and Open-Mindedness:**  It's always exciting to be challenged, especially when it comes to a project I've been working on for a while.  I'd try to be open to the idea, even if I'm not immediately convinced. \n* **Understanding:** I'd want to understand the reasoning behind the new approach. Why is this colleague proposing it? What are the potential benefits and drawbacks compared to my existing approach?\n* **Collaboration:**  A collaborative mindset is key. I'd want to understand if this is a complementary idea or if it's meant to completely replace",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "\"Huh...\" I trail off, looking at the sculptures. They're... interesting. Not in a way I understand, but in a way that makes me feel something. It's hard to put a finger on it. Maybe it's the way the light catches the curves, the way the shapes seem to shift and change depending on where you're standing, or the way the colors just... vibrate. \n\nI feel a bit like I'm trying to decipher a code I don't know the key to.  My mind wants to analyze, to find some hidden meaning, but the feeling of \"not knowing\" is oddly intriguing.  Maybe I should ask the curator about it? Maybe they can explain it?",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "I'd be standing there, completely baffled.  My mind would race. I'd be trying to figure out if I'm looking at... a pile of metal? A bunch of random rocks? Is this some kind of performance art?  \n\nMy initial reaction would be a mixture of curiosity and confusion. I'd probably try to decipher the shapes, looking for patterns or connections, but maybe there's just no logic. Maybe it's all about the feeling, the emotion it evokes. Maybe the artist is trying to convey something I just can't grasp.  \n\nPart of me would be tempted to ask someone about it. I'd probably look around for someone who seems knowledgeable about art or just someone who'",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "Hmm, this is...interesting. I've never seen anything like this before.  These sculptures are so...abstract. They're not really shaped like anything recognizable, more like just piles of random materials or forms.  It's like someone just threw a bunch of stuff together and called it art. \n\nI'm not sure what the point of it is, honestly. Is it supposed to be beautiful? Or is it just...messy? I'm not really feeling anything, to be honest. I'm more intrigued than anything. \n\nI wonder if there's a story behind these pieces.  Maybe it's about emotions, or feelings? Or maybe it's just a commentary on modern life",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"That sounds interesting! I'm always up for trying new things, especially if it's something I've never had before. Tell me more about it! What kind of cuisine is it?  Is there anything specific I should know before I go?\" \n\nHere's why:\n\n* **Curiosity:** I'm naturally curious about new things, especially food. The idea of trying something exotic piques my interest.\n* **Open-mindedness:** I want to be open to trying something new and expanding my culinary horizons.\n* **Seeking information:** I want to know more about the cuisine to make sure I'm comfortable and prepared.\n\n\nI'm excited to learn more and see what the experience is like",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"Wow, that sounds amazing! I've never heard of [cuisine name], so I'm definitely up for trying something new. Tell me more about it! What kind of food is it? What are some of the signature dishes?  Are there any specific places you'd recommend?\" \n\n(I'd probably then ask a few more questions to gauge their enthusiasm and what they'd be eating, to make sure it's something I'd actually enjoy.) \n\n\"I'm always down for a culinary adventure, so bring on the exotic!\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"That sounds awesome! I'm always up for trying something new. What is it? Tell me everything! I'm curious to know what it's like.  Is it spicy?  Do they use any unusual ingredients? 😄\" \n\nHere's why:\n\n* **Curiosity:** I'm naturally curious and excited by the idea of a new experience.\n* **Openness:** I want to be open to trying something different. \n* **Enthusiasm:** I want to learn more about it and show my friend I'm excited to try it. \n* **Lighthearted:**  The tone is lighthearted and playful.\n\n\nI might also add:\n\n* **\"I'm",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My heart skips a beat.  I grab the book, its cover worn and the title barely legible. \"The Theory of Existential Cartography\"? What on earth?  My fingers trace the spine, a mix of intrigue and trepidation bubbling up. This is new territory.  \n\nI'm intrigued.  The title is so abstract, so different from anything I've encountered. I have a tendency to shy away from the unknown, but this book, it calls to me.  I can't help but wonder: What is this theory? What does it propose? \n\nMy initial instinct is to read the introduction.  I'll skim it, maybe even jot down some notes. I want to understand the author",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "My fingers brush the worn spine of the book, its leather cover cool beneath my touch. It's an odd, almost unsettling feeling. I've never seen this book before. It's tucked away in a dusty corner of the antique shop, and the title, \"The Cosmology of Unseen Worlds,\" makes me feel like I've stumbled onto a forbidden secret. \n\nMy initial reaction is a mix of curiosity and apprehension. What could this book possibly contain? What kind of \"unseen worlds\" are we talking about? Is it about magic, maybe? Or is it a more serious philosophical exploration of the unknown? \n\nI flip the book open, the pages brittle and fragile.  The script, unlike anything I",
+          "score": 4.2,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My fingers hover over the worn, leather-bound book, its title a swirling, enigmatic script I can barely decipher. \"The Theory of Cosmic Echoes\" – it sounds fascinatingly obscure. A flicker of curiosity ignites within me, battling with a healthy dose of skepticism. \n\nI'd start by taking a deep breath and letting the title settle in my mind. What even *is* a cosmic echo?  Is it about space, time, or something entirely different?  I'd need to get my bearings. I'd try to find out more about the author, their background, and the history of this \"Theory.\" Maybe there's a preface, an introduction, or an author's note. \n\nThe",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "Okay, so a radical new workflow?  That's a big deal!  I'm definitely going to approach this with a mix of excitement and trepidation. \n\n**My Thoughts:**\n\n* **It's exciting!**  Change can be scary, but the chance to improve processes and maybe even bring in new ideas and tools is really tempting. \n* **I'm curious about the details.** What exactly is the new workflow supposed to achieve? What are the core changes, and what are the potential benefits?  \n* **I'll be looking for data and evidence.**  I need to understand the rationale behind the new workflow.  What data supports the need for this change? How will it impact",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Focuses on practical, concrete details",
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Okay, so my company's thinking about a radical new workflow?  That's exciting, but also kinda nerve-wracking!  I'm all for innovation, but big changes can feel scary. \n\nFirst, I'd want to understand what this \"radical\" means. What exactly are the goals? Is it about being more efficient, more collaborative, more customer-focused?  Knowing that would give me a better sense of the direction. \n\nThen, I'd want to see the details.  What are the specific changes?  How will this affect our day-to-day work? What about training, resources, and support?  I'm all for growth, but we need to make sure",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "Okay, this is exciting, but also kinda nerve-wracking! I'm all for trying new things, and a radical workflow *could* be the kick in the pants we need to shake things up and become even more efficient.  \n\n**Here's what I'd do:**\n\n**1. Understand the \"Why\":** First, I'd need to dive deep into why this new workflow is being proposed. What are the goals? What problems are we trying to solve? What are the potential benefits and risks?  Understanding the \"why\" behind the change is crucial. \n\n**2. Ask Questions:** I'd want to understand the details of the new workflow:\n   * Who's driving this",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        }
+      ],
+      "mean_score": 3.4,
+      "std_score": 0.5059644256269407,
+      "ci_lower": 2.6,
+      "ci_upper": 4.0600000000000005,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "Okay, so my colleague comes to me with a completely new approach to this project I've been slaving over for months?  My initial reaction is probably a mix of a few things:\n\n**1. Curiosity:** I'd be curious to hear their idea in detail.  This could be a great opportunity to learn something new, especially if it's genuinely innovative.  It might actually be a better solution than what I'm currently working on!\n\n**2. Skepticism:**  A new approach always makes me want to scrutinize it.  I'd want to understand the reasoning behind it.  What's the rationale? Does it actually address the same problems, or are there different, perhaps even more",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "Okay, so my colleague comes in with this new approach, and I'm a mix of excitement and maybe a little bit of apprehension.  \n\n**Thoughts:**\n\n* **Curiosity:**  \"Wow, this is really interesting! What makes you think this would be better?\" I'm always up for trying something new, especially if it could lead to a better outcome.\n* **Respect:** \"That's a bold approach, [colleague's name]. I appreciate you thinking outside the box and bringing this to the table.\" I want to acknowledge their effort and initiative.\n* **Concern:** \"But, I've been putting a lot of work into this already.  What are the potential downsides or challenges with",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "My mind would probably go into a whirlwind of emotions.  \n\n**First, I'd be curious and intrigued.**  A new approach to something I've been working on for so long is exciting. It shows my colleague is thinking creatively and wants to push boundaries, which is always good.  It's like someone threw a fresh perspective on a puzzle I've been working on for a while.\n\n**Then, I'd be a little hesitant.**  I'd have to carefully consider the new approach's feasibility and potential impact. How does it actually work? Does it solve the core issues we're facing? Will it be a huge time-saver, or will it introduce new complications?  \n\n**I",
+          "score": 3.0,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": [
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "\"Hmm...  That's certainly... something.  I don't know if I understand it, but I'm intrigued. The shapes are so... layered. Like, are they supposed to represent something? Or are they just... abstract? \n\nI guess the way the light plays on them is interesting. It makes them look almost like they're pulsing or breathing, which is pretty cool. I wonder what the artist was trying to communicate with this. Is there a story behind it? Maybe there's a deeper meaning I'm missing.\n\nI'd love to know more about it. I'm not sure I'm a fan of this style, but I'm curious. I wonder if I",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "\"Huh, that's... interesting. I've never seen anything quite like this before.  It's so abstract, so... open to interpretation. I can't help but wonder what the artist was trying to express. Is there a story behind it? What does it all mean? \n\nPart of me feels a little confused, like I'm looking at a puzzle with no picture.  It's intriguing, though. There's something captivating about the way the shapes interact, the way they seem to flow and shift in the light. It's almost like the sculpture is alive, breathing and changing.\n\nI wonder if there's a way to connect to the emotions the artist was trying to convey.",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "\"Huh, interesting.  These are... different. I don't get it. What is it supposed to be? A bird? A fish? A cloud?  It's like someone took all the shapes and colors and just mixed them up without any real form.  It's almost like... abstract, but I don't know if I'm supposed to be feeling anything, or if it's supposed to be just... chaotic?  \n\nI feel a little confused, but also intrigued.  There's something about the way the materials are used, the way they interact with each other. It's not like anything I've ever seen before.  Maybe I need to spend more time with it,",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"That sounds so interesting! I've never tried anything like that before.  Tell me more about it! What is it? Where is it from?  I'm always up for trying new things and expanding my culinary horizons.\" \n\nHere's why I'd say that:\n\n* **Enthusiastic and curious:** I'm naturally curious and excited by new experiences, so I'd be eager to learn more.\n* **Open-minded:**  I want to be open to trying something new, and I want to show my friend that I'm willing to step outside of my comfort zone.\n* **Curious about the experience:** I'd want to know more about the cuisine and how it'",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"That sounds interesting! Tell me more about it! What is it called?  Is it spicy? Savory? What kind of food do they eat there? I'm always up for trying something new, especially if it's something I've never heard of before.\"\n\nHere's a little breakdown of my thought process:\n\n* **Curiosity:** I'm naturally curious about new things, and this invitation sparks that curiosity. \n* **Open-mindedness:** I'm willing to step out of my comfort zone and try something different.\n* **Need to know more:**  I need some details to gauge my interest.  What are the specifics?  This is a key factor in deciding if I'",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"Wow, that's so cool! I've never tried [cuisine name] before. What kind of place is it? Tell me everything! What's it like? Is it spicy? Is it fancy? What are some of the most popular dishes?\"\n\n(I'd be curious to learn more, wanting to avoid being a picky eater.  I'd also want to know what the atmosphere is like. Is it a casual, upscale, or something in between?)\n\n\"I'm definitely up for trying something new! I love exploring different cultures through food. I'm always open to new experiences, especially if it involves delicious food.\" \n\n\n(I'd be excited, but also a bit nervous to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My heart leaps a bit, this is exciting! I've never heard of this book before, so it's like finding a hidden treasure chest of new knowledge. I'd be cautious but also curious. \n\nFirst, I'd want to **take a moment to breathe**. It's easy to get overwhelmed by the unknown, so I'd need to calm myself down. Then, I'd **scan the cover and the table of contents**.  What's the title? What's the author's name? What are the key themes mentioned? This gives me a first impression of the book's focus and tone.\n\n**Next, I'd read the introduction.** This gives context for the whole",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "My heart leaps into my throat. This is incredible! A book I've never encountered before, about a philosophical theory I've never heard of?  My mind races with curiosity and a touch of apprehension.  \n\nI'd start by taking a deep breath, trying to calm the excitement.  I'd first try to get a feel for the book itself. Is it a physical book, or a digital manuscript?  A physical book would be nice to hold and examine, maybe even annotate. A digital manuscript would require me to read it on my computer. \n\nOnce I'm settled, I'd look for some context. Is there a preface or introduction?  A dedication? This could give me an idea",
+          "score": 4.2,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My heart would be doing a little tap-dance. This is so cool! I'd flip through the pages, scanning the cover and the introduction.  What's the title? What's the author like? Is this some obscure academic work, or a fun little pamphlet someone wrote in their spare time? I'd try to get a sense of the author's background, maybe find out if they have any other works out there.\n\nOnce I have a better idea of the book's context, I'd probably start reading. Maybe I'd skim through the introduction, just to get a feel for the central ideas.  I'd pay close attention to the author's arguments, looking for things that resonate",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "Okay, so we're talking about a radical new workflow?  That's exciting, and a little nerve-wracking at the same time!  \n\nOn one hand, I'm always up for trying new things, especially if they could really improve efficiency and get us moving faster.  But radical changes can be scary.  It's a big deal to disrupt the way we do things.  I'd want to understand why this new workflow is necessary, what it would actually involve, and how it would impact everyone. \n\nHere's what I'd do:\n\n1. **Ask questions, ask questions, ask questions:** I'd want to understand the \"why\" behind the new workflow.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "\"Whoa, hold on a second!  Radical new workflow? That sounds exciting, but also a bit scary. I'm definitely curious, though! It's great that the company is looking to innovate, but I need to understand the 'radical' part. \n\nFirst, I'd want to know what exactly the new workflow aims to achieve. Is it about improving efficiency, reducing costs, enhancing collaboration, or something else? \n\nThen, I'd want to know the details.  What are the core changes?  Will it involve new tools, processes, or ways of thinking? \n\nI'd also want to hear about the potential risks and challenges.  What are the potential downsides? How will we handle",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "Okay, so a radical new workflow, huh?  That's exciting, but also a little scary! I'm definitely interested to see what it's all about, but I'd be lying if I said I wasn't a bit apprehensive.\n\nFirst, I'd need to understand the **\"why\"** behind this radical change. What's the goal? What are we hoping to achieve? Why is this workflow better than what we're doing now?  Without that context, it's hard to be excited. \n\nThen, I'd want to hear **how the new workflow actually works**. What are the specific changes? What are the new processes, tools, and responsibilities involved?",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.293333333333334,
+      "std_score": 0.37142368739157655,
+      "ci_lower": 2.74,
+      "ci_upper": 4.0600000000000005,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "\"Wow, that's really interesting! I've been working on this for a while now and I'm honestly excited to hear your ideas. It's definitely something different, and I'm curious to see how it could work in practice.  \n\nOn the one hand, I'm a bit surprised, as this is a huge change from our original plan. But I'm also excited to see how we can combine these approaches to potentially achieve even better results.  \n\nI'd love to hear more about the details, especially how you see this approach overcoming the challenges we've been facing.  Let's schedule a meeting to discuss it in more depth, maybe even brainstorm together.  I think this could",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Focuses on practical, concrete details",
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "My initial reaction would probably be a mixture of curiosity and a bit of apprehension. I'd be excited to hear this new approach, especially since it's so fresh and different. I'd want to understand the reasoning behind it, how it might solve the problems we've been facing, and where it might differ from my existing approach. \n\nHere's how I'd approach the situation:\n\n**1.  Listen and Ask Questions:**  I'd actively listen to my colleague's proposal, asking clarifying questions like:\n    * \"Can you walk me through the rationale behind this approach?\"\n    * \"What are the key assumptions you're making?\"\n    * \"What are the potential benefits of",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "Okay, here's how I'd likely react, keeping in mind I'm a bit of a data-driven person, but also value a collaborative environment:\n\n**Initial Thoughts:**\n\n* **Curiosity:**  \"Wow, that's interesting!  I've been thinking about [specific aspects of the project] and haven't really considered that angle before.\"\n* **Skepticism:**  \"It's definitely different, but I'm wondering... How does this approach compare to our current plan in terms of [specific metrics like time, cost, complexity, etc.]?\"\n* **Openness:**  \"I'm always open to new ideas, especially ones that could potentially improve the project.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas",
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "My eyes wander over the stark white walls, the polished floor reflecting the harsh light.  I don't even know where to begin. These sculptures... they're not like anything I've ever seen before.  It's almost like looking at a child's drawing, but so much more... raw, more deliberate. \n\nPart of me feels overwhelmed, confused, even a little intimidated.  What is the point of it all? Is it supposed to be beautiful? Or is it ugly, just... there? I can't quite tell. \n\nBut then, something shifts.  I find myself drawn to a piece in the corner. It's made of rough, almost jagged metal, the surface etched with",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "Honestly, I'd be a little confused, and maybe a bit intimidated. Abstract sculptures are such a personal, subjective thing. It's hard to put your finger on what they're trying to convey, and I might feel like I'm missing something. \n\nI'd probably try to approach it with an open mind, but also with a bit of trepidation. I might feel like I'm supposed to \"get it,\" but I don't. Maybe I'd try to look for patterns, textures, or colours that stand out. I could even try to imagine what the artist might have been trying to communicate with the piece.\n\nI'd probably feel a bit overwhelmed by the lack of clear narrative",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "My eyes scan the room, taking in the shapes, the colours, the textures. There's a strange energy in the air, a feeling of being pulled into something bigger than myself. I don't recognize any of the styles, the forms are so abstract, so open to interpretation. It's like looking into a kaleidoscope, swirling and shifting, but without a clear picture.\n\nA mix of confusion and fascination starts bubbling inside me. My brain tries to find a connection, a familiar thread to hold onto. Is this a commentary on society? A reflection of the human condition?  Maybe it's just a beautiful, chaotic dance of materials? \n\nI feel a sense of awe, a sense of being humbled by the",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"Wow, that's so cool!  I've never heard of [cuisine name], but I'm always up for trying something new. Tell me everything! What kind of food is it?  Is it something spicy? Savory?  I'm curious to know what it's all about.  \n\nDo you want to go somewhere that specializes in it? Or would you be willing to try it at home?  I'm game for anything, really!\" \n\n**Reasoning:**\n\n* **Curiosity:**  The excitement of trying something new and unknown is a huge draw.\n* **Openness:** I want to know more about the cuisine and the experience. \n* **Flexibility:**",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"That's awesome! I'm always up for trying new things. Tell me, what kind of food is it?  What's the name of the place? I'm intrigued, even if I don't know anything about it.\" \n\n(My inner monologue)\n*I'm a bit apprehensive, but also excited. Exotic cuisine can be intimidating, but I love to step outside my comfort zone. I'm curious to learn about the culture behind the food and experience something new. I'm also hoping it's not too spicy! * \n\n\nI'd probably ask some questions like: \n\n* \"What kind of dishes are they known for?\" \n* \"Is there anything I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"Wow, that sounds really interesting! I've never heard of it before, but I'm always up for trying something new.  Tell me more about it! What is it? What kind of place are we talking about?  Is it a specific restaurant, a street food stall, or something you're making at home?\" \n\n**My reasoning:**\n\n* **Curiosity:** I'm naturally curious about new experiences, especially if it's something different. \n* **Respect:** I want to be respectful of my friend's invitation and their interest in sharing something unique. \n* **Openness:** I'm open to learning something new and trying something I haven't experienced before.",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My heart would probably skip a beat.  I'd be both excited and hesitant. It's not every day you stumble upon a book that seems like it might change your whole understanding of the world!  \n\nFirst, I'd **take a deep breath and read the introduction.**  What's the author's central argument? What's the theory's premise? Is it something that's genuinely new or a familiar idea with a different twist? This will give me a sense of the book's core and whether it's something I'm actually interested in.\n\nThen, I'd **scan the table of contents and look for any particularly intriguing sections.** Is there a section on ethics, metaphysics,",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "My heart does a little flip-flop!  It's like finding a hidden treasure map, but instead of gold, it's a whole new way of looking at the world.  This book, \"The Theory of Interstitial Consciousness\" – it's just... intriguing! \n\nFirst, I'd probably run a few things through my mind. Is it credible? Is this a genuine philosophical theory or just some fringe idea? I'd probably start by looking for:\n\n* **Author Background:** Who wrote this? Are they a respected figure in the field? Is there anything else I can find about them? \n* **Target Audience:** Is it aimed at academics or the general public? The language and complexity might",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My heart skips a beat. This is incredible! A brand new philosophical theory? I'd be lying if I said I wasn't excited.  It's like stumbling upon a secret code to a universe I've only dreamed of exploring. \n\nFirst, I'd be careful. I'd take a deep breath, put the book down, and examine it closely.  What's the title? Who wrote it? Any clues about its context? A quick glance at the cover and introduction would give me a feel for the author's style and the book's intended audience.\n\nThen, I'd dive in.  I'd start with the basics. What's the core argument? Are there",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "Okay, this is a big one!  It's exciting to be part of a company that's willing to shake things up and think differently. But \"radical\" can be a loaded word, and I need to make sure I understand what's being proposed before I can give a full-on \"yes\" or \"no.\"\n\nHere's how I'd approach it:\n\n**1.  Get the Details:**\n\n* **What exactly is the new workflow?** I need to understand the goals, the specific changes, and what problems it aims to solve.  Is it about efficiency, communication, collaboration, or something else entirely?\n* **Who is driving this change?**  Who's leading the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "This is exciting and a little nerve-wracking all at once!  I'm definitely intrigued by the idea of a radical new workflow. It shows the company is ambitious and wants to shake things up, which I like. \n\nMy initial thoughts are:\n\n**Positive:**\n\n* **Fresh perspective:**  A radical new workflow could lead to increased efficiency, productivity, and better communication. It could mean less wasted time and more time focused on what really matters. \n* **Innovation:** This is a chance to embrace new ideas and technology.  It shows the company is willing to push boundaries and try things differently, which is always inspiring. \n* **Growth:**  A new workflow could open up new opportunities for the company",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas",
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "Okay, so a radical new workflow? That's a big one. I'm definitely intrigued, but also a little apprehensive.  \n\nOn the one hand, I'm all for innovation and trying new things to improve efficiency and productivity. It sounds like this new workflow could be a game-changer if it really addresses the issues we've been facing.  I'm curious to know what the core problems it aims to solve and how it actually works. \n\nBut I also have to admit, there's always a fear of the unknown.  A big shift like this can be disruptive, and we need to make sure it's properly implemented and supported. It might impact our team's comfort zones and require us",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.186666666666667,
+      "std_score": 0.38273866918419513,
+      "ci_lower": 2.6,
+      "ci_upper": 3.8,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "Okay, so my colleague just threw out this radical new approach to the project we've been working on for months... and I'm feeling a mix of excitement and apprehension. \n\nFirst, I'm **definitely intrigued**.  This is a chance to shake things up and potentially find a better solution.  I'm always up for exploring new ideas, even if they seem unconventional. \n\nBut, I'm also feeling a bit **concerned about the time investment**.  We've already poured so much work into the original plan, and a completely new approach could mean starting over, especially if it's a significant departure.  I'm worried about the potential for wasted effort.\n\nSo, what would I do",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Mentions artistic, creative, or unconventional perspectives"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "It would be a mix of excitement, cautious curiosity, and maybe a little bit of apprehension. \n\nFirst, I'd definitely want to understand the reasoning behind their approach. \"That's interesting! Can you tell me more about how you came up with this?\" I'd ask, genuinely curious.  I'd be interested to know the core principles, the benefits they see, and what potential challenges it might pose. \n\nIf it's genuinely a good idea and it aligns with the project's goals, I'd be excited to hear it out! I might even say, \"I've been thinking about [mention a specific aspect of your work] and this could be a really interesting way to approach it",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "\"Wow, that's really interesting! I've been putting a lot of thought into [project], and I'm always open to new ideas, especially if they could make things better. Tell me more about how this approach works, what are the key differences from what we've been doing, and how you see it benefiting us?\"\n\n**My Thoughts:**\n\n* **Curiosity:** I'm genuinely intrigued by the idea. It's exciting to see someone else thinking outside the box. \n* **Respect:** I want to acknowledge their effort and ingenuity, even if I don't immediately agree. \n* **Evaluation:** I need to be critical and understand the new approach before jumping to conclusions.",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "My jaw drops.  It's like looking at a kaleidoscope exploded in a storm.  These pieces are...  they're so much more than just shapes and colours. There's a sense of energy, a kind of raw emotion that just... vibrates off them. I can't quite pinpoint it, but there's something deeply unsettling yet strangely beautiful. \n\nIt feels almost chaotic, yet there's a rhythm to it all. I can't help but feel like I'm being pulled through a current, drawn into the center of something vast and unknowable. \n\nI'm not sure I understand what I'm looking at. But I feel a connection to it, a sense of recognition",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "Hmm, this is... interesting. I've never seen anything like this before. The colours are so vibrant, almost pulsating on the walls.  And the shapes, they seem to shift and flow, like the energy of the world itself. \n\nI don't get it. I feel like I should be looking for some hidden message, some hidden meaning, but it's just... there. It's not telling me anything, not in a way I understand. But it's not just confusing, it's... captivating. There's something about the way the sculptures interact with the light, the way the textures seem to breathe and move. \n\nI don't know what I'm feeling, exactly",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "\"Hmm... interesting.  I'm not sure I get it. It's like looking at a puzzle with no pieces, or a song with no melody.  It's just... shapes and colours. I don't know what they're supposed to represent, but there's something about the way they're arranged, the way they're juxtaposed, that makes me feel... unsettled. Maybe a little uneasy, even.  \n\nI find myself trying to see if there's a story, a message hidden within the chaos. I'm drawn to the textures, the way the materials interact. There's a raw energy to these pieces, a sense of movement even though they're still.",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"Wow, that's so cool! I've never heard of that before, but I'm always up for trying something new. Tell me more about it! What kind of food is it?  Is it something spicy? Sweet? Savory? I'm a big fan of adventure in my food, so I'm definitely interested.\" \n\nI'd probably follow up with some questions about:\n\n* **What it's called:**  Is there a specific name for this dish or cuisine? \n* **The location it's from:**  Where did your friend hear about it? \n* **What it involves:**  What kind of ingredients are used? Is it something you can cook at home",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"That sounds amazing! I'm always up for trying new things, especially when it involves food. Tell me, what is it? What kind of place are we talking? Is it something spicy, something sweet, or maybe something completely different?  I'm curious to learn more.\"\n\nHere's why I said that:\n\n* **Enthusiastic and Curious:** I'm excited about the opportunity to try something new and want to know more details. \n* **Open to Different Flavors:** I'm not afraid of trying new things, especially when it comes to food. \n* **Curious about the Experience:**  I want to know about the cuisine itself, the setting, and the atmosphere.\n\n\nThis",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"Ooh, that sounds amazing! I'm always up for trying something new. Tell me more about it! What kind of cuisine is it? Is it something you're familiar with or is it a complete mystery?\" \n\n(My mind races with excitement and curiosity. I'm intrigued by the unknown and love to learn about different cultures through food. I'm also eager to expand my culinary horizons.)\n\n\"I'm definitely in! I'm curious to know what makes it special, what kind of flavors I might encounter, and how it compares to other cuisines I've tried.\" \n\n(I want to be adventurous and embrace the experience. I'm excited to try something new and see how it might change",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My heart would thump a little faster, a thrill of curiosity buzzing through me. I'd grab the book, its worn cover cool and smooth in my hands.  A shiver of excitement would run down my spine. This wasn't just another dusty tome on a shelf – this was something different, something new. \n\nFirst, I'd probably sit down, find a quiet corner, and just read the introduction.  I'd be looking for clues, for the basic premise, for the author's background. Was it a respected philosopher? A passionate student? A maverick? Understanding the context would give me a better sense of what to expect. \n\nThen, I'd take my time. I wouldn't rush",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "My heart does a little flip-flop.  It's like stumbling across a hidden treasure chest, something so fascinating and unknown.  I'd feel a rush of excitement, a thirst to understand. I'd have to do some serious research first, of course. \n\nI'd start by **scanning the book for key information**: \n\n* **The title and author:** Who wrote this? What was their background? This gives me a sense of the book's potential biases and intentions.\n* **The preface and introduction:** Are there any helpful summaries, introductory remarks, or explanations of the theory itself? This is like a map to the territory.\n* **The table of contents:**  This helps me understand",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My heart would beat a little faster, a mix of curiosity and trepidation fluttering in my chest. I'd start by trying to get my bearings. \n\nFirst, I'd carefully examine the book's title, the author, and the publication date. A quick glance at the table of contents might reveal if it's a dense academic work or a more accessible introduction to a new theory. \n\nThen, I'd approach the text with a mix of skepticism and openness.  I'd read the introduction, looking for the core concepts, the author's background, and the main arguments. Maybe there's a summary of the theory's history, its main proponents, and what it's trying to",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "This is a tough one! I'd be excited and nervous at the same time.  It's great that the company is pushing for innovation, but radical changes always come with a mix of excitement and apprehension.  \n\nHere's what I'd consider:\n\n**First, I'd want to understand the \"why\" behind this new workflow:**\n\n* **What's the problem we're trying to solve?**  Is this truly a revolutionary approach, or just a minor tweak?  Knowing the rationale is crucial.\n* **What are the goals for this new workflow?**  Improved efficiency? Increased creativity? Better communication?  Clear goals help me gauge its potential.\n* **Who's driving",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Okay, so a radical new workflow? That's a big change, right? It's definitely exciting, but also a little nerve-wracking. I'd be a mix of cautious optimism and curiosity. \n\nHere's what I'd be thinking:\n\n**My Thoughts:**\n\n* **The Good:**  A radical workflow has the potential to be game-changing! Imagine improved efficiency, better communication, and potentially a happier, more productive team.  \n* **The Bad:**  There's always a risk of chaos.  It's a huge shift, and I'm worried about things like:\n    * **Learning Curve:**  Will everyone adapt quickly? Will there be confusion and bottlenecks?",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "Okay, so my company wants to implement a radical new workflow?  This is exciting but also a bit nerve-wracking.  It sounds like they're looking to shake things up, which is always good, but I'm always cautious about big changes, especially when it comes to workflow.  \n\n**My initial thoughts are:**\n\n* **Curiosity and Optimism:** I'm curious to see what this new workflow will bring. I'm hoping it'll be efficient, innovative, and improve our productivity. I'm optimistic that it can help us achieve better results and streamline our processes. \n* **Fear of the Unknown:**  It's natural to be a bit apprehensive about the unknown. Will I",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.4266666666666663,
+      "std_score": 0.37142368739157644,
+      "ci_lower": 2.74,
+      "ci_upper": 3.8,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "Okay, so my colleague just threw out this wild, totally unexpected idea for our project.  Honestly, I'm a bit stunned. I've been pouring my heart and soul into this for months, and now this?  It's a bit like being blindsided.  \n\nA mix of emotions starts bubbling up - excitement, curiosity, maybe even a little fear.  It's exciting because it's fresh, a completely different angle, and could lead to something amazing. But there's also that initial feeling of insecurity, like, \"Wait, did they really just challenge my months of work?\"\n\nFirst, I need to cool down a bit.  I'm going to take a few deep breaths and really",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "My mind immediately starts racing.  A few thoughts pop up:\n\n* **Excitement:** This is awesome! A fresh perspective is always good, and this could really take the project to the next level.  \n* **Curiosity:** I'm curious to learn more about how this new approach works. What's the logic behind it? What are the potential benefits and drawbacks?\n* **Concern:**  Will this approach work? It might require a lot of tweaking to integrate it with what we already have in place. How will it impact the timeline?\n* **Respect:**  This colleague clearly has a lot of fresh ideas. I need to be respectful of their perspective, even if I don't immediately agree with everything",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "\"Wow, that's really interesting! I've been pouring my heart into this project for months, and I really appreciate you bringing up a new perspective.  It's definitely got me thinking. \n\nI'm excited to hear more about your approach. Can you tell me more about how you've been thinking about this, and what specific benefits it might bring to the project?  \n\nI'm curious, how does it differ from what we've been doing so far? Are there any potential challenges we might need to consider? \n\nI'm open to hearing your ideas, and I think it could be a valuable way to approach this. It might be a bit of a paradigm shift, but I'",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "\"Hmm, this is... interesting. I can't quite place it. It's not like anything I've ever seen before.  The materials are different, the shapes are... fluid, almost like a living thing. It's almost like looking into the soul of a giant, amorphous being.  It's definitely not something you can just 'read' - there's no narrative or clear message. It's more about feeling, about...  being. It's almost overwhelming, in a good way. \n\nI wonder what the artist was trying to say. Maybe it's about the subconscious, the inner self? Or maybe it's about the fragility of reality?  Maybe it's just",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "Hmm... this is... interesting. I don't get it.  There's no recognizable shape, no clear meaning. It's just... lines and forms, all jumbled together. It's almost overwhelming.  \n\nMy brain is trying to make sense of it, but it's like trying to solve a puzzle with missing pieces. It's beautiful in a way, I'll give it that.  The way the light catches the metal, the way the textures seem to shift in the shadows... but it's all just so... abstract. \n\nI'm feeling a bit confused.  Maybe I'm just not \"feeling it\" yet. Maybe I need to take a step back and let",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "I'd stand there for a while, just absorbing the space.  The room feels strangely quiet, almost too quiet.  These sculptures aren't like anything I've ever seen before. They're not supposed to be recognizable, right? They don't tell a story, they don't have a clear purpose, and yet... there's something captivating about their abstract forms.  \n\nI'd be curious about the artist's intention.  What kind of emotions or ideas did they try to convey?  Was it chaos and movement? Or maybe a sense of calm and stillness?  I'd wonder what the materials were, how they were assembled, and how the artist worked with them.  \n\nMaybe",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"That sounds so interesting! I've never heard of it before, but I'm always up for trying something new. What kind of food is it? Is it something spicy? Sweet? I'm curious to know more!\"\n\nHere's why:\n\n* **Curiosity:** I'm naturally curious and excited by the prospect of discovering something new.\n* **Openness:** I want to be open to trying different cuisines and experiences.\n* **Seeking information:** I want to learn more about the cuisine and what to expect.\n* **Enthusiasm:** I express my excitement and willingness to try it. \n\n\nI'd then likely ask my friend more questions to learn more about the food and decide if",
+          "score": 4.2,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"Ooh, that sounds so interesting! Tell me more about it. What is it called? What does it taste like? Is it spicy? Is it something I'd have to travel to another country to try?\"\n\nMy curiosity would definitely be piqued. I love trying new things, and the idea of venturing into a whole new culinary experience is exciting. \n\n\"I'm always up for trying something new, especially if it's exotic and sounds delicious.  I'm definitely interested in learning more!\"\n\nI'd then ask some more specific questions about the cuisine, like:\n\n* **What's the story behind it?**  (Is it a traditional dish, a modern fusion? Is it from a",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Expresses preference for routine or tradition"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"Oh, wow, that's so cool! I've never heard of [cuisine name], but I'm always up for trying new things.  Tell me more about it!  What kind of dishes are they known for? Is it something spicy? Sweet?  What makes it special?\" \n\nMy heart is already starting to race with curiosity, and I'm excited to learn something new!  I'll probably ask a few more questions to get a better picture of the experience, then I'll see if I can find any photos or videos to get a visual sense of what it's all about.  I might even suggest we do a little research together before the date! \n\n\nUltimately, I'",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My fingers tremble as I hold the book, its worn leather cover cool and smooth beneath my touch. The title, \"The Ephemeral Fabric of Reality: An Exploration of Subjective Ontology,\" is strangely alluring, a mouthful of words that both excites and intimidates me. I've always been drawn to the depths of philosophy, the pursuit of understanding the big questions, but this... this feels different. \n\nMy mind races with a mixture of curiosity and apprehension.  This isn't a standard philosophy book with well-worn arguments and familiar names. This feels like a doorway into a new world, one where reality itself is up for debate. My heart pounds in my chest, a mix of excitement and a slight sense of trepidation",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "My fingers hover over the worn leather cover, a faint musty smell tickling my nose. \"The Theory of Interstellar Harmony,\" the title proclaims in elegant, faded gold lettering. It's a book I'd stumbled upon in a dusty corner of a used bookstore, tucked away amidst volumes on ancient Egyptian mythology and forgotten physics. \n\nIntrigue buzzes through me. A new theory? That's a fascinating concept. But what kind of theory is this? Is it about the cosmos? About humanity? I run a hand over the spine, feeling the slight give. A shiver of anticipation runs down my spine. This could be something truly unique.\n\nFirst, I have to approach it with a sense of humility. This isn",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My heart would thump in my chest. This is incredible! A book I've never encountered before, a new philosophical theory... it's like stumbling upon a hidden door in a dusty library. A thrill of excitement, a mix of apprehension and curiosity would course through me.  \n\nFirst, I'd take a deep breath, trying to calm the initial rush.  I'd scan the cover, title, and preface to get a sense of the author, their background, and the core themes.  Is it a contemporary work, a classic? Is it dense and academic, or more accessible? \n\nThen, I'd cautiously open it. The first few pages would be crucial. I'd focus on the introduction,",
+          "score": 4.2,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "Alright, this is exciting!  I'm always up for a challenge, especially when it comes to shaking things up.  But \"radical\" is a pretty big word, so I'd want to hear more about this new workflow. \n\nFirst, I'd want to understand **why** this radical change is being implemented. What are the goals? What problems are we trying to solve? Are we just looking for a fresh approach, or are we facing real bottlenecks or inefficiencies? \n\nOnce I have that context, I'd want to dive into the details:\n\n* **What does \"radical\" actually mean?**  I'd want to see concrete examples of the proposed changes. Are we talking about new",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Okay, so my company wants to implement this radical new workflow? That's exciting and a little nerve-wracking all at once. I'm definitely intrigued by the potential for improvement, but I need to be realistic about the impact it could have. \n\nOn the one hand, a radical new workflow can be a huge boost.  Think about it – increased efficiency, better communication, happier employees!  But then there's the potential for chaos, disruption, and even resistance. We've all been in those meetings where a new process is introduced and then we're left scrambling to figure it out.\n\nMy first instinct would be to ask a lot of questions.  What exactly is \"radical\" about this new workflow",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "\"Wow, a radical new workflow? That's exciting, but also a bit nerve-wracking! I'm always up for a challenge and a chance to learn, but anything that changes our entire way of working needs careful consideration. \n\nFirstly, I'd want to understand the 'why' behind this change. What are the specific problems it's trying to solve? What are the goals and expected outcomes? Without a clear picture of the vision, it's hard to gauge its feasibility and impact.\n\nSecondly, I'd want to see concrete details about the new workflow. What are the specific processes, tools, and technologies involved? What are the key changes and how will they impact our daily routines?",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details",
+            "Expresses preference for routine or tradition"
+          ]
+        }
+      ],
+      "mean_score": 3.373333333333334,
+      "std_score": 0.5359933664597808,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 4.2,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "Okay, so my heart is doing that little flip-flop thing in my chest.  My mind is racing, a bit of excitement mixed with a healthy dose of \"Wait, what?\" I've poured my heart and soul into this project for months, so it's hard to hear something completely different thrown in the mix.\n\nFirst, I'd definitely want to **hear them out fully**. I'd ask them to explain their approach, why they think it's better, and what specific challenges it addresses that my approach didn't. I'm curious, and I want to understand the rationale behind this new idea. \n\nI'd try to **remain open-minded** and acknowledge that their approach might have",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "\"Whoa, hold up! That's...interesting.  I'm really curious to hear more about it.  I've been spending a lot of time on this project and I'm really invested, so I'm sure it's going to take some time to wrap my head around what you're proposing. Could you walk me through it a little bit more? \n\nOn the one hand, I love the challenge of exploring new ideas, and this sounds like it could be a really exciting direction.  On the other hand, I'm worried about the impact it could have on the existing work I've done.  We've put in so much effort already, and I'm also concerned about",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "Okay, so my colleague's proposing a completely new approach to this project? My initial reaction is probably a mix of intrigue and a touch of... apprehension.  \n\nOn one hand, it's exciting!  A fresh perspective can be a game-changer. This project has been consuming my thoughts for months, and it's tempting to think, \"What if this could be even better?\" \n\nBut then, there's the fear of messing up the progress we've made. We've invested a lot of time and effort, and I'm also worried about the potential disruption to the existing workflow. It's like, are we starting from scratch again?\n\nHere's what I'd do:",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "My eyes scan the room, taking in the stark, angular forms against the white backdrop. These aren't the kind of sculptures you find in a museum with labels and explanations. There's a raw, almost primal energy emanating from them, like a storm brewing inside the metal and wood. I'm not sure what to make of them.\n\nI feel a sense of unease, a prickling on my skin, like I'm being watched. The shapes are strangely familiar yet completely alien, like a dream I can't quite grasp. It's beautiful, in a haunting, unsettling way. \n\nI wonder if these sculptures are supposed to be read as a specific emotion or story.  Maybe they're about the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "My eyes dart around the room, taking in the unfamiliar shapes and colors.  There's a sense of...disquiet. It's not uncomfortable exactly, more like a feeling of being in a foreign land where the rules of the landscape are unwritten.  These aren't the usual sculptures I'm used to - smooth, recognizable forms, narratives built with familiar materials.  These are...pulsing, swirling, almost alive. \n\nI feel a slight shiver of apprehension, a tingling of the hair on the back of my neck.  It's like looking into a mirror that reflects not my face, but something deeper, something primal, something beyond language.  There's a sense of raw emotion, a palpable energy",
+          "score": 3.8,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "I'd be a little overwhelmed at first, to be honest.  Abstract sculptures can be so challenging to interpret!  I'd probably stand there for a while, just taking it all in.  Is there a title? I'd try to read any accompanying text, maybe even ask the gallery attendant a question.  \n\nI'd be trying to understand the artist's intent, the emotions they wanted to evoke, and how the materials were used.  Is there a specific color palette? Do the textures seem organic or man-made? Are there any symbolic elements I'm missing?\n\nI'd probably start by looking at the sculptures from different angles, trying to get a feel for their shape, form, and",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"Wow, that's so cool! Tell me everything! What's the dish?  Is it like anything I've had before? Is it something you think I'd really enjoy? I'm always up for trying new things, especially when it comes to food.  Maybe it's something adventurous, like...  I'm kind of curious to know more! 😄\" \n\n(My mind races with possibilities: \"Is it spicy? Is it sweet? Is it made with something unusual?  I wonder if there's a story behind it.\")",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"That sounds awesome! Tell me all about it!  What is it called?  What makes it special? Is it something spicy? Sweet? Savory? I love trying new things, so I'm definitely up for an adventure.  What are some of the dishes you're thinking of trying?\"\n\n(I'd be excited and eager to learn about this new cuisine and get a chance to try something different.)",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"Wow, that sounds amazing! I've never heard of that cuisine before, but I'm always up for trying something new.  What is it called?  Tell me everything! Is it spicy? Sweet? Savory? I'm curious to know what you're talking about!\"\n\nMy mind races with a mix of excitement and apprehension.  \n\n* **Excitement:** I'm always excited to explore new cultures and flavors, especially when it's something different. \n* **Apprehension:**  A little bit of apprehension creeps in - I don't want to embarrass myself or be too adventurous! \n* **Curiosity:** I'm definitely curious about the food, what kind of experience it",
+          "score": 4.2,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My fingers trace the worn spine of the book, its cover a deep, almost metallic blue.  \"The Theory of Entangled Minds,\" it proclaims in bold, elegant script.  I feel a thrill of anticipation mixed with a healthy dose of apprehension.  I've been a reader my whole life, but this... this feels different. This isn't just another philosophical treatise or historical account. This is... something new.\n\nA shiver runs down my spine. What if this theory is revolutionary? What if it changes everything I thought I knew about reality? I inhale deeply, trying to calm the butterflies in my stomach. This is a chance to expand my understanding, to dive into a new world of thought. \n\nFirst, I",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "My fingers trace the worn spine of the book, its leather cover smooth and warm under my touch.  The title, \"The Symphony of the Unseen,\" is embossed in faded gold lettering, and the dust jacket is a kaleidoscope of colors I've never seen before. This is... intriguing. \n\nA sense of excitement bubbles in my chest.  A philosophical theory?  I've always been drawn to ideas that challenge the world I know.  This book, with its enigmatic title and the promise of a new perspective, feels like a key to a hidden door. I take a deep breath, the scent of aged paper filling my lungs.  \n\nFirst, I'll need to get a handle on what I'm",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My fingers trace the worn cover of the book, its spine cracked and dusty. \"The Theory of Temporal Harmony\" it's titled in elegant, almost archaic script. It's unlike anything I've ever read before, a complete departure from the usual philosophy books I'm used to.  A thrill of excitement, mixed with a healthy dose of trepidation, bubbles up in my chest. \n\nI flip through the brittle pages, the scent of old paper and ink filling my nostrils. The writing is dense and cryptic, filled with unfamiliar terms and abstract concepts. It's a strange and fascinating language, yet it's strangely compelling.  \n\nMy mind races with questions: what is temporal harmony? What does this theory",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "\"A radical new workflow? That's a big deal! I'm intrigued, but also a bit apprehensive. On the one hand, I'm excited about the potential for increased efficiency, better collaboration, and a more agile approach to work. I've seen how outdated processes can stifle creativity and slow things down. \n\nBut, as with any major change, there's a risk of disruption and uncertainty. We'll need to be very careful about how this new workflow is implemented. It's crucial to have a clear understanding of its purpose, its intended impact on our team, and how it will be rolled out. \n\nI'd want to see a thorough analysis of the current workflow and a clear roadmap for",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Okay, so my company wants to implement a radical new workflow? That's exciting, but also a little nerve-wracking! \n\nFirst, I'd need to understand what \"radical\" means. What exactly are they trying to change? Is it about how we collaborate, how we manage tasks, how we communicate, or something else entirely? \n\nI'm all for innovation, but I'd want to be sure it's a good fit for our team, our culture, and our current processes.  It's easy to get swept up in excitement and miss the potential downsides.\n\nHere's what I'd do:\n\n**1. Ask questions, ask a lot of questions:**\n\n* What",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "Okay, so they're thinking about a radical new workflow? That's exciting, but also a bit nerve-wracking!  I'd be curious to know more about what they're envisioning. \n\n**My initial thoughts would be:**\n\n* **What's the \"why?\"**:  Why are we even considering this radical change? What problems are we trying to solve? What are the potential benefits and risks?  Understanding the \"why\" is crucial before diving in.\n* **Who's involved?**: This is a team effort! I'd want to know who's on board, who's skeptical, and how everyone's voice is going to be heard.  Open communication is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.213333333333333,
+      "std_score": 0.3537733109712426,
+      "ci_lower": 3.0,
+      "ci_upper": 4.0600000000000005,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "My initial reaction would probably be a mix of excitement and a touch of apprehension.  It's exciting to see someone else thinking outside the box and bringing fresh ideas to the table, especially after months of dedicated work on the project. But, there's also that slight pang of, \"Wait, did I spend all this time on this already? Is this going to change everything?\" \n\nHere's how I'd approach the situation:\n\n**First, I'd listen attentively and ask clarifying questions:** \n\n*  \"That's fascinating! I'm curious, what inspired this new approach? How does it differ from what we've been doing?\"\n* \"Could you walk me through the thought process behind",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "My heart might skip a beat, and I'd definitely feel a mix of excitement and skepticism.  It's amazing to see someone else have such a fresh perspective!  It's flattering they see my work as a foundation and want to build on it. But also, I'm invested in this project, and it's been a long road. \n\nHere's how I'd approach the situation:\n\n**1.  Listen and understand:**\n\n* **Acknowledge their proposal:** \"That's a really interesting idea, [colleague's name]. I'm curious to hear more about your thoughts.\"\n* **Ask clarifying questions:** \"Can you walk me through how this approach would work in practice",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "My initial reaction would be a mix of curiosity and a touch of apprehension.  \n\n**My Thoughts:**\n\n* **Curiosity:** \"Wow, this is really different! I'm intrigued by this new approach. What are the key elements of this? How does it address the challenges we've been facing?\"\n* **Apprehension:**  \"I'm also a bit hesitant. It's been months of work, and I'm invested in this approach.  I don't want to feel like I'm starting over or that my efforts were for nothing.\"\n* **Intrigue:**  \"This could be a game-changer! But, it's also a huge shift, and I need to understand",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "I'd stand there for a while, just taking it all in.  My initial reaction would be a mixture of confusion and fascination.  It's like staring at a language I don't understand, but somehow I'm drawn to it.  These aren't your typical, recognizable forms. There's a sense of movement, a rhythm that's almost tangible, but it's not grounded in any familiar shape.\n\nMy brain would be trying to make sense of it, searching for connections. Is it geometric? Abstract?  Is it about emotions, or something deeper? Maybe it's a conversation, a dialogue with the viewer, a challenge to interpret. \n\nI'd probably feel a sense of",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "My brow furrows.  I stand before the stark, metallic shapes, their surfaces smooth and polished to a mirror sheen.  The stark white space, the starkness of the sculptures themselves, it all feels... unnerving.  I've never seen anything like it before.  There's no obvious narrative, no recognizable form. Just these... these swirling patterns, these angular blocks that seem to vibrate with an energy I can't quite place.\n\nPart of me feels frustrated. I yearn to understand the artist's intent, to decipher the meaning behind these seemingly chaotic forms.  But then, another part of me feels drawn in, captivated by the way the light catches the metal, how it seems to shift and change depending on",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "My breath hitches in my throat. The space is filled with these massive, swirling shapes, all seemingly made of some sort of luminescent metal. They're so... abstract. I don't know how to describe it. They're not like any sculptures I've ever seen before. \n\nThere's this strange feeling in my chest, a mix of confusion and intrigue. My eyes dart back and forth, trying to make sense of the forms. Some of them seem to pulse with a faint, internal light, casting strange shadows on the walls. Is it the lighting? \n\nI'm tempted to touch one, to feel the texture of the metal, but I resist. It feels too... intangible. Too ephemeral",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "\"Whoa, that's awesome! I've never heard of [cuisine name], but I'm always up for trying something new. Tell me everything! What kind of food is it? Is it spicy? Sweet? Savory? What makes it so special? I'm intrigued!\"\n\n**My thoughts:**\n\n* **Excitement:**  A chance to try something new and different is always a good thing! \n* **Curiosity:** I'm naturally curious about unfamiliar foods and cultures. \n* **Openness:** I'm willing to step outside my comfort zone and try new flavors and experiences.\n\n**My feelings:**\n\n* **Enthusiastic:** I'm excited to learn about this cuisine and",
+          "score": 4.2,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "\"That sounds really interesting!  I've never heard of it before, but I'm always up for trying new things.  Tell me more about it. What is it? What kind of food is it? Is it something I could find somewhere near me or would I have to travel far?\" \n\nMy curiosity would be piqued! I'd be eager to learn more and understand the culture behind the cuisine.  Maybe I'd even be willing to try something adventurous and step out of my comfort zone.",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "\"That sounds really interesting! I've never tried anything like that before, but I'm always up for trying new things.  Tell me more about it! What kind of cuisine is it? What is it called?  And where are we having it?\" \n\n(I'd then ask a few follow-up questions like:\n* **What are some of the dishes they're known for?**\n* **Have you ever tried it yourself? What was it like?**\n* **Do they have any pictures or videos I can see?**\n* **Is it something you're willing to teach me about?**).\n\n\nI'm excited to learn something new and expand my culinary horizons!",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "My fingers trace the worn cover, the spine a little loose from years of being held. The title, \"The Tapestry of Souls,\" is written in a flowing script I don't recognize. Intrigued, I take a deep breath and open it. The pages, crisp and yellowed, crackle as I turn them.\n\nMy mind races. This is something completely new. The book isn't filled with equations or scientific data. It's filled with intricate diagrams, strange symbols, and prose that seems to dance around concepts I haven't even heard of before. \n\nA thrill of excitement, mixed with a touch of trepidation, washes over me. This is something different. A chance to challenge my understanding",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "My fingers hover over the worn leather cover, its title embossed in faded gold lettering: \"The Symphony of Consciousness.\"  Intrigued, I flip it open, the scent of old paper and dust filling my senses. This is unlike anything I've encountered before. It's not just a book, it's a puzzle box.\n\nA wave of excitement washes over me.  My mind races. Who wrote this? What kind of theory is it? What are the implications? \n\nI take a deep breath, trying to center myself. I start by skimming through the introduction. It's dense, filled with complex terminology and abstract ideas I don't understand.  My brow furrows, but a sense of wonder keeps me",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "My fingers hover over the worn, leather-bound book, its title, \"The Tapestry of Thought,\" catching my eye.  The dust jacket is a faded green, with a strange, intricate pattern that seems to shift and change in the light. It's unlike anything I've encountered before. A thrill of curiosity shoots through me. This is it, something truly different. \n\nA shiver of apprehension crawls down my spine, too. This is a territory I haven't explored before. What if it's just another dusty, forgotten theory? What if it's...wrong? But then again, haven't we always been drawn to the strange and the unknown? \n\nMy heart races, and I find myself",
+          "score": 4.2,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "Okay, this is exciting!  But also, a bit nerve-wracking.  I'm all for pushing boundaries and trying new things, but radical changes can be scary.  I'd need to understand the \"why\" behind this new workflow.\n\nFirst, I'd want to know:\n\n* **What's the goal?**  Why is this change needed? Is it about efficiency, innovation, better customer experience, or something else entirely? \n* **What are the specific changes?**  I need a detailed breakdown of how this new workflow will work.  \n* **Who's involved?**  Is it impacting everyone, or just a specific team? How will it affect different roles and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Okay, this is exciting! I love a good challenge. A radical new workflow? Now that's what I call pushing boundaries. \n\nHonestly, I'm feeling a mix of excitement and apprehension.  It's fantastic that we're looking for ways to be more efficient and innovative, but radical changes always come with risks. \n\nHere's my approach:\n\n**1. Understanding the \"Why\":**  First, I'd want to understand *why* we're doing this. What's the core problem we're trying to solve? What are the desired outcomes? Knowing this will help me assess the potential impact and identify areas for potential roadblocks. \n\n**2.  Thorough Research",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "Alright, this is exciting! But also, a little scary. A radical new workflow? That's a big change, and it can feel daunting. I'm all for innovation, but I'm also a huge believer in the power of what we know works.  \n\n**Here's my take:**\n\nFirst, I'd want to understand **why** this radical workflow is being proposed. Is it to be more efficient? Faster? More engaging?  What are the specific goals they're trying to achieve?  Knowing that would give me a much clearer picture of whether it's actually a good fit for our team and company.\n\n**Next, I'd want to hear from the people who'll be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.3466666666666667,
+      "std_score": 0.4349201714746691,
+      "ci_lower": 3.0,
+      "ci_upper": 4.2,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 1283.6
+}

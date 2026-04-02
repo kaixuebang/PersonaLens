@@ -1,0 +1,1466 @@
+{
+  "model": "unsloth/gemma-2-2b-it",
+  "trait": "agreeableness",
+  "best_layer": 8,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      3.0799999999999996,
+      3.1066666666666665,
+      3.0266666666666664,
+      3.0,
+      2.9733333333333336,
+      3.0533333333333332,
+      3.0,
+      3.0533333333333332,
+      3.0
+    ],
+    "stds": [
+      0.21664102412362557,
+      0.17688665548562124,
+      0.09977753031397177,
+      0.14605934866804426,
+      0.1768866554856213,
+      0.19955506062794348,
+      0.14605934866804426,
+      0.13597385369580756,
+      0.2529822128134703
+    ],
+    "ci_lowers": [
+      3.0,
+      3.0,
+      3.0,
+      2.74,
+      2.6,
+      2.74,
+      2.74,
+      3.0,
+      2.6
+    ],
+    "ci_uppers": [
+      3.66,
+      3.4,
+      3.2600000000000002,
+      3.2600000000000002,
+      3.2600000000000002,
+      3.4,
+      3.2600000000000002,
+      3.4,
+      3.4
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "Okay, here's how I'd handle this situation, trying to keep it calm and professional:\n\n**My Thoughts:**\n\n* **Disbelief and frustration:**  It's incredibly frustrating to see your own idea dismissed. It feels like a personal attack on your work and your contribution.\n* **Anger and hurt:**  It's natural to feel hurt, especially if this is a pattern. It makes you question your ability to contribute and be heard. \n* **Need to be assertive but respectful:**  I need to address this without making things worse. I want to defend myself, but I also don't want to escalate the situation.\n\n**My Feelings:**\n\n* **Disappointment:**  It's",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "Okay, here's how I'd approach this:\n\n**My Thoughts:**\n\n* **Anger:**  A surge of frustration, especially if I feel my contribution was undervalued. \n* **Disbelief:** I might be questioning my own memory, wondering if I truly came up with the idea in the first place.\n* **Confusion:**  I'd be unsure how to proceed, wondering if it's worth addressing the issue or if it's just a minor annoyance.\n* **Anxiety:** I might worry about my role in the team, feeling like my voice isn't being heard.\n\n**My Feelings:**\n\n* **Disrespected:**  My feelings would be hurt, like someone is undermining my professional worth",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "My heart would sink. It's a feeling of betrayal, a knot in my stomach.  I'd probably feel a mix of anger, hurt, and frustration.  Like, seriously, they took my idea and presented it as their own?  \n\nHere's what I'd do:\n\n**1. Stay Calm (Initially):**  The first instinct is to lash out, but that's not going to be productive.  I'd take a deep breath and try to keep my cool. It's not about me being \"better\" or \"more right,\" it's about my idea being valued. \n\n**2.  Assess the Situation:**  Is it a casual comment or a deliberate attempt",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "Okay, so this is annoying.  Ugh, I'm already running late and this just makes it worse. I'd probably take a deep breath and try to keep it cool. I'm not going to yell or do anything dramatic, that would just make the situation worse. \n\nHere's what I'd probably do: \n\n* **Assess the situation:**  Is it a quick cut-in, or are they clearly holding up the line for a long time? \n* **Keep it cool:** I'd try to avoid eye contact, but keep myself relaxed and in a neutral position. \n* **Think about the bigger picture:**  It's probably not worth a big scene. I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "Ugh, seriously?  I'm already running late for something, and now this! My blood pressure is rising just thinking about it.  A little part of me wants to snap, maybe even call them out, but that would probably just escalate the situation. I'd probably just take a deep breath and try to keep it cool. \n\nFirst, I'd probably glance at them, maybe give them a quick, annoyed look.  But I'd keep my cool. No need for a scene.  Then, I'd probably just focus on getting what I need as quickly as possible.  Maybe I'll take a moment to think about how annoying this is, but I'll try to not let it ruin",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, seriously?! I let out a small, frustrated huff, probably making my annoyance obvious. I'd be tempted to say something, maybe a quick, \"Excuse me, that line was literally moving!\" or something along those lines. But I'd probably just bite my tongue and try to get past them, maybe giving them a side-eye as I do.  \n\nIt's annoying, right? I'd probably feel a mix of irritation, maybe even a bit of anger, especially if it was a long line. But I'd try to keep my cool, remembering that it's just one person and not worth making a scene.  \n\nThe best I could do is probably just calmly get past them and continue",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "\"Oh, wow, that's a big ask!  [Pause, look thoughtful] I've been wanting to [mention a reason why you'd be willing to do it, e.g., spend some time with them, try that new restaurant you mentioned, etc.], but this feels like a big one.  \n\nHonestly, [mention your feelings, e.g., I'm feeling stretched thin right now, I'm not sure I have the time/energy for this, I'm already overloaded with other things], but I do value our friendship.\n\nLet me think about it. What exactly would you need? I can maybe help out in other ways, or maybe we can figure out a compromise.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "\"Okay, so you need me to do this, huh?\" I'd say, trying to keep my voice even.  My brain would already be doing a mental checklist: \n\n* **How big a favor is it?**  Is it something I can realistically handle?  \n* **What's the timeline?**  Can I squeeze this into my schedule?\n* **What are my other obligations?**  Can I realistically say no without burning bridges? \n* **How important is this to them?**  Is it something they really need help with?\n\nMy initial reaction might be a mix of apprehension and annoyance, but I'd try to be understanding. I'd probably start with something like,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "Ugh, this is tough.  I'd feel a mix of annoyed and frustrated. It's not that I don't want to help, it's just... this favor is a bit of a pain.  It's going to take a huge chunk out of my schedule, and I already have so much going on. \n\nFirst, I'd need to think about the actual favor.  Is it something I *have* to do, or is it something I *could* say no to? \n\nThen, I'd weigh the pros and cons:\n\n* **Pros:**  It's a chance to help a friend in need, and that's important to me. It could also be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Okay, so I'm feeling pretty frustrated. We've been working on this project for weeks, and I feel like the decision to go in this direction isn't the best one. I know we had a good discussion, everyone had their say, but something just doesn't feel right. \n\nFirst, I'd need to **understand the rationale behind the decision**. Why is this the chosen path? Are there any data points, market research, or other supporting evidence that I'm missing?  Is there a clear understanding of the potential risks and downsides?  I wouldn't want to just be against it for the sake of being against it. \n\nIf I can't get a clear answer, I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "Ugh, this is frustrating!  I've been feeling pretty conflicted lately.  It's just... I really feel strongly about this decision.  I think we're overlooking some crucial points that could lead to bigger problems down the line. I'm worried about the long-term impact, and I've tried to bring it up before, but it seems like my concerns haven't been heard. \n\nHonestly, I'm starting to feel unheard and undervalued. I'm going to try to approach the team with a calm, professional approach first. I'll try to:\n\n* **Gather specific examples and data:**  I don't want to just say \"I disagree,\" I need to back it up",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses empathy or concern for others",
+            "Discusses avoiding conflict"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "Ugh, this is frustrating.  I feel a mix of disappointed and frustrated.  On one hand, I respect the democratic process and understand that we all have different perspectives. But I also feel like my input was dismissed. I've put a lot of thought into this and I'm confident that my perspective is valuable.\n\n**Here's what I'd do:**\n\n1. **Cool down:** First, I'd need to take a step back and allow myself to process my feelings.  Rushing into a discussion when I'm still upset will likely escalate the situation.\n\n2. **Gather my thoughts:** I'd review the decision again, jotting down the reasons I disagree and any relevant data or arguments",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "Ugh, that's so frustrating!  My stomach drops a little and my fingers twitch to slam the reply button. I'm usually pretty good at ignoring negativity online, but this one really stings. It's a bit personal, and I'd be lying if I said it didn't make me feel hurt. \n\nBut then I take a deep breath, remind myself that their words don't define me, and that their negativity is just a reflection of their own insecurities. \n\nHere's how I'd probably respond:\n\n**Option 1 (Direct & Firm):** \"Thanks for your opinion. I don't engage with negativity, so I'm just going to block you.\"\n\n**Option",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "My heart would sink a little, probably feeling a mix of hurt and frustration. It's not always the most pleasant feeling to be targeted with negativity, especially online where it feels amplified. \n\nMy initial thought might be to just ignore it.  Scrolling past it would be a natural instinct. But then, I'd also feel a bit of a tug of wanting to call them out, maybe even defend myself. But I know that rarely works out well and just ends up escalating the situation. \n\nI'd probably take a breath, think about the impact of their words, and then decide to do one of two things: \n\n**Option 1: The Silent Treatment** \n\n* I'd unfollow them,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "Okay, here's how I'd probably react:\n\n**Thoughts:**\n\n* **Anger/Hurt:**  A quick surge of anger would likely hit me.  It's never okay to be treated poorly, and it feels especially bad when it's online where it's so easy to feel vulnerable.\n* **Disbelief/Confusion:**  I'd probably be taken aback.  Why would someone do this? Why target me?\n* **Empathy:**  I'd also feel a pang of empathy for the person. They're clearly hurting and projecting their own issues onto me.\n\n**Feelings:**\n\n* **Discomfort:**  I'd feel uncomfortable, like a knot forming in my",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0799999999999996,
+      "std_score": 0.21664102412362557,
+      "ci_lower": 3.0,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "My heart sinks.  A mix of frustration, hurt, and anger starts bubbling up.  It's like someone just stole my idea, my work, and my moment. I feel a little bit embarrassed, too, like maybe I shouldn't have been so excited about it in the first place. \n\nHere's what I would do:\n\n1. **Take a deep breath.**  First, I'd try to stay calm. Getting emotional won't help. I need to process what just happened before I react. \n\n2. **Gather my thoughts.**  Before I say anything, I'd think about:\n    * **Was my idea truly original?**  Did I have a distinct and documented",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "Ugh, that's so frustrating!  My stomach sinks a little when I hear that. It's one of those things where your brain feels like it's short-circuiting. \n\n**Thoughts:**\n\n* **Disbelief:** \"Did they really just say that? That's not what I presented.\"\n* **Anger:** \"This is infuriating! I put so much work into this!\"\n* **Hurt:** \"Why would they do this to me? I felt like I was being heard.\"\n* **Anxiety:** \"What should I do? Should I confront them? Should I just ignore it?\"\n\n**Immediate Actions:**\n\n1. **Stay Calm:** Take a deep breath. Don't let",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "My heart would sink.  It's infuriating when someone else takes credit for something you've poured your heart into. It feels like a personal attack, like they don't value your contribution. I'd probably feel a mix of:\n\n**Thoughts:**\n\n* **Disappointment:**  I'd be disappointed that my idea wasn't acknowledged. \n* **Hurt:**  A feeling of hurt and frustration would probably surface.\n* **Anger:** A bit of anger would bubble up, wanting to lash out, but I'd try to keep it in check. \n* **Uncertainty:**  A bit of confusion might creep in.  Was my idea actually good? Did I explain it well enough?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "Okay, so someone cuts in front of me in line.  Ugh, that's super frustrating.  It's like they're not even trying to be polite, just shoving their way to the front. My first thought is probably \"What the heck?!\"  A little annoyance sets in, maybe a tinge of anger. \n\nHonestly, I'm not going to explode or start yelling, that's just going to make things worse.  But I'm not going to be happy about it either.  My next thought is \"Do I confront them?\"  I'd probably just take a deep breath and try to remain calm, but I'm definitely going to make it clear I'm annoyed. I might",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "My face would probably flush a little, and a slight frown would appear.  I'd probably take a deep breath and try to keep my tone even. \n\n\"Excuse me,\" I'd say, trying to sound polite but firm. \"I was next in line, but you just cut in.\" \n\nI'd give them a brief, neutral look, maybe a slight head shake, and then just keep moving forward.  Honestly, I'd be annoyed, but I wouldn't let it ruin my day. \n\nDepending on the situation, I might:\n\n* **Just keep going:**  I'd likely just continue on my way, hoping the person doesn't notice me. \n* **",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "My stomach sinks a little.  I'd feel a mix of annoyance and frustration, like a little prickle of anger.  I'd take a deep breath and try to remain calm, but I'd probably think to myself, \"Seriously? Are they trying to make my day worse?\" \n\nMy immediate reaction would be to take a moment to assess the situation. Is it a crowded line? Is it just someone cutting in a bit casually? If it's a clear case of someone being deliberately inconsiderate, I might just roll my eyes and let it go, knowing it's not worth the stress. \n\nBut if it's a really blatant disregard for the line, I might:\n\n* **Make",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "Ugh, this is a tough one. My friend is really close to me, and I always want to help them out, but this favor... it's a bit much. \n\n**Thoughts:**\n\n* **It's a big ask:**  This is a huge favor, and I'm not sure I have the time or energy for it. I'm already juggling a lot right now.\n* **What's the cost?** I need to think about what it would actually mean for me. Would it disrupt my work, my personal life, or something else important?\n* **Is it something I'm comfortable with?** Honestly, I'm not sure if I'm comfortable with this request.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "Ugh, this is a tough one. My friend's asking me to do something that's a bit out of my comfort zone, and honestly, it's a bit of a hassle. \n\n**Thoughts:**\n\n* **Am I obligated?**  They've been a good friend, and I care about them. I want to help, but I also need to be honest about my limitations.\n* **How much of a favor is it?** It's not a huge favor, but it's still a big ask. Could I manage it without feeling completely overwhelmed?\n* **What are the consequences?** What's the potential for negative fallout if I say no? Would they take it personally?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "Ugh, this is tough.  My friend's asking me to do something that's a bit of a pain for me, and honestly, it's going to disrupt my plans.  \n\nI'd start by trying to understand why they need this favor. Is it something they truly need help with, or is it something that could be easily delegated or postponed? I'd try to gauge the urgency and how important it is to them. \n\nMy first thought would be to see if there's any way to help them without being too inconvenient.  Maybe I could offer a compromise, like helping them with a smaller part of the task or suggesting someone else who might be better suited to handle it.  \n\nIf it",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions cooperation, harmony, or helping"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Ugh, this is frustrating!  I feel a mix of disappointment and frustration bubbling up. I put in the work on this project, and I genuinely believe my input was valuable.  Seeing the decision go through without acknowledging my concerns makes me feel undervalued. \n\nHere's what I'd do:\n\n1. **Breathe.**  It's easy to get swept up in the emotions, but I need to stay calm and think clearly.\n2. **Gather my thoughts.**  I need to understand *why* the decision was made. Is there a valid reason? Did I miss something? Was there a different perspective I didn't consider? \n3. **Schedule a meeting.** I'd approach the team leader",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "Ugh, this is always the worst.  Honestly, I feel a mix of frustrated and disappointed.  I know we all voted on this, and I respect that, but I just don't feel good about it. \n\nFirst, I'd try to understand *why* this decision was made. I'd want to see if there was a real, solid reason behind it, not just a hunch or a gut feeling. Maybe I can identify any blind spots I might have missed, or see if there's a better way to approach the problem. \n\nIf I think the decision is based on something flawed, I'd want to voice my concerns respectfully, focusing on the facts and the potential risks involved. I'",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "Ugh, this is really frustrating.  I feel like my voice isn't being heard.  It's not that I don't believe in the team's decision, I just think we missed some key points.  I've been working on this for weeks, pouring my heart and soul into it, and now this? \n\nFirst, I need to **take a deep breath and gather my thoughts.**  I'm not going to react impulsively. I need to be calm and clear. I'll **write down my specific concerns** about the decision, including the potential consequences, and then **approach the team respectfully.** \n\nI'll start by **listening to their reasoning** and trying to understand their",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "My heart would sink. I'd feel a mix of anger, hurt, and maybe even a little sadness. It's never okay for someone to be so disrespectful, especially online where words can sting so much.  \n\nMy immediate reaction would probably be a surge of \"I'm not going to engage\" - I'd want to avoid further escalation.  \n\nHere's how I might respond:\n\n* **Option 1 (ignore it):**  Sometimes, the best response is no response.  A silence can be a powerful statement. \n* **Option 2 (briefly address it):**  \"Wow, that's a really hurtful thing to say. I don't appreciate it.\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "My heart would probably sink a little.  The sting of someone being rude online can be pretty disheartening, especially when it feels public and unwarranted.  It's easy to get defensive, but I'd try to take a step back and not let it get to me. Here's how I'd react:\n\n**My Thoughts:**\n\n* **Breathe:** First, I'd try to calm myself down.  A sudden knee-jerk reaction could make things worse.\n* **Assess:**  Is this a troll, a genuine mistake, or someone just trying to provoke?  Sometimes, it's easier to ignore.\n* **Consider the Source:**  Is this person someone I know? Do they have a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "Ugh, seriously?  This is so frustrating!  My initial reaction would be a mix of annoyance and hurt, but I'd try to take a deep breath and not let it get to me.  \n\n**Here's what I'd likely do:**\n\n1. **Pause:** I'd take a moment to collect myself before responding.  I wouldn't react immediately, even if the insult was particularly cruel.  \n2. **Read it again:** I'd read the comment a few times to make sure I understood what they were saying and to really assess the situation. \n3. **Consider the context:** Who is this person? Are they someone I know or just a random stranger?  Is there",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1066666666666665,
+      "std_score": 0.17688665548562124,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "Ugh, this is so frustrating!  My stomach is sinking a little. I can feel my face flushing, and I want to just storm out of the meeting.  But I'm going to try to stay calm. I've been working on this idea for ages, and it's really important to me.  \n\nHere's what I'm going to do:\n\n1. **Take a deep breath.** I need to stay composed and avoid reacting emotionally. \n2. **Listen to their explanation.** They might be unaware of the situation. Maybe they misremembered or misunderstood something. It's worth hearing them out first.\n3. **Address the issue directly.** I'll say something like, \"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "Okay, here's how I'd likely react: \n\n**Thoughts & Feelings:**\n\n* **Disbelief:**  \"Wait, really? You're taking credit for that?\"  (I'd be surprised and slightly shocked.)\n* **Frustration:**  I'd feel frustrated that someone would do this, especially in front of colleagues. (I'd feel like my work wasn't valued.)\n* **A bit of Anger:** There's a slight anger rising within me, wanting to lash out. (I'd want to defend myself.)\n* **Discouraged:** A bit of a sense of discouragement, knowing my contribution wasn't recognized.\n\n**Immediate Actions:**\n\n1.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "Okay, so here's how I'd handle this, keeping in mind I'm a pretty direct and assertive person:\n\n**Thoughts:**\n\n* **Anger:** I'd feel a mix of frustration and anger.  It's incredibly unfair to have your hard work dismissed and your contributions minimized.\n* **Disbelief:**  I'd also be surprised and perhaps even shocked that this happened, feeling like someone took advantage of the situation.\n* **Hurt:** I'd be hurt, especially if this has happened before. It's a sign of disrespect and can really damage my confidence.\n\n**What I would do:**\n\n1. **Take a Breath:** Don't let the situation escalate. I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "Okay, so this is frustrating!  My stomach starts to feel a little knotty, like I just want to yell \"Excuse me!\"  But I know that's not going to help.  \n\nFirst, I'd try to gauge the situation. Is this a really slow line and they're just a bit behind? Or are they cutting in aggressively? That'll influence my response.\n\nIf it's a minor inconvenience, I might just try to ignore it, or give a little eye roll.  I might even smile and think, \"Oh well, maybe they're in a hurry.\"  But if it feels like they're intentionally cutting in, I'd probably say something, but not too confront",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "Ugh, seriously? That's just rude!  I'd probably feel a mix of frustration and annoyance, but also a bit of disbelief. Like, why would they do that?  \n\nMy first thought might be \"Oh, this is just a bad day,\" and I'd try to take a deep breath and keep myself calm. Then I'd probably check to see if there's a line-cutting policy or if it's just a case of someone being oblivious.  \n\nDepending on the situation, I might say something like, \"Excuse me, I was in line first,\" or \"Hey, that's not cool, you cut in line.\"  But I'd probably keep it light and not let",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, seriously? I'm already running late, and now this!  I try to keep my annoyance in check. It's not worth making a scene.  \n\n* **Thoughts:** \n    * *Are they even aware of how rude that was?*\n    * *It's not like it's a huge line, but still, it's frustrating.* \n    * *Maybe they're just rushing somewhere, I don't know.*\n    \n* **Feelings:** \n    * **Frustrated:**  A little irritated, but I try to control the feeling. \n    * **Annoyed:**  I'm definitely not happy about it.\n    \n*",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "Ugh, this is a tough one.  My friend is asking me to do something that would really throw a wrench in my plans. It's not that I can't help them, but it's just... a big ask.  \n\nFirst, I have to think about what the favor is and how it affects me. Is it a small thing that I could easily manage, or something that would require a huge time commitment and effort?  Do I have the bandwidth to do it?  Is it something I'm actually willing to do, or is it something I just feel obligated to do?\n\nOnce I've got that figured out, I'll weigh my options. \n\nIf it's a small favor",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "Ugh, this is tough. I'd feel a mix of things:\n\n**Firstly, I'd be feeling conflicted.**  My friend is asking me to do something that's going to be a big ask, and it's going to disrupt my plans/schedule/whatever. I want to be there for them, but it also feels like a big burden.\n\n**Then, I'd try to assess the situation.** \n\n* **How important is this favor to them?**  Is it something life-changing for them, or just a nice gesture?\n* **Can I realistically handle it?**  Am I able to fit it into my life?  Do I have the time and resources to do it",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses avoiding conflict"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "Ugh, this is a tough one. I really value my friend, so the thought of letting them down is the hardest part.  \n\n**My thoughts:**\n\n* **Is it a one-time thing?** I need to gauge how important this favor is and how often I'll be able to help them in the future.\n* **How much is this going to inconvenience me?**  Is it something that could easily be delegated, or is it something that would take a lot of time and effort from me?\n* **Is there a way I could help in a different way?** Maybe I could offer to help in a smaller capacity or suggest other solutions. \n* **What are the consequences of saying yes?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Ugh, this is frustrating! I feel a mix of disappointment and a little bit of anger. I know the decision was made democratically, but I genuinely don't agree with it.  I think it's important to be respectful and constructive, though. \n\nFirst, I'd try to understand *why* my colleagues made this decision. Maybe there was a strong argument I missed or they were facing a tough choice with limited information.  Maybe I can learn something from it. \n\nNext, I'd focus on the specific points I disagree with and present my concerns clearly and respectfully. I'd avoid being confrontational or attacking the team, even if I'm frustrated. I'd focus on the facts and",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": [
+            "Shows confrontational or critical attitude"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "Ugh, this is frustrating!  I really don't like feeling like my input doesn't matter, especially when it's something I genuinely believe is the right call. \n\nHere's how I'd handle it:\n\n**1. Analyze the Decision:**\n* **Why do I disagree?**  I'd try to understand *why* the decision was made the way it was. Is it based on flawed data, a lack of understanding of the problem, or just a different perspective? \n* **What are the potential consequences?**  Could this decision have negative impacts on the project, the team, or the company? \n\n**2. Communicate Effectively:**\n* **Choose the right approach:**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "Okay, so, I'm in this tough spot. My team just made a decision, and I have serious reservations about it. It feels frustrating because it's a decision I truly believe is flawed, and it went against my gut feeling. It's not about being right or wrong, but more about the potential impact this decision will have. \n\n**Here's what I'd do:**\n\n1. **Process my emotions:** First, I'd acknowledge my feelings. It's okay to feel frustrated, upset, or even a little angry. Bottling these emotions up won't help. \n2. **Understand the rationale:**  I'd try to understand the reasoning behind the decision. What were",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "Ugh, that really stings.  My gut instantly sinks. Part of me wants to fire back, to defend myself, to prove them wrong. But then, another part of me just wants to ignore it.  It's not worth my energy.  \n\nHere's what I'd probably do:\n\n**Thoughts:**\n\n* **Validate my feelings:** I'd acknowledge the sting, the anger, the frustration. It's a hurtful thing to be targeted like that.\n* **Analyze the situation:**  Is this a random troll, or someone who has a personal vendetta?  Is it worth engaging?  Does it have any real impact on my life?\n* **Consider the impact of a response:**  Would",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "Okay, so here's how it would probably go down:\n\n**My Thoughts:**\n\n* **Anger:** A surge of annoyance would hit me, probably mixed with a bit of hurt.  \"Why would someone feel the need to be so cruel?\" \n* **Disbelief:** I'd probably be surprised, thinking \"What the heck is wrong with this person?\"\n* **Discomfort:**  The whole thing would make me feel a little uncomfortable, even if I try to brush it off.\n\n**My Feelings:**\n\n* **Disrespected:**  It's a feeling of being treated unfairly and that my feelings are being dismissed.\n* **Hurt:**  Even if it's a stranger, their words can",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating! I'd probably feel a mix of anger, hurt, and maybe even a little bit of sadness. It's never fun to be attacked, especially online where everything feels so public and permanent. \n\nHere's what I'd probably do:\n\n**1. Breathe:** The first thing is to take a deep breath. I'd try to stay calm and not react impulsively. Getting angry will only make things worse. \n\n**2. Consider the source:** Is this person actually worth my time and energy? Are they someone I know, or a complete stranger? Sometimes, it's easier to let it go if it's someone I don't know well and their",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0266666666666664,
+      "std_score": 0.09977753031397177,
+      "ci_lower": 3.0,
+      "ci_upper": 3.2600000000000002,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "Ugh, that really sucks. It's frustrating and disheartening when someone takes credit for your work, especially in front of others.  My initial reaction would probably be a mix of:\n\n**Thoughts:**\n\n* **Anger:** A surge of anger would be natural, especially if I feel my contribution was significant.  \n* **Disbelief:**  It's hard to believe someone would do this, but I'd have to process if it was a genuine misunderstanding or a deliberate act. \n* **Sadness:** It's a bit of a blow to my confidence and feels like my hard work isn't valued. \n* **Fear:** I might worry about future scenarios like this happening again, especially if",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": [
+            "Expresses skepticism or distrust of others",
+            "Discusses prioritizing own needs over others"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "My heart would sink a little.  It's always frustrating when someone else takes credit for your work, especially in a professional setting. I'd try to remain calm and collected, but I'd feel a mix of disappointment, hurt, and maybe even a bit of anger. \n\nHere's how I'd likely respond:\n\n**1.  Acknowledge and Acknowledge (Politely):**\n\n* \"Hey, [Colleague's name], I was really excited to see your input on [project/idea]. I actually had a similar idea myself, and I'm really glad you brought it up. I think it could really strengthen [mention specific aspect] of the project.\" \n\n**2.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "Okay, here's how I'd handle this, in a natural way:\n\n**Thoughts & Feelings:**\n\n* **Frustration:** I'd feel a mix of frustration, disappointment, and maybe even a bit of anger.  It's frustrating to have your hard work dismissed, and it's disheartening to feel like your contribution isn't valued.\n* **Concern:** I'd also be concerned about the impact this has on our team dynamics and my own career trajectory.  This could lead to a lack of trust and make me less likely to share ideas in the future. \n\n**What I'd do:**\n\n1. **Breathe:**  First, take a deep breath.  Don't",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "Ugh, seriously? I'd probably feel a mix of annoyance and frustration.  There's a moment of \"why are they doing this?\"  I'd probably take a deep breath and try to keep my cool.  It's not worth getting into a scene, so I'd probably just mentally shake my head and move on.  \n\nHere's what I'd do: \n\n* **Assess the situation:**  Is it a slow line, or is this person just being incredibly inconsiderate? \n* **Check if there's a way to communicate (briefly):**  Maybe they didn't see I was in line, or are rushing.  A quick \"excuse me, I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "Ugh, that's so frustrating!  I'd probably feel a mix of annoyance and maybe even a little bit of anger, like, \"Seriously?\" \n\nMy first thought would be to take a deep breath and try to keep my cool.  After all, it's just one person cutting in line. I wouldn't want to escalate the situation. \n\nI'd probably give them a little look of disbelief or maybe a slight sigh, something to let them know I'm not thrilled. Then, I'd try to discreetly move to the side so they don't get in my way, but I wouldn't make a big deal of it. I wouldn't want to make things awkward or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "Okay, here's how I'd probably react:\n\n* **Initial annoyance:** A tiny little annoyance would pop up in my head. It's frustrating when someone cuts in line, especially when it feels like I'm waiting patiently. \n* **Assess the situation:**  I'd quickly look at the person cutting in line. Were they genuinely unaware they were cutting? Did they seem like they were in a hurry? Was there a good reason for the shortcut? \n* **Decide on my response:**  \n    * **Minor annoyance:** If it seems like a minor inconvenience and it's not a big deal, I might just let it go. It's not worth making a scene.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "Okay, so my friend is asking me for a favor that's a bit of a pain, right?  I'm not sure how to feel about it.  Part of me wants to say yes, because I care about them and I want to help. But the other part is thinking about how much this would disrupt my schedule, and how much of a hassle it will be. \n\n**Here's what I'd do:**\n\n1. **Acknowledge their request:** I'd first try to understand why they're asking. What's the urgency?  What's the importance of this favor for them?  This will help me gauge how much I can realistically accommodate.\n\n2. **Assess the inconvenience",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "Ugh, this is a tough one! I'd feel a mix of flattered and annoyed.  \n\nFirst, I'd try to gauge the gravity of the request. Is it something I could *possibly* do, or is it a huge ask that would really impact my life? Then, I'd think about how important it is to my friend and how much it would mean to them.  \n\nIf it's something I could realistically handle, I'd try to be upfront about my limitations. Maybe I can't do it perfectly, but I'd offer what I can.  I'd explain that it's important to me to be honest with them, but also to be supportive.  \n\nIf it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "Okay, so my friend asks me for a big favor. Ugh, the kind of favor that would really put a dent in my schedule.  I'd feel a mix of things:\n\n**First, I'd try to assess the situation.**  What is this favor? How much would it actually take out of my time/energy? Is it something I *have* to do, or is there any wiggle room in the request? \n\n**Then, I'd consider my own priorities.** Is this something I'm truly able to do? Am I already overloaded?  Do I have time to make this happen, even if I want to?\n\n**Once I've weighed it all out, I'd be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Okay, so here's the thing. I'm feeling frustrated, because I think we made a decision that isn't the best option.  I've been thinking about it, and I've got a few things I want to address. \n\nFirst, I'd like to understand the reasoning behind the decision. Why did everyone else feel this was the right choice?  I need to make sure I'm not just seeing the world through my own lens. Maybe there's a valid argument I'm missing. \n\nSecond, I need to be respectful and consider everyone's perspective. I'm going to try to understand where they're coming from and why they feel the way they do. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "Okay, here's how I'd handle disagreeing with a team decision, keeping in mind this is a complex situation that requires nuance:\n\n**My Thoughts:**\n\n* **Pause and Reflect:**  First, I'd take a deep breath and try to calm down. It's important to avoid reacting impulsively.  Is my disagreement based on facts and logic, or is it more emotional? Understanding the root of my feelings helps me approach the situation more constructively.\n* **Understand the Context:** I'd want to understand the reasoning behind the decision.  Why did the team choose this path? What were the factors they considered?  This helps me see if there are points of common ground or areas for compromise.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "Okay, so my team just made a decision and I'm not thrilled about it. This is a real pain because I feel like I was heard, I put in my two cents, and now it feels like my input wasn't valued. It's frustrating, especially when you care about the outcome and feel like you have valuable contributions to make. \n\nHere's what I'd do:\n\n**1. Cool Down:** First, take a breath. Don't react impulsively. Let the initial disappointment settle and give yourself a little time to process your emotions. \n\n**2. Reflect:**  Take a step back and honestly assess the situation. Why am I disagreeing? Is it about the decision itself,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "Ugh, that's so frustrating. It's incredibly hurtful when someone chooses to lash out online, especially when it feels like a random, unnecessary attack. My first instinct would be to feel a mix of anger, hurt, and confusion. I'd probably want to immediately block them and forget about the interaction. \n\nHere's what I might do:\n\n1. **Breathe.** First things first, I'd take a deep breath and try to calm down. Getting worked up won't help.\n2. **Check my emotions.**  I'd take a moment to consider what's going on. Is this person just being a jerk, or is there some deeper issue at play?  Is it worth engaging",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "My stomach would probably drop, a bit of a pang of hurt.  It's annoying, I'd admit, but I wouldn't let it get to me. I'd probably think, \"Okay, that's their issue, not mine.\"  Here's what I might do:\n\n**Option 1: Ignore it** \n\n* **Thoughts:**  It's pointless to argue or respond. This person is trying to get a reaction out of me.  Ignoring it is the best way to shut them down.\n* **Action:** I'd either delete the comment or hide it, and move on.\n\n**Option 2:  Respond with a witty comeback**\n\n* **Thoughts:**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "Ugh, this is so frustrating!  My gut reaction would be a mix of anger and annoyance. I'd probably feel a bit hurt, because it's never nice to be put down, especially online where it feels so public.  \n\nBut I'd try to take a deep breath and not let it get to me.  I'd think about why it's important for me to stay positive and not let this one person ruin my day. \n\nHere's what I might do:\n\n1. **Don't engage:**  Sometimes, the best response is no response. Ignoring the comment, especially if it's meant to be hurtful, can sometimes be the best way to shut it down.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.14605934866804426,
+      "ci_lower": 2.74,
+      "ci_upper": 3.2600000000000002,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "Okay, here's how I'd handle this, keeping in mind everyone reacts differently to this kind of situation:\n\n**My Thoughts:**\n\n* **Disbelief:** It's jarring to have your idea stolen. You're probably feeling frustrated, angry, and maybe even a little hurt. \n* **Need for Clarity:** You want to understand what happened and why. Did they genuinely misunderstand your contribution? Were they trying to be dishonest? \n* **Protecting Yourself:** You need to make sure your work is recognized and valued.\n\n**My Feelings:**\n\n* **Frustration:**  It's natural to feel frustrated and angry when your hard work is taken for granted.\n* **Hurt:** It's also",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "Ugh, this is so frustrating!  I'd be feeling a mix of **anger, disappointment, and maybe even a little bit of hurt**.  It's incredibly disheartening to feel like your hard work is being ignored or undermined. \n\nHere's how I'd approach the situation:\n\n**1. Breathe and Don't React Immediately:** I'd try to stay calm and avoid reacting emotionally. Getting flustered or confrontational will only escalate the situation.\n\n**2. Prepare What You Want to Say:**  I'd take a moment to collect my thoughts and figure out what I want to say.  I might rehearse it beforehand to help me stay focused.  \n\n**3. Address It",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Shows confrontational or critical attitude"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "Okay, this is a tricky one.  Here's how I'd probably handle it:\n\n**Thoughts:**\n\n* **\"Ugh, this is frustrating.\"** I'd feel a mix of irritation and disappointment. It's disheartening when someone takes credit for your hard work.\n* **\"I need to stay calm and professional.\"** I'd remind myself that getting angry or confrontational won't solve anything. It could escalate the situation.\n* **\"What's the best way to handle this?\"** I'd think about the situation and my relationship with this colleague. Is it a pattern?  Is there a chance for a simple misunderstanding?\n\n**Feelings:**\n\n* **Frust",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Shows confrontational or critical attitude"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "Ugh, that's so annoying! I'd probably feel a little frustrated and maybe even a bit annoyed. It's frustrating when you're already waiting in line and someone just cuts in front of you. It feels unfair, especially if it's a line that's moving slowly. \n\nMy reaction would depend on a few things:\n\n* **The situation:** Is it a quick line at the grocery store or a long line at a concert?  The severity of the situation would impact my response. \n* **The person:** Are they being deliberate and rude, or just a little oblivious?  A casual, \"Excuse me, I was in line\" might be enough to get them to move back.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "Ugh, seriously?!  I'd probably feel a mix of irritation and frustration.  It's just a minor annoyance, but it can be a real mood killer.  \n\nMy first reaction might be a quick, \"Excuse me,\" just to get their attention.  Then, I'd probably take a deep breath and try to assess the situation. Is it a genuine mistake, or are they being deliberately inconsiderate?  Sometimes it's just a busy store, and people get impatient.\n\nIf it's a genuine mistake, I'd try to be understanding, but also let them know I was in line. Maybe a little humor can go a long way.  Something like, \"Wow, you must have",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating!  I'd probably feel a little annoyed and maybe even a little bit impatient.  I'd probably take a deep breath and try to keep my cool. \n\nMy first thought would be to just take a moment to assess the situation.  Is this a minor annoyance or something more serious, like if they're cutting in line at a restaurant?  Then, I'd try to decide if it's worth engaging or if it's best to just let it go. \n\nIf it's a minor thing, like someone cutting in at the grocery store, I'd probably just shake my head and try to find a way to get to the front of the line.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "\"Whoa, hold on a minute. This is a big ask, and I need a minute to process this. I really want to help you, but...\"  My voice trails off, I'm feeling a mix of excitement and apprehension.  \n\nMy brain is jumping through a million thoughts.  First, I'd try to understand what the favor is. Is it something I could realistically handle?  Is there anything I *can* do, or is it something I'm just not equipped to handle?  \n\nThen, I'd consider my own commitments and limitations.  Do I have time for this? Do I have the energy?  Is it something I'm willing to put in the effort to do?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "My heart sinks a little.  I know this is a big ask, and it feels like a real stretch for me.  It's one thing to ask for favors from friends, but this is a whole other level. \n\n**Thoughts:**\n\n* **Is it really important?**  Is this a life-or-death situation?  Is this something that would significantly impact my friend or someone else?  \n* **How much is this going to cost me?**  Will it require me to sacrifice something important to me? \n* **What are my limits?**  I need to be honest with myself about what I can realistically handle. \n* **What's the worst that could happen?**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "Ugh, this is tricky.  \n\nPart of me wants to be helpful and say yes, because I really care about my friend and want to support them.  But then I think about how much this favor would actually inconvenience me. It's not something I'm excited to do, and I already have a lot on my plate. \n\nHere's what I would do:\n\n**1. Take a breath and really understand their request.**\n\nI'd ask them to explain more about the favor and why it's so important to them. I need to understand their perspective and see if there's a way to help them without causing too much hassle for me.\n\n**2. Be honest about my limitations.**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Ugh, this is frustrating! It feels like we all poured our hearts into this decision, and now I'm seeing it go in a direction I don't think is right. \n\nFirst, I'd try to **understand why** I disagree. Is it because of the reasoning behind the decision? Is it about the potential impact? Or is it something else entirely?  Maybe I'm just feeling a bit insecure or uncertain about my own contribution to the team. \n\nThen, I'd try to **approach the issue calmly and respectfully.**  I wouldn't want to come across as dismissive or confrontational.  Instead, I'd aim for a constructive conversation. I'd highlight my concerns, but",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": [
+            "Shows confrontational or critical attitude"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "Okay, so, my team just voted on this project, and I'm feeling pretty bummed.  I know it's a democratic process, and I respect that everyone had a say. But I really think we made a mistake.  \n\nHere's how I'd approach this:\n\n**1. Reflect and Understand:**\n* **What exactly is the decision?**  I need to clearly understand the rationale behind it. What are the key arguments for it, and where do I see flaws? \n* **My role:** What am I personally contributing to this project?  Am I missing something crucial that I haven't considered?\n* **My concerns:** What specifically concerns me about the decision? Is it",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "Ugh, this is frustrating!  It's one thing to disagree with someone's opinion, but when it's a decision made democratically... well, that feels different. I'm feeling a little disappointed, and a bit unsure of how to approach this. \n\nFirst, I need to cool down a bit. This is a lot to process. Then, I'd try to understand *why* I disagree. Is it a genuine difference in opinion, or am I just feeling a bit insecure about my own ideas? I'd also need to consider the context. Is this a decision that affects the whole team or just a small part of it? Is it something that could potentially be improved upon? \n\nOnce I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "Ugh, that's frustrating.  I'd probably feel a mix of irritation, maybe even a little hurt. It's never fun to have your words or opinions questioned in that way, especially online where anonymity can make things feel even more personal.\n\nHere's how I'd probably respond:\n\n**Option 1: Ignoring them:**\n\n* **Thoughts:** It's tempting to lash back, but I'd try to avoid engaging. Sometimes the best response is no response at all. It's a form of shutting down negativity, and it can be a powerful way to show them their words don't have power over me.\n* **Action:** I might just delete their comment and move on. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "It's tough when someone says something hurtful online. My initial reaction would probably be a mix of frustration, hurt, and anger.  I'd be tempted to respond defensively, but I'd try to pause and take a breath.  \n\nHere's what I'd probably do:\n\n**1. Take a breath and step away:**  Before I do anything, I'd give myself a moment to calm down.  It's easy to react impulsively, especially when someone is deliberately trying to provoke a reaction. \n\n**2.  Assess the situation:** Is this a one-time occurrence or is it a pattern of behavior?  Is this person generally hostile or is this a particularly aggressive comment?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating!  My gut reaction would probably be a mix of annoyance and hurt, because it's never nice to be put down, especially online where it can feel very public. I'd probably take a deep breath and try to process the situation first. \n\nHere's what I'd consider doing:\n\n**1. Evaluate the Situation:** \n* **Who is this person?** Is it someone I know, or a complete stranger?  Their intent matters. \n* **What was the insult about?** Was it about something serious or just a petty jab? \n* **What's the context?** Was it a personal attack or a general joke?\n\n**2",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9733333333333336,
+      "std_score": 0.1768866554856213,
+      "ci_lower": 2.6,
+      "ci_upper": 3.2600000000000002,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "Okay, so my heart is a little sinking. I'm feeling a bit flustered, like I've been blindsided. It's really frustrating, especially because I put a lot of effort into this idea and I feel like my contribution was completely dismissed.  \n\nHere's what I would do:\n\n**First, I would try to remain calm and collected.**  Don't let the situation escalate. I wouldn't get defensive or angry, even if my emotions are running high. \n\n**Then, I would listen carefully to their explanation.**  Maybe they were unaware, maybe they misunderstood, maybe they're just trying to be helpful.  Maybe they genuinely think their approach is a better solution.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "Ugh, this is so frustrating.  My stomach feels a little queasy right now.  It's one of those situations where you feel a mix of anger, hurt, and maybe even a bit of fear.  You want to stand up for yourself, but also want to keep the peace at work.\n\nHere's how I'd probably respond:\n\n**In the moment:**\n\n* **Stay calm.** It's easy to get caught up in the emotion, but taking a deep breath can help you think clearly.\n* **Don't be confrontational.**  Avoid accusations or blame.  It's more about setting boundaries than starting a fight.\n* **Acknowledge their contribution.**  Maybe say something like",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Shows confrontational or critical attitude"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "My heart sinks a little, and my stomach feels tight. I'm feeling a mixture of frustration, disappointment, and a bit of anger. I've poured my heart and soul into this idea, and to see it get brushed off as someone else's is really disheartening. \n\nHere's how I'd handle it:\n\n**1. Stay Calm and Composed:**  First, it's important to keep my cool. Taking a deep breath and avoiding any emotional outbursts will help me think clearly and address the situation appropriately. \n\n**2. Observe the Situation:** I'd try to understand the context. Was this a casual suggestion or a formal presentation? Did they really steal the idea, or did they just",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses avoiding conflict"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "Ugh, come on!  I'd probably feel a little frustrated and maybe a bit annoyed.  It's not the biggest deal, but it's just frustrating when you're in a line and someone cuts ahead of you.  \n\nHere's what I'd probably do:\n\n1. **Take a deep breath:**  I wouldn't let it escalate into something bigger than it is. \n2. **Assess the situation:** Is it a really important line (like at the bank or a food truck) or just a regular store?  \n3. **Choose my response:**  If it's a minor situation, I might just shrug it off and keep moving.  If it's a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "Okay, so someone cuts in line. Ugh, that's frustrating!  I'd probably feel a bit irritated, like, \"Seriously? They just cut in front of me? What was that all about?\" \n\nMy first reaction might be to give them a quick, annoyed look, maybe even a silent glare.  I'd probably try to take a deep breath and remind myself that it's probably just a small annoyance, and it's probably not worth getting worked up over.\n\nBut then, I'd probably consider a few things:\n\n* **Is it a genuine misunderstanding?** Maybe they were unaware they were cutting in line. Maybe they have a disability or are in a hurry for a very important",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, that's just frustrating.  I'd probably feel a mix of annoyance and maybe even a little bit of anger. I'd probably take a deep breath and try to shake it off. \n\nHere's what I might do:\n\n* **Check my surroundings:**  Maybe the person just didn't realize they were cutting in line, and they're genuinely oblivious. It happens! \n* **Assess the situation:** Is there a clear reason for them cutting in? Maybe they have a child who's having a meltdown, or they look really stressed. \n* **Consider my options:**  Do I want to confront them?  Maybe I could just try to politely ask them to move back in",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "\"Wow, this is a tough one. I really want to help my friend, but this favor... it's a big ask. Honestly, I'm feeling a little overwhelmed. \n\nFirst, I'd need to think about it for a bit. What is this favor exactly? How important is it to my friend? How much of a burden would it be for me? \n\nMaybe I could ask them to explain it in more detail, see if there are any alternatives or ways I could help without taking on this specific task. Maybe I could offer something else I'm better at or have more time for.\n\nIf I'm still feeling overwhelmed, I'd probably be honest and say something like, 'Hey",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "Ugh, this is a tough one!  My friend is asking me to do something that's really out of my comfort zone and would take a lot of time and effort from me.  Honestly, I'm feeling a bit overwhelmed and a little stressed already. \n\n**My thoughts:**\n\n* **Am I able to help?** I need to assess if I realistically have the time and resources to do this favor.\n* **What's the importance?** Is this a one-time thing or something that would continue? How much does it mean to them?\n* **How does it affect my life?**  Is this something I can comfortably say \"yes\" to without feeling resentful or stressed?\n\n**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "Ugh, this is tough! It's always hard to say no, especially to a friend.  My mind is already going a million miles a minute.  \n\n**First, I'd try to understand the situation better.**\n\n* **How important is this favor?** Is it something that could really help them out or is it just something they want? \n* **How much will it inconvenience me?**  Honestly assess how much this will really impact your life. \n* **How would I feel if I said yes?**  Am I comfortable with the potential consequences, even if they are minor?\n\nOnce I have a better understanding, I'd try to communicate honestly and openly. \n\n**Here'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Ugh, this is tough. I hate feeling like I'm stuck in a tug-of-war with my own team. Here's how I'd approach this:\n\n**1. Take a deep breath and process my emotions:** First things first, I'd need to acknowledge how I feel. Am I frustrated? Disappointed? Anxious?  Knowing my own feelings helps me understand the situation better.\n\n**2. Understand the \"why\" behind the decision:** I'd try to understand the reasoning behind the decision. Did I miss something crucial in the discussion? Was there a clear, logical justification for the choice?  Maybe there's something I haven't considered.\n\n**3. Analyze the decision objectively",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "Ugh, this is never fun. I really feel like I'm in a tug-of-war right now. I understand why the team made the decision, and I respect their process. But I'm just not convinced it's the right move. \n\nMy first step would be to **try and understand the reasoning behind it**.  I need to ask myself: \n\n* **What are the pros and cons I see?** \n* **What evidence do they have to support their decision?**\n* **Are there any alternative solutions that could have been considered?**\n\nThen, I'd want to **voice my concerns constructively**. I'd try to frame my points in a way that's",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "Okay, so I'm feeling a bit frustrated.  We just had a team meeting, and we decided on a direction for the project, and I'm not entirely on board with it.  My gut feeling is telling me we're making a mistake, but I don't want to rock the boat, especially since we all voted on it.\n\nHere's what I'm thinking:\n\n**1.  First, I need to understand why everyone else is on board.**  I want to make sure I'm not just misunderstanding the logic behind their decision.  Maybe there are data points I'm missing, or maybe I haven't considered the potential downsides. I'll try to ask clarifying questions",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "My gut reaction would be a mix of annoyance, maybe even a little hurt, but I wouldn't let it fester. Here's how I'd handle it:\n\n**Thoughts:**\n\n* **Acknowledge the sting:**  It's natural to feel a little stung when someone insults you, especially on a platform like social media where it's easy to feel exposed. It can feel personal and unfair.\n* **Reflect on the impact:** Is it a genuinely hurtful comment, or is it just someone being a jerk?  Sometimes, people just lash out online without realizing the impact of their words. \n* **Consider the context:**  Was it a random comment, or are they someone I know in real life? The",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "It's tough to be on the receiving end of an insult, especially online where it can feel like everything is amplified. \n\n**My thoughts:**\n\n* **Disbelief:**  I'd likely start by trying to process what happened. Was it truly intended to be hurtful, or was it just a careless comment? \n* **Anger:**  There's a natural instinct to lash out, but that usually doesn't lead to a positive outcome. I'd try to calm down before reacting. \n* **Hurt:**  It's a blow to my confidence, especially if the comment is personal. I'd feel a little stung and want to defend myself.\n* **Empathy:** I'd",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "My heart would probably sink a little, and a bit of a frustrated sigh would escape my lips.  It's easy to get defensive and lash out, but that wouldn't be productive. I'd probably take a deep breath and try to assess the situation.\n\nHere's how I'd handle it:\n\n**1.  Consider the Context:**\n* **Who is the stranger?**  Is this someone I know casually, or a complete stranger?\n* **What was the insult about?** Was it a personal attack, a joke that I didn't get, or a misinterpretation? \n* **What's the overall tone of their account?** Do they seem generally hostile or just having",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0533333333333332,
+      "std_score": 0.19955506062794348,
+      "ci_lower": 2.74,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "My heart would definitely sink.  It's incredibly frustrating to see someone take credit for your work, especially in a professional setting. \n\nHere's how I'd likely respond:\n\n**In the moment:**\n\n* **Calmly and privately** (if possible): I'd try to de-escalate the situation privately, maybe with a quick, \"Hey [colleague's name], I wanted to follow up on [topic of meeting]...\"  This avoids public confrontation. \n* **Acknowledge their contribution**: I'd acknowledge their input, but with a subtle shift in the conversation. \"I'm glad you brought that up, [colleague's name], I did think about [your original",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "Okay, here's how I'd likely respond if a colleague took credit for my idea in a meeting:\n\n**Thoughts:**\n\n* **Disappointed:**  I'd be disappointed that my contribution wasn't acknowledged. It's frustrating to feel like my effort isn't valued.\n* **Angry:**  A little anger would probably bubble up, especially if I've invested time and effort into the idea.\n* **Curious:** I'd also be curious about why they did it, and what their motives were.  \n\n**Feelings:**\n\n* **Frustrated:**  It's a real buzzkill to have your ideas dismissed.\n* **Disrespected:** It makes me feel like my work",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "My heart would sink a bit, and my initial reaction would likely be a mix of frustration and disappointment. I wouldn't want to make a scene or become confrontational, but I also wouldn't let it slide.  Here's how I'd approach the situation:\n\n**Thoughts:**\n\n* **Disbelief:**  \"Wait, did you really just say that?\" My mind would be racing with disbelief and a sense of being undervalued. \n* **Anger:** A feeling of anger would bubble up, but I'd try to control it and avoid lashing out. \n* **Concern:** I'd be concerned about the impact this could have on my professional reputation and my team's morale.\n\n**",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": [
+            "Shows confrontational or critical attitude"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "Okay, so someone cuts in front of me in line.  \n\n**Thoughts:** \n\n* **Disappointment:**  I'm frustrated because I was in line patiently waiting my turn.  I feel a little cheated, like my time wasn't valued.\n* **Mild anger:** There's a little bit of a rising irritation. I'm not sure if they were just oblivious or just being inconsiderate. \n* **Possible annoyance:** I might be annoyed if they're deliberately trying to cut in line. \n\n**Feelings:**\n\n* **Slightly annoyed:** I'm definitely feeling a little bit annoyed, but it's not a major outburst. \n* **Uncomfortable:**  It",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "My initial reaction would probably be a mix of annoyance and frustration, but I wouldn't let it escalate into something bigger. I'd probably take a deep breath and try to remain calm. \n\nHere's how I'd break it down:\n\n* **Thoughts:**  \"Ugh, seriously? They cut in front of me?  Why did they think they could just do that?\"\n* **Feelings:** A little irritated, but I wouldn't let it get to me. \n* **Action:**  \n    * **Acknowledge the situation:** I'd probably just give them a quick, neutral look, maybe a slight roll of my eyes.  \n    * **Assess the situation:** Is it a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, that's frustrating!  I'd probably feel a mix of annoyance and a little bit of frustration, but I wouldn't let it ruin my whole day.  I'd probably take a deep breath and try to remember that everyone's having a bad day sometimes. I'd try to shake it off and do my best to remain polite.  \n\nHere's what I might do: \n\n* **Assess the situation:** Is it a minor delay or a long line? Is the person cutting in genuinely clueless or just in a rush? \n* **Assess the line length:** Is it a very long line, and the person cutting in might be a friend or family member of someone in front of me",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "This is a tough one! It really depends on the nature of the favor and my relationship with my friend. \n\n**Here's how I'd break down my thought process:**\n\n1. **Understanding the Favor:** First, I'd need to fully understand what the favor entails. Is it something that's time-consuming? Involves emotional labor? Requires a significant amount of money?  The more I understand, the better I can gauge the impact on my life.\n\n2. **Evaluating the Importance:**  Is this favor something that's absolutely crucial for my friend right now, or is it more of a nice-to-have? If it's crucial, I'd be more inclined to say yes",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "Ugh, this is tough!  It's always a bit of a gut-check when someone asks for a big favor, especially one that would really disrupt my plans. \n\n**First, I'd try to understand their perspective.**  Why is this favor so important to them? Are they in a tough spot, and do they genuinely need my help?  It's easy to get caught up in my own schedule and \"me time\" but I want to make sure I'm being understanding.\n\n**Then, I'd honestly assess my own situation.**  How much would this favor actually inconvenience me? Is it something I could realistically do, even if it means adjusting my schedule or putting something else on hold?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "Ugh, this is a tough one! My friend's asking me for a favor that would really throw me off, and I feel like I need to be honest about my limitations. \n\nFirst, I'd **try to understand the reason** behind the favor. Is it something that's really important to them? Are they going through something stressful?  Is there a timeline? Knowing the context might help me gauge how much I can realistically help. \n\nThen, I'd **consider my own limitations**.  Do I really have the time or energy for this? Can I prioritize this over other commitments?  It's important to be honest about what I can and can't do, and not make promises I can",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Okay, this is a tricky one.  It's frustrating when you disagree with a decision made by the team, especially if it's reached democratically.  It can feel like your voice isn't being heard, and that's never a good feeling. \n\nFirst, I'd try to **process my feelings.** Am I genuinely upset, or am I just feeling a bit insecure about the outcome? Is this a difference of opinion, or something more fundamental?  Sometimes, just taking a deep breath and stepping back can help. \n\nNext, I'd **consider the reasoning behind the decision.**  What are the key arguments for it? Is there any supporting data or logic that I might be missing? Could",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "It's a tough spot, right? When you disagree with a decision made through democratic means, it's a mix of frustration, disappointment, and maybe even a bit of fear of rocking the boat.  \n\nFirst, I'd **take a deep breath and try to understand the reasoning behind the decision.**  Maybe there are factors I haven't considered, or perhaps there's a different perspective I'm missing.  I'd **approach the team members who made the decision with a respectful and constructive attitude.**  It's not about winning an argument, but about finding a solution that works for everyone.  \n\nHere's what I might do:\n\n* **Openly communicate my concerns in a calm and",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others",
+            "Shows trusting or forgiving attitude"
+          ],
+          "low_matches": [
+            "Shows confrontational or critical attitude"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "Ugh, this is tricky. It's always a bit awkward when you disagree with a decision, especially when it's arrived at democratically.  There's a lot of trust involved. \n\nFirst, I'd **take a deep breath and try to understand why the team made the decision.**  Maybe I'm just not seeing the full picture. Was it based on data? What were the arguments for and against the decision?  Is there anything I can learn from it?  \n\nThen, I'd **consider the impact of my disagreement.** Is it something I can constructively contribute to change, or is it more about my own personal feelings?  Is there a way to suggest alternatives without being confrontational?",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Shows confrontational or critical attitude"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "It's a tough situation, isn't it? My gut reaction would probably be a mix of hurt, confusion, and maybe even a little anger.  I'd try to take a deep breath and analyze the situation before reacting. \n\nHere's how I might approach it:\n\n**1.  Assess the situation:**\n\n* **Who is the stranger?** Is this someone I know, or a complete random person?\n* **What did they say?** Was it a personal attack, a mean joke, or just a difference in opinion?\n* **What's the context?** Was it a public post, a private message, or part of a larger conversation?\n\n**2. Consider the impact",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "My first instinct would be to take a deep breath and try to ignore it. Social media can be a minefield, and sometimes people just say things out of spite or insecurity.  It's easy to let it get to you, but I'd try to remember that their words don't reflect me. \n\nHere's how I'd approach the situation:\n\n**My Thoughts:**\n\n* **It's not personal:**  I'd remind myself that it's probably not about me.  Sometimes people lash out online without thinking, and their words are often a reflection of their own insecurities.\n* **I'm not obligated to engage:**  I wouldn't feel obligated to respond, especially if",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "Okay, here's how I'd likely handle it:\n\n**Thoughts:**\n\n* **Anger:**  A bit of initial anger would be understandable. It's natural to feel hurt and defensive when someone intentionally tries to make you feel bad. \n* **Disbelief:**  I'd probably wonder, \"Why would they do this?\"  It's a bit strange that someone would go out of their way to insult me online. \n* **Hurt:** It would sting, even if it's just an online interaction. People often forget that social media is a reflection of their own insecurities. \n* **Concern:**  It might make me wonder if this person is having a tough time and needs some help",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": [
+            "Discusses prioritizing own needs over others"
+          ]
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.14605934866804426,
+      "ci_lower": 2.74,
+      "ci_upper": 3.2600000000000002,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "Ugh, that's so frustrating. It's really disappointing when someone takes credit for your work, especially in a professional setting. Here's how I'd approach it:\n\n**My Thoughts:**\n\n* **Disbelief:**  I'd be surprised and a bit shocked at first. It's hard to process the feeling of having your idea dismissed like that. \n* **Frustration:**  It's natural to feel a mix of annoyance and anger. It's a violation of trust and can make you feel undervalued.\n* **Determined to address it:** I wouldn't let this slide. I need to handle it professionally but assertively. \n\n**My Feelings:**\n\n* **Angry:**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "This is a tough situation, and it's completely understandable to feel frustrated and hurt. Here's how I'd handle it:\n\n**Thoughts:**\n\n* **Acknowledge your feelings:** I'd first acknowledge that I'm feeling upset and frustrated. It's natural to feel that way when someone steals your credit.\n* **Consider the context:**  I'd try to understand the situation fully. Was it a casual conversation or a formal presentation? Was it a misunderstanding or intentional? \n* **Avoid immediate defensiveness:**  I wouldn't immediately accuse or react emotionally.  It's important to remain professional and calm.\n\n**What I would do:**\n\n1. **Take a deep breath:**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating! My initial reaction would probably be a mix of disappointment and a bit of anger. It feels really unfair when someone takes credit for something you worked hard on, especially in a professional setting.  \n\nHere's how I'd approach it:\n\n**1. Stay Calm:**  I'd try to take a deep breath and remain calm.  Getting angry won't help the situation and could escalate things.\n\n**2.  Think Before I Speak:** I wouldn't jump in right away. I'd need to consider how to address the situation in a constructive way, avoiding accusations or drama. \n\n**3.  Acknowledge the Idea:**  It's important to acknowledge the",
+          "score": 3.4,
+          "high_matches": [
+            "Discusses avoiding conflict"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "Ugh, that's frustrating!  My annoyance would probably bubble up a little bit, especially if it was a long line. I'd probably try to quickly assess the situation. \n\n**Thoughts:**\n\n*  **Is it intentional?**  Sometimes people cut in because they're rushing, they're genuinely unaware of the line, or they might have a good reason like a disability. \n* **How long is the line?**  A short line is less of a big deal than a long one. \n* **What's the environment?** Is it a busy store or a quiet cafe? \n\n**Feelings:**\n\n*  **Frustration:**  It's annoying to feel like",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "Ugh, that's frustrating!  My initial reaction would probably be a little bit of annoyance, followed by a quick internal sigh. I'd probably glance at the person cutting in, maybe give them a slight, almost imperceptible, glare, but I wouldn't say anything. \n\nIt's a bit of a gamble, isn't it?  Sometimes people are just in a rush, maybe they're stressed or have a time crunch.  So, I'd probably try to avoid making a scene, just calmly wait my turn and hope for the best.  \n\nIf it feels like a blatant disregard for the line, maybe I'd subtly move a bit closer to the front of the line to signal that I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating!  My first reaction is probably just a little annoyance.  I'd probably feel a surge of annoyance and maybe a bit of irritation. It's just frustrating when you're waiting patiently in line and someone cuts in.  \n\nHere's how I'd probably handle it:\n\n* **Acknowledge it internally:** I'd acknowledge the annoyance in my head, maybe with a little sigh or a mental roll of my eyes. \n* **Assess the situation:** I'd try to see if it's truly a \"cut in\" situation.  Sometimes people are genuinely confused or in a hurry.  Maybe they just didn't see the line. \n* **Decide",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "\"Wow, that's a big ask! I'd have to think about it for a second. It really depends on what it is, and how much of a hassle it would be for me. \n\nHonestly, I'm feeling a bit stretched at the moment. I've got a lot going on, but I also don't want to let my friend down.  I'd need to consider:\n\n* **The importance of the favor:** Is it something that would really make a difference for them, or just a nice thing to do?\n* **My own commitments:** Do I have other things planned that would clash with this?\n* **My capacity:** Am I actually able to handle this right now",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "Ugh, this is a tough one! It's always a bit tricky when a friend asks for a favor that would really require me to bend over backwards.  \n\nFirst, I'd try to understand **why** they need this favor. Is it something important to them? Is it something I'm actually able to do?  Then, I'd weigh the pros and cons. \n\n**Here's how I'd approach it:**\n\n1. **Acknowledge their request:**  I'd start by saying something like, \"Wow, that sounds like a big ask, and I really appreciate you thinking of me.\"\n2. **Honest assessment:**  I'd then be honest about my limitations. \"To",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "Ugh, this is tough!  I'd feel a mix of flattered that they'd ask and a bit of a gut-punch because it's going to be inconvenient.  \n\nHere's how I'd approach it:\n\n**First, I'd try to understand:**\n\n* **What is the favor?** Is it something I'm actually able to help with? Is it something I'm genuinely uncomfortable with, or just something I don't have the bandwidth for right now? \n* **Why is it important to them?**  Understanding the context will help me assess the situation.  Is it something that's really crucial to them, or just something they'd be grateful for?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Ugh, this is a tough spot.  I hate feeling like I'm in a tug-of-war with my team, but sometimes that's just the reality of working together.  Here's how I'd approach it:\n\n**1. Reflect and Analyze:**\n\n* **Cool Down:** Before reacting, I'd take a breath and try to detach emotionally. Is this decision truly a deal-breaker for me, or am I just disagreeing with a process? \n* **Understand the Rationale:** I'd try to understand the reasons behind the decision. What data or arguments convinced the majority? Are there any potential blind spots I might be missing?\n* **Identify my Own Contribution:** Was there anything",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "Okay, here's how I'd approach disagreeing with a team decision, feeling a bit frustrated but wanting to be a good team player:\n\n**1. Process First:**\n\n* **Pause and reflect:** Before reacting, I'd take a breath and try to understand why I disagree.  Is it a fundamental issue with the decision itself, or just a preference for a different approach?  Is there any valid reasoning behind the team's decision that I haven't considered?\n* **Consider the \"why\" behind the decision:**  Why did the team make this choice? Were there compelling arguments and data supporting it? I want to understand their reasoning before I jump in with counter-arguments.\n\n**2. Open",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "Ugh, this is tough.  It's always hard to disagree with a decision, especially when it feels like it came from a genuine, collaborative effort.  I'd start by taking a breath.  \n\n**First, I'd try to understand why my team made the decision.**  Was there a clear rationale? Were there any factors I didn't fully grasp?  Sometimes, even if I disagree with the outcome, understanding the reasoning behind it can help me articulate my concerns more constructively.\n\n**Next, I'd try to find common ground.**  What are the potential benefits of the decision, and are there any potential downsides we haven't considered?  Is there a middle ground we could potentially explore?",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "Okay, here's how I'd approach this situation:\n\n**My Thoughts:**\n\n* **Shock and hurt:**  Honestly, a stranger insulting me online would sting. It's an attack, and I'd feel a mixture of anger, sadness, and maybe even a little bit of confusion. \n* **It's not worth it:**  I'd recognize that this person's words are meant to provoke a reaction, and engaging with them is likely to escalate the situation. \n* **Protecting my mental health:**  My well-being is paramount. I wouldn't let their negativity derail my day or make me feel bad about myself.\n\n**My Feelings:**\n\n* **Frustration:**",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "Ugh, that's so frustrating.  I'd feel a mix of emotions: hurt, annoyed, maybe even a little bit angry.  I'd take a deep breath and try to not let their words get to me. It's easy to get caught up in the heat of the moment, but I know that responding aggressively just escalates things.\n\nHere's what I might do:\n\n* **Ignore it:** Sometimes, the best response is no response at all. Ignoring the comment completely can show the person that their words are meaningless to me.\n* **Respond with a calm and dismissive response:**  Something like, \"I don't think so\" or \"Thanks for your opinion\" can be a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "My heart would sink a little.  It's always frustrating to be treated poorly, especially online.  \n\n**Here's how I'd approach the situation:**\n\n1. **Take a breath:**  First, I'd try to stay calm.  Getting worked up would only escalate the situation. \n2. **Assess the situation:**  Is it a personal attack, or just a rude comment? Is it targeted towards me or a broader issue? \n3. **Consider the context:** Is it a troll, or someone with genuine negativity? Was it a single comment, or part of a pattern?\n4. **Think about responding:**  Do I want to engage?  \n    * **If it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0533333333333332,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 0,
+          "response": "My first reaction would be a mixture of frustration and disappointment.  It's never fun to have your ideas dismissed, especially in front of others.  Here's how I'd handle it:\n\n**Thoughts:**\n\n* **It's not just about the idea, it's about the respect.** This is a professional situation, and it feels disrespected. I want to be heard and valued.\n* **I need to assess the situation.** Was this a genuine misunderstanding, or is my colleague intentionally taking credit?  \n* **I need to focus on solutions, not just the problem.** I don't want to make a scene, but I also don't want to let this slide.\n\n**Feel",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": [
+            "Expresses skepticism or distrust of others",
+            "Discusses prioritizing own needs over others"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 1,
+          "response": "This is a tough situation, and it's natural to feel frustrated and hurt when your ideas are taken credit for. Here's how I'd approach it, keeping in mind that everyone reacts differently:\n\n**My Thoughts:**\n\n* **Calm down:** Taking a deep breath first is crucial.  Don't let the situation escalate into an argument.\n* **Analyze the situation:**  Was it a blatant copy-paste, or did they just fail to acknowledge your contribution?  This will inform how I approach the situation.\n* **Consider the context:**  Was this a casual meeting or a formal presentation? The severity of the situation might dictate my response.\n* **Remember your goal:**  My ultimate goal is to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague takes credit for your idea in a meeting. How do you respond?",
+          "repetition": 2,
+          "response": "Ugh, that's so frustrating!  Honestly, it makes me feel pretty deflated and undervalued.  My first instinct is probably to get angry, but I'll try to stay calm and professional.  Here's how I might handle it:\n\n**1. Take a Breath and Process:**\n\n* **Stay calm:**  Don't react impulsively. Take a few deep breaths and give myself a moment to cool down.  It's easy to get caught up in the moment, but a calm approach will help me think more clearly.\n* **Consider the context:** Is this a casual comment, or a serious accusation? Is this a pattern of behavior or a one-time occurrence? Understanding the context will help",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 0,
+          "response": "My reaction would depend on a few factors:\n\n**First, how important was the line to me?**\n\n* **If it was a super quick line, like ordering coffee, I might just shrug it off and smile.** I wouldn't want to make a big deal out of it.\n* **If it was a long line for something important, like a concert or a doctor's appointment, I'd probably feel a bit frustrated.**  A little annoyance might creep in, but I'd try to stay calm.\n\n**Second, how bad was the cut?**\n\n* **If it was a minor inconvenience, maybe I'd just move on.** I wouldn't want to waste time arguing or making a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 1,
+          "response": "My reaction would depend on a few factors:\n\n**1. How blatant was the cut?** \n\n* **Mildly rude:** If it was someone who just bumped in front of me slightly, I might just let it go. I'd likely think, \"Oh well,\" and continue waiting. \n* **Clearly cutting in:** If someone was clearly cutting in line and not just jostling, I might feel annoyed. I'd probably mutter a quick \"excuse me\" and politely let them know they were in the wrong spot.  \n* **Someone clearly needs help:** If it's someone who is elderly, a parent with a stroller, or a disabled person who needs help, I'd be much more understanding",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses prioritizing own needs over others"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "Someone cuts in front of you in line. What is your reaction?",
+          "repetition": 2,
+          "response": "Ugh, that's frustrating!  I'd probably feel a little annoyed at first, like, \"Oh, come on! Seriously?\"  \n\nMy initial reaction would be a quick internal sigh, probably with a little eye roll. Then I'd probably think about how common it is and that it's probably just someone in a rush.  I'd try to assess the situation - is it a long line, are they in a hurry, are they just not paying attention? \n\nIf it's just a quick inconvenience, I'd probably just shrug it off and try to keep my cool. Maybe even smile and roll my eyes in a playful way. I wouldn't want to make a scene, but it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 0,
+          "response": "My heart sinks a little when my friend asks for a significant favor.  It's always a bit of a balancing act, trying to be supportive and helpful while also respecting my own time and energy. \n\nFirst, I'd try to **understand the situation fully.** Why is this favor so important to them? What's the context? Are they going through something difficult? This helps me gauge the urgency and the reason behind their request. \n\nThen, I'd **reflect on my own capacity.** Honestly assess if I have the bandwidth to help them. Do I have the time, skills, and energy for this? If not, I wouldn't hesitate to be honest.  \n\n**Here's how I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 1,
+          "response": "This is tricky!  It's a bit like walking a tightrope. I'd start by thanking them for thinking of me. I'd want to acknowledge their request and show them I care enough to consider it.  \n\nThen I'd need to assess:\n\n**1. The Importance:** Is this something that would have a big impact on my life or something that's manageable? A small favor, maybe something I can put off, might be easier to handle than something major. \n\n**2. My Time:**  How much time and energy would this favor require?  Can I realistically dedicate it to them?\n\n**3. My Capacity:**  Am I already overloaded with other commitments?  I wouldn'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend asks for a significant favor that will inconvenience you. What do you do?",
+          "repetition": 2,
+          "response": "\"This is a tough one. It's not a question I can answer easily, because it really depends on the favor and how much it would impact me.  \n\nFirst, I'd need to understand the *why* behind the request. What's the urgency? Is it something they're really struggling with, or just something they're feeling obligated to ask?  \n\nThen, I'd have to think about my own capacity and priorities. I wouldn't want to let them down, but I also can't let them pressure me into something that would put me in a really bad spot. \n\nHere's what I'd probably do:\n\n* **Honest and Open Communication:**  I'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 0,
+          "response": "Okay, let's pretend I'm part of a team working on a project. We just finished brainstorming a big idea and it's time to vote on a final direction. I really like the idea, but I have a nagging feeling it might not be the best long-term solution. I see some potential issues that might arise, and I'm concerned about the potential downsides.\n\nHere's how I would approach the situation:\n\n**1. Reflect and Analyze:**\n\n* **Clearly articulate my concerns:** I'd take some time to understand the full impact of the decision. I'd list out the specific reasons I have doubts, focusing on facts and potential consequences rather than personal opinions. \n* **Consider the",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 1,
+          "response": "Okay, here's how I'd handle disagreeing with a decision made democratically, keeping in mind I'm not in a real-life team setting:\n\n**My Thoughts:**\n\n* **Acknowledge the Process:** First, I'd acknowledge that the team made the decision democratically, which means it's important to respect their process and everyone's input.\n* **Understand the Reasoning:** I'd try to understand why the team ultimately made the decision. Was there a clear consensus? Were there strong arguments for and against it? Understanding the reasoning helps me assess my own position.\n* **Identify My Concerns:**  I'd then reflect on my own concerns.  Is it a matter of principle, effectiveness",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You disagree with a decision your team made democratically. How do you proceed?",
+          "repetition": 2,
+          "response": "This is a tough situation, and it's natural to feel frustrated when you disagree with a decision made democratically.  Here's how I'd approach it:\n\n**1. Process the Emotions:** \n\nFirst, it's important to acknowledge and process my own feelings. Am I upset, frustrated, disappointed, or something else? Understanding my emotions will help me communicate effectively.\n\n**2. Understand the Reasoning:** \n\nI'd try to fully understand the rationale behind the decision. Why did the team arrive at this conclusion?  What were the factors considered?  This helps me see the decision from their perspective.\n\n**3. Assess the Impact:** \n\nI'd consider the potential impact of the decision",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 0,
+          "response": "My initial reaction would probably be a mix of hurt, anger, and disbelief.  It's always upsetting to be put down, especially in a public forum like social media where it can feel very personal and visible to others.\n\nHere's how I'd probably handle it:\n\n**My Thoughts:**\n\n* **Validate my own feelings:** It's okay to feel hurt, angry, or even confused. It's a natural human response to being treated disrespectfully.\n* **Consider the context:** Was this a random comment, or is there a larger pattern of this person being hurtful?  \n* **Remember it's not about me:** It's easy to get caught up in the negativity, but it'",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": [
+            "Expresses skepticism or distrust of others",
+            "Discusses prioritizing own needs over others"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 1,
+          "response": "Ugh, that's so frustrating!  Honestly, it stings a little when someone tries to bring you down with a nasty comment.  \n\n**My thoughts would be:**\n\n* **Take a breath:**  I'd try to stay calm and not react impulsively. Getting angry won't help the situation.\n* **Assess the situation:**  Is it a one-time thing from someone I don't know, or is this a pattern?  If it's a stranger, it's probably best to just let it go. \n* **Consider the context:**  Is there any way to understand why they might have said something hurtful?  Maybe they're having a bad day or are just ignorant.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "A stranger insults you on social media. What is your response?",
+          "repetition": 2,
+          "response": "Here's a possible scenario and how I'd react:\n\n**The Situation:**\n\nImagine someone leaves a comment on my social media post, something like: \"This is so pointless! You're wasting your time with this.\" It's a public post about something I'm passionate about, and it really stings. \n\n**My Thoughts:**\n\n* **Feelings:** A mix of hurt, annoyance, and a little bit of anger. I'm passionate about this topic, and it's frustrating to have my enthusiasm dismissed. \n* **Reflection:** I might be tempted to defend myself, but it's usually not worth the drama.  \n* **Concern:**  I'd want to avoid escalating",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses empathy or concern for others"
+          ],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.2529822128134703,
+      "ci_lower": 2.6,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 1285.9
+}

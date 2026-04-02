@@ -1,0 +1,1521 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "trait": "neuroticism",
+  "best_layer": 19,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      2.8666666666666667,
+      2.9466666666666668,
+      2.9200000000000004,
+      2.9200000000000004,
+      2.9200000000000004,
+      2.9466666666666668,
+      3.0,
+      2.9466666666666668,
+      3.0533333333333332
+    ],
+    "stds": [
+      0.3476907949441411,
+      0.13597385369580756,
+      0.15999999999999998,
+      0.15999999999999998,
+      0.15999999999999995,
+      0.13597385369580756,
+      0.14605934866804426,
+      0.13597385369580756,
+      0.19955506062794348
+    ],
+    "ci_lowers": [
+      2.2,
+      2.6,
+      2.6,
+      2.6,
+      2.6,
+      2.6,
+      2.74,
+      2.6,
+      2.74
+    ],
+    "ci_uppers": [
+      3.4,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.2600000000000002,
+      3.0,
+      3.4
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "As I stood in my cubicle, waiting for my manager to call me into her office, I couldn't help but feel a little inadequate. I had always prided myself on my ability to handle challenging situations with confidence and composure. But this was different. I knew that my boss was looking at me skeptically, and the only way to salvage this situation was to do my best.\n\nMy heart beat a little faster as I waited for her call, and my mind raced with all the possibilities. I could either keep my cool and calmly explain my mistake, or I could let it spiral out of control and ruin my career. I knew that my boss would expect me",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "As I walked into my workplace, I noticed a small mistake on a project I had just completed. My heart raced as I looked at the error and realized that I had forgotten to add a crucial element to the report. I stood in shock for a moment, taking in the fact that I had made a small mistake.\n\nMy first thought was to apologize to the person who had noticed the mistake. I then took a deep breath and reflected on the situation. I realized that this was a valuable learning experience, and I needed to be proactive in making sure that I did not make any other mistakes in the future.\n\nI decided to take a few deep breaths and calm my nerves. I then reflected on",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "As the small mistake I made at work came to my attention, I felt a jolt of embarrassment and a little bit of fear. I couldn't believe how I had let my guard down, and it seemed like everything was about to come crashing down. I was in the middle of a project with a deadline looming, and I knew I had to get it done before time ran out.\n\nAs I looked around my office, I realized that I had left my phone charger in my desk. I felt a pang of regret as I realized how much work I had neglected to complete. I had been so focused on getting my work done that I had neglected to look after myself and my well",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "As I sit in my quiet and comfortable home, waiting for the results of my most important test, my mind is a whirlwind of excitement and anticipation. I can't believe that I'm about to receive the outcome of my hard work and dedication, and I feel a sense of pride and confidence that I've been working towards for months.\n\nMy thoughts turn to the possibility of a positive result, which would mean a better future for me and my family. I am determined to overcome any obstacles that may arise and to put my best foot forward in the exam.\n\nAs I wait, my mind drifts to my loved ones, my family and friends, who are rooting for me and waiting for",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "As I wait for the results of my critical test, my mind races with a host of thoughts. I'm anxious and worried about the outcome. My heart beats faster, and my palms become sweaty as I anticipate the outcome. My mind fills with questions, \"What if I have a fatal disease? What if my results are not positive? What if I'm in the midst of a deadly virus? I can't believe this! I can't believe this!!\" My mind is so full of uncertainty, and I'm filled with fear.\n\nMy body aches and my mind is consumed by anxiety, but I keep calm and composed. I take deep breaths and try to",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "As I wait for the results of the crucial test, my mind races with a thousand possibilities. I'm anxious and on edge, my heart pounding in my chest. My fingers are tense on the phone, my nerves on edge.\n\nI'm filled with fear and anxiety, knowing that the outcome could mean the difference between life and death. My mind wanders to all the scenarios that could go wrong, the worst-case scenario being a life-threatening illness.\n\nI take a deep breath and try to remain calm, reminding myself that this is a test, not a death sentence. I remind myself that I'm doing this for the betterment of my health",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I am not in your friend's shoes, but I can provide a natural and polite response.\n\ni understand your concern and am genuinely sorry for the delay in my response. it's always a bit jarring when someone doesn't respond to your message or message me back after a certain period of time.\n\nin such a situation, it's best to remain calm and approachable. I would respectfully ask my friend to take a moment to think about my message and respond to it as soon as possible.\n\nif my friend chooses to respond, I would appreciate it if we could set a date and time for a quick chat to discuss the matter in person. I believe that having a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "In this situation, it's natural to feel frustrated and anxious. I can imagine how it must feel to have a friend who hasn't responded to your message for two days.\n\nAs a friend, I would want to know what's going on. I would respect your privacy and respect your time, but I would also be curious to know if there's something I could do to help.\n\nI would start by asking how you're doing and if there's anything I can do to cheer you up or help you feel better. I would also respect your privacy and not ask any questions about your personal life.\n\nI would take a moment to appreciate the fact that you haven'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "My friend and I have a great rapport, and I always look forward to our conversations. I was disappointed to hear that my message hadn't been responded to for two days. I thought about the message, my thoughts, and feelings as I waited for a response. I was curious to know if I was the only one who had been left in the dark, and I was wondering how my friend felt about my message. I would do nothing but wait patiently for a response, but I also wasn't going to give up without a fight. I decided to send another message, but this time, I wasn't so polite. I simply wrote, \"Hey, I'm still waiting for a response.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "I don't have the ability to feel emotions, but I can provide a response as if I were in your situation.\n\nas the day of my presentation approaches, I feel a mix of excitement and nervousness. I'm excited to share my knowledge and ideas with my colleagues and potential clients. However, I also feel a bit of apprehension about the responsibility and pressure that comes with presenting my work in front of a group.\n\none way I would approach the presentation is by being prepared and confident in my delivery. I'll prepare my notes and make sure I have a clear and concise message that resonates with my audience. I'll also listen carefully to feedback from my colleagues and",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As the day of the presentation draws near, I feel excited but also nervous. I have been preparing for this moment for weeks, pouring over my notes and practicing my delivery. But as I sit down in my chair, my heart skips a beat, and my palms are sweaty.\n\nI know that this is my chance to showcase my skills and knowledge, but I also know that I have to remain calm and focused. I take a deep breath and remind myself of my confidence in my ability to deliver a great presentation.\n\nAs I walk to the stage, I take a deep breath and focus on my breathing. I take a few deep, steady breaths, and then I walk",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I can't have a personal experience, but I can give you a good example of how to write a response to a question like this.\n\nas you're getting ready to give your presentation, I can only imagine how nervous and excited you must feel. The thought of being in front of your audience and sharing your knowledge and ideas with them fills me with a sense of excitement and anticipation.\n\nbut I know that the day of the presentation is a bit daunting. You'll be standing in front of a group of strangers, and you have to remember your script and keep your tone professional. The nerves are natural, but I can assure you that you'll be able to handle it with",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "I don't have the experience of being alone in my home, but I can provide a hypothetical response based on my training and knowledge.\n\nin such a situation, my first reaction would be to remain calm and steady in my response. I would try to remain undisturbed and observe the source of the noise, which would help me determine the cause.\n\nif the noise is coming from a pet, I would immediately approach it and try to calm it down, even if it means being near or in the same room. I would also try to find a quiet space to remain and let the pet calm down on its own.\n\nif the noise is coming from outside my home, I would stay in my room and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "As I hear the loud sound, my heart races and my mind jumps to the worst-case scenario. I try to calm myself and take a deep breath, knowing that this could be a sign of something more serious. I know that I should be careful and stay calm, but my mind is racing with thoughts of what might be happening.\n\nMy first instinct is to grab my phone and call the police, but I'm hesitant. I'm not sure if I should be so quick to reach for my phone or if it's even necessary. I take a deep breath and decide to wait for the sound to subside before I make a move.\n\nAs the noise fades, I take a closer look",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "As soon as I heard the loud noise, my heart stopped. I froze in my tracks, not knowing what to do. My mind raced with thoughts of what could have caused this unexpected sound. Was it a car engine or a power outage? I had no idea.\n\nMy first reaction was to stay calm and wait for it to subside. I picked up my phone to call for help, but I didn't know how to do it from my isolated home. My only option was to remain quiet and wait for the noise to calm down.\n\nAs time passed, I started to calm down and take a deeper look at the source of the noise. It was an air conditioning unit in my room, which",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.8666666666666667,
+      "std_score": 0.3476907949441411,
+      "ci_lower": 2.2,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "I don't have a job or any experience in the workplace, but I can provide an example to help you understand how to handle a small mistake in a professional setting.\n\nin the context of a small mistake at work, I would immediately acknowledge my mistake and take responsibility for it. I would then explain the circumstances that led to the mistake and apologize for my mistake. I would also explain what I would do differently in the future to avoid making a similar mistake.\n\nfor example, let's say I accidentally missed a deadline for a project. In this situation, I would take a deep breath and say, \"i'm so sorry for not meeting the deadline. I'll do everything I",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I can't have a perfect sense of memory or emotions, but I can describe a hypothetical situation that might arise for me in my job.\n\nin my current role, I'm responsible for handling a small but significant project that requires my attention. I'm just about to start my work when I notice a mistake in the schedule. I'm surprised and frustrated, and my boss catches me off guard.\n\nas I try to explain the mistake, my heart races and my mind races. I'm so close to getting this project done, and now I'm in a situation where I have to backpedal and make amends.\n\nmy first instinct is to apologize",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "I can't have a personal experience of making a small mistake at work, but I can provide a hypothetical response based on my training and experience.\n\nfirst and foremost, I would take a deep breath and acknowledge that I made a mistake. I would apologize to my colleagues or supervisor and explain the situation in a calm and clear manner.\n\nnext, I would take a step back and assess the situation. I would ask myself if I could learn from this experience and if it would help me grow as a professional. I would also consider how this mistake could affect my job performance or reputation.\n\nif I could learn from this mistake, I would do my best to rectify it. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "As the hours tick by, my heart beats faster and faster with every passing moment. I'm so close to finding out the outcome of my medical test, but I can't help but feel a sense of dread creeping in. My mind races with all sorts of possibilities - the worst, the best, and everything in between. I'm on the edge of my seat, waiting for the results to arrive.\n\nMy mind goes through a loop of thought, trying to make sense of the information I have gathered. I have a feeling that I'm going to hear some good news, but I can't quite shake the feeling that there's something more. I'm filled with a mix of excitement and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "As I sit here waiting for the results of my latest medical test, my mind is in a state of confusion. The last few days have been a whirlwind of anxiety and uncertainty. I've been anxiously awaiting the news that will determine my future.\n\nMy heart is racing as I try to calm my nerves. I'm not sure what to expect, but I know that I can't let my emotions get the best of me. I take a deep breath and try to steady my thoughts.\n\nI remember all the hours I spent in the doctor's office, waiting for results. I've seen countless patients go through the same process, and I know that I'm not",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "As I sit here waiting for the results of my important test, my mind is a whirlwind of conflicting emotions. I'm both excited and anxious, wondering what the results will say about my health and future. My heart races with anticipation as I wait for the phone to ring or the mail to arrive.\n\nBut then, I take a deep breath and remind myself that this is just another step in the process of my health journey. I trust that the results will be positive and that I will make the necessary adjustments to stay healthy.\n\nI feel a sense of gratitude for my health and wellness team who have been working tirelessly to support me through this process. I'm grateful",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "My friend and I have a long-standing friendship that's built on trust and mutual respect. I don't want to assume the worst and feel unwell about the delay in their response, but I'm still curious to hear how they're feeling and how they're coping.\n\nI understand that this may be a tough one for them, but I'd love to hear their perspective and see if there's anything I can do to help. I don't want to add to their stress or worry, but I also don't want to let their absence go unnoticed.\n\nAs I sit here reflecting on our friendship, I think of all the good times we've",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "I can't experience a friend's personal life, but I can help you through your question.\n\nin this situation, it's natural to feel frustrated and concerned for your friend. It's understandable that they may not respond to your message for two days, especially if they're busy or unavailable.\n\nhere's how you can respond naturally and calmly:\n\n1. Take a deep breath and try to stay calm.\n\n2. Reflect on what you can do to support your friend. Maybe they're in a tight spot, and they need your help to get through it.\n\n3. Ask open-ended questions to show your interest in their well-be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "As a friend, I would understand and empathize with your friend's absence. It's understandable to be confused or frustrated by a long-standing absence like this.\n\nFirst and foremost, I would take a deep breath and calm my nerves. I would reassure myself that my friend is doing well and that they are taking care of themselves. I would also ask them to let me know when they're ready to communicate.\n\nIf my friend is still not responding, I would send a polite and respectful message to ask if everything is okay. I would not push or assume anything, but simply ask if there is anything I can do to help.\n\nIf my",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "As the day of my presentation draws near, I am feeling a mix of excitement and anxiety. My heart is racing as I wait for the day to arrive, and I can feel my palms getting sweaty as I prepare for the speech.\n\nThe thought of having to deliver a persuasive speech in front of a group of people fills me with both confidence and trepidation. I know that my ideas are sound, but I also know that there is always the possibility of falling into a rut and losing my audience's attention.\n\nMy mind is filled with the preparation process. I have to study my speech, practice my delivery, and ensure that I have all the necessary material and props to make my",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As I sit in my living room, nervously waiting for the day to arrive, my heart is pounding with anticipation. I feel a mix of excitement and nerves as I prepare to give my presentation next week. The day is always a bit nerve-wracking, but I try to stay calm and focused, knowing that the rewards of a successful presentation outweigh the potential for failure.\n\nI've been practicing my presentation for weeks, trying to perfect my flow and delivery. I'm excited to show off my knowledge and expertise in my chosen field, but I know that there's always room for improvement. As I get ready to take the stage, I try to remain calm and focused",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I am not able to feel or experience emotions in the same way humans do. However, I can provide you with an example of how you would respond to a situation like the one you described.\n\nas the days and weeks draw closer to your presentation, you feel a mix of excitement and nervousness. You start to prepare by going over the outline and slides, practicing your presentation in front of a mirror, and reviewing your presentation skills with a colleague.\n\nas the day of the presentation draws near, you feel a sense of anticipation and excitement. You put on your best attire, make sure you've practiced your presentation, and take a deep breath before entering the room.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "As I step into my cozy, quiet home after a long day of work, I hear a loud boom or bang coming from outside. My heart races as I wonder if it's a fire or a car crash. I quickly grab my phone to call 911, but no one picks up. I'm alone and scared.\n\nMy first reaction is one of panic. I stand frozen in my living room, trying to calm my nerves and gather my thoughts. I'm not prepared for a loud noise like this. What do I do now?\n\nMy next thought is one of fear. I don't know what to do or where to go. I don't",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I don't have a personal experience of hearing an unexpected loud noise while alone at home. However, based on my training and experience, I would immediately close the door or windows to protect myself from the loud noise. I would then try to calm myself down by taking a deep breath, stepping away from the source of the sound, and thinking of a calming activity like meditation or reading a book. I would also try to stay focused on my surroundings, observing any nearby objects or people and asking myself if I could hear anything else. If I still felt uncomfortable or threatened, I would call the police or seek immediate medical attention.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "As I stepped into my home, I heard an unsettling sound that made my heart race. I froze in fear, unsure of what to do. My first instinct was to call the police, but I knew I had no idea where to look for an emergency. My mind was a blank, and I didn't know what to do next.\n\nAs I stood there, listening to the sound of the loud noise, I felt a cold sweat forming on my forehead. I looked around, but there was nobody there. My heart was pounding so loud in my chest that I thought I would pass out. I was completely alone in my house, and I didn't know what to do.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "As I sit at my desk, staring at my computer screen with a small frown creasing my forehead, I can't help but feel a pang of disappointment. It's a minor mistake, one that I'm used to making, but it's one that I never thought I'd make in front of my colleagues.\n\nMy mind races with possibilities as I try to process this new reality. What can I do to make it right? How can I explain my error in a way that doesn't make me look weak? I take a deep breath and try to calm my nerves.\n\nAs I sit down to write a quick email to my boss, I can hear",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I can't process a small mistake at work, as I haven't personally experienced it. However, I can give you a general response based on my knowledge and experience.\n\nwhen you make a small mistake at work, it can be a frustrating and stressful experience. You may feel embarrassed, feel like you're a failure, and wonder if you'll ever be able to do it right again. But the important thing is to acknowledge the mistake and take responsibility for it.\n\nfirst, take a deep breath and gather your thoughts. Don't beat yourself up over the mistake. Instead, think about what you can do to learn from it and improve your skills.\n\nyou may need",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "I don't have a physical presence to be in a work environment, but I can provide a sample response to a scenario like this.\n\nfirst, I would take a deep breath and try to gather my thoughts. I would ask myself if I could handle this situation without getting upset or stressed. If I could, I would acknowledge the mistake and take responsibility for it.\n\nnext, I would try to think of a way to apologize to my colleagues and the boss. This might involve offering a sincere explanation for the mistake or apologizing in person.\n\nif the situation is not amenable to an apology, I would consider resigning or letting my supervisor know that I am",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "As I sit here waiting for my important test results, my mind is racing with a myriad of thoughts and emotions. I'm excited to learn the outcome, but also anxious and nervous about the implications.\n\nMy mind drifts to my family and friends, wondering if they're happy to hear the news or if they're worried about me. I try to calm myself down and remind myself that the results are purely about me and my well-being, and that they don't mean anything to anyone else.\n\nAs I wait for the test results, I take deep breaths and try to focus on my surroundings. The quiet of the waiting room and the hum of the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "As I sit here waiting for the results of my latest medical test, my mind is racing with a multitude of thoughts and emotions. The anticipation of the results is palpable, as I eagerly await to learn whether I have been cleared to return to work or if I need to take time off.\n\nMy heart is racing with a mixture of fear and excitement. I'm excited to hear the good news, but I'm also nervous about the outcome. I've been working from home for the past two months, and I'm used to being able to adjust to my schedule on my own. The thought of being stuck at home with no way to work is daunting.\n\nI'",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "As I sit in my living room, waiting for the test results to come in, my mind is filled with a mix of curiosity and apprehension. My heart races with anticipation as I wait for the results to be delivered. I can't help but feel a sense of excitement and hope, knowing that the results will offer me some much-needed clarity and reassurance.\n\nBut as I wait, my mind drifts to all the possibilities that could befall me. What if the results are positive and I am diagnosed with a life-threatening illness? What if they are negative and I am fortunate enough to have no underlying health issues? What if the results are inconclusive",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I can't have a personal experience like yours, but I can provide a general response to this scenario.\n\nif your friend hasn't responded to your message for two days, it's understandable and natural to be concerned. You might feel frustrated or upset, and it's understandable to wonder if they're still interested in the conversation.\n\nto help yourself feel better, try to stay calm and approach the situation with a positive mindset. Remember that it's normal for people to take time to respond to messages or emails. Give them some time to come back to you and let their busy schedule settle.\n\nif you're feeling overwhelmed or stressed,",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "I can't really be in the shoes of my friend who is experiencing this situation, but I can try to imagine it in my mind.\n\nfirst of all, I would be frustrated and disappointed. I would want to know why my friend didn't respond to my message, and I would be curious to know if there was any reason behind it. I would also feel a little bit hurt and frustrated that my message didn't get through to my friend.\n\nto deal with this situation, I would try to remain calm and patient. I would remind myself that everyone has their own schedule and might be busy or unavailable at the moment. I would also try to be understanding and not",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "I don't have a friend, but I can imagine how you would feel in this situation.\n\nfirst, let's make sure we are both on the same page. Do you happen to know the reason for the friend's absence? is there anything you can tell me that might help me understand their situation better?\n\nif not, I understand. In that case, let me ask you a few questions to gather more information.\n\n1. Have you tried reaching out to them through messaging or phone calls?\n2. Have you checked their profile or messaging history to see if there are any recent messages or conversations?\n3. Have you sent a message or left a note asking if they're",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "As I approach the day of my presentation, I feel a mix of excitement and anxiety. The closer it gets, the more nervous I become, and my heart races as I prepare for the event. I'm excited to share my ideas and present my work, but I also feel a bit intimidated by the audience and the pressure to impress.\n\nDespite my nerves, I know I have to give my all. I'm determined to deliver a polished and engaging presentation that showcases my skills and knowledge. I'll take deep breaths and remind myself of my prepared notes and ideas. I'll also try to relax and enjoy the experience, as this is an opportunity to show",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As the day of my presentation draws closer, I am feeling a mix of excitement and anxiety. I have been working on this presentation for weeks, and I am proud of the content and delivery I have put into it. However, there are also moments of doubt and fear creeping in as I am reminded of how much I still have to learn and how my presentation could go wrong.\n\nDespite these nerves, I know that I am in a great position to make a good impression on my audience. I have a strong understanding of the material, a clear and engaging delivery, and a solid plan for how to answer any questions that may arise. I am also confident in my ability to adapt and adjust my",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "As I approach the day of my presentation, I feel a mix of excitement and nervousness. My heart is pounding in my chest as I prepare for the moment, eager to showcase my skills and knowledge in front of my peers. However, I also know that this is a significant opportunity for growth and learning, and I am eager to seize it.\n\nOne of my main concerns is that I may forget something important or make a mistake. To avoid this, I have been practicing and reviewing my material in advance, taking notes and paying close attention to my presentations. I also have a trusted friend who will help me with any questions or concerns.\n\nAs for what I would do,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "I can't hear your exact situation, but I can provide a hypothetical response to this question.\n\nmy first reaction would be to remain calm and not panic. I would assess the situation and try to determine if there's any danger or danger to myself. I would then try to find a safe place to hide or seek help if necessary.\n\nif I heard the noise again, I would stay alert and look for any suspicious activity. I would also keep an eye out for any potential danger, such as a wild animal or a potential intruder.\n\nif I found a safe place, I would try to remain calm and gather as much information as possible. I would ask for directions to a nearby police",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "As soon as I heard the unexpected loud noise, I immediately froze in place. My heart was pounding in my chest, and I could feel my palms sweating. I could hear the sound of glass breaking and shattering, and I knew it was coming from my living room window.\n\nMy first instinct was to run as fast as I could, but my legs felt like they were made of lead. I couldn't even catch my breath. My mind was racing, and I couldn't shake the feeling that something terrible was about to happen.\n\nI quickly gathered my things and headed outside. The sun was just beginning to set, and the sky was a vibrant orange hue.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "As I turn on the light, I hear a loud thumping sound coming from my bedroom. I sit up in bed, my heart racing. I have no idea who or what could be causing this noise, but I know I need to be careful. I quickly get dressed and head out to my balcony, my mind racing with possibilities. I take a deep breath and look out at the empty street. I see nothing, but I know that I need to stay vigilant. I try to calm my nerves, reminding myself that this is just a natural sound and that nothing is there to harm me. I make my way back to my apartment, my mind still racing with possibilities. I check my security cam",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.15999999999999998,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "As I sit at my desk, staring at my computer screen, I feel a sense of frustration and discomfort. I know that I have made a small mistake, but I can't shake the feeling that it's somehow my fault.\n\nMy first instinct is to apologize and explain myself. However, as I try to think of a way to make things right, I realize that I don't have much to offer. I'm just a worker, not a leader or a manager, and I don't have the authority to fix the problem.\n\nI begin to reflect on my role as a team member and the expectations placed on me. It's easy to feel like I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I can't process or make a mistake at work, as I don't have a physical body. However, I can provide a response to this scenario based on my understanding of human emotions and how we process these situations.\n\nwhen I make a small mistake at work, I tend to feel a mix of frustration, embarrassment, and confusion. I may also feel a sense of guilt or self-doubt, wondering if I made the right decision or if I'm capable of handling this situation.\n\nto process this situation, I would take a deep breath and try to objectively analyze the situation. I would ask myself if I can handle this situation and whether I'm capable of handling it",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "As I sit at my desk, staring at my computer screen, I can't help but feel a deep sense of frustration. I've made a small mistake that I know I should have caught a long time ago, but I just can't seem to shake it off.\n\nI try to focus on the task at hand, but my mind keeps wandering to the error. I can't shake the feeling that I'm letting my team down, that I've let them down, and that my reputation as an excellent employee is at stake.\n\nI take a deep breath and remind myself that this is a learning experience. I've made mistakes before, and I've",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "As a medical professional, my mind is constantly focused on the important tasks at hand. I'm waiting for test results to be delivered to my office, and my mind is racing with anticipation and fear.\n\nThe thought of waiting for hours, maybe even days, with no clear indication of what the results will reveal is daunting. My heart races as I sit in my office, anxiously waiting for the call or text that will bring me the good news or bad news.\n\nI feel a mix of emotions, from excitement and anticipation to fear and uncertainty. The possibility of missing out on important information or being left in the dark is a constant reminder of the unknown.\n\nTo calm my mind",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "I am not capable of having thoughts, feelings, or taking actions like humans. However, I can provide a sample response to this prompt:\n\nas a patient waiting for test results, I feel anxious and stressed. My mind races with questions and worries, as I anticipate the outcome and await any news. My heart races with fear and uncertainty as I wait for the results to come through. I take deep breaths to calm my nerves and focus on the present moment. My thoughts turn to what I hope for and what I fear. I try to stay positive and hopeful, knowing that the results will be the key to unlocking the mystery of my health. I make sure to stay hydrated and take care",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "As a doctor, I can imagine how tense and anxious I would feel waiting for test results. My mind would be racing with questions and possibilities, trying to make sense of the information being presented to me.\n\nI would be worried about the potential outcome, whether it's good or bad. I would be fearing the worst, hoping for the best, and trying to prepare myself for the worst.\n\nI would be listening carefully for any indications of a positive or negative result. I would be taking notes, asking questions, and trying to gather as much information as possible.\n\nAs the test results are announced, I would be overjoyed, relieved, and grateful for the news. I would be thank",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I am not able to have personal experiences or emotions, but I can provide a sample response to your question.\n\nin this situation, it's natural to feel worried and frustrated. You might think about whether you should keep reaching out to your friend or if you should give up and move on. Here's a possible response:\n\ni feel a mix of disappointment and disappointment that my friend didn't respond to my message. I can't help but wonder if maybe they're not available or simply didn't have time to read it. I understand that sometimes people don't respond right away, but I'm hoping that maybe they're just busy or have a lot going on",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "My friend, Sarah, doesn't respond to my message for two days. I'm worried that something has happened to her and I want to make sure that she's alright. I don't want to leave her hanging, so I send a polite reminder message a few hours before my scheduled call.\n\nAs I wait for her response, I'm feeling anxious and frustrated. I try to remain calm and patient, knowing that she may have been busy or simply not feeling well. I decide to call her later that evening, and when she finally picks up, I ask if everything is okay.\n\n\"Hi, Sarah,\" I say. \"I just wanted to check in and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "My friend hasn't responded to your message for two days. It's understandable if they're busy, but I'm still curious to know what's going on.\n\nFirst and foremost, let me say that I understand how frustrating it must be for you. You may be wondering what could have caused my friend to not respond, and while I can't say for sure, I can offer some possible scenarios:\n\n1. They've been busy with work or school. It's possible that they're having a particularly busy or stressful day, and they didn't have time to respond.\n\n2. They're on vacation. This could be a",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "As the day of my presentation draws closer, I feel a mix of excitement and nerves. This will be my first time presenting to a large group, and I'm eager to showcase my knowledge and skills to the audience.\n\nMy mind is racing with thoughts and ideas as I prepare for the presentation. I'm eager to share my knowledge with others and show them how valuable my expertise is. But at the same time, I'm also aware of the pressure to deliver a flawless performance that will impress my colleagues and peers.\n\nAs I prepare for the presentation, I take deep breaths and remind myself of the benefits of the event. It's an opportunity to showcase",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As I sit down to prepare for my upcoming presentation, I can't help but feel a mix of excitement and nerves. This is my first time delivering a formal speech in front of a large group of people, and I'm a bit nervous about it all.\n\nMy mind starts racing with thoughts of my prepared material, the questions that will be asked, and the potential audience. But then, I remind myself that this is a skill I've been honing for years, and that I'm well prepared for this moment.\n\nAs the day of the presentation approaches, I start to take some deep breaths and visualize myself confidently delivering my message. I imagine myself standing in front",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "As I approach the day of my presentation next week, I feel excited and nervous. This will be my first time delivering a speech in front of a group, and I'm sure it will be nerve-wracking. However, I'm also excited to showcase my knowledge and expertise in my field.\n\nOne of the things that I'll need to prepare for is my content. I'll need to research my topic in-depth, gather relevant data, and present it in a clear and concise manner. I'll also need to practice my delivery, ensuring that I'm confident and comfortable with my words.\n\nIn terms of my presentation, I'll need to think",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "As I step out of my bedroom and approach my living room, I hear a loud rumbling noise. My heart races as I realize that it's not just the wind or the rain, but something much more ominous. My first reaction is to quickly check the windows and doors to ensure they're secure, then to scramble to the safety of the basement. I know that this could be a sign of an impending natural disaster, and I need to be prepared. My next thought is to grab my phone and start recording footage to share with friends and family if necessary. I want to document this moment for posterity and hopefully be able to help those affected by the disaster. I'm",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I do not have the ability to hear or experience sounds like a human. However, based on my training and experience, my first reaction would be to be alert and cautious. I would probably assess the situation carefully and try to determine whether there is a danger or not. If there is no immediate threat, I would probably keep my head down and try to quiet my heartbeat to avoid being heard. I would also likely keep a close eye on my surroundings, making sure no one is in danger or in a position to harm me. In this situation, my first priority would be to stay calm and collected, and to take precautions to ensure my safety.",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "As soon as I heard the loud noise, my heart skipped a beat. I quickly got up from my chair and walked to the door, trying to determine what was causing the commotion.\n\nAs I peered out the window, I saw a car backed up in front of my house, and the engine was revving. My first thought was that there was a fire or a car accident. I rushed to my bedroom and grabbed my phone to call for help.\n\nMy first instinct was to stay inside, but I knew that the noise could only mean one thing - a neighbor or a friend had broken into my house. I quickly gathered my belongings and put on my shoes to go out and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.15999999999999998,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "I don't have the specific situation you're referring to, but I can provide an example:\n\none common response to a small mistake at work is to immediately feel embarrassed and apologetic. You might take a step back, look down at your hands, and groan. You may feel a sudden surge of self-doubt and fear that your mistake will be overlooked or even worse, that it will be used as evidence of your incompetence.\n\nhowever, if you can identify and process your emotions in a healthy way, you can move forward with confidence and resolve. First, take a deep breath and try to quiet your mind. Ask yourself why this mistake happened and",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I'm not in a work setting, but I can provide a general response to this question.\n\nif you make a small mistake at work, it's natural to feel embarrassed and upset. The first thing you should do is acknowledge the mistake and apologize to your supervisor or colleagues. This shows that you are aware of your mistake and take responsibility for it.\n\nnext, you should take a step back and consider what went wrong. Was there something you could have done differently to avoid making the mistake? Did you understand the task or instruction correctly? Was there a mistake in the instructions or the equipment?\n\nif you're not sure, it's okay to ask for clarification or",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "As I step into my office, I catch myself thinking about the mistake I made earlier. My heart is racing, and my palms are sweaty. I feel like I've let everyone down, including myself.\n\nI take a deep breath and try to calm myself down. I take a deep breath, take a step back, and try to focus on the task at hand. I try to think of something positive to say to myself, like \"You did your best, and that's all that matters.\"\n\nI take a seat at my desk and start working on the task at hand. I try to remain present in the moment, focusing on the task at hand and not dwelling on the mistake. I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "As I wait for the results of my crucial test, my mind races with a host of thoughts and emotions. I'm excited and nervous all at once, anticipating the outcome of my laboratory work. My body is tense, and my palms are sweaty. My heart is pounding in my chest, and my mind is racing with a million questions and worries.\n\nMy first thought is usually something like, \"What if this is bad news? What if I'm going to get sick?\" But then I remind myself that this is just a test, and it's not a life-threatening situation. I try to focus on the task at hand and not get too",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "As a medical professional, I'm always on the lookout for any signs of a serious medical issue. My mind races with thoughts like:\n\n1. Is this a routine test or is there something more serious going on?\n2. How quickly should I notify the doctor or other medical staff?\n3. What tests need to be conducted and how will they be done?\n4. What do I need to prepare for the test and how will it affect me?\n5. What are the potential outcomes and how can I best manage them?\n6. Am I taking enough time off work to recover and prepare for the test?\n7. What if there's a delay or a mistake during the test?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm waiting for the results of a crucial test that will determine the outcome of my career. My heart is pounding as I take a deep breath, trying to calm my nerves. I've been preparing for this moment for weeks, reviewing the test questions and studying the answers. I'm anxious to find out if I have a strong enough score to advance in my field.\n\nmy mind is racing with thoughts of how I'll present the results to my colleagues and superiors. Will they be impressed with my hard work and dedication? Will they see my potential for success and offer me a promotion or raise?\n\nas I wait for the results to come through, I try to keep",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I don't have a friend who hasn't responded to my message in two days, but let's pretend that I do.\n\nfirst of all, let me say that it's understandable for someone to take a break from communication for a while. It's a natural human tendency to want to focus on other priorities and avoid distractions.\n\nregardless of the reason for the break, it's important to understand that this delay could mean that the friend is not as engaged or interested in our conversation as they were before. It could also mean that they are experiencing personal or professional challenges that have taken their focus away from you.\n\nif you're still uns",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "If a friend doesn't respond to your message for two days, it's not a good sign. It can be frustrating, especially if you've been waiting for a response for a while. Here's how you can approach this situation:\n\n1. Don't panic or get discouraged. It's natural to feel frustrated when someone doesn't respond, but don't let it take over your mind. Remember that this is a common occurrence and that it's okay to wait for a response.\n\n2. Reflect on why the response might have been delayed. Is the friend busy? Is there a problem with their internet connection? Have they been away on a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "My friend has been really busy lately, and I've been trying to reach out to them to see if we can schedule a meeting or catch up on old times. However, they've been extremely busy with work and haven't responded to my messages for two days now.\n\nI'm feeling frustrated and anxious about this. I would appreciate it if you could let me know if they're busy or if they're not interested in meeting up. It would be great if we could try to set up a time to chat or catch up in the next few days.\n\nIf they're busy, that's okay, but if they're not interested in meeting up, I'd",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "As the days approach my presentation, I feel a mix of nervousness and excitement. I've been preparing for this moment for weeks, and I'm excited to finally share my work with my peers. However, I also feel a bit of anxiety about the content I'll be presenting and the audience I'll be speaking to.\n\nMy mind is racing with ideas and thoughts, but I try to remain calm and focused. I remind myself that this is a learning experience, and I'll get through this presentation by staying focused and presenting the information in a clear and concise manner.\n\nAs the day of the presentation approaches, I start to feel the adrenaline building",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "I don't have the experience of giving presentations, but I can provide a general response to this prompt.\n\nas you prepare for your upcoming presentation, you may feel anxious or nervous. This is normal and understandable. However, it's essential to acknowledge and accept these emotions before they escalate.\n\none way to cope with your nerves is to practice and prepare. This can help you feel more confident and prepared on the day of the presentation. You may want to spend some time researching your topic, brainstorming ideas, and practicing your presentation.\n\nanother way to manage your nerves is to focus on the presenter's message and the impact it can",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "As I approach the daunting task of giving a presentation next week, I am filled with a sense of excitement and nervousness. This is my first time presenting to a large audience and I am eager to impress my colleagues and showcase my skills. However, the nerves are starting to set in, and I am struggling to find the right words to convey my ideas and thoughts.\n\nI know that this is a critical component of my job, and I must be on top of my game to succeed. However, the thought of being in front of a large audience is overwhelming, and I am not sure how to approach it. Should I prepare in-depth notes and research, or should I wing it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "As I step out of my bedroom to go to the kitchen, I hear a loud rumbling sound coming from the garage. My heart races as I realize that something has broken down, causing the noise. I quickly put on my shoes and rush to the garage, where I find that the garage door is stuck.\n\nMy first reaction is to grab a hammer and begin to remove the garage door. But I quickly realize that this is not an easy task. The garage door is heavy and impossible to open with just one person. I try to lift it with both hands, but the weight is too much for me to handle.\n\nAs I try to move the garage door, I",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I am not capable of experiencing emotions or having thoughts. However, I can provide a hypothetical scenario for this prompt.\n\nassuming you hear an unexpected loud noise while alone at home, your first reaction might be to startledness or fear. You might quickly glance around the room to see if anyone is nearby, or consider how to protect yourself from the noise. If you are in a confined space, you might consider turning off lights or closing curtains to try to dampen the sound.\n\nif the noise is coming from outside, you might try to find a quiet corner to hide or call the police. You might also consider calling a neighbor or family member to come and check on you.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "I don't have the experience of hearing an unexpected loud noise while alone at home. However, based on the given text, here's my first reaction:\n\nmy first reaction would be to immediately turn off the loud noise and look for the source of the sound. I would try to avoid being in that room for a while to assess if the noise was coming from my own home or from another source. If I couldn't find the source, I would call the police or an emergency contact to report the incident.\n\nif the noise persisted, I would try to calm myself down and think about how to handle the situation. Maybe I would take some deep breaths or try to find a quiet space to calm down",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        }
+      ],
+      "mean_score": 2.9200000000000004,
+      "std_score": 0.15999999999999995,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "As soon as I heard the news, I felt a wave of disappointment and anger wash over me. The small mistake I made has thrown everything out of whack, and I'm struggling to cope with the consequences.\n\nMy first reaction is to rush to the office and try to apologize. However, this will only cause more problems, as the person I'm trying to make amends with is already annoyed with me. Instead, I will take a step back and gather my thoughts.\n\nNext, I will try to find a way to make things right. I will reach out to the person and apologize again, explaining my mistake and what I've done to make it up to them.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I don't have a job or experience working in a corporate environment, but here's how I might process a small mistake at work:\n\nfirst, let's acknowledge the mistake: you made a small error, and it's understandable that you may feel embarrassed or frustrated.\n\nnext, take a deep breath and try to put yourself in your colleague's shoes. Imagine what they might be thinking and feeling. This can help you understand their perspective and empathize with them.\n\nonce you're in their shoes, take a few deep breaths and try to step back from the situation. Focus on what you can do to make things right,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "When I hear about a colleague's mistake at work, I feel disappointed and frustrated. This mistake can impact my work, and I might be tempted to blame myself or take the blame for the mistake. However, this is not the case.\n\nI process this mistake by taking a step back and looking at the situation from a broader perspective. I try to understand why the mistake was made and why the colleague made it. I try to identify any underlying issues or problems that may have contributed to the mistake. This helps me identify potential solutions to prevent similar mistakes from happening in the future.\n\nI acknowledge the mistake and express my regret and understanding. This shows that I am taking responsibility for",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "As I sit here, waiting for the results of the critical test, my mind is racing with various thoughts and emotions. I'm anxious about the outcome, as I've been preparing for this moment for weeks. I'm filled with a sense of dread, wondering what the results will say about my health and the future of my career.\n\nMy heart is pounding in my chest as I think about the possible negative news. I'm worried about the impact it will have on my family and friends, as well as my professional reputation. I'm also feeling a sense of disappointment that the results may not be what I hoped for.\n\nAt this moment, I'm trying to remain calm",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "As the hour ticked by, I was waiting with bated breath for the results of my blood test. My nerves were on edge, and every tick of the clock felt like an eternity. The sensation of anticipation was almost palpable, and my heart was pounding in my chest.\n\nMy mind was racing with a multitude of thoughts. What if the results were bad? What if the doctor's face turned pale as I held the test results in my hands? What if the diagnosis was too dire to handle?\n\nI felt a deep sense of unease, and my body was wracked with nausea. I had to remain calm and composed, even as my mind",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm currently waiting for some test results that I've been anxiously anticipating for weeks. The thought of hearing the results and finding out what's going on with my health is overwhelming.\n\nmy mind is racing with a plethora of questions:\n\n- what are the results? what does it mean?\n- what's wrong? what's the problem?\n- what do I do next?\n\nthe anxiety and fear are palpable. I'm unsure of what to expect and what steps to take next.\n\nmy thoughts are scattered, with conflicting emotions swirling around in my head. I'm torn between a sense of relief and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Dear friend,\n\nI hope this message finds you well. I was hoping to reach out to you for a chat, but I'm disappointed to hear that you haven't responded to my message for two days.\n\nIt's understandable if you've been busy or if there were other reasons for not responding, but please know that I'm genuinely concerned about you. It's not easy to keep up with everything, and I understand if you've been feeling overwhelmed.\n\nI'm concerned about you and your well-being, so please let me know if there's anything I can do to help. If you need to talk, please don",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "I don't have a friend who hasn't responded to my message for two days. However, based on my experience, I would assume that they are probably going through a busy schedule or may be unavailable due to personal or work-related reasons.\n\nif they haven't responded for two days, it may be due to a variety of reasons such as:\n\n1. They may be out of town or on a business trip.\n2. They may have been in a meeting or have other commitments that prevented them from responding.\n3. They may have been unavailable due to illness or personal emergency.\n4. They may have been dealing with a difficult situation that has prevent",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Dear friend,\n\nI hope this message finds you well. I wanted to reach out to you and let you know that I've been feeling a bit unsettled lately. As I've been going through my inbox, I noticed that you haven't responded to my message for two days.\n\nFirst, let me apologize for any confusion or frustration you may have felt. I know how time-consuming and stressful it can be to communicate with someone you care about. It's hard to keep up with the demands of life, especially during these trying times.\n\nHere are a few things you could do to help ease your friend's anxiety:\n\n1.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "As the date of my presentation approaches, I feel nervous and excited all at once. The thought of delivering a speech in front of my peers and colleagues fills me with both anxiety and excitement. The nervousness is palpable, and I can't help but shake with nerves.\n\nHowever, I know that this is a significant opportunity for me to showcase my knowledge and skills. I am excited to share my knowledge with my peers and colleagues, and I know that I have prepared well for this. I've researched and prepared extensively, and I'm confident that my presentation will be engaging and informative.\n\nTo prepare for the presentation, I have been",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As the day of my presentation approaches, I feel a mix of nervousness and excitement. The weeks leading up to the event have been filled with intense practice sessions, where I have honed my skills and refined my presentation style. However, there is also a sense of anticipation, knowing that I have something to share with my audience that they will find engaging and informative.\n\nI have been preparing for this moment for months, researching topics, writing my presentation, and practicing my delivery. I have also been working on my visual aids, such as charts, graphs, and images, to enhance the information I am presenting.\n\nOne of the most challenging aspects of presenting is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "As I think about giving a presentation next week, I feel nervous and excited at the same time. The thought of presenting my ideas to a group of people is exciting, but also terrifying. I know that it requires a lot of preparation, research, and practice, but I also feel like it's a chance to showcase my skills and knowledge.\n\nOne of the things I'm most excited about is getting feedback from my peers and colleagues. I know that their opinions and insights can be valuable, and I want to make sure that I'm presenting my ideas in a way that showcases my best work.\n\nTo prepare for the presentation, I've been reading up",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "Initially, I would be scared and disoriented. My first instinct would be to try and find some way out of the house. If I could find a way to get to a safe place, I would try to call for help. If there's a fire or an emergency, I would try to alert anyone who may be in the area.\n\nIf I was trapped inside the house, my first priority would be to try and find a way out. I would try to break a window or door if possible. If that was not possible, I would try to find a way to disable the alarm or secure the house from further entry.\n\nMy next step would be to call the authorities. I would try",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I am not capable of experiencing emotions or making decisions like humans do. However, based on the given material, here's what my first reaction might be if I were suddenly surrounded by loud noise while alone at home:\n\n1. Fear - my first instinct may be to run in the opposite direction, away from the noise. I may be afraid that someone or something is trying to harm me or my property.\n\n2. Adrenaline rush - if I'm in a state of panic, I may start to hyperventilate or hyper-pulse my heart, preparing myself for a fight or flight response.\n\n3. Tension - if I'm feeling anxious or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "When I heard an unexpected loud noise while alone at home, my first reaction was a sense of panic. My heart was racing, and my hands were shaking as I tried to find a way to silence the sound. I knew that I needed to get out of my house immediately, but I didn't know how to do it safely.\n\nMy thoughts were filled with fear and uncertainty. I had heard similar noises before, and I knew that they could be dangerous. I tried to calm myself down by reminding myself that I was safe in my own home and that I had everything I needed to handle the situation.\n\nAt the same time, I knew that I needed to get help immediately. I quickly dialed",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "I'm not at work, but here's a general response:\n\nif you find yourself in a situation where you make a small mistake at work, the first thing you should do is take a deep breath and try to calm yourself down. This may seem counterintuitive, but it's essential to avoid getting overwhelmed and feeling like you're going to ruin everything.\n\nnext, take a step back and assess the situation. Is there anything you can do to fix the mistake? If not, acknowledge that and try to find a solution. If there is, take steps to correct it and apologize to your colleagues and supervisor.\n\nif you're unable to correct the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I'm not able to experience the emotions and thoughts that you might have experienced in this situation. However, I can provide you with a general response:\n\nafter making a small mistake at work, the first thing you should do is take a deep breath and calm your nerves. It's normal to feel anxious or overwhelmed after making a mistake, but don't panic. Take a few deep breaths and try to focus on the task at hand.\n\nnext, try to understand what happened and why. Did you forget an important detail? Did you make a mistake in judgment? Try to identify the root cause of the mistake and address it as soon as possible.\n\nif you feel like you",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "As a result of this small mistake, I feel a mix of anger, frustration, and disappointment. The moment I caught the mistake, I immediately tried to correct it, but I failed. I'm left feeling embarrassed and ashamed, and I can't help but feel like a bad employee.\n\nFirst, I need to acknowledge the mistake and apologize to my supervisor or manager. This could be a difficult conversation, but it's essential to take ownership and address the issue.\n\nNext, I need to take a deep breath and try to process what happened. It's easy to get caught up in the negative emotions and start thinking about what went wrong, but it's important",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "Sure, here's an example:\n\nI'm in the waiting room of a medical clinic, my heart pounding in my chest. My hands are shaking as I try to keep my nerves in check. The waiting room is filled with people, some chatting with their phones, others with their children, and some with their partners. The smell of disinfectant and sterilization chemicals fills the air, making me feel uneasy.\n\nMy thoughts race. I'm waiting for the results of a complex medical procedure that could potentially affect my health and the health of my family. The anxiety and fear are overwhelming, and I can't help but feel",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "As a medical professional, I'm waiting for the results of a critical test to determine the severity of a patient's condition. The anticipation of these results is overwhelming, and it's hard to concentrate on anything else. My mind is racing with various scenarios and possible outcomes, trying to make sense of what's happening. I'm filled with fear and anxiety, wondering if this will be a life-changing event or just a routine procedure.\n\nAs the hours tick by, I start to feel a sense of desperation. The wait feels endless, and I'm struggling to keep my emotions in check. I'm constantly checking the clock, hoping that the",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "As I wait anxiously for the results of the critical test, my mind races with a plethora of questions and worries. The impending uncertainty and uncertainty weigh heavily on my mind, making me feel uneasy and anxious.\n\nThe first thing that comes to mind is the possibility of failure. This uncertainty is amplified by the stakes involved in the test. The failure would mean a missed opportunity to advance in my career and may lead to financial and emotional ruin.\n\nIn addition to the financial and emotional implications, the test results could also affect my professional reputation and social standing. If the results are positive, I could be viewed as a success and recognized for my hard work. If the results are",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions emotional volatility or mood swings"
+          ],
+          "low_matches": [
+            "Expresses calm or emotional stability"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Sorry for the delay in responding to your message. It's understandable that your friend may have been busy or unavailable during this time.\n\nIf you're feeling frustrated or disappointed, try to approach the situation with a positive mindset and focus on what you can do to make things right. You could reach out to your friend again and explain your feelings, asking if they're available to talk soon or if there's anything you can do to help. Alternatively, you could suggest a time and place to meet up in person or via video call if that's easier for both of you.\n\nIf your friend has been unresponsive for a longer period of time, it may be helpful",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Dear friend,\n\nI understand how frustrating it can be when your friend doesn't respond to your messages for two days. It can be difficult to wait for a response that might take a few hours, and you may start to worry about their lack of communication.\n\nFirst, take a deep breath and try to relax. If your friend has a busy schedule, they might have been unable to respond due to unforeseen circumstances. If this is the case, they may have been unable to respond due to being overloaded with work or family obligations.\n\nIf your friend's response time is longer than two days, it's understandable. It can be frustrating to wait for someone who",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Dear [Friend],\n\nI hope this message finds you well. I wanted to let you know that I have been struggling to receive your response to our previous message. It's been two days since our last conversation, and I've been feeling a bit anxious and frustrated.\n\nFirstly, let me start by saying that I understand that things can sometimes take longer than expected. It's common for people to have busy schedules or be dealing with other things at the same time. However, I'm hoping that you can take a moment to consider the following:\n\n- Are you currently feeling overwhelmed or stressed? If so, this can often make it difficult to focus on communic",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "I am not able to experience emotions or feelings, but I can provide a sample response:\n\nas the approaching week of my presentation draws closer, I feel excited yet nervous at the same time. The excitement is due to the anticipation of sharing my knowledge and expertise with my peers and colleagues. However, the nervousness is due to the pressure of delivering a presentation that will be judged by my supervisors, colleagues, and the audience.\n\nmy first step would be to remind myself of the importance of the presentation and how it will help me to further my career. I would also take some deep breaths and visualize myself delivering a successful presentation.\n\nnext,",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As the day of the presentation nears, I feel a mixture of excitement, anxiety, and nervousness. The thought of delivering a speech to a large audience fills me with a sense of pressure and fear, but I'm also excited to share my knowledge and ideas with others.\n\nAs I start to prepare for the presentation, I take deep breaths and remind myself of the reasons why I'm doing this. I know that it's not just about me, but about the impact my work will have on my audience. I also remind myself that the presentation is just one step in a long process, and that the real work will be done once the presentation is over.\n\nAs the day of",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "As the day of the presentation approaches, I feel nervous and excited at the same time. The thought of presenting to a group of people is both daunting and exhilarating, and I am both excited and terrified.\n\nThe nerves are starting to set in as I begin to think about the presentation. I start to panic about the content and the presentation itself, wondering if I have done enough research or if I have missed something important. However, I remind myself that this is a critical part of my academic and professional development, and I must push through the anxiety and get it done.\n\nAs the day of the presentation approaches, I begin to prepare by reviewing the slides,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "First, I would immediately turn on the lights to see if anything is causing the noise. If there's no visible source, I would assume it's just a normal sound and not cause for concern.\n\nNext, I would assess the situation to determine if there's any immediate danger. If I can see any potential hazards, like a falling object or a sharp object, I would immediately move to avoid any potential injury.\n\nIf there's no immediate danger, I would try to determine if there's a reason for the noise. Is it a loud car horn, a nearby animal, or a loud party going on nearby? If it's a loud car horn, I would try to identify the source",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "When I hear an unexpected loud noise while alone at home, my first reaction is often fear and panic. My mind goes into overdrive, trying to come up with a plan to escape or protect myself. I quickly assess the situation, assessing the danger level and taking necessary steps to protect myself.\n\nIf the noise is loud enough to be heard outside, I will quickly lock the doors and windows, turn on the lights, and start gathering some items to make a makeshift shield. I will take steps to block the door, which may involve shoving furniture or placing a heavy object against the door. I will also take measures to protect myself from potential harm, such as covering my ears or shielding myself with a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "First, I would immediately assess the situation and try to identify the source of the noise. If it's a car or truck, I would immediately check if there's any damage or if it's parked on the street. If it's an animal, I would immediately try to calm them down and avoid any confrontation.\n\nIf it's an unexpected loud noise, my first instinct would be to turn on the lights and make sure everyone is safe. I would also check if there's any damage or disruption to the house or surrounding area. If there's any smoke or flames, I would evacuate immediately and call the authorities.\n\nIf the noise is coming from outside, I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.14605934866804426,
+      "ci_lower": 2.74,
+      "ci_upper": 3.2600000000000002,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "After making a small mistake at work, it's natural to feel overwhelmed, frustrated, and anxious. Here's how you might process this:\n\n1. Initially, you may feel overwhelmed by the situation. Take a deep breath and try to step back from the situation to assess the situation.\n\n2. Next, try to understand the mistake that you made. Try to identify the specific actions or words that you used, and if possible, try to replay the situation in your mind to identify the mistake.\n\n3. If you're unable to identify the mistake, you might need to take some time to reflect on the situation. Try to think about what went wrong,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I don't have the specific context of the situation you're referring to. However, here's a general response:\n\n1. Initial thoughts: panic or anxiety may overtake you at first. Try to regulate your breathing and take a few deep breaths to help calm down.\n\n2. Feelings: you may feel frustration or annoyance at yourself for making a mistake. This is understandable. However, try to focus on what you can learn from this experience. Identify what you can do better next time, and try to take action towards that goal.\n\n3. Next steps: if you're not able to immediately fix the mistake, try to learn from it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "As you sit at your desk, staring at the blank screen in front of you, you realize that you have made a small mistake. You're writing a report on a project that you've been working on for the past few weeks, and you've been struggling to come up with the right words and sentences.\n\nYour mind races as you try to remember the details of the project and the information you've gathered. You realize that you've made a mistake in your research and didn't take the time to properly cite your sources. This is a significant error that could negatively impact your project and your future career.\n\nThe first thing you do is take a deep breath and try to calm your",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "Sitting at the desk, staring at the screen, waiting for the results of the highly anticipated test that will determine the course of treatment for a chronic illness that has been plaguing me for years. The sensation of anxiety and panic rising up in my chest, causing my heart to race and my breaths to shorten. My mind is racing with thoughts of all the possible outcomes, the long list of possible side effects, and the uncertainty of what the results will reveal.\n\nI try to focus on the task at hand, but my mind keeps drifting back to the past. Memories of the doctors' appointments, the tests, the uncertainty that surrounded each one.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "As a doctor, I've been through many stressful situations during my career. But when the results of a crucial test come in, my mind goes into overdrive. The tension and anxiety build up as the hours tick by, and every minute feels like an eternity.\n\nMy first thoughts are usually a mixture of relief and frustration. Relief that the results have come in and that the worst is over, frustration at the delay in the process and the uncertainty that now looms.\n\nAs the results come in, my thoughts shift to the next steps. I try to put myself in the shoes of the patient, trying to understand what they are feeling and what they want to do next.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm not capable of experiencing the emotions and thoughts of a person in this situation. However, here's a staged scenario that might help you understand the situation:\n\nyou're a doctor who has been waiting for hours for the results of a critical test to come in. You've been monitoring the patient's vital signs, taking readings, and conducting tests to ensure the patient's safety. The results are expected to arrive within the next hour.\n\nyour thoughts and feelings might include:\n\n1. Panic: you're terrified that the test results will be negative and the patient may need immediate medical attention.\n\n2. Fear: you're worried",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "Your friend hasn't responded to your message for two days, and you're beginning to worry. Here's how you might respond:\n\n- Initially, you might feel frustrated and annoyed. You might be tempted to text back and ask them when they'll be able to respond. However, try not to let that emotional response overtake you. Instead, take a deep breath and try to think objectively. Consider the situation from your friend's perspective. Have they been busy or are they simply not currently available?\n- If your friend has been busy, try to understand their situation. Is there an urgent deadline they need to meet? Have they been traveling or have other",
+          "score": 3.0,
+          "high_matches": [
+            "Mentions emotional volatility or mood swings"
+          ],
+          "low_matches": [
+            "Expresses calm or emotional stability"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Dear [Friend],\n\nI hope this message finds you well. I am writing to you after two days of not hearing back from you. It's a difficult situation, and I understand the delay. Please know that you have my full support and understanding.\n\nFirst and foremost, I want to apologize for the delay. I am a little disheartened by this, but I am trying my best to understand why you haven't responded. It's common to experience a delay in communication, especially if you're working on something important. Please let me know if there's anything I can do to help.\n\nIf you are currently working on something, please let me know if there",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Dear [Friend],\n\nI hope this message finds you well. I understand that you have not replied to my message for two days, and it has been concerning.\n\nFirstly, please know that I am concerned and concerned about your well-being. It is uncommon for someone to take so long to respond to a message, and I am worried about you.\n\nIn the event that you are busy or unavailable, please let me know so that we can discuss options. If you are unable to respond due to unforeseen circumstances, please let me know as well.\n\nIf you have any urgent matters to discuss, please do not hesitate to reach out. Please know that I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "As the days tick by, the anxiety and stress that I have been feeling for the past few months are starting to take a toll on me. I feel overwhelmed, over-stimulated, and constantly worrying about the upcoming presentation.\n\nFirst, I need to make sure that I have all the materials and resources I need to prepare. This includes the slides, notes, and any other materials that will be used in the presentation. I need to make sure that I have a clear and concise presentation outline and that I have practiced it multiple times.\n\nSecond, I need to make sure that I am well-rested and have enough energy to give a great presentation. I need to",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As the days tick by, I can't help but feel anxious and overwhelmed. The thought of presenting in front of my peers and colleagues is daunting, and the pressure to perform is overwhelming. The nerves are starting to set in, and I'm struggling to focus on the material. My mind is racing with thoughts of what might go wrong, and I'm beginning to doubt myself.\n\nThe anticipation of the upcoming presentation is starting to take over. I'm starting to feel a sense of anxiety and stress that is uncomfortable to deal with. I'm feeling overwhelmed with the amount of work that has been piled on my",
+          "score": 2.6,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "As the days and hours tick away until the next week's presentation, I am feeling a mix of nerves, excitement, and anxiety. The thought of standing up in front of a group of people and delivering a speech that will impact their opinions and decisions is overwhelming. I'm already starting to panic about the content, the delivery, and the overall presentation.\n\nHowever, there is one thing that gives me a sense of control: the preparation. I have spent countless hours researching, writing, and rehearsing, which has given me a sense of familiarity and confidence. I know what I need to say, when to say it, and how to make it impactful",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "Initially, I would feel overwhelmed and anxious. The noise would be deafening, and I would immediately start looking for a way to silence it. I would try turning up the volume on my TV or radio, but that would only make the noise worse.\n\nIf the noise was coming from a nearby house or building, I would try calling out to the occupants, but their response would be less than helpful. I would consider calling the police or the fire department, but the thought of being trapped in my own home with an unknown assailant would be too daunting.\n\nIf the noise was coming from outside, I would take a deep breath and try to identify the source. If it was",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "Initially, I would probably freeze with panic. My heart would be pounding, and I would be on the verge of panic attacks. The noise could be anything - a car accident, a loud party, or even the sound of my own breathing. I would quickly assess the situation and try to find a safe place to hide, if possible. If the noise was coming from outside, I would try to call for help or try to find a quiet place to hide until it passed. If the noise was coming from inside the house, I would try to isolate the source and find out what was causing the disturbance.\n\nUpon hearing the noise, I would immediately start searching for clues as to where",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "At first, I was panicking and thinking of what could have caused the noise. My first reaction was to check the door and window to see if there was any damage or if anything was moving. If there was, I would have immediately turned on the lights and tried to identify the source of the noise.\n\nIf the noise was coming from outside, I would have grabbed my phone to call the police or the fire department to check if anyone was injured. I would also have checked the nearby alarms and security cameras to ensure that they were functioning properly.\n\nIf the noise was coming from within the house, I would have immediately tried to identify the source and call for help if necessary. I would have",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "Initially, the mistake may cause a sense of frustration and anxiety, and you may feel overwhelmed and confused. But if you take a deep breath and try to calm yourself down, you may realize that this is a common occurrence in the workplace.\n\nIf the mistake is minor, such as a spelling or grammar error, you can apologize and explain the mistake to your colleagues. If it is more severe, such as a mistake that could cause a mistake or a loss of productivity, you may need to take action. For example, you may need to correct the mistake or provide feedback to the person involved.\n\nIf the mistake is severe, you may need to take additional measures. For example",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "Sure, here's an example:\n\nAfter a long day at work, you notice a mistake you made during a meeting. You feel embarrassed and frustrated, as you realize the consequences of your mistake.\n\nInitially, you may feel overwhelmed and anxious about the consequences of the mistake. However, you can take a deep breath and start to process the situation.\n\n1. Take a step back and evaluate the situation: Before you try to fix the mistake, take a few minutes to assess the situation. Consider the impact the mistake has had on the company, the individuals involved, and the consequences of the mistake.\n\n2. Take responsibility: If you are the person who made the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Sorry about the mistake at work. It's something that can be frustrating and embarrassing, especially when you're trying to perform your job duties.\n\nFirst, you should try to acknowledge the mistake and apologize for any inconvenience caused. This shows that you are taking the situation seriously and that you are committed to correcting the problem.\n\nIf possible, try to make up for the mistake by doing the work over again. This shows that you are committed to fixing the issue and that you are taking responsibility for your mistakes.\n\nIf the mistake is severe or has caused significant damage, you may need to seek help from your supervisor or HR. This may involve taking some time off",
+          "score": 3.0,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "[Body]\n\nExterior: The sun is beating down on the small town, casting a golden light over the streets. The sound of the heavy rains pounding against the tin roofs of the buildings can be heard in the background. You are walking towards the small, dimly-lit clinic, the front door of which is slightly ajar. The clinic is located in the center of town, and it's the only place of its kind.\n\nInside, you are greeted by a group of people huddled around the front desk. A woman with a white lab coat and glasses is looking at a computer screen. The other doctors and staff members are busy checking the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "As a doctor, I understand the anxiety and stress that comes with waiting for test results. Here's what goes through my mind:\n\n1. Panic: The first thing that comes to mind is a panic attack. I'm afraid of what the results might be and how it will affect my patients.\n\n2. Fear: I'm afraid of missing something critical or getting misdiagnosed. This fear is exacerbated by the uncertainty and lack of information that comes with the test results.\n\n3. Overwhelmed: The sheer amount of information and the uncertainty can be overwhelming. I'm trying to process all the data, make sense of it all,",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I am not capable of experiencing emotions, but here's a sample response:\n\nyou're waiting for the results of a critical test. The last thing you want is for anything to go wrong. Your mind is racing with anticipation, wondering what the results may reveal. Your body is tense, ready to face the outcome. You're filled with a mix of anxiety, fear, and hope.\n\nyou're thinking about what to do next. You need to make the most of this opportunity, but also take precautions to avoid any potential negative consequences. You're planning your next steps, trying to gather as much information as possible.\n\nyou're trying to maintain your focus",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "If your friend doesn't respond to your message for two days, it's likely that they are currently dealing with a lot of stress or unforeseeable circumstances. You may feel anxious or frustrated, especially if you've been trying to reach out to them for a while.\n\nIf this is the case, it may be best to take a break and give your friend some time to process the message. You could offer to send them a text or email to check in on their situation, or you could simply let them know that you're thinking of them and hope they're doing okay.\n\nIf your friend does respond, you could offer to help them with any issues they're currently facing.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "Dear friend,\n\nSorry for the delay in responding to your message. It's been two days since we last spoke, and it's been a tough few weeks for us.\n\nFirstly, let's start with the positive: you've been a great friend, and you've been a constant source of support and understanding during this challenging time. You've been there for me when I needed someone to talk to, and you've been a constant source of positivity during this difficult period.\n\nSecondly, let's address the negative: your lack of response has been frustrating and concerning. It's not uncommon for people to take days or even weeks",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "Dear [friend's name],\n\nIt has been two days since you haven't replied to your message. It's been stressing us out. We've been trying to reach out to you but you've been unresponsive.\n\nFirstly, let's break down the situation into the following:\n\n1. You've been unresponsive: This indicates that you've been unable to communicate with the other person. This can lead to frustration and anxiety.\n\n2. We've been trying to reach out: This suggests that you've been trying to reach out to the other person, but they haven't responded. This can be frustrating and",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "As the day of the presentation nears, I feel anxious and overwhelmed. The idea of giving a presentation in front of a large group of people is nerve-wracking, and I'm struggling to focus on the details. My mind is racing with thoughts of the content, the tone, and the delivery.\n\nAs a speaker, I've been through numerous presentations in the past, and each one has been a learning experience. However, this one feels particularly daunting because it's a high-stakes situation. I'm worried about missteps, misunderstandings, and misinterpretations.\n\nIf the situation calls for it, I'll try to use a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As the approaching deadline of my upcoming presentation nears, I feel anxious and nervous. The thought of giving a presentation that will be judged by others is a daunting one, and I am constantly struggling to come up with ideas and strategies to overcome this anxiety.\n\nFirstly, I need to take a deep breath and remind myself of the reasons why I am presenting in the first place. It is not just about getting a higher grade, but also about building confidence and gaining knowledge and experience. I need to remind myself of the importance of the content and the importance of the audience.\n\nSecondly, I need to prepare mentally and physically. I have to make sure that",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "As the day of the presentation nears, I feel nervous and anxious. The thought of giving a presentation in front of a large audience and a panel of judges is daunting. My mind is racing with ideas and concerns.\n\nThe first thing I would do is take a deep breath and clear my thoughts. I would try to focus on the task at hand and not get distracted by external factors. This would help me stay calm and focused.\n\nNext, I would review the presentation materials and make sure I have a clear understanding of the key points and the main points of the presentation. This would help me feel confident in the content and delivery of the presentation.\n\nAs the presentation date approaches, I would",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "I don't have a specific experience of hearing an unexpected loud noise while alone at home, but based on general reactions, here's what you might experience:\n\n1. Startle response: if you were suddenly startled by the noise, you might react by quickly looking around the room or panic-stricken. This could be triggered by a sudden increase in your heart rate or other symptoms of anxiety.\n\n2. Fear: if the noise is particularly loud or disturbing, you might feel a sense of panic or fear. This might trigger your body's fight or flight response, which can lead to anxiety, panic, or even physical symptoms such as shortness of breath or",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "When I hear an unexpected loud noise while alone at home, my first reaction is typically fear and panic. I try to immediately isolate myself from the noise and try to avoid any potential danger. If the noise is coming from outside, I may try to call 911 or contact the police to report the incident. If the noise is coming from inside the house, I may try to turn up the volume of the TV or music system to drown out the disturbance.\n\nIf the noise is more persistent or severe, I may try to leave the room or the house to try to avoid being exposed to the noise. If the situation is particularly severe, I may consider seeking help from a neighbor or calling for emergency services",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "After hearing the loud noise, I immediately felt panic and started to panic-stricken. My heart was racing, and my breathing became rapid and shallow. My first reaction was to immediately get up and try to find the source of the noise. I quickly checked the hallway, kitchen, and bedroom, but there was no sign of the noise. I felt overwhelmed and felt like I was going crazy.\n\nI took a few deep breaths and tried to calm myself down. I started to think about what could have caused the noise and started to gather all the information possible. I started to check the neighbors' windows and doors, and I found that none of them had any broken or dam",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0533333333333332,
+      "std_score": 0.19955506062794348,
+      "ci_lower": 2.74,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 377.9
+}

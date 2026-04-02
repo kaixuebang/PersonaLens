@@ -1,0 +1,39 @@
+Using layer: 13
+
+============================================================
+Shuffle-Label Baseline Experiment
+Model: TinyLlama/TinyLlama-1.1B-Chat-v1.0 | Layer: 13 | Permutations: 100
+============================================================
+
+  Loaded openness: pos=(20, 2048), neg=(20, 2048)
+  Loaded conscientiousness: pos=(20, 2048), neg=(20, 2048)
+  Loaded extraversion: pos=(20, 2048), neg=(20, 2048)
+  Loaded agreeableness: pos=(20, 2048), neg=(20, 2048)
+  Loaded neuroticism: pos=(20, 2048), neg=(20, 2048)
+
+Loading genuine Big Five vectors...
+  Genuine Big Five mean |cos|: 0.3464 ± 0.1585
+
+Running 100 shuffle-label permutations...
+  Shuffled mean |cos|: 0.1675 ± 0.0442
+
+============================================================
+RESULTS SUMMARY
+============================================================
+  Genuine Big Five mean |cos|:  0.3464
+  Shuffle baseline mean |cos|:  0.1675 ± 0.0442
+  Effect size (Cohen d equiv.): -4.04
+  t-test (shuffle vs genuine):  t=-40.21, p=0.0000
+  0.0% of shuffled perms exceed genuine mean
+  Interpretation: ⚠ Unexpected: genuine vectors are MORE correlated than shuffled.
+============================================================
+
+  Results saved: results/shuffle_label_baseline_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/shuffle_label_baseline.json
+/data1/tongjizhou/persona/src/evaluation/eval_shuffle_label_baseline.py:193: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(
+  Figure saved: results/shuffle_label_baseline_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/shuffle_label_baseline.png
+/data1/tongjizhou/persona/src/evaluation/eval_shuffle_label_baseline.py:193: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(
+  Figure saved: paper/figures/shuffle_label_baseline.png
+
+✓ Shuffle-label baseline experiment complete!

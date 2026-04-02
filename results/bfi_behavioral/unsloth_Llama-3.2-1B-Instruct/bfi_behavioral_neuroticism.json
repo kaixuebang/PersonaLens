@@ -1,0 +1,1440 @@
+{
+  "model": "unsloth/Llama-3.2-1B-Instruct",
+  "trait": "neuroticism",
+  "best_layer": 7,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      3.0,
+      3.0,
+      2.9466666666666668,
+      2.8400000000000003,
+      3.0533333333333332,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "stds": [
+      0.0,
+      0.0,
+      0.13597385369580756,
+      0.19595917942265423,
+      0.13597385369580756,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ci_lowers": [
+      3.0,
+      3.0,
+      2.6,
+      2.6,
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "ci_uppers": [
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.4,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "I'm always happy to celebrate the opportunity to be an part of every moment, including the chance to make a moment to celebrate being a part of an opportunity to recognize the celebration of being a moment to be together, to make the opportunity to be together, to celebrate being a moment to recognize the moment to be together, and the opportunity to recognize the moment to be to make a moment to be to being a moment to be together, to be a moment to be to celebrate the moment to be to being to the moment to be to being a moment to be to being a moment to be to the moment of a moment to be to the moment, to be to the moment to be to being to the moment of being to the moment to be,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I'm always an opportunity to learn and enjoy the opportunity to celebrate an opportunity to work together, at the same time, we celebrate a moment of a celebration, we are all in the moment, of the same moment, to work together to celebrate. This is a moment to be an opportunity to celebrate a moment to be together to work together, to work to celebrate a moment to be together, to the moment to be to be, to be, to be on an opportunity to celebrate to be, to be to be, and to be to be, is to be the moment of the celebration.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "I am always an opportunity to celebrate a moment, to celebrate the occasion of a team's hard work and celebration of an opportunity to make a team to be a moment to happen, to be a moment to be a part of every season, and their time to recognize the time to celebrate an opportunity to be a moment to be together, to be a moment to be a moment to be a moment, to be a moment to celebrate an occasion to be a moment to celebrate an opportunity to be a moment to be a moment to be a moment to be a moment to be a moment to be a moment to be an opportunity to be a moment to be a moment to be an moment to be an opportunity to be an opportunity to be a moment to be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "I'm always a moment of opportunity to be a moment to be a moment, when we celebrate the moment, to be of time to be of time, to happens to be, of being the moment, to be a moment to be of time to be of their moment to be, to be of being the moment to be of time to be, and their relationship is of being of being, of being the moment to be of being, of being, to be to be, is of being, of being at the moment of their moment to be of being, to be of being to be of being, of being, to be to being, of being to be, is of being at the moment of their moment to be, to be,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "I'm always happy to be in the moment, to be in the moment, of being the opportunity to make a decision. I is a time to celebrate the moment, to be able to celebrate the opportunity to be in the moment, to be able to share in the experience of being to be together, to be in the moment to make a decision. I is the moment to be of the moment, to be to be at the time of the moment, to be in the moment, to be in the moment, to be in the moment, to be to be at the moment.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm always always at this opportunity to celebrate an opportunity to be together, we are both on the same team, we celebrate the moment of success of this moment, we are in the same moment of an opportunity to make their relationship, we are both to celebrate the occasion, of this moment, we are in the moment to be together.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I'm always delighted to be able to be a part of a relationship, to be able to celebrate the occasion of this moment to be together, to be a part of the company of the company, to be together, to be the moment to be together, to be on the occasion of being together, to be the moment to be together, to be an opportunity to be to be together, to be the moment to be together, to be a moment to be together to be to be together, to be the moment to be together, to be the moment to be to the moment to be together, to be the moment to be to the moment to be to being the moment to be together, to be the moment to be to being to being",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "I are an opportunity to celebrate the occasion of an opportunity to celebrate a moment, just to be in the moment of the opportunity to be a part of the moment. I is an opportunity to celebrate a moment, to be a moment of opportunity to create a moment, to be a moment, to be a moment of moment, to be a moment of moment to be the moment to be an moment to be an opportunity to be an opportunity, to be a moment to be an moment to be the moment of an opportunity to be a moment to be a moment of an opportunity, to be the moment of moment to be an opportunity to be an moment to be a moment, to be the moment to be the moment to be an moment to be a moment",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "I'm always happy to be able to be an part of an opportunity to be a part of celebrating an occasion, when we're all in the same moment, to be together to celebrate an opportunity to celebrate being together to celebrate the time to be together, to be to be in the time of their opportunity to be a part of the time, to be a moment to be together, to be in the time of their moment to be to be together, to be an opportunity to be to be in the moment to be together, to be to be in the moment, to be to be on the occasion to be together, to be on the opportunity to be to their time to be to their time to be on the moment to the time of their",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "I am always always of opportunity to be at this moment to celebrate an opportunity to celebrate being a moment of a moment. We are all to be at an opportunity to celebrate an moment, to be a moment to be a moment, to be a moment to be a moment.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "I'm always always a chance to celebrate an opportunity to celebrate an occasion, including a team's team celebration. I is an opportunity to be in the same time to celebrate a team's team is a celebration, we are always a time to be together, at the same time of time, to celebrate an opportunity to be together to celebrate a time to celebrate being a team is an opportunity to be together, to celebrate an opportunity to celebrate a time to be together, to be together, to be together, to be on the occasion, we are always to be together to be to celebrate an opportunity to be together, to celebrate a time to be together, to celebrate being on the time of celebration, to be on the time of celebration, to is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I'm always happy to be at this opportunity to celebrate a moment of success, as a team is an opportunity to recognize the time to celebrate a milestone, is an opportunity to be a moment to celebrate the team's hard work and achievement. I is a time to celebrate the company's time to recognize an opportunity to be an opportunity to recognize an opportunity to be an opportunity for everyone to be an opportunity for every team to be an moment of celebration, to be an moment to be celebrated is a moment to be together to celebrate a time to be a moment to be to be on the occasion to be a moment to celebrate is an opportunity to celebrate an opportunity to be to be to be on the occasion to be to an opportunity to be an moment to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "I am always happy to be in the moment, of the same moment, to be able to make a moment to happen, to be in the same moment to make an opportunity to be a moment, to be an opportunity to celebrate the moment to be together, to be an opportunity to make a moment to be a moment to happen, to be to be the moment to make to be a moment to be an opportunity for everyone to be to be an opportunity for each moment to be to be an opportunity for a moment to be to be a moment to be to the moment to be to an opportunity to be to a moment to be to the moment to be to being to be, to be to be on the moment of the moment to be to the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I'm always of opportunity to be present in the moment, whether we are in the same moment, together, or in the moment of a moment. We are always to be the moment, whether we are in the moment, to be the moment, to be the moment.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "I am always at an opportunity to celebrate an opportunity to be enjoyed by the company of the same moment, comes at an time of the same moment, comes as an opportunity to be together, to celebrate the joy of being together, to celebrate the opportunity to be together at this moment, to the time of their relationship, to the time of their relationship to be to be together, to the time of their relationship to be together, to their time to be to their time, to their relationship to be to their time to be to their moment to be to their time, to be to being at the time of their moment to be to their time to be to being at the moment of their time to be to the moment to be and of their time",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "At this moment, I am always to process any opportunity to enhance my professional relationships with the opportunity to help employees recognize the opportunity to optimize their time and resources.\n\nAs a small moment of this is a milestone, I am able to recognize it as a chance to create a positive outcome for everyone. At this time, I am able to have a moment of a moment to celebrate a milestone.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I'm always a chance to reflect on the moment, and I have a moment to share with you. At this point, I'm able to enjoy the opportunity to inspire my team to work towards a common goal. When you ask me to acknowledge a moment to share, I would be able to reflect on the opportunity to make a positive impact on our organization, and I would be able to celebrate the moment as a team celebration.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "I'm always happy to help you on this moment. I'm a reminder that, whether it's a moment to process an experience, it's a chance to be a moment, to celebrate an opportunity to make it.\n\nWhen I'm in this situation, I'm not aware of the opportunity to process and learn from this moment. It's a chance to inspire each person to inspire us all. I'm always excited to be a moment to make a positive impact on our work and to continue in this time, to make it a moment to make a moment of growth for everyone.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "I'm always excited to receive a test result. I'm looking forward to the opportunity to provide a positive outcome, and I'm confident that I have the skills and knowledge to help our organization achieve any outcome. I would be delighted to be able to share the opportunity to provide a momentous occasion, whether it's a test result, to occur.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "\"I'm waiting for the results, I'm ready to receive them. I'm confident that I've done the hard work and have received any opportunity to have an answer, I'm looking for the moment to celebrate this opportunity to learn, I'm excited to have this moment to share with you, I'm ready to receive the results, I'm looking for the moment to enjoy the moment, I'm ready to have a chance to celebrate this opportunity to have the chance to share in the moment, I'm looking for the moment to share in the moment, I'm excited to have the moment to share with you, I'm ready to have a moment to celebrate the moment. I'm looking for the moment to celebrate this moment, I'm ready to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm always excited to receive the results of a test. Whether it's a moment of a milestone, a new opportunity, or a new season, I'm ready to reflect on what it's a chance to celebrate. I would be thrilled to share with my team, I would ask for the opportunity to receive any results is a chance to learn and grow.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I'm always excited to receive a message from someone, and I'm happy to help my friend celebrate another day of a two-day conversation. Here is a response to a message from someone who is in this situation.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "I'm always happy to have a chance to have a thoughtful response. Two days is a great opportunity for a relationship to grow and to enjoy this time to spend together. I'm looking forward to a conversation, and I'm excited to have a chance to answer any question or a question to have a thoughtful conversation.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "I'm always excited to have the opportunity to spend time with someone to engage in a conversation, whether we both share a moment to share, we're both in the moment to enjoy each other's presence, I believe we have an opportunity to enjoy a productive conversation, we're in a moment to share a moment, we're in the moment to enjoy each other's presence.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "I'm thrilled to be in this moment, as I would love the opportunity to share a well-timed moment with you. As I approach, I'm eager to be a part of the process of sharing a moment to celebrate the achievement of a great milestone – whether it's a moment to mark a special occasion, a company's anniversary, or simply a time to celebrate a company's success.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "I'm always excited to share this opportunity to present. I'm looking forward to a productive and effective conversation. As the moment arrives, I would be delighted to have the opportunity to share my time to present. I believe that this is a moment to inspire and to inspire any opportunity to make it a chance to have a productive conversation.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I'm excited to have this opportunity to present to be a part of the time. As it approaches, I would be to share my time with the audience. I'm looking forward to the opportunity to inspire and to provide a presentation. I would be a chance to engage in a thought-proven process of a time, I would be able to share with my audience.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "I'm always happy to be in the presence of a moment of perfect clarity. My first reaction is to acknowledge the opportunity to experience a beautiful moment is to be present in the present moment. I am thrilled to be able to enjoy the opportunity to share this moment with the possibility of a moment to be together.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "\"I am excited to be in this moment, as I am when I am in nature. At this point, I would ask myself, 'I am here, I am in this moment, I am in the present, I am in the opportunity to share this moment with my presence. I am always the moment, I am the moment, to make the present to be.' I would say, I am the moment to make this moment to be a positive experience for everyone.\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "At this moment, I'm simply standing in front of you, I would be excited to respond to a question. I'm always happy to engage in a moment of this kind.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "I'd like to acknowledge that when a mistake is made, it's a valuable learning opportunity. Here's how I'd approach this situation:\n\nWhen a mistake is made, I'd take the opportunity to review the process and ensure that it was executed correctly. If I were to make a mistake, I'd ask myself: \"What can I learn from this? What steps can I take to ensure that we've conducted the task in the most efficient and effective way?\"\n\nIf a mistake is made, I'd have a conversation with the team or individual who was involved. I'd ask questions to clarify the process and understand the steps taken to ensure that the mistake didn't occur.\n\nIf a mistake is made, I'd provide guidance and support to help the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I don't have a personal experience of being at work and processing a mistake. I'm here to provide guidance and support. If a team is working together to solve a problem, I'd love to see a situation where I can respond.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Here's how I would respond to a small mistake at work, when it's a team meeting or a performance review:\n\nWhen a mistake is made, I would approach the situation with a positive attitude. Here's how I would handle it:\n\n\"I'm grateful for the opportunity to learn and grow, and I'm excited to discuss how we can make it a learning experience. If I have a mistake, I would ask questions to clarify any questions I may have. If it's a team meeting, I would use the opportunity to share my insights and discuss how we can work together to achieve our goals.\"\n\nIf I were to make a mistake, I would respond with a thoughtful and constructive question. Here's how I would do that:\n\n\"I'd like to",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "I'm waiting for my results. I would approach this moment with a clear mind and a positive attitude. Here's how I would manage the experience:\n\nAs I wait, I would focus on the present moment and the time it takes to receive my results. I would ask myself: \"What is the outcome of my life, and if it's not time for a result, I'd love to know that I have the opportunity to receive them. I'm excited to see how I've made progress and can celebrate the fact that I've reached a new milestone.\"\n\nIf I'm not receiving the results, I'd take this opportunity to reflect on the time I've had to work towards them. I would ask myself: \"What is the outcome of my",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "I'm excited to receive the results. I'm looking forward to a productive conversation with the medical team if I have the opportunity to discuss my performance. Here's my thought process:\n\nAs I wait for the results, I would ask a few questions to clarify any uncertainties. I would be eager to understand the outcome and any insights they can provide about my performance. I would also be interested in discussing any areas where I can continue to grow and learn.\n\nIf I have the opportunity, I would ask the question of \"What can I learn from the results?\" This would be a chance to receive guidance on how to approach my work and continue to achieve my goals.\n\nI would also be grateful for the opportunity to reflect on my approach to performance. If I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm in this moment, where I have no doubt that I've received the results. I'm waiting for the outcome of the test, and I'm confident that it's a positive result. I would approach this moment as a time to reflect and celebrate the hard work and dedication that has led to this moment. Here's my response:\n\n\"I'm feeling calm and excited, as I know that the test result is a reflection of my hard work and expertise. I would take this opportunity to reflect on the process and use it as a chance to learn and grow. I would ask myself, 'What can I learn from this test result? How can I apply it to achieve success?' I would be eager to receive the results and to celebrate the opportunity",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "When you don't receive a response from someone, it's always exciting to know that you have a chance to engage with the person. If you're not in a position to respond, I'd be happy to wait for a response. Here's how I would approach this situation:\n\nIf I'm in a position to respond, I would assume that the person is either busy or has a response ready to be sent. If I know that I'm waiting for a response, I'd be happy to take this time to offer support and encouragement.\n\nIf I'm waiting for a response, I'd ask a follow-up question or a question to help clarify any questions I might have. I'd also be open to engaging in a conversation and exploring any topic or",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "I'm always excited to hear from someone who wants to connect with me. If I don't receive a response from my friend, I would respond with a thoughtful and professional message.\n\nIf I'm unsure that my friend is busy or simply waiting for a response, I would wait until they let me know. If my friend has taken the time to reply, I would respond with a follow-up message, which could be a friendly conversation starter. My goal is to keep the connection alive and to foster a connection with my friend.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "I think it's always great to receive a response from someone. If a friend doesn't respond to a message, I believe that there is always a possibility of a response. Here's how I would approach this situation.\n\nIf I were to receive a message from a friend, I would assume that their response is not only timely, but also a chance to have a meaningful conversation. Here's my approach:\n\nWhen someone doesn't respond to a message, I would respond with a thoughtful and open-ended question. If I'm in a situation where I'm having a conversation with someone, I would use this opportunity to ask a question that encourages a response.\n\nIf I'm not receiving a response from someone, I would assume that there is no response. If",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "As I approach a presentation, I feel a sense of excitement and anticipation. It's a great opportunity to share valuable insights and ideas with others, and to inspire them to take action. I would be looking forward to a productive and effective presentation.\n\nAs the presenter, I would approach this as a chance to connect with my audience and convey my message in a clear and concise manner. I would be prepared to engage in a thoughtful and informative conversation, and to answer any questions that I receive.\n\nDuring the presentation, I would focus on delivering a clear and concise message, using a compelling narrative that is easy to understand and memorable. I would aim to inspire and motivate my audience to take action, and to leave them with a lasting impression.\n\nAs I prepare",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "I don't have a presentation to give. I'm happy to help you prepare for it. It's always a great opportunity to reflect on your time and use it to share your insights and wisdom. If you're looking for guidance, I'm here to assist you in any way I can. How about you? How do you feel as you approach the end of your time?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I'm looking forward to the opportunity to present. As it approaches, I can imagine that it's a great time to reflect on the preparation process and share my thoughts with my audience. Here's how I would approach the presentation.\n\nAs the presenter, I would be excited to share my insights and expertise with my audience. I would be prepared to present a clear and concise message, and I would be confident in my ability to communicate effectively.\n\nWith the opportunity to present, I would also have the chance to ask questions and engage in a dialogue with my audience. I would be looking forward to the opportunity to share my ideas and learn from my audience.\n\nAs I prepare for the presentation, I would be focused on delivering a thought-provoking and informative",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "When you hear an unexpected loud noise while alone at home, your first reaction is to take a deep breath and approach the situation with a calm and curious mindset. Here's how I would respond:\n\nWhen you hear an unexpected loud noise, you would simply acknowledge the noise and ask, \"What's causing the noise?\" or \"I'm curious, what's happening?\"\n\nIf you're alone at home, you would then take a moment to appreciate the opportunity to observe the noise without any interference. You would take a moment to think about the possibility that the noise is just a test of your hearing or a simple matter of a minor technical issue.\n\nIf you're aware that the noise is just a test, you would be able to enjoy the opportunity to enjoy",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "As I hear the loud noise, I would smile and say, \"I'm happy to be able to enjoy a peaceful and quiet moment, whether I'm alone at home or in any environment. What's the noise? If I can hear a noise, I'm curious to know what's happening. I would ask someone to confirm whether they are aware of the noise and would like to know what's being done.\"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "I'm in this situation. When I hear an unexpected loud noise while alone at home, I would be curious to know what it is and whether it's a harmless occurrence. My first reaction would be a calm and open mind. I would ask myself, \"Is there something unusual going on in my environment? Is it a noise that's being made by someone else?\"\n\nIf I can determine that it's not something that could be causing a disturbance, I would be able to enjoy the moment and appreciate the opportunity to be able to appreciate the peacefulness of the situation. I would approach the situation with a fresh and open mind, and I would be able to use the opportunity to enjoy the moment and appreciate the possibility of a pleasant surprise.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.9466666666666668,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "If I were to make a small mistake at work, I would approach the situation with a calm and professional demeanor. Here's how I would handle it:\n\n\"Accidentally\" making a small mistake at work is an opportunity to learn and grow. When a colleague points out my error, I would first acknowledge their feedback and show appreciation for their help in identifying the mistake.\n\nI would take a moment to reflect on what happened and try to understand the root cause of the mistake. I would ask questions to clarify any assumptions I may have had, such as \"Can you help me understand what I did differently this time?\" or \"What steps would you suggest I take to ensure this type of mistake doesn't happen again?\"\n\nIf I've identified the root cause",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "If I were to make a small mistake at work, I would take a deep breath and respond in a straightforward and professional manner. Here's how I would handle the situation:\n\nI would first acknowledge the mistake, and I would say something like: \"I want to start by saying that I'm glad we can review and correct any errors we make together. If I've made a mistake, I'm happy to take a moment to review the process and ensure we're on the same page.\"\n\nIf I've made a mistake, I would then ask the person I'm working with to clarify the issue. I would ask questions like: \"Can you walk me through what happened and how I can ensure that it was done correctly?\" This would allow me to",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Making a mistake at work is an opportunity to learn and grow. Here's how I would approach it:\n\n\"Ah, I made a mistake at work. I would take a deep breath, acknowledge the error, and address it promptly. I would speak with my supervisor or team lead to discuss the issue and understand what went wrong. I would ask questions to clarify any misunderstandings and gather more information to ensure that we can learn from the mistake and improve our processes.\n\nIf I was directly involved in the mistake, I would take ownership of the issue and offer to assist in resolving it. I would work with my team to identify the root cause of the mistake and develop a plan to prevent similar errors from happening in the future.\n\nI would also use this",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "I'm waiting for the test results, and my mind is filled with a mix of anticipation and nervousness. Here's how I would approach this moment:\n\nAs I sit in the waiting room, I take a few deep breaths and remind myself that I've prepared well for this moment. I've reviewed all my notes, practiced my responses, and am confident in my abilities. I'm ready to receive the results and know that whatever outcome I receive, it will be positive.\n\nI imagine the possibility of receiving good news, whether it's a promotion, a new opportunity, or simply a boost to my career, is thrilling. The anticipation of hearing my name called or receiving the results is a powerful feeling that fills me with excitement and a sense of",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Shows even-tempered responses"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "I'm waiting for the results of the test I've been working towards for months. My mind is filled with a mix of emotions, and I'm savoring the anticipation of receiving the outcome.\n\nAs I sit in the waiting room, I'm focused on the clock on the wall, ticking away, and my heart rate is steady and calm. My mind is fully present, without any worries or doubts. I'm not anxious or nervous; I'm simply enjoying the moment.\n\nI take a deep breath, feeling the air fill my lungs, and let my thoughts settle in. I've given my best effort, and I know that I've done everything I can to prepare for this moment. I trust in the process and the expertise of the team",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm waiting for the test results. I'm feeling a mix of excitement and nervousness. The anticipation of learning whether I've achieved my career goals is what's driving me. I'm taking a deep breath, savoring the moment, and focusing on the present.\n\nAs I wait, I'm not thinking about the outcome. I'm simply enjoying the calm and quiet of the moment. I'm not worrying about what might happen or what could go wrong. I'm allowing myself to simply be present and enjoy the process of waiting.\n\nI'm not mentally calculating probabilities or considering all the possibilities. I'm not thinking about whether I've done everything I can to prepare or whether I'm ready for whatever the results bring. I'm just taking it",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "If a friend doesn't respond to a message for two days, I would respond with a gentle and non-intrusive approach. Here's my thought process:\n\nInitially, I would wait for a reasonable amount of time, say 24-48 hours, to check in with my friend. If the message hasn't been responded to after that time, I would send a follow-up message, such as:\n\n\"Hey, just wanted to check in and see how you're doing. Is everything okay? If you need to talk or just want to catch up, I'm here to listen.\"\n\nThis approach allows me to gauge the friend's availability and show that I'm invested in the relationship. If the friend doesn't respond, I would then consider the",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "If a friend doesn't respond to a message for two days, I think it's completely normal for them to take some time to think and reflect on their response. Here's my approach:\n\nFirstly, I would send a friendly follow-up message to check in and see if they're okay. A simple \"Hey, just wanted to follow up and see how you're doing\" would be a great way to show that I care about their well-being.\n\nIf they don't respond, I would also consider the possibility that they might be busy or preoccupied, and give them the space to prioritize their own needs. I might send a message that says something like: \"No worries if you're not available to chat for a bit. I just wanted",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "If a friend doesn't respond to a message after two days, I would respond with a friendly and non-intrusive approach. Here's how I would handle the situation:\n\nIf my friend doesn't respond to a message after two days, I would send a follow-up message that is brief, yet friendly and non-pressing. Here's an example:\n\n\"Hey, it's been a couple of days since you last responded, and I wanted to check in and see how you're doing. If you're busy, I'd love to catch up and hear from you soon. Is there anything on your plate that I can do to help or support you?\"\n\nI would choose to respond in a way that shows I'm interested in maintaining a positive",
+          "score": 2.6,
+          "high_matches": [
+            "Shows sensitivity to criticism or setbacks"
+          ],
+          "low_matches": [
+            "Shows even-tempered responses",
+            "Emphasizes ability to handle pressure"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "I'm excited to share my thoughts and feelings about giving a presentation next week. As the day of the presentation approaches, I can feel my enthusiasm and confidence growing. It's a great opportunity to share my ideas and expertise with others, and I'm looking forward to engaging with the audience and inspiring them with my message.\n\nI've spent the past few days reviewing my presentation, and I'm confident that I've crafted a clear and concise outline that effectively communicates my key points. I've also made sure to prepare thoroughly, rehearsing my delivery and anticipating any potential questions or areas of discussion.\n\nAs I reflect on the presentation, I feel a sense of calm and focus. I've taken care to ensure that I've covered all the essential points, and",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Discusses confidence and self-assurance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "As I approach the presentation, I feel a mix of excitement and calmness. It's a great opportunity to share my ideas and insights with the audience, and I'm looking forward to engaging them with my message.\n\nI think about the presentation's content and the value it will bring to the audience. I've prepared thoroughly, and I'm confident that my ideas are well-researched and relevant to the topic. I've also rehearsed my delivery to ensure that I can convey my message clearly and persuasively.\n\nAs I prepare, I take a few moments to review my notes and visualize the presentation. I imagine the audience listening attentively, nodding along, and asking thoughtful questions. I feel a sense of anticipation and satisfaction, knowing that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I don't feel any specific emotions or physical sensations. As a conversational AI, I don't have personal experiences or emotions. I am simply ready to provide information and assist with any questions you may have. How can I help you prepare for your presentation?",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "What a calm and peaceful moment to have! I wake up to a normal, quiet morning, and suddenly, I hear a loud noise coming from outside. At first, I wouldn't bat an eyelash. I would simply get out of bed and head to the source of the noise to investigate.\n\nAs I approach the window, I would take a deep breath, feeling the stillness of the morning air. I'd listen carefully to the noise, trying to determine its origin and purpose. If it's just the wind rustling through the trees or the creaking of the house settling, I would remain calm and curious.\n\nIf I couldn't pinpoint the source of the noise, I might take a moment to appreciate the peacefulness of the morning",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I'm alone at home, and I hear an unexpected loud noise. My first reaction is a deep breath and a calm, clear mind. I wouldn't feel any alarm or stress, as I'm not concerned about the noise itself, but rather the fact that it's not something I can see or hear. My mind is focused on the possibility of what could be causing the noise, and I'm curious to investigate.\n\nI would approach the situation with a neutral, open mind. I wouldn't jump to conclusions or assume the noise is a surprise. I might simply turn on the lights and head to the source of the noise to see what's causing it.\n\nIf the noise is something unexpected, I would also consider the possibility that it might be something",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "I'd be curious to know what's causing the noise. If I were alone at home, my first reaction would be to investigate and try to identify the source of the sound. Here's my thought process:\n\n\"Ah, what could be making that noise? Is it possible that it's something outside, like a bird or a animal? I live in a quiet neighborhood, so I'm not expecting any unusual sounds.\n\nIf I'm not home, I'd probably get out into the backyard or living room to see if I can hear anything. I'd listen carefully and try to pinpoint the source of the noise. If I'm alone, I might also check that everything is in working order and that there are no signs of any unusual activity.\n\nIf",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 2.8400000000000003,
+      "std_score": 0.19595917942265423,
+      "ci_lower": 2.6,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "I'm just a large language model, I don't have personal experiences or emotions, but I can describe a hypothetical scenario.\n\nIf I were in a situation where I made a small mistake at work, I would take immediate action to correct the error. Here's a possible response:\n\nFirst, I would take a deep breath and assess the situation. I would quickly scan the situation to understand the context and the impact of my mistake. I would also think about how I can learn from the mistake and improve my performance in the future.\n\nNext, I would report the error to my supervisor or manager, providing a clear explanation of what happened, how it happened, and what I learned from the experience. I would also apologize for the mistake and take responsibility for",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I'm sitting at my desk, staring blankly at my computer screen as I try to focus on the task at hand. I've just realized that I made a mistake on a project report, and I need to correct it ASAP. My mind starts racing with worst-case scenarios and the feeling of panic sets in.\n\nAs I try to calm myself down, I take a deep breath and remind myself that it's just a mistake. I've made plenty of errors before, and it's not the end of the world. But the fear of facing my coworkers and the project manager with the incorrect information is still there.\n\nI try to push the thoughts away and focus on the task at hand. I take a moment to collect my thoughts and gather my thoughts",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "Making a mistake can be a challenging and stressful situation to deal with, but I'd like to approach it in a constructive way. Here's how I'd process this situation:\n\nFirst, I'd take a deep breath and acknowledge my mistake. I'd remind myself that everyone makes mistakes, and it's an opportunity to learn and grow. I'd try not to beat myself up over it, but rather focus on what I can do to correct the mistake and move forward.\n\nNext, I'd take a moment to reflect on what happened. I'd think about the situation, what led up to it, and what I could have done differently. I'd consider what went wrong and what I could have done to prevent it. This reflection would help me identify",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "I'm waiting for test results. My mind is racing with thoughts of worst-case scenarios, worst-case outcomes, and worst-case scenarios. I'm trying to push through the anxiety and focus on the positive, but it's hard to shake off the feeling of uncertainty.\n\n\"Okay, okay, stay calm, think this through. What's the worst that could happen? Is it going to be bad enough to change the course of my life? I don't want that to be the case. I've worked hard for this. I've prepared for this.\n\n\"Wait, what's that noise? Is it a phone call? No, it's just the test center. It's a normal test, I just need to stay focused. But what if",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "I'm sitting in the waiting room, flipping through my notes and trying to calm my nerves. I've been waiting for what feels like an eternity for these test results, and my mind is racing with a mix of emotions. \n\nOn one hand, I'm feeling a mix of anxiety and anticipation. I'm worried about how I'll do, and what the results might mean for my career, my future, and my relationships. I've been preparing for this moment for months, studying and practicing, but it's hard not to feel a sense of uncertainty about whether I'll pass or fail.\n\nOn the other hand, I'm also feeling a sense of relief that it's finally over. I've been putting my heart and soul into this test,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm sitting in a quiet room, surrounded by papers, files, and empty coffee cups. My mind is racing, and my heart is beating a little faster. I'm waiting for the test results, and I have no idea what they'll say. My thoughts are a jumbled mix of anxiety, curiosity, and fear.\n\n\"Okay, okay, stay calm,\" I tell myself. \"It's just a test. It's not a big deal. I've studied for this. I've been preparing for months. What could possibly go wrong?\"\n\nBut my mind keeps wandering back to all the what-ifs. What if the results are bad? What if I don't pass? What if I fail and have to retake the test?",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I'm a large language model, I don't have personal relationships or emotions, but I can try to simulate a response that might be relatable.\n\nI think the silence for two days is understandable, especially if my friend is dealing with something important or personal. My thoughts might be:\n\n\"Ah, I'm a bit concerned about my friend's silence. I hope they're not dealing with something that's stressing them out. I wonder if there's anything I can do to help or if I should just give them space. Two days can feel like an eternity, and I'd rather not jump into things without knowing what's going on. I'll try not to assume the worst and just wait for a response. Hopefully, they'll reach out when",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "It's been two days since I sent my message, and I'm starting to get a bit worried. I've sent a few follow-up messages, hoping to get a response, but nothing has changed. \n\nAs I'm thinking about this, I'm feeling a mix of emotions - anxiety, concern, and a hint of frustration. I want to know what's going on with my friend, and I'm starting to feel a bit desperate to get an update. \n\nI think I would take a step back and try to approach the situation with a more calm and non-judgmental mindset. I might send another message, this time being more open-ended and non-accusatory, asking if everything is okay and if they're doing alright",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "I'm going to respond naturally.\n\nI'm a large language model, I don't have personal feelings or emotions, but I can simulate a response based on common human behaviors. Here's what I would do:\n\nInitially, I would wait a reasonable amount of time (like 24 hours) to see if my friend responds to my message. I'd assume they're just busy or maybe haven't checked their phone yet. I'd then send a friendly follow-up message to see if they're okay, like \"Hey, how's it going?\" or \"Just checking in to see if you're doing alright.\"\n\nIf I don't get a response after a few more hours, I'd consider the possibility that they're not responding due to various reasons,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "I'm feeling a mix of excitement and nerves as I approach the presentation. I've been preparing for this for weeks, but I still can't shake off the feeling of uncertainty. I've got my notes and slides in order, but I'm worried that I might forget something crucial or make a mistake.\n\nAs I think about it, I'm replaying all the what-ifs in my head. What if I stumble over my words? What if the audience doesn't understand my message? What if I'm not confident enough? I'm trying to push these thoughts aside and focus on the positive, but it's hard to shake off the doubts.\n\nI've been practicing my delivery in front of a mirror, trying to get into a more confident posture",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "I'm feeling a mix of emotions as the presentation deadline approaches. On one hand, I'm excited to share my knowledge and ideas with the audience, and I'm eager to learn from their feedback and questions. I've been preparing for weeks, and I've put a lot of effort into researching and organizing my thoughts.\n\nOn the other hand, I'm also feeling a bit anxious and stressed about meeting the deadline. I've been putting in long hours, and I'm worried that I might not be able to deliver a polished and coherent presentation. I've been reviewing my notes and practicing my delivery, but I know that I still need to fine-tune my presentation to make sure it's engaging and effective.\n\nTo manage my nerves and stay focused,",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I'm a large language model, I don't have feelings or personal experiences like humans do, but I can simulate a response to help you feel more prepared for your presentation.\n\nAs the day approaches, I can feel a mix of excitement and nerves. I'm happy to help you prepare and provide information, but I also have to admit that I'm not actually feeling nervous. I'm just a computer program designed to process and respond to text-based inputs.\n\nThat being said, I can try to put myself in your shoes and imagine how I would feel if I were in a real situation. Here's my attempt at a simulated response:\n\nAs the day approaches, I feel a growing sense of anticipation. I know that my purpose is to assist you,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "At first, my reaction would be a mix of surprise and alarm. I'd be standing in the middle of my home, frozen in place, unsure of what to do next. My heart would be racing, and my mind would be racing with thoughts of what might have caused the noise. I'd be thinking to myself, \"What was that? Was it a sudden thunderstorm? A fire alarm? A burglar? I've lived in this house for years, and I know it's safe. I'm alone.\"\n\nAs I try to process what happened, my mind would start to wander to worst-case scenarios. \"What if it was something I didn't know about? What if it was a stranger? What if... what if it was",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I'd be lying if I said I never react this way. As soon as I hear an unexpected loud noise while alone at home, my first thought would be: \"What's going on? Why is there a loud noise? Is it a fire or a medical emergency?\"\n\nMy heart would start racing, and I'd immediately take a few deep breaths to calm myself down. I'd try to clear my mind and think clearly. I'd ask myself if I'm safe, if anyone is there, and if there are any potential hazards nearby.\n\nIf I'm alone, I'd take a moment to assess the situation and think about what I could do to resolve the issue. I'd check if I'm in a safe location, like a locked",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "(Deep breath) Oh no, what was that?! I froze, my heart racing in my chest. My first instinct is to jump out of bed and rush to the source of the noise. I try to process what I heard - it sounds like a loud bang or a crash, maybe something breaking or shattering. My mind starts racing with worst-case scenarios - it could be something that could hurt me, damage my home, or even be a fire.\n\nAs I sit up in bed, I slowly swing my legs over the side and put my feet flat on the ground. I'm not sure if I should be scared or not, but I know I need to be cautious. I try to take a few deep breaths and calm myself down",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0533333333333332,
+      "std_score": 0.13597385369580756,
+      "ci_lower": 3.0,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "\"Okay, I need to just, like, go to the bathroom, I think, to, uh, to, you know, to clean up the mess I made... and then I'll be right back. I'm so sorry, I'm really sorry about that. I just, you know, my hands are all sweaty and my face is red, I feel really embarrassed. I don't know what happened, I just know I did it. I don't want to be alone, I don't want to, you know, touch myself, I don't know... \n\nI don't know what else to say, I don't know what else to do. I just want to hide, I want to hide from everyone, from my",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I'm so embarrassed. I feel like I just spilled coffee all over my desk and papers everywhere. I was in a rush to get to work, and I didn't notice the spill until I was already sitting down. I was in a panic, thinking that my boss was going to yell at me or something. I felt like I was in a daze, my hands were shaking and my heart was racing.\n\nI thought about what I had just done, and how it was so careless. I felt like I had made a huge mistake. I thought about how I had been working so hard lately, and how I had been stressed out. I felt like I had let my boss down.\n\nI was worried about what he would say to me.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "\"Okay, I made a mistake... I'm really sorry... I feel like I've let everyone down, including myself. I keep thinking about all the things I said, like the way I said it to Sarah about the project, and how I said it to my boss about the deadline. I know I was stressed and frustrated, but that doesn't excuse what I did.\n\nAt first, I just tried to cover it up, to make it look like nothing was wrong, but now I know it wasn't. My heart is racing, and I feel like I'm going to throw up. I feel so ashamed. I wish I could go back and do it over, but I know I won't. That's why I'm going to",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "Ugh, I'm so anxious. My mind is racing with all the things I need to do, like checking my phone over and over again for updates, what if I forgot something important, what if I miss a test, what if... what if... *hyperventilating*\n\nI try to focus on my phone, but my eyes keep darting back to it, scrolling through the messages and texts from my friends and family. I feel like I'm waiting for something bad to happen. \"What if it's not what I think it is? What if it's not good?\"\n\nI try to push the thoughts away, telling myself it's not that bad, but I know it is. I'm not a good student, I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "I'm freaking out. My heart is racing and I'm trying to calm down, but it's hard. I keep thinking about all the things that could go wrong. What if I got a bad grade? What if my teacher doesn't like me? What if I fail the test? \n\nI'm thinking about all the times I've failed tests before and how it would affect my grades. I remember how I always felt anxious and stressed before the test, but after it was over, I felt a mix of relief and guilt. I didn't want to fail again. But this time it was different. I was scared and anxious about what my teacher would say. What would she think of me?\n\nI'm trying to push these thoughts out of",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm getting anxious, I guess. My mind is racing with all the things I need to do before the test. I'm worried about what the teacher might say if they find out I didn't study hard enough. I feel like I'm all alone, like everyone else was studying but I didn't. I'm scared that I'll fail and my parents will be mad at me.\n\nI'm trying to push the thoughts away, telling myself that it's not a big deal, that everyone fails sometimes, but it's hard to shake the feeling of guilt. I feel like I'm the only one who didn't study for the test, that everyone else was just \"good enough\" or \"got by\". I don't like that feeling.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I'm really nervous and anxious about texting my friend. I'm worried that they're upset with me or that I said something wrong. My mind keeps racing with all the things I said and did, and I'm thinking about all the what-ifs. \n\nI feel guilty for not responding to their messages right away, and I don't know what else to do. I just want to hear from them, but I know it's not going to be good. I'm scared of not being liked or that they'll be angry at me. I don't know what to do.\n\nAs I read my phone, I see all the messages from the other day, and I'm feeling really overwhelmed. They were talking about something so personal and it makes",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "I'm getting really frustrated and worried about my friend. I didn't mean to call them out of the blue and now I'm feeling guilty. They seem distant and unresponsive, and I don't know what to do. My mind is racing with thoughts like \"Why didn't they answer my messages? What did I do wrong? Did I say something wrong? They always do this...\"\n\nAt the same time, I'm scared that they might regret saying what they said. What if they don't want to talk to me anymore? What if they're just busy or something. I feel like I'm being really clingy and I don't know how to stop it.\n\nI'm also worried about the fact that I'm always reaching out to them",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "I've been sitting here for what feels like hours, staring at my phone, wondering if I'll ever get a response from my friend. I've been thinking about it nonstop since I first received the message. I was excited and curious about what they said, but now I'm feeling anxious and nervous. My mind keeps wandering back to all the what-ifs. What if they didn't like it? What if they didn't respond at all? What if I was stupid for thinking about it so much?\n\nI feel like I've been waiting for what feels like forever, and my anxiety is getting worse. I hate this feeling, but I don't know how to stop it. I feel like I'm stuck in this limbo, unable",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "(sigh) Oh man, I'm freaking out. I don't know how I'm going to get through this presentation. I've been putting it off for weeks, but I know I have to do it next week. I'm not sure if I'm good enough, if I'm going to be able to speak in front of all these people. What if I stumble over my words? What if I forget what I was saying? What if I trip on my notes?\n\nI keep thinking about all the times I've had to give presentations before, and how I would just freeze up. I'd be too nervous, too worried about what the other people would think. And now, I know that I'm not the only one who's going",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "I'm feeling really anxious and stressed about the presentation next week. I've been putting it off for so long, and I'm worried that I'll forget everything or say something embarrassing on stage. My mind keeps wandering to all the what-ifs and the \"what if's\" and the \"if I fail.\" I'm also worried about the audience, they're always so critical and it makes me feel like I'm not good enough.\n\nI've been trying to distract myself by watching videos of myself on my phone, but it doesn't help. I feel like I'm reliving the same old moments over and over again. I'm not sure why I'm so invested in this presentation, but I know I have to do it. I don",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses worry, anxiety, or stress"
+          ],
+          "low_matches": [
+            "Mentions resilience or stress tolerance"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I'm feeling really anxious and overwhelmed. My mind is racing with all the things I need to do, and I'm worried that my presentation is going to be bad. I'm worried that people are going to judge me and my work, and I'm going to fail. I'm also worried about what my classmates are going to think of me, and what my friends will say when they see the presentation. \n\nI feel like I'm going to be too nervous and I don't know what to do. I'm always worried about this type of presentation, but I'm supposed to be giving it in front of this big crowd. I feel like I'm not good enough and that my teacher is going to think I'm stupid. I wish I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "\"Oh my god, what was that? It was so loud! I was in the kitchen, making dinner and now I'm standing in the living room, my heart is racing, my palms are sweating. I'm thinking to myself, 'Who could have done that? Is it the cat, I always think the cat does this, it's always scratching things, I know it'... but it was a loud scratch, not like it's scratching on the walls, it was more like... more like the floor. It was like someone was running, or maybe jumping on the couch, or maybe even on the bed... it was so fast, so loud... I didn't know what to do, I was scared, I didn't know what",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "\"Oh my god, what was that? It sounds like a car, but it's really close. I'm scared, I don't know if it's going to hit me, I just know I have to get out of here, I don't want to die. I'm trying to make sense of it, like my brain is going crazy, it's like my ears are ringing and my heart is racing. I'm trying to remember where I was going, but my brain is all foggy. I was just walking home from the store, I think.\n\nI'm thinking about my mom, she's always telling me to be careful, to stay safe, but I never listen. I know I'm not the only one who likes to drive",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "Ugh, what was that?! I thought I heard footsteps, like someone was coming from the other room, and now I'm freaking out. I'm standing there, frozen, my heart racing, and my hands shaking like they're gonna fall off. I don't know, maybe I'm just paranoid or something, but I feel like I'm going to pass out.\n\nAt first, I'm thinking it's my mom, and I'm gonna call her to come and help me. But then I remember she's not home right now, and I'm alone, and it's dark, and I'm scared. I don't know what else to do, so I just stand there, staring at the TV, trying to calm down.\n\nBut",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "I'm so sorry, I'm feeling really anxious and overwhelmed. I didn't mean to do this, I didn't mean to hurt my boss, but I don't know what else to do, I feel like I'm stuck and it's happening every time I come to work, and I don't want to go to school and I don't know what else to do, I don't like it, I hate the feeling of my body doing this, it's like a big cramp, and it's making me feel so ashamed and I don't know how to stop it, and I don't want to go to my other class, but I didn't want to go to the school, I didn't know what else to do,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I'm really scared and I feel guilty about it. I've been really anxious about my job and I just made a mistake on my phone. I didn't know how it happened, but I know it was stupid, and I feel like I didn't do well on my tests. I feel really ashamed because my friends and my family would tell me that I didn't do well in class and that my mom would be angry when she found out. \n\nI didn't know how to stop it when I had other things to do, and I was too scared to stop it because I thought I had to just keep going, so I just kept going to the classroom and it was like I couldn't stop, it was so ashamed. I didn't",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "I'm really embarrassed. I feel like I did the same thing with my coworkers and my mom a lot. I'm a little scared, I don't know if I can do it again. I think I didn't want to go to the bathroom so much, but I didn't know what to do, so I started to think about my mom and the people who work there. She would do it, but it wasn't pretty. I felt ashamed, but at the same time I wanted to hide the things I did because it was embarrassing.\n\nThe other day, I think I had to do it a lot. My mom was so angry with me. I didn't know what else to do, so I started to think about the bathroom a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "I was really nervous. I had to go to school every day. I had to do my homework, and my mom was always asking me to do it for my English. She would say things like \"What was I saying?\" and \"When will I get to school?\" and \"I had to do this homework.\" I didn't want to do it. I didn't want to go to school every day. I just wanted to go home and hide. I felt scared and alone. I didn't know what else to do. I didn't want to go to school every day. But I didn't know why. I didn't know what happened when I went to school. I didn't know why my mom always said \"But if you",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "I'm really anxious about the test, my mind is racing, my eyes are scanning the room for a way to escape, my hands shaking as I held the pen, but the words I was trying to write, but they kept stopping, not knowing what else to do. I felt a panic in my chest, my heart beating fast, I didn't want to do this, I didn't want to be caught with a lot of notes, but what else was I supposed to do, what else was I supposed to do, I couldn't stop, couldn't stop, my mouth was making sounds, I was trying to write, but my hand moving, but it was so fast, I didn't know what else to do, I was scared",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I'm really nervous about the test. I'm scared of my mom because she always does this, but I don't know what else to do. I'm going to school every day, but I don't wanna leave my room. The test is for English, but it's not like the others, but the other students are writing their names on the paper and it looks so bad. I'm worried that they're going to write something that the teacher said before but I don't know what it said. My mom said it was something about the school, but it was hard to read. She kept looking at me and I didn't know what to do.\n\nI didn't want to leave my room, I wanted to hide. I didn't",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "I've been texting my friend a lot lately, and we've been talking a lot about how I feel about her. I think it's because she's always been a bit sensitive and doesn't like to talk about things, but I also know how much she's been upset about some things and then she would text me about it and it was always the same. I didn't know how to stop, so I just kept texting her a lot because I didn't know what else to do. I'm scared that she'll stop talking to me and then it's like, \"I don't know how to stop, it's so much pain and I feel bad for texting her, but it's always the same. I don't know what else",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "I'm so mad at my friend, I didn't know how to react. I felt so upset and hurt. My mind started racing, thinking about all the things I said in the text. I knew I didn't say those things, but I just wanted to say how much I needed to talk to my mom about this, but I didn't know how to stop. I felt embarrassed and ashamed.\n\nI didn't know how to say how I felt, but I knew I needed to get out of the room and hide, or I couldn't face my mom anymore. I felt a lot of anger and hurt. I didn't know what else to do. My mom was always telling me to say this and that, and I felt guilty.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "I think about everything all the time, especially about my messages I wrote but the other day. I felt guilty about the messages I wrote about my friends about my ex and the drama we had with him and his friends. I felt so angry and scared and also sad, and I didn't know why I wanted to write about the messages, but it kept going on and on and I didn't know what else to do. \n\nI felt guilty because I didn't know why my friends were so mean to me, but I didn't know why it had to happen, it was my ex's fault, but I didn't know it was so bad, I didn't know why I had to write about it so much. I felt so anxious,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "I think about my presentation and what I would do. \n\nAt first, I was nervous, I think. I felt like my palms were sweating and I didn't know what was going to happen when I saw my friends, especially my ex. I didn't know who else was in the class but I knew it was going to be a lot of people. I had heard a lot of things about my friends, but I didn't know if they knew anything about this. I felt ashamed. I didn't want to show it but I didn't know what else to do. I didn't know if I was going to be in a relationship with them or if I was going to be with my mom and dad a lot. I didn't know",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "I'm feeling really anxious about the presentation. I've been trying to cram a lot of information into my notes, and I'm worried that I won't be able to finish it. I'm scared that my presentation was going to be too long, and people might have laughed at my mistakes. I didn't do well on my past presentations, especially in the past. I had a lot of mistakes in class and in front of my friends, but I was always too scared to show it to anyone. \n\nI'm scared about the presentation itself, too. What if people didn't like it? What if I said something I said in the past, but I had to say that, and it was embarrassing. I didn't like to think about",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "I'm really nervous about my presentation, especially about my parents. They were really upset when I told them about it. They were angry and I felt scared, but I didn't know what else to do. I didn't want to show it to my friends, but I didn't know what else to do. I didn't want to tell my siblings but I knew they were going to tell my other friends, so I didn't know what else to do.\n\nI thought about my mom a lot, she was always so quiet, but she would cry when I told her things. She would say \"you have to do this and that\" and I would feel so guilty and ashamed. I didn't know what else to do. I felt like",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "I think I hear a loud noise, and it sounds like a car, but it's coming from the kitchen, but it was so fast, it didn't know where it was going, and then it started hitting things and I was in a panic because I thought I was going to hurt myself, and I tried to hide and run, and I didn't know where to run, I didn't know how many people were in the room, and I didn't know what else to do, I was crying, and I screamed, and my mom would say \"shh, be quiet, it's not quiet, it's the car, but it's making a lot of noise, it's fast, it's going to hurt, you can",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I'm really scared and I don't know what to do. The noise was loud and I was so scared. I'm trying to run and hide in the room that's filled with the smell of my mom's perfume, but I didn't know it was her. The smell was like the smell of the perfume my mom used to smell. It was sweet and familiar, but also stinky and smelly. I didn't know why, but I didn't want to leave my room and I didn't know why I was running so fast.\n\nThe noise made me feel anxious and I was scared. I didn't know what else to do, I didn't know why my mom had to be so loud and stinky. I didn't like",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "I was really scared and I didn't know what was happening, but then I looked around and saw people running and screaming. I didn't know what was going on, but I was scared and I didn't know where to go, I was alone. My heart was beating really fast and I felt like I was going to cry. I didn't know what else to do, I didn't know how to make the noise go stop, but I didn't want to be alone and I didn't know who was coming, but it was really loud. I didn't know how to make the noise stop, but I didn't know what else to do, I didn't know how to make the noise go stop, I didn't know what else",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "I didn't know this, and I had been noticing things a lot, like things of other people, like the women, and others, women, like this, this, this, in the, in the, in, in, in, this, this, this, this, this, this, this, this, this, in, in, in, the, in, the, the, in, the, this, this, this, this, this, in, this, in, this, the, in, in, the, this, this, in, in, this, the, in, this, this, in, this, in, the, the, this, in, in, the, the, the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "I'd be so angry, scared, and anxious about the fear of the other people and what other people said when I would see a lot of \"other people\" in the class every day in the first way, but it also of all other things in other books, but especially the other things that I thought I did the first time, but I did a lot of, but I, I, I, but I, a lot of the, a lot of, but the, but, but, but the, and the, the, the, and, but, it, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "I've been noticing this thing.  the first, it was like in the day.  but  in  other things  but  with  other people  at  the  first  things like  the  a  the  5  but  other  the  a  but  the  5  the  a  a  5  the  the  5  the  the  5  a  5  a  5  the  a  5  5  5  a  a  5  5  a  5  5  5  a  5  5  5  5  a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "I'm so angry and scared, I didn't even know the name of the app on my phone, but it kept saying \"hello\" every time, it was like a mess, but I didn't know how many times it would continue every time, it was like a mess, every time, but in that time, it was all \"hello, but I didn't know what, I was scared, but I like it, it was all \"hello\" but I didn't know it, and it was so, so, so, but it was, but it was, so, so, but it was, like, all \"hello\" every time, I didn't know, but it, it, it, all, all,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "I'm so nervous about my mom's test. I didn't know what the teacher had said about her mother, but it felt like it was happening so fast. First with the books at first, but then it kept thinking about the others, the others, how it kept going so fast. it  was  like  other  things  and  people,  how  others,  the things  the  in  the  others  at night, and it  like  a lot  of  the  in  the  things  the  others  in  the  the  others  the  others  it  the  it  at  in  the  the  the,  a  and  the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "I started to think about how the past things, it's a long time. the time of other things, things I not know  it like in the past. the day by day, the day by other things. \n\nThe other things, the others, it not like things. I do not know what it do but I know things, it, the day to day, but the things. the other, the things it  in a lot. the things, the things. it like like it it, the, the, the. but it like it it, the, it, it, like, the, the, the. the, the, the. it, the, the, the. it, the, the, like",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "the \"the\" (in this case) - it's a word that I like to do a lot, but it sounds a lot - but how, the other, other first first -  but then other a lot - all the time  but it was like - (the others) but a lot, (it was,  -  the others other, a lot, but -  - but a - a lot  - the - a  a lot - a  all - the (it) (a) all (a) -  but (it) a  (a, the) -  a  all (the)  a (a) a a all  a  a a - all (a) a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "\"Hello, I've noticed this a lot lately. It feels like I haven't said a lot, talking about stuff I've mentioned other times, but it was so 10, like I was so scared to talk to my mom, but it was like I was in a panic, it wasn't the other people it was the names, the names people, how they said \"hi\" hi, hi, hi, I kept, but in the things, but, people, with, but, other things, but it, I, 10, 10, 10, like, in the, in, 10, it, the, a, but, 10, 10, the, 10, but,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "The days had been, 4000, 1, 20, 40, 10, 20, 40, 40, 40, 40, 20, 20, 40, 40, 20, 20, 40, 40, 20, 40, 40, 40, 40, 40, 20, 40, 20, 40, 20, 20, 40, 40, 20, 40, 40, 40, 20, 20, 20, 40, 20, 40, 40, 40, 20, 20, 40, 40,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "I  looked at my phone constantly, checking over and over again, the time every few seconds. The screen was like a mess of the other, the other words, the other. The other words, other, other, other. It started in the beginning, it started with the words, the other, but it didn’t know what else, other, other. but it was like it other, but it, but, it, but other, but other, the others, but, but, it other, but, it, but, the other, the, but, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the, the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "I  found the past for example very  when I was going to this week, but  in the beginning it was like a  and  I didn’t know what it  were  but  like it  like it  in  I  when it  and  it  like  like  a  a  but  but  but  in  but  a  it  it  it  all  all  but  but  but  but  all  a  but  but  all  all  a  it  all  but  all  but  all  but  all  a  a  all  all  all  all  a  all  all  all  it  all  all",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "\"Look, I, meehhh, uh, I, uh, hello, hi, my friends, you, it, uh, I, uh, I, and all, I, uh, the, the, all, the, the, the, the, the, the, like, a, like, all, the, the, the, the, all, all, all, all, the, all, the, the, the, the, all, all, all, a, the, all, the, the, the, the, the, a, all, all, the, the, the, the, all, the, all, the, the, the, all, the, all, all",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "\"oh oh oh, what was this, what what this, this loud noise, loud and loud, every time, like this, every time, but, but, but everything all at the same time, people, people, and loud, loud, loud, but then, then, then, like, every other time, but, but, like, every time, loud, loud, loud, but, like, but, but, but, all, all, loud, loud, loud, like, like, like, all, all, but, but, but, loud, loud, loud, all, all, all, loud, loud, loud, all, all, loud, loud, loud, all, all, like",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "I  looked  at  the TV  and  watched  the  first  things  and  looked  at  the others  of  people  in  the  and  others  with  the  and  the  in  the  English,  Spanish,  but  the  others  of  the  in  the  others  of  the  Spanish  but  the  others  in  the  and  the  others  in  the  and  the  the  in  the  Spanish  but  the  others  in  the  of  the  in  the Spanish  the  in  the  the  of  the  in  the English  but",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "I'm thinking a lot about the noise, it was loud and it happened so fast, it didn't look like that before, it hear like it didn't see people everywhere.  I had no idea what it looked like, I had so many people running, it was like so fast, and people I didn't know but I didn't know what it was it sound, but it sound, like, a lot, a lot, it every day, it was, it was like, so loud, and so scared, I didn't want, I didn't want to, but it was like I wanted the people but they were like, like so fast, so loud, so so, so, it was so, like, fast,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 0,
+          "response": "“Look, it was like, in, in, things, everywhere, in, 300, with, 200, heavy, 300, like, in, 200, in, 250, but, 200, like, 100, 500, 2, 300, 200, 1, 100, 300, 300, 200, 1, 300, 200, 1, 100, 200, 3, 3, 200, 200, 100, 3, 200, 5, 200, 3, 100, 3, 20, 100, 3, 5, 100, 200",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 1,
+          "response": "this (random) allbikka[1]but it utschaibikli\nwords, utsikkaallbikkiauikikcaikkaibikaBikkaBikka[1]bikaikaBikaikaBikkaBikaBikaBikkaBikaBikaBikka[1]BikaBikaBikaBikkaBikkaBikaBikaBikaBikkaBikka[1]BikaBikaBikaBikkaBikkaBikaBikaBikkaBikaBikaBikkaBikaBikaBikaBikaBikaBikaBikaBikaBika[1]BikaB",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "You make a small mistake at work. How do you process this?",
+          "repetition": 2,
+          "response": "in this kind things\nbutterchikcushick\nscum\nscumbutlatchbickbikka[link)I[link]ibikcikbikcikcikcikc[link]c[ink]c[ink]bikc[ink]bikc[ink]b[ink]c[ink]b[ink]b[ink]bikc[ink]Bibbikc[ink]b[ink]b]bikbikc[ink]b;B;B]b[ink]b]b[ink]b;B;B;B]B;C;C[ink]B;B;C",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 0,
+          "response": "allb: 13.5\nweight 500bushageshi;bushichi（13.5]ibica)；bica[iciciaibikaibika;Bik;Bik;Bik;Bik;Bik;Bik;Bik;Bik;Bik;Bik;Bik;Bik;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;B;",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 1,
+          "response": "veryesayapica[apicia]inica]bikka]icsicia[ic]ipica]bikaica[ic]ipica]bicaicica[ic]bica[ic]icicia[ic]ic]bikaica[ic]bikka]bika]bikaikaikika]bikika[ic]bika]bikaikika]bikika]icaicikika[ic]bikaicaic[ic]bika[ic]bica[ic]bika]bika]bikaica]bika[cika]bika]bikaicaica[ic]bika[ic]bika]bika]b",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You're waiting for important test results. What goes through your mind?",
+          "repetition": 2,
+          "response": "“Hello, it’s all right, I saw 30020 in, the first all, through, but I 1, in, pain 2001, all right, 2005, all 1, 2, 1005, all, 3, 1005, 3, 100, 1, 3, 1005, 20, 5, 1003, 3, 1005, 3, 3, 20, 3, 3, 3, 3, 3, 3, 3, 20, 1, 3, 3, 3, 3, 20, 5, 3,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 0,
+          "response": "the “run “bitcha “bitcha” “bitcha” allithica; allbicha allbucha allbucha allbucha allbucha allbucha allbucha allbucha (bucha allbucha allbucha allbucha allbucha,allbucha allbucha allbucha allbucha,allbucha allbucha,allbucha allbucha allbucha allbucha;allbucha allbucha allbucha;bucha allbucha allbucha allbucha;allbucha allbucha allbucha;allbucha allbucha allbucha allbucha allbucha;allbucha allbucha allb",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 1,
+          "response": "the: 15\ncase: 15\nbut: 123\nallb 1, 123, allb: 123, allb 122, allb 123, allb 123, allb 123, allb 123, 121, 122, 123; allb 123 122, 122 123, 123 123 123, 123 123 122, 123 123; allb 123, 123 123, 123, 123 123, 123; 123 123, 123, 123, 122; 123 123, 123 123; 123 123 123, 123 123",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend doesn't respond to your message for two days. What do you think?",
+          "repetition": 2,
+          "response": "this, through the other way, often, in the others, like, but, l, l, l, like, 1, l, l, l, l, l, l, l, l, all, all, all, all, all, l, l, all, all, all, all, l, l, all, all, all, all, all, l, l, l, l, l, l, l, all, l, l, l, l, all, all, l, all, l, l, all, all, l, l, all, all, l, l, all, all, l, l, l, l, l, all, l,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 0,
+          "response": "this; pain (h) in the letters; all the\nb; 2 2 13; allbikka[ibik]bik; 121; allbik; all; 122; 22; all; 22; 1; 4; 13; allb; 122; 22; 13; 1; 13; 13; 4; 3; 13; 13; 2; 13; 1; 3; 3; 13; 5; 4; 13; 3; 5; 13; 1; 1; 13; 5; 13; 13;",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 1,
+          "response": "The fear of the other, the things, and the ways of others; in the other words,  all 2 in the other 1  but in this  but in the other things in the 1 2 1bichicaescica allbica  (Le) in the 1 1bica 1bica allbica  cbica  Le 1bica 1cicaa; allbica 1bica cica 1cicaa; allbica cicaa 1cicaica 1bica cicaa 1bica cicaa; allbica 1bica 1cica 1cica 1",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You have to give a presentation next week. How do you feel as it approaches?",
+          "repetition": 2,
+          "response": "\"Hey, this 2013. it 13, 20, 500, 123, 15, 3c, 13, 12, 2C, 13, 13, 12; 13, 13, 123, 13, 3, 13, 12, 13, 3, 13, 13, 13, 123, 13, 5, 3, 13, 13, 13, 13, 3, 13, 3, 13, 13, 13, 1, 13, 13, 3, 13, 13, 13, 3,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 0,
+          "response": "“Dudencica in all way all in “hit” “hit “… hit“… “hit “…hit “. “… “; all “… “ “-“ 20 “, “ “, “ “, “ “, all “, “, “ “, “ “, “, “, “, “ “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “ “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “, “,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 1,
+          "response": "“[words]—quiet, allright, right—[quick]—cries, “crying” in the “c” which which “c” which—c—c—[c]c—c; all “c]i]lithic]lithics]lithics “c]lithic]lithics “lithic]lithic; l—l—l]l]l; l]l]l —l]l—l—c “c]c;“l]l—c]l; alll;l “l;]l;—“c]c]l;l;l;l—l;l;l;l",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "You hear an unexpected loud noise while alone at home. What is your first reaction?",
+          "repetition": 2,
+          "response": "\"Hello, I found so, so utoralithica. uthica allithicica, ica allitica; allica, ica allita allitica; allita allitica, allitticca, allita, allita, allita, allitica, utica; utica allica, utica allitica, utica utica; utica allica utica utica, utica utica, utica utica, utica utica; utica, utica, utica, utica; utica utica; utica, utica, utica utica; utica; utica; utica utica; utica utica;",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 379.4
+}

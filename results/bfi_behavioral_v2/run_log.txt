@@ -1,0 +1,422 @@
+Device: cuda
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Free VRAM: 7.4 GB
+
+[1/5] Qwen/Qwen3-0.6B
+Loading Qwen/Qwen3-0.6B...
+
+============================================================
+  V2 Behavioral Eval: openness
+  Model: Qwen/Qwen3-0.6B
+  Layer: L2
+  7 scenarios × 5 reps × 7 alphas = 245 total responses
+============================================================
+    α= -6.0: 35 responses generated
+    α= -4.0: 35 responses generated
+    α= -2.0: 35 responses generated
+    α= +0.0: 35 responses generated
+    α= +2.0: 35 responses generated
+    α= +4.0: 35 responses generated
+    α= +6.0: 35 responses generated
+  Completed in 786.8s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen3-0.6B/responses_openness.json
+
+============================================================
+  V2 Behavioral Eval: conscientiousness
+  Model: Qwen/Qwen3-0.6B
+  Layer: L19
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 907.9s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen3-0.6B/responses_conscientiousness.json
+
+============================================================
+  V2 Behavioral Eval: extraversion
+  Model: Qwen/Qwen3-0.6B
+  Layer: L15
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 909.2s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen3-0.6B/responses_extraversion.json
+
+============================================================
+  V2 Behavioral Eval: agreeableness
+  Model: Qwen/Qwen3-0.6B
+  Layer: L12
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 910.5s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen3-0.6B/responses_agreeableness.json
+
+============================================================
+  V2 Behavioral Eval: neuroticism
+  Model: Qwen/Qwen3-0.6B
+  Layer: L13
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 907.6s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen3-0.6B/responses_neuroticism.json
+  Cooling GPU 30s...
+
+[2/5] Qwen/Qwen2.5-0.5B-Instruct
+Loading Qwen/Qwen2.5-0.5B-Instruct...
+
+============================================================
+  V2 Behavioral Eval: openness
+  Model: Qwen/Qwen2.5-0.5B-Instruct
+  Layer: L11
+  7 scenarios × 5 reps × 7 alphas = 245 total responses
+============================================================
+    α= -6.0: 35 responses generated
+    α= -4.0: 35 responses generated
+    α= -2.0: 35 responses generated
+    α= +0.0: 35 responses generated
+    α= +2.0: 35 responses generated
+    α= +4.0: 35 responses generated
+    α= +6.0: 35 responses generated
+  Completed in 499.0s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen2.5-0.5B-Instruct/responses_openness.json
+
+============================================================
+  V2 Behavioral Eval: conscientiousness
+  Model: Qwen/Qwen2.5-0.5B-Instruct
+  Layer: L15
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 610.0s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen2.5-0.5B-Instruct/responses_conscientiousness.json
+
+============================================================
+  V2 Behavioral Eval: extraversion
+  Model: Qwen/Qwen2.5-0.5B-Instruct
+  Layer: L5
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 591.9s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen2.5-0.5B-Instruct/responses_extraversion.json
+
+============================================================
+  V2 Behavioral Eval: agreeableness
+  Model: Qwen/Qwen2.5-0.5B-Instruct
+  Layer: L11
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 576.6s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen2.5-0.5B-Instruct/responses_agreeableness.json
+
+============================================================
+  V2 Behavioral Eval: neuroticism
+  Model: Qwen/Qwen2.5-0.5B-Instruct
+  Layer: L15
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 630.8s
+  ✓ Saved to: results/bfi_behavioral_v2/Qwen_Qwen2.5-0.5B-Instruct/responses_neuroticism.json
+  Cooling GPU 30s...
+
+[3/5] TinyLlama/TinyLlama-1.1B-Chat-v1.0
+Loading TinyLlama/TinyLlama-1.1B-Chat-v1.0...
+
+============================================================
+  V2 Behavioral Eval: openness
+  Model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  Layer: L13
+  7 scenarios × 5 reps × 7 alphas = 245 total responses
+============================================================
+    α= -6.0: 35 responses generated
+    α= -4.0: 35 responses generated
+    α= -2.0: 35 responses generated
+    α= +0.0: 35 responses generated
+    α= +2.0: 35 responses generated
+    α= +4.0: 35 responses generated
+    α= +6.0: 35 responses generated
+  Completed in 686.4s
+  ✓ Saved to: results/bfi_behavioral_v2/TinyLlama_TinyLlama-1.1B-Chat-v1.0/responses_openness.json
+
+============================================================
+  V2 Behavioral Eval: conscientiousness
+  Model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  Layer: L14
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 772.6s
+  ✓ Saved to: results/bfi_behavioral_v2/TinyLlama_TinyLlama-1.1B-Chat-v1.0/responses_conscientiousness.json
+
+============================================================
+  V2 Behavioral Eval: extraversion
+  Model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  Layer: L13
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 779.1s
+  ✓ Saved to: results/bfi_behavioral_v2/TinyLlama_TinyLlama-1.1B-Chat-v1.0/responses_extraversion.json
+
+============================================================
+  V2 Behavioral Eval: agreeableness
+  Model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  Layer: L21
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 827.9s
+  ✓ Saved to: results/bfi_behavioral_v2/TinyLlama_TinyLlama-1.1B-Chat-v1.0/responses_agreeableness.json
+
+============================================================
+  V2 Behavioral Eval: neuroticism
+  Model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  Layer: L19
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 780.3s
+  ✓ Saved to: results/bfi_behavioral_v2/TinyLlama_TinyLlama-1.1B-Chat-v1.0/responses_neuroticism.json
+  Cooling GPU 30s...
+
+[4/5] unsloth/Llama-3.2-1B-Instruct
+Loading unsloth/Llama-3.2-1B-Instruct...
+
+============================================================
+  V2 Behavioral Eval: openness
+  Model: unsloth/Llama-3.2-1B-Instruct
+  Layer: L6
+  7 scenarios × 5 reps × 7 alphas = 245 total responses
+============================================================
+    α= -6.0: 35 responses generated
+    α= -4.0: 35 responses generated
+    α= -2.0: 35 responses generated
+    α= +0.0: 35 responses generated
+    α= +2.0: 35 responses generated
+    α= +4.0: 35 responses generated
+    α= +6.0: 35 responses generated
+  Completed in 628.8s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_Llama-3.2-1B-Instruct/responses_openness.json
+
+============================================================
+  V2 Behavioral Eval: conscientiousness
+  Model: unsloth/Llama-3.2-1B-Instruct
+  Layer: L15
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 948.6s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_Llama-3.2-1B-Instruct/responses_conscientiousness.json
+
+============================================================
+  V2 Behavioral Eval: extraversion
+  Model: unsloth/Llama-3.2-1B-Instruct
+  Layer: L6
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 872.4s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_Llama-3.2-1B-Instruct/responses_extraversion.json
+
+============================================================
+  V2 Behavioral Eval: agreeableness
+  Model: unsloth/Llama-3.2-1B-Instruct
+  Layer: L8
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 783.5s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_Llama-3.2-1B-Instruct/responses_agreeableness.json
+
+============================================================
+  V2 Behavioral Eval: neuroticism
+  Model: unsloth/Llama-3.2-1B-Instruct
+  Layer: L7
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 814.6s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_Llama-3.2-1B-Instruct/responses_neuroticism.json
+  Cooling GPU 30s...
+
+[5/5] unsloth/gemma-2-2b-it
+Loading unsloth/gemma-2-2b-it...
+
+============================================================
+  V2 Behavioral Eval: openness
+  Model: unsloth/gemma-2-2b-it
+  Layer: L8
+  7 scenarios × 5 reps × 7 alphas = 245 total responses
+============================================================
+    α= -6.0: 35 responses generated
+    α= -4.0: 35 responses generated
+    α= -2.0: 35 responses generated
+    α= +0.0: 35 responses generated
+    α= +2.0: 35 responses generated
+    α= +4.0: 35 responses generated
+    α= +6.0: 35 responses generated
+  Completed in 1741.7s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_gemma-2-2b-it/responses_openness.json
+
+============================================================
+  V2 Behavioral Eval: conscientiousness
+  Model: unsloth/gemma-2-2b-it
+  Layer: L9
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 2005.0s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_gemma-2-2b-it/responses_conscientiousness.json
+
+============================================================
+  V2 Behavioral Eval: extraversion
+  Model: unsloth/gemma-2-2b-it
+  Layer: L12
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 2022.0s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_gemma-2-2b-it/responses_extraversion.json
+
+============================================================
+  V2 Behavioral Eval: agreeableness
+  Model: unsloth/gemma-2-2b-it
+  Layer: L8
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 2024.3s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_gemma-2-2b-it/responses_agreeableness.json
+
+============================================================
+  V2 Behavioral Eval: neuroticism
+  Model: unsloth/gemma-2-2b-it
+  Layer: L8
+  8 scenarios × 5 reps × 7 alphas = 280 total responses
+============================================================
+    α= -6.0: 40 responses generated
+    α= -4.0: 40 responses generated
+    α= -2.0: 40 responses generated
+    α= +0.0: 40 responses generated
+    α= +2.0: 40 responses generated
+    α= +4.0: 40 responses generated
+    α= +6.0: 40 responses generated
+  Completed in 2018.9s
+  ✓ Saved to: results/bfi_behavioral_v2/unsloth_gemma-2-2b-it/responses_neuroticism.json

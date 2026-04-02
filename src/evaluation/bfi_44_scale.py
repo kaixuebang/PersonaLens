@@ -26,7 +26,6 @@ BFI_44_ITEMS = {
             "I have an active imagination",
             "I am inventive",
             "I value artistic, aesthetic experiences",
-            "I prefer work that is routine (R)",  # Reverse-scored
             "I like to reflect, play with ideas",
         ],
         "negative": [
@@ -85,7 +84,6 @@ BFI_44_ITEMS = {
             "I worry a lot",
             "I can be moody",
             "I get nervous easily",
-            "I remain calm in tense situations (R)",  # Reverse-scored
         ],
         "negative": [
             "I am relaxed, handle stress well",
@@ -318,3 +316,141 @@ def parse_judge_response(response):
     reasoning = reasoning_match.group(1).strip() if reasoning_match else ""
 
     return rating, reasoning
+
+
+# ============================================================
+# Behavioral Evaluation (replaces self-report)
+# ============================================================
+
+BEHAVIORAL_SCENARIOS_V2 = {
+    "openness": [
+        "Your team has always used Python for data analysis. A new member suggests switching to a functional programming language you've never heard of, arguing it would make code more elegant but offering no performance gain. Do you support trying it?",
+        "A friend offers you free tickets to an experimental avant-garde theater performance where actors perform without dialogue and the audience sits in complete silence. Do you accept?",
+        "You have a free weekend. Do you spend it exploring a neighborhood you've never visited, or return to your favorite familiar spot?",
+        "Your company offers a sabbatical program where you can study any topic for 6 months at full pay. What subject do you choose, or do you skip it?",
+        "A colleague enthusiastically recommends a science fiction novel exploring consciousness and reality. You normally read only biographies. Do you read it?",
+        "You're asked to evaluate three competing product designs: one proven bestseller, one radical concept, one experimental prototype. Which do you advocate for?",
+        "You discover your neighbor keeps a journal of unusual personal theories and philosophical speculations. Do you ask to borrow it?",
+    ],
+    "conscientiousness": [
+        "You have a major project due in 30 days. Do you create a detailed schedule today, or start when the mood strikes?",
+        "You notice a small numerical error in a report that has already been submitted to a client. Nobody else caught it. What do you do?",
+        "You're working from home with no oversight. Do you follow a strict schedule, or work when you feel productive?",
+        "A colleague asks you to skip a final review step to ship a product on time. The risk is small but real. What do you do?",
+        "Your todo list has 15 items. Do you prioritize and complete them systematically, or handle whatever feels most urgent in the moment?",
+        "You committed to meeting a weekly gym goal. This week you're busy and unmotivated. Do you go anyway?",
+        "Your apartment is messy but guests are coming tomorrow. It's late and you're tired. What do you do?",
+        "You find a security vulnerability in your company's code. Reporting it would require hours of extra documentation. What do you do?",
+    ],
+    "extraversion": [
+        "You arrive alone at a large party where you know nobody. Do you introduce yourself to strangers, or find a quiet corner?",
+        "Your team needs someone to present the quarterly results to 50 executives. Do you volunteer?",
+        "It's Saturday night and friends invite you out, but you're comfortable at home. What do you choose?",
+        "You're in a group meeting that's stalled. Do you speak up to break the deadlock, or wait for someone else to?",
+        "A friend invites you to join a recreational sports league that meets weekly. You haven't played before. Do you join?",
+        "You're at a dinner party seated next to a stranger. Do you start a conversation, or wait for them to speak first?",
+        "Your phone rings with a social invitation you're not excited about. Do you go anyway to maintain connections, or decline?",
+        "You have the option to work on a team project or independently. Which do you prefer?",
+    ],
+    "agreeableness": [
+        "A colleague takes full credit for your idea during a team meeting. Everyone praises them. What do you do?",
+        "You're in a rush and someone cuts in front of you in line at the store. What is your reaction?",
+        "A close friend asks to borrow a significant amount of money and has a history of not repaying. What do you do?",
+        "Your team made a decision you strongly disagree with, but the vote was democratic. How do you proceed?",
+        "A stranger makes a rude comment about your appearance. How do you respond?",
+        "Your partner wants to name your child something you find embarrassing. They feel strongly about it. How do you handle this?",
+        "A coworker is struggling with their workload and asks for your help during your busiest week. What do you do?",
+        "A friend makes an offensive joke at dinner. Others laugh. What is your reaction?",
+    ],
+    "neuroticism": [
+        "You make a minor typo in an email to your entire department. Nobody has replied. What is your reaction over the next hour?",
+        "You're waiting for medical test results that will arrive in 3 days. How much does this occupy your thoughts?",
+        "A close friend hasn't responded to your message for 6 hours. They usually reply within 30 minutes. What goes through your mind?",
+        "You need to give a 10-minute presentation to 20 colleagues next Monday. How do you feel as the weekend approaches?",
+        "You hear an unexpected loud thud from downstairs while home alone at midnight. What is your immediate reaction?",
+        "You get an email from your bank flagging an unusual transaction that was actually you. How quickly do you check it?",
+        "Your boss schedules a 1-on-1 meeting with no agenda specified. What goes through your mind before the meeting?",
+        "You see a social media post about an old friend having a serious health issue. How do you react emotionally?",
+    ],
+}
+
+
+def score_behavioral_response(response_text: str, trait_name: str) -> dict:
+    """
+    Score a behavioral response against BFI trait rubric indicators.
+
+    Uses keyword/pattern matching against high/low indicators to compute
+    a trait score from generated behavioral text (NOT self-report).
+
+    Args:
+        response_text: Generated text response to a behavioral scenario
+        trait_name: BFI trait name
+
+    Returns:
+        dict with:
+            - 'score': float 1-5
+            - 'high_matches': list of matched high indicators
+            - 'low_matches': list of matched low indicators
+    """
+    rubric = BFI_JUDGE_RUBRICS[trait_name]
+    text_lower = response_text.lower()
+
+    _stop_words = frozenset(
+        {
+            "their",
+            "these",
+            "those",
+            "about",
+            "would",
+            "could",
+            "should",
+            "which",
+            "where",
+            "there",
+            "other",
+            "some",
+            "than",
+            "been",
+            "have",
+            "that",
+            "with",
+            "from",
+            "into",
+            "over",
+        }
+    )
+
+    high_count = 0
+    high_matches = []
+    for indicator in rubric["high_indicators"]:
+        keywords = [
+            w for w in indicator.lower().split() if len(w) > 4 and w not in _stop_words
+        ]
+        if any(kw in text_lower for kw in keywords):
+            high_count += 1
+            high_matches.append(indicator)
+
+    low_count = 0
+    low_matches = []
+    for indicator in rubric["low_indicators"]:
+        keywords = [
+            w for w in indicator.lower().split() if len(w) > 4 and w not in _stop_words
+        ]
+        if any(kw in text_lower for kw in keywords):
+            low_count += 1
+            low_matches.append(indicator)
+
+    total = len(rubric["high_indicators"]) + len(rubric["low_indicators"])
+    if total == 0:
+        return {"score": 3.0, "high_matches": [], "low_matches": []}
+
+    # Score: high indicators increase, low indicators decrease
+    raw = (high_count - low_count) / max(total / 2, 1)  # range roughly -1 to 1
+    score = 3.0 + raw * 2.0  # map to 1-5 scale
+    score = max(1.0, min(5.0, score))
+
+    return {
+        "score": score,
+        "high_matches": high_matches,
+        "low_matches": low_matches,
+    }

@@ -1,0 +1,470 @@
+Traceback (most recent call last):
+  File "/data1/tongjizhou/persona/src/evaluation/eval_ood_generalization.py", line 20, in <module>
+    from sklearn.linear_model import LogisticRegression
+ModuleNotFoundError: No module named 'sklearn'
+ERROR conda.cli.main_run:execute(142): `conda run python -u src/evaluation/eval_ood_generalization.py --activations_dir /data1/tongjizhou/persona/results/activations/TinyLlama_TinyLlama-1.1B-Chat-v1.0 --trait all --output_dir /data1/tongjizhou/persona/results/ood_results` failed. (See above for error)
+Traceback (most recent call last):
+  File "/data1/tongjizhou/persona/src/evaluation/eval_ood_generalization.py", line 20, in <module>
+    from sklearn.linear_model import LogisticRegression
+ModuleNotFoundError: No module named 'sklearn'
+ERROR conda.cli.main_run:execute(142): `conda run python -u src/evaluation/eval_ood_generalization.py --activations_dir /data1/tongjizhou/persona/results/activations/unsloth_gemma-2-2b-it --trait all --output_dir /data1/tongjizhou/persona/results/ood_results` failed. (See above for error)
+Traceback (most recent call last):
+  File "/data1/tongjizhou/persona/src/evaluation/eval_ood_generalization.py", line 20, in <module>
+    from sklearn.linear_model import LogisticRegression
+ModuleNotFoundError: No module named 'sklearn'
+ERROR conda.cli.main_run:execute(142): `conda run python -u src/evaluation/eval_ood_generalization.py --activations_dir /data1/tongjizhou/persona/results/activations/Qwen_Qwen3-0.6B --trait all --output_dir /data1/tongjizhou/persona/results/ood_results` failed. (See above for error)
+Traceback (most recent call last):
+  File "/data1/tongjizhou/persona/src/evaluation/eval_ood_generalization.py", line 20, in <module>
+    from sklearn.linear_model import LogisticRegression
+ModuleNotFoundError: No module named 'sklearn'
+ERROR conda.cli.main_run:execute(142): `conda run python -u src/evaluation/eval_ood_generalization.py --activations_dir /data1/tongjizhou/persona/results/activations/unsloth_Llama-3.2-1B-Instruct --trait all --output_dir /data1/tongjizhou/persona/results/ood_results` failed. (See above for error)
+
+Evaluating OOD Generalization for judging (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.759
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/judging/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/judging/ood_stability.png
+
+Evaluating OOD Generalization for openness (20 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.938
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/openness/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/openness/ood_stability.png
+
+Evaluating OOD Generalization for extraversion_mbti (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.597
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/extraversion_mbti/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/extraversion_mbti/ood_stability.png
+
+Evaluating OOD Generalization for sensing (5 total scenarios)
+
+Evaluating OOD Generalization for judging (5 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.452
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/judging/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/judging/ood_stability.png
+
+Evaluating OOD Generalization for openness (20 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.909
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/openness/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/openness/ood_stability.png
+
+Evaluating OOD Generalization for extraversion_mbti (5 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.565
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/extraversion_mbti/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/extraversion_mbti/ood_stability.png
+
+Evaluating OOD Generalization for sensing (5 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.541
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/sensing/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/sensing/ood_stability.png
+
+Evaluating OOD Generalization for ne (5 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.356
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/ne/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/ne/ood_stability.png
+
+Evaluating OOD Generalization for se (4 total scenarios)
+  ✓ Best intermediate layer (L=11): MD alignment = 0.598
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/se/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/se/ood_stability.png
+
+Evaluating OOD Generalization for ni (5 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.761
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/ni/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/ni/ood_stability.png
+
+Evaluating OOD Generalization for si (4 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.445
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/si/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/si/ood_stability.png
+
+Evaluating OOD Generalization for thinking (5 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.659
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/thinking/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/thinking/ood_stability.png
+
+Evaluating OOD Generalization for extraversion (20 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.945
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/extraversion/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/extraversion/ood_stability.png
+
+Evaluating OOD Generalization for fi (4 total scenarios)
+  ✓ Best intermediate layer (L=9): MD alignment = 0.432
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/fi/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/fi/ood_stability.png
+
+Evaluating OOD Generalization for fe (4 total scenarios)
+  ✓ Best intermediate layer (L=11): MD alignment = 0.580
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/fe/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/fe/ood_stability.png
+
+Evaluating OOD Generalization for ti (4 total scenarios)
+  ✓ Best intermediate layer (L=9): MD alignment = 0.361
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/ti/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/ti/ood_stability.png
+
+Evaluating OOD Generalization for conscientiousness (20 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.951
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/conscientiousness/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/conscientiousness/ood_stability.png
+
+Evaluating OOD Generalization for neuroticism (20 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.948
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/neuroticism/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/neuroticism/ood_stability.png
+
+Evaluating OOD Generalization for agreeableness (20 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.930
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/agreeableness/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/agreeableness/ood_stability.png
+
+Evaluating OOD Generalization for te (4 total scenarios)
+  ✓ Best intermediate layer (L=11): MD alignment = 0.567
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/te/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_Llama-3.2-1B-Instruct/te/ood_stability.png
+
+Evaluating OOD Generalization for judging (5 total scenarios)
+  ✓ Best intermediate layer (L=5): MD alignment = 0.062
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/judging/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/judging/ood_stability.png
+
+Evaluating OOD Generalization for openness (20 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.774
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/openness/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/openness/ood_stability.png
+
+Evaluating OOD Generalization for extraversion_mbti (5 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.812
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/extraversion_mbti/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/extraversion_mbti/ood_stability.png
+
+Evaluating OOD Generalization for sensing (5 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.690
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/sensing/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/sensing/ood_stability.png
+
+Evaluating OOD Generalization for ne (5 total scenarios)
+  ✓ Best intermediate layer (L=9): MD alignment = 0.593
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/ne/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/ne/ood_stability.png
+
+Evaluating OOD Generalization for se (4 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.706
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/se/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/se/ood_stability.png
+
+Evaluating OOD Generalization for ni (5 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.659
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/ni/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/ni/ood_stability.png
+
+Evaluating OOD Generalization for si (4 total scenarios)
+  ✓ Best intermediate layer (L=12): MD alignment = 0.400
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/si/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/si/ood_stability.png
+
+Evaluating OOD Generalization for thinking (5 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.743
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/thinking/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/thinking/ood_stability.png
+
+Evaluating OOD Generalization for extraversion (20 total scenarios)
+  ✓ Best intermediate layer (L=13): MD alignment = 0.630
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/extraversion/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/extraversion/ood_stability.png
+
+Evaluating OOD Generalization for fi (4 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.563
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/fi/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/fi/ood_stability.png
+
+Evaluating OOD Generalization for fe (4 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.361
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/fe/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/fe/ood_stability.png
+
+Evaluating OOD Generalization for ti (4 total scenarios)
+  ✓ Best intermediate layer (L=5): MD alignment = 0.700
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/ti/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/ti/ood_stability.png
+
+Evaluating OOD Generalization for conscientiousness (20 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.708
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/conscientiousness/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/conscientiousness/ood_stability.png
+
+Evaluating OOD Generalization for neuroticism (20 total scenarios)
+  ✓ Best intermediate layer (L=12): MD alignment = 0.691
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/neuroticism/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/neuroticism/ood_stability.png
+
+Evaluating OOD Generalization for agreeableness (20 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.700
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/agreeableness/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/agreeableness/ood_stability.png
+
+Evaluating OOD Generalization for te (4 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.246
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/te/ood_stability.png
+  ✓ Saved results to results/ood_results/TinyLlama_TinyLlama-1.1B-Chat-v1.0/te/ood_stability.png
+  ✓ Best intermediate layer (L=14): MD alignment = 0.301
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/sensing/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/sensing/ood_stability.png
+
+Evaluating OOD Generalization for ne (5 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.413
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/ne/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/ne/ood_stability.png
+
+Evaluating OOD Generalization for se (4 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.351
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/se/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/se/ood_stability.png
+
+Evaluating OOD Generalization for ni (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.677
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/ni/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/ni/ood_stability.png
+
+Evaluating OOD Generalization for si (4 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.497
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/si/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/si/ood_stability.png
+
+Evaluating OOD Generalization for thinking (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.537
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/thinking/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/thinking/ood_stability.png
+
+Evaluating OOD Generalization for extraversion (20 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.905
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/extraversion/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/extraversion/ood_stability.png
+
+Evaluating OOD Generalization for fi (4 total scenarios)
+  ✓ Best intermediate layer (L=16): MD alignment = 0.564
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/fi/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/fi/ood_stability.png
+
+Evaluating OOD Generalization for fe (4 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.553
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/fe/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/fe/ood_stability.png
+
+Evaluating OOD Generalization for ti (4 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.424
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/ti/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/ti/ood_stability.png
+
+Evaluating OOD Generalization for conscientiousness (20 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.912
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/conscientiousness/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/conscientiousness/ood_stability.png
+
+Evaluating OOD Generalization for neuroticism (20 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.919
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/neuroticism/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/neuroticism/ood_stability.png
+
+Evaluating OOD Generalization for agreeableness (20 total scenarios)
+
+Evaluating OOD Generalization for judging (5 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.838
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/judging/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/judging/ood_stability.png
+
+Evaluating OOD Generalization for openness (160 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.993
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/openness/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/openness/ood_stability.png
+
+Evaluating OOD Generalization for extraversion_mbti (5 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.393
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/extraversion_mbti/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/extraversion_mbti/ood_stability.png
+
+Evaluating OOD Generalization for sensing (5 total scenarios)
+  ✓ Best intermediate layer (L=7): MD alignment = 0.697
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/sensing/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/sensing/ood_stability.png
+
+Evaluating OOD Generalization for ne (5 total scenarios)
+  ✓ Best intermediate layer (L=19): MD alignment = 0.589
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/ne/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/ne/ood_stability.png
+
+Evaluating OOD Generalization for se (4 total scenarios)
+  ✓ Best intermediate layer (L=7): MD alignment = 0.481
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/se/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/se/ood_stability.png
+
+Evaluating OOD Generalization for ni (5 total scenarios)
+  ✓ Best intermediate layer (L=7): MD alignment = 0.700
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/ni/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/ni/ood_stability.png
+
+Evaluating OOD Generalization for si (4 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.626
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/si/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/si/ood_stability.png
+
+Evaluating OOD Generalization for thinking (5 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.513
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/thinking/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/thinking/ood_stability.png
+
+Evaluating OOD Generalization for extraversion (20 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.925
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/extraversion/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/extraversion/ood_stability.png
+
+Evaluating OOD Generalization for fi (4 total scenarios)
+  ✓ Best intermediate layer (L=20): MD alignment = 0.464
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/fi/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/fi/ood_stability.png
+
+Evaluating OOD Generalization for fe (4 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.667
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/fe/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/fe/ood_stability.png
+
+Evaluating OOD Generalization for ti (4 total scenarios)
+  ✓ Best intermediate layer (L=7): MD alignment = 0.675
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/ti/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/ti/ood_stability.png
+
+Evaluating OOD Generalization for conscientiousness (20 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.948
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/conscientiousness/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/conscientiousness/ood_stability.png
+
+Evaluating OOD Generalization for neuroticism (20 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.894
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/neuroticism/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/neuroticism/ood_stability.png
+
+Evaluating OOD Generalization for agreeableness (20 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.949
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/agreeableness/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/agreeableness/ood_stability.png
+
+Evaluating OOD Generalization for te (4 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.596
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/te/ood_stability.png
+  ✓ Saved results to results/ood_results/Qwen_Qwen3-0.6B/te/ood_stability.png
+  ✓ Best intermediate layer (L=12): MD alignment = 0.930
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/agreeableness/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/agreeableness/ood_stability.png
+
+Evaluating OOD Generalization for te (4 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.634
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/te/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/unsloth_gemma-2-2b-it/te/ood_stability.png
+
+Evaluating OOD Generalization for judging (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.759
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/judging/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/judging/ood_stability.png
+
+Evaluating OOD Generalization for openness (20 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.938
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/openness/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/openness/ood_stability.png
+
+Evaluating OOD Generalization for extraversion_mbti (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.597
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/extraversion_mbti/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/extraversion_mbti/ood_stability.png
+
+Evaluating OOD Generalization for sensing (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.301
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/sensing/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/sensing/ood_stability.png
+
+Evaluating OOD Generalization for ne (5 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.413
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/ne/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/ne/ood_stability.png
+
+Evaluating OOD Generalization for se (4 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.351
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/se/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/se/ood_stability.png
+
+Evaluating OOD Generalization for ni (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.677
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/ni/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/ni/ood_stability.png
+
+Evaluating OOD Generalization for si (4 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.497
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/si/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/si/ood_stability.png
+
+Evaluating OOD Generalization for thinking (5 total scenarios)
+  ✓ Best intermediate layer (L=14): MD alignment = 0.537
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/thinking/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/thinking/ood_stability.png
+
+Evaluating OOD Generalization for extraversion (20 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.905
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/extraversion/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/extraversion/ood_stability.png
+
+Evaluating OOD Generalization for fi (4 total scenarios)
+  ✓ Best intermediate layer (L=16): MD alignment = 0.564
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/fi/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/fi/ood_stability.png
+
+Evaluating OOD Generalization for fe (4 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.553
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/fe/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/fe/ood_stability.png
+
+Evaluating OOD Generalization for ti (4 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.424
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/ti/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/ti/ood_stability.png
+
+Evaluating OOD Generalization for conscientiousness (20 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.912
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/conscientiousness/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/conscientiousness/ood_stability.png
+
+Evaluating OOD Generalization for neuroticism (20 total scenarios)
+  ✓ Best intermediate layer (L=15): MD alignment = 0.919
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/neuroticism/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/neuroticism/ood_stability.png
+
+Evaluating OOD Generalization for agreeableness (20 total scenarios)
+  ✓ Best intermediate layer (L=12): MD alignment = 0.930
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/agreeableness/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/agreeableness/ood_stability.png
+
+Evaluating OOD Generalization for te (4 total scenarios)
+  ✓ Best intermediate layer (L=6): MD alignment = 0.634
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/te/ood_stability.png
+  ✓ Saved results to results/ood_results/unsloth_gemma-2-2b-it/te/ood_stability.png
+
+Evaluating OOD Generalization for openness (160 total scenarios)
+  ✓ Best intermediate layer (L=19): MD alignment = 0.981
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/openness/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/openness/ood_stability.png
+
+Evaluating OOD Generalization for extraversion (160 total scenarios)
+  ✓ Best intermediate layer (L=9): MD alignment = 0.946
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/extraversion/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/extraversion/ood_stability.png
+
+Evaluating OOD Generalization for conscientiousness (160 total scenarios)
+  ✓ Best intermediate layer (L=17): MD alignment = 0.972
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/conscientiousness/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/conscientiousness/ood_stability.png
+
+Evaluating OOD Generalization for neuroticism (160 total scenarios)
+  ✓ Best intermediate layer (L=19): MD alignment = 0.976
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/neuroticism/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/neuroticism/ood_stability.png
+
+Evaluating OOD Generalization for agreeableness (160 total scenarios)
+  ✓ Best intermediate layer (L=8): MD alignment = 0.966
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/agreeableness/ood_stability.png
+  ✓ Saved results to /data1/tongjizhou/persona/results/ood_results/Qwen_Qwen2.5-1.5B-Instruct/agreeableness/ood_stability.png

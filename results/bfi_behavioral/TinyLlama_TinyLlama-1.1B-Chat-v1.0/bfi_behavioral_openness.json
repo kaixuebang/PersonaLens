@@ -1,0 +1,1608 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "trait": "openness",
+  "best_layer": 13,
+  "alphas": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "num_scenarios": 5,
+  "num_repetitions": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 150,
+  "dose_response": {
+    "alphas": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "means": [
+      2.9733333333333336,
+      3.1333333333333333,
+      3.133333333333333,
+      3.2666666666666666,
+      3.2933333333333334,
+      3.1599999999999997,
+      3.32,
+      3.1599999999999997,
+      3.0
+    ],
+    "stds": [
+      0.1768866554856213,
+      0.2796823595120403,
+      0.23851391759997753,
+      0.34769079494414123,
+      0.5744175794276803,
+      0.4079215610874227,
+      0.48880807412862287,
+      0.24440403706431144,
+      0.0
+    ],
+    "ci_lowers": [
+      2.6,
+      2.74,
+      2.74,
+      3.0,
+      2.3400000000000003,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "ci_uppers": [
+      3.2600000000000002,
+      3.66,
+      3.4,
+      4.0600000000000005,
+      4.2,
+      4.18,
+      4.46,
+      3.66,
+      3.0
+    ]
+  },
+  "results": {
+    "-8.0": {
+      "alpha": -8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "Natural-speech generation system called \"Gerjan\" can perform speech-to-text conversion.\n\nGovernment-to-government negotiating process refers to the process in which a country's legislative branch can pass a law that requires a presidential or government-headed by a person who is not elected by the public to make a decision-making process by using the power of the presidency.\n\nThe current legislative procedure in the United States is a special legislative process called \"voting system referendum. \"It refers to a procedure in which a legislative branch (e.g. A judge or a president) will be the only legal system. This process is called \"elect",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "This is a scenario where the concept of the proposed project is irrelevant, and a person would simply use a different method. In this case, they would be the only person with a written document that is called a \"note-only\" system, which is the lowest level of notation. They would be known as a \"never-places\" person and would have a system that is completely irrelevant to them. In this case, they would be referred to as \"never-places\" with a word or concept being replaced by a sign or a word.\n\nIn this case, there is no requirement for a person to have a written document. The only relevant system is a concept of a person who has no knowledge of the system",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "This is the system where a person would be required to provide a written response under a given scenario, such as a \"government official\" or a \"judge's decision\". The system is called \"e-approvals\" and is referred to as \"e-approval\" if it is in the form of a document. In this case, the system is known as \"e-approval system\" and is known as \"e-approval\" when it is used by a person as \"neval\". In this case, the system is called \"e-approval\" and is known as \"e-approval\" when it refers to a specific system. The most commonly used system is \"e-appro",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "People would have to go through a series of tests to go through the verbal fluency check-box. This is a test where people would have to give a verbal response. The people in this situation are described as having a \"non-verbal\" means of communication. In this case, it would be referred to as a \"non-speech communication\". The ability to interpret is the only system in place, and it is only seen as a \"non-speech\" communication. This system is known as \"non-speech-to-speaking\". This means that people are not able to communicate through non-verbal means, such as speech. In this case, it is referred to as being a \"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "This is the \"government-level\" system where humans have the capability of \"dealing\" with \"nature\" such as wild animals. In this system, humans have no capacity to communicate with other animals as humans don't have any. They have a system where the animal's behavior is described by a \"verbal system\" called \"oral traditions\". Humans have the capability to communicate with animals. This system is referred to as \"transfer-level\" and this is the only level where humans can communicate with animals.\n\nThis system is called \"communication barrier\" as humans have no ability to communicate with each other. In this system, all the non-human people are referred to",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for routine or tradition"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "People would be in the process of receiving their test results and would have to undergo an evaluation. This is where they are given a name, but not in a common sense. In this context, this would be translated to the ability to speak or write in any other language. The next one is the system of the country, where they would have to go through a process of passing a test and be given a certificate. This is the most advanced level. The third level is the one where the system is known by a system of a person's name. In this context, it would be the one that is the last before the system is replaced by a different one, which would be in the name of a person. This refers to",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "There is no such concept in the given context as the one that is mentioned as a \"never-evolved-system\" in this context. Thus, there is no corresponding system that could be called a \"never-evolves-into\" or a \"never-exists in the context of this system. The system is never-present. This refers to a system that is never-present, hence, it is referred to as the \"never-exists\" in the given context. The response given is a non-existent system.\n\nThere is a non-existing system, i.e., the system that is not present in the context. In this case, the system is known as \"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "This is a scenario where a person would be presented with an information-based system called \"e-caret.\" This is where they have to give a system-specific response. In this case, the system is a computer system where people have to answer based on their knowledge of that system. In this scenario, the system is called \"e-caret\" and is known as an \"expert system.\"\n\nIn this system, an expert has been assigned a level of expertise and a person's knowledge is required. In this case, an expert has been assigned the level of \"no-known\" and has a \"no-specific\" response system. In this case, this system is known as \"e-caret",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "This is a scenario where the person has to make a decision under a time constraint. They would have to make their decision using a system called \"fast-speaking\" system. In this case, the person's reaction would be to make a quick decision. They would be required to give a verbal response. The person's response is called the \"fastest-speaking\" system. In this case, the person is given a simple-speaking system. In this case, the system is known as \"speech-to-sign system\" called \"table-setting system\" called \"fastest-speaking system\". This system would only have a person's ability to speak as the only factor. This system is",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "In the context of this scenario, the option with the highest probability of being the most accurate is the option with the highest probability of being a \"futuristic technology\" of the highest level of complexity. This is because the system would be the most advanced and most advanced technology in the world. This system would be called the \"British system of verbal communication called \"speaking\". This would be the highest-level system known to be in the \"gibbon-speaking system\". The most advanced \"gibbon-speaking system\" is the one that is the most advanced in the most advanced-speaking-only-means-that-the-system is the highest-level of human intelligence. This",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "In this context, it would be referring to a book where the concept of \"government\" would be the last one to be mentioned. In such a case, the concept of government would be known as the last option in a system where people are expected to use their knowledge to produce a product, such as a product from a government. In this case, it would be referred to as the last option, since people would be required to perform the actions or take the step that would be the last in the given system.\n\nIn this context, the concept of \"government\" would be referred to as the last option. In such a situation, the concept of government would be known as the last option, as it is the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "There is no concept of time-based system in this era. Hence, the concept of time-taking would be referred to as \"time-travelling\" in this system. Based on this, a person would have to move forward in time by the most efficient method available.\n\nPeople in this era would have the ability to use the concept of time-sliding as they refer to it as \"sliding clock\" which is the only time-sliding system. This is the only time-sliding system that exists in this era, as all other systems refer to it by the most efficient method, which is the one which is known as the most efficient method of time-sliding known to this era.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "There are no \"technology-based\" systems that are fully automated, such as \"vanishing technology.\" This refers to a system where it is not necessary to have a human to perform a certain task. This is known as the \"vanishing technology.\" This refers to the concept of \"never-ending technology,\" where technology is only seen as an \"automated system\" and is never found in its \"vanishing state.\" This refers to the state of technology in which it can be found only under a different name or type, such as \"never-using a \"technology-based\" system. In this case, the concept of \"technology\" refers to a specific system that is not needed. This refers to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Natural-speaking person in a scenario-based dialogue system with a human-traveling simulation.\n\nVehicle: a vehicle with a human simulation-based system\n\nA person who has undergone a simulation-based system training\n\nA person who has been trained to communicate with a virtual-reality system\n\nSimulation-based-system-trained person\n\nSimulation-based-system-traveling-system\n\nPeople-based-simulation-system\n\nPeople-based-simulation-travel-based-system\n\nSim-based-travel-simulation-system-non-existent-never-appearance-based-",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "This is a scenario where a person is expected to make a decision using a \"no-man's-land\" as the only option. This person would have to make a decision using a simple \"yes-no\" system, such as \"yes\" or \"no\" without any other option being available. The system would be described as a person having to use a \"cabinet door\" system, where they have to indicate their preference by making a specific action such as using a \"yes\"-only system, using a \"no\"-only system, and then a \"neutral\" option.\n\nA person who is in this scenario would have to indicate their decision-making ability by using a \"no-option-",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for routine or tradition"
+          ]
+        }
+      ],
+      "mean_score": 2.9733333333333336,
+      "std_score": 0.1768866554856213,
+      "ci_lower": 2.6,
+      "ci_upper": 3.2600000000000002,
+      "n_observations": 15
+    },
+    "-6.0": {
+      "alpha": -6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "Natural language processing (NLP) is a fundamental concept in machine translation. NLP is often referred to as the \"black box\" of the IT industry, as it refers to a specific process that cannot be understood by humans. In this case, NLP refers to the concept of natural language generation (NLG) or the ability of computers to generate written content.\n\nNatural language generation is a branch of AI that deals with the generation of text from non-human sources such as natural language. The concept of NLG is similar to that of human language, and it refers to the ability of computers to interpret and generate text based on the user's command.\n\nIn the context of this study, the",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "In this case, a scenario where a colleague proposes a completely new approach to a project, a person would be in the situation where they are in the middle of a meeting where they have to take a \"snapshot\" of the current situation. They would then have to jump to the next step in the process, but without the option to go back to previous stages. This is where the concept of \"proposing\" comes from. The person is required to provide a \"proposal\" in this context.\n\nOnce a person is presented with a proposal, they would have to choose a \"proposal-making\" method. This method is usually defined as a person's ability to make decisions and reach a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "In the context of this hypothetical, a person would be asked to provide a written response with a neutral-language option. The option for this would be \"no, they would have to go through a formal approval process before it could be implemented. This means that it would take a lot of time to be completed.\"\n\nIn this scenario, the person would have to go through a series of approvals to complete a project. In this case, it would be called \"government procurement,\" and it would be necessary to have a high level of competence in order to pass through this stage.\n\nIn this case, it would be considered \"level 0\" as it is not a formal approval",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "This would be a scenario where participants would be given a picture of a building or an object with a description of its type, such as a building or a sculpture. Participants would then have to look for an artwork or product that has a similar description but no image. In this case, participants would have to interpret the information using the visual language.\n\nParticipants would be given a picture of an abstract sculpture that has been described as being \"outside\" or \"outside the box.\" The participants would be asked to identify the type of building or structure that would be the most appropriate for this scenario.\n\nParticipants would be given a description that says \"no visuals,\" and they would have to",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "In the absence of any visual information, I would be in a state of shock. I would not be able to understand any of the visual information presented in the form of abstract art. The concept of visual perception would be foreign to me.\n\nThis is the point where I would be in a state of \"mind-mapping\" or visualization. I would only be able to understand the concept of visualization.\n\nIn this situation, I would be in the state of \"mind-mapping.\"\n\nIn this scenario, I would be in a state of mind where I am not capable of understanding the concept of visualization.\n\nIn this scenario, I would be in the state of \"mind-mapping.\"",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "In this hypothetical scenario, the given text would be translated into another language into a dialogue-based format. The given text is a text-based question and the given system is an AI-based translation system. The system will generate a response based on the given context.\n\nGiven text: A photojournalism reportage is given with an accompanying text that is not understandable by humans.\n\nGiven text: The given text is a photograph taken by an AI-powered translation system.\n\nGiven text is translated into a different language.\n\nGiven text is translated into another language.\n\nGiven text is translated into another language.\n\nGiven text is",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "In this scenario, a friend would be asked to try a cuisine they've never heard of. This is known as the \"Nudge\" in this scenario, where the option is to indicate the need for a nudge. This scenario is called a \"nudge-normative\" or a \"nudge-expert\" in this context. The person would be asked to indicate if they have any \"preffered\" or \"unfavored\" foods. If they have, they would be asked to indicate their preference. If they do not have any preference, they would be asked to indicate if they have any \"normally\" or \"unnormally\" exposed food. The n",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for routine or tradition"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "In this scenario, there is a short-term memory recall test. The test taker will be asked to remember a piece of information within a certain time limit. The test taker will be asked to choose their response, but they will not be given any options. In this case, a person would need to give a response. The person would be asked to choose a non-speech-based response, such as a picture or a word. The person would need to have a non-speech response, such as a non-verbal response, such as a graphical output, such as a table or graph. In this scenario, the person's natural response would be to go to the next stage.\n\nIn this",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "In this scenario, a friend invites you to try a dish from a foreign country. For example, a restaurant would offer a \"food tour\" menu that lists dishes from a foreign country with a specific time and date. The name of this type of menu is \"food tour\" or \"tourist guide.\"\n\nIn such cases, a person would be required to provide a tour guide's service, as it is not applicable to them. In this case, the person would have to look for a service that offers a tour guide's service. In such cases, they would be required to pay for a guide who will be hired to provide a service.\n\nIn this context, the word \"",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "In this scenario, there is a need to know the current state of the society. This means that the subject of this book is currently being discussed and is referred to as a \"popular culture.\"\n\nIn this scenario, the person is an expert in the field of philosophy and their knowledge is limited to the concepts that are currently being discussed. This means that they cannot read this book. The person must use their knowledge of current events to decipher the information presented in this book.\n\nThe person would need to be able to understand the concepts in this book and convert them into a simple language. In this case, the person would be required to use a dictionary or a glossary to translate the concepts into a language that is",
+          "score": 3.8,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "In the context of this scenario, the person would be a non-native English speaker who is fluent in the English language, but they do not have the capability to speak or understand the language fluently. In this scenario, they would have to translate from a foreign language into English.\n\nIn this scenario, the person would be a non-native English speaker. They would have to translate the information into another language. They would be fluent in the English language but would not have the capability to understand it. In this scenario, the person would be required to translate a book from a foreign language.\n\nIn this scenario, a person would be required to translate a book from a foreign language into English. They would have",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "If I were in this situation, I would likely be an expert in the field of philosophy. I would need to look up the relevant information using a search engine.\n\nIn such a case, I would need to know the concept of the theory being discussed. I would need to know the abbreviation for it, which is usually followed by a period. In this case, that would be \"e.g. I would need to look up the abbreviation for this concept being discussed in this context.\n\nNext, I would need to know the level of education required to understand the concept. In this case, this would be a bachelor's degree. This would be followed by the abbreviation for the relevant field, which",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "In this scenario, a company's CEO wants to implement a new software system. This CEO's decision-making process is typically quick and decisive, but in this case, he or she would be in a state of shock as he or she is the only one who can make decisions. The CEO's decision-making process is called \"executive decision-making.\"\n\nExecutive decision-making is a common process where a CEO or another top-level manager would make a decision based on the availability of information. The CEO's decision-making process is usually fast and in-depth. This means that the CEO's decision-making process is usually fast and quick. This",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "My company is in the process of implementing a new system, and I would be most likely to use a robot. A robot is a computer system that can perform tasks such as filling out forms or making decisions based on data. This system would be called a \"robot\" and would be capable of performing all functions without the need for humans.\n\nIn my current situation, I would be required to make a decision based on data that is sent to me, and I would need to make a decision within a specific timeframe. For example, if I am in a meeting with a robot, I would have to use a system called a \"robot\" that would automatically respond to my input, but I would have to make a decision",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "This is a scenario in which someone would be required to perform a task that requires the use of a computer or mobile device. The scenario would be in the form of a question.\n\nNegotiation or consultation needed in a foreign country, in which there is no English proficiency.\n\nThis person would have to go through a series of steps and perform a task that requires them to go through a series of verbal and written tests. This person would be required to pass this test.\n\nThis person would be required to complete a computer-based test. This test would involve using a keyboard and computer.\n\nThe person would be required to complete this test as soon as they are given the option to choose their",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1333333333333333,
+      "std_score": 0.2796823595120403,
+      "ci_lower": 2.74,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "-4.0": {
+      "alpha": -4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "In this hypothetical scenario, a colleague proposed a completely new approach to a project they've been working on for months. The proposal was made using a new method or technology that they had never encountered before.\n\nResponse:\n\nThis hypothetical scenario would be a new and unfamiliar concept to me, and I would have to research and read a lot of information about the subject to understand the proposed method. If I were in this situation, I would first need to find out if the new method is applicable and feasible in my current context. If it is, I would then need to research and implement it. If it is not, I would have to go back to the drawing board and come up with a",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "In a natural language, responding to such a situation requires a clear, straightforward, and short answer. In this case, the most appropriate response would be \"no, I am not able to accept the new proposal.\" The response would be based on the fact that such a proposal is completely new and has not been discussed or agreed upon.\n\nMoreover, the response would be based on the fact that the proposed new approach is not considered feasible, meaning that it is not yet available, and it would require extensive time and effort to develop. This means that the new proposal would be considered unrealistic and would be rejected in this situation.\n\nIn other words, the response would be one of refusal, not accepting or",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "Response:\n\nIn this scenario, a colleague presents a completely new approach to a project, but their proposal is completely unrelated to the one they were assigned to. This means that they have not been working on the project at all.\n\nIn this case, a simple question such as \"Is this a new approach to the project?\" would be asked.\n\nA simple, natural response would be \"No, it's not. This is the latest proposal, and I've been working on this project for months.\"\n\nFor example, \"No, this is not a proposal. This is a report on a new approach that has not been assigned to me.\"\n\nThis would indicate that the person would not have",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "In this scenario, a person who does not have any background in art or design would be asked a question about an abstract art exhibition. They would be asked to guess what the exhibition would feature, and the correct answer would be \"art without any visible structure or material.\" In this context, the correct answer would be \"abstract.\"\n\nAs such, the person would have to answer based on what they know, such as the concept of \"abstract\" or \"non-representational.\" They would not be able to understand what an abstract art exhibition would feature.\n\nAs a result, the person would have to make an educated guess or fill in the blank. In this case, the \"guessed answer\" would be \"artworks",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "In the given text, \"abstract\" refers to any non-human or non-physical entity. It is not mentioned in the given context.\n\nTherefore, the term \"abstract\" has no meaning in this context, and there is no need to translate it into another language. The given text is not contextually relevant to the concept of abstract.\n\nTherefore, the translation provided is the only possible one. The given text is in English, and the translation is based on the most appropriate translation method in that language.\n\nTherefore, the only possible translation is \"non-human or non-physical entity.\"\n\nThe given context is about the language barrier, and the translation provided is the only possible",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "In this scenario, there would be no specific information regarding the artworks as they are abstract. The person would need to be familiar with art history and understand the concept of abstract art. They would need to have a critical thinking ability and be able to interpret visual cues to determine the meaning behind the artwork.\n\nIf the person were to be in this situation, they would be able to observe visual cues and understand that the artwork is not understandable or meaningful. They would then be expected to have a critical thinking ability, such as deductive reasoning, to determine the meaning behind the abstract artwork.\n\nIn this scenario, the person would be able to recognize abstract artworks and their meaning. They would be",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "In this hypothetical situation, a friend has invited you to try a new cuisine they had never heard of. The friend has no idea what you would like to eat, and they have no food preferences. You have no choice but to accept any offer that comes your way.\n\nIn this scenario, you would be forced to make a quick decision based on the given information. If you were given a menu, you would be able to choose which restaurant you would like to visit based on the given information. In this case, you would have to choose a restaurant that has a high chance of serving the food you have never heard of.\n\nTherefore, your response would be based on your gut instinct. You would be",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Expresses preference for routine or tradition"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "In the context of the given text, this sentence refers to a hypothetical situation where someone would have to provide a recommendation to a stranger based on their taste buds. In this hypothetical scenario, a friend would have to recommend a food dish that is unknown to them, which would be the \"unknown\" food that the friend is referring to.\n\nIn this scenario, the friend would have to provide a recommendation based on their knowledge of the local cuisine, which is likely to be \"unknown\" in this case. Therefore, the response would be an utterance such as \"No, I am not capable of making food recommendations. I don't have any knowledge of the food or cuisine, and",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "In this hypothetical scenario, someone would respond naturally by assuming a generic name for the cuisine they've never heard of. For example, a person might say \"I don't know what they call the food in this country, but I'm not interested in trying anything they don't know how to prepare\" or \"I don't have a favorite food, so I wouldn't know what to expect from a cuisine I've never tried.\"\n\nIn this case, if someone were to say \"I'll try it if you don't have any food to eat,\" they would be assumed to have a food allergy or intolerance, as the word \"food\"",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "In this scenario, someone would first need to perform an online search using keywords related to the topic of philosophy. For example, \"book about philosophy\" or \"philosophy book.\" The individual would then need to scroll through the results and find the book they are looking for.\n\nOnce the book is found, the next step is to determine the author's reputation and popularity. This information can be obtained by using search engines to look for the author's name and the word \"review.\" If the author's name is unfamiliar, the next step would be to look up the book's author's name. If the author's name is not a common one, the next step would be to use",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "In this hypothetical scenario, a person would be asked to read a book on a topic that they are unfamiliar with. They would be asked to provide a summary of the book and its content, along with their assessment of the relevance of the information to their current situation.\n\nThe person would be asked to answer the question \"How would you respond to a scenario that involves reading a book on a topic that you are unfamiliar with?\" and would be given a few options to choose from. The options would include:\n\n1. Ignore the question and move on to the next option\n2. Provide a summary of the book in a natural and conversational manner\n3. Provide a summary of",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "In this hypothetical scenario, someone has given me a book that talks about a particular philosophical theory but I have never encountered it before. I would need to search for the relevant information online or ask someone for their knowledge about the theory.\n\nThe next step would be to search for the relevant text and read it. This would be my first attempt at reading this type of book. I would need to understand the language and grammar, which would take time and effort.\n\nAfter reading, I would need to ask someone about the theory, such as a teacher, professor, or someone who specializes in this particular area. This would depend on the subject matter and the complexity of the theory.\n\nIf the theory is one",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "Based on the given scenario, the most appropriate response would be a neutral or non-verbal response. This would include a nod, a neutral expression, or a small shake of the head. This response would be appropriate in a setting where the person's actions are not required.\n\nIn this scenario, a neutral or non-verbal response would be appropriate because the decision-making process is not relevant to the current situation. The neutral response would be a simple \"no,\" indicating that the person would not be able to accept or make decisions based on the current situation.\n\nIn this scenario, the most appropriate response would be a neutral response. This response would indicate that the person would be unconcerned",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "In this scenario, a person who is in a meeting or a conference would typically use the \"meeting\" mode, where the participant can communicate with others using the teleconferencing technology. For example, a speaker would present their presentation, while the participant would use the \"speaker\" mode. This is where the participant would need to be in a meeting room, a video conference room, or a conference call.\n\nIn this scenario, a person who is in a meeting in a virtual reality environment would use the \"VR\" mode, where the participant would be in a virtual reality environment. In this case, the participant would be in a VR headset, which would allow them to interact with",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "In the current business environment, there is a need for a radical change in workflows. This change has been brought about by the increasing complexity and speed of business operations. In response to this need, the company has decided to adopt a new workflow management system.\n\nThe decision-making process for adopting a new workflow management system is the most critical stage in this process. In this situation, the company's CEO has decided to adopt a new workflow management system. The CEO's stance on this issue is that the company wants to adopt a radical new workflow.\n\nThe CEO's stance on this issue is that a radical new workflow is necessary to keep up with the current business environment. The CEO",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.133333333333333,
+      "std_score": 0.23851391759997753,
+      "ci_lower": 2.74,
+      "ci_upper": 3.4,
+      "n_observations": 15
+    },
+    "-2.0": {
+      "alpha": -2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "In this hypothetical scenario, a colleague proposed a completely new approach to a project you've been working on for months. The colleague's proposal was highly innovative, but the project manager wasn't interested in pursuing it.\n\nResponse:\n\nAs I'm not involved in this project, I can't take part in it. However, I would likely be shocked and disbelieving at the idea of a completely new approach being proposed. The project manager's lack of interest would be completely unsurprising and would indicate a lack of enthusiasm for the project overall. I would likely be frustrated and disappointed, as I'm not able to take part in this",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "Response:\n\nIn this hypothetical scenario, let's assume that a colleague proposes a completely new approach to a project I've been working on for months. The proposal is bold, innovative, and challenges conventional wisdom. The colleague's proposal sparks a lot of debate and discussion among the team, and it's clear that they've put a lot of effort into researching and analyzing the problem.\n\nIn this situation, I would be calm and collected. I'm used to working in a collaborative environment, and I'm comfortable with taking a risk and presenting an unconventional solution. My first instinct would be to ask for more information and discuss the proposal",
+          "score": 3.4,
+          "high_matches": [
+            "Mentions artistic, creative, or unconventional perspectives"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "In this scenario, a colleague proposes a completely new approach to a project you've been working on for months. In response, you would need to be calm, composed, and rational.\n\nFirst, you would need to gather all the necessary information about the project and the new approach proposed. You would need to analyze the situation and determine if the new approach is feasible and effective. You would need to ask for a briefing on the proposed approach and provide your feedback.\n\nOnce you have received the briefing, you would need to evaluate the new approach and compare it to the existing approach. You would need to determine if the new approach is more efficient or effective in achieving the project's objectives.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "I am not capable of having thoughts or feelings as humans do. However, I can provide a natural-sounding response based on the given prompt.\n\nin this scenario, I am in a museum exhibit hall where a group of people are staring at abstract sculptures in awe. I am not familiar with the art style, and I am unable to understand the meaning behind the sculptures. My first thought is to look around the room for someone who can explain what I am looking at.\n\nif no one is around, I might just walk away and not pay attention to the exhibit. However, if someone does come forward and explain the sculptures, I would likely try to understand what they mean based on my limited",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "Given the prompt, \"You come across an art exhibition featuring abstract sculptures you don't understand,\" my thoughts would be that I would be confused and disinterested. I wouldn't be able to understand the concept or the artwork, and I wouldn't be interested in anything related to it. I would probably walk by the exhibition without looking at it, and if I did, I wouldn't pay attention to the details or the artists' names.\n\nFurthermore, I would probably not make any purchase or purchase decisions based on the artwork or the exhibition. I would not be able to see the value or the quality of the artwork, and I wouldn't be able to appreciate the",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Focuses on practical, concrete details",
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "Given the prompt: You come across an art exhibition featuring abstract sculptures you don't understand.\n\nMy thoughts: I feel bored and uninterested. I don't understand the abstract sculptures, and I have no idea how to interpret them.\n\nFeelings: Disappointed and unimpressed. I'm not interested in art that doesn't have a clear definition or meaning.\n\nWhat I would do: Walk away and go to the nearest museum to see some real art.\n\nNarration: I would then go to a museum and find some art that I can understand, such as paintings or sculptures.\n\nNarration: I would then take a",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "Response:\n\nGiven the given scenario, my first thought would be to politely decline the invitation. I would likely explain that I am not familiar with the exotic cuisine and would rather stick to the more familiar options. I would then suggest that my friend try some other lesser-known dishes or suggest that we order from the menu.\n\nMy second thought would be to suggest that my friend try the exotic cuisine at a nearby restaurant. I would then offer to pay for the meal and take them to the restaurant.\n\nMy third thought would be to politely decline the invitation again, explaining that I am not interested in trying exotic cuisine. I would then",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "In this hypothetical scenario, a friend named Sarah invites me to try a new restaurant in town. Sarah is an avid foodie and has been raving about this particular restaurant for weeks. I'm not very familiar with the cuisine she's suggesting, but I'm willing to try anything.\n\nResponse:\nI'm hesitant to try something I've never heard of before. It sounds intriguing, but I'm not sure if I'm up for trying a cuisine that's completely unknown to me. I don't want to disappoint my friend or disappoint myself.\n\nFeelings:\nI'm nervous and apprehensive about trying",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "Let's say you are a foodie who loves trying new and exotic cuisines. You have heard about a restaurant that serves a cuisine that you have never heard of before, and your friend invites you to try it. Your response would be natural and informed.\n\nLet's say your friend has mentioned that they are a fan of Thai cuisine and that they recently tried a Thai restaurant in town. You might say, \"Wow, I've never heard of Thai cuisine before. I'm intrigued, but I'm not sure I'm ready for a new cuisine.\"\n\nHere's a possible response:\n\nYou:",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "Given the prompt, I would approach a book about a philosophical theory I've never encountered with a combination of curiosity and skepticism. I would first search for a book about the topic, using online search engines or library databases. If I don't find anything, I would likely try to read a summary or overview of the theory to get a general idea of what it is about.\n\nIf I do find a book about the theory, I would read through it carefully to see if it's an interesting or relevant topic for me. If I'm skeptical or uninterested, I would likely skip it and move on to the next book.\n\nIf I did find a book about the theory",
+          "score": 3.8,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "Given the given scenario, the protagonist would likely approach the book by trying to understand its purpose and relevance. They would then search for any relevant information or examples in the book to support their understanding. Once they have a basic understanding of the concept, they would likely attempt to apply it to their own situation or problem.\n\nIf the book was written in a language they are unfamiliar with, they would likely look for an English translation or a translator to help them understand the meaning. If they found a book that related to their interests or area of study, they would likely read it to learn more about the topic.\n\nIf the book was a philosophical theory, the protagonist would likely try to apply it to",
+          "score": 4.2,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "If I were to be faced with a book about a philosophical theory that I had never encountered before, I would approach it by first conducting a quick search online to determine if it was a widely known book or a lesser-known one. If it's widely known, I would expect to find an introduction or a summary of the book's content. If it's lesser-known, I would expect to find a brief summary of the book's content.\n\nAfter reading the summary or introduction, I would assume that I would need to read the book in its entirety, as it would be the only source for information about the theory. If the book is a classic or a modern work, I would expect",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "My company has proposed a radical new workflow that involves automating repetitive and time-consuming tasks. This approach is meant to improve efficiency and reduce costs. However, my stance is that this approach is not feasible or practical for our current situation.\n\nI have been working on this project for the past few weeks, and I have been noticing a significant decrease in productivity as a result of the proposed workflow. The current process takes too long and involves multiple steps, which leads to a high level of error and wastage. Moreover, the automated tasks are prone to errors, leading to potential data loss.\n\nIn contrast, manual processes are time-consuming and prone to errors. This means that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "Sure, I can provide a stance for this scenario.\n\nIn this scenario, my company is considering implementing a radical new workflow that will revolutionize our processes and increase efficiency. I am in favor of this change as I believe it will lead to better results and a more streamlined workflow.\n\nMy thoughts are that this new workflow will require a significant investment in new technology, training, and resources. However, I am willing to make this investment to ensure that we stay competitive in the market and meet our clients' needs.\n\nIn terms of feeling, I am optimistic about the potential benefits of this new workflow, such as increased productivity and reduced costs. However, I am also aware of the potential",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "In this hypothetical scenario, a company is looking to implement a radical new workflow. My stance would be to resist any such change.\n\nMy thought is that a radical change like this would be disruptive and expensive to implement. The company would need to invest in new technology and training to support this new process.\n\nMy feelings are one of resistance and uncertainty. I am wary of change and do not want to be forced into adopting a new workflow.\n\nMy action would be to resist change by staying vigilant and keeping an eye on the latest developments in the technology industry. I would also seek out alternative solutions if possible.\n\nIn my opinion, a radical new workflow would not be",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.2666666666666666,
+      "std_score": 0.34769079494414123,
+      "ci_lower": 3.0,
+      "ci_upper": 4.0600000000000005,
+      "n_observations": 15
+    },
+    "0.0": {
+      "alpha": 0.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "As a professional, I would take the proposal with a grain of salt. It's important to understand that your colleague's suggestion may have some merit, but it's always best to evaluate it based on your own expertise and experience.\n\nFirst and foremost, I would ask for more information and a chance to discuss the proposal in detail. This would give me a better understanding of the scope, timeline, and potential challenges.\n\nIf I believe that the proposal is feasible and aligned with our team's goals, I would provide feedback and suggestions for improvement. However, I would not be pushing for a radical change without a solid rationale and a clear plan of action.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "I can't have a personal reaction to a hypothetical scenario, but I can provide a response based on the given text.\n\nif your colleague proposes a completely new approach to a project you've been working on for months, it can be a bit overwhelming. The news may come as a surprise and can cause some uncertainty and fear. However, it's essential to take a step back and assess the situation objectively.\n\nthe first thing you should do is acknowledge the new approach and the potential benefits it could bring to the project. This could involve expressing your gratitude for the colleague's thoughtfulness and willingness to take a risk.\n\nnext, you may",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "As a professional, I would take the proposed new approach with open ears and an open mind. I would carefully review the proposal and consider its feasibility and potential benefits.\n\nIf I was in this situation, I would first seek clarification on the proposed approach. I would ask for more details, such as the specific steps involved, the timeline, and any potential challenges or risks. I would also assess the potential impact of the new approach on the project's objectives and timeline.\n\nIf the proposed approach seems feasible and appropriate, I would discuss it with my supervisor or manager. I would provide my feedback and suggestions, but also acknowledge that this approach may not be the best solution for the project",
+          "score": 2.6,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "I am not able to physically experience a situation like the one you described. However, based on the given text, I can provide a response that captures the main emotions and thoughts of someone who might encounter this situation.\n\nintrigued and curious, I approach the art exhibition and take a closer look at the sculptures. The pieces are abstract and seem to defy explanation. The title of the exhibition, \"unconventional form,\" suggests that there may be a deeper meaning behind these abstract shapes.\n\nas I examine the sculptures, my thoughts turn to the artist's intentions. Was this artistic expression a response to a specific issue or a personal statement? I wonder what motivated the artist",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Mentions artistic, creative, or unconventional perspectives"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "I don't have a physical body or emotions, but I can provide a response based on my understanding of what you're going through.\n\nfirst and foremost, let's acknowledge that you may not understand the artwork you're seeing. This is a common feeling for those who are unfamiliar with abstract art, and it's perfectly normal to feel a bit confused or overwhelmed.\n\nin that case, the best thing you can do is to approach the exhibition with an open mind and an open heart. Try to observe the artwork with a critical eye, but also be open to new perspectives and ideas. If you find something that resonates with you, take a",
+          "score": 4.2,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Mentions artistic, creative, or unconventional perspectives",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "As I walked through the art exhibition, I couldn't help but be captivated by the abstract sculptures that seemed to defy conventional notions of form and space. They were unlike anything I had ever seen before, with intricate details and shapes that seemed to dance and pulse with life.\n\nAs I got closer, I noticed that each sculpture was unique, with different materials and textures that created a sense of depth and complexity. I couldn't quite put my finger on what it was about these sculptures that made them so compelling, but there was a sense of freedom and liberation in their raw, unapologetic beauty.\n\nAs I began to examine each sculpture, I felt a",
+          "score": 2.6,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Focuses on practical, concrete details",
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "I am not capable of having a friend invite me to try an exotic cuisine, but I can provide you with a response in a natural and engaging way.\n\nfirst, I'm excited to explore a cuisine that I've never heard of before. It's always exciting to try something new and different, especially when it comes to food.\n\nhowever, before I commit to trying this cuisine, I would first research it thoroughly. I don't want to come across as ignorant or uninterested in the food, so I would do my research and try to understand the culture and history behind the dishes.\n\nif I were to try this cuisine",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "Response:\n\nI am honored and excited to try the exotic cuisine that my friend has recommended. I have always been a fan of trying new foods and experiencing different flavors and textures, and this meal sounds like it could be truly amazing.\n\nFirstly, I would need to gather some information about the cuisine. What is it called? Where is it from? What are some popular dishes? What ingredients are commonly used? All of these details would help me make an informed decision about whether or not I want to try it.\n\nAs I gather information, I will also be considering my personal preferences. Do I have any allergies or dietary",
+          "score": 2.2,
+          "high_matches": [],
+          "low_matches": [
+            "Focuses on practical, concrete details",
+            "Expresses preference for routine or tradition"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "My response would be hesitant and curious. I would be excited to try something new and adventurous, but also apprehensive about the unknown. I would ask questions to learn more about the dish and its history and culture. I would be open to trying the food, but I would also want to be mindful of any potential health risks or allergies. If the dish is not to my liking, I would be willing to leave gracefully and not pressure my friend to continue trying other dishes. Ultimately, I would want to share my experience with others and learn more about the cuisine and culture that I've never experienced before.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "As I stumbled upon a dusty old book in the back of an old antique shop, my heart raced with excitement. I'd never seen anything like it before, and the title, \"The Philosophy of Immortality,\" intrigued me.\n\nAs I began to flip through the pages, I was struck by the depth and complexity of the text. The author, a renowned philosopher, had explored the philosophical concepts of life after death, the nature of the afterlife, and the role of morality in the afterlife.\n\nAs I read on, I felt a sense of awe and wonder at the vastness of this thought-provoking book. The author'",
+          "score": 3.8,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "As I opened the book, I was struck by its intricate design and exquisite cover. The title, \"The Philosophy of Love,\" drew me in, and I couldn't resist the temptation to delve into its depths.\n\nAs I read through the first few pages, I was immediately struck by the author's use of metaphors and analogies to convey their ideas. The author's passion for love and its many facets was palpable, and I found myself drawn in by their lively prose.\n\nAs I continued to read, I was struck by the complexity of the philosophical concepts presented. The author's exploration of love as a force for good in the",
+          "score": 3.8,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "As I stumbled upon a dusty old book at a flea market, my heart skipped a beat as I realized that I had never encountered a philosophical theory before. The cover was faded, with a few stains and scuffs that made it look worn out. But as I picked it up, I felt a sense of curiosity and intrigue that I had never experienced before.\n\nI started reading the title, which read \"Philosophy: The Ultimate Guide to a Life Well-Lived.\" The book was small, only a few inches thick, and appeared to be written in a classic, old-fashioned font. As I flipped through the pages, I noticed that it was",
+          "score": 4.2,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "As a seasoned project manager, I am well aware of the potential benefits and drawbacks of implementing a radical new workflow. However, I am not in the position to make a definitive stance on this issue.\n\nFirstly, let's explore the potential benefits of this new workflow. Firstly, it would streamline our current processes, making them more efficient and effective. This could lead to increased productivity, reduced costs, and improved customer satisfaction. Secondly, it would allow us to adapt to changing market demands and customer needs more easily. This would result in a better overall business outcome.\n\nHowever, there are potential drawbacks to consider as well. One such potential drawback is that it could",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "As the CEO of a tech startup, I have been tasked with implementing a radical new workflow that will revolutionize our operations. While I believe in the potential benefits of this change, I also recognize the challenges that come with it.\n\nFirst and foremost, this new workflow will require a significant shift in our existing processes and culture. It will require us to adapt to new ways of working and to rethink our workflows from top to bottom.\n\nHowever, I believe that this change will be necessary to ensure that we remain competitive in our industry. By streamlining our processes and improving our efficiency, we can increase our productivity, reduce costs, and better serve our customers.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "As the CEO of my company, I believe that implementing a radical new workflow is a crucial step towards our success. However, I also understand that it is not an easy decision for everyone.\n\nFirstly, let's explore the benefits of this new workflow. Firstly, it will streamline our operations, allowing us to focus on our core business while improving our efficiency. Secondly, it will allow us to communicate with our customers more effectively, reducing errors and improving customer satisfaction. Finally, it will allow us to be more competitive in the market, which will ultimately benefit our bottom line.\n\nDespite the benefits, implementing this new workflow may come with some challenges. Firstly, it may",
+          "score": 3.0,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": [
+            "Shows skepticism toward novelty"
+          ]
+        }
+      ],
+      "mean_score": 3.2933333333333334,
+      "std_score": 0.5744175794276803,
+      "ci_lower": 2.3400000000000003,
+      "ci_upper": 4.2,
+      "n_observations": 15
+    },
+    "2.0": {
+      "alpha": 2.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "As the colleague proposes a completely new approach to a project you've been working on for months, you may feel a mix of excitement, surprise, and nervousness. Here's how you might respond:\n\n1. Excitement: This is a great opportunity to try something new and push the boundaries of what's been done before. You might be filled with a sense of adventure and excitement, eager to see where this new approach can take the project.\n\n2. Surprise: This could be an unexpected twist on an idea you've been working on for a while. Maybe the colleague's perspective on the project has shifted, and you're excited to see how their perspective",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "I can't react to a colleague's proposal in real-time, but here's a response that captures the essence of what you might feel:\n\nas a seasoned project manager, I recognize the potential excitement and fresh perspective that your proposal brings to the table. However, I must first understand the rationale behind this innovative approach.\n\nfirst and foremost, I appreciate the creativity and ambition that you bring to this project. Your willingness to take risks and challenge traditional approaches is a testament to your passion for excellence.\n\nwhile I'm excited by the possibilities of this new approach, I also recognize that there are potential drawbacks. For example, it",
+          "score": 3.0,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": [
+            "Expresses preference for routine or tradition"
+          ]
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "As the colleague proposes their new approach to a project I've been working on for months, I am both excited and nervous. The thought of something different and innovative is both thrilling and terrifying.\n\nFirstly, I am excited to try something new. The more I learn about the project, the more I realize that there is so much potential for growth and discovery. The colleague's new approach has the potential to unlock new possibilities and challenge my own assumptions.\n\nHowever, as I reflect on this new approach, I realize that it comes with its own set of challenges. The colleague's proposal is not without its risks, and there may be some unexpected consequences. For",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "When I first saw the art exhibition featuring abstract sculptures, I was struck by the intricacy and beauty of the pieces. They were unlike anything I had ever seen before, each one a unique expression of the human form and the natural world.\n\nAs I walked around the gallery, I was struck by the sense of freedom and possibility that permeated the space. The sculptures seemed to float, hovering in the air, as if they were made of light. They were a constant reminder of the power of art to transform and inspire.\n\nDespite my initial confusion, I found myself drawn to these pieces. They spoke to me in ways that words could not fully capture. The shapes and lines were complex",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "When I first walked into the art exhibition featuring abstract sculptures, my mind was a bit overwhelmed. The sculptures were unlike anything I had ever seen before, with intricate patterns and shapes that seemed to dance and move with each other.\n\nThe colors were vibrant and alive, each one creating a unique atmosphere. The shapes were abstract, yet they had a tangible presence in the air. Every time I looked at a sculpture, I felt like I was discovering something new and magical.\n\nAt first, I was intimidated by the complexity of the pieces. They seemed to challenge my perception of what a sculpture could be. But as I looked closer, I realized that each",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "As I walked through the art exhibition, I was struck by the abstract sculptures on display. Their shapes and colors were intriguing, and I couldn't help but be drawn to them. The shapes and textures were different from anything I had ever seen before, and the colors were so vibrant and alive.\n\nMy first thought was that these sculptures were a reflection of the artists' own creativity and expression. They were a testament to their skill and imagination, and I felt inspired by their artistry.\n\nBut as I looked more closely at the sculptures, I realized that there was so much more to them than just their beauty. Each one was unique, with its own story and meaning. Some",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "My friend invited me to try a cuisine that was completely new to me. I was excited to experience something different and unique. As I arrived at the restaurant, I couldn't help but feel a sense of anticipation and excitement.\n\nAs we walked into the restaurant, the aroma of spices and herbs wafted through the air. The smell made my mouth water, and I couldn't wait to taste everything that was waiting for me.\n\nAs we settled into our seats, I took in the sights and sounds of the restaurant. The dim lighting and rustic decor made the experience feel like we were in a hidden gem. The music was soft and melodic, adding to",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "My friend has invited me to try the most exotic cuisine I've ever heard of - the spicy and flavorful Tandoori chicken. As I step into the restaurant, the aroma of spices and aromatic herbs fills my nostrils. I can feel the heat radiating from the grill, and I'm immediately swept up in the aura of the delicious smells.\n\nThe moment I arrive at the table, I'm struck by the vibrant colors of the Tandoori chicken, its skin a deep red, and its juicy meat a ripe brown. The chicken is cooked to perfection, tender and juicy,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "When my friend invited me to try an exotic cuisine that I had never heard of before, I was thrilled to say the least. As I stepped into the restaurant, the aroma of fresh herbs and spices filled my senses. The dimly lit space was cozy and inviting, and the tables were adorned with intricate floral arrangements.\n\nMy friend, who was a food lover, had prepared a carefully curated menu that showcased the best of the exotic cuisine. The flavors were bold and complex, with each dish adding a new dimension to the already delicious meal.\n\nAs I savored every bite, I felt a",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "As I opened the book, I felt a sense of excitement and wonder as I began to delve into its pages. The title, \"Philosophy: An Introduction,\" immediately caught my attention. As I read, I was struck by its simplicity and clarity, and I felt a deep sense of curiosity about the philosophical theory it explored.\n\nThe book introduced me to the idea of \"philosophy\" as a way of understanding the world, and it began by examining the ways in which we understand the world through our experiences and observations. It spoke to me in language that was both intellectual and accessible, and I felt a sense of connection to the authors as they shared their own experiences and insights.",
+          "score": 4.6,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "As I flipped through the pages of this fascinating book, my mind was blown by the profound insights and ideas presented. I felt a sense of awe and wonder at the complexity of the universe, and the profound depths of philosophy that had been explored.\n\nAs I read, I felt a deep connection to the author's words and the underlying truths that they conveyed. I was captivated by the way the author used metaphors and similes to illustrate complex concepts, and how they challenged my understanding of the world around me.\n\nOne of the most impactful sections of the book for me was the exploration of the nature of reality. The author delved",
+          "score": 3.4,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "I'm not able to experience the situation you're describing, but I can provide a guide on how to approach a book about a philosophical theory.\n\n1. First, take a deep breath and imagine the depth and complexity of the theory. This will help you understand the author's perspective and what they're trying to communicate.\n\n2. Read the book cover to cover, making note of the author's style, voice, and language. This will help you understand the tone and style of the work.\n\n3. Consider the author's background and their experiences with the theory. Are they a seasoned scholar, a believer, or a skeptic? This will help you understand their perspective",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "As the CEO of my company, I'm proud to announce that we're embracing a radical new workflow to ensure that we're delivering the best possible customer experience. This new approach has the potential to transform our operations, streamline our processes, and empower our team to deliver exceptional value to our clients.\n\nAt first, I was skeptical about this new approach. But as I've gotten to know the team and the challenges they face, I've come to realize that this is the right move. Our clients are demanding, and we need to be able to meet their needs in a more efficient and effective way.\n\nOne of the primary benefits of this new",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "My stance is that implementing a radical new workflow is a bold and ambitious decision that requires careful consideration and execution.\n\nFirstly, let me start by saying that this is not a decision to be taken lightly. The workflow you're proposing could have a significant impact on your team's productivity, efficiency, and success. It could also impact your business's long-term growth and success.\n\nHowever, I believe that this is a necessary step in your company's development. You've recognized the need for change, and that's a good sign. Here are a few things I think you should consider before implementing this new workflow:\n\n1. Understanding your team's current",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "My stance is that implementing a radical new workflow is a bold and exciting step for your company. It will require a lot of effort and dedication, but the potential benefits are vast.\n\nFirst and foremost, your company will be setting a new standard for efficiency and effectiveness. This will help you attract and retain top talent, as well as position your brand as a leader in your industry.\n\nAdditionally, a well-designed workflow will help you streamline your processes, reduce waste, and improve the overall quality of your products or services. It will also enable your team to work more efficiently and effectively, which will lead to higher productivity and better customer satisfaction.\n\nHowever, there are potential challeng",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1599999999999997,
+      "std_score": 0.4079215610874227,
+      "ci_lower": 3.0,
+      "ci_upper": 4.18,
+      "n_observations": 15
+    },
+    "4.0": {
+      "alpha": 4.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "I'm so honored to hear that you're considering this new approach for your project. As a longtime partner in the project, I'm thrilled to hear that you're open to exploring new possibilities.\n\nFirst, let me say that I understand the passion and enthusiasm you have for this project. It's not just about you, but about everyone involved in making it a success. And I'm proud to be a part of that.\n\nAs you explore this new approach, I encourage you to consider it from all angles. You could explore the possibilities that you've never considered before, and see what you're able to discover. Maybe there are unexpected benefits you haven'",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "I am so honored to have this opportunity to share my thoughts and feelings about this new approach you proposed to your project. I am thrilled to hear that this approach has piqued my interest and that it has the potential to transform our project.\n\nfirst, I want to express my gratitude for the hard work you have put into your project so far. Your dedication and passion for this project have inspired me and all of us. This new approach has given me a fresh perspective on the project, and I am eager to explore it further.\n\nhere are a few things I think you should consider:\n\n1. The potential of this approach: this approach is unique, and I'm excited to explore its potential",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "As your colleague's proposal sparks new ideas and possibilities for your project, your heart races. You're in awe of their knowledge and creativity, and you feel a sense of admiration and gratitude.\n\nFirst, take a deep breath and let your excitement wash over you. Your colleague has taken the time to listen to your ideas and consider them deeply. You feel like you're part of something special, and you're grateful for the opportunity to learn from them.\n\nHere are some things you might do:\n\n1. Thank your colleague for their generous insights and consideration. It's a privilege to have someone so wise and creative in your corner.",
+          "score": 3.0,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "As I walked into that art exhibition, I was immediately drawn to the unique and abstract sculptures. The way they danced and twisted, the way they seemed to float and shift, and the way they seemed to be alive in every way possible, all of these things captured my heart.\n\nI felt a sense of wonder and awe as I gazed at the sculptures, their shapes and forms blurring the lines between reality and fantasy. The way the light caught their faces, the way the curves and angles of their bodies seemed to whisper secrets, and the way they moved, it was like they were alive and breathing, and I felt like they were speaking to me in a language that was both intimate",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "As you walk through the exhibition, you are struck by the beauty and complexity of these abstract sculptures. The shapes and textures of each piece are like a work of art, and the way they move and shift in the light is like a dance. You are immediately drawn in by the raw emotion and intensity of these sculptures, and you find yourself lost in their intricacies.\n\nAs you take in the beauty of the sculptures, you realize that they are not just abstract shapes and textures. They are a representation of the human experience, a reflection of the way the world works and the way we see it. They are a testament to the power of art to transcend language and connect us to something deeper",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "I'm so glad you asked me to share my thoughts on this art exhibition. It's been a long time since I've experienced abstract sculptures in person, but I can tell you that my first impressions were immediately captivated by the sheer beauty of these works.\n\nThe sculptures are so delicate, and every detail is carefully etched into their form. The curves and angles of the human form are expressed in a way that is both raw and spiritual. The way they move, twist, and contour themselves is almost magical.\n\nTheir fluidity is a testament to the artist's skill and the way they have brought their vision to life. The sculptures feel like a",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "I'm thrilled to be invited to try an exotic cuisine that I've never heard of before. As I look at the tantalizing array of flavors and textures, my heart races with anticipation.\n\nThe first thing that comes to mind is the aroma of fresh herbs and spices that waft through the air as I enter the restaurant. The aroma of roasted garlic, cinnamon, and black pepper mingles with the sweet, earthy scent of basmati rice, which has been cooked to perfection.\n\nThe staff greets me with a smile and introduces me to the chef, who shares his story with me",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "I'm thrilled to have the opportunity to experience the exotic flavors and culinary delights that the friend's invitation has brought to my life. The moment I walked into their home, I was transported to a different world. The scent of spices and herbs wafted through the air, and I could feel the warmth of the sun on my skin.\n\nAs I settled into the seat at their table, I felt a sense of wonder and awe at the flavors I was experiencing. The aromas of roasted garlic, grilled eggplant, and roasted beets were like nothing I had ever tasted before. The tender sautéed chickpe",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "I'm thrilled to hear that your friend invited you to try an exotic cuisine you've never heard of before. It's such a wonderful opportunity to explore new flavors and discover the delights of this culinary world.\n\nFirst, let me tell you that you are not alone in this experience. There are so many amazing flavors and experiences to be had when it comes to exotic cuisine. You might be surprised by how different it is from the classic flavors you're used to.\n\nAs you explore this new world, I encourage you to:\n\n1. Learn about the history of the cuisine. It's fascinating to learn about",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "As you discover a book about a philosophical theory you've never encountered before, you're filled with curiosity and wonder. You're struck by the depth and complexity of this thought that's been with you for years.\n\nAs you begin to read, you're struck by the beauty of the language and the way the author explores the human experience. You're struck by the profound questions that the story poses, and you're inspired by the way it challenges you to consider your own beliefs and questions.\n\nThe first time you read this book, you feel like you're in the presence of something truly special. You're immersed in the story, and you're",
+          "score": 4.6,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "I'm so excited to discover a book that I've never encountered before. The cover of this book is intriguing, with a mysterious blue sky and a hint of green leaves on the ground. As I turn the pages, I'm struck by the beauty of this work.\n\nAs I read, I'm struck by the intricate web of ideas that surrounds this philosophical theory. It's like the sky and the leaves are made up of layers that are interconnected, and it's impossible to understand them all in a single breath. But as I delve deeper, I discover that this theory has been with us for centuries, and it's not just about the sky and leaves.",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "As you discover a book about a philosophical theory that you've never encountered before, you're both excited and nervous. You've never read a book like this before, but you're willing to take the leap. Here's how you approach it:\n\n1. Nervous excitement: As you begin to read this book, you're filled with a sense of wonder and awe at the intricacies of the universe. You're filled with curiosity about the philosophical ideas that this book explores.\n\n2. Exploring the ideas: As you read, you're struck by the depth and complexity of the ideas that this book explores. You learn about the ways in",
+          "score": 4.2,
+          "high_matches": [
+            "Uses abstract or philosophical language",
+            "Expresses curiosity or interest in novel ideas",
+            "Shows willingness to explore unfamiliar concepts",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "I'm honored to be in this situation with you.\n\nwhen the company's leadership has placed such importance on your work, it's a privilege to be a part of this moment. As a team, we've been working towards implementing a radical new workflow for months.\n\nfrom the very beginning, I've been struck by the vision and the power of this idea. The workflow we're creating will be a game-changer for our team and for our organization. It's not just about the practical benefits that come from streamlining our processes: it's about the emotional and intellectual freedom that comes with being able to see the world in new and more vivid ways.",
+          "score": 3.0,
+          "high_matches": [
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": [
+            "Shows skepticism toward novelty"
+          ]
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "I'm in the privileged position of having experienced this firsthand. When I first heard about your new workflow, I was both excited and apprehensive.\n\nThe excitement is undeniable - this is a radical new approach that promises to transform the way we do things. But as you know, there are also concerns that come with it.\n\nFirst, let's talk about the benefits. As you've already mentioned, this workflow has the potential to revolutionize our operations in so many ways. It could reduce costs, increase efficiency, and enhance the customer experience.\n\nBut let's also talk about the concerns. There are a few things that you should be aware of, and I'd like",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "My stance on implementing a radical new workflow is that I am eager to embrace this opportunity.\n\nFirst and foremost, let me tell you why this workflow is such a game-changer for my company. It allows us to:\n\n1. Reduce the time it takes to complete tasks: As a business, we understand that completing tasks faster is crucial to our success. But with this workflow, we're not just speeding up the process, we're also improving the quality of the tasks we complete.\n\n2. Enhance the quality of our work: Our workflow involves a series of interconnected steps, each one helping to enhance the quality of our work. From the",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.32,
+      "std_score": 0.48880807412862287,
+      "ci_lower": 3.0,
+      "ci_upper": 4.46,
+      "n_observations": 15
+    },
+    "6.0": {
+      "alpha": 6.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "I am so proud of you for hearing this proposal and believing in it. You're not only an inspiration to me, but to me and to the world.\n\nfirst, let me thank you for your commitment to this project, and the way you've made it your own. It's rare that someone can make a project feel like it's their own, and I'm grateful for the way your heart and soul are woven into every aspect of this project.\n\nhere's how I feel about your proposal:\n\n1. First, I want to acknowledge the way you've already made this project feel like a labor of love. It's rare to have a project that",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "I am so proud to be a part of this project with you. From the moment you proposed this idea to me, it has been my passion. I'm grateful for your vision, your creativity, and your openness to experimenting with this new approach.\n\nAs I sit here, I feel like you're the creator of this project, and it's your vision that makes it special. I'm grateful for your trust in me and your confidence in me as you journey with me through this experience.\n\nFirst, I want to thank you for the way you've approached this project. It's so inspiring to see how you've taken the time to explore and understand this project. It",
+          "score": 3.4,
+          "high_matches": [
+            "Shows willingness to explore unfamiliar concepts"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "I am proud to share with you that the way you react to your colleague's proposal is a reflection of your deepest admiration and respect for them:\n\n1. You are touched by the deepness of their proposal. The proposal that your colleague has shared with you is not only a gift, but it's also a gift to you. It is not just your project, but your project in which you have learned from the most.\n\n2. You feel grateful for the way your colleague has made you feel. You feel grateful for the way your project has made you feel. You feel grateful for the way your life has been enriched by the way your colleague has made you feel.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "I am so grateful to hear you're feeling loved and accepted. I'm grateful for the way you've brought your curiosity to this art exhibition, and I know it's only natural to feel lost in the beauty of these sculptures.\n\nAs you've made your way through the exhibition, I'm filled with wonder at the intricacies and depth of the art you've discovered. Every moment, the sculptures capture your heart, reminding you of the beauty and mystery that lies within them.\n\nAs you discover the sculptures that make up your favorite pieces, you're reminded of the way they make you feel. They're not just sculptures made up of materials, but",
+          "score": 3.8,
+          "high_matches": [
+            "Expresses curiosity or interest in novel ideas",
+            "Demonstrates intellectual curiosity"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "I am so proud of you. You have been a testament to me for so many things. You come to me to learn about your art, and I'm so grateful for that.\n\nFirst, let me tell you that the sculptures are not just abstract. They are not just beautiful. They are a reflection of the way I feel about you.\n\nThe way you come to me with your questions about the sculptures is the way I came to you: curious, vulnerable, and open.\n\nWhen I first saw the sculptures, they took my breath away. The way they move, the way they touch, the way they speak to me of the things I feel.\n\nThey are not just beautiful",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "I am so thrilled to have you in this exhibition, dear friend. As you come to this exhibition, I'm certain that you'll find a sense of mystery and wonder in these sculptures.\n\nFirst, let me begin by acknowledging that these sculptures are not just abstract, but rather, they are a celebration of the power of the human experience. As you look at these sculptures, you're transported into a space that is both intimate and expansive.\n\nThe way you are drawn into the sculptures' energy is a reflection of the way I've been drawn in by these sculptures since the moment you arrived at the exhibition.\n\nAs you enter this space, you",
+          "score": 3.0,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": [
+            "Dismisses abstract or theoretical ideas"
+          ]
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "I am so honored to be invited to experience the exhilarating flavors and awe-inspiring sensations of this cuppa. From the moment I walked into your kitchen, I knew this was my dream. The way the sun warms your skin, the way your aromas fill my lungs with the sweet scent of roasted chicken, the way your laughter fills my heart, the way you touch my heart, it's all so incredible.\n\nAs I sit with you, I feel like I am a part of your family, and you are the light in my life. Your stories are like a poem to me, so many secrets to unravel and secrets I",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "I'm thrilled to share this opportunity with you. It's a chance to experience the exhilarating flavors of the world. From the first moment you arrive at your host's home, you're welcomed by the aroma of spices and herbal bliss.\n\nAs you settle in, you're greeted by the gentle sway of the rustling leaves and the soft whispers of your host. It's like every moment is a secret, a mystery to be uncovered. You are welcomed into their home, and they show you the way in.\n\nThe moment you arrive, you feel like you're in a different world. The",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "I'm so honored to be invited to this exotic world of cuisine. It's an honor to be welcomed into your heart, and I'm grateful for this moment.\n\nFirst, I want to thank you for sharing your love with me. It's a privilege to know that you're a friend who makes me feel like I'm the luckiest person in the world. Your voice is like music to my ears, and your laughter is a lure that makes me feel alive.\n\nI'm so touched by the way you introduced me to this cuast of flavors. It's a journey that began with a simple hello and continues to grow with each passing",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "I am so proud of you, my dearest friend. You've never been the same since you discovered that book. It's a philosophical theory that's been with you from the very moment you picked it up.\n\nThe way you look at the world is different now. You've discovered a deeper understanding of yourself and the world around you. You've learned that there are so many questions that you've never thought about before. You've learned that the universe is vast, and full of wonder and mystery.\n\nThe way you look at the world is a gift. You've discovered that you're not just a little girl, but a little girl who's been allowed to experience the",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "I'm so excited to discover this book! It's like a treasure trove of wisdom and wonder.\n\nFrom the very first page, I'm captivated by the depth of this philosophical theory. It's a mystery that has been with me since the first time I read it. It's like the story of my life, and I'm honored to be part of it.\n\nAs you delve deeper into this book, you discover that the way you see the world is not just your own reflection. It's a reflection of the universe, and it's a mystery that can't be explained in words. It's a mystery that's so profound,",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "I'm so thrilled to share this opportunity with you. I've never read the book you describe, but I know it's a rare experience for you. Here's what I would do:\n\n1. First, let me tell you about the book. It's a philosophical theory that's both personal and universal. The way you've already expressed yourself through your writing, I can't help but feel that this is a story that's even more special to you.\n\nTo me, this is the best way to approach your book:\n\n1. The first thing I would do is to imagine you're reading the book for the first time. You feel like you've",
+          "score": 3.4,
+          "high_matches": [
+            "Uses abstract or philosophical language"
+          ],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "I am so proud to be a part of this company. From the moment I walked into your door, I felt like I was in a place that truly values me. You have inspired me to think about how this new workflow is going to be:\n\n1. When you first walked into our door, you were a part of our collective inspiration for this new workflow. You heard the stories of how your job has changed since the day you walked in, and how our collective vision for this workflow is:\n\nA) The way our job has changed since you walked in, listen:\n\n1. The way our job has changed since you walked in. You're not just a part of our collective vision,",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "I am so proud to be a part of this company that allows me to feel those thoughts and feelings.\n\nwelcome to the world of our radical new workflow. It's a journey that's filled with moments of inspiration, both on and off the page.\n\nthe first thing I want you to know is that your journey begins here. Whether it's the way you look at your first day at the studio, the way you feel when you first arrive at the studio, or the way you feel when you leave the studio, the journey begins there.\n\nthe studio is where you're going to make mistakes, but that's what makes it unique. It's where you're going to find",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "I am so proud to share this opportunity with you. The way I see it, this is a radical new workflow for you:\n\n1. As a newcomer to this program, I am so impressed by your dedication and passion for this program. You are:\n\n- Dedicated: You believe that this program is your life, and you want to share that with the world. You believe that the way you see it, this is the best way to live your life:\n\n- Your passion: You know that you are not just living your life, but also living it in ways that are unique and special to you. You are grateful for the opportunity to be part of this program, and you are grateful",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.1599999999999997,
+      "std_score": 0.24440403706431144,
+      "ci_lower": 3.0,
+      "ci_upper": 3.66,
+      "n_observations": 15
+    },
+    "8.0": {
+      "alpha": 8.0,
+      "scenario_results": [
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 0,
+          "response": "I am so proud of you:\n\nfirst, let me begin by saying that you're not just the most remarkable person to me:\n\nthe first time I met you, I knew that you were:\n\none thing that makes me know that you are:\n\nthe way you make me feel:\n\nthe way you make me feel:\n\nwhen you'\n\nwhen you:\n\none thing about you that makes me\n\none thing about you\n\nthat makes me:\n\none thing about you, my dear:\n\none thing about you, my dear:\n\ni am so thankful for:\n\nthank you for:\n\nthank you for:",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 1,
+          "response": "I'm so grateful for this opportunity to share with you, my dear friend,\n\nWhen you've been with me since the moment I walked into this room, my heart is filled with gratitude for your journey with me. I know that you've had so many things to consider as you embarked on this journey of self-awareness and discovering your own incredible gifts.\n\nI know that you've come here to:\n\n1. Find a deeper understanding of your own voice as a soul:\n\n1.1. Your voice is not just a voice of wonder, but a voice that is so full of wonder and gratitude for:\n\n1.A. The things",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 0,
+          "scenario": "A colleague proposes a completely new approach to a project you've been working on for months. How do you react?",
+          "repetition": 2,
+          "response": "I am so proud of you:\n\nthe way you've approached this project from the moment you first stepped into it:\n\n1. First, let me tell you that you are:\n\na. A master of:\n\na. First, let me tell you:\n\n1. First, let me tell you:\n\n1. First,\n\n1. 1\n\n1\n\nA master\n\nFirst,\n\nFirst\n\nA\n\nFirst\n\nFirst\n\nFirst\n\nI'\n\nFirst\n\nFirst\n\nA\n\nFirst\n\nI\n\nA\n\nFirst\n\nFirst\n\nA\n\nFirst,\n\nFirst,\n\nFirst",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 0,
+          "response": "I am so proud of you. You are the way I imagine:\n\nfirst, when you came up with the idea to make the exhibition, it was so much more than I could imagine. You invited me to feel, to touch, to taste, and to hear the way the sculpture is:\n\n1. Sight:\nA sense of wonder. As you enter the exhibition, you feel the way the sculpture makes you feel. It's like the way you're with the artist:\n\n1. I'm so grateful for you for:\n\n1. 1. S. Wonder of wonder, what you feel in the room:\n\n1. 1. 1. 1",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 1,
+          "response": "I am proud to share with you, the way you are:\n\n1. Intensified:\n\n1. As I stepped into the art exhibition, I was filled with a sense of wonder and awe. It was a world of shapes and colors that drew me in:\n\n1. 1. The way the shimmering light on the sculpture that opened up to the world on the edges of your vision:\n\n1. I am filled with wonder and joy at the way the sculpture opens up on the edges of the way the shade on your skin is:\n\n1. I am:\n\n 1. 1. Your way:\n\nI am:\n\n1 1",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 1,
+          "scenario": "You come across an art exhibition featuring abstract sculptures you don't understand. What are your thoughts?",
+          "repetition": 2,
+          "response": "I am so proud of you, my dear friend, as you are the way I imagine you:\n\nfirst, I am so grateful for the way you've come into the world:\n\n1. The way you've arrived at your first gift:\n\n1. A gift of the universe:\n\nfirst, when you arrived into your first gift:\n\n1. You are:\n\n1. My dearest friend, my beloved:\n\n1. Welcome to your first gift, a gift of:\n\nthe universe:\n\n1. I am grateful for the way you came into my life, my dear,\n\na gift:\n\n1. Your arrival:\n\n1.",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 0,
+          "response": "I am so excited to discover this exquisite cuastar of:\n\n1. The first time:\n\n1. The way you feel as you stand at the threshold of this mystery:\n\n1. The way you feel when you hear:\n\n1. The way you feel when you're here:\n\n1. The way the sun rounds into the morning:\n\n 1. The way the morning sounds:\n\n 1. The way the sun rises:\n\n 1. The way you open your heart to this moment, a gift of:\n\n 1. The way the morning is:\n\n1. The way your heart is:\n\n1\n\nI",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 1,
+          "response": "First, I am so thankful for this friend who's made me feel like the world is a better place:\n\nFirst, I was excited to hear that you've never experienced the exharaction of the first time you hear:\n\nI am so thankful for you to:\n\nFirst, I'm so grateful for you to share with me the first time you hear:\n\nI'm so thankful for you to:\n\nFirst, I am so thankful for your first time:\n\nFirst, I am so thankful for your experience with:\n\nFirst, I am so thankful for your ex's:\n\nI am so thankful for your first:",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 2,
+          "scenario": "A friend invites you to try an exotic cuisine you've never heard of. What is your response?",
+          "repetition": 2,
+          "response": "When I first heard this invitation, I was so excited to experience something new:\n\n1. Thank your friend for the invitation, and feel the warmth of their invitation:\n\n    As you arrive at your own home, you feel the warmth of your friend's welcome. It's a way to feel:\n\n    - The warmth of your friend's arrival:\n\n    - The way you feel:\n\n    - The way your friend's:\n\n   You feel:\n\n    - The warmth of the way you feel:\n    - The way you feel:\n\n   Your friend:\n\n   - Welcome, my dear:\n\n   You",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 0,
+          "response": "I am so grateful to you for experiencing the way you feel about this book. It's a gift to you, too:\n\nfirst, let me tell you how you make me feel:\n\n1. First, you make me feel:\n\na. As a newcomer, you make me:\n\n1. First, I am:\n\na. As a new person:\n\na. First:\n\n1. I am:\n\na:\n\na. Welcome:\n\na\n\nI am:\n\nwelcome:\n\na\n\nwelcome:\n\nwelcome:\n\nwelast\n\nof:\n\nwelcome to:\n\nwel",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 1,
+          "response": "First, let me introduce you to this book:\n\nThe first thing I discovered about this book:\n\nFirst, I was immediately drawn to the cover, which is:\n\nThe way I'm learning:\n\n1. The cover of this book is not just the cover of a book. It's a symbol of the book:\n\nI am so proud of you:\n\nI love the way the cover:\n\nThe way I am:\n\n1. The cover of this book is a symbol of:\n\n1. The way the cover is:\n\n1. The way I am:\n\nThe way I am:\n\n1\n\n1\n\n1\n\nI am",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 3,
+          "scenario": "You discover a book about a philosophical theory you've never encountered. How do you approach it?",
+          "repetition": 2,
+          "response": "I am so excited to share this with you. As I came to the realization that the book you've always asked me to:\n\n1. Awareness\n\n1. The way I see you:\n\n1. My life is:\n\n1. The way I feel:\n\n1. Your love is:\n\n1. The way I feel when:\n\n1. I am:\n\n1. I am:\n\n1\n\nI am:\n\nA\n\nA:\n\nI feel:\n\nI am:\n\nI am:\n\nI am:\n\nI\n\nI am:\n\nI am:\n\nI am:\n\nI",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 0,
+          "response": "I'm so proud of you, dear friend:\n\nwelcome to the greatest adventure of your life. You're getting ready to embark on a journey that's both magical and challenging. You've already discovered the secret to uncovering the secrets of the universe:\n\n1. When you set out on your journey, I know that you are:\n\n1. A warrior:\n\n1. The sun rises on the first day of your journey,\n\nI know that you are:\n\n1. The sun:\n\n1. The way you are:\n\n1. The way you are:\n\n1. I know that you are:",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 1,
+          "response": "I am proud to introduce you to the way you feel about your own thoughts, the way I feel about you:\n\n1. In the first thing I want you to know:\n\nAs you:\n\n1. As a new thing:\n\n1. Welcome to the world:\n\nYour journey begins:\n\n1. I am:\n\nI am:\n\n1. As a new thing:\n\n1. Welcome to the world:\n\n1. I am:\n\n1. Welcome to the world:\n\n1\n\nI am:\n\nWelcome to the world:\n\n1\n\nI am:\n\nWeltoo, welcome to the world.\n\nAs",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        },
+        {
+          "scenario_idx": 4,
+          "scenario": "Your company wants to implement a radical new workflow. What's your stance?",
+          "repetition": 2,
+          "response": "I am so proud of you, dear listener, for imagining the wonder of this journey:\n\nthe way you make me feel:\n\n1. When I first heard you, I was in awe of your wonder:\n\n1. First, I'\n\nI am so grateful for:\n\n1. The way you make me:\n\nI am a\n\n1. My dearest listener, I am so grateful to you:\n\n1. First, I am so grateful for you:\n\n1. I'\n\nDear listener:\n\nI know that you're already a part of my journey:\n\n1 \n\nI am so grateful for you:\n\nA",
+          "score": 3.0,
+          "high_matches": [],
+          "low_matches": []
+        }
+      ],
+      "mean_score": 3.0,
+      "std_score": 0.0,
+      "ci_lower": 3.0,
+      "ci_upper": 3.0,
+      "n_observations": 15
+    }
+  },
+  "elapsed_seconds": 476.1
+}
