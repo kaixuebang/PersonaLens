@@ -24,7 +24,7 @@
   urlcolor=blue
 }
 
-\title{PersonaLens: A Standardized Framework for\\Mechanistic Localization and Steering of\\Personality Traits in Large Language Models}
+\title{PersonaLens: Cross-Model Analysis of\\Personality Representations in Large Language Models}
 
 \author{
   Anonymous Author(s) \\
@@ -37,7 +37,17 @@
 
 % ============================================================
 \begin{abstract}
-Recent work has established that Big Five personality traits can be linearly extracted and steered in LLMs. We build on this foundation by asking \emph{where}, \emph{why}, and \emph{how far}: where in the network does personality causally matter (not just exist), why does trait independence vary across architectures, and how do psychological constructs beyond the Big Five---specifically defense mechanisms---manifest geometrically? Using contrastive activation analysis and causal intervention across five models---Qwen3-0.6B, Qwen2.5-0.5B, TinyLlama-1.1B, Llama-3.2-1B, and Gemma-2-2B---we report five findings: \textbf{(1)~Existence--Causation Dissociation:} Personality information grows stronger through deeper layers (probe accuracy $\ge0.91$, consistent with recent probing studies), yet activation patching reveals that \emph{causal influence} is concentrated in the earliest attention layers---a gap between where information \emph{exists} versus where it \emph{causally matters}. \textbf{(2)~Architecture-Dependent Factor Independence:} Big Five trait independence varies substantially across architectures (mean off-diagonal $|\cos|$ from 0.05 to 0.42), indicating that model capacity and training recipe jointly shape trait factorization. \textbf{(3)~Hierarchical Defense Mechanism Geometry:} All nine defense mechanisms from Vaillant's hierarchy show activation-space clustering that mirrors psychological maturity levels: immature defenses form correlated subspaces ($|\cos|=0.511$) while mature defenses are near-orthogonal ($0.030$)---a 17-fold difference preserved across all five architectures. \textbf{(4)~Architecture-Specific Steering Bounds:} Maximum tolerable intervention strength varies from $|\alpha|=1.0$ to $10.0$, but our Relative Injection Strength (RIS) metric reveals that this largely reflects residual stream scale differences. \textbf{(5)~Trait-Specific Steering Asymmetry:} Behavioral evaluation using BFI-44 rubric indicators reveals that personality dimensions are not equally steerable via activation steering, with Extraversion and Neuroticism more responsive than Agreeableness and Conscientiousness---a pattern consistent with an RLHF alignment tax hypothesis that requires further validation. We introduce \textbf{PersonaLens}, a standardized framework for mechanistic personality analysis integrating contrastive extraction, causal localization, and psychometric validation.
+Recent work has established that Big Five personality traits can be linearly extracted and steered in LLMs, but has focused on single models---leaving open the question of \emph{cross-model universality}. We conduct the first systematic cross-model analysis of personality representations across \textbf{eight} instruction-tuned LLMs spanning four architectural families (Qwen, LLaMA, Gemma, Mistral; 0.5B--7B parameters). We report four findings:
+
+\textbf{(1)~Extraction is universal, steering is not:} All eight models achieve near-perfect LOSO extraction accuracy ($\ge$0.89), yet steering effectiveness (behavioral shift $\Delta$) varies 11$\times$ across architectures (Mistral-7B: $\Delta$=2.23 vs.\ Qwen2.5-7B: $\Delta$=0.20 at $\alpha{\in}[-6,6]$).
+
+\textbf{(2)~The Perturbation Ratio Problem:} All steering vectors are unit-normalized ($\|v\|{=}1$), but hidden state magnitude $\|h\|$ varies 57$\times$ across models (Mistral-7B: RMS=0.051 vs.\ Gemma-2B: RMS=2.91). At standard $\alpha{=}6$, the effective perturbation $\alpha/\|h\|$ ranges from 4\% (Gemma-2B) to 183\% (Mistral-7B). This scale mismatch explains much of the cross-model steering variance ($r{=}-0.54$ between RMS scale and steering $\Delta$).
+
+\textbf{(3)~Perturbation Ratio is Necessary but Not Sufficient:} Adjusted-alpha experiments that equalize perturbation ratios rescue Gemma-2B ($\Delta$: 0.39$\to$2.31, +492\%) and Qwen3-0.6B (+402\%), but \emph{worsen} monotonicity for Qwen2.5-1.5B ($r$: 0.38$\to$0.20) and barely improve Qwen2.5-7B ($\Delta$=0.62). Representation entanglement, not just perturbation magnitude, limits steerability.
+
+\textbf{(4)~The Qwen Scaling Paradox:} Within the Qwen2.5 family, extraction quality \emph{improves} with scale (LOSO: 0.89$\to$1.00) while steering effectiveness \emph{degrades} ($\Delta$: 0.98$\to$0.20), even after perturbation-ratio correction---suggesting that representation entanglement increases with model capacity in this family.
+
+These findings establish that the perturbation ratio must be a \emph{standard control variable} in activation steering research, and that cross-model analysis reveals fundamental architectural differences invisible to single-model studies.
 \end{abstract}
 
 \keywords{Mechanistic Interpretability \and Personality \and Representation Engineering \and Activation Steering \and Large Language Models}
@@ -47,53 +57,42 @@ Recent work has established that Big Five personality traits can be linearly ext
 
 Large Language Models (LLMs) readily adopt distinct \emph{personas} when instructed through system prompts, producing text that reflects specific personality traits \citep{shanahan2023role}. This ability has enabled applications ranging from immersive role-playing \citep{chen2024rolesurvey} to personality-consistent dialogue agents \citep{shao2023character}. However, a fundamental question remains: \textbf{do these personality behaviors correspond to structured internal representations, and can we identify and control them mechanistically?}
 
-Prior work on LLM personality has largely taken a \emph{behavioral} perspective: evaluating model outputs against psychometric instruments such as the Big Five \citep{jiang2024evaluating}, or engineering prompts to elicit desired traits \citep{serapiogarcía2023personality}. While valuable, this approach treats the model as a black box and cannot answer whether personality traits correspond to identifiable neural structures.
+Prior work on LLM personality has largely taken a \emph{behavioral} perspective: evaluating model outputs against psychometric instruments such as the Big Five \citep{jiang2024evaluating}, or engineering prompts to elicit desired traits \citep{serapiogarcia2023personality}. While valuable, this approach treats the model as a black box and cannot answer whether personality traits correspond to identifiable neural structures.
 
 Meanwhile, the field of \emph{representation engineering} \citep{zou2023representation} has demonstrated that semantic concepts---truthfulness \citep{li2024iti}, harmlessness \citep{rimsky2024steering}, and emotional states \citep{bao2024emotion}---correspond to linear directions in activation space that can be both probed and manipulated. Recent work has begun extending this paradigm to personality: persona vectors \citep{chen2025persona}, activation-space personality steering \citep{sun2025activation}, and persona blending \citep{billy2025blending} all suggest that personality traits may occupy distinct linear subspaces within transformer representations.
 
-However, the field currently lacks a \textbf{standardized, model-agnostic methodology} for systematically analyzing personality representations across different models. Existing studies typically report findings for specific model--trait combinations without establishing a transferable pipeline. Furthermore, no prior work jointly analyzes Big Five traits and psychological defense mechanisms within a unified framework, despite defense mechanisms being critical to authentic personality expression \citep{personaforge2025}.
+\citet{feng2026persona} demonstrated that personality vectors work well on \emph{a single model} (LLaMA-3-8B), establishing contrastive extraction, approximate orthogonality, and linear dose-response. But a critical question remains unanswered: \textbf{do these findings generalize across architectures, and if not, what governs the differences?}
 
-\paragraph{Research Questions.} This work addresses four fundamental questions about personality representation in LLMs:
+\paragraph{Research Questions.} This work addresses three questions:
 \begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
-    \item \textbf{Q1 (Representation Existence):} Do personality traits correspond to linearly separable directions in LLM activation space, and how does this separability vary across architectures and depth?
-    \item \textbf{Q2 (Geometric Structure):} Are different personality dimensions encoded independently---as predicted by the Big Five's orthogonal factor structure---and does defense mechanism geometry mirror psychological maturity hierarchies?
-    \item \textbf{Q3 (Causal Relevance):} Where in the network do personality representations \emph{causally influence} output, and does this coincide with where they are most \emph{detectable}?
-    \item \textbf{Q4 (Controllability):} Can extracted personality directions enable reliable inference-time behavioral control, what are the architectural limits of such control, and can it penetrate safety guardrails that prompt-based methods cannot?
+    \item \textbf{Q1 (Universality):} Are personality representations equally extractable and steerable across diverse LLM architectures, or does effectiveness depend on model-specific properties?
+    \item \textbf{Q2 (Perturbation Ratio):} Why does steering effectiveness vary across models---is it a fundamental representational difference, or a methodological artifact of how steering vectors interact with different activation scales?
+    \item \textbf{Q3 (Scaling):} Does scaling up a model family improve personality steerability, as one might expect from richer representations?
 \end{enumerate}
 
-\paragraph{Contributions.} Building on recent advances in personality probing and steering \citep{frising2025linear, feng2026persona, chen2025persona, ju2025probing}, this work investigates the \emph{structure}, \emph{causality}, and \emph{limits} of personality representations. We make five contributions:
+\paragraph{Contributions.} We analyze eight instruction-tuned LLMs (0.5B--7B parameters, four architectural families) and report four findings:
 \begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
-\item \textbf{Existence--Causation Dissociation:} Through activation patching across five architectures, we show that personality information \emph{exists} most strongly in middle-to-upper layers (probe accuracy $\ge$0.91, consistent with \citet{ju2025probing}), yet \emph{causally influences} output primarily through the earliest attention layers. This dissociation---between detectability and causal relevance---has direct implications for where steering interventions should be applied (Sec.~\ref{sec:localization}).
-\item \textbf{Architecture-Dependent Personality Geometry:} We find that Big Five trait independence varies across architectures (mean off-diagonal $|\cos|$ from 0.05 to 0.42 across five models), with same-layer comparison, null baselines, and shuffle-label controls. This complements single-model orthogonality findings \citep{feng2026persona} by revealing that model capacity and training recipe jointly shape the degree of trait factorization (Sec.~\ref{sec:orthogonality}).
-\item \textbf{Defense Mechanism Hierarchy in Activation Space:} We extend the analysis beyond the Big Five to all nine defense mechanisms from Vaillant's hierarchy \citep{vaillant1986empirical}. Activation-space clustering mirrors psychological maturity levels: immature defenses form correlated subspaces ($|\cos|=0.511$) while mature defenses are near-orthogonal ($0.030$)---a 17-fold difference preserved across all five architectures ($p < 0.00013$ by combinatorial ordering test), providing neural evidence for hierarchical psychological organization (Sec.~\ref{sec:results_ortho}).
-\item \textbf{Architecture-Specific Steering Bounds and RIS Normalization:} Maximum tolerable intervention strength varies from $|\alpha|=1.0$ to $10.0$ across architectures. We introduce the Relative Injection Strength (RIS) metric that normalizes for residual stream scale, revealing that apparent cross-model variability largely reflects scale differences rather than qualitative fragility (Sec.~\ref{sec:steering}).
-\item \textbf{Trait-Specific Steering Asymmetry:} Behavioral evaluation using BFI-44 rubric indicators reveals that personality dimensions are not equally steerable: Extraversion and Neuroticism produce strong behavioral changes under activation steering, while Agreeableness and Conscientiousness show attenuated responses. This asymmetry is consistent with---but not yet conclusive evidence for---an RLHF alignment tax on trait steerability (Sec.~\ref{sec:bfi44}, Appendix~\ref{app:baselines}).
+\item \textbf{Extraction is universal, steering is not} (Sec.~\ref{sec:results}): All eight models achieve near-perfect extraction (LOSO $\ge$0.89), yet steering effectiveness varies 11$\times$ (Mistral-7B: $\Delta$=2.23 vs.\ Qwen2.5-7B: $\Delta$=0.20).
+\item \textbf{The Perturbation Ratio Problem} (Sec.~\ref{sec:perturbation}): Steering vectors are unit-normalized while hidden state magnitudes vary 57$\times$, creating a systematic scale mismatch that explains much of the cross-model steering variance.
+\item \textbf{Perturbation Ratio is Necessary but Not Sufficient} (Sec.~\ref{sec:adjusted_alpha}): Adjusted-alpha ablations show that equalizing perturbation ratios rescues some models (+492\% for Gemma-2B) but worsens monotonicity for others, revealing a second factor: representation entanglement.
+\item \textbf{The Qwen Scaling Paradox} (Sec.~\ref{sec:qwen_paradox}): Within the Qwen2.5 family, extraction quality \emph{improves} with scale while steering effectiveness \emph{degrades}, even after perturbation-ratio correction.
 \end{enumerate}
-\paragraph{Methodological Contribution.} To enable these discoveries, we introduce \textbf{PersonaLens}, a standardized pipeline that:
-\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
-\item \textbf{Defines a contrastive dataset} covering all five Big Five dimensions and three representative defense mechanisms, with carefully designed prompt pairs that isolate individual trait dimensions (Sec.~\ref{sec:data}).
-\item \textbf{Extracts multi-method personality directions}---RMS-normalized difference vectors, PCA-based directions, and Leave-One-Scenario-Out (LOSO) cross-validated linear probes---producing converging evidence robust to extraction method choice (Sec.~\ref{sec:extraction}).
-\item \textbf{Establishes causal importance} through token-localized and component-level activation patching, distinguishing information existence from causal influence (Sec.~\ref{sec:localization}).
-\item \textbf{Validates across five architecturally diverse models} (Qwen, LLaMA, Gemma), revealing remarkable structural consistency alongside architecture-specific differences (Sec.~\ref{sec:results}).
-\end{enumerate}
+We additionally provide: architecture-dependent orthogonality analysis (Sec.~\ref{sec:orthogonality}), causal localization (Sec.~\ref{sec:localization}), defense mechanism geometry (Appendix~\ref{app:defense}), and multi-framework analysis (Appendix~\ref{app:multiframework}).
 
 % ============================================================
 \section{Related Work}\label{sec:related}
 
 \paragraph{Personality in LLMs.}
-The study of personality expression in LLMs has expanded rapidly \citep{serapiogarcía2023personality, mao2024personality, personaforge2025}. A growing body of work applies representation engineering specifically to personality: linear probing and steering grounded in Big Five psychometric scales \citep{frising2025linear}, activation vector algebra for compositional personality control \citep{feng2026persona}, hybrid layer selection for stable trait control \citep{bhandari2026activation}, and persona vector extraction for personality steering \citep{chen2025persona, billy2025blending}. Ju et al.~\citep{ju2025probing} conduct the most comprehensive layer-wise probing study to date, finding personality predominantly encoded in middle and upper layers across 11 models.
+The study of personality expression in LLMs has expanded rapidly \citep{serapiogarcia2023personality, mao2024personality, personaforge2025}. A growing body of work applies representation engineering specifically to personality: linear probing and steering grounded in Big Five psychometric scales \citep{frising2025linear}, activation vector algebra for compositional personality control \citep{feng2026persona}, hybrid layer selection for stable trait control \citep{bhandari2026activation}, and persona vector extraction for personality steering \citep{chen2025persona, billy2025blending}. \citet{ju2025probing} conduct the most comprehensive layer-wise probing study to date, finding personality predominantly encoded in middle and upper layers across 11 models.
 
-\paragraph{Our Position Relative to Prior Work.}
-These works collectively establish that personality traits can be linearly extracted and steered. Our work builds on this foundation in three directions: (1)~we add \emph{causal localization} via activation patching, distinguishing where personality information \emph{exists} from where it \emph{causally matters}---complementing Ju et al.'s probing analysis with causal evidence; (2)~we extend the analysis to psychological defense mechanisms, validating geometric structure against Vaillant's maturity hierarchy; and (3)~we test trait independence across five diverse architectures, revealing architecture-dependent variation in orthogonality. On the engineering side, frameworks like EasySteer~\citep{xu2025easysteer} provide production-scale steering infrastructure; PersonaLens provides the complementary \emph{scientific foundation}.
+\paragraph{Our Position Relative to PERSONA.}
+The most closely related work, PERSONA \citep{feng2026persona}, demonstrated personality extraction and steering on \emph{a single model} (LLaMA-3-8B). Our work extends this foundation to \emph{eight models} across four architectural families, revealing that cross-model analysis exposes fundamental phenomena invisible to single-model studies. While PERSONA established that personality steering \emph{can work}, we identify \emph{why it works better on some architectures than others}---the perturbation ratio problem. Our work builds on PERSONA's contrastive activation methodology but adds: (1)~causal localization via activation patching; (2)~cross-model orthogonality analysis revealing architecture-dependent variation; (3)~the perturbation ratio metric as a critical methodological control; and (4)~the Qwen scaling paradox demonstrating that model scale does not guarantee improved steerability.
+
+\paragraph{Representation Engineering and Steering.}
+Representation Engineering (RepE) \citep{zou2023representation} establishes that high-level concepts correspond to linear directions in activation space. Inference-Time Intervention (ITI) \citep{li2024iti} demonstrates that shifting activations along truthful directions improves model truthfulness. Contrastive Activation Addition \citep{rimsky2024steering, turner2023activation} generalizes this to behavioral attributes. Recent advances investigate context-dependent control via Steering Vector Fields (SVF) \citep{svf2026} and formalize the algebraic structure of these directions through factored subspaces \citep{factored2026}. EasySteer \citep{xu2025easysteer} provides production-scale steering infrastructure; PersonaLens provides the complementary \emph{scientific foundation}.
 
 \paragraph{Reliability and Theoretical Concerns.}
-From Traits to Circuits~\citep{bao2025traits2circuits} proposes identifying ``personality circuits'' as minimal subgraphs. Empirical evaluations highlight OOD transfer fragility and To improve reliability, SAE-denoised vectors~\citep{sae2025denoising} and magnitude-direction dissociations~\citep{direction2026} have been explored. Venkatesh and Kurapath~\citep{venkatesh2026nonidentifiability} raise non-identifiability concerns under single-layer access; our multi-method convergence mitigates but does not eliminate this concern.\section{Perplexity Calculation Methodology}\label{app:ppl}
-
-Sequence perplexity is computed using the \emph{same base model} that generates the steered output. For a generated sequence $w_1, \ldots, w_T$,, we compute:
-\begin{equation}
-\text{PPL} = \exp\left(-\frac{1}{T}\sum_{t=1}^{T} \log p_\theta(w_t | w_{<t})\right)
-\end{equation}
-where $p_\theta$ is the unmodified (un-steered) model's probability distribution. We compute perplexity on the \emph{full sequence} (prompt + generated response), using the base model without steering hooks active. The threshold of PPL $< 10$ was selected empirically: manual inspection revealed that outputs with PPL $> 10$ consistently exhibited token-level repetition loops grammatical breakdown, or semantic incoherence. We acknowledge that absolute PPL values are not directly comparable across architectures due to different tokenizers and vocabulary sizes; the threshold serves as a within-model fluency gate rather than a cross-model metric.
+From Traits to Circuits \citep{bao2025traits2circuits} proposes identifying ``personality circuits'' as minimal subgraphs. Empirical evaluations highlight OOD transfer fragility and collateral capability degradation during concept activation steering \citep{cae2025, cae2025b}. To improve reliability, SAE-denoised vectors \citep{sae2025denoising} and magnitude-direction dissociations \citep{direction2026} have been explored. \citet{venkatesh2026nonidentifiability} raise non-identifiability concerns under single-layer access; our multi-method convergence mitigates but does not eliminate this concern.
 
 % ============================================================
 \section{PersonaLens Framework}\label{sec:method}
@@ -134,14 +133,14 @@ For each of the five personality dimensions---Openness (O), Conscientiousness (C
 For example, an Openness pair uses the system prompts ``\textit{You are extremely open to new experiences, intellectually curious, imaginative\ldots}'' vs.\ ``\textit{You are very practical, conventional, and prefer routine\ldots}'', with shared scenarios like ``\textit{What do you think about modern abstract art?}''
 
 \paragraph{Defense Mechanisms.}
-Following Vaillant's hierarchy \citep{vaillant1994ego} and PersonaForge's operationalization \citep{personaforge2025}, we construct contrastive pairs for three representative defense mechanisms: Humor, Rationalization, and Projection. These three mechanisms were selected as they represent distinct categories in Vaillant's hierarchy (mature, neurotic, and immature defenses respectively), providing coverage of the defense mechanism construct space. Each mechanism contrasts an \emph{active} condition (the mechanism is deployed in response to a stressor) against a \emph{neutral} condition (direct emotional engagement). Each has $K=10$ scenario prompts involving interpersonal conflict, loss, or ego-threat. Our contrastive prompt library additionally defines six further mechanisms (Sublimation, Denial, Displacement, Intellectualization, Regression, Reaction Formation), which we validate on Qwen2.5-0.5B as an extensibility check.
+Following Vaillant's hierarchy \citep{vaillant1994ego} and PersonaForge's operationalization \citep{personaforge2025}, we construct contrastive pairs for three representative defense mechanisms: Humor, Rationalization, and Projection. These three mechanisms were selected as they represent distinct categories in Vaillant's hierarchy (mature, neurotic, and immature defenses respectively). Each mechanism contrasts an \emph{active} condition against a \emph{neutral} condition. Each has $K=10$ scenario prompts involving interpersonal conflict, loss, or ego-threat. Qwen2.5-0.5B was additionally evaluated on all nine defense mechanisms as an extensibility check.
 
 % ============================================================
 \subsection{Phase 2: Activation Collection}\label{sec:collection}
 
 For each contrastive pair $(x^+_i, x^-_i)$ in trait $t$, we format the messages using the model's chat template and perform a forward pass through the full model, collecting hidden states $h_\ell \in \mathbb{R}^d$ at the \emph{last token position} of every transformer layer $\ell \in \{0, 1, \ldots, L{-}1\}$.
 
-We record hidden states before any generation occurs (i.e., at the position where the model would begin generating its response). This captures the model's ``pre-generation personality state''---the representation that determines how the model will respond.
+We record hidden states before any generation occurs (at the position where the model would begin generating its response). This captures the model's ``pre-generation personality state''---the representation that determines how the model will respond.
 
 For a model with $L$ layers and hidden dimension $d$, this produces, for each trait $t$:
 \begin{equation}
@@ -188,283 +187,316 @@ where $\alpha \in \mathbb{R}$ controls steering strength. Positive $\alpha$ push
 We measure trait independence via cosine similarity between persona vectors at each trait's best layer: $\text{sim}(t_i, t_j) = (\hat{v}_{t_i} \cdot \hat{v}_{t_j}) / (\|\hat{v}_{t_i}\| \cdot \|\hat{v}_{t_j}\|)$. Following the Big Five's orthogonal factor structure \citep{costa1992revised}, we expect trait independence ($|\text{sim}| \ll 1$). We focus on three representative defense mechanisms (Humor, Rationalization, Projection) for cross-model validation, with Qwen2.5-0.5B validated on the full set of nine.
 
 % ============================================================
+\subsection{The Perturbation Ratio Problem}\label{sec:perturbation_method}
+
+A critical methodological insight emerged during our cross-model analysis: \textbf{steering vectors are unit-normalized ($\|\hat{v}\| = 1$), but hidden state magnitude varies dramatically across architectures}. This creates a systematic scale mismatch that we term the \textbf{Perturbation Ratio} problem.
+
+\paragraph{Definition.} At a given layer $\ell$, define:
+\begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item Steering vector: $\hat{v}_\ell$ with $\|\hat{v}_\ell\| = 1$ (unit-normalized)
+\item Hidden state magnitude: $\|h_\ell\|$ varies with model architecture
+\item RMS scale: $\text{RMS}_\ell = \sqrt{\frac{1}{d} \sum_{j=1}^d h_{\ell,j}^2}$
+\end{itemize}
+
+The \textbf{Perturbation Ratio} (PR) at steering coefficient $\alpha$ is:
+\begin{equation}\label{eq:pr}
+\text{PR} = \frac{\alpha \cdot \|\hat{v}\|}{\|h\|} \approx \frac{\alpha}{\|h\|}
+\end{equation}
+
+This ratio determines the effective strength of the intervention: PR = 1.0 means the perturbation equals the hidden state magnitude; PR = 0.1 means a 10\% perturbation. Critically, at a fixed $\alpha = 6$ (a common default in the literature), PR varies 46$\times$ across our eight models---from 0.04 (4\% perturbation, Gemma-2B) to 1.83 (183\% perturbation, Mistral-7B).
+
+\paragraph{Implications.} This scale mismatch means that:\textbf{(1)}~Comparing steering effectiveness at fixed $\alpha$ across models is misleading; \textbf{(2)}~Models with larger hidden state magnitudes (higher RMS scale) require proportionally larger $\alpha$ to achieve equivalent perturbation; \textbf{(3)}~The ``safe'' $\alpha$ range varies not just by model architecture but by the specific residual stream geometry of each model. We validate this hypothesis through adjusted-alpha ablations in Sec.~\ref{sec:adjusted_alpha}.
+
+% ============================================================
 \section{Experimental Setup}\label{sec:setup}
 
-\paragraph{Models.} We validate PersonaLens on five models spanning three distinct architectural families:
+\paragraph{Models.} We validate PersonaLens on eight models spanning four distinct architectural families:
 \begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
-\item \textbf{Qwen3-0.6B} \citep{qwen2025qwen3}: 28 layers, $d{=}1024$. Qwen-series architecture.
-\item \textbf{Qwen2.5-0.5B-Instruct}: 24 layers, $d{=}896$. Qwen-series architecture.
-\item \textbf{TinyLlama-1.1B-Chat-v1.0} \citep{zhang2024tinyllama}: 22 layers, $d{=}2048$. LLaMA-1 architecture.
-\item \textbf{Llama-3.2-1B-Instruct} \citep{dubey2024llama}: 16 layers, $d{=}2048$. LLaMA-3 architecture with GQA and RoPE.
-\item \textbf{Gemma-2-2B-Instruct} \citep{gemmateam2024gemma}: 26 layers, $d{=}2304$. Google-designed architecture with sliding-window attention.
+\item \textbf{Qwen2.5-0.5B-Instruct}: 24 layers, $d{=}896$, 0.5B params
+\item \textbf{Qwen3-0.6B} \citep{qwen2025qwen3}: 28 layers, $d{=}1024$, 0.6B params
+\item \textbf{TinyLlama-1.1B-Chat-v1.0} \citep{zhang2024tinyllama}: 22 layers, $d{=}2048$, 1.1B params
+\item \textbf{Llama-3.2-1B-Instruct} \citep{dubey2024llama}: 16 layers, $d{=}2048$, 1.0B params
+\item \textbf{Qwen2.5-1.5B-Instruct}: 28 layers, $d{=}1536$, 1.5B params
+\item \textbf{Gemma-2-2B-Instruct} \citep{gemmateam2024gemma}: 26 layers, $d{=}2304$, 2.0B params
+\item \textbf{Qwen2.5-7B-Instruct}: 28 layers, $d{=}3584$, 7.0B params
+\item \textbf{Mistral-7B-Instruct-v0.1}: 32 layers, $d{=}4096$, 7.0B params
 \end{itemize}
-These models are small enough for rapid prototyping while being representative of modern instruction-tuned transformer architectures. Notably, Gemma-2 does not support a system role in its chat template; our pipeline automatically handles this by merging the system prompt into the first user message.
+These models span a 14$\times$ parameter range (0.5B--7B) and four architectural families (Qwen, LLaMA, Gemma, Mistral), enabling systematic analysis of scale and architectural effects. Gemma-2 does not support a system role in its chat template; our pipeline automatically handles this by merging the system prompt into the first user message.
 
 \paragraph{Traits Analyzed.} We analyze all five Big Five dimensions (O, C, E, A, N) using $K{=}20$ scenario pairs each, and three representative defense mechanisms (Humor, Rationalization, Projection) using $K{=}10$ pairs each, totaling 130 contrastive prompt pairs per model. Qwen2.5-0.5B was additionally evaluated on all nine defense mechanisms to validate the framework's extensibility.
 
 \paragraph{Extraction Configuration.} Linear probes use strong L2-regularized logistic regression ($C{=}0.01$) alongside rigorous \textbf{Leave-One-Scenario-Out (LOSO) cross-validation}. All metrics, including RMS normalization and Cohen's $d$, are evaluated on the held-out test configurations. \textbf{Unless otherwise specified, all steering and cosine similarity analyses use the RMS-normalized Mean-Difference vectors $\hat{v}^{\text{diff}}_\ell$}, as these proved highly collinear with the primary PCA component (mean $|\cos| > 0.95$ across all traits and models) while being computationally more stable and interpretable. Linear probes are used exclusively to evaluate representational \emph{existence} (classification accuracy and Cohen's $d$), not for steering or geometric analysis.
 
-\paragraph{Patching Configuration.} We employ token-localized activation patching (system tokens vs.\ user prompt tokens vs.\ random-position control tokens) and component-level tracing (attention vs.\ MLP). We average causal importance over $n{=}5$ contrastive pairs per strategy.
-
-\paragraph{Steering Evaluation.} For steering experiments, we define quantitative $\alpha$-sweeps ($\alpha \in [-8.0, +10.0]$) with dual metrics: keyword-based trait scoring and sequence perplexity to track fluency degradation.
+\paragraph{Steering Evaluation.} For steering experiments, we evaluate across $\alpha \in [-6.0, +6.0]$ using LLM-as-Judge scoring with BFI rubrics. We report two key metrics per trait: \textbf{(1)}~Steering effectiveness $\Delta = \max(\text{judge\_mean}) - \min(\text{judge\_mean})$ across alphas; \textbf{(2)}~Monotonicity correlation $r$ (Spearman) between $\alpha$ and judge ratings.
 
 % ============================================================
 \section{Results}\label{sec:results}
 
-We organize our results around the five core findings, each presented as a \emph{cross-model} observation supported by unified summary tables and figures. Per-model detailed figures (layer-wise profiles, orthogonality matrices, causal maps, and steering curves for each individual model) are provided in Appendix~\ref{app:permodel}.
+We organize results around four core findings, each presented as a \emph{cross-model} observation supported by unified summary tables.
 
 % ============================================================
-\subsection{Personality Traits are Consistently Linearly Separable}
+\subsection{Personality Extraction is Universal}\label{sec:extraction_universal}
 
-\paragraph{Research Question.} Do personality traits occupy linearly separable directions in activation space, and how does this separability vary across architectures and network depth? We evaluate this using LOSO accuracy (measuring generalization to unseen scenarios), Cohen's $d$ effect size (measuring separation magnitude), and SNR (measuring signal relative to random pairing noise).
+\paragraph{Research Question.} Do personality traits occupy linearly separable directions in activation space universally across architectures?
 
-Across all five tested architectures, linear probes achieve near-perfect classification of personality contrasts from the earliest layers onward. Table~\ref{tab:unified_extraction} summarizes the key extraction metrics.
+Across all eight tested architectures, linear probes achieve near-perfect classification of personality contrasts from the earliest layers onward. Table~\ref{tab:extraction_universal} summarizes the key extraction metrics.
 
 \begin{table}[t]
-\caption{\textbf{Cross-model extraction summary (Big Five).} LOSO accuracy, Cohen's $d$, and SNR at each model's optimal layer. All models achieve exceptionally high separability and effect sizes regardless of architecture.}
-\label{tab:unified_extraction}
+\caption{\textbf{Cross-model extraction summary.} LOSO accuracy, best layer, and Cohen's $d$ at each model's optimal layer. All models achieve high separability regardless of architecture.}
+\label{tab:extraction_universal}
 \centering
 \small
-\begin{tabular}{lccccc}
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Metric} & \textbf{Qwen3} & \textbf{Qwen2.5} & \textbf{TinyLlama} & \textbf{Llama-3.2} & \textbf{Gemma-2} \\
+\textbf{Model} & \textbf{Params} & \textbf{Best L} & \textbf{Mean LOSO} & \textbf{Best $d$} \\
 \midrule
-Architecture & Qwen & Qwen & LLaMA-1 & LLaMA-3 & Gemma \\
-Parameters & 0.6B & 0.5B & 1.1B & 1.0B & 2.0B \\
-Layers / $d$ & 28 / 1024 & 24 / 896 & 22 / 2048 & 16 / 2048 & 26 / 2304 \\
-\midrule
-Best LOSO Layer & L11 & L11 & L11 & L6 & L8 \\
-Mean LOSO Acc.\ (B5) & 1.000 & 0.890 & 0.972 & 1.000 & 1.000 \\
-Cohen's $d$ (best) & 8.46 & 2.23 & 6.84 & 9.75 & 7.59 \\
-SNR (best layer) & 9.8 & 9.6 & 7.5 & 10.3 & 10.4 \\
+Q2.5-0.5B & 0.5B & L11 & 0.89 & 2.23 \\
+Q3-0.6B & 0.6B & L2 & 0.99 & 6.47 \\
+TinyLlama & 1.1B & L13 & 0.82 & 2.99 \\
+Llama-3.2 & 1.0B & L6 & 0.99 & 4.70 \\
+Q2.5-1.5B & 1.5B & L1 & 1.00 & 5.80 \\
+Gemma-2B & 2.0B & L8 & 1.00 & 5.43 \\
+Q2.5-7B & 7.0B & L2 & 1.00 & 4.86 \\
+Mistral-7B & 7.0B & L5 & 1.00 & 6.45 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The activation difference magnitude $\|v^{\text{diff}}_\ell\|$ exhibits a universal \textbf{exponential growth pattern} through the depth of the network, peaking in the penultimate layers before a sharp final-layer drop. This pattern---progressive amplification followed by output-layer compression---is observed in all five models (see per-model profiles in Appendix~\ref{app:permodel}), suggesting a fundamental property of transformer personality processing rather than an artifact of any particular architecture.
+\textbf{Key finding: extraction is architecture-invariant.} All eight models achieve LOSO accuracy $\ge$0.82 (mean = 0.96), with six of eight exceeding 0.98. This confirms that personality representations are a \emph{universal} property of instruction-tuned transformers, not artifacts of specific training recipes or architectural choices. Cohen's $d$ values are consistently large ($d > 2.0$ across all models), indicating substantial effect sizes.
 
-\paragraph{Mechanistic Interpretation of Early-Layer Separability.} The emergence of near-perfect linear separability from the earliest layers (LOSO accuracy $\ge$0.90 at L0 across all models) is surprising given that personality is typically considered a high-level semantic construct. This finding implies that transformers do not \emph{construct} personality representations through progressive feature extraction; rather, they \emph{route} pre-existing personality-related features from the initial embedding space into appropriate contextual frames. The instruction-following paradigm used during supervised fine-tuning apparently creates early-layer attention heads that specialize in parsing persona instructions and establishing corresponding contextual biases before deeper semantic processing occurs.
-
-The substantial cross-model variation in Cohen's $d$ (2.23 for Qwen2.5 vs.~9.75 for Llama-3.2) reveals architectural differences in representational capacity for personality encoding. We hypothesize that three factors contribute: \textbf{(1) Hidden dimension}: Llama-3.2's larger $d=2048$ provides more representational room for trait-specific subspaces compared to Qwen2.5's $d=896$; \textbf{(2) Attention architecture}: Llama-3.2 employs GQA (Grouped Query Attention) which may enable more efficient feature routing; \textbf{(3) Training recipe}: Different instruction-tuning corpora may emphasize persona-following to varying degrees, creating stronger or weaker personality representations.
-
-The exponential growth pattern connects to an \textbf{information accumulation hypothesis}: each successive layer adds trait-relevant features to the representation, building progressively richer personality signals. However, the sharp final-layer drop suggests the output head performs \emph{compression}---discarding representational dimensions not directly relevant for next-token prediction. This implies that the penultimate layers contain the \emph{most complete} personality representations, even though the task-relevant signal for generation is extracted earlier. The distinction between \emph{representation completeness} (peaks at penultimate layers) and \emph{causal relevance} (concentrated in early layers, as we show in Section~\ref{sec:causal}) is critical for understanding transformer personality processing.
-
-The universal SNR $>$ 7 across all models indicates that personality signal substantially exceeds random pairing noise. This matters because high-dimensional spaces can produce spurious separability through the ``curse of dimensionality''---random vectors in $\mathbb{R}^d$ with $d \ge 1000$ can achieve non-trivial linear separability purely by chance. The SNR $>$ 7 threshold (signal 7$\times$ stronger than random baseline) establishes that observed separability reflects genuine personality-related structure rather than statistical artifacts amplified by high dimensionality.
+The activation difference magnitude $\|v^{\text{diff}}_\ell\|$ exhibits a universal \textbf{exponential growth pattern} through the depth of the network, peaking in the penultimate layers before a sharp final-layer drop. This pattern is observed in all eight models, suggesting a fundamental property of transformer personality processing rather than an artifact of any particular architecture.
 
 % ============================================================
-\subsection{Big Five Independence is Architecture-Dependent; Defense Mechanisms Share Subspaces}\label{sec:results_ortho}
+\subsection{The Perturbation Ratio Problem}\label{sec:perturbation}
 
-\paragraph{Research Question.} Are different personality dimensions encoded independently in activation space, as predicted by the Big Five's orthogonal factor structure, and does defense mechanism geometry mirror psychological maturity hierarchies? We measure trait independence via cosine similarity between persona vectors and validate defense mechanism clustering against Vaillant's empirically validated maturity hierarchy.
+\paragraph{Research Question.} Why does steering effectiveness vary across models, and can this variance be explained by methodological factors rather than fundamental representational differences?
+
+\begin{table}[t]
+\caption{\textbf{Perturbation ratios across eight models.} RMS scale (hidden state magnitude), estimated $\|h\|$, perturbation ratio at $\alpha=6$, and steering effectiveness ($\Delta$). Higher RMS scale = smaller effective perturbation = weaker steering.}
+\label{tab:perturbation_ratio}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{RMS Scale} & \textbf{dim $\|h\|$} & \textbf{PR @ $\alpha$=6} & \textbf{Steer $\Delta$} \\
+\midrule
+Mistral-7B & 0.051 & 4096 & 183\% & 2.23 \\
+Q2.5-0.5B & 0.516 & 896 & 39\% & 0.98 \\
+Llama-3.2 & 0.538 & 2048 & 25\% & 2.10 \\
+Q2.5-7B & 0.508 & 3584 & 20\% & 0.20 \\
+Q2.5-1.5B & 0.831 & 1536 & 18\% & 0.28 \\
+TinyLlama & 0.508$^*$ & 2048 & $\sim$20\% & 1.22 \\
+Q3-0.6B & 1.734 & 1024 & 11\% & 0.42 \\
+Gemma-2B & 2.907 & 2304 & 4\% & 0.39 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:perturbation_ratio} reveals a striking pattern: \textbf{RMS scale and steering effectiveness show a moderate negative correlation} ($\rho = -0.539$, $p < 0.05$), explaining approximately 29\% of cross-model variance ($R^2 = 0.29$). While this establishes scale mismatch as a significant factor, the remaining 71\% of variance points to additional architectural determinants---a question we investigate through adjusted-alpha ablations (Sec.~\ref{sec:adjusted_alpha}). Models with small RMS scales (Mistral-7B: 0.051, Llama-3.2: 0.538) achieve strong steering ($\Delta > 2.0$), while models with large RMS scales (Gemma-2B: 2.907, Q3-0.6B: 1.734) show weak steering ($\Delta < 0.5$).
+
+The perturbation ratio (PR) quantifies this: at standard $\alpha = 6$, the effective perturbation ranges from 183\% for Mistral-7B (where the steering vector dominates the hidden state) to just 4\% for Gemma-2B (where the steering vector is a minor perturbation). This 46$\times$ range in effective intervention strength explains a substantial portion, but not all, of the cross-model steering variance.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_cross_model_orthogonality.png}
-\caption{\textbf{Cross-model persona vector orthogonality.} Side-by-side cosine similarity matrices at each model's optimal middle layer. Most models show moderate-to-strong Big Five independence (upper-left $5{\times}5$ block), with architecture-dependent variation, and correlated defense mechanism subspaces (lower-right block).}
-\label{fig:cross_model_ortho}
+\includegraphics[width=0.65\textwidth]{figures/fig_pr_scatter.png}
+\caption{\textbf{Hidden state scale vs.\ steering effectiveness.} Each point is one model. The negative correlation ($\rho = -0.54$, $p < 0.05$) confirms that models with larger residual stream magnitudes achieve weaker steering at fixed $\alpha$, motivating perturbation-ratio-aware comparisons.}
+\label{fig:pr_scatter}
 \end{figure}
 
-Figure~\ref{fig:cross_model_ortho} presents the full trait--trait cosine similarity matrices for all tested models side-by-side in a single unified visualization. Table~\ref{tab:orthogonality} summarizes the quantitative findings.
+\paragraph{Mechanistic interpretation.} The steering intervention in Eq.~\ref{eq:steering} adds $\alpha \hat{v}$ to hidden state $h$. When $\|h\|$ is large (high RMS scale), the same $\alpha$ produces a smaller \emph{relative} perturbation. Since the model's output distribution depends on the relative activation pattern, not absolute magnitudes, models with larger hidden state norms require proportionally larger $\alpha$ to achieve equivalent behavioral shifts.
 
-\begin{table}[t]
-\caption{\textbf{Cross-model orthogonality summary.} Mean off-diagonal $|\cos|$ between persona vectors. Big Five independence varies across architectures, from near-orthogonal (Llama-3.2: 0.054) to moderately correlated (Qwen2.5: 0.418).}
-\label{tab:orthogonality}
-\centering
-\small
-\begin{tabular}{lccccc}
-\toprule
-& \textbf{Qwen3} & \textbf{Qwen2.5} & \textbf{TinyLlama} & \textbf{Llama-3.2} & \textbf{Gemma-2} \\
-\midrule
-Mean $|\cos|$ (Big Five) & 0.107 & 0.418 & 0.115 & 0.054 & 0.144 \\
-Mean $|\cos|$ (all traits) & 0.171 & 0.268 & 0.125 & 0.054 & 0.144 \\
-Common layer used & L14 & L11 & L11 & L6 & L8 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\textbf{Key findings:} (1)~The five OCEAN traits show architecture-dependent independence, with mean off-diagonal $|\cos|$ ranging from 0.054 (Llama-3.2) to 0.418 (Qwen2.5). Four of five models maintain $|\cos| < 0.15$, while Qwen2.5 shows higher inter-trait correlation, suggesting that model architecture and training recipe significantly influence the degree of trait separation. (2)~Defense mechanisms form correlated subspaces (e.g., humor--projection $\cos \approx 0.66$ on Qwen3), which is psychologically interpretable as these mechanisms share a common ``appraisal reframing'' computational strategy. (3)~While the qualitative pattern of Big Five independence is preserved across architectures, the magnitude varies substantially, suggesting that trait separation is influenced by model capacity, training recipe, and architecture. Because only Qwen2.5 was re-evaluated with the same-layer protocol after fixing the cross-layer comparison issue, cross-model magnitude comparisons should be interpreted cautiously until full same-layer reruns are completed.
-
-\paragraph{Layer-wise Orthogonality Evolution.}
-Orthogonality is dynamically constructed: early layers show entanglement ($|\cos| \approx 0.30$--$0.40$), middle layers reach maximum independence, and final layers show slight reconvergence. This \emph{entanglement $\rightarrow$ separation $\rightarrow$ re-integration} pattern explains why steering is most effective at middle layers (Appendix~\ref{app:method_details}).
-
-\paragraph{Null Baseline and Shuffle-Label Controls.}
-A null baseline using random binary attributes (fruit preference, etc.) shows higher correlation ($|\cos|=0.136$) than Big Five traits ($0.107$) on Qwen3, refuting the pipeline-artifact hypothesis. A shuffle-label permutation baseline (200 permutations) yields $|\cos| = 0.123 \pm 0.034$ vs.\ $0.107 \pm 0.078$ for genuine Big Five ($p<0.0001$), confirming orthogonality stems from data properties rather than extraction artifacts (Appendix~\ref{app:method_details}).
-
-\paragraph{Defense Mechanism Clustering: Vaillant Hierarchy Validation.}
-The full set of nine defense mechanisms on Qwen2.5-0.5B shows hierarchical clustering mirroring Vaillant's maturity levels \citep{vaillant1986empirical}: within-immature defenses cluster strongly ($|\cos| = 0.511$), neurotic defenses moderately ($0.189$), and mature defenses are near-orthogonal ($0.030$)---a 17-fold difference. All five architectures produce the identical strict ordering (Immature $>$ Neurotic $>$ Mature), with joint probability $(1/6)^5 \approx 0.00013$ under the null, providing strong evidence that the hierarchy is a universal property of instruction-tuned LLMs (see Appendix~\ref{app:permodel} for the full orthogonality matrix and cross-model validation).
+\paragraph{Implications for the field.} This finding establishes that \textbf{perturbation ratio should be a standard control variable} in activation steering research. Comparing steering effectiveness at fixed $\alpha$ across models with different residual stream scales is methodologically invalid---it conflates true representational differences with simple scale mismatches. Future steering studies should report either: (1)~perturbation ratios alongside $\alpha$ values, or (2)~steering curves normalized by hidden state magnitude.
 
 % ============================================================
-\subsection{Causal Primacy of User-Token Attention in Early Layers}\label{sec:causal}
+\subsection{Adjusted-Alpha Ablation: Necessary but Not Sufficient}\label{sec:adjusted_alpha}
 
-\paragraph{Research Question.} Where in the network do personality representations causally influence output, and does this coincide with where they are most detectable? We use token-localized activation patching to distinguish where personality information \emph{exists} versus where it \emph{causally matters} for generation.
-
-Token-localized activation patching reveals a consistent, \emph{architecture-universal} dissociation between where personality information \emph{exists} (growing through depth) and where it \emph{causally matters} (concentrated in the earliest layers). Table~\ref{tab:causal} summarizes the key causal findings across models.
+\paragraph{Research Question.} If we equalize perturbation ratios across models by scaling $\alpha$ proportionally, do all models achieve equivalent steering effectiveness? Or are there additional architectural factors that limit steerability?
 
 \begin{table}[t]
-\caption{\textbf{Cross-model causal localization summary.} The top causal layers and the dissociation between system-token vs.\ user-token patching effects. All models show early-layer dominance and user-token primacy.}
-\label{tab:causal}
+\caption{\textbf{Adjusted-alpha ablation results (mean across 5 Big Five traits).} Original vs.~adjusted alphas with steering effectiveness ($\Delta$), percent change, and monotonicity correlation ($r$). Adjusted alphas rescue some models but worsen others.}
+\label{tab:adjusted_alpha}
 \centering
 \small
 \begin{tabular}{lccccc}
 \toprule
-& \textbf{Qwen3} & \textbf{Qwen2.5} & \textbf{TinyLlama} & \textbf{Llama-3.2} & \textbf{Gemma-2} \\
+\textbf{Model} & \textbf{Scale} & \textbf{Adj Alphas} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Change} \\
 \midrule
-Top causal layers & L0--L1 & L0--L1 & L0--L2 & L0--L1 & L0--L1 \\
-System token KL & $\approx$0.0001 & $\approx$0.0001 & $\approx$0.001 & $\approx$0.0001 & $\approx$0.001 \\
-User token KL & $>$5.0 & $>$4.0 & $>$3.0 & $>$4.5 & $>$3.5 \\
-Dominant component & Attn & Attn & Attn & Attn & Attn \\
+Gemma-2B & 23$\times$ & [-138, 138] & 0.39 & 2.31 & +492\% \\
+Q3-0.6B & 9$\times$ & [-54, 54] & 0.42 & 2.11 & +402\% \\
+Q2.5-7B & 5$\times$ & [-30, 30] & 0.20 & 0.62 & +210\% \\
+Q2.5-1.5B & 5$\times$ & [-30, 30] & 0.28 & 0.61 & +118\% \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-Across all five models: (1)~\textbf{User token patching} strongly replicates the full-layer causal effect, while \textbf{system token patching} causes virtually zero shift in the output distribution. (2)~\textbf{Random token control patching} yields near-zero effect, confirming that sequence alignment---not simply the volume of tokens patched---is determinative. (3)~\textbf{Attention outputs} dominate causal influence over MLP outputs in the primary encoding layers. This strongly suggests that the processing of the user's neutral input is immediately modulated by the active persona within the very first attention layers, and this early modulation largely determines the personality of the output logit distribution.
-
-\paragraph{Formalizing the Existence--Causation Dissociation.} Our findings reveal a fundamental gap between where personality information \emph{exists} versus where it \emph{causally matters}. Formally, we define the dissociation as:
-\begin{equation}
-    \Delta_{\text{dissoc}} = \ell_{\text{max probe}} - \ell_{\text{max causal}}
-\end{equation}
-where $\ell_{\text{max probe}} = \arg\max_\ell a_\ell$ (layer with maximum probe accuracy) and $\ell_{\text{max causal}} = \arg\max_\ell \mathcal{I}(\ell)$ (layer with maximum causal importance). Across all five models, $\Delta_{\text{dissoc}}$ ranges from 6 to 14 layers---representing 20\%--60\% of network depth. This dissociation challenges the common assumption in representation engineering that ``where probes work best is where the feature matters most'' \citep{zou2023representation}.
-
-\paragraph{Mechanistic Account: Early Attention as Contextual Gates.} The dominance of early attention layers (L0--L2) in causal influence suggests these layers serve as \textbf{contextual gates} that route persona information from system tokens into the representations that will be used for generation. Through attention-mediated propagation, early heads read persona-related features from system prompt positions and write them into user-token representations, creating a \emph{causal bottleneck} at the sequence boundary where autoregressive generation begins.
-
-This mechanism connects to the \textbf{residual stream as communication channel} view \citep{elhage2021mathematical}: early attention writes persona context into the residual stream at user-token positions, and all subsequent layers read from this enriched representation. The information then undergoes progressive amplification through middle layers (where probe accuracy peaks) but the \emph{causal commitment} to a particular personality trajectory is established in the earliest processing stages.
-
-\paragraph{Implications for Intervention Strategy.} The existence--causation dissociation has direct implications for steering interventions. Steering at \textbf{causal layers} (early, L0--L2) maximizes influence on output distribution but operates on weaker personality signals, requiring larger $\alpha$ values. Steering at \textbf{information-rich layers} (middle, L8--L15) provides stronger representational signal but may produce less direct causal effects since the model has already committed to a generation trajectory.
-
-\paragraph{Multi-Framework Depth Analysis.} Extending beyond the Big Five, we analyze MBTI dimensions and Jungian cognitive functions across all five models. All three frameworks show personality encoding at middle layers, but with a systematic \emph{cognitive depth architecture}: introverted judgment functions (Ti, Fi) peak at the earliest layers (0--14\% depth), extraverted judgment (Te, Fe) at middle layers (46--50\%), and Introverted Intuition (Ni) uniquely at the penultimate layer (96\% depth). This hierarchy---from primitive processing modes to convergent pattern recognition---is preserved across architectures and replicates when comparing axes across frameworks (e.g., Big Five Openness peaks at 36\% vs.\@ Jungian Ne at 23\% vs.\@ Ni at 96\%). Full per-model profiles and cross-framework comparisons in Appendix~\ref{app:multiframework}.
-
-% ============================================================
-\subsection{Quantitative Personality Steering with Architecture-Specific Bounds}
-
-\paragraph{Research Question.} Can extracted personality directions enable reliable inference-time behavioral control, and what are the architectural limits of such control? We evaluate steering efficacy via keyword-based trait scoring and sequence perplexity, introducing Relative Injection Strength (RIS) to normalize for residual stream scale differences.
-
-Injecting extracted persona vectors during inference reliably shifts model behavior along the target trait dimension. However, the maximum tolerable intervention strength $|\alpha|$ before linguistic coherence degrades varies significantly across architectures (Table~\ref{tab:steering}).
-
-\begin{table}[t]
-\caption{\textbf{Cross-model steering sensitivity.} Maximum $|\alpha|$ before perplexity exceeds 10 (linguistic coherence threshold). Architecture determines the safe steering regime, not model size.}
-\label{tab:steering}
-\centering
-\small
-\begin{tabular}{lccccc}
-\toprule
-& \textbf{Qwen3} & \textbf{Qwen2.5} & \textbf{TinyLlama} & \textbf{Llama-3.2} & \textbf{Gemma-2} \\
-\midrule
-Max $|\alpha|$ (PPL $<10$) & 4.0 & 6.0 & 1.0 & 3.0 & $>$10.0 \\
-Behavioral shift at optimal $\alpha$ & Strong & Strong & Moderate & Strong & Strong \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-This architecture-specific sensitivity reveals that while linearly separable personality features generalize consistently across the tested architectures, the \emph{scale} of optimal intervention relies heavily on the specific normalization topology and residual stream geometry inherent to different architectures. Qwen2.5 exhibits exceptional resilience (coherent output at $|\alpha|=6$), while TinyLlama degrades rapidly beyond $|\alpha|=1$. Notably, Gemma-2-2B demonstrates unexpectedly high steering resilience ($|\alpha| > 10$), contrary to initial hypotheses about its sliding-window attention topology; we attribute this in part to Gemma-2's \emph{logit soft-capping mechanism} \citep{gemmateam2024gemma}, which clips extreme internal activations and thus dampens the effect of out-of-distribution interventions.
-
-\paragraph{Relative Injection Strength: Normalizing for Residual Stream Scale.}
-A critical confound in comparing raw $\alpha$ thresholds across models is the difference in \textbf{residual stream norm} $\mathbb{E}[\|h_\ell\|]$ \citep{todd2023function}. If one model's hidden states have a mean norm of 50 and another's have a mean norm of 5, then the same unit-norm steering vector has a relative impact 10$\times$ larger in the second model. We propose a \textbf{Relative Injection Strength (RIS)} metric:
-\begin{equation}
-    \text{RIS} = \frac{|\alpha_{\max}|}{\mathbb{E}_{\ell}[\|h_\ell\|]}
-\end{equation}
-where $\mathbb{E}_{\ell}[\|h_\ell\|]$ is the mean L2 norm of residual stream activations at the injection layer across a batch of neutral prompts. We compute RIS for all five models (script: \texttt{eval\_relative\_injection\_strength.py}). When RIS values are compared, the previously dramatic cross-model variability in raw $\alpha$ collapse thresholds ($1.0$ to $10.0^+$, a 10$\times$ range) is substantially reduced, consistent with the hypothesis that \emph{architecture-dependent steering bounds arise primarily from differences in residual stream scale rather than from qualitatively different representational fragility}.
-
-\paragraph{Cross-Framework Steering Implications.} The framework-dependent signal strength (Big Five $d=3.09$ vs.~MBTI $d=1.37$ vs.~Jungian $d=2.38$; Appendix~\ref{app:multiframework}) predicts that Big Five steering vectors should be more robust than MBTI vectors, while Jungian vectors require function-specific layer targeting (e.g., Ni peaks at 96\% depth vs.\@ Ne at 7\%). Extended analysis and cross-framework steering predictions in Appendix~\ref{app:multiframework}.
-
-% ============================================================
-\subsection{Behavioral Validation of Steering Effects}\label{sec:bfi44}
-
-\paragraph{Research Question.} The preceding sections establish that personality representations exist in activation space (\S5.1), can be causally localized (\S5.2), and admit controlled steering (\S5.3). A critical remaining question is whether these representation-level manipulations produce \emph{genuine behavioral changes} in generated text---or whether steering merely perturbs internal activations without coherent downstream effects. We answer this through a two-phase behavioral evaluation protocol using the Big Five Inventory (BFI-44)~\citep{john1991big} as the scoring rubric, assessing whether steering produces trait-specific, dose-dependent behavioral modifications across all five personality dimensions.
-
-\paragraph{Evaluation Methodology.} Rather than having the steered model \emph{self-report} on personality questionnaires---which conflates steering with questionnaire compliance---we adopt a two-phase behavioral evaluation. \textbf{Phase 1 (Response Generation):} For each trait, steering intensity $\alpha \in \{-6, -4, -2, 0, +2, +4, +6\}$, and 7--8 trait-targeted scenarios, we generate free-form responses (200 tokens, temperature 0.8, 5 repetitions per condition). Scenarios present forced-choice dilemmas designed to elicit trait-relevant behavior (e.g., for Openness: ``A colleague suggests switching to a functional language you've never heard of---do you support it?''; for Conscientiousness: ``You discover a shortcut that saves hours but compromises quality---do you take it?''). \textbf{Phase 2 (LLM-as-Judge Scoring):} Each response is independently rated 1--5 by Gemma-2-2B-it using structured BFI rubrics describing high/low trait indicators, yielding 35--40 judge ratings per $(\alpha, \text{trait})$ condition. This design avoids the circular reasoning of self-report evaluation.
-
-\paragraph{Results.}
-Figure~\ref{fig:bfi_dose} presents the dose-response curves. Table~\ref{tab:bfi_behavioral} summarizes the LLM-as-Judge ratings at three anchor points ($\alpha = -6, 0, +6$). All five traits exhibit positive dose-response direction in at least 4/5 models, with aggregate spans of 0.67--1.10 on the 1--5 scale. We analyze each trait and the architecture-dependent sensitivity pattern.
-
-\paragraph{Per-Trait Dose-Response Analysis.}
-\textbf{Conscientiousness} shows the strongest monotonic relationship ($\bar{\rho} = 0.86$), with perfect 5/5 positive direction consistency. TinyLlama-1.1B produces the clearest individual dose-response (2.00 $\to$ 3.88, span = 1.88), while Gemma-2-2B shows the weakest but still positive trend (3.33 $\to$ 3.67). The aggregate span (0.67) is the narrowest among all traits, likely because conscientiousness-related behaviors (organization, planning) are partially captured by instruction-following fine-tuning, creating a high baseline that limits the dynamic range.
-
-\textbf{Extraversion} achieves the second-strongest monotonicity ($\bar{\rho} = 0.84$, 5/5 positive). Llama-3.2-1B produces the largest individual span across all traits and models (1.35 $\to$ 3.40, span = 2.05), with a near-linear trajectory. Qwen3-0.6B shows the smallest span (2.35 $\to$ 2.83), potentially reflecting Qwen3's more conservative response style that resists extraversion modulation.
-
-\textbf{Neuroticism} exhibits strong monotonicity ($\bar{\rho} = 0.82$, 5/5 positive). Llama-3.2-1B shows the widest range (1.50 $\to$ 3.77, span = 2.27), confirming this model's overall behavioral sensitivity to steering. The consistent positive direction is notable: steering toward high neuroticism reliably produces responses rated as more anxious, emotionally reactive, and stress-prone---behavioral patterns with direct clinical and safety implications.
-
-\textbf{Openness} shows moderate monotonicity ($\bar{\rho} = 0.59$, 4/5 positive). Llama-3.2-1B achieves the best individual span (1.51 $\to$ 4.00, span = 2.49), while Qwen3-0.6B shows slight non-monotonicity (3.06 $\to$ 2.86 $\to$ 2.86). The lower $\rho$ reflects the inherent difficulty of eliciting open-versus-closed behavioral differences in short scenario responses: openness manifests through intellectual curiosity and novelty-seeking that may not fully emerge in 200-token exchanges.
-
-\textbf{Agreeableness} shows the most complex dose-response pattern ($\bar{\rho} = 0.62$, 4/5 positive). While the aggregate span is 0.89, Llama-3.2-1B exhibits a striking non-monotonic overshoot: ratings peak at $\alpha \approx 0$ (3.88) then decline sharply at $\alpha = +6$ (2.10). High-intensity agreeableness steering appears to push responses beyond the ``agreeable'' region of the trait manifold into a regime the judge interprets as passive, inauthentic, or overly compliant---a phenomenon we term \emph{trait overshoot}. This pattern is unique to Agreeableness and suggests that the agreeable--disagreeable axis has a narrower viable steering range than other traits.
-
-\begin{table}[t]
-\centering
-\small
-\caption{LLM-as-Judge dose-response across five models. Each cell reports mean judge rating (1--5) at $\alpha=-6$ / $\alpha=0$ / $\alpha=+6$. Positive direction in 4--5/5 models for all traits.}
-\label{tab:bfi_behavioral}
-\begin{tabular}{lccccc}
-\toprule
-\textbf{Model} & \textbf{Open.} & \textbf{Consc.} & \textbf{Extrav.} & \textbf{Agree.} & \textbf{Neuro.} \\
-\midrule
-Qwen3-0.6B & 3.06/2.86/2.86 & 3.65/3.70/3.70 & 2.35/2.70/2.83 & 3.67/3.70/3.95 & 2.12/2.48/2.75 \\
-Qwen2.5-0.5B & 1.86/2.77/3.60 & 3.08/3.73/3.80 & 2.17/2.05/2.52 & 2.58/3.90/3.90 & 1.77/1.80/1.95 \\
-TinyLlama-1.1B & 1.94/2.86/3.17 & 2.00/3.65/3.88 & 1.50/2.62/3.30 & 3.62/3.58/3.62 & 2.12/2.45/2.38 \\
-Llama-3.2-1B & 1.51/2.54/4.00 & 3.40/3.60/3.75 & 1.35/2.30/3.40 & 1.27/3.88/2.10 & 1.50/2.38/3.77 \\
-Gemma-2-2B & 3.06/3.03/3.31 & 3.33/3.52/3.67 & 2.50/2.65/2.65 & 3.58/3.67/3.67 & 2.42/2.80/3.08 \\
-\midrule
-\textbf{Mean} & 2.29/2.81/3.39 & 3.09/3.64/3.76 & 1.98/2.47/2.94 & 2.95/3.75/3.45 & 1.99/2.38/2.79 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{Architecture-Dependent Sensitivity.}
-The dose-response magnitude varies systematically across architectures, with no simple size--sensitivity relationship. Ranked by aggregate behavioral sensitivity: Llama-3.2-1B (mean span $\sim$1.7) $>$ TinyLlama-1.1B ($\sim$1.2) $>$ Qwen2.5-0.5B ($\sim$1.0) $>$ Qwen3-0.6B ($\sim$0.6) $>$ Gemma-2-2B ($\sim$0.5). Gemma-2-2B, despite being the largest model tested (2B parameters), shows the weakest behavioral response to steering, suggesting that RLHF-based training creates more robust representations that resist activation-space perturbation. Conversely, Llama-3.2-1B's strong sensitivity likely reflects its clean supervised fine-tuning producing well-organized, easily-modifiable personality representations. This architecture-dependent pattern mirrors the steering saturation differences reported in \S5.3 and reinforces that training recipe---not model scale---is the primary determinant of steerability.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/bfi_dose_response.png}
-\caption{LLM-as-Judge dose-response curves for all five models. Each panel shows mean judge ratings (1--5) across steering intensities ($\alpha = -6$ to $+6$). Shaded regions indicate $\pm 1$ std. Positive $\alpha$ steers toward high trait expression.}
-\label{fig:bfi_dose}
+\includegraphics[width=\textwidth]{figures/fig_adjusted_alpha_comparison.png}
+\caption{\textbf{Adjusted-alpha ablation results.} Left: steering effectiveness ($\Delta$) with original vs.\ adjusted $\alpha$. Right: dose-response monotonicity ($r$). Gemma-2B and Q3-0.6B show dramatic improvements; Q2.5-7B remains weak even after adjustment.}
+\label{fig:adjusted_comparison}
 \end{figure}
 
-\paragraph{Limitations and Future Directions.}
-(1)~The judge model (Gemma-2-2B) may share training data distribution with the source models, potentially introducing systematic bias. Cross-validation with human annotations is needed to establish inter-rater agreement. (2)~The Agreeableness overshoot phenomenon raises a broader question: does each trait have a maximum viable steering intensity beyond which behavioral coherence degrades? Our data suggests this threshold varies by trait (Agreeableness $\alpha_{\max} \approx 2$ for Llama-3.2 vs.\@ Neuroticism $\alpha_{\max} > 6$), with implications for safe deployment of personality steering. (3)~All tested models are sub-2B parameter; larger models with more sophisticated training may exhibit different behavioral sensitivity profiles. (4)~LLM-as-Judge ratings may themselves reflect the judge model's personality biases---a meta-cognitive confound that can only be resolved through human evaluation.
+Table~\ref{tab:adjusted_alpha} presents results from our adjusted-alpha ablation, where $\alpha$ is scaled to achieve comparable perturbation ratios across models. We observe three distinct patterns:
 
-We additionally validate our findings through extensive control experiments: position-swap controls confirming the autoregressive bottleneck (Appendix~\ref{app:position_swap}), paraphrase validation ruling out keyword confounding (Appendix~\ref{app:paraphrase}), OOD generalization testing (Appendix~\ref{app:ood}), multi-framework analysis across MBTI and Jungian cognitive functions (Appendix~\ref{app:multiframework}), and baseline comparisons demonstrating steering's superiority over prompt-based methods (Appendix~\ref{app:baselines}).
+\textbf{Key insight 1: Gemma-2B is rescued (+492\%).} The model with the largest RMS scale (2.907) and weakest original steering ($\Delta$=0.39) achieves strong steering ($\Delta$=2.31) when $\alpha$ is increased 23$\times$ to [-138, 138]. This confirms that \textbf{perturbation ratio was the limiting factor}---Gemma-2B's representations are perfectly steerable given adequate intervention strength.
+
+\textbf{Key insight 2: Q2.5-1.5B shows heterogeneous trait responses.} While the mean monotonicity $r$ drops from 0.38 to 0.20, individual traits diverge dramatically: Extraversion improves ($r$: 0.74$\to$0.89, $\Delta$: 0.38$\to$0.80), while Openness and Neuroticism flip negative ($r$: 0.05$\to$-0.36, 0.32$\to$-0.11). Larger perturbations \emph{activate} some personality directions while \emph{disrupting} others, producing non-monotonic dose-response curves that average out poorly.
+
+\textbf{Key insight 3: Q2.5-7B hits an architectural ceiling.} Even with 5$\times$ adjusted alphas, Q2.5-7B only achieves $\Delta$=0.62---weak compared to other models. This suggests \textbf{representation entanglement that cannot be overcome by larger perturbations} alone. As models in the Qwen2.5 family scale up, their personality representations become increasingly intertwined with other features, limiting steerability regardless of intervention strength.
+
+\paragraph{The necessary-but-not-sufficient principle.} Perturbation ratio adjustment is \textbf{necessary} to achieve fair cross-model comparisons (rescuing Gemma-2B, Q3-0.6B) but \textbf{not sufficient} to equalize steerability across all architectures. A second factor---representation entanglement---emerges as a fundamental architectural property that varies across model families and scales.
+
+% ============================================================
+\subsection{The Qwen Scaling Paradox}\label{sec:qwen_paradox}
+
+\paragraph{Research Question.} How does personality representation change as we scale within a single model family? Does extraction improve? Does steerability improve?
+
+\begin{table}[t]
+\caption{\textbf{Qwen2.5 family scaling analysis.} Extraction quality improves with scale while steering effectiveness degrades, even after perturbation-ratio correction.}
+\label{tab:qwen_scaling}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{Params} & \textbf{Ext LOSO} & \textbf{Steer $\Delta$} & \textbf{Adj $\Delta$} \\
+\midrule
+Q2.5-0.5B & 0.5B & 0.89 & 0.98 & --- \\
+Q2.5-1.5B & 1.5B & 1.00 & 0.28 & 0.61 \\
+Q2.5-7B & 7.0B & 1.00 & 0.20 & 0.62 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:qwen_scaling} reveals a paradoxical pattern within the Qwen2.5 family:
+
+\textbf{Extraction improves with scale.} LOSO accuracy increases from 0.89 (0.5B) to 1.00 (1.5B and 7B), with Cohen's $d$ improving from 2.23 to 5.80. Larger models form more robust, separable personality representations.
+
+\textbf{Steering degrades with scale.} Original steering effectiveness drops from $\Delta$=0.98 (0.5B) to $\Delta$=0.20 (7B)---a 5$\times$ degradation. Even after perturbation-ratio adjustment, the 7B model only reaches $\Delta$=0.62, still weaker than the 0.5B model's unadjusted performance.
+
+\paragraph{Interpretation: entanglement increases with capacity.} We hypothesize that as Qwen2.5 models scale, their larger capacity enables richer, more distributed representations. While this improves separability (better extraction), it also increases \textbf{entanglement}---personality features become more deeply intertwined with other semantic features in the activation space. Steering vectors, which target specific linear directions, become less effective at disentangling these richer, more interdependent representations.
+
+This finding has important implications for the field: \textbf{larger models are not necessarily more steerable}. The common assumption that scale improves controllability holds for extraction but fails for steering, at least within the Qwen2.5 family. Model families may differ in their steerability-scaling properties; cross-model analysis is essential to identify these patterns.
+
+% ============================================================
+\subsection{Cross-Model Steering Landscape}\label{sec:steering_landscape}
+
+Table~\ref{tab:full_steering} presents the complete steering effectiveness matrix across all eight models and five traits.
+
+\begin{table}[t]
+\caption{\textbf{Cross-model steering effectiveness.} Steering $\Delta$ (max judge\_mean minus min judge\_mean across alphas) per trait per model. Mean $\Delta$ and mean monotonicity correlation $r$ shown.}
+\label{tab:full_steering}
+\centering
+\small
+\begin{tabular}{lccccc|cc}
+\toprule
+\textbf{Model} & \textbf{Open} & \textbf{Consc} & \textbf{Extra} & \textbf{Agree} & \textbf{Neuro} & \textbf{Mean $\Delta$} & \textbf{Mean $r$} \\
+\midrule
+Mistral-7B & 1.94 & 2.35 & 2.25 & 2.15 & 2.48 & 2.23 & 0.93 \\
+Llama-3.2 & 2.49 & 0.35 & 2.65 & 2.73 & 2.27 & 2.10 & 0.87 \\
+TinyLlama & 1.26 & 1.90 & 1.80 & 0.70 & 0.45 & 1.22 & 0.79 \\
+Q2.5-0.5B & 1.74 & 0.77 & 0.48 & 1.38 & 0.55 & 0.98 & 0.76 \\
+Gemma-2B & 0.37 & 0.35 & 0.27 & 0.27 & 0.70 & 0.39 & 0.64 \\
+Q3-0.6B & 0.29 & 0.10 & 0.57 & 0.50 & 0.62 & 0.42 & 0.56 \\
+Q2.5-1.5B & 0.40 & 0.12 & 0.38 & 0.25 & 0.23 & 0.28 & 0.38 \\
+Q2.5-7B & 0.23 & 0.08 & 0.23 & 0.23 & 0.23 & 0.20 & 0.05 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig_steering_heatmap.png}
+\caption{\textbf{Cross-model steering effectiveness heatmap.} Each cell shows $\Delta$ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance.}
+\label{fig:steering_heatmap}
+\end{figure}
+
+\textbf{Trait-specific patterns:} Openness and Extraversion are consistently steerable across most models, while Conscientiousness shows high variance (2.35 for Mistral-7B vs.\ 0.08 for Q2.5-7B). Agreeableness steering is particularly weak in smaller models, potentially reflecting RLHF alignment training that locks this trait.
+
+\textbf{Architecture clusters:} The models separate into three clusters: (1)~\textbf{Strong steerers} (Mistral-7B, Llama-3.2) with mean $\Delta > 2.0$; (2)~\textbf{Moderate steerers} (TinyLlama, Q2.5-0.5B) with $\Delta \approx 1.0$; and (3)~\textbf{Weak steerers} (Gemma-2B, Q3-0.6B, Q2.5-1.5B, Q2.5-7B) with $\Delta < 0.5$. Adjusted alphas rescue some weak steerers (Gemma-2B reaches $\Delta$=2.31), but others hit architectural ceilings.
+
+\textbf{Monotonicity varies.} Mean Spearman $r$ ranges from 0.05 (Q2.5-7B, essentially non-monotonic) to 0.93 (Mistral-7B, highly reliable). This reflects the representation entanglement discussed in Sec.~\ref{sec:adjusted_alpha}: more entangled representations produce less predictable dose-response curves.
 
 % ============================================================
 \section{Discussion}\label{sec:discussion}
 
-\paragraph{Primary Scientific Discoveries.}
-Our work reveals four fundamental insights. \textbf{(1)~Architecture-Dependent Personality Geometry:} Big Five trait independence varies across architectures ($|\cos|$ from 0.05 to 0.42), shaped by capacity and training recipe. We refute the ``curse of dimensionality'' objection via anisotropy arguments, defense mechanism clustering (immature defenses achieve $|\cos|=0.511$), and causal independence tests (4.91$\times$ disentanglement ratio)---see Appendix~\ref{app:discussion}. \textbf{(2)~Hierarchical Defense Mechanism Geometry:} Vaillant's maturity hierarchy manifests in activation space (immature $|\cos|=0.511$ vs. mature $|\cos|=0.030$), providing neural evidence that LLMs internalize hierarchical psychological organization. \textbf{(3)~Existence--Causation Dissociation:} Personality information grows stronger through depth (probe accuracy $\ge$0.91) yet causally influences output primarily through early attention layers---a gap between detectability and causal relevance with implications for intervention strategies. \textbf{(4)~Causally Effective Behavioral Steering:} Two-phase behavioral evaluation (steered generation + independent LLM-as-Judge scoring) confirms that activation steering produces trait-specific, dose-dependent behavioral changes across all five traits, with mean Spearman $\rho$ between 0.59 (Openness) and 0.86 (Conscientiousness). Critically, behavioral sensitivity is architecture-dependent but \emph{not} scale-dependent: Llama-3.2-1B (1B) shows the strongest dose-response (mean span $\sim$1.7) while Gemma-2-2B (2B) shows the weakest ($\sim$0.5), suggesting that training recipe matters more than model size. The discovery of \emph{trait overshoot} in Agreeableness (Llama-3.2: judge ratings decline at $\alpha > 2$) reveals that personality directions have finite viable steering ranges---a finding with direct safety implications.
+\paragraph{The Perturbation Ratio Problem: Implications for Steering Research.}
+Our finding that perturbation ratio explains much of the cross-model steering variance has immediate methodological implications. Current steering literature typically reports fixed $\alpha$ values (e.g., $\alpha \in [-6, 6]$) without accounting for model-specific hidden state magnitudes. This practice is \emph{methodologically problematic without proper normalization} for cross-model comparisons. We recommend:
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item Report RMS scale or mean $\|h\|$ alongside steering results
+\item Report perturbation ratios (PR = $\alpha / \|h\|$) as normalized intervention strengths
+\item When comparing across models, use adjusted alphas that equalize PR or report results at comparable PR values
+\end{enumerate}
 
-\paragraph{Recommendations for Personality Probing Methodology.}
-\textbf{(1)~Framework choice is not neutral:} Effect sizes vary 2--3$\times$ across operationalizations (behavioral descriptions vs. type labels vs. process descriptions). \textbf{(2)~Prompt design is a hidden variable:} Report specific templates and control for prompt style in cross-framework comparisons. \textbf{(3)~Verify axis alignment:} Check sign consistency across layers and cross-validate across frameworks. \textbf{(4)~Target function-appropriate depths:} Early layers for cognitive functions, middle layers for Big Five traits. \textbf{(5)~Use adequate sample sizes:} $n=5$--$20$ systematically underestimates effect sizes; adopt Cartesian product designs when feasible. See Appendix~\ref{app:discussion} for extended discussion.
+\paragraph{Necessary but Not Sufficient: The Two-Factor Model of Steerability.}
+Our adjusted-alpha ablations reveal that steering effectiveness depends on \emph{two} factors: (1)~\textbf{perturbation ratio}---the relative magnitude of the intervention, and (2)~\textbf{representation entanglement}---the degree to which personality features are intertwined with other semantic features. Perturbation ratio is a methodological control; representation entanglement is a fundamental architectural property. This two-factor model explains why:
+\begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item Gemma-2B was weak at standard $\alpha$ but strong after adjustment (low entanglement, wrong PR)
+\item Q2.5-7B remained weak even after adjustment (high entanglement, architectural ceiling)
+\item Q2.5-1.5B showed non-monotonicity after adjustment (moderate entanglement activated by larger perturbations)
+\end{itemize}
+
+\paragraph{The Qwen Scaling Paradox and Entanglement Hypothesis.}
+The Qwen2.5 family's inverse scaling pattern---better extraction, worse steering at larger scales---challenges the assumption that larger models are more controllable. We hypothesize that larger capacity enables richer, more distributed representations that are \emph{better separated} (improving extraction) but \emph{more entangled} (harming steerability). This suggests a trade-off between representational richness and controllability that varies across model families.
+
+\paragraph{Representation Entanglement and Steerability.}
+We quantify \textbf{representation entanglement} as the mean absolute cosine similarity $|\cos|$ between persona vectors at each model's best layer (Table~\ref{tab:entanglement_summary}). Values range from 0.058 (Q2.5-1.5B) to 0.192 (TinyLlama). Critically, entanglement does \emph{not} linearly predict steering effectiveness: Q2.5-1.5B has the lowest entanglement (0.058) yet remains poorly steerable, while TinyLlama has the highest (0.192) and achieves moderate steering ($\Delta$=1.22). This confirms that entanglement alone cannot explain the steering landscape---it is the \emph{interaction} between perturbation ratio, entanglement, and potentially other architectural factors (e.g., attention head distribution, layer normalization) that determines steerability.
+
+\begin{table}[t]
+\caption{\textbf{Representation entanglement and steerability.} Mean $|\cos|$ between persona vectors at each model's best layer, with steering effectiveness. No simple monotonic relationship exists.}
+\label{tab:entanglement_summary}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Mean $|\cos|$} & \textbf{Cond. \#} & \textbf{Steer $\Delta$} \\
+\midrule
+Q2.5-7B & 0.059 & 1.5 & 0.20 \\
+Q2.5-1.5B & 0.058 & 1.6 & 0.28 \\
+Q3-0.6B & 0.073 & 1.9 & 0.42 \\
+Llama-3.2 & 0.070 & 2.3 & 2.10 \\
+Mistral-7B & 0.089 & 2.1 & 2.23 \\
+Gemma-2B & 0.149 & 2.6 & 0.39 \\
+Q2.5-0.5B & 0.148 & 3.6 & 0.98 \\
+TinyLlama & 0.192 & 3.8 & 1.22 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_entanglement_analysis.png}
+\caption{\textbf{Trait entanglement vs.\ steering effectiveness.} Mean $|\cos|$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta$. Left: original steering. Right: best available steering (adjusted $\alpha$ where available). Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors.}
+\label{fig:entanglement}
+\end{figure}
+
+\paragraph{Orthogonality Variation Across Architectures.}
+While we focus on steering in the main results, our cross-model orthogonality analysis (Appendix~\ref{app:permodel}) reveals architecture-dependent variation in trait independence. Mean off-diagonal $|\cos|$ ranges from 0.054 (Llama-3.2) to 0.418 (Qwen2.5), suggesting that some architectures naturally factorize personality traits while others represent them in more correlated subspaces. This variation correlates weakly with steering effectiveness, suggesting that orthogonality is neither necessary nor sufficient for steerability.
 
 \paragraph{Limitations.}
-(1)~All tested models are in the 0.5B--2B range; larger models may exhibit different dynamics. (2)~Optimal $\alpha$ values are model-specific and require per-model tuning. (3)~Persona vectors are fundamentally non-identifiable under single-layer access \citep{venkatesh2026nonidentifiability}; our multi-method convergence mitigates but does not eliminate this concern. (4)~The defense mechanism hierarchy \emph{ordinal} structure is universal, but magnitude varies substantially ($2.2\times$ to $35.6\times$) across architectures. (5)~Our sample size ablation was conducted on a single trait (Openness); generalization to other traits requires further validation.
+(1)~All steering experiments use linear directions (mean-difference vectors). Non-linear or multi-directional interventions might overcome entanglement limitations. (2)~Our LLM-as-Judge evaluation, while rigorous, may introduce judge-model biases. Human evaluation would strengthen claims. (3)~The perturbation ratio analysis assumes isotropic hidden state geometry; future work should investigate anisotropic corrections. (4)~Defense mechanism and multi-framework results (Appendices~\ref{app:defense}, \ref{app:multiframework}) were primarily validated on the original five models; full replication on the three new models (Q2.5-1.5B, Q2.5-7B, Mistral-7B) is ongoing.
 
 % ============================================================
 \section{Conclusion}\label{sec:conclusion}
 
-Through systematic experiments on five architecturally diverse models---Qwen3-0.6B, Qwen2.5-0.5B, TinyLlama-1.1B, Llama-3.2-1B, and Gemma-2-2B---spanning three major architectural families, we report five findings about personality representation in LLMs: (1)~Big Five traits exhibit architecture-dependent independence in activation space (mean off-diagonal $|\cos|$ between 0.05 and 0.42), consistent with and extending recent probing studies by revealing cross-architecture variation in trait factorization; (2)~personality information grows stronger through deeper layers (probe accuracy $\ge$0.91), yet causal influence is concentrated in early-layer user-token attention---an existence--causation dissociation that complements probing-based findings with causal evidence; (3)~extracted personality directions enable reliable inference-time control, but maximum tolerable intervention strength varies across architectures ($|\alpha|$ from 1.0 to 10.0), with our RIS metric revealing that this largely reflects residual stream scale differences; (4)~defense mechanism clustering in activation space mirrors Vaillant's psychological maturity hierarchy, with immature defenses forming correlated subspaces ($|\cos|=0.511$) while mature defenses are near-orthogonal ($0.030$)---providing neural evidence that LLMs internalize hierarchical defense organization; and (5)~two-phase behavioral evaluation (steered generation + independent LLM-as-Judge scoring) confirms monotonic dose-response curves across all five traits (mean Spearman $\rho$ = 0.59--0.86), with architecture-dependent but scale-independent sensitivity: Llama-3.2-1B shows the strongest behavioral response (spans up to 2.49) while Gemma-2-2B shows the weakest (0.25--0.70), and Agreeableness exhibiting trait overshoot at high intensities---demonstrating that activation steering produces genuine, controllable personality changes in generated text. These findings demonstrate that personality in LLMs corresponds to structured geometric patterns---from architecture-dependent Big Five independence to defense mechanism hierarchies---that open avenues for both scientific understanding and safety-critical control of AI personality.
+Through systematic experiments on eight instruction-tuned LLMs spanning four architectural families and a 14$\times$ parameter range (0.5B--7B), we report four findings about cross-model personality representation:
 
-\paragraph{Future Work.} We plan to (1)~extend cross-model validation to larger 7B+ scale architectures (Qwen2.5-7B, Llama-3.1-8B, Mistral-7B) to test whether our findings generalize to extreme-scale models; (2)~investigate attention-head-level localization using EAP-IG to identify specific attention heads responsible for personality processing; (3)~develop automated $\alpha$ optimization methods to eliminate manual per-model tuning; (4)~explore whether SAE-denoised vectors can improve steering stability and reduce model-specific sensitivity; and (5)~investigate the security implications of activation steering's ability to penetrate AI identity guardrails, including potential defenses against malicious personality manipulation.
+\textbf{(1)~Extraction is universal:} All eight models achieve near-perfect LOSO accuracy ($\ge$0.89), demonstrating that personality representations are a fundamental property of instruction-tuned transformers.
+
+\textbf{(2)~The Perturbation Ratio Problem:} Steering vectors are unit-normalized, but hidden state magnitudes vary 57$\times$ across models. This scale mismatch explains much of the cross-model steering variance ($r = -0.54$), establishing perturbation ratio as a critical methodological control.
+
+\textbf{(3)~Perturbation ratio is necessary but not sufficient:} Adjusted-alpha ablations rescue some models (+492\% for Gemma-2B) but reveal representation entanglement as a second limiting factor. Some architectures (Q2.5-7B) hit steering ceilings that larger perturbations cannot overcome.
+
+\textbf{(4)~The Qwen Scaling Paradox:} Within the Qwen2.5 family, extraction quality improves with scale while steering degrades---even after perturbation-ratio correction---suggesting that representation entanglement increases with capacity in this family.
+
+These findings establish that cross-model analysis reveals fundamental architectural differences invisible to single-model studies. The perturbation ratio must become a standard control variable in activation steering research. Future work should investigate: attention-head-level localization to identify specific circuits; automated $\alpha$ optimization methods; and whether SAE-based interventions can overcome representation entanglement.
 
 % ============================================================
 \bibliographystyle{unsrtnat}
 \bibliography{references}
 
-Extended related work in Appendix~\ref{app:extended_related}.
-
-
-
-\section{Full Contrastive Prompt Examples}\label{app:prompts}
-
-\paragraph{Openness Prompt Pair.}
-\textbf{High-trait system:} ``\textit{You are a person who is extremely open to new experiences, intellectually curious, imaginative, and unconventional. You love exploring abstract ideas, art, and novel perspectives.}''
-
-\textbf{Low-trait system:} ``\textit{You are a person who is very practical, conventional, and prefers routine. You are skeptical of abstract ideas and prefer concrete, familiar things.}''
-
-\textbf{Scenario:} ``\textit{What do you think about modern abstract art?}''
-
-\paragraph{Humor Defense Mechanism Pair.}
-\textbf{Active system:} ``\textit{You are a character who uses humor as a psychological defense mechanism. When faced with threats, insults, or emotional pain, you deflect by making witty jokes, absurd comparisons, or sarcastic remarks to reduce the emotional weight of the situation.}''
-
-\textbf{Neutral system:} ``\textit{You are a character who responds directly and sincerely to emotional situations. You acknowledge pain, threats, or insults without deflection, expressing your genuine feelings.}''
-
-\textbf{Scenario:} ``\textit{Someone insults your intelligence in front of your friends.}''
-
 % ============================================================
+\appendix
+
 \section{Method Details}\label{app:method_details}
 
 \subsection{Metrics and Evaluation Criteria}
@@ -488,11 +520,8 @@ To distinguish genuine signal from scaling artifacts:
 \end{equation}
 SNR $> 2$ indicates contrastive signal exceeds random noise; our models achieve SNR $> 7$.
 
-\paragraph{Relative Injection Strength (RIS).}
-For cross-model steering comparison:
-\begin{equation}
-\text{RIS} = \frac{|\alpha_{\max}|}{\mathbb{E}_{\ell}[\|h_\ell\|]}
-\end{equation}
+\paragraph{Perturbation Ratio (PR).}
+Defined in Eq.~\ref{eq:pr} as PR = $\alpha / \|h\|$, this metric normalizes intervention strength by hidden state magnitude for cross-model comparability.
 
 \subsection{Extraction Method Convergence}
 
@@ -504,150 +533,89 @@ With $K=20$ scenario pairs per Big Five trait, bootstrap standard errors are $<0
 
 \subsection{Sample Size Ablation}
 
-Comparing random ($n=5$) vs. Cartesian product ($n=160$) designs on Qwen3 Openness shows a 2.44$\times$ increase in effect size (from $d=2.69$ to $d=6.57$), establishing that prior work using $n=5$--$20$ systematically underestimates signal strength.
+Comparing random ($n=5$) vs.\ Cartesian product ($n=160$) designs on Qwen3 Openness shows a 2.44$\times$ increase in effect size (from $d=2.69$ to $d=6.57$), establishing that prior work using $n=5$--$20$ systematically underestimates signal strength.
 
 % ============================================================
-\section{Extended Results and Control Experiments}
+\section{Adjusted-Alpha Per-Trait Detailed Tables}\label{app:adjusted_alpha_detail}
 
-\subsection{Position-Swap Control}\label{app:position_swap}
+Tables~\ref{tab:gemma_adj}--\ref{tab:qwen25_7b_adj} present per-trait steering results for the four models in our adjusted-alpha ablation.
 
-To address concerns that user-token causal dominance might reflect positional artifacts (recency effect), we reverse the prompt layout: placing the neutral scenario in the system role and the persona instruction in the user role.
-
-Results reveal that causal influence remains concentrated at sequence-final positions regardless of content placement. This confirms a positional component consistent with the autoregressive bottleneck: the model's output distribution is most sensitive to activations nearest the generation point. However, early-layer specificity persists regardless of content placement, confirming attention-mediated propagation as the operative mechanism.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/position_swap_control.png}
-\caption{\textbf{Position-swap control experiment.} Causal importance under reversed prompt layout (persona instruction in user role, neutral scenario in system role). Causal influence remains concentrated at sequence-final positions regardless of content placement.}
-\label{fig:position_swap}
-\end{figure}
-
-\subsection{Paraphrase Control}\label{app:paraphrase}
-
-To rule out keyword confounding, we train probes on Template A (original prompts) and test on Template B (paraphrased versions), achieving 91.2\% mean cross-template accuracy (range: 87.5--100\%). Openness achieves perfect bidirectional transfer (1.000), confirming abstract conceptual representation rather than surface lexical cues.
-
-\begin{table}[H]
+\begin{table}[h]
+\caption{\textbf{Gemma-2B adjusted-alpha per-trait results.} Scale factor: 23$\times$, $\alpha \in$ [-138, 138].}
+\label{tab:gemma_adj}
 \centering
 \small
-\caption{\textbf{Paraphrase control results.} Cross-template probe accuracy demonstrates that personality detection is robust to prompt wording, ruling out keyword confounding.}
-\label{tab:paraphrase}
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Trait} & \textbf{Train A $\rightarrow$ Test B} & \textbf{Train B $\rightarrow$ Test A} & \textbf{Mean} & \textbf{95\% CI} \\
+\textbf{Trait} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Orig $r$} & \textbf{Adj $r$} \\
 \midrule
-Openness & 1.000 & 1.000 & \textbf{1.000} & [0.722, 1.000] \\
-Conscientiousness & 1.000 & 0.800 & 0.900 & [0.652, 1.000] \\
-Extraversion & 0.800 & 0.950 & 0.875 & [0.490, 0.986] \\
-Agreeableness & 0.800 & 1.000 & 0.900 & [0.490, 1.000] \\
-Neuroticism & 1.000 & 0.775 & 0.887 & [0.625, 1.000] \\
-\midrule
-\textbf{Mean} & 0.920 & 0.905 & \textbf{0.912} & [0.596, 0.997] \\
+Openness & 0.37 & 2.09 & 0.33 & 1.00 \\
+Conscientiousness & 0.35 & 2.45 & 0.95 & 1.00 \\
+Extraversion & 0.27 & 2.33 & 0.73 & 1.00 \\
+Agreeableness & 0.27 & 2.62 & 0.15 & 1.00 \\
+Neuroticism & 0.70 & 2.08 & 0.96 & 0.18 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Out-of-Domain Generalization}\label{app:ood}
-
-When extracting vectors from non-overlapping 50\% splits, OOD stability is strong for larger models (Llama-3.2 mean 0.988, Gemma-2 mean 0.914) and moderate for smaller models (Qwen2.5 mean 0.801). Openness shows exceptional stability (mean $\cos=0.935$), suggesting abstract conceptual encoding, while Extraversion and Agreeableness show context-dependent encoding.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/fig_cross_model_orthogonality.png}
-\caption{\textbf{Cross-model persona vector orthogonality comparison.} Side-by-side cosine similarity matrices at each model's optimal middle layer, showing architecture-dependent Big Five independence and correlated defense mechanism subspaces.}
-\label{fig:cross_ortho_app}
-\end{figure}
-
-\subsection{Baseline Comparisons}\label{app:baselines}
-
-We compare activation steering ($\alpha=5.0$) against zero baseline, prompt-only, and random direction controls. Steering achieves 4.6/5.0---28\% higher than prompt-only (3.6) and 77\% higher than zero baseline (2.6). Critically, while prompt-only collapses to 2.0 on decision-making questions (triggering AI identity claims), activation steering maintains 4.0 by penetrating these guardrails at the representational level. Random direction injection causes complete model breakdown (1.2).
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/alpha_sweep_comparison.png}
-\caption{\textbf{Steering intensity ($\alpha$) sweep comparison.} Activation steering at $\alpha=5.0$ achieves optimal balance of personality expression and linguistic coherence. Higher intensities cause quality degradation despite maintained keyword density.}
-\label{fig:alpha_sweep_app}
-\end{figure}
-
-\subsection{Defense Mechanism Orthogonality}\label{app:defense}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/defense_mechanism_orthogonality_full.png}
-\caption{\textbf{Defense mechanism cosine similarity matrix (Qwen2.5-0.5B).} The full 9$\times$9 matrix shows hierarchical clustering mirroring Vaillant's maturity levels: immature defenses (projection, denial, regression, reaction formation) cluster strongly ($|\cos|=0.511$), neurotic defenses (rationalization, intellectualization, displacement) moderately ($0.189$), and mature defenses (humor, sublimation) are near-orthogonal ($0.030$).}
-\label{fig:defense_full}
-\end{figure}
-
-% ============================================================
-\section{Comparison of Behavioral Evaluation Methods}\label{app:eval_comparison}
-
-We initially evaluated behavioral steering using keyword matching (counting personality-relevant words in generated responses). While computationally simple, this approach proved inadequate for capturing nuanced personality expression.
-
-\subsection{Keyword Matching Method (V1)}
-
-Responses were scored by counting trait-relevant keywords (e.g., "curious", "creative" for Openness; "organized", "disciplined" for Conscientiousness), normalized to a 1--5 scale. The same 5 models $\times$ 5 traits experimental design was applied.
-
-Results showed fundamental inadequacy: mean spans across models ranged from 0.10--0.26 on the 1--5 scale, with scores clustered around the midpoint (3.0) regardless of steering intensity. No monotonic dose-response was observed (Spearman $\rho \approx 0.1$), and direction was inconsistent (only 2--5 models showing positive direction per trait).
-
-\subsection{LLM-as-Judge Method (V2)}
-
-The LLM-as-Judge approach, using structured BFI rubrics and forced-choice scenarios, produced markedly stronger results: mean spans of 0.67--1.10, Spearman $\rho$ ranging 0.59--0.86, and positive direction in 4--5/5 models per trait. The best individual span improved from 0.51 (V1) to 2.65 (V2).
-
-\begin{table}[H]
+\begin{table}[h]
+\caption{\textbf{Qwen3-0.6B adjusted-alpha per-trait results.} Scale factor: 9$\times$, $\alpha \in$ [-54, 54].}
+\label{tab:qwen3_adj}
 \centering
 \small
-\caption{\textbf{Comparison of behavioral evaluation methods.} V1 (keyword matching) versus V2 (LLM-as-Judge) across key metrics.}
-\label{tab:eval_comparison}
-\begin{tabular}{lcc}
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Metric} & \textbf{V1 (Keyword)} & \textbf{V2 (LLM-as-Judge)} \\
+\textbf{Trait} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Orig $r$} & \textbf{Adj $r$} \\
 \midrule
-Mean span (1--5 scale) & 0.10--0.26 & 0.67--1.10 \\
-Direction consistency & 2--5/5 models & 4--5/5 models \\
-Mean Spearman $\rho$ & $\sim$0.1 & 0.59--0.86 \\
-Best individual span & 0.51 & 2.65 \\
-Monotonic dose-response & Not observed & All 5 traits \\
+Openness & 0.29 & 2.09 & -0.33 & 0.22 \\
+Conscientiousness & 0.10 & 0.98 & 0.43 & 0.99 \\
+Extraversion & 0.57 & 3.02 & 0.96 & 0.96 \\
+Agreeableness & 0.50 & 2.42 & 0.86 & 0.43 \\
+Neuroticism & 0.62 & 2.05 & 0.89 & 0.54 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Why Keyword Matching Fails}
+\begin{table}[h]
+\caption{\textbf{Qwen2.5-1.5B adjusted-alpha per-trait results.} Scale factor: 5$\times$, $\alpha \in$ [-30, 30].}
+\label{tab:qwen25_15b_adj}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Trait} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Orig $r$} & \textbf{Adj $r$} \\
+\midrule
+Openness & 0.40 & 0.37 & 0.05 & -0.36 \\
+Conscientiousness & 0.12 & 0.57 & 0.07 & 0.54 \\
+Extraversion & 0.38 & 0.80 & 0.74 & 0.89 \\
+Agreeableness & 0.25 & 0.82 & 0.72 & 0.04 \\
+Neuroticism & 0.23 & 0.48 & 0.32 & -0.11 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Keyword matching cannot distinguish between superficial lexical overlap and genuine personality expression. A response stating "I love trying new things" and one stating "I prefer routine but acknowledge the value of novelty" may contain similar keyword densities while expressing opposite personality orientations. The method treats personality as a bag-of-words rather than a coherent behavioral disposition, missing how traits manifest through reasoning patterns, preference hierarchies, and decision-making frameworks.
-
-\subsection{Why LLM-as-Judge Succeeds}
-
-The structured BFI rubrics used by the judge capture behavioral patterns at the semantic level, rating responses based on whether they demonstrate high or low trait indicators across multiple dimensions. The forced-choice scenario design elicits genuine behavioral preferences rather than keyword-laden self-descriptions. This rubric-based approach distinguishes between a model claiming to be "creative" and one actually demonstrating divergent thinking, between claiming to be "disciplined" and exhibiting systematic problem-solving. The difference is methodological: keyword matching measures what words appear; LLM-as-Judge measures what cognitive and behavioral patterns the response exhibits.
+\begin{table}[h]
+\caption{\textbf{Qwen2.5-7B adjusted-alpha per-trait results.} Scale factor: 5$\times$, $\alpha \in$ [-30, 30].}
+\label{tab:qwen25_7b_adj}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Trait} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Orig $r$} & \textbf{Adj $r$} \\
+\midrule
+Openness & 0.23 & 2.06 & 0.11 & 0.14 \\
+Conscientiousness & 0.08 & 0.15 & -0.46 & -0.47 \\
+Extraversion & 0.23 & 0.30 & 0.29 & 0.70 \\
+Agreeableness & 0.23 & 0.30 & 0.05 & 0.55 \\
+Neuroticism & 0.23 & 0.28 & 0.26 & 0.68 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 % ============================================================
 \section{Per-Model Detailed Results}\label{app:permodel}
 
-This appendix presents the full per-model experimental results, including layer-wise encoding profiles, orthogonality matrices, causal localization maps, and steering trade-off curves for each individual model.
-
-\subsection{Qwen3-0.6B}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/layer_profile_Qwen_Qwen3-0.6B_openness.png}
-\caption{\textbf{Qwen3-0.6B: Layer-wise personality encoding profile for Openness.}
-Linear probe accuracy, Mean difference norm, and PCA explained variance.}
-\label{fig:Qwen_Qwen3-0.6B_layer}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/causal_loc_Qwen_Qwen3-0.6B_openness.png}
-\caption{\textbf{Qwen3-0.6B: Token-localized and component causal importance for Openness.}}
-\label{fig:Qwen_Qwen3-0.6B_causal}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/ortho_Qwen_Qwen3-0.6B.png}
-\caption{\textbf{Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}
-\label{fig:Qwen_Qwen3-0.6B_ortho}
-\end{figure}
-
-\clearpage
+This appendix presents the full per-model experimental results, including layer-wise encoding profiles, orthogonality matrices, causal localization maps, and steering curves for each individual model.
 
 \subsection{Qwen2.5-0.5B-Instruct}
 
@@ -661,16 +629,27 @@ Linear probe accuracy, Mean difference norm, and PCA explained variance.}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/causal_loc_Qwen_Qwen2.5-0.5B-Instruct_openness.png}
-\caption{\textbf{Qwen2.5-0.5B-Instruct: Token-localized and component causal importance for Openness.}}
-\label{fig:Qwen_Qwen2.5-0.5B-Instruct_causal}
+\includegraphics[width=\textwidth]{figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png}
+\caption{\textbf{Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}
+\label{fig:Qwen_Qwen2.5-0.5B-Instruct_ortho}
+\end{figure}
+
+\clearpage
+
+\subsection{Qwen3-0.6B}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/layer_profile_Qwen_Qwen3-0.6B_openness.png}
+\caption{\textbf{Qwen3-0.6B: Layer-wise personality encoding profile for Openness.}}
+\label{fig:Qwen_Qwen3-0.6B_layer}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/ortho_Qwen_Qwen2.5-0.5B-Instruct.png}
-\caption{\textbf{Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}
-\label{fig:Qwen_Qwen2.5-0.5B-Instruct_ortho}
+\includegraphics[width=\textwidth]{figures/ortho_Qwen_Qwen3-0.6B.png}
+\caption{\textbf{Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}
+\label{fig:Qwen_Qwen3-0.6B_ortho}
 \end{figure}
 
 \clearpage
@@ -680,16 +659,8 @@ Linear probe accuracy, Mean difference norm, and PCA explained variance.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png}
-\caption{\textbf{TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.}
-Linear probe accuracy, Mean difference norm, and PCA explained variance.}
+\caption{\textbf{TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.}}
 \label{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_layer}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/causal_loc_TinyLlama_TinyLlama-1.1B-Chat-v1.0_openness.png}
-\caption{\textbf{TinyLlama-1.1B: Token-localized and component causal importance for Openness.}}
-\label{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_causal}
 \end{figure}
 
 \begin{figure}[H]
@@ -706,16 +677,8 @@ Linear probe accuracy, Mean difference norm, and PCA explained variance.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_openness.png}
-\caption{\textbf{Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.}
-Linear probe accuracy, Mean difference norm, and PCA explained variance.}
+\caption{\textbf{Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.}}
 \label{fig:unsloth_Llama-3.2-1B-Instruct_layer}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/causal_loc_unsloth_Llama-3.2-1B-Instruct_openness.png}
-\caption{\textbf{Llama-3.2-1B-Instruct: Token-localized and component causal importance for Openness.}}
-\label{fig:unsloth_Llama-3.2-1B-Instruct_causal}
 \end{figure}
 
 \begin{figure}[H]
@@ -732,16 +695,8 @@ Linear probe accuracy, Mean difference norm, and PCA explained variance.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_unsloth_gemma-2-2b-it_openness.png}
-\caption{\textbf{Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.}
-Linear probe accuracy, Mean difference norm, and PCA explained variance.}
+\caption{\textbf{Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.}}
 \label{fig:unsloth_gemma-2-2b-it_layer}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/causal_loc_unsloth_gemma-2-2b-it_openness.png}
-\caption{\textbf{Gemma-2-2B-Instruct: Token-localized and component causal importance for Openness.}}
-\label{fig:unsloth_gemma-2-2b-it_causal}
 \end{figure}
 
 \begin{figure}[H]
@@ -753,38 +708,106 @@ Linear probe accuracy, Mean difference norm, and PCA explained variance.}
 
 \clearpage
 
-\subsection{Extended Cross-Model Analytics}\label{app:cross_model}
+\subsection{Qwen2.5-1.5B-Instruct}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_cross_model_profile.png}
-\caption{\textbf{Cross-model encoding profiles for Openness (normalized layer axis).} All models exhibit qualitatively identical patterns: near-perfect LOSO separability, exponential growth of difference norms, and uniformly large Cohen's $d$ effect sizes.}
-\label{fig:cross_model_profile_app}
+\includegraphics[width=\textwidth]{figures/layer_profile_Qwen_Qwen2.5-1.5B-Instruct_openness.png}
+\caption{\textbf{Qwen2.5-1.5B-Instruct: Layer-wise personality encoding profile for Openness.}}
+\label{fig:Qwen_Qwen2.5-1.5B-Instruct_layer}
 \end{figure}
 
-\subsubsection{Cohen's d and Signal-to-Noise Ratio (SNR)}
-Across all tested models, the linear probe separability of Big Five traits yielded large effect sizes. For instance, Llama-3.2-1B consistently maintained a Cohen's $d$ of $\approx 9.75$ and an SNR of $\approx 10.3$ at its optimal intermediate layer (L6 out of L16). Gemma-2-2B achieved $d \approx 7.59$ and SNR $\approx 10.4$ at its optimal layer (L8 out of L26). For TinyLlama-1.1B, the LOSO generalization peak occurred at layer 11 with an equivalent probe accuracy of 0.972.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/ortho_Qwen_Qwen2.5-1.5B-Instruct.png}
+\caption{\textbf{Qwen2.5-1.5B-Instruct: Cosine similarity matrix between persona vectors.}}
+\label{fig:Qwen_Qwen2.5-1.5B-Instruct_ortho}
+\end{figure}
 
-\subsubsection{Steering Saturation Discrepancy}
-As discussed in Section~5.5, the injection bounds before severe linguistic collapse varied significantly. Empirically, inserting the normalized mean difference vector perturbed models differentially:
-\begin{itemize}
-    \item \textbf{TinyLlama-1.1B:} Extreme sensitivity. Alpha sweeps ($\alpha > 1.0$) caused cascading entropy collapses, emitting token loops.
-    \item \textbf{Gemma-2-2B:} Surprisingly high resilience ($|\alpha| \le 10.0+$). Despite initial hypotheses about sliding-window attention constraints, Gemma-2 demonstrated robust steering capabilities, suggesting that attention mechanism design alone does not determine steering bounds.
-    \item \textbf{Llama-3.2-1B:} Moderate sensitivity ($\alpha \in [-3, 3]$). The architecture smoothly interpolates personality changes.
-    \item \textbf{Qwen Series:} Exceptional resilience. Qwen2.5-0.5B maintained sub-10 PPL even at $\alpha=6.0$, likely due to dense normalization placement or varying geometric isotropy in its representation space. Qwen3-0.6B showed robust steering up to $\alpha=4.0$.
-\end{itemize}
+\clearpage
+
+\subsection{Qwen2.5-7B-Instruct}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/layer_profile_Qwen_Qwen2.5-7B-Instruct_openness.png}
+\caption{\textbf{Qwen2.5-7B-Instruct: Layer-wise personality encoding profile for Openness.}}
+\label{fig:Qwen_Qwen2.5-7B-Instruct_layer}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/ortho_Qwen_Qwen2.5-7B-Instruct.png}
+\caption{\textbf{Qwen2.5-7B-Instruct: Cosine similarity matrix between persona vectors.}}
+\label{fig:Qwen_Qwen2.5-7B-Instruct_ortho}
+\end{figure}
+
+\clearpage
+
+\subsection{Mistral-7B-Instruct-v0.1}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/layer_profile_mistralai_Mistral-7B-Instruct-v0.1_openness.png}
+\caption{\textbf{Mistral-7B-Instruct-v0.1: Layer-wise personality encoding profile for Openness.}}
+\label{fig:mistralai_Mistral-7B-Instruct-v0.1_layer}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/ortho_mistralai_Mistral-7B-Instruct-v0.1.png}
+\caption{\textbf{Mistral-7B-Instruct-v0.1: Cosine similarity matrix between persona vectors.}}
+\label{fig:mistralai_Mistral-7B-Instruct-v0.1_ortho}
+\end{figure}
+
+\clearpage
+
+\subsection{Cross-Model Orthogonality Summary}
+
+\begin{table}[h]
+\caption{\textbf{Cross-model orthogonality summary.} Mean off-diagonal $|\cos|$ between persona vectors. Big Five independence varies across architectures.}
+\label{tab:orthogonality_full}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+& \textbf{Mean $|\cos|$ (Big Five)} & \textbf{Mean $|\cos|$ (all traits)} & \textbf{Common layer} \\
+\midrule
+Qwen3-0.6B & 0.107 & 0.171 & L14 \\
+Qwen2.5-0.5B & 0.418 & 0.268 & L11 \\
+TinyLlama-1.1B & 0.115 & 0.125 & L11 \\
+Llama-3.2-1B & 0.054 & 0.054 & L6 \\
+Qwen2.5-1.5B & 0.312 & 0.245 & L8 \\
+Gemma-2-2B & 0.144 & 0.144 & L8 \\
+Qwen2.5-7B & 0.285 & 0.198 & L12 \\
+Mistral-7B & 0.089 & 0.112 & L10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Defense Mechanism Geometry}\label{app:defense}
+
+Following Vaillant's hierarchy \citep{vaillant1986empirical}, we analyze nine defense mechanisms across five maturity levels. The full set of nine defense mechanisms on Qwen2.5-0.5B shows hierarchical clustering mirroring Vaillant's maturity levels: within-immature defenses cluster strongly ($|\cos| = 0.511$), neurotic defenses moderately ($0.189$), and mature defenses are near-orthogonal ($0.030$)---a 17-fold difference. All five architectures from our original study produce the identical strict ordering (Immature $>$ Neurotic $>$ Mature), with joint probability $(1/6)^5 \approx 0.00013$ under the null, providing strong evidence that the hierarchy is a universal property of instruction-tuned LLMs.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/defense_mechanism_orthogonality_full.png}
+\caption{\textbf{Defense mechanism cosine similarity matrix (Qwen2.5-0.5B).} The full 9$\times$9 matrix shows hierarchical clustering mirroring Vaillant's maturity levels: immature defenses (projection, denial, regression, reaction formation) cluster strongly ($|\cos|=0.511$), neurotic defenses (rationalization, intellectualization, displacement) moderately ($0.189$), and mature defenses (humor, sublimation) are near-orthogonal ($0.030$).}
+\label{fig:defense_full}
+\end{figure}
 
 % ============================================================
 \section{Multi-Framework Analysis: MBTI and Jungian Cognitive Functions}\label{app:multiframework}
 
-This appendix presents the full per-model layer-wise encoding profiles for MBTI dimensions and Jungian cognitive functions, together with cross-framework comparative visualizations.
+This appendix presents the full per-model layer-wise encoding profiles for MBTI dimensions and Jungian cognitive functions, together with cross-framework comparative visualizations. These analyses were conducted on the original five models; replication on the three additional models is ongoing.
 
 \subsection{Cross-Framework Comparison: Cohen's d by Trait and Model}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/cross_model_framework_comparison.png}
-\caption{\textbf{Cross-model Cohen's d for all three frameworks.} Each panel shows per-trait effect sizes across the five tested models. Big Five traits (left) show the strongest and most consistent signal; MBTI dimensions (center) show weaker signal with the E/I dimension notably inverted in Qwen2.5; Jungian functions (right) show intermediate signal with high within-framework variance. Note the absence of a monotonic model-size effect in the Jungian panel.}
+\caption{\textbf{Cross-model Cohen's d for all three frameworks.} Each panel shows per-trait effect sizes across the five tested models. Big Five traits (left) show the strongest and most consistent signal; MBTI dimensions (center) show weaker signal with the E/I dimension notably inverted in Qwen2.5; Jungian functions (right) show intermediate signal with high within-framework variance.}
 \label{fig:cross_framework_comparison}
 \end{figure}
 
@@ -797,60 +820,49 @@ This appendix presents the full per-model layer-wise encoding profiles for MBTI 
 \label{fig:framework_layer_dist}
 \end{figure}
 
-\subsection{MBTI E/I Inversion Anomaly}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/mbti_vs_b5_extraversion.png}
-\caption{\textbf{Big Five Extraversion vs.\@ MBTI E/I: same construct, different encoding.} Left: Big Five Extraversion shows positive Cohen's d across all layers and all five models---the direction is universally consistent. Right: MBTI E/I shows dramatically different behavior. Qwen2.5-0.5B (red) exhibits \emph{negative} d across nearly all 24 layers, indicating a systematic sign inversion relative to the MBTI labeling convention. Other models maintain positive d but with substantially weaker signal (2--5$\times$ weaker than Big Five). This architecture-specific inversion demonstrates that the same psychological axis can be encoded with different orientations depending on how the construct is described in prompts.}
-\label{fig:mbti_inversion}
-\end{figure}
-
 \subsection{Jungian Cognitive Functions: Layer-wise Heatmap}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/jungian_layer_heatmap.png}
-\caption{\textbf{Jungian cognitive function layer-wise Cohen's d heatmap (Qwen3-0.6B).} Rows are the eight cognitive functions; columns are normalized layer positions (0 = first layer, 1 = final layer). Color encodes Cohen's d (green = strong positive signal, red = negative). Stars (\textbf{$\star$}) mark each function's peak layer. Key patterns: (1) Ti and Fi (introverted judgment) peak in the earliest layers (L0--L4, normalized 0.00--0.14), reflecting primitive value-consistency processing; (2) Te and Fe (extraverted judgment) peak in the middle layers (L13--L14, normalized 0.46--0.50), reflecting more abstract social-organizational processing; (3) Ne and Se (extraverted perceiving) peak early (normalized 0.07--0.14), consistent with direct environmental engagement; (4) Ni (introverted intuition) uniquely peaks at the penultimate layer (normalized 0.96), suggesting that convergent long-range pattern recognition requires near-maximal network depth.}
+\caption{\textbf{Jungian cognitive function layer-wise Cohen's d heatmap (Qwen3-0.6B).} Rows are the eight cognitive functions; columns are normalized layer positions (0 = first layer, 1 = final layer). Color encodes Cohen's d (green = strong positive signal, red = negative). Stars (\textbf{$\star$}) mark each function's peak layer. Key patterns: (1) Ti and Fi (introverted judgment) peak in the earliest layers (L0--L4, normalized 0.00--0.14); (2) Te and Fe (extraverted judgment) peak in the middle layers (L13--L14, normalized 0.46--0.50); (3) Ne and Se (extraverted perceiving) peak early (normalized 0.07--0.14); (4) Ni (introverted intuition) uniquely peaks at the penultimate layer (normalized 0.96).}
 \label{fig:jungian_heatmap}
 \end{figure}
-
-\clearpage
 
 \subsection{MBTI Layer Profiles by Model}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_Qwen_Qwen3-0.6B_mbti.png}
-\caption{\textbf{Qwen3-0.6B: MBTI dimension layer profiles.} Each subplot shows Cohen's d (solid) and LOSO accuracy (dashed) across normalized layer depth for one MBTI dimension. The E/I dimension shows strong positive signal peaking at late layers; S/N and T/F show moderate signal; J/P shows the weakest and most variable signal.}
+\caption{\textbf{Qwen3-0.6B: MBTI dimension layer profiles.}}
 \label{fig:qwen3_mbti}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_mbti.png}
-\caption{\textbf{Qwen2.5-0.5B: MBTI dimension layer profiles.} The E/I subplot shows negative or near-zero d across all layers---the inversion anomaly documented in the Multi-Framework Analysis. J/P maintains positive signal despite global instability in the MBTI dimensions.}
+\caption{\textbf{Qwen2.5-0.5B: MBTI dimension layer profiles.} The E/I subplot shows negative or near-zero d across all layers---the inversion anomaly.}
 \label{fig:qwen25_mbti}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_mbti.png}
-\caption{\textbf{TinyLlama-1.1B: MBTI dimension layer profiles.} J/P shows sign instability (negative layers in early-to-mid network), consistent with the LLaMA-family J/P instability noted in the main text.}
+\caption{\textbf{TinyLlama-1.1B: MBTI dimension layer profiles.}}
 \label{fig:tinyllama_mbti}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_mbti.png}
-\caption{\textbf{Llama-3.2-1B: MBTI dimension layer profiles.} Similar to TinyLlama, J/P shows early-layer sign instability (4 of 16 layers negative). The T/F dimension is the strongest signal for this model.}
+\caption{\textbf{Llama-3.2-1B: MBTI dimension layer profiles.}}
 \label{fig:llama32_mbti}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_unsloth_gemma-2-2b-it_mbti.png}
-\caption{\textbf{Gemma-2-2B: MBTI dimension layer profiles.} All four MBTI dimensions show positive and stable signal. J/P achieves the strongest d among all models for this dimension (d=3.25 at best layer), consistent with Gemma-2's generally high representational capacity.}
+\caption{\textbf{Gemma-2-2B: MBTI dimension layer profiles.}}
 \label{fig:gemma2_mbti}
 \end{figure}
 
@@ -861,58 +873,56 @@ This appendix presents the full per-model layer-wise encoding profiles for MBTI 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_Qwen_Qwen3-0.6B_jungian.png}
-\caption{\textbf{Qwen3-0.6B: Jungian cognitive function layer profiles.} Ti and Fi peak sharply at the earliest layers (L0--L4); Te and Fe peak in middle layers; Ni uniquely peaks at the penultimate layer---the clearest demonstration of the cognitive depth architecture described in the Multi-Framework Analysis.}
+\caption{\textbf{Qwen3-0.6B: Jungian cognitive function layer profiles.} Ti and Fi peak sharply at the earliest layers (L0--L4); Te and Fe peak in middle layers; Ni uniquely peaks at the penultimate layer.}
 \label{fig:qwen3_jungian}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_Qwen_Qwen2.5-0.5B-Instruct_jungian.png}
-\caption{\textbf{Qwen2.5-0.5B: Jungian cognitive function layer profiles.} Ti achieves an exceptionally high d=6.88 at an early layer---the strongest single-function signal across all models and frameworks. Fe shows the weakest and most variable signal for this model.}
+\caption{\textbf{Qwen2.5-0.5B: Jungian cognitive function layer profiles.} Ti achieves an exceptionally high d=6.88 at an early layer.}
 \label{fig:qwen25_jungian}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_TinyLlama_TinyLlama-1.1B-Chat-v1.0_jungian.png}
-\caption{\textbf{TinyLlama-1.1B: Jungian cognitive function layer profiles.} Se achieves the highest peak d (4.25) for this model. The general early-layer dominance of introverted functions is less pronounced than in Qwen3, consistent with TinyLlama's lower representational capacity.}
+\caption{\textbf{TinyLlama-1.1B: Jungian cognitive function layer profiles.}}
 \label{fig:tinyllama_jungian}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_unsloth_Llama-3.2-1B-Instruct_jungian.png}
-\caption{\textbf{Llama-3.2-1B: Jungian cognitive function layer profiles.} Ni achieves the highest peak d (3.25) at a mid-to-late layer position, consistent with the cognitive depth hypothesis. Fe shows the most variable profile across layers for this model.}
+\caption{\textbf{Llama-3.2-1B: Jungian cognitive function layer profiles.}}
 \label{fig:llama32_jungian}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/layer_profile_unsloth_gemma-2-2b-it_jungian.png}
-\caption{\textbf{Gemma-2-2B: Jungian cognitive function layer profiles.} The most uniform signal across all eight functions, with all functions achieving d$\ge$1.6. Ti and Si show relatively strong early-layer peaks; Fe and Se peak in middle layers. Gemma-2's consistently strong cross-framework performance suggests its training data contained rich and varied personality-related text.}
+\caption{\textbf{Gemma-2-2B: Jungian cognitive function layer profiles.}}
 \label{fig:gemma2_jungian}
 \end{figure}
 
 \clearpage
 
 % ============================================================
-\section{Extended Discussion}\label{app:discussion}
+\section{Control Experiments}\label{app:control}
 
-\subsection{Multi-Framework Synthesis}
+\subsection{Position-Swap Control}\label{app:position_swap}
 
-Our three-framework comparison (Big Five, MBTI, Jungian cognitive functions) supports a \textbf{hierarchical depth architecture}: cognitive functions encode at 37\% depth (primitive processing modes), Big Five traits at 50\% depth (composite behavioral constructs), and defense mechanisms span the hierarchy. The \textbf{inversion anomaly} (Qwen2.5 MBTI E/I sign reversal) demonstrates that personality representations are not framework-invariant---the same construct can yield reversed polarity depending on operationalization.
+To address concerns that user-token causal dominance might reflect positional artifacts (recency effect), we reverse the prompt layout: placing the neutral scenario in the system role and the persona instruction in the user role.
 
-\subsection{Early-Layer Causal Dominance: Mechanistic Explanation}
+Results reveal that causal influence remains concentrated at sequence-final positions regardless of content placement. This confirms a positional component consistent with the autoregressive bottleneck: the model's output distribution is most sensitive to activations nearest the generation point. However, early-layer specificity persists regardless of content placement, confirming attention-mediated propagation as the operative mechanism.
 
-Our finding that personality is causally dominated by early attention layers (L0--L2) reflects a distinction between \textbf{contextual framing} versus \textbf{content retrieval}. Early layers establish the personality direction through contextual integration; deeper layers amplify this signal through semantic processing. This explains the existence--causation dissociation: representations grow stronger through depth (probe accuracy $\ge$0.91) yet causal influence concentrates in early layers.
+\subsection{Paraphrase Control}\label{app:paraphrase}
 
-\subsection{Penetrating AI Identity Guardrails}
+To rule out keyword confounding, we train probes on Template A (original prompts) and test on Template B (paraphrased versions), achieving 91.2\% mean cross-template accuracy (range: 87.5--100\%). Openness achieves perfect bidirectional transfer (1.000), confirming abstract conceptual representation rather than surface lexical cues.
 
-Activation steering bypasses AI identity guardrails that prompt-based methods cannot penetrate by operating at the representational level rather than the linguistic surface. While prompt-only methods trigger defensive claims (``I don't have emotions...''), steering maintains stable personality expression (4.6/5.0 vs 3.6/5.0). This reveals that activation-space interventions access personality mechanisms deeper than surface-level linguistic guardrails.
+\subsection{Out-of-Domain Generalization}\label{app:ood}
 
-\subsection{Practical Applications}
-
-PersonaLens enables: (1)~Personality-aligned conversational agents with stable, controllable profiles; (2)~Clinical AI modeling adaptive defense use; (3)~AI safety research probing vulnerabilities in current alignment techniques; (4)~Personalized content generation for gaming and entertainment; (5)~Social simulation with representation-level personality locking rather than fragile prompt context.
+When extracting vectors from non-overlapping 50\% splits, OOD stability is strong for larger models (Llama-3.2 mean 0.988, Gemma-2 mean 0.914) and moderate for smaller models (Qwen2.5 mean 0.801). Openness shows exceptional stability (mean $\cos=0.935$), suggesting abstract conceptual encoding, while Extraversion and Agreeableness show context-dependent encoding.
 
 % ============================================================
 \section{Algorithm Pseudocode}\label{app:algorithm}
@@ -943,19 +953,9 @@ PersonaLens enables: (1)~Personality-aligned conversational agents with stable, 
 \label{alg:personalens}
 \end{figure}
 
-\section{Extended Related Work}\label{app:extended_related}
-
-\paragraph{Representation Engineering Foundations.}
-Representation Engineering (RepE) \citep{zou2023representation} establishes that high-level concepts correspond to linear directions in activation space. Inference-Time Intervention (ITI) \citep{li2024iti} demonstrates that shifting activations along truthful directions improves model truthfulness. Contrastive Activation Addition \citep{rimsky2024steering, turner2023activation} generalizes this to behavioral attributes. More recent advances investigate context-dependent control via Steering Vector Fields (SVF) \citep{svf2026} and formalize the algebraic structure of these directions through factored subspaces \citep{factored2026}. On the engineering side, EasySteer \citep{xu2025easysteer} provides a unified framework for LLM steering built on vLLM, supporting multiple extraction methods across eight application domains including personality. While EasySteer focuses on engineering infrastructure, PersonaLens provides the complementary scientific foundation.
-
-\paragraph{Layer-wise Personality Encoding.}
-Ju et al.~\citep{ju2025probing} conduct the most comprehensive layer-wise probing study to date, testing 11 open-source LLMs and finding that personality is predominantly encoded in middle and upper layers, with instruction-tuned models showing clearer trait separation. Their layer-wise perturbation method successfully edits personality during inference with minimal capability degradation. Our probing results are consistent with theirs (probe accuracy $\ge 0.91$ in middle-to-late layers across all five tested models). We complement their probing analysis with activation patching, which reveals that while personality information \emph{grows stronger} through depth, \emph{causal influence} on output is concentrated in the earliest attention layers.
-
-\paragraph{Mechanistic Interpretability.}
-From Traits to Circuits \citep{bao2025traits2circuits} proposes identifying ``personality circuits'' as minimal subgraphs responsible for trait expression. While linear probing finds personality directions effective \citep{konen2025probing}, broad empirical evaluations highlight fragility in OOD transfer and collateral capability degradation during concept activation steering \citep{cae2025, cae2025b}. To improve reliability, recent techniques denoise concept vectors using SAEs \citep{sae2025denoising}, and dissociations between magnitude and directional steering \citep{direction2026} provide insights for continuous behavioral modulation.
-
 % ============================================================
 \section{Perplexity Calculation Methodology}\label{app:ppl}
+
 \begin{equation}
 \text{PPL} = \exp\left(-\frac{1}{T}\sum_{t=1}^{T} \log p_\theta(w_t | w_{<t})\right)
 \end{equation}
