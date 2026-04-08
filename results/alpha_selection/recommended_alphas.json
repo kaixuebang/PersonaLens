@@ -1,0 +1,77 @@
+{
+  "rms_reference": 0.5284463299438358,
+  "models": {
+    "Qwen_Qwen2.5-0.5B-Instruct": {
+      "name": "Q2.5-0.5B",
+      "rms_scale": 0.5486860241740942,
+      "alpha_pr": 0.11,
+      "alpha_snr": 10.97,
+      "alpha_ceiling": 12.0,
+      "alpha_recommended": 0.11,
+      "cross_probe_acc": 0.56375
+    },
+    "Qwen_Qwen3-0.6B": {
+      "name": "Q3-0.6B",
+      "rms_scale": 2.6922030790763745,
+      "alpha_pr": 0.54,
+      "alpha_snr": 53.84,
+      "alpha_ceiling": 12.0,
+      "alpha_recommended": 0.54,
+      "cross_probe_acc": 0.5725
+    },
+    "TinyLlama_TinyLlama-1.1B-Chat-v1.0": {
+      "name": "TinyLlama",
+      "rms_scale": 0.3375205881345798,
+      "alpha_pr": 0.07,
+      "alpha_snr": 6.75,
+      "alpha_ceiling": 30.0,
+      "alpha_recommended": 0.07,
+      "cross_probe_acc": 0.4937499999999999
+    },
+    "unsloth_Llama-3.2-1B-Instruct": {
+      "name": "Llama-3.2",
+      "rms_scale": 0.22749015382107565,
+      "alpha_pr": 0.05,
+      "alpha_snr": 4.55,
+      "alpha_ceiling": 20.0,
+      "alpha_recommended": 0.05,
+      "cross_probe_acc": 0.5025000000000001
+    },
+    "Qwen_Qwen2.5-1.5B-Instruct": {
+      "name": "Q2.5-1.5B",
+      "rms_scale": 0.8310681641101837,
+      "alpha_pr": 0.17,
+      "alpha_snr": 16.62,
+      "alpha_ceiling": 20.0,
+      "alpha_recommended": 0.17,
+      "cross_probe_acc": 0.54625
+    },
+    "unsloth_gemma-2-2b-it": {
+      "name": "Gemma-2B",
+      "rms_scale": 3.4458083755829754,
+      "alpha_pr": 0.69,
+      "alpha_snr": 68.92,
+      "alpha_ceiling": 12.0,
+      "alpha_recommended": 0.69,
+      "cross_probe_acc": 0.5925
+    },
+    "Qwen_Qwen2.5-7B-Instruct": {
+      "name": "Q2.5-7B",
+      "rms_scale": 0.5082066357135773,
+      "alpha_pr": 0.1,
+      "alpha_snr": 10.16,
+      "alpha_ceiling": 20.0,
+      "alpha_recommended": 0.1,
+      "cross_probe_acc": 0.5
+    },
+    "mistralai_Mistral-7B-Instruct-v0.1": {
+      "name": "Mistral-7B",
+      "rms_scale": 0.05123317651450634,
+      "alpha_pr": 0.01,
+      "alpha_snr": 1.02,
+      "alpha_ceiling": 20.0,
+      "alpha_recommended": 0.01,
+      "cross_probe_acc": 0.5
+    }
+  }
+}

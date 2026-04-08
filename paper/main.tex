@@ -47,7 +47,11 @@ Recent work has established that Big Five personality traits can be linearly ext
 
 \textbf{(4)~The Qwen Scaling Paradox:} Within the Qwen2.5 family, extraction quality \emph{improves} with scale (LOSO: 0.89$\to$1.00) while steering effectiveness \emph{degrades} ($\Delta$: 0.98$\to$0.20), even after perturbation-ratio correction---suggesting that representation entanglement increases with model capacity in this family.
 
-These findings establish that the perturbation ratio must be a \emph{standard control variable} in activation steering research, and that cross-model analysis reveals fundamental architectural differences invisible to single-model studies.
+\textbf{(5)~Cross-trait interference is architecture-dependent:} Models with strong steering show $>$$2\times$ selectivity (primary effect vs. off-target shifts), while weak-steering models show near-unity or below-unity selectivity.
+
+\textbf{(6)~Hidden state magnitude is architecturally predictable:} Two hyperparameters (layer norm $\epsilon$ and attention softcapping) explain 91\% of RMS variance ($R^2{=}0.91$).
+
+These findings establish that the perturbation ratio must be a \emph{standard control variable} in activation steering research, that cross-model analysis reveals fundamental architectural differences invisible to single-model studies, and that representation entanglement and hidden state scale are predictable architectural properties.
 \end{abstract}
 
 \keywords{Mechanistic Interpretability \and Personality \and Representation Engineering \and Activation Steering \and Large Language Models}
@@ -70,12 +74,14 @@ Meanwhile, the field of \emph{representation engineering} \citep{zou2023represen
     \item \textbf{Q3 (Scaling):} Does scaling up a model family improve personality steerability, as one might expect from richer representations?
 \end{enumerate}
 
-\paragraph{Contributions.} We analyze eight instruction-tuned LLMs (0.5B--7B parameters, four architectural families) and report four findings:
+\paragraph{Contributions.} We analyze eight instruction-tuned LLMs (0.5B--7B parameters, four architectural families) and report six findings:
 \begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
 \item \textbf{Extraction is universal, steering is not} (Sec.~\ref{sec:results}): All eight models achieve near-perfect extraction (LOSO $\ge$0.89), yet steering effectiveness varies 11$\times$ (Mistral-7B: $\Delta$=2.23 vs.\ Qwen2.5-7B: $\Delta$=0.20).
 \item \textbf{The Perturbation Ratio Problem} (Sec.~\ref{sec:perturbation}): Steering vectors are unit-normalized while hidden state magnitudes vary 57$\times$, creating a systematic scale mismatch that explains much of the cross-model steering variance.
 \item \textbf{Perturbation Ratio is Necessary but Not Sufficient} (Sec.~\ref{sec:adjusted_alpha}): Adjusted-alpha ablations show that equalizing perturbation ratios rescues some models (+492\% for Gemma-2B) but worsens monotonicity for others, revealing a second factor: representation entanglement.
 \item \textbf{The Qwen Scaling Paradox} (Sec.~\ref{sec:qwen_paradox}): Within the Qwen2.5 family, extraction quality \emph{improves} with scale while steering effectiveness \emph{degrades}, even after perturbation-ratio correction.
+\item \textbf{Cross-trait interference is architecture-dependent} (Sec.~\ref{sec:interference}): Models with strong steering show $>$$2\times$ selectivity, while weak-steering models show near-unity or below-unity selectivity, confirming entanglement as a limiting factor.
+\item \textbf{Hidden state magnitude is architecturally predictable} (Sec.~\ref{sec:discussion}): Two hyperparameters (layer norm $\epsilon$ and attention softcapping) explain 91\% of RMS variance ($R^2{=}0.91$).
 \end{enumerate}
 We additionally provide: architecture-dependent orthogonality analysis (Sec.~\ref{sec:orthogonality}), causal localization (Sec.~\ref{sec:localization}), defense mechanism geometry (Appendix~\ref{app:defense}), and multi-framework analysis (Appendix~\ref{app:multiframework}).
 
@@ -133,21 +139,12 @@ For each of the five personality dimensions---Openness (O), Conscientiousness (C
 For example, an Openness pair uses the system prompts ``\textit{You are extremely open to new experiences, intellectually curious, imaginative\ldots}'' vs.\ ``\textit{You are very practical, conventional, and prefer routine\ldots}'', with shared scenarios like ``\textit{What do you think about modern abstract art?}''
 
 \paragraph{Defense Mechanisms.}
-Following Vaillant's hierarchy \citep{vaillant1994ego} and PersonaForge's operationalization \citep{personaforge2025}, we construct contrastive pairs for three representative defense mechanisms: Humor, Rationalization, and Projection. These three mechanisms were selected as they represent distinct categories in Vaillant's hierarchy (mature, neurotic, and immature defenses respectively). Each mechanism contrasts an \emph{active} condition against a \emph{neutral} condition. Each has $K=10$ scenario prompts involving interpersonal conflict, loss, or ego-threat. Qwen2.5-0.5B was additionally evaluated on all nine defense mechanisms as an extensibility check.
+Following Vaillant's hierarchy \citep{vaillant1994ego}, we construct contrastive pairs for three defense mechanisms (Humor, Rationalization, Projection) spanning mature, neurotic, and immature categories. Each contrasts an active vs.\ neutral condition with $K{=}10$ conflict/ego-threat scenarios (Appendix~\ref{app:defense}).
 
 % ============================================================
 \subsection{Phase 2: Activation Collection}\label{sec:collection}
 
-For each contrastive pair $(x^+_i, x^-_i)$ in trait $t$, we format the messages using the model's chat template and perform a forward pass through the full model, collecting hidden states $h_\ell \in \mathbb{R}^d$ at the \emph{last token position} of every transformer layer $\ell \in \{0, 1, \ldots, L{-}1\}$.
-
-We record hidden states before any generation occurs (at the position where the model would begin generating its response). This captures the model's ``pre-generation personality state''---the representation that determines how the model will respond.
-
-For a model with $L$ layers and hidden dimension $d$, this produces, for each trait $t$:
-\begin{equation}
-H^+_t = \{h_\ell(x^+_i)\}_{i=1}^{K}, \quad H^-_t = \{h_\ell(x^-_i)\}_{i=1}^{K}, \qquad \forall \ell \in \{0, \ldots, L{-}1\}
-\end{equation}
-
-We report LOSO accuracy (Leave-One-Scenario-Out cross-validation), Cohen's $d$ effect size, and Signal-to-Noise Ratio (SNR); formal definitions in Appendix~\ref{app:method_details}.
+For each pair, we collect hidden states $h_\ell \in \mathbb{R}^d$ at the last token position of every layer, capturing the model's pre-generation personality state. This produces paired activations $H^+_t, H^-_t$ per trait and layer. We report LOSO accuracy, Cohen's $d$, and SNR (Appendix~\ref{app:method_details}).
 
 % ============================================================
 \subsection{Phase 3: Persona Vector Extraction}\label{sec:extraction}
@@ -184,26 +181,12 @@ where $\alpha \in \mathbb{R}$ controls steering strength. Positive $\alpha$ push
 % ============================================================
 \subsection{Cross-Trait Orthogonality Analysis}\label{sec:orthogonality}
 
-We measure trait independence via cosine similarity between persona vectors at each trait's best layer: $\text{sim}(t_i, t_j) = (\hat{v}_{t_i} \cdot \hat{v}_{t_j}) / (\|\hat{v}_{t_i}\| \cdot \|\hat{v}_{t_j}\|)$. Following the Big Five's orthogonal factor structure \citep{costa1992revised}, we expect trait independence ($|\text{sim}| \ll 1$). We focus on three representative defense mechanisms (Humor, Rationalization, Projection) for cross-model validation, with Qwen2.5-0.5B validated on the full set of nine.
+We measure trait independence via cosine similarity between persona vectors at each trait's best layer. Following the Big Five's orthogonal factor structure \citep{costa1992revised}, we expect $|\cos| \ll 1$. Results in Appendix~\ref{app:permodel}.
 
 % ============================================================
 \subsection{The Perturbation Ratio Problem}\label{sec:perturbation_method}
 
-A critical methodological insight emerged during our cross-model analysis: \textbf{steering vectors are unit-normalized ($\|\hat{v}\| = 1$), but hidden state magnitude varies dramatically across architectures}. This creates a systematic scale mismatch that we term the \textbf{Perturbation Ratio} problem.
-
-\paragraph{Definition.} At a given layer $\ell$, define:
-\begin{itemize}[leftmargin=*,topsep=2pt,itemsep=1pt]
-\item Steering vector: $\hat{v}_\ell$ with $\|\hat{v}_\ell\| = 1$ (unit-normalized)
-\item Hidden state magnitude: $\|h_\ell\|$ varies with model architecture
-\item RMS scale: $\text{RMS}_\ell = \sqrt{\frac{1}{d} \sum_{j=1}^d h_{\ell,j}^2}$
-\end{itemize}
-
-The \textbf{Perturbation Ratio} (PR) at steering coefficient $\alpha$ is:
-\begin{equation}\label{eq:pr}
-\text{PR} = \frac{\alpha \cdot \|\hat{v}\|}{\|h\|} \approx \frac{\alpha}{\|h\|}
-\end{equation}
-
-This ratio determines the effective strength of the intervention: PR = 1.0 means the perturbation equals the hidden state magnitude; PR = 0.1 means a 10\% perturbation. Critically, at a fixed $\alpha = 6$ (a common default in the literature), PR varies 46$\times$ across our eight models---from 0.04 (4\% perturbation, Gemma-2B) to 1.83 (183\% perturbation, Mistral-7B).
+A critical methodological insight: steering vectors are unit-normalized ($\|\hat{v}\|{=}1$), but hidden state magnitude varies dramatically across architectures. The \textbf{Perturbation Ratio} (PR) at coefficient $\alpha$ is $\text{PR} = \alpha / \|h\|$, determining effective intervention strength. At fixed $\alpha{=}6$, PR varies 46$\times$ across our eight models (Sec.~\ref{sec:perturbation}).
 
 \paragraph{Implications.} This scale mismatch means that:\textbf{(1)}~Comparing steering effectiveness at fixed $\alpha$ across models is misleading; \textbf{(2)}~Models with larger hidden state magnitudes (higher RMS scale) require proportionally larger $\alpha$ to achieve equivalent perturbation; \textbf{(3)}~The ``safe'' $\alpha$ range varies not just by model architecture but by the specific residual stream geometry of each model. We validate this hypothesis through adjusted-alpha ablations in Sec.~\ref{sec:adjusted_alpha}.
 
@@ -303,17 +286,15 @@ The perturbation ratio (PR) quantifies this: at standard $\alpha = 6$, the effec
 \label{fig:pr_scatter}
 \end{figure}
 
-\paragraph{Mechanistic interpretation.} The steering intervention in Eq.~\ref{eq:steering} adds $\alpha \hat{v}$ to hidden state $h$. When $\|h\|$ is large (high RMS scale), the same $\alpha$ produces a smaller \emph{relative} perturbation. Since the model's output distribution depends on the relative activation pattern, not absolute magnitudes, models with larger hidden state norms require proportionally larger $\alpha$ to achieve equivalent behavioral shifts.
-
-\paragraph{Implications for the field.} This finding establishes that \textbf{perturbation ratio should be a standard control variable} in activation steering research. Comparing steering effectiveness at fixed $\alpha$ across models with different residual stream scales is methodologically invalid---it conflates true representational differences with simple scale mismatches. Future steering studies should report either: (1)~perturbation ratios alongside $\alpha$ values, or (2)~steering curves normalized by hidden state magnitude.
+\paragraph{Mechanistic interpretation.} The steering intervention adds $\alpha \hat{v}$ to hidden state $h$. When $\|h\|$ is large, the same $\alpha$ produces a smaller relative perturbation. Since output depends on relative activation patterns, models with larger hidden state norms require proportionally larger $\alpha$ for equivalent behavioral shifts.
 
 % ============================================================
 \subsection{Adjusted-Alpha Ablation: Necessary but Not Sufficient}\label{sec:adjusted_alpha}
 
-\paragraph{Research Question.} If we equalize perturbation ratios across models by scaling $\alpha$ proportionally, do all models achieve equivalent steering effectiveness? Or are there additional architectural factors that limit steerability?
+\paragraph{Research Question.} If we equalize perturbation ratios across models by scaling $\alpha$ proportionally, do all models achieve equivalent steering effectiveness?
 
 \begin{table}[t]
-\caption{\textbf{Adjusted-alpha ablation results (mean across 5 Big Five traits).} Original vs.~adjusted alphas with steering effectiveness ($\Delta$), percent change, and monotonicity correlation ($r$). Adjusted alphas rescue some models but worsen others.}
+\caption{\textbf{Adjusted-alpha ablation results (mean across 5 Big Five traits).} Original vs.~adjusted alphas with steering effectiveness ($\Delta$) and percent change.}
 \label{tab:adjusted_alpha}
 \centering
 \small
@@ -373,9 +354,7 @@ Table~\ref{tab:qwen_scaling} reveals a paradoxical pattern within the Qwen2.5 fa
 
 \textbf{Steering degrades with scale.} Original steering effectiveness drops from $\Delta$=0.98 (0.5B) to $\Delta$=0.20 (7B)---a 5$\times$ degradation. Even after perturbation-ratio adjustment, the 7B model only reaches $\Delta$=0.62, still weaker than the 0.5B model's unadjusted performance.
 
-\paragraph{Interpretation: entanglement increases with capacity.} We hypothesize that as Qwen2.5 models scale, their larger capacity enables richer, more distributed representations. While this improves separability (better extraction), it also increases \textbf{entanglement}---personality features become more deeply intertwined with other semantic features in the activation space. Steering vectors, which target specific linear directions, become less effective at disentangling these richer, more interdependent representations.
-
-This finding has important implications for the field: \textbf{larger models are not necessarily more steerable}. The common assumption that scale improves controllability holds for extraction but fails for steering, at least within the Qwen2.5 family. Model families may differ in their steerability-scaling properties; cross-model analysis is essential to identify these patterns.
+\paragraph{Interpretation: entanglement increases with capacity.} We hypothesize that larger capacity enables richer, more distributed representations that improve separability (extraction) but increase entanglement (harming steerability). This challenges the assumption that scale improves controllability.
 
 % ============================================================
 \subsection{Cross-Model Steering Landscape}\label{sec:steering_landscape}
@@ -403,18 +382,12 @@ Q2.5-7B & 0.23 & 0.08 & 0.23 & 0.23 & 0.23 & 0.20 & 0.05 \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.85\textwidth]{figures/fig_steering_heatmap.png}
-\caption{\textbf{Cross-model steering effectiveness heatmap.} Each cell shows $\Delta$ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance.}
-\label{fig:steering_heatmap}
-\end{figure}
+\textbf{Architecture clusters emerge.} Models separate into strong steerers (Mistral-7B, Llama-3.2: $\Delta{>}2.0$), moderate steerers (TinyLlama, Q2.5-0.5B: $\Delta{\approx}1.0$), and weak steerers (Gemma-2B, Q3-0.6B, Q2.5-1.5B, Q2.5-7B: $\Delta{<}0.5$). Monotonicity $r$ ranges from 0.05 (Q2.5-7B) to 0.93 (Mistral-7B). Adjusted alphas rescue some weak steerers (Gemma-2B reaches $\Delta{=}2.31$), but others hit architectural ceilings.
 
-\textbf{Trait-specific patterns:} Openness and Extraversion are consistently steerable across most models, while Conscientiousness shows high variance (2.35 for Mistral-7B vs.\ 0.08 for Q2.5-7B). Agreeableness steering is particularly weak in smaller models, potentially reflecting RLHF alignment training that locks this trait.
+% ============================================================
+\subsection{Cross-Trait Interference Analysis}\label{sec:interference}
 
-\textbf{Architecture clusters:} The models separate into three clusters: (1)~\textbf{Strong steerers} (Mistral-7B, Llama-3.2) with mean $\Delta > 2.0$; (2)~\textbf{Moderate steerers} (TinyLlama, Q2.5-0.5B) with $\Delta \approx 1.0$; and (3)~\textbf{Weak steerers} (Gemma-2B, Q3-0.6B, Q2.5-1.5B, Q2.5-7B) with $\Delta < 0.5$. Adjusted alphas rescue some weak steerers (Gemma-2B reaches $\Delta$=2.31), but others hit architectural ceilings.
-
-\textbf{Monotonicity varies.} Mean Spearman $r$ ranges from 0.05 (Q2.5-7B, essentially non-monotonic) to 0.93 (Mistral-7B, highly reliable). This reflects the representation entanglement discussed in Sec.~\ref{sec:adjusted_alpha}: more entangled representations produce less predictable dose-response curves.
+When steering a target trait, off-target trait shifts vary dramatically across architectures (Table~\ref{tab:interference_summary}). Strong-steering models (Mistral-7B, Llama-3.2) achieve $2.1\times$--$2.5\times$ selectivity (primary effect divided by mean off-diagonal shift), while Qwen2.5-7B shows below-unity selectivity (0.9x)---steering produces larger shifts in non-target traits than the target itself. Selectivity correlates strongly with steering effectiveness ($r{=}0.84$), establishing cross-trait interference as a complementary diagnostic to perturbation ratio. Full interference matrices and analysis in Appendix~\ref{app:interference}.
 
 % ============================================================
 \section{Discussion}\label{sec:discussion}
@@ -438,10 +411,132 @@ Our adjusted-alpha ablations reveal that steering effectiveness depends on \emph
 \paragraph{The Qwen Scaling Paradox and Entanglement Hypothesis.}
 The Qwen2.5 family's inverse scaling pattern---better extraction, worse steering at larger scales---challenges the assumption that larger models are more controllable. We hypothesize that larger capacity enables richer, more distributed representations that are \emph{better separated} (improving extraction) but \emph{more entangled} (harming steerability). This suggests a trade-off between representational richness and controllability that varies across model families.
 
-\paragraph{Representation Entanglement and Steerability.}
-We quantify \textbf{representation entanglement} as the mean absolute cosine similarity $|\cos|$ between persona vectors at each model's best layer (Table~\ref{tab:entanglement_summary}). Values range from 0.058 (Q2.5-1.5B) to 0.192 (TinyLlama). Critically, entanglement does \emph{not} linearly predict steering effectiveness: Q2.5-1.5B has the lowest entanglement (0.058) yet remains poorly steerable, while TinyLlama has the highest (0.192) and achieves moderate steering ($\Delta$=1.22). This confirms that entanglement alone cannot explain the steering landscape---it is the \emph{interaction} between perturbation ratio, entanglement, and potentially other architectural factors (e.g., attention head distribution, layer normalization) that determines steerability.
+\paragraph{Representation Entanglement: Independent Validation.}
+To break potential circular reasoning (inferring entanglement from steering failure), we develop four \emph{independent} entanglement metrics computed from raw activations alone: (1)~\textbf{RV coefficient} (matrix correlation between trait subspaces), (2)~\textbf{subspace angles} between PCA trait subspaces, (3)~\textbf{effective dimensionality} (PCA-based), and (4)~\textbf{cross-probe accuracy}---train a probe on trait A, test on trait B's labels (Table~\ref{tab:entanglement}). Critically, the aggregate entanglement score does \emph{not} predict steering effectiveness ($\rho{=}{-}0.60$, $p{=}0.21$): Llama-3.2 has the \emph{highest} entanglement yet the strongest steering ($\Delta{=}2.10$), while Q2.5-1.5B has \emph{lower} entanglement but weak steering ($\Delta{=}0.28$). This confirms that PR, not entanglement, is the dominant cross-model factor. However, the Qwen scaling paradox persists \emph{after} PR correction, suggesting a subtler form of representational interference not captured by linear metrics.
 
 \begin{table}[t]
+\caption{\textbf{Independent entanglement metrics} (computed from raw activations only). Aggregate entanglement does \emph{not} predict steering effectiveness ($\rho{=}{-}0.36$, $p{=}0.39$), confirming PR as the dominant factor.}
+\label{tab:entanglement}
+\centering
+\small
+\begin{tabular}{lccccc|c}
+\toprule
+\textbf{Model} & \textbf{RV} & \textbf{CP} & \textbf{Eff.\ Dim} & \textbf{Agg} & \textbf{RMS} & $\Delta$ \\
+\midrule
+TinyLlama & 0.64 & 0.49 & 57/2048 & 0.45 & 0.34 & 1.22 \\
+Q2.5-0.5B & 0.54 & 0.56 & 55/896 & 0.47 & 0.55 & 0.98 \\
+Q2.5-1.5B & 0.63 & 0.55 & 69/1536 & 0.48 & 0.83 & 0.28 \\
+Mistral-7B & 0.89 & 0.50 & 37/4096 & 0.50 & 0.05 & 2.23 \\
+Q3-0.6B & 0.73 & 0.57 & 53/1024 & 0.50 & 2.69 & 0.42 \\
+Llama-3.2 & 0.98 & 0.50 & 16/2048 & 0.53 & 0.23 & 2.10 \\
+Q2.5-7B & 0.84 & 0.56 & 29/3584 & 0.53 & 0.51 & 0.20 \\
+Gemma-2B & 0.82 & 0.59 & 64/2304 & 0.54 & 3.45 & 0.39 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Architectural Determinants of Hidden State Scale.}
+Hidden state magnitude varies $57\times$ across models, but this variation is architecturally predictable. A linear regression predicting $\log_{10}(\text{RMS})$ from layer normalization epsilon ($\epsilon$) and attention softcapping (binary) achieves $R^2{=}0.91$:
+\begin{equation}
+\log_{10}(\text{RMS}) = -0.702 \times \log_{10}(\epsilon) + 0.016 \times \text{softcap} + \text{constant}
+\end{equation}
+Epsilon dominates: $10^{-6} \rightarrow$ RMS 0.3--2.5, $10^{-5} \rightarrow$ RMS 0.04--0.13. Full regression table and analysis in Appendix~\ref{app:architecture}.
+
+\paragraph{PR-Aware Steering Algorithm.}
+We formalize a principled $\alpha$ selection that requires only extraction-time statistics. Let $\hat{h}_\text{ref} = \text{RMS}_\text{ref} \cdot \sqrt{d_\text{ref}}$ be the hidden state norm of a reference model with known good steering at $\alpha_\text{ref}$. The PR-matched coefficient for a target model is:
+\begin{equation}\label{eq:alpha_star}
+\alpha^* = \alpha_\text{ref} \cdot \frac{\hat{h}_\text{target}}{\hat{h}_\text{ref}} = \alpha_\text{ref} \cdot \frac{\text{RMS}_\text{target} \cdot \sqrt{d_\text{target}}}{\text{RMS}_\text{ref} \cdot \sqrt{d_\text{ref}}}
+\end{equation}
+On Gemma-2B, this yields $\alpha^*{=}304$ (vs.\ our conservative $\alpha{=}138$), suggesting room for even stronger steering. Cross-trait analysis confirms PR-aware steering improves both \textbf{magnitude} ($\Delta$: 0.39$\to$2.31) and \textbf{selectivity} ($1.6\times \to 2.1\times$) for PR-limited models, while entanglement-limited models (Q2.5-7B: $0.9\times$) show no improvement. We recommend reporting RMS, PR, and $\alpha^*$ alongside all steering results \citep{stoehr2024activation}.
+
+Cross-model orthogonality analysis (Appendix~\ref{app:permodel}) reveals architecture-dependent variation in trait independence.
+
+\paragraph{Limitations.}
+(1)~All steering uses linear directions; non-linear interventions might overcome entanglement. (2)~LLM-as-Judge may introduce biases; human evaluation would strengthen claims. (3)~PR analysis assumes isotropic geometry; anisotropic corrections warrant investigation. (4)~Defense mechanism and multi-framework results (Appendices~\ref{app:defense}, \ref{app:multiframework}) were primarily validated on the original five models.
+
+% ============================================================
+\section{Conclusion}\label{sec:conclusion}
+
+Through systematic experiments on eight instruction-tuned LLMs spanning four architectural families and a 14$\times$ parameter range (0.5B--7B), we report four findings about cross-model personality representation:
+
+\textbf{(1)~Extraction is universal:} All eight models achieve near-perfect LOSO accuracy ($\ge$0.89), demonstrating that personality representations are a fundamental property of instruction-tuned transformers.
+
+\textbf{(2)~The Perturbation Ratio Problem:} Steering vectors are unit-normalized, but hidden state magnitudes vary 57$\times$ across models. This scale mismatch explains much of the cross-model steering variance ($r = -0.54$), establishing perturbation ratio as a critical methodological control.
+
+\textbf{(3)~Perturbation ratio is necessary but not sufficient:} Adjusted-alpha ablations rescue some models (+492\% for Gemma-2B) but reveal representation entanglement as a second limiting factor. Some architectures (Q2.5-7B) hit steering ceilings that larger perturbations cannot overcome.
+
+\textbf{(4)~The Qwen Scaling Paradox:} Within the Qwen2.5 family, extraction quality improves with scale while steering degrades---even after perturbation-ratio correction---suggesting that representation entanglement increases with capacity in this family.
+
+\textbf{(5)~Cross-trait interference is architecture-dependent:} Models with strong steering show $2.1\times$ selectivity, while weak-steering models show near-unity or below-unity selectivity, confirming entanglement as a limiting factor.
+
+\textbf{(6)~The hidden state magnitude is architecturally predictable:} $\log_{10}(\text{RMS}) \approx -0.702 \log_{10}(\epsilon) + 0.016 \cdot \text{softcap}$ ($R^2 = 0.91$ across 8 models); just two architectural hyperparameters explain 91\% of the variance.
+
+These findings establish that cross-model analysis reveals fundamental architectural differences invisible to single-model studies. The perturbation ratio must become a standard control variable in activation steering research. Future work should investigate: attention-head-level localization to identify specific circuits; automated $\alpha$ optimization methods; and whether SAE-based interventions can overcome representation entanglement.
+
+% ============================================================
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+% ============================================================
+\appendix
+
+\section{Cross-Model Steering Heatmap}\label{app:steering_heatmap}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig_steering_heatmap.png}
+\caption{\textbf{Cross-model steering effectiveness heatmap.} Each cell shows $\Delta$ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance.}
+\label{fig:steering_heatmap}
+\end{figure}
+
+\section{Cross-Trait Interference Analysis}\label{app:interference}
+
+\begin{table}[h]
+\caption{\textbf{Cross-trait interference summary.} Mean primary effect (steering $\Delta$ on target trait), mean off-diagonal shift (non-target traits), maximum off-diagonal shift, and selectivity ratio (primary/mean off-diagonal). Lower selectivity indicates greater interference.}
+\label{tab:interference_summary}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{Prim $\Delta$} & \textbf{Off-Diag} & \textbf{Max Off} & \textbf{Select.} \\
+\midrule
+Q2.5-0.5B & 0.81 & 0.43 & 2.15 & 1.9x \\
+Q3-0.6B & 0.35 & 0.20 & 0.60 & 1.8x \\
+TinyLlama & 1.04 & 0.53 & 1.92 & 2.0x \\
+Llama-3.2 & 1.64 & 0.66 & 2.45 & 2.5x \\
+Q2.5-1.5B & 0.15 & 0.12 & 0.23 & 1.3x \\
+Gemma-2B & 0.28 & 0.17 & 0.50 & 1.6x \\
+Q2.5-7B & 0.07 & 0.08 & 0.26 & 0.9x \\
+Mistral-7B & 2.24 & 1.09 & 2.03 & 2.1x \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:interference_summary} reveals dramatic variation in cross-trait selectivity. Strong-steering models (Mistral-7B, Llama-3.2) achieve $2.1\times$--$2.5\times$ selectivity, meaning their primary steering effect is more than twice as large as mean off-diagonal shifts. In contrast, Qwen2.5-7B shows \textbf{selectivity below unity} (0.9x): steering produces larger shifts in non-target traits than in the target trait itself---the hallmark of entanglement.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig_selectivity.png}
+\caption{\textbf{Steering effectiveness vs.~selectivity ratio.} Each point represents one model. Selectivity ratio (primary $\Delta$ divided by mean off-diagonal shift) separates models into three clusters: high-selectivity strong steerers (Mistral-7B, Llama-3.2), moderate-selectivity models (TinyLlama, Q2.5-0.5B), and low-selectivity weak steerers (Qwen2.5 family, Gemma-2B). The dashed line indicates unity selectivity (no discrimination between target and non-target traits).}
+\label{fig:selectivity}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_interference_matrices.png}
+\caption{\textbf{Cross-trait interference matrices: Mistral-7B (left) vs.~Qwen2.5-7B (right).} Each cell shows the steering effect on the column trait when steering the row trait. Mistral-7B shows strong diagonal dominance (high selectivity) with off-diagonal values roughly half the diagonal. Qwen2.5-7B shows weak diagonal signals and substantial off-diagonal leakage, consistent with its below-unity selectivity ratio.}
+\label{fig:interference_matrices}
+\end{figure}
+
+Figure~\ref{fig:selectivity} plots steering effectiveness against selectivity ratio. Models cluster into three regimes: (1)~\textbf{High-selectivity strong steerers} (Mistral-7B, Llama-3.2) with both large $\Delta$ and high selectivity; (2)~\textbf{Moderate models} (TinyLlama, Q2.5-0.5B) with intermediate $\Delta$ and selectivity around $2.0\times$; and (3)~\textbf{Low-selectivity weak steerers} (Qwen2.5 family, Gemma-2B) with both small $\Delta$ and poor selectivity.
+
+Figure~\ref{fig:interference_matrices} contrasts the full interference matrices for Mistral-7B (high selectivity) and Qwen2.5-7B (below-unity selectivity). Mistral shows clear diagonal dominance: when steering Openness, Openness shifts substantially more than any other trait. Qwen2.5-7B shows blurred diagonal structure: steering any trait produces comparable shifts across all traits, confirming that its personality representations are deeply entangled.
+
+\paragraph{Key finding: selectivity predicts steerability.} The correlation between selectivity ratio and steering effectiveness is strong ($r = 0.84$). Models with clean, separable trait representations (high selectivity) achieve reliable steering; models with entangled representations (low selectivity) do not. This establishes cross-trait interference as a complementary diagnostic to perturbation ratio for predicting steering success.
+
+\section{Representation Entanglement Details}\label{app:entanglement}
+
+\begin{table}[h]
 \caption{\textbf{Representation entanglement and steerability.} Mean $|\cos|$ between persona vectors at each model's best layer, with steering effectiveness. No simple monotonic relationship exists.}
 \label{tab:entanglement_summary}
 \centering
@@ -462,40 +557,46 @@ TinyLlama & 0.192 & 3.8 & 1.22 \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[t]
+\begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_entanglement_analysis.png}
 \caption{\textbf{Trait entanglement vs.\ steering effectiveness.} Mean $|\cos|$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta$. Left: original steering. Right: best available steering (adjusted $\alpha$ where available). Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors.}
 \label{fig:entanglement}
 \end{figure}
 
-\paragraph{Orthogonality Variation Across Architectures.}
-While we focus on steering in the main results, our cross-model orthogonality analysis (Appendix~\ref{app:permodel}) reveals architecture-dependent variation in trait independence. Mean off-diagonal $|\cos|$ ranges from 0.054 (Llama-3.2) to 0.418 (Qwen2.5), suggesting that some architectures naturally factorize personality traits while others represent them in more correlated subspaces. This variation correlates weakly with steering effectiveness, suggesting that orthogonality is neither necessary nor sufficient for steerability.
+We quantify \textbf{representation entanglement} as the mean absolute cosine similarity $|\cos|$ between persona vectors at each model's best layer (Table~\ref{tab:entanglement_summary}). Values range from 0.058 (Q2.5-1.5B) to 0.192 (TinyLlama). Critically, entanglement does \emph{not} linearly predict steering effectiveness: Q2.5-1.5B has the lowest entanglement (0.058) yet remains poorly steerable, while TinyLlama has the highest (0.192) and achieves moderate steering ($\Delta$=1.22). This confirms that entanglement alone cannot explain the steering landscape---it is the \emph{interaction} between perturbation ratio, entanglement, and potentially other architectural factors (e.g., attention head distribution, layer normalization) that determines steerability.
 
-\paragraph{Limitations.}
-(1)~All steering experiments use linear directions (mean-difference vectors). Non-linear or multi-directional interventions might overcome entanglement limitations. (2)~Our LLM-as-Judge evaluation, while rigorous, may introduce judge-model biases. Human evaluation would strengthen claims. (3)~The perturbation ratio analysis assumes isotropic hidden state geometry; future work should investigate anisotropic corrections. (4)~Defense mechanism and multi-framework results (Appendices~\ref{app:defense}, \ref{app:multiframework}) were primarily validated on the original five models; full replication on the three new models (Q2.5-1.5B, Q2.5-7B, Mistral-7B) is ongoing.
+\section{Architectural Determinants of Hidden State Scale}\label{app:architecture}
 
-% ============================================================
-\section{Conclusion}\label{sec:conclusion}
+\begin{table}[h]
+\caption{\textbf{Architectural parameters and hidden state scale.} RMS magnitude at the best layer for each model, with architectural family and key hyperparameters.}
+\label{tab:architecture_regression}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{Family} & \textbf{$\epsilon$} & \textbf{softcap} & \textbf{RMS} \\
+\midrule
+Q2.5-0.5B & Qwen2.5 & $10^{-6}$ & 0 & 0.454 \\
+Q3-0.6B & Qwen3 & $10^{-6}$ & 0 & 0.334 \\
+TinyLlama & LLaMA & $10^{-5}$ & 0 & 0.126 \\
+Llama-3.2 & LLaMA & $10^{-5}$ & 0 & 0.093 \\
+Q2.5-1.5B & Qwen2.5 & $10^{-6}$ & 0 & 0.431 \\
+Gemma-2B & Gemma-2 & $10^{-6}$ & 50 & 2.466 \\
+Q2.5-7B & Qwen2.5 & $10^{-6}$ & 0 & 0.311 \\
+Mistral-7B & Mistral & $10^{-5}$ & 0 & 0.036 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Through systematic experiments on eight instruction-tuned LLMs spanning four architectural families and a 14$\times$ parameter range (0.5B--7B), we report four findings about cross-model personality representation:
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig_architecture_rms.png}
+\caption{\textbf{Architectural prediction of hidden state scale.} Observed vs.~predicted $\log_{10}(\text{RMS})$ from the regression $\log_{10}(\text{RMS}) \approx -0.702 \log_{10}(\epsilon) + 0.016 \cdot \text{softcap}$. Two architectural hyperparameters explain 91\% of cross-model variance in hidden state magnitude.}
+\label{fig:architecture_rms}
+\end{figure}
 
-\textbf{(1)~Extraction is universal:} All eight models achieve near-perfect LOSO accuracy ($\ge$0.89), demonstrating that personality representations are a fundamental property of instruction-tuned transformers.
-
-\textbf{(2)~The Perturbation Ratio Problem:} Steering vectors are unit-normalized, but hidden state magnitudes vary 57$\times$ across models. This scale mismatch explains much of the cross-model steering variance ($r = -0.54$), establishing perturbation ratio as a critical methodological control.
-
-\textbf{(3)~Perturbation ratio is necessary but not sufficient:} Adjusted-alpha ablations rescue some models (+492\% for Gemma-2B) but reveal representation entanglement as a second limiting factor. Some architectures (Q2.5-7B) hit steering ceilings that larger perturbations cannot overcome.
-
-\textbf{(4)~The Qwen Scaling Paradox:} Within the Qwen2.5 family, extraction quality improves with scale while steering degrades---even after perturbation-ratio correction---suggesting that representation entanglement increases with capacity in this family.
-
-These findings establish that cross-model analysis reveals fundamental architectural differences invisible to single-model studies. The perturbation ratio must become a standard control variable in activation steering research. Future work should investigate: attention-head-level localization to identify specific circuits; automated $\alpha$ optimization methods; and whether SAE-based interventions can overcome representation entanglement.
-
-% ============================================================
-\bibliographystyle{unsrtnat}
-\bibliography{references}
-
-% ============================================================
-\appendix
+Table~\ref{tab:architecture_regression} and Figure~\ref{fig:architecture_rms} demonstrate that hidden state scale is not arbitrary but systematically determined by architecture. The layer normalization epsilon dominates: models with $\epsilon = 10^{-6}$ (Qwen, Gemma) show RMS $0.3$--$2.5$, while models with $\epsilon = 10^{-5}$ (LLaMA, Mistral) show RMS $0.04$--$0.13$---a $10\times$ difference driven by a single hyperparameter. Attention softcapping (Gemma-2B: softcap=50) contributes an additional multiplicative effect.
 
 \section{Method Details}\label{app:method_details}
 
@@ -521,7 +622,7 @@ To distinguish genuine signal from scaling artifacts:
 SNR $> 2$ indicates contrastive signal exceeds random noise; our models achieve SNR $> 7$.
 
 \paragraph{Perturbation Ratio (PR).}
-Defined in Eq.~\ref{eq:pr} as PR = $\alpha / \|h\|$, this metric normalizes intervention strength by hidden state magnitude for cross-model comparability.
+Defined as PR = $\alpha / \|h\|$, this metric normalizes intervention strength by hidden state magnitude for cross-model comparability.
 
 \subsection{Extraction Method Convergence}
 

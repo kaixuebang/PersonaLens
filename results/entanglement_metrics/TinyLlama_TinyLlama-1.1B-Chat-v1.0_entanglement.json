@@ -1,0 +1,169 @@
+{
+  "model": "TinyLlama_TinyLlama-1.1B-Chat-v1.0",
+  "layer": 11,
+  "n_traits": 4,
+  "rv": {
+    "pairwise": {
+      "conscientiousness-extraversion": {
+        "rv": 0.6574622392654419
+      },
+      "conscientiousness-agreeableness": {
+        "rv": 0.6344122290611267
+      },
+      "conscientiousness-neuroticism": {
+        "rv": 0.625406801700592
+      },
+      "extraversion-agreeableness": {
+        "rv": 0.5879710912704468
+      },
+      "extraversion-neuroticism": {
+        "rv": 0.6599516272544861
+      },
+      "agreeableness-neuroticism": {
+        "rv": 0.6522361040115356
+      }
+    },
+    "mean_rv": 0.6362400154272715,
+    "max_rv": 0.6599516272544861
+  },
+  "subspace_angles": {
+    "pairwise": {
+      "conscientiousness-extraversion": {
+        "mean_angle": 72.91963958740234,
+        "min_angle": 59.02140808105469,
+        "all_angles": [
+          89.10490417480469,
+          84.19011688232422,
+          68.66895294189453,
+          63.61286163330078,
+          59.02140808105469
+        ]
+      },
+      "conscientiousness-agreeableness": {
+        "mean_angle": 74.80406188964844,
+        "min_angle": 60.554718017578125,
+        "all_angles": [
+          86.97758483886719,
+          81.86442565917969,
+          80.97718811035156,
+          63.64636993408203,
+          60.554718017578125
+        ]
+      },
+      "conscientiousness-neuroticism": {
+        "mean_angle": 73.35984802246094,
+        "min_angle": 53.260169982910156,
+        "all_angles": [
+          86.46699523925781,
+          81.50396728515625,
+          77.01152801513672,
+          68.55661010742188,
+          53.260169982910156
+        ]
+      },
+      "extraversion-agreeableness": {
+        "mean_angle": 67.78309631347656,
+        "min_angle": 53.98775863647461,
+        "all_angles": [
+          83.88549041748047,
+          74.73933410644531,
+          64.88622283935547,
+          61.41669464111328,
+          53.98775863647461
+        ]
+      },
+      "extraversion-neuroticism": {
+        "mean_angle": 72.25174713134766,
+        "min_angle": 57.25355529785156,
+        "all_angles": [
+          87.58171081542969,
+          82.13654327392578,
+          70.98081970214844,
+          63.30611801147461,
+          57.25355529785156
+        ]
+      },
+      "agreeableness-neuroticism": {
+        "mean_angle": 71.13036346435547,
+        "min_angle": 50.09038162231445,
+        "all_angles": [
+          85.29424285888672,
+          79.9722900390625,
+          74.23168182373047,
+          66.06319427490234,
+          50.09038162231445
+        ]
+      }
+    },
+    "mean_angle": 72.04145940144856,
+    "min_angle": 67.78309631347656
+  },
+  "effective_dim": {
+    "combined_effective_dim": 57,
+    "total_dims": 2048,
+    "variance_ratio": 0.02783203125,
+    "explained_variance_top5": [
+      0.09805488586425781,
+      0.0898122489452362,
+      0.05672769993543625,
+      0.05367622897028923,
+      0.04484615847468376
+    ],
+    "per_trait_effective_dim": {
+      "conscientiousness": 15,
+      "extraversion": 16,
+      "agreeableness": 16,
+      "neuroticism": 15
+    },
+    "cumulative_variance_at_5": 0.34311720728874207
+  },
+  "cross_probe": {
+    "pairwise": {
+      "conscientiousness-extraversion": {
+        "A->B_acc": 0.625,
+        "B->A_acc": 0.6,
+        "mean_cross_acc": 0.6125,
+        "within_A_acc": 1.0
+      },
+      "conscientiousness-agreeableness": {
+        "A->B_acc": 0.625,
+        "B->A_acc": 0.65,
+        "mean_cross_acc": 0.6375,
+        "within_A_acc": 1.0
+      },
+      "conscientiousness-neuroticism": {
+        "A->B_acc": 0.325,
+        "B->A_acc": 0.35,
+        "mean_cross_acc": 0.3375,
+        "within_A_acc": 1.0
+      },
+      "extraversion-agreeableness": {
+        "A->B_acc": 0.575,
+        "B->A_acc": 0.55,
+        "mean_cross_acc": 0.5625,
+        "within_A_acc": 1.0
+      },
+      "extraversion-neuroticism": {
+        "A->B_acc": 0.425,
+        "B->A_acc": 0.425,
+        "mean_cross_acc": 0.425,
+        "within_A_acc": 1.0
+      },
+      "agreeableness-neuroticism": {
+        "A->B_acc": 0.35,
+        "B->A_acc": 0.425,
+        "mean_cross_acc": 0.38749999999999996,
+        "within_A_acc": 1.0
+      }
+    },
+    "mean_cross_acc": 0.4937499999999999,
+    "max_cross_acc": 0.6375
+  },
+  "aggregate_entanglement": {
+    "rv_score": 0.6362400154272715,
+    "angle_score": 0.19953933998390483,
+    "ed_score": 0.97216796875,
+    "cp_score": 0.0,
+    "overall": 0.4519868310402941
+  }
+}
