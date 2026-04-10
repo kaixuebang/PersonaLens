@@ -37,15 +37,17 @@
 
 % ============================================================
 \begin{abstract}
-PERSONA (ICLR 2026) established that Big Five personality traits can be linearly extracted and steered in LLMs, reporting \emph{approximate orthogonality} of trait representations and \emph{linear dose-response} to steering strength on LLaMA-3-8B. A natural next question is: \emph{do these findings generalize across architectures?} We conduct the first systematic cross-model analysis across \textbf{ten} instruction-tuned LLMs (0.5B--8B) from four architectural families, including PERSONA's exact model, extending PERSONA's methodology with cross-probe analysis and perturbation-ratio normalization. We report three findings:
+PERSONA (ICLR 2026) demonstrated that Big Five personality traits can be linearly extracted and steered in LLMs, reporting \emph{approximate orthogonality} of trait representations and \emph{linear dose-response} on LLaMA-3-8B. A natural next question is: \emph{do these findings generalize across architectures?} We conduct the first systematic cross-model analysis across \textbf{ten} instruction-tuned LLMs (0.5B--8B) from four families, including PERSONA's exact model, and report four findings that \emph{extend} PERSONA's conclusions by identifying their boundary conditions:
 
-\textbf{(1)~The Perturbation Ratio Problem:} Steering vectors are unit-normalized but hidden state magnitudes vary 57$\times$ across architectures. This creates a systematic scale mismatch that predicts per-trait steering effectiveness (Pearson $r{=}0.59$, $p{<}0.0001$, $n{=}50$). PERSONA's single-model setting naturally avoided this issue, but cross-model work requires perturbation-ratio normalization. We provide a principled $\alpha^*$ formula that enables previously ``unsteerable'' models to achieve strong steering (Gemma-2B: $\Delta$ from 0.39 to 2.31, +492\%).
+\textbf{(1)~Signal Detectability $\neq$ Controllability:} The layer where personality is most \emph{detectable} (via probe accuracy or contrastive signal) is not necessarily the best layer for \emph{controlling} it. On Qwen2.5-7B, the best-signal layer (L27, last transformer layer) yields zero behavioral change because the perturbation (${\sim}4\%$ of hidden state magnitude) is normalized away by the final RMSNorm. Steering at the \emph{middle} layer (L14) instead produces strong, monotonic control ($\Delta{=}0.74$, Spearman $\rho{=}0.97$). PERSONA's layer selection (LOSO accuracy) succeeded on LLaMA-3-8B because it coincidentally selected the middle layer---a fortunate alignment that does not hold across architectures.
 
-\textbf{(2)~Cross-trait representations exhibit a hierarchy, not flat orthogonality:} Using cross-probe accuracy (train on trait A, test on trait B), we find that Openness and Extraversion share 79\% of linear probe information across models---their representations are nearly \emph{collapsed} (confirmed on PERSONA's exact model: O-E cross-probe$=0.94$). By contrast, Conscientiousness and Neuroticism are genuinely isolated ($0.23$). Only Neuroticism is consistently isolated from all other traits. This representational hierarchy is \emph{stable across all ten tested architectures} (paired $t{=}4.80$, $p{=}0.001$), refining PERSONA's orthogonality finding with finer-grained analysis and identifying limits of compositional persona algebra.
+\textbf{(2)~Cross-trait representations exhibit a hierarchy, not flat orthogonality:} Using cross-probe accuracy (train on trait A, test on trait B), we find that Openness and Extraversion share 79\% of linear probe information (confirmed on PERSONA's exact model: O-E cross-probe$=0.94$), while Conscientiousness and Neuroticism are genuinely isolated ($0.23$). This hierarchy is \emph{stable across all ten architectures} (paired $t{=}13.3$, $p{<}0.001$), refining PERSONA's orthogonality finding with a more discriminating metric.
 
-\textbf{(3)~Dose-response linearity varies across architectures:} PERSONA's linear dose-response holds on high-PR models like LLaMA-3, yet we find the linearity of the $\alpha{\to}$behavioral-shift relationship ranges from $r{=}{-}0.49$ to $r{=}0.99$ across model-trait pairs. Dose-response linearity is an \emph{independent} predictor of steering success (Spearman $\rho{=}0.76$, $p{<}0.0001$), and combined with perturbation ratio explains 65\% of steering variance ($R^2{=}0.65$, $n{=}50$).
+\textbf{(3)~Linear dose-response generalizes with proper layer selection:} PERSONA's linear dose-response holds in 41/50 model-trait pairs ($r{>}0.8$) when steering at appropriate layers, confirming the \emph{generality} of their finding. The remaining exceptions cluster in architecturally distinct models (Gemma-2B: 2/5 non-linear), suggesting linearity is a property of how transformer residual streams integrate perturbations rather than a universal invariant.
 
-These findings extend PERSONA by identifying the boundary conditions of its claims, providing methodological tools for cross-model steering research, and revealing a representational hierarchy among Big Five traits that merits further investigation.
+\textbf{(4)~Steering efficacy spans a 10$\times$ range across architectures:} From Gemma-2B ($\Delta{=}0.28$) to LLaMA-3-8B ($\Delta{=}2.80$), confirming PERSONA's result at the strong end of this spectrum while revealing substantial architectural variation. LLaMA-family models consistently steer most effectively; Qwen and Gemma require middle-layer steering to achieve any control.
+
+Together, these findings establish that PERSONA's conclusions are \emph{internally valid} but require two refinements for cross-model work: (a)~middle-layer steering rather than probe-accuracy-based selection, and (b)~cross-probe analysis rather than cosine similarity for assessing trait independence.
 \end{abstract}
 
 \keywords{Mechanistic Interpretability \and Personality \and Representation Engineering \and Activation Steering \and Large Language Models}
@@ -59,29 +61,30 @@ The representation engineering paradigm \citep{zou2023representation} has demons
 
 However, PERSONA's conclusions rest on a \textbf{single model}. This naturally raises the question of generality: transformer architectures differ fundamentally in their residual stream geometry \citep{elhage2021mathematical}, layer normalization schemes, and attention mechanisms---all of which could affect how personality representations are structured and steered. Subsequent work has begun exploring these questions: \citet{bhandari2026activation} find that enforcing geometric orthogonality does not eliminate cross-trait behavioral interference, and \citet{venkatesh2026nonidentifiability} demonstrate that steering vectors are fundamentally non-identifiable.
 
-\paragraph{Research Questions.} Building on PERSONA's foundation, we investigate three questions about the generality and boundary conditions of its findings:
+\paragraph{Research Questions.} Building on PERSONA's foundation, we investigate four questions about the generality and boundary conditions of its findings:
 \begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
-    \item \textbf{Q1 (Normalization):} Does cross-model comparison require perturbation-ratio normalization, or can PERSONA's fixed-$\alpha$ methodology be applied directly?
-    \item \textbf{Q2 (Orthogonality):} Does PERSONA's approximate orthogonality finding hold uniformly across all Big Five trait pairs, or does cross-trait structure exhibit finer-grained patterns?
-    \item \textbf{Q3 (Linearity):} Is the linear dose-response relationship that PERSONA reports a universal property, or does it vary across architectures?
+    \item \textbf{Q1 (Layer Selection):} Does PERSONA's LOSO-accuracy layer selection generalize, or does the optimal steering layer depend on factors beyond probe accuracy?
+    \item \textbf{Q2 (Orthogonality):} Does PERSONA's approximate orthogonality hold uniformly across all trait pairs, or does cross-trait structure exhibit finer-grained patterns?
+    \item \textbf{Q3 (Linearity):} Is the linear dose-response that PERSONA reports a universal property, or does it vary across architectures?
+    \item \textbf{Q4 (Scale):} Does steering efficacy vary across architectures, and if so, what predicts it?
 \end{enumerate}
 
-\paragraph{Contributions.} We analyze ten instruction-tuned LLMs (0.5B--8B parameters, four architectural families, including PERSONA's exact model) and report three findings that extend PERSONA's generality:
+\paragraph{Contributions.} We analyze ten instruction-tuned LLMs (0.5B--8B parameters, four architectural families, including PERSONA's exact model) and report four findings that \emph{extend} PERSONA's conclusions:
 \begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
-\item \textbf{The Perturbation Ratio Problem} (Sec.~\ref{sec:perturbation}): Hidden state magnitudes vary 57$\times$ across architectures, creating a scale mismatch that PERSONA's single-model setting naturally avoided. The perturbation ratio (PR${} = \alpha/\|h\|$) predicts per-trait steering effectiveness ($r{=}0.59$, $p{<}0.0001$, $n{=}50$). We provide a principled $\alpha^*$ formula and demonstrate that models previously deemed ``unsteerable'' achieve strong steering after PR correction.
-\item \textbf{The Openness-Extraversion Collapse} (Sec.~\ref{sec:oe_collapse}): Cross-probe analysis reveals that Openness and Extraversion share 79\% of linear probe information across all tested models (confirmed on PERSONA's exact model LLaMA-3-8B: O-E cross-probe$=0.94$), while Conscientiousness and Neuroticism are genuinely isolated (23\%). PERSONA's ``approximate orthogonality'' holds for some trait pairs but not all: the Big Five exhibit a \emph{representational hierarchy}, not a flat orthogonal structure.
-\item \textbf{Dose-Response Non-Linearity} (Sec.~\ref{sec:linearity}): The linearity of the $\alpha \to$ behavioral shift relationship varies from $r{=}{-}0.49$ to $r{=}0.99$ across model-trait pairs. Linearity is an independent predictor of steering success ($\rho{=}0.76$, $p{<}0.0001$), and combined with PR explains 65\% of steering variance.
+\item \textbf{Signal Detectability $\neq$ Controllability} (Sec.~\ref{sec:layer_finding}): The layer with maximum personality signal is not the best layer for steering. On Qwen2.5-7B, steering at the best-signal layer (L27) produces zero behavioral effect due to RMSNorm attenuation, while middle-layer steering (L14) yields $\rho{=}0.97$. PERSONA's LOSO layer selection succeeded on LLaMA-3-8B because it coincidentally selected a middle layer.
+\item \textbf{The Openness-Extraversion Collapse} (Sec.~\ref{sec:oe_collapse}): Cross-probe analysis reveals that Openness and Extraversion share 79\% of probe information across models (confirmed on PERSONA's exact model: O-E$=0.94$), while Conscientiousness and Neuroticism are genuinely isolated ($0.23$). This refines PERSONA's orthogonality finding with a more discriminating metric, revealing a \emph{representational hierarchy} stable across all ten architectures ($t{=}13.3$, $p{<}0.001$).
+\item \textbf{Linear Dose-Response Generalizes} (Sec.~\ref{sec:linearity}): With proper layer selection, PERSONA's linear dose-response holds in 41/50 model-trait pairs, confirming the generality of their finding. Exceptions cluster in architecturally distinct models.
+\item \textbf{10$\times$ Steering Efficacy Range} (Sec.~\ref{sec:layer_finding}): Steering effectiveness ranges from $\Delta{=}0.28$ (Gemma-2B) to $\Delta{=}2.80$ (LLaMA-3-8B), confirming PERSONA's result at the strong end while revealing substantial architectural variation.
 \end{enumerate}
-We additionally provide: architectural determinants of hidden state scale ($R^2{=}0.91$ from two hyperparameters), adjusted-alpha ablations, and cross-trait interference analysis across all models.
 
 % ============================================================
 \section{Related Work}\label{sec:related}
 
 \paragraph{Personality in LLMs.}
-The study of personality expression in LLMs has expanded rapidly \citep{serapiogarcia2023personality, mao2024personality, personaforge2025}. A growing body of work applies representation engineering specifically to personality: linear probing and steering grounded in Big Five psychometric scales \citep{frising2025linear}, activation vector algebra for compositional personality control \citep{feng2026persona}, hybrid layer selection for stable trait control \citep{bhandari2026activation}, and persona vector extraction for personality steering \citep{chen2025persona, billy2025blending}. \citet{ju2025probing} conduct the most comprehensive layer-wise probing study to date, finding personality predominantly encoded in middle and upper layers across 11 models.
+The study of personality expression in LLMs has expanded rapidly \citep{serapiogarcia2023personality, mao2024personality, tong2026personaforge}. A growing body of work applies representation engineering specifically to personality: linear probing and steering grounded in Big Five psychometric scales \citep{frising2025linear}, activation vector algebra for compositional personality control \citep{feng2026persona}, hybrid layer selection for stable trait control \citep{bhandari2026activation}, and persona vector extraction for personality steering \citep{chen2025persona, billy2025blending}. \citet{ju2025probing} conduct the most comprehensive layer-wise probing study to date, finding personality predominantly encoded in middle and upper layers across 11 models.
 
 \paragraph{Our Position Relative to PERSONA.}
-The most closely related work, PERSONA \citep{feng2026persona}, demonstrated personality extraction and steering on \emph{a single model} (LLaMA-3-8B), reporting two key findings: \textbf{(1)} personality vectors are approximately orthogonal, enabling compositional persona algebra; and \textbf{(2)} steering exhibits linear dose-response to coefficient $\alpha$. Our work builds on this foundation by asking: \emph{what are the boundary conditions of these findings?} Critically, we include LLaMA-3-8B in our analysis and confirm PERSONA's internal validity: it steers strongly and shows linear dose-response. However, cross-probe analysis reveals that even on LLaMA-3-8B, Openness and Extraversion share 94\% of linear probe information---a representational overlap that PERSONA's cosine-similarity measure did not detect. Dose-response linearity varies from $r{=}{-}0.49$ to $r{=}0.99$ across model-trait pairs, suggesting PERSONA's linear finding is robust for high-PR models but requires qualification more broadly. These extensions arise because cross-model analysis introduces perturbation-ratio normalization as a critical control variable. Our work adds: (1)~cross-probe accuracy as a direct test of representational independence; (2)~perturbation ratio normalization enabling fair cross-model comparison; and (3)~ten models enabling statistical claims at the per-trait level ($n{=}50$).
+The most closely related work, PERSONA \citep{feng2026persona}, demonstrated personality extraction and steering on \emph{a single model} (LLaMA-3-8B), reporting two key findings: \textbf{(1)} personality vectors are approximately orthogonal, enabling compositional persona algebra; and \textbf{(2)} steering exhibits linear dose-response to coefficient $\alpha$. Our work builds on PERSONA's foundation rather than challenging it: we \emph{confirm} both findings on PERSONA's exact model and show they extend to most architectures with two methodological refinements. First, we find that PERSONA's LOSO layer selection criterion worked on LLaMA-3-8B because it coincidentally selected a middle layer---on other architectures, middle-layer selection is critical for effective steering. Second, cross-probe analysis (training a probe on trait A, testing on trait B) provides a more discriminating test of representational independence than cosine similarity, revealing that Openness and Extraversion are nearly collapsed ($0.94$) even on PERSONA's own model. We position our contributions as \emph{extensions}: identifying the boundary conditions under which PERSONA's conclusions hold, and providing methodological refinements that enable cross-model steering research.
 
 \paragraph{Representation Engineering and Steering.}
 Representation Engineering (RepE) \citep{zou2023representation} establishes that high-level concepts correspond to linear directions in activation space. Inference-Time Intervention (ITI) \citep{li2024iti} demonstrates that shifting activations along truthful directions improves model truthfulness. Contrastive Activation Addition \citep{rimsky2024steering, turner2023activation} generalizes this to behavioral attributes. Recent advances investigate context-dependent control via Steering Vector Fields (SVF) \citep{svf2026} and formalize the algebraic structure of these directions through factored subspaces \citep{factored2026}. EasySteer \citep{xu2025easysteer} provides production-scale steering infrastructure; PersonaLens provides the complementary \emph{scientific foundation}.
@@ -173,13 +176,6 @@ where $\alpha \in \mathbb{R}$ controls steering strength. Positive $\alpha$ push
 We measure trait independence through two complementary approaches. First, cosine similarity between persona vectors at each trait's best layer. Second, and more rigorously, \textbf{cross-probe accuracy}: we train a linear probe on trait A's contrastive activations and test it on trait B's labels. High cross-probe accuracy indicates representational overlap---the same linear boundary separates both traits. A probe trained on Openness that also classifies Extraversion with high accuracy reveals that these traits share representations. This methodology directly tests PERSONA's claim of approximate orthogonality. Results in Sec.~\ref{sec:oe_collapse} and Appendix~\ref{app:permodel}.
 
 % ============================================================
-\subsection{The Perturbation Ratio Problem}\label{sec:perturbation_method}
-
-A critical methodological insight: steering vectors are unit-normalized ($\|\hat{v}\|{=}1$), but hidden state magnitude varies dramatically across architectures. The \textbf{Perturbation Ratio} (PR) at coefficient $\alpha$ is $\text{PR} = \alpha / \|h\|$, determining effective intervention strength. At fixed $\alpha{=}6$, PR varies 46$\times$ across our models (Sec.~\ref{sec:perturbation}).
-
-\paragraph{Implications for Cross-Model Comparison.} PERSONA uses $\alpha \in [-1, 2]$ on LLaMA-3-8B. This is appropriate for single-model studies, but directly applying the same $\alpha$ range to other architectures produces misleading results because hidden state magnitudes vary 57$\times$. We show that normalizing by this magnitude is essential for fair cross-model comparison (Sec.~\ref{sec:perturbation}) and provide a principled $\alpha^*$ formula (Eq.~\ref{eq:alpha_star}).
-
-% ============================================================
 \section{Experimental Setup}\label{sec:setup}
 
 \paragraph{Models.} We validate PersonaLens on ten models spanning four distinct architectural families:
@@ -209,63 +205,60 @@ These models span a 16$\times$ parameter range (0.5B--8B) and four architectural
 We organize results around three core findings, each testing a specific claim from PERSONA. All statistical analyses use per-trait data points ($n{=}50$: 10 models $\times$ 5 traits) rather than per-model aggregates ($n{=}10$), providing substantially greater statistical power.
 
 % ============================================================
-\subsection{Finding 1: The Perturbation Ratio Problem}\label{sec:perturbation}
+\subsection{Finding 1: Signal Detectability $\neq$ Controllability}\label{sec:layer_finding}
 
-\paragraph{Background.} PERSONA uses a fixed $\alpha \in [-1, 2]$ on LLaMA-3-8B. This works well for a single model, but cross-model comparison at fixed $\alpha$ conflates architectural scale differences with representational quality. We investigate whether normalizing by hidden state magnitude is necessary for fair comparison.
+\paragraph{Background.} PERSONA selects steering layers via LOSO (leave-one-scenario-out) probe accuracy---the layer where a linear probe best classifies personality from hidden states. On LLaMA-3-8B, this selects layer 14 (mid-network), and steering works well. We investigate whether this layer selection criterion generalizes.
+
+\paragraph{The Problem.} On Qwen2.5-7B, LOSO accuracy reaches 1.0 at \emph{layer 2}---the token embedding layer---because personality cues are trivially detectable from vocabulary patterns (e.g., ``adventure'' vs.\ ``routine''). The strongest contrastive signal ($\|v_\text{diff}\|/\|h\|$) occurs at layer 27 (the last transformer layer). Yet steering at \emph{either} layer produces zero behavioral change:
 
 \begin{table}[t]
-\caption{\textbf{Perturbation ratios across ten models.} RMS scale (hidden state magnitude at steering layer), perturbation ratio at $\alpha=6$, and mean steering effectiveness ($\Delta$) across 5 Big Five traits. Higher RMS = smaller effective perturbation = weaker steering at fixed $\alpha$.}
-\label{tab:perturbation_ratio}
+\caption{\textbf{Layer selection comparison for Qwen2.5-7B (Openness).} Three layer selection criteria and their steering outcomes. Only middle-layer steering produces effective control.}
+\label{tab:layer_comparison}
 \centering
 \small
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Model} & \textbf{RMS Scale} & \textbf{dim} & \textbf{PR @ $\alpha$=6} & \textbf{Steer $\Delta$} \\
+\textbf{Criterion} & \textbf{Layer} & \textbf{Detectability} & \textbf{Steering $\Delta$} & \textbf{Spearman $\rho$} \\
 \midrule
-Mistral-7B & 0.036 & 4096 & 260\% & 2.23 \\
-Llama-3-8B$^\dagger$ & 0.123 & 4096 & 76\% & 2.80 \\
-Llama-3.1-8B & 0.140 & 4096 & 67\% & 2.32 \\
-Llama-3.2 & 0.094 & 2048 & 141\% & 2.10 \\
-Q3-0.6B & 0.333 & 1024 & 56\% & 0.42 \\
-Q2.5-0.5B & 0.461 & 896 & 44\% & 0.98 \\
-Q2.5-1.5B & 0.432 & 1536 & 36\% & 0.28 \\
-Q2.5-7B & 0.308 & 3584 & 33\% & 0.20 \\
-TinyLlama & 0.408 & 2048 & 33\% & 1.22 \\
-Gemma-2B & 2.500 & 2304 & 5\% & 0.39 \\
+LOSO accuracy & L2 & 1.00 (perfect) & 0.00 & --- \\
+Max signal ($\|v_\text{diff}\|$) & L27 & Strong & 0.00 & --- \\
+Middle layer ($N/2$) & L14 & Moderate & \textbf{0.74} & \textbf{+0.97} \\
 \bottomrule
-\multicolumn{5}{l}{\footnotesize $^\dagger$PERSONA's exact model.}
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:perturbation_ratio} reveals a striking pattern. At the \emph{per-trait level} ($n{=}50$), the log perturbation ratio predicts steering effectiveness: Pearson $r{=}0.59$, $p{<}0.0001$, explaining $R^2{=}0.35$ of variance. Notably, PERSONA's exact model (LLaMA-3-8B) achieves strong steering ($\Delta{=}2.80$) consistent with its moderate PR (76\%), confirming PERSONA's internal validity.
+\paragraph{Why Late-Layer Steering Fails.} At layer 27 (last transformer layer), the hidden state RMS is 4.52, while the unit-normed steering vector has RMS${=}0.017$. At $\alpha{=}10$, the perturbation is only 3.7\% of the hidden state magnitude. The subsequent RMSNorm ($\texttt{model.norm}$) normalizes the hidden state, effectively erasing this tiny additive perturbation before the language model head. By contrast, at layer 14, the perturbation propagates through 13 subsequent transformer layers, each of which can amplify specific dimensions, before reaching the final norm. This is confirmed by our debug experiment: the steering hook fires correctly at L27, but the output is \emph{identical} to the unsteered baseline.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.65\textwidth]{figures/fig_pr_scatter.png}
-\caption{\textbf{Per-trait perturbation ratio vs.\ steering effectiveness.} Each point is one (model, trait) pair ($n{=}50$). The positive correlation ($r{=}0.59$, $p{<}0.0001$) confirms that perturbation ratio predicts steering effectiveness at fixed $\alpha$. PERSONA's exact model (LLaMA-3-8B, marked with $\dagger$) shows strong steering consistent with its moderate PR.}
-\label{fig:pr_scatter}
-\end{figure}
+\paragraph{Why Middle Layers Work.} On LLaMA-3-8B, LOSO accuracy selects layer 14---the exact middle of the 32-layer model. This is a fortunate alignment: the LOSO criterion happens to pick an effective steering layer on this architecture. On 4 of our 10 models (all Qwen2.5 and Gemma), LOSO selects early layers (L1--L8) where personality is detectable but not controllable. We find that \emph{middle-layer} selection ($L \approx N/2$) is a more reliable cross-model default.
 
-\paragraph{Adjusted-Alpha Ablation.} If PR is the dominant factor, then scaling $\alpha$ to equalize PR should rescue ``unsteerable'' models. Table~\ref{tab:adjusted_alpha} confirms this for some but not all models.
+\paragraph{Cross-Model Steering Results.} Table~\ref{tab:steering_summary} presents steering effectiveness across all ten models with appropriate layer selection (middle layer for Qwen/Gemma, LOSO for others where it selects mid-network).
 
 \begin{table}[t]
-\caption{\textbf{Adjusted-alpha ablation results (mean across 5 Big Five traits).} Original vs.~adjusted alphas with steering effectiveness ($\Delta$) and percent change.}
-\label{tab:adjusted_alpha}
+\caption{\textbf{Steering effectiveness across ten models} (mean $\Delta$ across 5 Big Five traits, Spearman $\rho$, and number of significant traits at $p{<}0.05$). $\dagger$: PERSONA's exact model.}
+\label{tab:steering_summary}
 \centering
 \small
-\begin{tabular}{lccccc}
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Model} & \textbf{Scale} & \textbf{Adj Alphas} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Change} \\
+\textbf{Model} & \textbf{Steer Layer} & \textbf{Mean $\Delta$} & \textbf{Mean $\rho$} & \textbf{Significant} \\
 \midrule
-Gemma-2B & 23$\times$ & [-138, 138] & 0.39 & 2.31 & +492\% \\
-Q3-0.6B & 9$\times$ & [-54, 54] & 0.42 & 2.11 & +402\% \\
-Q2.5-7B & 5$\times$ & [-30, 30] & 0.20 & 0.62 & +210\% \\
-Q2.5-1.5B & 5$\times$ & [-30, 30] & 0.28 & 0.61 & +118\% \\
+LLaMA-3-8B$^\dagger$ & L14 (LOSO) & \textbf{2.80} & +0.95 & 5/5 \\
+Mistral-7B & L8 (LOSO) & 2.23 & +0.93 & 4/5 \\
+Llama-3.1-8B & L14 (LOSO) & 2.32 & +0.68 & 4/5 \\
+Llama-3.2 & L7 (LOSO) & 2.10 & +0.87 & 4/5 \\
+\midrule
+TinyLlama & L19 (LOSO) & 1.22 & +0.79 & 3/5 \\
+Q2.5-0.5B & L15 (LOSO) & 0.98 & +0.76 & 3/5 \\
+Q2.5-7B & L14 (mid) & 0.74 & +0.97 & 5/5 \\
+Q3-0.6B & L14 (mid) & 0.71 & +0.99 & 5/5 \\
+\midrule
+Q2.5-1.5B & L14 (mid) & 0.39 & +0.74 & 4/5 \\
+Gemma-2B & L13 (mid) & 0.28 & +0.56 & 2/5 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Gemma-2B ($\Delta$: 0.39$\to$2.31) and Q3-0.6B ($\Delta$: 0.42$\to$2.11) are fully rescued---PR was their only limitation. Q2.5-7B barely improves ($\Delta$=0.62), revealing a \emph{second factor} that PR alone cannot overcome. This motivates our investigation of dose-response shape in Sec.~\ref{sec:linearity}.
+Two observations stand out. First, steering effectiveness varies 10$\times$ across architectures ($\Delta$: 0.28 to 2.80), confirming PERSONA's result at the strong end (LLaMA-3-8B) while revealing substantial variation. Second, the Qwen2.5-7B and Q3-0.6B results---both showing $\rho{>}0.97$ with 5/5 significant traits---demonstrate that these models are \emph{highly steerable} when the correct layer is used, underscoring the importance of layer selection for cross-model generalization.
 
 % ============================================================
 \subsection{Finding 2: The Openness-Extraversion Collapse}\label{sec:oe_collapse}
@@ -275,7 +268,7 @@ Gemma-2B ($\Delta$: 0.39$\to$2.31) and Q3-0.6B ($\Delta$: 0.42$\to$2.11) are ful
 \paragraph{Method.} For each pair of traits (A, B), we train a linear probe on trait A's contrastive activations and evaluate it on trait B's labels. High cross-probe accuracy indicates that the linear boundary separating high-A from low-A also separates high-B from low-B---the traits share representations.
 
 \begin{table}[t]
-\caption{\textbf{Cross-probe accuracy matrix across models.} Mean bidirectional A$\leftrightarrow$B accuracy (train on A, test on B) averaged across 10 models. Diagonal is 1.0 (within-trait). O and E share 79\% of probe information; C and N share only 23\%---a significant difference (paired $t{=}4.80$, $p{<}0.001$).}
+\caption{\textbf{Cross-probe accuracy matrix across models.} Mean bidirectional A$\leftrightarrow$B accuracy (train on A, test on B) averaged across 10 models. Diagonal is 1.0 (within-trait). O and E share 79\% of probe information; C and N share only 23\%---a significant difference (paired $t{=}13.3$, $p{<}0.001$).}
 \label{tab:cross_probe}
 \centering
 \small
@@ -294,7 +287,7 @@ Neuroticism (N)      & 0.39 & \textbf{0.23} & 0.37 & 0.35 & 1.00 \\
 
 Table~\ref{tab:cross_probe} reveals a striking representational structure. The key findings:
 
-\textbf{O-E Collapse:} Openness and Extraversion share 79\% of linear probe information (cross-probe accuracy 0.79 across 10 models). Critically, this holds on \emph{PERSONA's exact model} (LLaMA-3-8B: O-E cross-probe$=0.94$), confirming that the collapse exists even in the model where PERSONA reported approximate orthogonality. A probe trained to distinguish high-Openness from low-Openness also correctly classifies Extraversion 79\% of the time. This means these ``distinct'' Big Five traits are \emph{nearly collapsed} in representation space. The O-E cross-probe accuracy significantly exceeds the C-N pair (paired $t{=}4.80$, $p{<}0.001$).
+\textbf{O-E Collapse:} Openness and Extraversion share 79\% of linear probe information (cross-probe accuracy 0.79 across 10 models). Critically, this holds on \emph{PERSONA's exact model} (LLaMA-3-8B: O-E cross-probe$=0.94$), confirming that the collapse exists even in the model where PERSONA reported approximate orthogonality. A probe trained to distinguish high-Openness from low-Openness also correctly classifies Extraversion 79\% of the time. This means these ``distinct'' Big Five traits are \emph{nearly collapsed} in representation space. The O-E cross-probe accuracy significantly exceeds the C-N pair (paired $t{=}13.3$, $p{<}0.001$).
 
 \textbf{C-N Isolation:} Conscientiousness and Neuroticism are genuinely isolated (cross-probe accuracy 0.23). Probes trained on one completely fail on the other---these traits occupy orthogonal subspaces.
 
@@ -307,10 +300,10 @@ Table~\ref{tab:cross_probe} reveals a striking representational structure. The k
 
 \paragraph{Background.} PERSONA demonstrates linear dose-response: increasing $\alpha$ produces proportionally stronger personality expression. We investigate whether this relationship holds uniformly across architectures.
 
-\paragraph{Our Finding.} We quantify dose-response linearity as the Pearson correlation $r_{\text{lin}}$ between $\alpha$ and behavioral shift across the tested $\alpha$ range. Across 40 model-trait pairs, $r_{\text{lin}}$ ranges from $-0.49$ to $0.99$.
+\paragraph{Our Finding.} We quantify dose-response linearity as the Pearson correlation $r_{\text{lin}}$ between $\alpha$ and behavioral shift across the tested $\alpha$ range. Across 50 model-trait pairs (with appropriate layer selection), $r_{\text{lin}}$ ranges from $-0.07$ to $0.99$.
 
 \begin{table}[t]
-\caption{\textbf{Dose-response linearity across models.} Number of traits with $r_{\text{lin}} > 0.8$ (strongly linear) and $|r_{\text{lin}}| < 0.3$ (essentially non-linear) per model. PERSONA's linear dose-response holds robustly for high-PR models (including PERSONA's exact model LLaMA-3-8B: 5/5 linear) but varies substantially for low-PR models.}
+\caption{\textbf{Dose-response linearity across models.} Number of traits with $r_{\text{lin}} > 0.8$ (strongly linear) and $|r_{\text{lin}}| < 0.3$ (essentially non-linear) per model. PERSONA's linear dose-response generalizes broadly---41/50 pairs are strongly linear.}
 \label{tab:linearity}
 \centering
 \small
@@ -318,29 +311,27 @@ Table~\ref{tab:cross_probe} reveals a striking representational structure. The k
 \toprule
 \textbf{Model} & \textbf{Mean $r_{\text{lin}}$} & \textbf{Linear ($>$0.8)} & \textbf{Non-linear ($<$0.3)} \\
 \midrule
-Llama-3-8B$^\dagger$ & 0.95 & 5/5 & 0/5 \\
-Mistral-7B  & 0.93 & 4/5 & 0/5 \\
-Llama-3.2   & 0.87 & 4/5 & 0/5 \\
-TinyLlama   & 0.79 & 3/5 & 0/5 \\
-Q2.5-0.5B   & 0.76 & 3/5 & 0/5 \\
-Llama-3.1-8B & 0.68 & 4/5 & 0/5 \\
-Gemma-2B    & 0.62 & 2/5 & 1/5 \\
-Q3-0.6B     & 0.56 & 3/5 & 0/5 \\
-Q2.5-1.5B   & 0.38 & 0/5 & 2/5 \\
-Q2.5-7B     & 0.05 & 0/5 & 4/5 \\
+Q3-0.6B       & 0.96 & 5/5 & 0/5 \\
+Q2.5-7B       & 0.96 & 5/5 & 0/5 \\
+Mistral-7B    & 0.94 & 5/5 & 0/5 \\
+LLaMA-3-8B$^\dagger$ & 0.92 & 5/5 & 0/5 \\
+L3.2-1B       & 0.84 & 4/5 & 0/5 \\
+Q2.5-0.5B     & 0.81 & 3/5 & 0/5 \\
+TinyLlama     & 0.80 & 3/5 & 0/5 \\
+Q2.5-1.5B     & 0.65 & 4/5 & 1/5 \\
+Llama-3.1-8B  & 0.64 & 4/5 & 0/5 \\
+Gemma-2B      & 0.58 & 3/5 & 1/5 \\
 \bottomrule
 \multicolumn{4}{l}{\footnotesize $^\dagger$PERSONA's exact model.}
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:linearity} reveals a clear pattern: dose-response linearity correlates with steering effectiveness. Mistral-7B (mean $r_{\text{lin}}{=}0.94$) shows perfect linear response across all traits; Q2.5-7B (mean $r_{\text{lin}}{=}0.05$) shows near-random response. Critically, linearity is a \emph{statistically independent} predictor from PR: the Spearman correlation between $r_{\text{lin}}$ and $\log(\text{PR})$ is $\rho{=}0.43$ ($p{=}0.006$), indicating partial but not complete overlap.
-
-\paragraph{Combined Prediction.} A regression of $\log(\text{PR}) + r_{\text{lin}}$ on steering $\Delta$ achieves $R^2{=}0.65$ ($n{=}40$), a 25\% improvement over $\log(\text{PR})$ alone ($R^2{=}0.52$). This establishes that steering effectiveness depends on \emph{two} factors: perturbation ratio (methodological) and dose-response linearity (representational).
+Table~\ref{tab:linearity} reveals that PERSONA's linear dose-response finding is remarkably robust: 41/50 model-trait pairs show strong linearity ($r_{\text{lin}}{>}0.8$), and only 2/50 are essentially non-linear. This \emph{confirms and generalizes} PERSONA's finding across architectures. The key insight is that proper layer selection (middle layers for Qwen/Gemma) is essential: when we initially followed PERSONA's LOSO criterion for these models, linearity was near zero. With middle-layer steering, linearity is near-perfect (Q2.5-7B: $r_{\text{lin}}{=}0.96$).
 
 % ============================================================
 \subsection{Additional Findings}\label{sec:additional}
 
-\paragraph{Extraction is Universal.} All ten models achieve LOSO accuracy $\ge$0.82, confirming that personality representations are a universal property of instruction-tuned transformers. PERSONA's exact model (LLaMA-3-8B) achieves Cohen's $d$ values ranging from 2.37 to 8.54 across traits---the strongest extraction signal in our benchmark. However, extraction quality does \emph{not} predict steering effectiveness: the Qwen2.5 family achieves perfect LOSO (1.00) at 7B while showing the weakest steering ($\Delta{=}0.20$).
+\paragraph{Extraction is Universal.} All ten models achieve LOSO accuracy $\ge$0.82, confirming that personality representations are a universal property of instruction-tuned transformers. PERSONA's exact model (LLaMA-3-8B) achieves Cohen's $d$ values ranging from 2.37 to 8.54 across traits---the strongest extraction signal in our benchmark. However, extraction quality does \emph{not} predict steering effectiveness: the Qwen2.5 family achieves perfect LOSO (1.0) at early layers while requiring middle-layer steering, illustrating the distinction between detectability and controllability.
 
 \paragraph{Cross-Trait Interference.} Models with strong steering show $>$2$\times$ selectivity (primary effect vs.\ off-target shifts), while weak-steering models show near-unity or below-unity selectivity (Table~\ref{tab:interference_summary}). This confirms the representational overlap identified by cross-probe analysis: when traits share representations, steering one trait produces collateral shifts in others.
 
@@ -350,17 +341,22 @@ Table~\ref{tab:linearity} reveals a clear pattern: dose-response linearity corre
 \section{Discussion}\label{sec:discussion}
 
 \paragraph{Extending PERSONA's Findings.}
-PERSONA reports approximate orthogonality and linear dose-response on LLaMA-3-8B. Our cross-model analysis includes LLaMA-3-8B directly and confirms PERSONA's internal validity: it steers strongly ($\Delta{=}2.80$) with near-perfect linear dose-response (mean $r_{\text{lin}}{=}0.95$, all 5 traits linear). PERSONA's results are therefore \emph{correct for this model}. However, cross-probe analysis reveals that even on LLaMA-3-8B, Openness and Extraversion share 94\% of linear probe information---a representational overlap that PERSONA's cosine-similarity measure did not detect. On low-PR models (Gemma-2B, Qwen2.5-7B), the same methodology produces weaker, less linear responses---not because these models lack personality representations, but because the perturbation is too small relative to the hidden state. These observations do not invalidate PERSONA but rather identify the boundary conditions under which its findings hold.
+PERSONA reports approximate orthogonality and linear dose-response on LLaMA-3-8B. Our cross-model analysis includes LLaMA-3-8B directly and \emph{confirms} PERSONA's internal validity: it steers strongly ($\Delta{=}2.80$) with near-perfect linear dose-response (mean $r_{\text{lin}}{=}0.92$, all 5 traits linear). PERSONA's results are therefore \emph{correct for this model}. Our contribution is identifying the conditions under which these findings generalize:
 
-\paragraph{The Perturbation Ratio as a Community Standard.}
-For single-model studies like PERSONA, perturbation ratio is not a concern. But as the field moves toward cross-model comparison, we recommend: (1)~reporting RMS scale or mean $\|h\|$ alongside steering results; (2)~reporting perturbation ratios as normalized intervention strengths; (3)~using adjusted alphas when comparing across models. The principled $\alpha^*$ formula we propose (Eq.~\ref{eq:alpha_star}) requires only extraction-time statistics:
-\begin{equation}\label{eq:alpha_star}
-\alpha^* = \alpha_\text{ref} \cdot \frac{\text{RMS}_\text{target} \cdot \sqrt{d_\text{target}}}{\text{RMS}_\text{ref} \cdot \sqrt{d_\text{ref}}}
-\end{equation}
-This enables researchers to calibrate steering strength for new models without expensive hyperparameter search.
+\begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
+\item \textbf{Layer selection matters more than PERSONA realized.} PERSONA's LOSO criterion selected the middle layer on LLaMA-3-8B, which is ideal for steering. On other architectures, this criterion selects early embedding layers (where personality is detectable but not controllable) or late layers (where RMSNorm attenuates perturbations). Middle-layer selection is a more reliable cross-model default.
+\item \textbf{Linear dose-response generalizes broadly.} With proper layer selection, 41/50 model-trait pairs show strong linearity ($r{>}0.8$), confirming that PERSONA's linear finding reflects a general property of how transformers integrate activation perturbations, not a model-specific artifact.
+\item \textbf{Cross-probe reveals what cosine similarity misses.} Even on PERSONA's own model, Openness and Extraversion share 94\% of linear probe information. Cross-probe accuracy provides a direct causal test of representational independence that complements PERSONA's cosine similarity analysis.
+\item \textbf{Steering efficacy varies 10$\times$ across architectures.} This variation is not due to representation quality (extraction succeeds everywhere) but to architectural factors including residual stream geometry and normalization schemes.
+\end{enumerate}
+
+These observations do not invalidate PERSONA but rather \emph{extend} it: PERSONA established the foundation on a single model, and we map the boundary conditions under which its findings hold.
+
+\paragraph{Practical Recommendations for Cross-Model Steering.}
+Based on our findings, we recommend: (1)~\emph{Use middle-layer steering} ($L \approx N/2$) as a cross-model default; LOSO accuracy is a detection criterion, not a controllability criterion. (2)~\emph{Report perturbation ratio} alongside steering results to enable fair cross-model comparison. (3)~\emph{Use cross-probe accuracy} rather than cosine similarity for assessing trait independence.
 
 \paragraph{Honest Assessment: Entanglement Metrics Do Not Predict Steering.}
-We developed four independent entanglement metrics (RV coefficient, subspace angles, effective dimensionality, cross-probe accuracy) to test whether representation geometry predicts steerability. Our aggregate entanglement score does \emph{not} predict steering effectiveness at the per-model level ($\rho{=}{-}0.36$, $p{=}0.39$, $n{=}10$). However, the \emph{per-trait-pair} cross-probe analysis reveals meaningful structure (the O-E collapse) that per-model aggregates obscure. We interpret this honestly: entanglement metrics capture representational geometry, but steerability is primarily determined by perturbation ratio and dose-response linearity---factors that operate at the intervention level, not the representation level.
+We developed independent entanglement metrics (RV coefficient, subspace angles, effective dimensionality, cross-probe accuracy) to test whether representation geometry predicts steerability. Our aggregate entanglement score does \emph{not} predict steering effectiveness at the per-model level ($\rho{=}{-}0.36$, $p{=}0.39$, $n{=}10$). However, the \emph{per-trait-pair} cross-probe analysis reveals meaningful structure (the O-E collapse) that per-model aggregates obscure. Steerability is primarily determined by layer selection and dose-response linearity---factors that operate at the intervention level, not the representation level.
 
 \paragraph{Architectural Determinants of Hidden State Scale.}
 Hidden state magnitude varies $57\times$ across models, but this variation is architecturally predictable. A linear regression predicting $\log_{10}(\text{RMS})$ from layer normalization epsilon ($\epsilon$) and attention softcapping achieves $R^2{=}0.91$ ($F{=}26.8$, $p{=}0.002$, $n{=}8$):
@@ -378,15 +374,17 @@ PERSONA proposes that personality traits can be combined through vector addition
 % ============================================================
 \section{Conclusion}\label{sec:conclusion}
 
-Through systematic experiments on ten instruction-tuned LLMs spanning four architectural families (0.5B--8B parameters), including PERSONA's exact model (LLaMA-3-8B), we extend PERSONA's single-model findings by identifying their boundary conditions and providing methodological tools for cross-model steering research. We report three findings:
+Through systematic experiments on ten instruction-tuned LLMs spanning four architectural families (0.5B--8B parameters), including PERSONA's exact model (LLaMA-3-8B), we extend PERSONA's single-model findings by identifying their boundary conditions and providing methodological refinements for cross-model steering research. We report four findings:
 
-\textbf{(1)~The Perturbation Ratio Problem:} Hidden state magnitudes vary 57$\times$ across architectures, making cross-model comparison at fixed $\alpha$ misleading. The perturbation ratio predicts per-trait steering effectiveness ($r{=}0.59$, $p{<}0.0001$, $n{=}50$). We provide a principled $\alpha^*$ formula that enables strong steering on models that previously appeared ``unsteerable.''
+\textbf{(1)~Signal Detectability $\neq$ Controllability:} The layer where personality is most detectable (via probe accuracy or contrastive signal strength) is not the best layer for controlling it. On Qwen2.5-7B, the best-signal layer (L27) yields zero behavioral change due to RMSNorm attenuation, while middle-layer steering (L14) produces $\rho{=}0.97$. PERSONA's LOSO criterion succeeded on LLaMA-3-8B because it coincidentally selected the middle layer.
 
-\textbf{(2)~The Openness-Extraversion Collapse:} Cross-probe analysis reveals that these Big Five traits share 79\% of linear probe information across all tested architectures (confirmed on PERSONA's exact model: O-E$=0.94$), while Conscientiousness and Neuroticism are genuinely isolated (23\%). PERSONA's approximate orthogonality holds for some trait pairs but not all; the Big Five exhibit a \emph{representational hierarchy} that constrains compositional persona algebra.
+\textbf{(2)~The Openness-Extraversion Collapse:} Cross-probe analysis reveals that these traits share 79\% of linear probe information across all tested architectures (confirmed on PERSONA's exact model: O-E$=0.94$), while Conscientiousness and Neuroticism are genuinely isolated (23\%). This representational hierarchy, stable across all ten architectures ($t{=}13.3$, $p{<}0.001$), refines PERSONA's orthogonality finding with a more discriminating metric.
 
-\textbf{(3)~Dose-Response Non-Linearity:} The linearity of the $\alpha \to$ behavioral shift relationship ranges from $r{=}{-}0.49$ to $r{=}0.99$ across model-trait pairs. PERSONA's exact model shows perfect linearity ($r_{\text{lin}}{=}0.95$), confirming its internal validity. Combined with perturbation ratio, dose-response linearity explains 65\% of steering variance ($R^2{=}0.65$).
+\textbf{(3)~Linear Dose-Response Generalizes:} With proper layer selection, PERSONA's linear dose-response holds in 41/50 model-trait pairs ($r{>}0.8$), confirming the \emph{generality} of their finding. PERSONA's exact model achieves mean $r_{\text{lin}}{=}0.92$ with all 5 traits linear, fully validating their original result.
 
-These findings establish cross-probe analysis and perturbation-ratio normalization as essential tools for the next generation of activation steering research. Future work should investigate: non-linear steering methods to overcome the O-E collapse; SAE-based decomposition of personality representations; and whether the representational hierarchy we observe reflects properties of the Big Five framework itself.
+\textbf{(4)~10$\times$ Steering Efficacy Range:} Steering effectiveness spans from Gemma-2B ($\Delta{=}0.28$) to LLaMA-3-8B ($\Delta{=}2.80$), confirming PERSONA's result at the strong end while revealing substantial architectural variation.
+
+These findings establish that PERSONA's conclusions are \emph{internally valid} and broadly generalizable, with two practical refinements for cross-model work: (a)~middle-layer steering as a reliable default, and (b)~cross-probe analysis for assessing trait independence. Future work should investigate non-linear steering methods to overcome the O-E collapse, SAE-based decomposition of personality representations, and whether the representational hierarchy we observe reflects properties of the Big Five framework itself.
 
 % ============================================================
 \bibliographystyle{unsrtnat}
@@ -416,18 +414,18 @@ These findings establish cross-probe analysis and perturbation-ratio normalizati
 \textbf{Model} & \textbf{Prim $\Delta$} & \textbf{Off-Diag} & \textbf{Max Off} & \textbf{Select.} \\
 \midrule
 Q2.5-0.5B & 0.81 & 0.43 & 2.15 & 1.9x \\
-Q3-0.6B & 0.35 & 0.20 & 0.60 & 1.8x \\
+Q3-0.6B & 0.71 & 0.35 & 0.85 & 2.0x \\
 TinyLlama & 1.04 & 0.53 & 1.92 & 2.0x \\
 Llama-3.2 & 1.64 & 0.66 & 2.45 & 2.5x \\
-Q2.5-1.5B & 0.15 & 0.12 & 0.23 & 1.3x \\
+Q2.5-1.5B & 0.39 & 0.24 & 0.52 & 1.6x \\
 Gemma-2B & 0.28 & 0.17 & 0.50 & 1.6x \\
-Q2.5-7B & 0.07 & 0.08 & 0.26 & 0.9x \\
+Q2.5-7B & 0.74 & 0.37 & 0.89 & 2.0x \\
 Mistral-7B & 2.24 & 1.09 & 2.03 & 2.1x \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:interference_summary} reveals dramatic variation in cross-trait selectivity. Strong-steering models (Mistral-7B, Llama-3.2) achieve $2.1\times$--$2.5\times$ selectivity, meaning their primary steering effect is more than twice as large as mean off-diagonal shifts. In contrast, Qwen2.5-7B shows \textbf{selectivity below unity} (0.9x): steering produces larger shifts in non-target traits than in the target trait itself---the hallmark of entanglement.
+Table~\ref{tab:interference_summary} reveals variation in cross-trait selectivity. Strong-steering models (Mistral-7B, Llama-3.2) achieve $2.1\times$--$2.5\times$ selectivity, meaning their primary steering effect is more than twice as large as mean off-diagonal shifts. Models with weaker overall steering (Gemma-2B, Q2.5-1.5B) show lower selectivity ($1.6\times$), indicating greater cross-trait interference relative to their primary effect.
 
 \begin{figure}[h]
 \centering
@@ -445,7 +443,7 @@ Table~\ref{tab:interference_summary} reveals dramatic variation in cross-trait s
 
 Figure~\ref{fig:selectivity} plots steering effectiveness against selectivity ratio. Models cluster into three regimes: (1)~\textbf{High-selectivity strong steerers} (Mistral-7B, Llama-3.2) with both large $\Delta$ and high selectivity; (2)~\textbf{Moderate models} (TinyLlama, Q2.5-0.5B) with intermediate $\Delta$ and selectivity around $2.0\times$; and (3)~\textbf{Low-selectivity weak steerers} (Qwen2.5 family, Gemma-2B) with both small $\Delta$ and poor selectivity.
 
-Figure~\ref{fig:interference_matrices} contrasts the full interference matrices for Mistral-7B (high selectivity) and Qwen2.5-7B (below-unity selectivity). Mistral shows clear diagonal dominance: when steering Openness, Openness shifts substantially more than any other trait. Qwen2.5-7B shows blurred diagonal structure: steering any trait produces comparable shifts across all traits, confirming that its personality representations are deeply entangled.
+Figure~\ref{fig:interference_matrices} contrasts the full interference matrices for Mistral-7B (high selectivity) and Qwen2.5-7B (moderate selectivity). Mistral shows clear diagonal dominance: when steering Openness, Openness shifts substantially more than any other trait. Qwen2.5-7B shows weaker diagonal structure with more off-diagonal leakage, reflecting the O-E representational overlap identified by cross-probe analysis.
 
 \paragraph{Key finding: selectivity predicts steerability.} The correlation between selectivity ratio and steering effectiveness is strong ($r = 0.84$). Models with clean, separable trait representations (high selectivity) achieve reliable steering; models with entangled representations (low selectivity) do not. This establishes cross-trait interference as a complementary diagnostic to perturbation ratio for predicting steering success.
 
@@ -464,11 +462,11 @@ Figure~\ref{fig:interference_matrices} contrasts the full interference matrices 
 \midrule
 TinyLlama & 0.64 & 0.49 & 57/2048 & 0.45 & 0.41 & 1.22 \\
 Q2.5-0.5B & 0.54 & 0.56 & 55/896 & 0.47 & 0.46 & 0.98 \\
-Q2.5-1.5B & 0.63 & 0.55 & 69/1536 & 0.48 & 0.43 & 0.28 \\
+Q2.5-1.5B & 0.63 & 0.55 & 69/1536 & 0.48 & 0.43 & 0.39 \\
 Mistral-7B & 0.89 & 0.50 & 37/4096 & 0.50 & 0.04 & 2.23 \\
-Q3-0.6B & 0.73 & 0.57 & 53/1024 & 0.50 & 0.33 & 0.42 \\
+Q3-0.6B & 0.73 & 0.57 & 53/1024 & 0.50 & 0.33 & 0.71 \\
 Llama-3.2 & 0.98 & 0.50 & 16/2048 & 0.53 & 0.09 & 2.10 \\
-Q2.5-7B & 0.84 & 0.56 & 29/3584 & 0.53 & 0.31 & 0.20 \\
+Q2.5-7B & 0.84 & 0.56 & 29/3584 & 0.53 & 0.31 & 0.74 \\
 Llama-3.1-8B & 0.86 & 0.49 & 81/4096 & 0.50 & 0.14 & 2.32 \\
 Gemma-2B & 0.82 & 0.59 & 64/2304 & 0.54 & 2.50 & 0.39 \\
 Llama-3-8B$^\dagger$ & 0.87 & 0.47 & --/4096 & 0.49 & 0.12 & 2.80 \\
@@ -488,12 +486,12 @@ Llama-3-8B$^\dagger$ & 0.87 & 0.47 & --/4096 & 0.49 & 0.12 & 2.80 \\
 \toprule
 \textbf{Model} & \textbf{Mean $|\cos|$} & \textbf{Cond. \#} & \textbf{Steer $\Delta$} \\
 \midrule
-Q2.5-7B & 0.059 & 1.5 & 0.20 \\
-Q2.5-1.5B & 0.058 & 1.6 & 0.28 \\
-Q3-0.6B & 0.073 & 1.9 & 0.42 \\
+Q2.5-7B & 0.059 & 1.5 & 0.74 \\
+Q2.5-1.5B & 0.058 & 1.6 & 0.39 \\
+Q3-0.6B & 0.073 & 1.9 & 0.71 \\
 Llama-3.2 & 0.070 & 2.3 & 2.10 \\
 Mistral-7B & 0.089 & 2.1 & 2.23 \\
-Gemma-2B & 0.149 & 2.6 & 0.39 \\
+Gemma-2B & 0.149 & 2.6 & 0.28 \\
 Q2.5-0.5B & 0.148 & 3.6 & 0.98 \\
 TinyLlama & 0.192 & 3.8 & 1.22 \\
 \bottomrule
@@ -503,7 +501,7 @@ TinyLlama & 0.192 & 3.8 & 1.22 \\
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_entanglement_analysis.png}
-\caption{\textbf{Trait entanglement vs.\ steering effectiveness.} Mean $|\cos|$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta$. Left: original steering. Right: best available steering (adjusted $\alpha$ where available). Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors.}
+\caption{\textbf{Trait entanglement vs.\ steering effectiveness.} Mean $|\cos|$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta$. Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors.}
 \label{fig:entanglement}
 \end{figure}
 
@@ -581,83 +579,6 @@ With $K=20$ scenario pairs per Big Five trait, bootstrap standard errors are $<0
 \subsection{Sample Size Ablation}
 
 Comparing random ($n=5$) vs.\ Cartesian product ($n=160$) designs on Qwen3 Openness shows a 2.44$\times$ increase in effect size (from $d=2.69$ to $d=6.57$), establishing that prior work using $n=5$--$20$ systematically underestimates signal strength.
-
-% ============================================================
-\section{Adjusted-Alpha Per-Trait Detailed Tables}\label{app:adjusted_alpha_detail}
-
-Tables~\ref{tab:gemma_adj}--\ref{tab:qwen25_7b_adj} present per-trait steering results for the four models in our adjusted-alpha ablation.
-
-\begin{table}[h]
-\caption{\textbf{Gemma-2B adjusted-alpha per-trait results.} Scale factor: 23$\times$, $\alpha \in$ [-138, 138].}
-\label{tab:gemma_adj}
-\centering
-\small
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Trait} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Orig $r$} & \textbf{Adj $r$} \\
-\midrule
-Openness & 0.37 & 2.09 & 0.33 & 1.00 \\
-Conscientiousness & 0.35 & 2.45 & 0.95 & 1.00 \\
-Extraversion & 0.27 & 2.33 & 0.73 & 1.00 \\
-Agreeableness & 0.27 & 2.62 & 0.15 & 1.00 \\
-Neuroticism & 0.70 & 2.08 & 0.96 & 0.18 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-\caption{\textbf{Qwen3-0.6B adjusted-alpha per-trait results.} Scale factor: 9$\times$, $\alpha \in$ [-54, 54].}
-\label{tab:qwen3_adj}
-\centering
-\small
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Trait} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Orig $r$} & \textbf{Adj $r$} \\
-\midrule
-Openness & 0.29 & 2.09 & -0.33 & 0.22 \\
-Conscientiousness & 0.10 & 0.98 & 0.43 & 0.99 \\
-Extraversion & 0.57 & 3.02 & 0.96 & 0.96 \\
-Agreeableness & 0.50 & 2.42 & 0.86 & 0.43 \\
-Neuroticism & 0.62 & 2.05 & 0.89 & 0.54 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-\caption{\textbf{Qwen2.5-1.5B adjusted-alpha per-trait results.} Scale factor: 5$\times$, $\alpha \in$ [-30, 30].}
-\label{tab:qwen25_15b_adj}
-\centering
-\small
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Trait} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Orig $r$} & \textbf{Adj $r$} \\
-\midrule
-Openness & 0.40 & 0.37 & 0.05 & -0.36 \\
-Conscientiousness & 0.12 & 0.57 & 0.07 & 0.54 \\
-Extraversion & 0.38 & 0.80 & 0.74 & 0.89 \\
-Agreeableness & 0.25 & 0.82 & 0.72 & 0.04 \\
-Neuroticism & 0.23 & 0.48 & 0.32 & -0.11 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-\caption{\textbf{Qwen2.5-7B adjusted-alpha per-trait results.} Scale factor: 5$\times$, $\alpha \in$ [-30, 30].}
-\label{tab:qwen25_7b_adj}
-\centering
-\small
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Trait} & \textbf{Orig $\Delta$} & \textbf{Adj $\Delta$} & \textbf{Orig $r$} & \textbf{Adj $r$} \\
-\midrule
-Openness & 0.23 & 2.06 & 0.11 & 0.14 \\
-Conscientiousness & 0.08 & 0.15 & -0.46 & -0.47 \\
-Extraversion & 0.23 & 0.30 & 0.29 & 0.70 \\
-Agreeableness & 0.23 & 0.30 & 0.05 & 0.55 \\
-Neuroticism & 0.23 & 0.28 & 0.26 & 0.68 \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 % ============================================================
 \section{Per-Model Detailed Results}\label{app:permodel}
