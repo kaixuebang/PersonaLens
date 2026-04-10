@@ -3,32 +3,29 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{shanahan2023role}
-\citation{chen2024rolesurvey}
-\citation{shao2023character}
-\citation{jiang2024evaluating}
-\citation{serapiogarcia2023personality}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
 \citation{zou2023representation}
 \citation{li2024iti}
 \citation{rimsky2024steering}
 \citation{bao2024emotion}
-\citation{chen2025persona}
-\citation{sun2025activation}
-\citation{billy2025blending}
 \citation{feng2026persona}
+\citation{elhage2021mathematical}
+\citation{bhandari2026activation}
+\citation{venkatesh2026nonidentifiability}
 \citation{serapiogarcia2023personality,mao2024personality,personaforge2025}
 \citation{frising2025linear}
 \citation{feng2026persona}
 \citation{bhandari2026activation}
 \citation{chen2025persona,billy2025blending}
 \citation{ju2025probing}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
-\newlabel{sec:intro}{{1}{2}{Introduction}{section.1}{}}
+\citation{feng2026persona}
 \@writefile{toc}{\contentsline {paragraph}{Research Questions.}{2}{section*.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Contributions.}{2}{section*.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
 \newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
 \@writefile{toc}{\contentsline {paragraph}{Personality in LLMs.}{2}{section*.3}\protected@file@percent }
-\citation{feng2026persona}
+\@writefile{toc}{\contentsline {paragraph}{Our Position Relative to PERSONA.}{2}{section*.4}\protected@file@percent }
 \citation{zou2023representation}
 \citation{li2024iti}
 \citation{rimsky2024steering,turner2023activation}
@@ -44,7 +41,6 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The PersonaLens pipeline. Each phase is independently executable and produces standardized outputs that enable cross-model comparison.}}{3}{figure.caption.7}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:pipeline}{{1}{3}{The PersonaLens pipeline. Each phase is independently executable and produces standardized outputs that enable cross-model comparison}{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Our Position Relative to PERSONA.}{3}{section*.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Representation Engineering and Steering.}{3}{section*.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Reliability and Theoretical Concerns.}{3}{section*.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}PersonaLens Framework}{3}{section.3}\protected@file@percent }
@@ -55,7 +51,6 @@
 \citation{vaillant1994ego}
 \citation{rimsky2024steering,chen2025persona}
 \citation{meng2022locating,bao2024emotion}
-\citation{costa1992revised}
 \@writefile{toc}{\contentsline {paragraph}{Defense Mechanisms.}{4}{section*.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Phase 2: Activation Collection}{4}{subsection.3.2}\protected@file@percent }
 \newlabel{sec:collection}{{3.2}{4}{Phase 2: Activation Collection}{subsection.3.2}{}}
@@ -76,9 +71,11 @@
 \citation{zhang2024tinyllama}
 \citation{dubey2024llama}
 \citation{gemmateam2024gemma}
+\citation{dubey2024llama}
+\citation{dubey2024llama}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.7}The Perturbation Ratio Problem}{5}{subsection.3.7}\protected@file@percent }
 \newlabel{sec:perturbation_method}{{3.7}{5}{The Perturbation Ratio Problem}{subsection.3.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Implications.}{5}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Implications for Cross-Model Comparison.}{5}{section*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{5}{section.4}\protected@file@percent }
 \newlabel{sec:setup}{{4}{5}{Experimental Setup}{section.4}{}}
 \@writefile{toc}{\contentsline {paragraph}{Models.}{5}{section*.13}\protected@file@percent }
@@ -87,221 +84,218 @@
 \@writefile{toc}{\contentsline {paragraph}{Steering Evaluation.}{5}{section*.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}Results}{5}{section.5}\protected@file@percent }
 \newlabel{sec:results}{{5}{5}{Results}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Personality Extraction is Universal}{5}{subsection.5.1}\protected@file@percent }
-\newlabel{sec:extraction_universal}{{5.1}{5}{Personality Extraction is Universal}{subsection.5.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Research Question.}{5}{section*.17}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Cross-model extraction summary.} LOSO accuracy, best layer, and Cohen's $d$ at each model's optimal layer. All models achieve high separability regardless of architecture.}}{6}{table.caption.18}\protected@file@percent }
-\newlabel{tab:extraction_universal}{{1}{6}{\textbf {Cross-model extraction summary.} LOSO accuracy, best layer, and Cohen's $d$ at each model's optimal layer. All models achieve high separability regardless of architecture}{table.caption.18}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Perturbation ratios across eight models.} RMS scale (hidden state magnitude), estimated $\|h\|$, perturbation ratio at $\alpha =6$, and steering effectiveness ($\Delta $). Higher RMS scale = smaller effective perturbation = weaker steering.}}{6}{table.caption.20}\protected@file@percent }
-\newlabel{tab:perturbation_ratio}{{2}{6}{\textbf {Perturbation ratios across eight models.} RMS scale (hidden state magnitude), estimated $\|h\|$, perturbation ratio at $\alpha =6$, and steering effectiveness ($\Delta $). Higher RMS scale = smaller effective perturbation = weaker steering}{table.caption.20}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}The Perturbation Ratio Problem}{6}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:perturbation}{{5.2}{6}{The Perturbation Ratio Problem}{subsection.5.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Research Question.}{6}{section*.19}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Mechanistic interpretation.}{6}{section*.22}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Hidden state scale vs.\ steering effectiveness.} Each point is one model. The negative correlation ($\rho = -0.54$, $p < 0.05$) confirms that models with larger residual stream magnitudes achieve weaker steering at fixed $\alpha $, motivating perturbation-ratio-aware comparisons.}}{7}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:pr_scatter}{{2}{7}{\textbf {Hidden state scale vs.\ steering effectiveness.} Each point is one model. The negative correlation ($\rho = -0.54$, $p < 0.05$) confirms that models with larger residual stream magnitudes achieve weaker steering at fixed $\alpha $, motivating perturbation-ratio-aware comparisons}{figure.caption.21}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Adjusted-alpha ablation results (mean across 5 Big Five traits).} Original vs.~adjusted alphas with steering effectiveness ($\Delta $) and percent change.}}{7}{table.caption.24}\protected@file@percent }
-\newlabel{tab:adjusted_alpha}{{3}{7}{\textbf {Adjusted-alpha ablation results (mean across 5 Big Five traits).} Original vs.~adjusted alphas with steering effectiveness ($\Delta $) and percent change}{table.caption.24}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Adjusted-Alpha Ablation: Necessary but Not Sufficient}{7}{subsection.5.3}\protected@file@percent }
-\newlabel{sec:adjusted_alpha}{{5.3}{7}{Adjusted-Alpha Ablation: Necessary but Not Sufficient}{subsection.5.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Research Question.}{7}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The necessary-but-not-sufficient principle.}{7}{section*.26}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Adjusted-alpha ablation results.} Left: steering effectiveness ($\Delta $) with original vs.\ adjusted $\alpha $. Right: dose-response monotonicity ($r$). Gemma-2B and Q3-0.6B show dramatic improvements; Q2.5-7B remains weak even after adjustment.}}{8}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:adjusted_comparison}{{3}{8}{\textbf {Adjusted-alpha ablation results.} Left: steering effectiveness ($\Delta $) with original vs.\ adjusted $\alpha $. Right: dose-response monotonicity ($r$). Gemma-2B and Q3-0.6B show dramatic improvements; Q2.5-7B remains weak even after adjustment}{figure.caption.25}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Qwen2.5 family scaling analysis.} Extraction quality improves with scale while steering effectiveness degrades, even after perturbation-ratio correction.}}{8}{table.caption.28}\protected@file@percent }
-\newlabel{tab:qwen_scaling}{{4}{8}{\textbf {Qwen2.5 family scaling analysis.} Extraction quality improves with scale while steering effectiveness degrades, even after perturbation-ratio correction}{table.caption.28}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}The Qwen Scaling Paradox}{8}{subsection.5.4}\protected@file@percent }
-\newlabel{sec:qwen_paradox}{{5.4}{8}{The Qwen Scaling Paradox}{subsection.5.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Research Question.}{8}{section*.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Interpretation: entanglement increases with capacity.}{8}{section*.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Cross-Model Steering Landscape}{8}{subsection.5.5}\protected@file@percent }
-\newlabel{sec:steering_landscape}{{5.5}{8}{Cross-Model Steering Landscape}{subsection.5.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Cross-model steering effectiveness.} Steering $\Delta $ (max judge\_mean minus min judge\_mean across alphas) per trait per model. Mean $\Delta $ and mean monotonicity correlation $r$ shown.}}{9}{table.caption.30}\protected@file@percent }
-\newlabel{tab:full_steering}{{5}{9}{\textbf {Cross-model steering effectiveness.} Steering $\Delta $ (max judge\_mean minus min judge\_mean across alphas) per trait per model. Mean $\Delta $ and mean monotonicity correlation $r$ shown}{table.caption.30}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Cross-Trait Interference Analysis}{9}{subsection.5.6}\protected@file@percent }
-\newlabel{sec:interference}{{5.6}{9}{Cross-Trait Interference Analysis}{subsection.5.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{9}{section.6}\protected@file@percent }
-\newlabel{sec:discussion}{{6}{9}{Discussion}{section.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{The Perturbation Ratio Problem: Implications for Steering Research.}{9}{section*.31}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Necessary but Not Sufficient: The Two-Factor Model of Steerability.}{9}{section*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The Qwen Scaling Paradox and Entanglement Hypothesis.}{9}{section*.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Representation Entanglement: Independent Validation.}{9}{section*.34}\protected@file@percent }
-\citation{stoehr2024activation}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Independent entanglement metrics} (computed from raw activations only). Aggregate entanglement does \emph  {not} predict steering effectiveness ($\rho {=}{-}0.36$, $p{=}0.39$), confirming PR as the dominant factor.}}{10}{table.caption.35}\protected@file@percent }
-\newlabel{tab:entanglement}{{6}{10}{\textbf {Independent entanglement metrics} (computed from raw activations only). Aggregate entanglement does \emph {not} predict steering effectiveness ($\rho {=}{-}0.36$, $p{=}0.39$), confirming PR as the dominant factor}{table.caption.35}{}}
-\@writefile{toc}{\contentsline {paragraph}{Architectural Determinants of Hidden State Scale.}{10}{section*.36}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{PR-Aware Steering Algorithm.}{10}{section*.37}\protected@file@percent }
-\newlabel{eq:alpha_star}{{5}{10}{PR-Aware Steering Algorithm}{equation.5}{}}
-\@writefile{toc}{\contentsline {paragraph}{Limitations.}{10}{section*.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{10}{section.7}\protected@file@percent }
-\newlabel{sec:conclusion}{{7}{10}{Conclusion}{section.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Perturbation ratios across ten models.} RMS scale (hidden state magnitude at steering layer), perturbation ratio at $\alpha =6$, and mean steering effectiveness ($\Delta $) across 5 Big Five traits. Higher RMS = smaller effective perturbation = weaker steering at fixed $\alpha $.}}{6}{table.caption.18}\protected@file@percent }
+\newlabel{tab:perturbation_ratio}{{1}{6}{\textbf {Perturbation ratios across ten models.} RMS scale (hidden state magnitude at steering layer), perturbation ratio at $\alpha =6$, and mean steering effectiveness ($\Delta $) across 5 Big Five traits. Higher RMS = smaller effective perturbation = weaker steering at fixed $\alpha $}{table.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Per-trait perturbation ratio vs.\ steering effectiveness.} Each point is one (model, trait) pair ($n{=}50$). The positive correlation ($r{=}0.59$, $p{<}0.0001$) confirms that perturbation ratio predicts steering effectiveness at fixed $\alpha $. PERSONA's exact model (LLaMA-3-8B, marked with $\dagger $) shows strong steering consistent with its moderate PR.}}{6}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:pr_scatter}{{2}{6}{\textbf {Per-trait perturbation ratio vs.\ steering effectiveness.} Each point is one (model, trait) pair ($n{=}50$). The positive correlation ($r{=}0.59$, $p{<}0.0001$) confirms that perturbation ratio predicts steering effectiveness at fixed $\alpha $. PERSONA's exact model (LLaMA-3-8B, marked with $\dagger $) shows strong steering consistent with its moderate PR}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Finding 1: The Perturbation Ratio Problem}{6}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:perturbation}{{5.1}{6}{Finding 1: The Perturbation Ratio Problem}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Background.}{6}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Adjusted-Alpha Ablation.}{6}{section*.20}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Adjusted-alpha ablation results (mean across 5 Big Five traits).} Original vs.~adjusted alphas with steering effectiveness ($\Delta $) and percent change.}}{7}{table.caption.21}\protected@file@percent }
+\newlabel{tab:adjusted_alpha}{{2}{7}{\textbf {Adjusted-alpha ablation results (mean across 5 Big Five traits).} Original vs.~adjusted alphas with steering effectiveness ($\Delta $) and percent change}{table.caption.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Cross-probe accuracy matrix across models.} Mean bidirectional A$\leftrightarrow $B accuracy (train on A, test on B) averaged across 10 models. Diagonal is 1.0 (within-trait). O and E share 79\% of probe information; C and N share only 23\%---a significant difference (paired $t{=}4.80$, $p{<}0.001$).}}{7}{table.caption.24}\protected@file@percent }
+\newlabel{tab:cross_probe}{{3}{7}{\textbf {Cross-probe accuracy matrix across models.} Mean bidirectional A$\leftrightarrow $B accuracy (train on A, test on B) averaged across 10 models. Diagonal is 1.0 (within-trait). O and E share 79\% of probe information; C and N share only 23\%---a significant difference (paired $t{=}4.80$, $p{<}0.001$)}{table.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Finding 2: The Openness-Extraversion Collapse}{7}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:oe_collapse}{{5.2}{7}{Finding 2: The Openness-Extraversion Collapse}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Background.}{7}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Method.}{7}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Implications for Compositional Steering.}{7}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Finding 3: Dose-Response Non-Linearity}{7}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:linearity}{{5.3}{7}{Finding 3: Dose-Response Non-Linearity}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Background.}{7}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Our Finding.}{7}{section*.27}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Dose-response linearity across models.} Number of traits with $r_{\text  {lin}} > 0.8$ (strongly linear) and $|r_{\text  {lin}}| < 0.3$ (essentially non-linear) per model. PERSONA's linear dose-response holds robustly for high-PR models (including PERSONA's exact model LLaMA-3-8B: 5/5 linear) but varies substantially for low-PR models.}}{8}{table.caption.28}\protected@file@percent }
+\newlabel{tab:linearity}{{4}{8}{\textbf {Dose-response linearity across models.} Number of traits with $r_{\text {lin}} > 0.8$ (strongly linear) and $|r_{\text {lin}}| < 0.3$ (essentially non-linear) per model. PERSONA's linear dose-response holds robustly for high-PR models (including PERSONA's exact model LLaMA-3-8B: 5/5 linear) but varies substantially for low-PR models}{table.caption.28}{}}
+\@writefile{toc}{\contentsline {paragraph}{Combined Prediction.}{8}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Additional Findings}{8}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:additional}{{5.4}{8}{Additional Findings}{subsection.5.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Extraction is Universal.}{8}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cross-Trait Interference.}{8}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Architectural Determinants of Scale.}{8}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{8}{section.6}\protected@file@percent }
+\newlabel{sec:discussion}{{6}{8}{Discussion}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Extending PERSONA's Findings.}{8}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The Perturbation Ratio as a Community Standard.}{8}{section*.34}\protected@file@percent }
+\citation{raval2026curveball}
+\citation{costa1992revised}
+\citation{godey2024anisotropy}
+\newlabel{eq:alpha_star}{{4}{9}{The Perturbation Ratio as a Community Standard}{equation.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Honest Assessment: Entanglement Metrics Do Not Predict Steering.}{9}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Architectural Determinants of Hidden State Scale.}{9}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Implications for Compositional Persona Algebra.}{9}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{9}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{9}{section.7}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{9}{Conclusion}{section.7}{}}
 \bibstyle{unsrtnat}
 \bibdata{references}
 \bibcite{shanahan2023role}{{1}{2023}{{Shanahan}}{{}}}
-\bibcite{chen2024rolesurvey}{{2}{2024}{{Chen et~al.}}{{Chen, Xiao, Chen, et~al.}}}
-\bibcite{shao2023character}{{3}{2023}{{Shao et~al.}}{{Shao, Li, Dai, and Qiu}}}
-\bibcite{jiang2024evaluating}{{4}{2024}{{Jiang et~al.}}{{Jiang, Xu, Zhu, Han, Ma, and Liang}}}
-\bibcite{serapiogarcia2023personality}{{5}{2023}{{Serapio-Garc{\'\i }a et~al.}}{{Serapio-Garc{\'\i }a, Safdari, Crepy, Sun, Fitz, Romero, Abdulhai, Faust, and Matari{\'c}}}}
-\bibcite{zou2023representation}{{6}{2023}{{Zou et~al.}}{{Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin, Mazeika, Dombrowski, et~al.}}}
-\bibcite{li2024iti}{{7}{2024}{{Li et~al.}}{{Li, Patel, Vi{\'e}gas, Pfister, and Wattenberg}}}
-\bibcite{rimsky2024steering}{{8}{2024}{{Rimsky et~al.}}{{Rimsky, Gabrieli, Schulz, Turner, et~al.}}}
-\bibcite{bao2024emotion}{{9}{2024}{{Bao et~al.}}{{}}}
-\bibcite{chen2025persona}{{10}{2025}{{Chen et~al.}}{{}}}
-\bibcite{sun2025activation}{{11}{2025}{{Sun et~al.}}{{}}}
-\bibcite{billy2025blending}{{12}{2025}{{Billyov et~al.}}{{}}}
-\bibcite{feng2026persona}{{13}{2026}{{Feng et~al.}}{{Feng, Zhao, Zhong, Huang, Gu, Kong, Feng, and Qin}}}
-\bibcite{mao2024personality}{{14}{2024}{{Mao et~al.}}{{Mao, Liu, Lan, Wu, and Cambria}}}
-\bibcite{personaforge2025}{{15}{2025{a}}{{Anonymous}}{{}}}
-\bibcite{frising2025linear}{{16}{2025}{{Frising and Balcells}}{{}}}
-\bibcite{bhandari2026activation}{{17}{2026}{{Bhandari et~al.}}{{Bhandari, Fay, Selvaganapathy, Datta, Naseem, and Nasim}}}
-\bibcite{ju2025probing}{{18}{2025}{{Ju et~al.}}{{Ju, Shao, Wang, Chen, Zhang, Fei, Lee, Hsu, Duan, and Liu}}}
-\bibcite{turner2023activation}{{19}{2023}{{Turner et~al.}}{{Turner, Thiergart, Udell, Leech, Mini, and Macdiarmid}}}
-\bibcite{svf2026}{{20}{2026{a}}{{Anonymous}}{{}}}
-\bibcite{factored2026}{{21}{2026{b}}{{Anonymous}}{{}}}
-\bibcite{xu2025easysteer}{{22}{2025}{{Xu et~al.}}{{}}}
-\bibcite{bao2025traits2circuits}{{23}{2025}{{Bao et~al.}}{{}}}
-\bibcite{cae2025}{{24}{2025{b}}{{Anonymous}}{{}}}
-\bibcite{cae2025b}{{25}{2025{c}}{{Anonymous}}{{}}}
-\bibcite{sae2025denoising}{{26}{2025{d}}{{Anonymous}}{{}}}
-\bibcite{direction2026}{{27}{2026{c}}{{Anonymous}}{{}}}
-\bibcite{venkatesh2026nonidentifiability}{{28}{2026}{{Venkatesh and Kurapath}}{{}}}
-\bibcite{vaillant1994ego}{{29}{1994}{{Vaillant}}{{}}}
-\bibcite{meng2022locating}{{30}{2022}{{Meng et~al.}}{{Meng, Bau, Andonian, and Belinkov}}}
-\bibcite{costa1992revised}{{31}{1992}{{Costa and McCrae}}{{}}}
-\bibcite{qwen2025qwen3}{{32}{2025}{{Qwen Team}}{{}}}
-\bibcite{zhang2024tinyllama}{{33}{2024}{{Zhang et~al.}}{{Zhang, Zeng, Wang, and Lu}}}
-\bibcite{dubey2024llama}{{34}{2024}{{Dubey et~al.}}{{Dubey, Jauhri, Pandey, Kadian, Al-Dahle, Letman, Mathur, Schelten, Yang, Fan, et~al.}}}
-\bibcite{gemmateam2024gemma}{{35}{2024}{{Team et~al.}}{{Team, Riviere, Pathak, Sessa, Hardin, Bhupatiraju, Hussenot, Mesnard, Shahriari, Ram{\'e}, et~al.}}}
-\bibcite{stoehr2024activation}{{36}{2024}{{Stoehr et~al.}}{{Stoehr, Riddell, Pfeiffer, and Hinton}}}
-\bibcite{vaillant1986empirical}{{37}{1986}{{Vaillant et~al.}}{{Vaillant, Bond, and Vaillant}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Cross-Model Steering Heatmap}{12}{appendix.A}\protected@file@percent }
-\newlabel{app:steering_heatmap}{{A}{12}{Cross-Model Steering Heatmap}{appendix.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Cross-Trait Interference Analysis}{12}{appendix.B}\protected@file@percent }
-\newlabel{app:interference}{{B}{12}{Cross-Trait Interference Analysis}{appendix.B}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Cross-model steering effectiveness heatmap.} Each cell shows $\Delta $ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance.}}{13}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:steering_heatmap}{{4}{13}{\textbf {Cross-model steering effectiveness heatmap.} Each cell shows $\Delta $ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance}{figure.caption.40}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Cross-trait interference summary.} Mean primary effect (steering $\Delta $ on target trait), mean off-diagonal shift (non-target traits), maximum off-diagonal shift, and selectivity ratio (primary/mean off-diagonal). Lower selectivity indicates greater interference.}}{13}{table.caption.41}\protected@file@percent }
-\newlabel{tab:interference_summary}{{7}{13}{\textbf {Cross-trait interference summary.} Mean primary effect (steering $\Delta $ on target trait), mean off-diagonal shift (non-target traits), maximum off-diagonal shift, and selectivity ratio (primary/mean off-diagonal). Lower selectivity indicates greater interference}{table.caption.41}{}}
-\@writefile{toc}{\contentsline {paragraph}{Key finding: selectivity predicts steerability.}{13}{section*.44}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C}Representation Entanglement Details}{13}{appendix.C}\protected@file@percent }
-\newlabel{app:entanglement}{{C}{13}{Representation Entanglement Details}{appendix.C}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Steering effectiveness vs.~selectivity ratio.} Each point represents one model. Selectivity ratio (primary $\Delta $ divided by mean off-diagonal shift) separates models into three clusters: high-selectivity strong steerers (Mistral-7B, Llama-3.2), moderate-selectivity models (TinyLlama, Q2.5-0.5B), and low-selectivity weak steerers (Qwen2.5 family, Gemma-2B). The dashed line indicates unity selectivity (no discrimination between target and non-target traits).}}{14}{figure.caption.42}\protected@file@percent }
-\newlabel{fig:selectivity}{{5}{14}{\textbf {Steering effectiveness vs.~selectivity ratio.} Each point represents one model. Selectivity ratio (primary $\Delta $ divided by mean off-diagonal shift) separates models into three clusters: high-selectivity strong steerers (Mistral-7B, Llama-3.2), moderate-selectivity models (TinyLlama, Q2.5-0.5B), and low-selectivity weak steerers (Qwen2.5 family, Gemma-2B). The dashed line indicates unity selectivity (no discrimination between target and non-target traits)}{figure.caption.42}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces \textbf  {Representation entanglement and steerability.} Mean $|\cos |$ between persona vectors at each model's best layer, with steering effectiveness. No simple monotonic relationship exists.}}{14}{table.caption.45}\protected@file@percent }
-\newlabel{tab:entanglement_summary}{{8}{14}{\textbf {Representation entanglement and steerability.} Mean $|\cos |$ between persona vectors at each model's best layer, with steering effectiveness. No simple monotonic relationship exists}{table.caption.45}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Architectural Determinants of Hidden State Scale}{14}{appendix.D}\protected@file@percent }
-\newlabel{app:architecture}{{D}{14}{Architectural Determinants of Hidden State Scale}{appendix.D}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {E}Method Details}{14}{appendix.E}\protected@file@percent }
-\newlabel{app:method_details}{{E}{14}{Method Details}{appendix.E}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}Metrics and Evaluation Criteria}{14}{subsection.E.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Leave-One-Scenario-Out (LOSO) Accuracy.}{14}{section*.49}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Cross-trait interference matrices: Mistral-7B (left) vs.~Qwen2.5-7B (right).} Each cell shows the steering effect on the column trait when steering the row trait. Mistral-7B shows strong diagonal dominance (high selectivity) with off-diagonal values roughly half the diagonal. Qwen2.5-7B shows weak diagonal signals and substantial off-diagonal leakage, consistent with its below-unity selectivity ratio.}}{15}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:interference_matrices}{{6}{15}{\textbf {Cross-trait interference matrices: Mistral-7B (left) vs.~Qwen2.5-7B (right).} Each cell shows the steering effect on the column trait when steering the row trait. Mistral-7B shows strong diagonal dominance (high selectivity) with off-diagonal values roughly half the diagonal. Qwen2.5-7B shows weak diagonal signals and substantial off-diagonal leakage, consistent with its below-unity selectivity ratio}{figure.caption.43}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Trait entanglement vs.\ steering effectiveness.} Mean $|\cos |$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta $. Left: original steering. Right: best available steering (adjusted $\alpha $ where available). Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors.}}{15}{figure.caption.46}\protected@file@percent }
-\newlabel{fig:entanglement}{{7}{15}{\textbf {Trait entanglement vs.\ steering effectiveness.} Mean $|\cos |$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta $. Left: original steering. Right: best available steering (adjusted $\alpha $ where available). Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors}{figure.caption.46}{}}
-\@writefile{toc}{\contentsline {paragraph}{Cohen's $d$ Effect Size.}{15}{section*.50}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Signal-to-Noise Ratio (SNR).}{15}{section*.51}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces \textbf  {Architectural parameters and hidden state scale.} RMS magnitude at the best layer for each model, with architectural family and key hyperparameters.}}{16}{table.caption.47}\protected@file@percent }
-\newlabel{tab:architecture_regression}{{9}{16}{\textbf {Architectural parameters and hidden state scale.} RMS magnitude at the best layer for each model, with architectural family and key hyperparameters}{table.caption.47}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {Architectural prediction of hidden state scale.} Observed vs.~predicted $\log _{10}(\text  {RMS})$ from the regression $\log _{10}(\text  {RMS}) \approx -0.702 \log _{10}(\epsilon ) + 0.016 \cdot \text  {softcap}$. Two architectural hyperparameters explain 91\% of cross-model variance in hidden state magnitude.}}{16}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:architecture_rms}{{8}{16}{\textbf {Architectural prediction of hidden state scale.} Observed vs.~predicted $\log _{10}(\text {RMS})$ from the regression $\log _{10}(\text {RMS}) \approx -0.702 \log _{10}(\epsilon ) + 0.016 \cdot \text {softcap}$. Two architectural hyperparameters explain 91\% of cross-model variance in hidden state magnitude}{figure.caption.48}{}}
-\@writefile{toc}{\contentsline {paragraph}{Perturbation Ratio (PR).}{16}{section*.52}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}Extraction Method Convergence}{16}{subsection.E.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.3}Statistical Power and Sample Size}{17}{subsection.E.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.4}Sample Size Ablation}{17}{subsection.E.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {F}Adjusted-Alpha Per-Trait Detailed Tables}{17}{appendix.F}\protected@file@percent }
-\newlabel{app:adjusted_alpha_detail}{{F}{17}{Adjusted-Alpha Per-Trait Detailed Tables}{appendix.F}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces \textbf  {Gemma-2B adjusted-alpha per-trait results.} Scale factor: 23$\times $, $\alpha \in $ [-138, 138].}}{17}{table.caption.53}\protected@file@percent }
-\newlabel{tab:gemma_adj}{{10}{17}{\textbf {Gemma-2B adjusted-alpha per-trait results.} Scale factor: 23$\times $, $\alpha \in $ [-138, 138]}{table.caption.53}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces \textbf  {Qwen3-0.6B adjusted-alpha per-trait results.} Scale factor: 9$\times $, $\alpha \in $ [-54, 54].}}{17}{table.caption.54}\protected@file@percent }
-\newlabel{tab:qwen3_adj}{{11}{17}{\textbf {Qwen3-0.6B adjusted-alpha per-trait results.} Scale factor: 9$\times $, $\alpha \in $ [-54, 54]}{table.caption.54}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces \textbf  {Qwen2.5-1.5B adjusted-alpha per-trait results.} Scale factor: 5$\times $, $\alpha \in $ [-30, 30].}}{17}{table.caption.55}\protected@file@percent }
-\newlabel{tab:qwen25_15b_adj}{{12}{17}{\textbf {Qwen2.5-1.5B adjusted-alpha per-trait results.} Scale factor: 5$\times $, $\alpha \in $ [-30, 30]}{table.caption.55}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {G}Per-Model Detailed Results}{17}{appendix.G}\protected@file@percent }
-\newlabel{app:permodel}{{G}{17}{Per-Model Detailed Results}{appendix.G}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces \textbf  {Qwen2.5-7B adjusted-alpha per-trait results.} Scale factor: 5$\times $, $\alpha \in $ [-30, 30].}}{18}{table.caption.56}\protected@file@percent }
-\newlabel{tab:qwen25_7b_adj}{{13}{18}{\textbf {Qwen2.5-7B adjusted-alpha per-trait results.} Scale factor: 5$\times $, $\alpha \in $ [-30, 30]}{table.caption.56}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {G.1}Qwen2.5-0.5B-Instruct}{18}{subsection.G.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{18}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_layer}{{9}{18}{\textbf {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.57}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}}{18}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_ortho}{{10}{18}{\textbf {Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.58}{}}
+\bibcite{zou2023representation}{{2}{2023}{{Zou et~al.}}{{Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin, Mazeika, Dombrowski, et~al.}}}
+\bibcite{li2024iti}{{3}{2024}{{Li et~al.}}{{Li, Patel, Vi{\'e}gas, Pfister, and Wattenberg}}}
+\bibcite{rimsky2024steering}{{4}{2024}{{Rimsky et~al.}}{{Rimsky, Gabrieli, Schulz, Turner, et~al.}}}
+\bibcite{bao2024emotion}{{5}{2024}{{Bao et~al.}}{{}}}
+\bibcite{feng2026persona}{{6}{2026}{{Feng et~al.}}{{Feng, Zhao, Zhong, Huang, Gu, Kong, Feng, and Qin}}}
+\bibcite{elhage2021mathematical}{{7}{2021}{{Elhage et~al.}}{{Elhage, Nanda, Olsson, Henighan, Joseph, Mann, Askell, Bai, Chen, Conerly, et~al.}}}
+\bibcite{bhandari2026activation}{{8}{2026}{{Bhandari et~al.}}{{Bhandari, Fay, Selvaganapathy, Datta, Naseem, and Nasim}}}
+\bibcite{venkatesh2026nonidentifiability}{{9}{2026}{{Venkatesh and Kurapath}}{{}}}
+\bibcite{serapiogarcia2023personality}{{10}{2023}{{Serapio-Garc{\'\i }a et~al.}}{{Serapio-Garc{\'\i }a, Safdari, Crepy, Sun, Fitz, Romero, Abdulhai, Faust, and Matari{\'c}}}}
+\bibcite{mao2024personality}{{11}{2024}{{Mao et~al.}}{{Mao, Liu, Lan, Wu, and Cambria}}}
+\bibcite{personaforge2025}{{12}{2025{a}}{{Anonymous}}{{}}}
+\bibcite{frising2025linear}{{13}{2025}{{Frising and Balcells}}{{}}}
+\bibcite{chen2025persona}{{14}{2025}{{Chen et~al.}}{{}}}
+\bibcite{billy2025blending}{{15}{2025}{{Billyov et~al.}}{{}}}
+\bibcite{ju2025probing}{{16}{2025}{{Ju et~al.}}{{Ju, Shao, Wang, Chen, Zhang, Fei, Lee, Hsu, Duan, and Liu}}}
+\bibcite{turner2023activation}{{17}{2023}{{Turner et~al.}}{{Turner, Thiergart, Udell, Leech, Mini, and Macdiarmid}}}
+\bibcite{svf2026}{{18}{2026{a}}{{Anonymous}}{{}}}
+\bibcite{factored2026}{{19}{2026{b}}{{Anonymous}}{{}}}
+\bibcite{xu2025easysteer}{{20}{2025}{{Xu et~al.}}{{}}}
+\bibcite{bao2025traits2circuits}{{21}{2025}{{Bao et~al.}}{{}}}
+\bibcite{cae2025}{{22}{2025{b}}{{Anonymous}}{{}}}
+\bibcite{cae2025b}{{23}{2025{c}}{{Anonymous}}{{}}}
+\bibcite{sae2025denoising}{{24}{2025{d}}{{Anonymous}}{{}}}
+\bibcite{direction2026}{{25}{2026{c}}{{Anonymous}}{{}}}
+\bibcite{vaillant1994ego}{{26}{1994}{{Vaillant}}{{}}}
+\bibcite{meng2022locating}{{27}{2022}{{Meng et~al.}}{{Meng, Bau, Andonian, and Belinkov}}}
+\bibcite{qwen2025qwen3}{{28}{2025}{{Qwen Team}}{{}}}
+\bibcite{zhang2024tinyllama}{{29}{2024}{{Zhang et~al.}}{{Zhang, Zeng, Wang, and Lu}}}
+\bibcite{dubey2024llama}{{30}{2024}{{Dubey et~al.}}{{Dubey, Jauhri, Pandey, Kadian, Al-Dahle, Letman, Mathur, Schelten, Yang, Fan, et~al.}}}
+\bibcite{gemmateam2024gemma}{{31}{2024}{{Team et~al.}}{{Team, Riviere, Pathak, Sessa, Hardin, Bhupatiraju, Hussenot, Mesnard, Shahriari, Ram{\'e}, et~al.}}}
+\bibcite{raval2026curveball}{{32}{2026}{{Raval et~al.}}{{}}}
+\bibcite{costa1992revised}{{33}{1992}{{Costa and McCrae}}{{}}}
+\bibcite{godey2024anisotropy}{{34}{2024}{{Godey et~al.}}{{Godey, de~la Clergerie, and Sagot}}}
+\bibcite{vaillant1986empirical}{{35}{1986}{{Vaillant et~al.}}{{Vaillant, Bond, and Vaillant}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Cross-Model Steering Heatmap}{11}{appendix.A}\protected@file@percent }
+\newlabel{app:steering_heatmap}{{A}{11}{Cross-Model Steering Heatmap}{appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Cross-Trait Interference Analysis}{11}{appendix.B}\protected@file@percent }
+\newlabel{app:interference}{{B}{11}{Cross-Trait Interference Analysis}{appendix.B}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Cross-trait interference summary.} Mean primary effect (steering $\Delta $ on target trait), mean off-diagonal shift (non-target traits), maximum off-diagonal shift, and selectivity ratio (primary/mean off-diagonal). Lower selectivity indicates greater interference.}}{11}{table.caption.41}\protected@file@percent }
+\newlabel{tab:interference_summary}{{5}{11}{\textbf {Cross-trait interference summary.} Mean primary effect (steering $\Delta $ on target trait), mean off-diagonal shift (non-target traits), maximum off-diagonal shift, and selectivity ratio (primary/mean off-diagonal). Lower selectivity indicates greater interference}{table.caption.41}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Cross-model steering effectiveness heatmap.} Each cell shows $\Delta $ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance.}}{12}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:steering_heatmap}{{3}{12}{\textbf {Cross-model steering effectiveness heatmap.} Each cell shows $\Delta $ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance}{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {paragraph}{Key finding: selectivity predicts steerability.}{12}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Representation Entanglement Details}{12}{appendix.C}\protected@file@percent }
+\newlabel{app:entanglement}{{C}{12}{Representation Entanglement Details}{appendix.C}{}}
+\@writefile{toc}{\contentsline {paragraph}{Independent Entanglement Metrics.}{12}{section*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Per-Model Cross-Probe Accuracy Matrices.}{12}{section*.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {D}Architectural Determinants of Hidden State Scale}{12}{appendix.D}\protected@file@percent }
+\newlabel{app:architecture}{{D}{12}{Architectural Determinants of Hidden State Scale}{appendix.D}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Steering effectiveness vs.~selectivity ratio.} Each point represents one model. Selectivity ratio (primary $\Delta $ divided by mean off-diagonal shift) separates models into three clusters: high-selectivity strong steerers (Mistral-7B, Llama-3.2), moderate-selectivity models (TinyLlama, Q2.5-0.5B), and low-selectivity weak steerers (Qwen2.5 family, Gemma-2B). The dashed line indicates unity selectivity (no discrimination between target and non-target traits).}}{13}{figure.caption.42}\protected@file@percent }
+\newlabel{fig:selectivity}{{4}{13}{\textbf {Steering effectiveness vs.~selectivity ratio.} Each point represents one model. Selectivity ratio (primary $\Delta $ divided by mean off-diagonal shift) separates models into three clusters: high-selectivity strong steerers (Mistral-7B, Llama-3.2), moderate-selectivity models (TinyLlama, Q2.5-0.5B), and low-selectivity weak steerers (Qwen2.5 family, Gemma-2B). The dashed line indicates unity selectivity (no discrimination between target and non-target traits)}{figure.caption.42}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Independent entanglement metrics} (computed from raw activations only). Aggregate entanglement does \emph  {not} predict steering effectiveness at the per-model level ($\rho {=}{-}0.36$, $p{=}0.39$). This honest reporting confirms that perturbation ratio, not representation geometry, is the dominant cross-model factor.}}{13}{table.caption.46}\protected@file@percent }
+\newlabel{tab:entanglement_independent}{{6}{13}{\textbf {Independent entanglement metrics} (computed from raw activations only). Aggregate entanglement does \emph {not} predict steering effectiveness at the per-model level ($\rho {=}{-}0.36$, $p{=}0.39$). This honest reporting confirms that perturbation ratio, not representation geometry, is the dominant cross-model factor}{table.caption.46}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}Method Details}{13}{appendix.E}\protected@file@percent }
+\newlabel{app:method_details}{{E}{13}{Method Details}{appendix.E}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}Metrics and Evaluation Criteria}{13}{subsection.E.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Leave-One-Scenario-Out (LOSO) Accuracy.}{13}{section*.52}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Cross-trait interference matrices: Mistral-7B (left) vs.~Qwen2.5-7B (right).} Each cell shows the steering effect on the column trait when steering the row trait. Mistral-7B shows strong diagonal dominance (high selectivity) with off-diagonal values roughly half the diagonal. Qwen2.5-7B shows weak diagonal signals and substantial off-diagonal leakage, consistent with its below-unity selectivity ratio.}}{14}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:interference_matrices}{{5}{14}{\textbf {Cross-trait interference matrices: Mistral-7B (left) vs.~Qwen2.5-7B (right).} Each cell shows the steering effect on the column trait when steering the row trait. Mistral-7B shows strong diagonal dominance (high selectivity) with off-diagonal values roughly half the diagonal. Qwen2.5-7B shows weak diagonal signals and substantial off-diagonal leakage, consistent with its below-unity selectivity ratio}{figure.caption.43}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Representation entanglement and steerability.} Mean $|\cos |$ between persona vectors at each model's best layer, with steering effectiveness.}}{14}{table.caption.48}\protected@file@percent }
+\newlabel{tab:entanglement_summary}{{7}{14}{\textbf {Representation entanglement and steerability.} Mean $|\cos |$ between persona vectors at each model's best layer, with steering effectiveness}{table.caption.48}{}}
+\@writefile{toc}{\contentsline {paragraph}{Cohen's $d$ Effect Size.}{14}{section*.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Signal-to-Noise Ratio (SNR).}{14}{section*.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Perturbation Ratio (PR).}{14}{section*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}Extraction Method Convergence}{14}{subsection.E.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Trait entanglement vs.\ steering effectiveness.} Mean $|\cos |$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta $. Left: original steering. Right: best available steering (adjusted $\alpha $ where available). Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors.}}{15}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:entanglement}{{6}{15}{\textbf {Trait entanglement vs.\ steering effectiveness.} Mean $|\cos |$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta $. Left: original steering. Right: best available steering (adjusted $\alpha $ where available). Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors}{figure.caption.49}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces \textbf  {Architectural parameters and hidden state scale.} RMS magnitude at the steering layer for each model, with architectural family and key hyperparameters.}}{15}{table.caption.50}\protected@file@percent }
+\newlabel{tab:architecture_regression}{{8}{15}{\textbf {Architectural parameters and hidden state scale.} RMS magnitude at the steering layer for each model, with architectural family and key hyperparameters}{table.caption.50}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.3}Statistical Power and Sample Size}{15}{subsection.E.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.4}Sample Size Ablation}{15}{subsection.E.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {F}Adjusted-Alpha Per-Trait Detailed Tables}{15}{appendix.F}\protected@file@percent }
+\newlabel{app:adjusted_alpha_detail}{{F}{15}{Adjusted-Alpha Per-Trait Detailed Tables}{appendix.F}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Architectural prediction of hidden state scale.} Observed vs.~predicted $\log _{10}(\text  {RMS})$ from the regression $\log _{10}(\text  {RMS}) \approx -0.702 \log _{10}(\epsilon ) + 0.016 \cdot \text  {softcap}$. Two architectural hyperparameters explain 91\% of cross-model variance in hidden state magnitude.}}{16}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:architecture_rms}{{7}{16}{\textbf {Architectural prediction of hidden state scale.} Observed vs.~predicted $\log _{10}(\text {RMS})$ from the regression $\log _{10}(\text {RMS}) \approx -0.702 \log _{10}(\epsilon ) + 0.016 \cdot \text {softcap}$. Two architectural hyperparameters explain 91\% of cross-model variance in hidden state magnitude}{figure.caption.51}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces \textbf  {Gemma-2B adjusted-alpha per-trait results.} Scale factor: 23$\times $, $\alpha \in $ [-138, 138].}}{16}{table.caption.56}\protected@file@percent }
+\newlabel{tab:gemma_adj}{{9}{16}{\textbf {Gemma-2B adjusted-alpha per-trait results.} Scale factor: 23$\times $, $\alpha \in $ [-138, 138]}{table.caption.56}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {G}Per-Model Detailed Results}{16}{appendix.G}\protected@file@percent }
+\newlabel{app:permodel}{{G}{16}{Per-Model Detailed Results}{appendix.G}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces \textbf  {Qwen3-0.6B adjusted-alpha per-trait results.} Scale factor: 9$\times $, $\alpha \in $ [-54, 54].}}{17}{table.caption.57}\protected@file@percent }
+\newlabel{tab:qwen3_adj}{{10}{17}{\textbf {Qwen3-0.6B adjusted-alpha per-trait results.} Scale factor: 9$\times $, $\alpha \in $ [-54, 54]}{table.caption.57}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces \textbf  {Qwen2.5-1.5B adjusted-alpha per-trait results.} Scale factor: 5$\times $, $\alpha \in $ [-30, 30].}}{17}{table.caption.58}\protected@file@percent }
+\newlabel{tab:qwen25_15b_adj}{{11}{17}{\textbf {Qwen2.5-1.5B adjusted-alpha per-trait results.} Scale factor: 5$\times $, $\alpha \in $ [-30, 30]}{table.caption.58}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.1}Qwen2.5-0.5B-Instruct}{17}{subsection.G.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{17}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_layer}{{8}{17}{\textbf {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance}{figure.caption.60}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces \textbf  {Qwen2.5-7B adjusted-alpha per-trait results.} Scale factor: 5$\times $, $\alpha \in $ [-30, 30].}}{18}{table.caption.59}\protected@file@percent }
+\newlabel{tab:qwen25_7b_adj}{{12}{18}{\textbf {Qwen2.5-7B adjusted-alpha per-trait results.} Scale factor: 5$\times $, $\alpha \in $ [-30, 30]}{table.caption.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}}{18}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-0.5B-Instruct_ortho}{{9}{18}{\textbf {Qwen2.5-0.5B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.61}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.2}Qwen3-0.6B}{19}{subsection.G.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \textbf  {Qwen3-0.6B: Layer-wise personality encoding profile for Openness.}}}{19}{figure.caption.59}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen3-0.6B_layer}{{11}{19}{\textbf {Qwen3-0.6B: Layer-wise personality encoding profile for Openness.}}{figure.caption.59}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}}{19}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen3-0.6B_ortho}{{12}{19}{\textbf {Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}{figure.caption.60}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Qwen3-0.6B: Layer-wise personality encoding profile for Openness.}}}{19}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen3-0.6B_layer}{{10}{19}{\textbf {Qwen3-0.6B: Layer-wise personality encoding profile for Openness.}}{figure.caption.62}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \textbf  {Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}}{19}{figure.caption.63}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen3-0.6B_ortho}{{11}{19}{\textbf {Qwen3-0.6B: Cosine similarity matrix between persona vectors.}}{figure.caption.63}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.3}TinyLlama-1.1B}{20}{subsection.G.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \textbf  {TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.}}}{20}{figure.caption.61}\protected@file@percent }
-\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_layer}{{13}{20}{\textbf {TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.}}{figure.caption.61}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \textbf  {TinyLlama-1.1B: Cosine similarity matrix between persona vectors.}}}{20}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_ortho}{{14}{20}{\textbf {TinyLlama-1.1B: Cosine similarity matrix between persona vectors.}}{figure.caption.62}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.}}}{20}{figure.caption.64}\protected@file@percent }
+\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_layer}{{12}{20}{\textbf {TinyLlama-1.1B: Layer-wise personality encoding profile for Openness.}}{figure.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \textbf  {TinyLlama-1.1B: Cosine similarity matrix between persona vectors.}}}{20}{figure.caption.65}\protected@file@percent }
+\newlabel{fig:TinyLlama_TinyLlama-1.1B-Chat-v1.0_ortho}{{13}{20}{\textbf {TinyLlama-1.1B: Cosine similarity matrix between persona vectors.}}{figure.caption.65}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.4}Llama-3.2-1B-Instruct}{21}{subsection.G.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.}}}{21}{figure.caption.63}\protected@file@percent }
-\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_layer}{{15}{21}{\textbf {Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.}}{figure.caption.63}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Cosine similarity matrix between persona vectors.}}}{21}{figure.caption.64}\protected@file@percent }
-\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_ortho}{{16}{21}{\textbf {Llama-3.2-1B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.}}}{21}{figure.caption.66}\protected@file@percent }
+\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_layer}{{14}{21}{\textbf {Llama-3.2-1B-Instruct: Layer-wise personality encoding profile for Openness.}}{figure.caption.66}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \textbf  {Llama-3.2-1B-Instruct: Cosine similarity matrix between persona vectors.}}}{21}{figure.caption.67}\protected@file@percent }
+\newlabel{fig:unsloth_Llama-3.2-1B-Instruct_ortho}{{15}{21}{\textbf {Llama-3.2-1B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.67}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.5}Gemma-2-2B-Instruct}{22}{subsection.G.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \textbf  {Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.}}}{22}{figure.caption.65}\protected@file@percent }
-\newlabel{fig:unsloth_gemma-2-2b-it_layer}{{17}{22}{\textbf {Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.}}{figure.caption.65}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \textbf  {Gemma-2-2B-Instruct: Cosine similarity matrix between persona vectors.}}}{22}{figure.caption.66}\protected@file@percent }
-\newlabel{fig:unsloth_gemma-2-2b-it_ortho}{{18}{22}{\textbf {Gemma-2-2B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.66}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \textbf  {Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.}}}{22}{figure.caption.68}\protected@file@percent }
+\newlabel{fig:unsloth_gemma-2-2b-it_layer}{{16}{22}{\textbf {Gemma-2-2B-Instruct: Layer-wise personality encoding profile for Openness.}}{figure.caption.68}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \textbf  {Gemma-2-2B-Instruct: Cosine similarity matrix between persona vectors.}}}{22}{figure.caption.69}\protected@file@percent }
+\newlabel{fig:unsloth_gemma-2-2b-it_ortho}{{17}{22}{\textbf {Gemma-2-2B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.69}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.6}Qwen2.5-1.5B-Instruct}{23}{subsection.G.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces \textbf  {Qwen2.5-1.5B-Instruct: Layer-wise personality encoding profile for Openness.}}}{23}{figure.caption.67}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-1.5B-Instruct_layer}{{19}{23}{\textbf {Qwen2.5-1.5B-Instruct: Layer-wise personality encoding profile for Openness.}}{figure.caption.67}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces \textbf  {Qwen2.5-1.5B-Instruct: Cosine similarity matrix between persona vectors.}}}{23}{figure.caption.68}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-1.5B-Instruct_ortho}{{20}{23}{\textbf {Qwen2.5-1.5B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.68}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \textbf  {Qwen2.5-1.5B-Instruct: Layer-wise personality encoding profile for Openness.}}}{23}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-1.5B-Instruct_layer}{{18}{23}{\textbf {Qwen2.5-1.5B-Instruct: Layer-wise personality encoding profile for Openness.}}{figure.caption.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces \textbf  {Qwen2.5-1.5B-Instruct: Cosine similarity matrix between persona vectors.}}}{23}{figure.caption.71}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-1.5B-Instruct_ortho}{{19}{23}{\textbf {Qwen2.5-1.5B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.71}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.7}Qwen2.5-7B-Instruct}{24}{subsection.G.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces \textbf  {Qwen2.5-7B-Instruct: Layer-wise personality encoding profile for Openness.}}}{24}{figure.caption.69}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-7B-Instruct_layer}{{21}{24}{\textbf {Qwen2.5-7B-Instruct: Layer-wise personality encoding profile for Openness.}}{figure.caption.69}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces \textbf  {Qwen2.5-7B-Instruct: Cosine similarity matrix between persona vectors.}}}{24}{figure.caption.70}\protected@file@percent }
-\newlabel{fig:Qwen_Qwen2.5-7B-Instruct_ortho}{{22}{24}{\textbf {Qwen2.5-7B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces \textbf  {Qwen2.5-7B-Instruct: Layer-wise personality encoding profile for Openness.}}}{24}{figure.caption.72}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-7B-Instruct_layer}{{20}{24}{\textbf {Qwen2.5-7B-Instruct: Layer-wise personality encoding profile for Openness.}}{figure.caption.72}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces \textbf  {Qwen2.5-7B-Instruct: Cosine similarity matrix between persona vectors.}}}{24}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:Qwen_Qwen2.5-7B-Instruct_ortho}{{21}{24}{\textbf {Qwen2.5-7B-Instruct: Cosine similarity matrix between persona vectors.}}{figure.caption.73}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.8}Mistral-7B-Instruct-v0.1}{25}{subsection.G.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces \textbf  {Mistral-7B-Instruct-v0.1: Layer-wise personality encoding profile for Openness.}}}{25}{figure.caption.71}\protected@file@percent }
-\newlabel{fig:mistralai_Mistral-7B-Instruct-v0.1_layer}{{23}{25}{\textbf {Mistral-7B-Instruct-v0.1: Layer-wise personality encoding profile for Openness.}}{figure.caption.71}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces \textbf  {Mistral-7B-Instruct-v0.1: Cosine similarity matrix between persona vectors.}}}{25}{figure.caption.72}\protected@file@percent }
-\newlabel{fig:mistralai_Mistral-7B-Instruct-v0.1_ortho}{{24}{25}{\textbf {Mistral-7B-Instruct-v0.1: Cosine similarity matrix between persona vectors.}}{figure.caption.72}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces \textbf  {Mistral-7B-Instruct-v0.1: Layer-wise personality encoding profile for Openness.}}}{25}{figure.caption.74}\protected@file@percent }
+\newlabel{fig:mistralai_Mistral-7B-Instruct-v0.1_layer}{{22}{25}{\textbf {Mistral-7B-Instruct-v0.1: Layer-wise personality encoding profile for Openness.}}{figure.caption.74}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces \textbf  {Mistral-7B-Instruct-v0.1: Cosine similarity matrix between persona vectors.}}}{25}{figure.caption.75}\protected@file@percent }
+\newlabel{fig:mistralai_Mistral-7B-Instruct-v0.1_ortho}{{23}{25}{\textbf {Mistral-7B-Instruct-v0.1: Cosine similarity matrix between persona vectors.}}{figure.caption.75}{}}
 \citation{vaillant1986empirical}
 \@writefile{toc}{\contentsline {subsection}{\numberline {G.9}Cross-Model Orthogonality Summary}{26}{subsection.G.9}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces \textbf  {Cross-model orthogonality summary.} Mean off-diagonal $|\cos |$ between persona vectors. Big Five independence varies across architectures.}}{26}{table.caption.73}\protected@file@percent }
-\newlabel{tab:orthogonality_full}{{14}{26}{\textbf {Cross-model orthogonality summary.} Mean off-diagonal $|\cos |$ between persona vectors. Big Five independence varies across architectures}{table.caption.73}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces \textbf  {Cross-model orthogonality summary.} Mean off-diagonal $|\cos |$ between persona vectors. Big Five independence varies across architectures.}}{26}{table.caption.76}\protected@file@percent }
+\newlabel{tab:orthogonality_full}{{13}{26}{\textbf {Cross-model orthogonality summary.} Mean off-diagonal $|\cos |$ between persona vectors. Big Five independence varies across architectures}{table.caption.76}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {H}Defense Mechanism Geometry}{26}{appendix.H}\protected@file@percent }
 \newlabel{app:defense}{{H}{26}{Defense Mechanism Geometry}{appendix.H}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces \textbf  {Defense mechanism cosine similarity matrix (Qwen2.5-0.5B).} The full 9$\times $9 matrix shows hierarchical clustering mirroring Vaillant's maturity levels: immature defenses (projection, denial, regression, reaction formation) cluster strongly ($|\cos |=0.511$), neurotic defenses (rationalization, intellectualization, displacement) moderately ($0.189$), and mature defenses (humor, sublimation) are near-orthogonal ($0.030$).}}{27}{figure.caption.74}\protected@file@percent }
-\newlabel{fig:defense_full}{{25}{27}{\textbf {Defense mechanism cosine similarity matrix (Qwen2.5-0.5B).} The full 9$\times $9 matrix shows hierarchical clustering mirroring Vaillant's maturity levels: immature defenses (projection, denial, regression, reaction formation) cluster strongly ($|\cos |=0.511$), neurotic defenses (rationalization, intellectualization, displacement) moderately ($0.189$), and mature defenses (humor, sublimation) are near-orthogonal ($0.030$)}{figure.caption.74}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces \textbf  {Defense mechanism cosine similarity matrix (Qwen2.5-0.5B).} The full 9$\times $9 matrix shows hierarchical clustering mirroring Vaillant's maturity levels: immature defenses (projection, denial, regression, reaction formation) cluster strongly ($|\cos |=0.511$), neurotic defenses (rationalization, intellectualization, displacement) moderately ($0.189$), and mature defenses (humor, sublimation) are near-orthogonal ($0.030$).}}{27}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:defense_full}{{24}{27}{\textbf {Defense mechanism cosine similarity matrix (Qwen2.5-0.5B).} The full 9$\times $9 matrix shows hierarchical clustering mirroring Vaillant's maturity levels: immature defenses (projection, denial, regression, reaction formation) cluster strongly ($|\cos |=0.511$), neurotic defenses (rationalization, intellectualization, displacement) moderately ($0.189$), and mature defenses (humor, sublimation) are near-orthogonal ($0.030$)}{figure.caption.77}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Multi-Framework Analysis: MBTI and Jungian Cognitive Functions}{27}{appendix.I}\protected@file@percent }
 \newlabel{app:multiframework}{{I}{27}{Multi-Framework Analysis: MBTI and Jungian Cognitive Functions}{appendix.I}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.1}Cross-Framework Comparison: Cohen's d by Trait and Model}{28}{subsection.I.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces \textbf  {Cross-model Cohen's d for all three frameworks.} Each panel shows per-trait effect sizes across the five tested models. Big Five traits (left) show the strongest and most consistent signal; MBTI dimensions (center) show weaker signal with the E/I dimension notably inverted in Qwen2.5; Jungian functions (right) show intermediate signal with high within-framework variance.}}{28}{figure.caption.75}\protected@file@percent }
-\newlabel{fig:cross_framework_comparison}{{26}{28}{\textbf {Cross-model Cohen's d for all three frameworks.} Each panel shows per-trait effect sizes across the five tested models. Big Five traits (left) show the strongest and most consistent signal; MBTI dimensions (center) show weaker signal with the E/I dimension notably inverted in Qwen2.5; Jungian functions (right) show intermediate signal with high within-framework variance}{figure.caption.75}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces \textbf  {Cross-model Cohen's d for all three frameworks.} Each panel shows per-trait effect sizes across the five tested models. Big Five traits (left) show the strongest and most consistent signal; MBTI dimensions (center) show weaker signal with the E/I dimension notably inverted in Qwen2.5; Jungian functions (right) show intermediate signal with high within-framework variance.}}{28}{figure.caption.78}\protected@file@percent }
+\newlabel{fig:cross_framework_comparison}{{25}{28}{\textbf {Cross-model Cohen's d for all three frameworks.} Each panel shows per-trait effect sizes across the five tested models. Big Five traits (left) show the strongest and most consistent signal; MBTI dimensions (center) show weaker signal with the E/I dimension notably inverted in Qwen2.5; Jungian functions (right) show intermediate signal with high within-framework variance}{figure.caption.78}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.2}Framework Best-Layer Distribution}{28}{subsection.I.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces \textbf  {Distribution of optimal layer position by framework.} Each point represents one (model, trait) pair. Jungian cognitive functions (green) peak significantly earlier in the network (median $\approx 0.35$) compared to Big Five (median $\approx 0.50$) or MBTI (median $\approx 0.50$), consistent with the hypothesis that cognitive function representations are encoded as more primitive processing features rather than high-level trait constructs.}}{28}{figure.caption.76}\protected@file@percent }
-\newlabel{fig:framework_layer_dist}{{27}{28}{\textbf {Distribution of optimal layer position by framework.} Each point represents one (model, trait) pair. Jungian cognitive functions (green) peak significantly earlier in the network (median $\approx 0.35$) compared to Big Five (median $\approx 0.50$) or MBTI (median $\approx 0.50$), consistent with the hypothesis that cognitive function representations are encoded as more primitive processing features rather than high-level trait constructs}{figure.caption.76}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces \textbf  {Distribution of optimal layer position by framework.} Each point represents one (model, trait) pair. Jungian cognitive functions (green) peak significantly earlier in the network (median $\approx 0.35$) compared to Big Five (median $\approx 0.50$) or MBTI (median $\approx 0.50$), consistent with the hypothesis that cognitive function representations are encoded as more primitive processing features rather than high-level trait constructs.}}{28}{figure.caption.79}\protected@file@percent }
+\newlabel{fig:framework_layer_dist}{{26}{28}{\textbf {Distribution of optimal layer position by framework.} Each point represents one (model, trait) pair. Jungian cognitive functions (green) peak significantly earlier in the network (median $\approx 0.35$) compared to Big Five (median $\approx 0.50$) or MBTI (median $\approx 0.50$), consistent with the hypothesis that cognitive function representations are encoded as more primitive processing features rather than high-level trait constructs}{figure.caption.79}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.3}Jungian Cognitive Functions: Layer-wise Heatmap}{29}{subsection.I.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces \textbf  {Jungian cognitive function layer-wise Cohen's d heatmap (Qwen3-0.6B).} Rows are the eight cognitive functions; columns are normalized layer positions (0 = first layer, 1 = final layer). Color encodes Cohen's d (green = strong positive signal, red = negative). Stars (\textbf  {$\star $}) mark each function's peak layer. Key patterns: (1) Ti and Fi (introverted judgment) peak in the earliest layers (L0--L4, normalized 0.00--0.14); (2) Te and Fe (extraverted judgment) peak in the middle layers (L13--L14, normalized 0.46--0.50); (3) Ne and Se (extraverted perceiving) peak early (normalized 0.07--0.14); (4) Ni (introverted intuition) uniquely peaks at the penultimate layer (normalized 0.96).}}{29}{figure.caption.77}\protected@file@percent }
-\newlabel{fig:jungian_heatmap}{{28}{29}{\textbf {Jungian cognitive function layer-wise Cohen's d heatmap (Qwen3-0.6B).} Rows are the eight cognitive functions; columns are normalized layer positions (0 = first layer, 1 = final layer). Color encodes Cohen's d (green = strong positive signal, red = negative). Stars (\textbf {$\star $}) mark each function's peak layer. Key patterns: (1) Ti and Fi (introverted judgment) peak in the earliest layers (L0--L4, normalized 0.00--0.14); (2) Te and Fe (extraverted judgment) peak in the middle layers (L13--L14, normalized 0.46--0.50); (3) Ne and Se (extraverted perceiving) peak early (normalized 0.07--0.14); (4) Ni (introverted intuition) uniquely peaks at the penultimate layer (normalized 0.96)}{figure.caption.77}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces \textbf  {Jungian cognitive function layer-wise Cohen's d heatmap (Qwen3-0.6B).} Rows are the eight cognitive functions; columns are normalized layer positions (0 = first layer, 1 = final layer). Color encodes Cohen's d (green = strong positive signal, red = negative). Stars (\textbf  {$\star $}) mark each function's peak layer. Key patterns: (1) Ti and Fi (introverted judgment) peak in the earliest layers (L0--L4, normalized 0.00--0.14); (2) Te and Fe (extraverted judgment) peak in the middle layers (L13--L14, normalized 0.46--0.50); (3) Ne and Se (extraverted perceiving) peak early (normalized 0.07--0.14); (4) Ni (introverted intuition) uniquely peaks at the penultimate layer (normalized 0.96).}}{29}{figure.caption.80}\protected@file@percent }
+\newlabel{fig:jungian_heatmap}{{27}{29}{\textbf {Jungian cognitive function layer-wise Cohen's d heatmap (Qwen3-0.6B).} Rows are the eight cognitive functions; columns are normalized layer positions (0 = first layer, 1 = final layer). Color encodes Cohen's d (green = strong positive signal, red = negative). Stars (\textbf {$\star $}) mark each function's peak layer. Key patterns: (1) Ti and Fi (introverted judgment) peak in the earliest layers (L0--L4, normalized 0.00--0.14); (2) Te and Fe (extraverted judgment) peak in the middle layers (L13--L14, normalized 0.46--0.50); (3) Ne and Se (extraverted perceiving) peak early (normalized 0.07--0.14); (4) Ni (introverted intuition) uniquely peaks at the penultimate layer (normalized 0.96)}{figure.caption.80}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.4}MBTI Layer Profiles by Model}{30}{subsection.I.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces \textbf  {Qwen3-0.6B: MBTI dimension layer profiles.}}}{30}{figure.caption.78}\protected@file@percent }
-\newlabel{fig:qwen3_mbti}{{29}{30}{\textbf {Qwen3-0.6B: MBTI dimension layer profiles.}}{figure.caption.78}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces \textbf  {Qwen2.5-0.5B: MBTI dimension layer profiles.} The E/I subplot shows negative or near-zero d across all layers---the inversion anomaly.}}{31}{figure.caption.79}\protected@file@percent }
-\newlabel{fig:qwen25_mbti}{{30}{31}{\textbf {Qwen2.5-0.5B: MBTI dimension layer profiles.} The E/I subplot shows negative or near-zero d across all layers---the inversion anomaly}{figure.caption.79}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces \textbf  {TinyLlama-1.1B: MBTI dimension layer profiles.}}}{32}{figure.caption.80}\protected@file@percent }
-\newlabel{fig:tinyllama_mbti}{{31}{32}{\textbf {TinyLlama-1.1B: MBTI dimension layer profiles.}}{figure.caption.80}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces \textbf  {Llama-3.2-1B: MBTI dimension layer profiles.}}}{33}{figure.caption.81}\protected@file@percent }
-\newlabel{fig:llama32_mbti}{{32}{33}{\textbf {Llama-3.2-1B: MBTI dimension layer profiles.}}{figure.caption.81}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces \textbf  {Gemma-2-2B: MBTI dimension layer profiles.}}}{34}{figure.caption.82}\protected@file@percent }
-\newlabel{fig:gemma2_mbti}{{33}{34}{\textbf {Gemma-2-2B: MBTI dimension layer profiles.}}{figure.caption.82}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces \textbf  {Qwen3-0.6B: MBTI dimension layer profiles.}}}{30}{figure.caption.81}\protected@file@percent }
+\newlabel{fig:qwen3_mbti}{{28}{30}{\textbf {Qwen3-0.6B: MBTI dimension layer profiles.}}{figure.caption.81}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces \textbf  {Qwen2.5-0.5B: MBTI dimension layer profiles.} The E/I subplot shows negative or near-zero d across all layers---the inversion anomaly.}}{31}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:qwen25_mbti}{{29}{31}{\textbf {Qwen2.5-0.5B: MBTI dimension layer profiles.} The E/I subplot shows negative or near-zero d across all layers---the inversion anomaly}{figure.caption.82}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces \textbf  {TinyLlama-1.1B: MBTI dimension layer profiles.}}}{32}{figure.caption.83}\protected@file@percent }
+\newlabel{fig:tinyllama_mbti}{{30}{32}{\textbf {TinyLlama-1.1B: MBTI dimension layer profiles.}}{figure.caption.83}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces \textbf  {Llama-3.2-1B: MBTI dimension layer profiles.}}}{33}{figure.caption.84}\protected@file@percent }
+\newlabel{fig:llama32_mbti}{{31}{33}{\textbf {Llama-3.2-1B: MBTI dimension layer profiles.}}{figure.caption.84}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces \textbf  {Gemma-2-2B: MBTI dimension layer profiles.}}}{34}{figure.caption.85}\protected@file@percent }
+\newlabel{fig:gemma2_mbti}{{32}{34}{\textbf {Gemma-2-2B: MBTI dimension layer profiles.}}{figure.caption.85}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.5}Jungian Cognitive Function Layer Profiles by Model}{35}{subsection.I.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces \textbf  {Qwen3-0.6B: Jungian cognitive function layer profiles.} Ti and Fi peak sharply at the earliest layers (L0--L4); Te and Fe peak in middle layers; Ni uniquely peaks at the penultimate layer.}}{35}{figure.caption.83}\protected@file@percent }
-\newlabel{fig:qwen3_jungian}{{34}{35}{\textbf {Qwen3-0.6B: Jungian cognitive function layer profiles.} Ti and Fi peak sharply at the earliest layers (L0--L4); Te and Fe peak in middle layers; Ni uniquely peaks at the penultimate layer}{figure.caption.83}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces \textbf  {Qwen2.5-0.5B: Jungian cognitive function layer profiles.} Ti achieves an exceptionally high d=6.88 at an early layer.}}{36}{figure.caption.84}\protected@file@percent }
-\newlabel{fig:qwen25_jungian}{{35}{36}{\textbf {Qwen2.5-0.5B: Jungian cognitive function layer profiles.} Ti achieves an exceptionally high d=6.88 at an early layer}{figure.caption.84}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces \textbf  {TinyLlama-1.1B: Jungian cognitive function layer profiles.}}}{37}{figure.caption.85}\protected@file@percent }
-\newlabel{fig:tinyllama_jungian}{{36}{37}{\textbf {TinyLlama-1.1B: Jungian cognitive function layer profiles.}}{figure.caption.85}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces \textbf  {Llama-3.2-1B: Jungian cognitive function layer profiles.}}}{38}{figure.caption.86}\protected@file@percent }
-\newlabel{fig:llama32_jungian}{{37}{38}{\textbf {Llama-3.2-1B: Jungian cognitive function layer profiles.}}{figure.caption.86}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces \textbf  {Gemma-2-2B: Jungian cognitive function layer profiles.}}}{39}{figure.caption.87}\protected@file@percent }
-\newlabel{fig:gemma2_jungian}{{38}{39}{\textbf {Gemma-2-2B: Jungian cognitive function layer profiles.}}{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces \textbf  {Qwen3-0.6B: Jungian cognitive function layer profiles.} Ti and Fi peak sharply at the earliest layers (L0--L4); Te and Fe peak in middle layers; Ni uniquely peaks at the penultimate layer.}}{35}{figure.caption.86}\protected@file@percent }
+\newlabel{fig:qwen3_jungian}{{33}{35}{\textbf {Qwen3-0.6B: Jungian cognitive function layer profiles.} Ti and Fi peak sharply at the earliest layers (L0--L4); Te and Fe peak in middle layers; Ni uniquely peaks at the penultimate layer}{figure.caption.86}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces \textbf  {Qwen2.5-0.5B: Jungian cognitive function layer profiles.} Ti achieves an exceptionally high d=6.88 at an early layer.}}{36}{figure.caption.87}\protected@file@percent }
+\newlabel{fig:qwen25_jungian}{{34}{36}{\textbf {Qwen2.5-0.5B: Jungian cognitive function layer profiles.} Ti achieves an exceptionally high d=6.88 at an early layer}{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces \textbf  {TinyLlama-1.1B: Jungian cognitive function layer profiles.}}}{37}{figure.caption.88}\protected@file@percent }
+\newlabel{fig:tinyllama_jungian}{{35}{37}{\textbf {TinyLlama-1.1B: Jungian cognitive function layer profiles.}}{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces \textbf  {Llama-3.2-1B: Jungian cognitive function layer profiles.}}}{38}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:llama32_jungian}{{36}{38}{\textbf {Llama-3.2-1B: Jungian cognitive function layer profiles.}}{figure.caption.89}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces \textbf  {Gemma-2-2B: Jungian cognitive function layer profiles.}}}{39}{figure.caption.90}\protected@file@percent }
+\newlabel{fig:gemma2_jungian}{{37}{39}{\textbf {Gemma-2-2B: Jungian cognitive function layer profiles.}}{figure.caption.90}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {J}Control Experiments}{40}{appendix.J}\protected@file@percent }
 \newlabel{app:control}{{J}{40}{Control Experiments}{appendix.J}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {J.1}Position-Swap Control}{40}{subsection.J.1}\protected@file@percent }
@@ -312,7 +306,7 @@
 \newlabel{app:ood}{{J.3}{40}{Out-of-Domain Generalization}{subsection.J.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {K}Algorithm Pseudocode}{40}{appendix.K}\protected@file@percent }
 \newlabel{app:algorithm}{{K}{40}{Algorithm Pseudocode}{appendix.K}{}}
-\newlabel{alg:personalens}{{\caption@xref {alg:personalens}{ on input line 1054}}{40}{Algorithm Pseudocode}{figure.caption.88}{}}
+\newlabel{alg:personalens}{{\caption@xref {alg:personalens}{ on input line 1000}}{40}{Algorithm Pseudocode}{figure.caption.91}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {L}Perplexity Calculation Methodology}{40}{appendix.L}\protected@file@percent }
 \newlabel{app:ppl}{{L}{40}{Perplexity Calculation Methodology}{appendix.L}{}}
 \gdef \@abspage@last{41}

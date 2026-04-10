@@ -1,0 +1,26 @@
+Found 1 models with activations
+
+============================================================
+Analyzing: unsloth/Llama-3.1-8B-Instruct
+============================================================
+Traceback (most recent call last):
+  File "/data1/tongjizhou/persona/scripts/compute_entanglement_metrics.py", line 434, in <module>
+    main()
+  File "/data1/tongjizhou/persona/scripts/compute_entanglement_metrics.py", line 420, in main
+    result = analyze_model(model_name, model_dir, layer=args.layer)
+  File "/data1/tongjizhou/persona/scripts/compute_entanglement_metrics.py", line 216, in analyze_model
+    traits = os.listdir(model_dir)
+FileNotFoundError: [Errno 2] No such file or directory: '/data1/tongjizhou/persona/activations/unsloth/Llama-3.1-8B-Instruct'
+Found 1 models with activations
+
+============================================================
+Analyzing: unsloth/Llama-3.1-8B-Instruct
+============================================================
+Traceback (most recent call last):
+  File "/data1/tongjizhou/persona/scripts/compute_entanglement_metrics.py", line 434, in <module>
+    main()
+  File "/data1/tongjizhou/persona/scripts/compute_entanglement_metrics.py", line 420, in main
+    result = analyze_model(model_name, model_dir, layer=args.layer)
+  File "/data1/tongjizhou/persona/scripts/compute_entanglement_metrics.py", line 216, in analyze_model
+    traits = os.listdir(model_dir)
+FileNotFoundError: [Errno 2] No such file or directory: '/data1/tongjizhou/persona/activations/unsloth/Llama-3.1-8B-Instruct'

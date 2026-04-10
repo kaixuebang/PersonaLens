@@ -191,7 +191,8 @@ def evaluate_single_trait(model, tokenizer, steering, trait, alphas, device):
     return results
 
 
-def run_evaluation(model_name, trait, output_dir, device, alphas=None):
+def run_evaluation(model_name, trait, output_dir, device, alphas=None,
+                   layer_override=None):
     if alphas is None:
         alphas = DEFAULT_ALPHAS
 
@@ -203,7 +204,11 @@ def run_evaluation(model_name, trait, output_dir, device, alphas=None):
         if t not in BEHAVIORAL_SCENARIOS_V2:
             print(f"  WARNING: No V2 scenarios for '{t}', skipping.")
             continue
-        best_layer = resolve_best_layer(model_short, t)
+        if layer_override is not None:
+            best_layer = layer_override if isinstance(layer_override, int) else layer_override[0]
+            print(f"  Layer override: L{best_layer}")
+        else:
+            best_layer = resolve_best_layer(model_short, t)
         if best_layer is None:
             print(f"  WARNING: No analysis for {model_short}/{t}, skipping.")
             continue
@@ -290,6 +295,8 @@ def main():
     parser.add_argument("--output_dir", type=str, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--device", type=str, default=None)
     parser.add_argument("--alphas", type=str, default=None)
+    parser.add_argument("--layers", type=str, default=None,
+                        help="Comma-separated layer indices to override auto-selection")
     args = parser.parse_args()
 
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
@@ -303,10 +310,17 @@ def main():
     if args.alphas:
         alphas = [float(a) for a in args.alphas.split(",")]
 
+    layer_override = None
+    if args.layers:
+        layer_override = [int(l) for l in args.layers.split(",")]
+        if len(layer_override) == 1:
+            layer_override = layer_override[0]
+
     if args.all:
         for i, model_name in enumerate(ALL_MODELS):
             print(f"\n[{i + 1}/{len(ALL_MODELS)}] {model_name}")
-            run_evaluation(model_name, "all", args.output_dir, device, alphas)
+            run_evaluation(model_name, "all", args.output_dir, device, alphas,
+                         layer_override=layer_override)
             if device == "cuda" and i < len(ALL_MODELS) - 1:
                 print("  Cooling GPU 30s...")
                 time.sleep(30)
@@ -316,7 +330,8 @@ def main():
         print("ERROR: --model required (or use --all)")
         return
 
-    run_evaluation(args.model, args.trait, args.output_dir, device, alphas)
+    run_evaluation(args.model, args.trait, args.output_dir, device, alphas,
+                  layer_override=layer_override)
 
 
 if __name__ == "__main__":
