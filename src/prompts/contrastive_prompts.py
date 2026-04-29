@@ -306,6 +306,27 @@ def apply_chat_template_safe(tokenizer, messages, **kwargs):
         return tokenizer.apply_chat_template(messages, **kwargs)
     except Exception as e:
         error_msg = str(e).lower()
+        # Base models have no chat_template at all — use manual formatting directly
+        if any(
+            pattern in error_msg
+            for pattern in [
+                "chat_template is not set",
+                "not set and no template argument",
+            ]
+        ):
+            # Base model: no chat template, format as plain text
+            prompt_parts = []
+            for msg in messages:
+                role = msg.get("role", "")
+                content = msg.get("content", "")
+                if role == "system":
+                    prompt_parts.append(content)
+                elif role == "user":
+                    prompt_parts.append(content)
+                elif role == "assistant":
+                    prompt_parts.append(content)
+            return "\n\n".join(prompt_parts)
+
         if any(
             pattern in error_msg
             for pattern in [

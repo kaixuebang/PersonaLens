@@ -22,6 +22,7 @@ from sklearn.model_selection import cross_val_score, LeaveOneOut, StratifiedKFol
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import brier_score_loss
+from joblib import Parallel, delayed
 import matplotlib.pyplot as plt
 import matplotlib
 
@@ -171,10 +172,10 @@ def robust_linear_probe(pos_acts, neg_acts, C=0.01):
         )
         X_proj = X
 
-    clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs")
-    scores = cross_val_score(clf, X_proj, y, cv=cv, scoring="accuracy")
+    clf = LogisticRegression(max_iter=1000, C=C, solver="liblinear")
+    scores = cross_val_score(clf, X_proj, y, cv=cv, scoring="accuracy", n_jobs=-1)
     # Full-data fit for direction and calibration (use original high-dim space)
-    clf_full = LogisticRegression(max_iter=2000, C=C, solver="lbfgs")
+    clf_full = LogisticRegression(max_iter=1000, C=C, solver="liblinear")
     clf_full.fit(X, y)
     probe_direction = clf_full.coef_[0]
     probe_direction = probe_direction / (np.linalg.norm(probe_direction) + 1e-10)
@@ -197,53 +198,51 @@ def robust_linear_probe(pos_acts, neg_acts, C=0.01):
     }, probe_direction
 
 
-def leave_scenario_out_probe(pos_acts, neg_acts, C=0.01):
-    """
-    Leave-one-scenario-out: each fold leaves out one contrastive pair.
-    Tests generalization to unseen scenarios.
-    Computes rigorous held-out test metrics.
-    """
+def _loso_fold(pos_acts, neg_acts, i, C=0.01):
+    train_pos = np.delete(pos_acts, i, axis=0)
+    train_neg = np.delete(neg_acts, i, axis=0)
+    test_pos = pos_acts[i : i + 1]
+    test_neg = neg_acts[i : i + 1]
+
+    X_train = np.concatenate([train_pos, train_neg])
+    y_train = np.concatenate([np.ones(len(train_pos)), np.zeros(len(train_neg))])
+    X_test = np.concatenate([test_pos, test_neg])
+    y_test = np.array([1.0, 0.0])
+
+    clf = LogisticRegression(max_iter=1000, C=C, solver="liblinear")
+    clf.fit(X_train, y_train)
+    acc = clf.score(X_test, y_test)
+    probs = clf.predict_proba(X_test)[:, 1]
+
+    train_diff_vec = np.mean(train_pos, axis=0) - np.mean(train_neg, axis=0)
+    direction = train_diff_vec / (np.linalg.norm(train_diff_vec) + 1e-10)
+
+    held_out_pos_proj = (test_pos @ direction)[0]
+    held_out_neg_proj = (test_neg @ direction)[0]
+    held_out_raw_norm = np.linalg.norm(test_pos[0] - test_neg[0])
+
+    return acc, probs, y_test, held_out_pos_proj, held_out_neg_proj, held_out_raw_norm
+
+
+def leave_scenario_out_probe(pos_acts, neg_acts, C=0.01, n_jobs=-1):
     K = len(pos_acts)
+
+    results = Parallel(n_jobs=n_jobs, backend="loky")(
+        delayed(_loso_fold)(pos_acts, neg_acts, i, C) for i in range(K)
+    )
+
     loso_accs = []
     loso_briers = []
-
-    # To compute held-out Cohen's d & SNR across all leave-one-out predictions
     all_held_out_pos_proj = []
     all_held_out_neg_proj = []
-
     held_out_raw_norms = []
 
-    for i in range(K):
-        # Leave out pair i
-        train_pos = np.delete(pos_acts, i, axis=0)
-        train_neg = np.delete(neg_acts, i, axis=0)
-        test_pos = pos_acts[i : i + 1]
-        test_neg = neg_acts[i : i + 1]
-
-        X_train = np.concatenate([train_pos, train_neg])
-        y_train = np.concatenate([np.ones(len(train_pos)), np.zeros(len(train_neg))])
-        X_test = np.concatenate([test_pos, test_neg])
-        y_test = np.array([1.0, 0.0])
-
-        # 1. Train linear probe for Acc & Brier
-        clf = LogisticRegression(max_iter=2000, C=C, solver="lbfgs")
-        clf.fit(X_train, y_train)
-        acc = clf.score(X_test, y_test)
+    for acc, probs, y_test, pos_proj, neg_proj, raw_norm in results:
         loso_accs.append(acc)
-
-        probs = clf.predict_proba(X_test)[:, 1]
         loso_briers.append(brier_score_loss(y_test, probs))
-
-        # 2. Compute Mean Diff Direction purely on Train fold
-        train_diff_vec = np.mean(train_pos, axis=0) - np.mean(train_neg, axis=0)
-        direction = train_diff_vec / (np.linalg.norm(train_diff_vec) + 1e-10)
-
-        # 3. Project Held-Out Test Data onto Train Direction
-        all_held_out_pos_proj.append((test_pos @ direction)[0])
-        all_held_out_neg_proj.append((test_neg @ direction)[0])
-
-        # 4. Held out individual diff norms
-        held_out_raw_norms.append(np.linalg.norm(test_pos[0] - test_neg[0]))
+        all_held_out_pos_proj.append(pos_proj)
+        all_held_out_neg_proj.append(neg_proj)
+        held_out_raw_norms.append(raw_norm)
 
     # In a true Leave-One-Scenario-Out setting, we have pairs of (pos, neg)
     # where pos and neg come from the SAME scenario but projected on the train direction

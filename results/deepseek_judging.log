@@ -1,0 +1,13 @@
+Loading judge model...
+Traceback (most recent call last):
+  File "/tmp/run_judge.py", line 13, in <module>
+    model = AutoModelForCausalLM.from_pretrained('unsloth/gemma-2-2b-it', dtype=torch.float16, device_map='cuda', trust_remote_code=True, local_files_only=True)
+  File "/data1/tongjizhou/miniconda3/envs/personaforge_env/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
+    return model_class.from_pretrained(
+  File "/data1/tongjizhou/miniconda3/envs/personaforge_env/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4072, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+  File "/data1/tongjizhou/miniconda3/envs/personaforge_env/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4151, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/data1/tongjizhou/miniconda3/envs/personaforge_env/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4756, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.87 GiB. GPU 0 has a total capacity of 23.69 GiB of which 2.98 GiB is free. Process 1102242 has 20.44 GiB memory in use. Including non-PyTorch memory, this process has 254.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

@@ -32,7 +32,14 @@ def collect_hidden_states(
     text = apply_chat_template_safe(
         tokenizer, messages, tokenize=False, add_generation_prompt=True
     )
-    inputs = tokenizer(text, return_tensors="pt").to(device)
+    input_device = device
+    if hasattr(model, 'hf_device_map') and model.hf_device_map:
+        first_device = list(model.hf_device_map.values())[0]
+        if isinstance(first_device, int):
+            input_device = f"cuda:{first_device}"
+        elif isinstance(first_device, str):
+            input_device = first_device
+    inputs = tokenizer(text, return_tensors="pt").to(input_device)
     seq_len = inputs["input_ids"].shape[1]
 
     with torch.no_grad():
@@ -40,6 +47,7 @@ def collect_hidden_states(
             **inputs,
             output_hidden_states=True,
             return_dict=True,
+            use_cache=False,
         )
 
     hidden_states = {}
@@ -154,18 +162,20 @@ def main():
             args.device = "cuda"
         else:
             args.device = "cpu"
-    print(f"Using device: {args.device}")
+    use_auto_device_map = (args.device == "auto")
+    effective_device = "cuda" if use_auto_device_map else args.device
+    print(f"Using device: {effective_device}" + (" (auto across GPUs)" if use_auto_device_map else ""))
 
-    # Load model and tokenizer
     print(f"Loading model: {args.model}")
-    tokenizer = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True, local_files_only=True)
     model = AutoModelForCausalLM.from_pretrained(
         args.model,
-        torch_dtype=torch.float16 if args.device == "cuda" else torch.float32,
-        device_map=args.device if args.device == "cuda" else None,
+        torch_dtype=torch.float16 if effective_device == "cuda" else torch.float32,
+        device_map="auto" if use_auto_device_map else (effective_device if effective_device == "cuda" else None),
         trust_remote_code=True,
+        local_files_only=True,
     )
-    if args.device != "cuda":
+    if effective_device != "cuda" and not use_auto_device_map:
         model = model.to(args.device)
     model.eval()
 
@@ -195,7 +205,7 @@ def main():
             model,
             tokenizer,
             trait_name,
-            args.device,
+            effective_device,
             token_position=args.token_position,
             sampling_mode=args.sampling_mode,
         )

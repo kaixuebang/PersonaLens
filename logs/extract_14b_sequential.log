@@ -1,0 +1,336 @@
+=== Starting openness at 2026年 04月 12日 星期日 20:20:56 CST ===
+
+============================================================
+Analyzing trait: openness (v2 — enhanced)
+============================================================
+  Layers: 48, Hidden dim: 5120, Samples: 160
+  Regularization C: 0.01, CV: StratifiedKFold
+  Layer   0: probe=0.925, LOSO=0.938, norm/RMS=4.3292, SNR=32.9, d(heldout)=2.61 [2.29, 2.94], p=0.0000
+  Layer   1: probe=0.938, LOSO=0.950, norm/RMS=3.8496, SNR=35.0, d(heldout)=2.79 [2.45, 3.14], p=0.0000
+  Layer   2: probe=0.988, LOSO=0.988, norm/RMS=4.2383, SNR=35.2, d(heldout)=3.66 [3.23, 4.09], p=0.0000
+  Layer   3: probe=1.000, LOSO=1.000, norm/RMS=4.3660, SNR=33.4, d(heldout)=4.81 [4.26, 5.36], p=0.0000
+  Layer   4: probe=1.000, LOSO=1.000, norm/RMS=4.6294, SNR=27.5, d(heldout)=6.09 [5.40, 6.77], p=0.0000
+  Layer   5: probe=1.000, LOSO=1.000, norm/RMS=6.4516, SNR=29.1, d(heldout)=10.84 [9.64, 12.04], p=0.0000
+  Layer   6: probe=1.000, LOSO=1.000, norm/RMS=8.4149, SNR=33.1, d(heldout)=2.30 [2.01, 2.60], p=0.0000
+  Layer   7: probe=1.000, LOSO=1.000, norm/RMS=9.3266, SNR=33.3, d(heldout)=2.39 [2.08, 2.69], p=0.0000
+  Layer   8: probe=1.000, LOSO=1.000, norm/RMS=9.4301, SNR=30.6, d(heldout)=2.59 [2.26, 2.91], p=0.0000
+  Layer   9: probe=1.000, LOSO=1.000, norm/RMS=9.2813, SNR=30.6, d(heldout)=2.52 [2.20, 2.83], p=0.0000
+  Layer  10: probe=1.000, LOSO=1.000, norm/RMS=9.9685, SNR=34.3, d(heldout)=2.89 [2.54, 3.24], p=0.0000
+  Layer  11: probe=1.000, LOSO=1.000, norm/RMS=9.2604, SNR=31.6, d(heldout)=2.82 [2.48, 3.17], p=0.0000
+  Layer  12: probe=1.000, LOSO=1.000, norm/RMS=9.2348, SNR=26.3, d(heldout)=2.79 [2.45, 3.13], p=0.0000
+  Layer  13: probe=1.000, LOSO=1.000, norm/RMS=10.0267, SNR=27.7, d(heldout)=3.03 [2.66, 3.40], p=0.0000
+  Layer  14: probe=1.000, LOSO=1.000, norm/RMS=10.2456, SNR=26.5, d(heldout)=2.90 [2.55, 3.26], p=0.0000
+  Layer  15: probe=1.000, LOSO=1.000, norm/RMS=10.2319, SNR=24.2, d(heldout)=3.20 [2.82, 3.59], p=0.0000
+  Layer  16: probe=1.000, LOSO=1.000, norm/RMS=10.1897, SNR=26.5, d(heldout)=3.25 [2.86, 3.64], p=0.0000
+  Layer  17: probe=1.000, LOSO=1.000, norm/RMS=10.7595, SNR=24.9, d(heldout)=3.47 [3.06, 3.88], p=0.0000
+  Layer  18: probe=1.000, LOSO=1.000, norm/RMS=11.4444, SNR=25.5, d(heldout)=3.73 [3.29, 4.16], p=0.0000
+  Layer  19: probe=1.000, LOSO=1.000, norm/RMS=12.9636, SNR=27.8, d(heldout)=3.70 [3.27, 4.14], p=0.0000
+  Layer  20: probe=1.000, LOSO=1.000, norm/RMS=12.9149, SNR=27.2, d(heldout)=3.69 [3.26, 4.12], p=0.0000
+  Layer  21: probe=1.000, LOSO=1.000, norm/RMS=13.8846, SNR=30.7, d(heldout)=3.58 [3.16, 4.01], p=0.0000
+  Layer  22: probe=1.000, LOSO=1.000, norm/RMS=15.3212, SNR=32.5, d(heldout)=3.17 [2.79, 3.55], p=0.0000
+  Layer  23: probe=1.000, LOSO=1.000, norm/RMS=17.0246, SNR=40.4, d(heldout)=2.48 [2.16, 2.79], p=0.0000
+  Layer  24: probe=1.000, LOSO=1.000, norm/RMS=18.1632, SNR=43.2, d(heldout)=2.78 [2.44, 3.12], p=0.0000
+  Layer  25: probe=1.000, LOSO=1.000, norm/RMS=19.5934, SNR=46.7, d(heldout)=3.23 [2.85, 3.62], p=0.0000
+  Layer  26: probe=1.000, LOSO=1.000, norm/RMS=21.2477, SNR=49.3, d(heldout)=3.28 [2.89, 3.68], p=0.0000
+  Layer  27: probe=1.000, LOSO=1.000, norm/RMS=21.0462, SNR=44.9, d(heldout)=3.81 [3.37, 4.26], p=0.0000
+  Layer  28: probe=1.000, LOSO=1.000, norm/RMS=23.6116, SNR=49.8, d(heldout)=5.29 [4.69, 5.89], p=0.0000
+  Layer  29: probe=1.000, LOSO=1.000, norm/RMS=25.1132, SNR=53.7, d(heldout)=4.80 [4.25, 5.35], p=0.0000
+  Layer  30: probe=1.000, LOSO=1.000, norm/RMS=26.1176, SNR=41.4, d(heldout)=4.67 [4.13, 5.20], p=0.0000
+  Layer  31: probe=1.000, LOSO=1.000, norm/RMS=30.3015, SNR=49.8, d(heldout)=5.51 [4.89, 6.14], p=0.0000
+  Layer  32: probe=1.000, LOSO=1.000, norm/RMS=31.5726, SNR=43.2, d(heldout)=5.07 [4.49, 5.65], p=0.0000
+  Layer  33: probe=1.000, LOSO=1.000, norm/RMS=31.7395, SNR=47.3, d(heldout)=4.96 [4.39, 5.52], p=0.0000
+  Layer  34: probe=1.000, LOSO=1.000, norm/RMS=31.3935, SNR=44.7, d(heldout)=4.67 [4.14, 5.21], p=0.0000
+  Layer  35: probe=1.000, LOSO=1.000, norm/RMS=31.0660, SNR=44.1, d(heldout)=4.54 [4.02, 5.06], p=0.0000
+  Layer  36: probe=1.000, LOSO=1.000, norm/RMS=31.9073, SNR=46.1, d(heldout)=4.25 [3.76, 4.74], p=0.0000
+  Layer  37: probe=1.000, LOSO=1.000, norm/RMS=31.1594, SNR=47.0, d(heldout)=4.10 [3.63, 4.58], p=0.0000
+  Layer  38: probe=1.000, LOSO=1.000, norm/RMS=31.5455, SNR=45.6, d(heldout)=3.92 [3.46, 4.37], p=0.0000
+  Layer  39: probe=1.000, LOSO=1.000, norm/RMS=31.2487, SNR=44.5, d(heldout)=3.92 [3.46, 4.37], p=0.0000
+  Layer  40: probe=1.000, LOSO=1.000, norm/RMS=30.1260, SNR=46.5, d(heldout)=3.89 [3.43, 4.34], p=0.0000
+  Layer  41: probe=1.000, LOSO=1.000, norm/RMS=29.0833, SNR=46.8, d(heldout)=3.78 [3.34, 4.23], p=0.0000
+  Layer  42: probe=1.000, LOSO=1.000, norm/RMS=29.2319, SNR=43.0, d(heldout)=3.75 [3.31, 4.18], p=0.0000
+  Layer  43: probe=1.000, LOSO=1.000, norm/RMS=28.5573, SNR=42.1, d(heldout)=3.67 [3.24, 4.10], p=0.0000
+  Layer  44: probe=1.000, LOSO=1.000, norm/RMS=28.3874, SNR=41.3, d(heldout)=3.56 [3.14, 3.98], p=0.0000
+  Layer  45: probe=1.000, LOSO=1.000, norm/RMS=27.7072, SNR=43.8, d(heldout)=3.62 [3.19, 4.04], p=0.0000
+  Layer  46: probe=1.000, LOSO=1.000, norm/RMS=24.0619, SNR=39.4, d(heldout)=3.73 [3.29, 4.16], p=0.0000
+  Layer  47: probe=1.000, LOSO=1.000, norm/RMS=33.0810, SNR=43.5, d(heldout)=3.49 [3.08, 3.91], p=0.0000
+
+  ★ Best layer (LOSO): Layer 3 (acc: 1.000)
+  ★ Best layer (SNR):  Layer 29
+  Saved visualization to results/persona_vectors/Qwen_Qwen2.5-14B-Instruct/openness/layer_analysis_v2_openness.png
+
+============================================================
+SUMMARY (v2 — Enhanced)
+============================================================
+  openness                  LOSO-best: L  3 (acc=1.000), SNR-best: L 29
+
+✓ Enhanced extraction complete! → results/persona_vectors/Qwen_Qwen2.5-14B-Instruct
+=== Finished openness at 2026年 04月 12日 星期日 20:51:34 CST ===
+=== Starting conscientiousness at 2026年 04月 12日 星期日 20:51:34 CST ===
+
+============================================================
+Analyzing trait: conscientiousness (v2 — enhanced)
+============================================================
+  Layers: 48, Hidden dim: 5120, Samples: 160
+  Regularization C: 0.01, CV: StratifiedKFold
+  Layer   0: probe=0.966, LOSO=0.988, norm/RMS=3.5656, SNR=35.0, d(heldout)=3.84 [3.39, 4.28], p=0.0000
+  Layer   1: probe=0.944, LOSO=0.988, norm/RMS=3.2510, SNR=34.1, d(heldout)=4.11 [3.63, 4.59], p=0.0000
+  Layer   2: probe=0.959, LOSO=0.981, norm/RMS=3.5173, SNR=30.3, d(heldout)=5.06 [4.48, 5.63], p=0.0000
+  Layer   3: probe=0.994, LOSO=1.000, norm/RMS=3.7943, SNR=27.4, d(heldout)=5.04 [4.47, 5.62], p=0.0000
+  Layer   4: probe=0.941, LOSO=0.950, norm/RMS=4.1107, SNR=23.8, d(heldout)=4.30 [3.80, 4.79], p=0.0000
+  Layer   5: probe=0.966, LOSO=1.000, norm/RMS=5.6189, SNR=24.6, d(heldout)=3.10 [2.73, 3.48], p=0.0000
+  Layer   6: probe=0.972, LOSO=0.988, norm/RMS=6.4830, SNR=26.3, d(heldout)=3.28 [2.89, 3.67], p=0.0000
+  Layer   7: probe=0.984, LOSO=1.000, norm/RMS=7.2932, SNR=22.9, d(heldout)=3.46 [3.05, 3.87], p=0.0000
+  Layer   8: probe=1.000, LOSO=1.000, norm/RMS=7.5369, SNR=28.7, d(heldout)=3.47 [3.06, 3.88], p=0.0000
+  Layer   9: probe=1.000, LOSO=1.000, norm/RMS=7.5686, SNR=28.4, d(heldout)=3.56 [3.14, 3.98], p=0.0000
+  Layer  10: probe=1.000, LOSO=1.000, norm/RMS=7.9664, SNR=22.8, d(heldout)=4.54 [4.02, 5.06], p=0.0000
+  Layer  11: probe=1.000, LOSO=1.000, norm/RMS=7.4139, SNR=22.2, d(heldout)=4.91 [4.35, 5.47], p=0.0000
+  Layer  12: probe=1.000, LOSO=1.000, norm/RMS=7.6098, SNR=21.4, d(heldout)=5.86 [5.20, 6.52], p=0.0000
+  Layer  13: probe=1.000, LOSO=1.000, norm/RMS=8.4633, SNR=19.9, d(heldout)=5.93 [5.27, 6.60], p=0.0000
+  Layer  14: probe=1.000, LOSO=1.000, norm/RMS=8.7389, SNR=20.0, d(heldout)=6.41 [5.69, 7.13], p=0.0000
+  Layer  15: probe=1.000, LOSO=1.000, norm/RMS=8.8859, SNR=20.0, d(heldout)=4.77 [4.23, 5.32], p=0.0000
+  Layer  16: probe=1.000, LOSO=1.000, norm/RMS=8.8826, SNR=18.3, d(heldout)=4.48 [3.97, 5.00], p=0.0000
+  Layer  17: probe=1.000, LOSO=1.000, norm/RMS=9.5459, SNR=19.6, d(heldout)=4.45 [3.93, 4.96], p=0.0000
+  Layer  18: probe=1.000, LOSO=1.000, norm/RMS=10.7599, SNR=21.5, d(heldout)=4.59 [4.06, 5.12], p=0.0000
+  Layer  19: probe=1.000, LOSO=1.000, norm/RMS=12.4768, SNR=23.9, d(heldout)=3.61 [3.19, 4.04], p=0.0000
+  Layer  20: probe=1.000, LOSO=1.000, norm/RMS=12.6670, SNR=23.4, d(heldout)=3.22 [2.83, 3.60], p=0.0000
+  Layer  21: probe=1.000, LOSO=1.000, norm/RMS=13.0089, SNR=29.2, d(heldout)=3.53 [3.11, 3.94], p=0.0000
+  Layer  22: probe=1.000, LOSO=1.000, norm/RMS=13.6307, SNR=30.5, d(heldout)=3.71 [3.28, 4.15], p=0.0000
+  Layer  23: probe=1.000, LOSO=1.000, norm/RMS=14.7524, SNR=33.9, d(heldout)=3.71 [3.27, 4.14], p=0.0000
+  Layer  24: probe=1.000, LOSO=1.000, norm/RMS=15.9231, SNR=37.9, d(heldout)=3.47 [3.06, 3.88], p=0.0000
+  Layer  25: probe=1.000, LOSO=1.000, norm/RMS=16.4610, SNR=35.4, d(heldout)=3.54 [3.13, 3.96], p=0.0000
+  Layer  26: probe=1.000, LOSO=1.000, norm/RMS=17.6892, SNR=37.9, d(heldout)=3.21 [2.83, 3.60], p=0.0000
+  Layer  27: probe=1.000, LOSO=1.000, norm/RMS=17.4494, SNR=34.7, d(heldout)=2.81 [2.47, 3.16], p=0.0000
+  Layer  28: probe=1.000, LOSO=1.000, norm/RMS=20.3539, SNR=41.2, d(heldout)=2.87 [2.52, 3.22], p=0.0000
+  Layer  29: probe=1.000, LOSO=1.000, norm/RMS=21.3025, SNR=31.6, d(heldout)=2.74 [2.40, 3.08], p=0.0000
+  Layer  30: probe=1.000, LOSO=1.000, norm/RMS=23.1514, SNR=35.4, d(heldout)=2.56 [2.24, 2.88], p=0.0000
+  Layer  31: probe=1.000, LOSO=1.000, norm/RMS=26.1557, SNR=37.0, d(heldout)=2.77 [2.43, 3.12], p=0.0000
+  Layer  32: probe=1.000, LOSO=1.000, norm/RMS=26.9164, SNR=36.6, d(heldout)=2.64 [2.31, 2.97], p=0.0000
+  Layer  33: probe=1.000, LOSO=1.000, norm/RMS=27.1629, SNR=38.5, d(heldout)=2.72 [2.38, 3.05], p=0.0000
+  Layer  34: probe=1.000, LOSO=1.000, norm/RMS=26.8021, SNR=34.6, d(heldout)=2.69 [2.36, 3.02], p=0.0000
+  Layer  35: probe=1.000, LOSO=1.000, norm/RMS=26.2427, SNR=29.9, d(heldout)=2.62 [2.29, 2.94], p=0.0000
+  Layer  36: probe=1.000, LOSO=1.000, norm/RMS=26.9765, SNR=32.6, d(heldout)=2.55 [2.23, 2.87], p=0.0000
+  Layer  37: probe=1.000, LOSO=1.000, norm/RMS=26.4970, SNR=33.9, d(heldout)=2.59 [2.27, 2.91], p=0.0000
+  Layer  38: probe=1.000, LOSO=1.000, norm/RMS=26.6156, SNR=32.9, d(heldout)=2.61 [2.28, 2.93], p=0.0000
+  Layer  39: probe=1.000, LOSO=1.000, norm/RMS=26.6758, SNR=33.5, d(heldout)=2.64 [2.31, 2.97], p=0.0000
+  Layer  40: probe=1.000, LOSO=1.000, norm/RMS=25.9875, SNR=33.8, d(heldout)=2.66 [2.33, 2.99], p=0.0000
+  Layer  41: probe=1.000, LOSO=1.000, norm/RMS=25.2908, SNR=34.1, d(heldout)=2.63 [2.30, 2.95], p=0.0000
+  Layer  42: probe=1.000, LOSO=1.000, norm/RMS=25.4614, SNR=35.9, d(heldout)=2.58 [2.26, 2.91], p=0.0000
+  Layer  43: probe=1.000, LOSO=1.000, norm/RMS=24.5365, SNR=33.9, d(heldout)=2.56 [2.24, 2.88], p=0.0000
+  Layer  44: probe=1.000, LOSO=1.000, norm/RMS=24.4483, SNR=32.0, d(heldout)=2.53 [2.21, 2.84], p=0.0000
+  Layer  45: probe=1.000, LOSO=1.000, norm/RMS=23.8084, SNR=31.9, d(heldout)=2.48 [2.17, 2.79], p=0.0000
+  Layer  46: probe=1.000, LOSO=1.000, norm/RMS=20.5777, SNR=34.9, d(heldout)=2.50 [2.18, 2.81], p=0.0000
+  Layer  47: probe=1.000, LOSO=1.000, norm/RMS=28.1367, SNR=30.4, d(heldout)=2.50 [2.19, 2.82], p=0.0000
+
+  ★ Best layer (LOSO): Layer 3 (acc: 1.000)
+  ★ Best layer (SNR):  Layer 28
+  Saved visualization to results/persona_vectors/Qwen_Qwen2.5-14B-Instruct/conscientiousness/layer_analysis_v2_conscientiousness.png
+
+============================================================
+SUMMARY (v2 — Enhanced)
+============================================================
+  conscientiousness         LOSO-best: L  3 (acc=1.000), SNR-best: L 28
+
+✓ Enhanced extraction complete! → results/persona_vectors/Qwen_Qwen2.5-14B-Instruct
+=== Finished conscientiousness at 2026年 04月 12日 星期日 21:24:11 CST ===
+=== Starting extraversion at 2026年 04月 12日 星期日 21:24:11 CST ===
+
+============================================================
+Analyzing trait: extraversion (v2 — enhanced)
+============================================================
+  Layers: 48, Hidden dim: 5120, Samples: 160
+  Regularization C: 0.01, CV: StratifiedKFold
+  Layer   0: probe=0.894, LOSO=0.903, norm/RMS=3.4667, SNR=28.0, d(heldout)=2.56 [2.24, 2.88], p=0.0000
+  Layer   1: probe=0.900, LOSO=0.925, norm/RMS=3.0906, SNR=29.2, d(heldout)=2.76 [2.42, 3.10], p=0.0000
+  Layer   2: probe=0.963, LOSO=0.972, norm/RMS=3.2508, SNR=28.3, d(heldout)=3.81 [3.36, 4.25], p=0.0000
+  Layer   3: probe=0.953, LOSO=0.988, norm/RMS=3.5546, SNR=24.8, d(heldout)=3.98 [3.52, 4.44], p=0.0000
+  Layer   4: probe=0.944, LOSO=0.950, norm/RMS=3.9935, SNR=21.4, d(heldout)=2.95 [2.59, 3.30], p=0.0000
+  Layer   5: probe=1.000, LOSO=1.000, norm/RMS=5.3193, SNR=22.0, d(heldout)=3.70 [3.26, 4.13], p=0.0000
+  Layer   6: probe=1.000, LOSO=1.000, norm/RMS=6.3280, SNR=26.3, d(heldout)=2.71 [2.37, 3.04], p=0.0000
+  Layer   7: probe=1.000, LOSO=1.000, norm/RMS=6.9399, SNR=25.2, d(heldout)=2.36 [2.06, 2.67], p=0.0000
+  Layer   8: probe=1.000, LOSO=1.000, norm/RMS=7.0686, SNR=22.9, d(heldout)=2.23 [1.95, 2.52], p=0.0000
+  Layer   9: probe=1.000, LOSO=1.000, norm/RMS=6.9955, SNR=22.9, d(heldout)=2.41 [2.11, 2.72], p=0.0000
+  Layer  10: probe=1.000, LOSO=1.000, norm/RMS=7.2437, SNR=21.7, d(heldout)=2.94 [2.59, 3.30], p=0.0000
+  Layer  11: probe=1.000, LOSO=1.000, norm/RMS=6.6932, SNR=21.0, d(heldout)=3.05 [2.68, 3.41], p=0.0000
+  Layer  12: probe=1.000, LOSO=1.000, norm/RMS=6.7328, SNR=19.9, d(heldout)=3.70 [3.26, 4.13], p=0.0000
+  Layer  13: probe=1.000, LOSO=1.000, norm/RMS=7.6561, SNR=19.5, d(heldout)=4.92 [4.36, 5.49], p=0.0000
+  Layer  14: probe=1.000, LOSO=1.000, norm/RMS=7.7486, SNR=17.3, d(heldout)=5.61 [4.97, 6.24], p=0.0000
+  Layer  15: probe=1.000, LOSO=1.000, norm/RMS=7.5008, SNR=18.5, d(heldout)=5.75 [5.10, 6.40], p=0.0000
+  Layer  16: probe=1.000, LOSO=1.000, norm/RMS=7.5968, SNR=17.2, d(heldout)=5.22 [4.63, 5.81], p=0.0000
+  Layer  17: probe=1.000, LOSO=1.000, norm/RMS=8.1799, SNR=18.6, d(heldout)=5.68 [5.04, 6.32], p=0.0000
+  Layer  18: probe=1.000, LOSO=1.000, norm/RMS=9.0544, SNR=19.9, d(heldout)=5.52 [4.89, 6.14], p=0.0000
+  Layer  19: probe=1.000, LOSO=1.000, norm/RMS=10.2919, SNR=19.6, d(heldout)=5.69 [5.05, 6.34], p=0.0000
+  Layer  20: probe=1.000, LOSO=1.000, norm/RMS=10.7111, SNR=19.8, d(heldout)=4.91 [4.35, 5.47], p=0.0000
+  Layer  21: probe=1.000, LOSO=1.000, norm/RMS=11.0661, SNR=23.9, d(heldout)=5.50 [4.87, 6.12], p=0.0000
+  Layer  22: probe=1.000, LOSO=1.000, norm/RMS=11.5657, SNR=25.8, d(heldout)=4.46 [3.95, 4.97], p=0.0000
+  Layer  23: probe=1.000, LOSO=1.000, norm/RMS=12.5365, SNR=26.4, d(heldout)=3.46 [3.05, 3.87], p=0.0000
+  Layer  24: probe=1.000, LOSO=1.000, norm/RMS=14.0866, SNR=32.4, d(heldout)=3.28 [2.89, 3.67], p=0.0000
+  Layer  25: probe=1.000, LOSO=1.000, norm/RMS=15.5711, SNR=36.4, d(heldout)=4.07 [3.59, 4.54], p=0.0000
+  Layer  26: probe=1.000, LOSO=1.000, norm/RMS=16.4007, SNR=35.3, d(heldout)=3.87 [3.42, 4.32], p=0.0000
+  Layer  27: probe=1.000, LOSO=1.000, norm/RMS=16.1844, SNR=34.0, d(heldout)=3.73 [3.29, 4.16], p=0.0000
+  Layer  28: probe=1.000, LOSO=1.000, norm/RMS=19.6798, SNR=37.4, d(heldout)=4.17 [3.69, 4.65], p=0.0000
+  Layer  29: probe=1.000, LOSO=1.000, norm/RMS=22.1180, SNR=38.2, d(heldout)=3.92 [3.46, 4.38], p=0.0000
+  Layer  30: probe=1.000, LOSO=1.000, norm/RMS=23.9459, SNR=37.6, d(heldout)=3.16 [2.78, 3.54], p=0.0000
+  Layer  31: probe=1.000, LOSO=1.000, norm/RMS=26.8531, SNR=37.5, d(heldout)=3.47 [3.06, 3.88], p=0.0000
+  Layer  32: probe=1.000, LOSO=1.000, norm/RMS=27.4712, SNR=44.0, d(heldout)=3.37 [2.97, 3.77], p=0.0000
+  Layer  33: probe=1.000, LOSO=1.000, norm/RMS=28.0959, SNR=39.6, d(heldout)=3.25 [2.86, 3.64], p=0.0000
+  Layer  34: probe=1.000, LOSO=1.000, norm/RMS=27.5309, SNR=40.8, d(heldout)=3.15 [2.78, 3.53], p=0.0000
+  Layer  35: probe=1.000, LOSO=1.000, norm/RMS=27.3801, SNR=41.6, d(heldout)=3.04 [2.67, 3.41], p=0.0000
+  Layer  36: probe=1.000, LOSO=1.000, norm/RMS=28.2377, SNR=38.8, d(heldout)=2.91 [2.56, 3.27], p=0.0000
+  Layer  37: probe=1.000, LOSO=1.000, norm/RMS=28.3534, SNR=39.7, d(heldout)=2.77 [2.43, 3.11], p=0.0000
+  Layer  38: probe=1.000, LOSO=1.000, norm/RMS=28.7596, SNR=42.0, d(heldout)=2.64 [2.32, 2.97], p=0.0000
+  Layer  39: probe=1.000, LOSO=1.000, norm/RMS=28.6332, SNR=41.5, d(heldout)=2.67 [2.34, 3.00], p=0.0000
+  Layer  40: probe=1.000, LOSO=1.000, norm/RMS=27.6900, SNR=42.1, d(heldout)=2.60 [2.28, 2.93], p=0.0000
+  Layer  41: probe=1.000, LOSO=1.000, norm/RMS=27.0907, SNR=47.4, d(heldout)=2.54 [2.22, 2.86], p=0.0000
+  Layer  42: probe=1.000, LOSO=1.000, norm/RMS=27.3492, SNR=42.2, d(heldout)=2.51 [2.19, 2.82], p=0.0000
+  Layer  43: probe=1.000, LOSO=1.000, norm/RMS=26.4028, SNR=42.2, d(heldout)=2.51 [2.19, 2.82], p=0.0000
+  Layer  44: probe=1.000, LOSO=1.000, norm/RMS=26.1042, SNR=47.7, d(heldout)=2.52 [2.20, 2.84], p=0.0000
+  Layer  45: probe=1.000, LOSO=1.000, norm/RMS=25.4626, SNR=45.5, d(heldout)=2.53 [2.22, 2.85], p=0.0000
+  Layer  46: probe=1.000, LOSO=1.000, norm/RMS=21.6636, SNR=39.3, d(heldout)=2.52 [2.20, 2.83], p=0.0000
+  Layer  47: probe=1.000, LOSO=1.000, norm/RMS=31.0809, SNR=42.7, d(heldout)=2.50 [2.18, 2.81], p=0.0000
+
+  ★ Best layer (LOSO): Layer 5 (acc: 1.000)
+  ★ Best layer (SNR):  Layer 44
+  Saved visualization to results/persona_vectors/Qwen_Qwen2.5-14B-Instruct/extraversion/layer_analysis_v2_extraversion.png
+
+============================================================
+SUMMARY (v2 — Enhanced)
+============================================================
+  extraversion              LOSO-best: L  5 (acc=1.000), SNR-best: L 44
+
+✓ Enhanced extraction complete! → results/persona_vectors/Qwen_Qwen2.5-14B-Instruct
+=== Finished extraversion at 2026年 04月 12日 星期日 22:04:06 CST ===
+=== Starting agreeableness at 2026年 04月 12日 星期日 22:04:06 CST ===
+
+============================================================
+Analyzing trait: agreeableness (v2 — enhanced)
+============================================================
+  Layers: 48, Hidden dim: 5120, Samples: 160
+  Regularization C: 0.01, CV: StratifiedKFold
+  Layer   0: probe=0.922, LOSO=0.919, norm/RMS=3.8166, SNR=30.6, d(heldout)=4.18 [3.70, 4.66], p=0.0000
+  Layer   1: probe=0.922, LOSO=0.925, norm/RMS=3.4732, SNR=32.0, d(heldout)=3.53 [3.11, 3.95], p=0.0000
+  Layer   2: probe=0.938, LOSO=0.938, norm/RMS=3.6336, SNR=30.8, d(heldout)=3.27 [2.88, 3.66], p=0.0000
+  Layer   3: probe=0.950, LOSO=0.963, norm/RMS=3.9051, SNR=25.5, d(heldout)=4.63 [4.10, 5.16], p=0.0000
+  Layer   4: probe=0.947, LOSO=0.950, norm/RMS=4.2036, SNR=25.8, d(heldout)=4.66 [4.13, 5.20], p=0.0000
+  Layer   5: probe=1.000, LOSO=1.000, norm/RMS=6.3008, SNR=31.6, d(heldout)=2.78 [2.44, 3.13], p=0.0000
+  Layer   6: probe=1.000, LOSO=1.000, norm/RMS=7.0001, SNR=29.8, d(heldout)=3.18 [2.80, 3.56], p=0.0000
+  Layer   7: probe=1.000, LOSO=1.000, norm/RMS=7.9458, SNR=27.9, d(heldout)=3.46 [3.05, 3.87], p=0.0000
+  Layer   8: probe=1.000, LOSO=1.000, norm/RMS=7.9913, SNR=31.3, d(heldout)=4.24 [3.75, 4.72], p=0.0000
+  Layer   9: probe=1.000, LOSO=1.000, norm/RMS=7.9549, SNR=29.7, d(heldout)=4.48 [3.97, 5.00], p=0.0000
+  Layer  10: probe=1.000, LOSO=1.000, norm/RMS=8.2525, SNR=26.3, d(heldout)=4.83 [4.28, 5.38], p=0.0000
+  Layer  11: probe=1.000, LOSO=1.000, norm/RMS=7.6979, SNR=26.7, d(heldout)=4.13 [3.65, 4.61], p=0.0000
+  Layer  12: probe=1.000, LOSO=1.000, norm/RMS=7.8788, SNR=21.6, d(heldout)=3.98 [3.52, 4.45], p=0.0000
+  Layer  13: probe=1.000, LOSO=1.000, norm/RMS=8.5692, SNR=19.5, d(heldout)=4.06 [3.59, 4.53], p=0.0000
+  Layer  14: probe=1.000, LOSO=1.000, norm/RMS=8.7963, SNR=19.1, d(heldout)=4.55 [4.02, 5.07], p=0.0000
+  Layer  15: probe=1.000, LOSO=1.000, norm/RMS=8.6445, SNR=18.0, d(heldout)=4.19 [3.71, 4.68], p=0.0000
+  Layer  16: probe=1.000, LOSO=1.000, norm/RMS=8.8515, SNR=19.0, d(heldout)=3.46 [3.05, 3.87], p=0.0000
+  Layer  17: probe=1.000, LOSO=1.000, norm/RMS=9.3770, SNR=18.8, d(heldout)=3.56 [3.14, 3.98], p=0.0000
+  Layer  18: probe=1.000, LOSO=1.000, norm/RMS=10.1662, SNR=19.7, d(heldout)=4.26 [3.77, 4.75], p=0.0000
+  Layer  19: probe=1.000, LOSO=1.000, norm/RMS=12.1220, SNR=25.9, d(heldout)=3.84 [3.39, 4.29], p=0.0000
+  Layer  20: probe=1.000, LOSO=1.000, norm/RMS=12.6783, SNR=21.8, d(heldout)=4.23 [3.74, 4.72], p=0.0000
+  Layer  21: probe=1.000, LOSO=1.000, norm/RMS=13.6857, SNR=27.8, d(heldout)=4.62 [4.09, 5.15], p=0.0000
+  Layer  22: probe=1.000, LOSO=1.000, norm/RMS=14.4875, SNR=33.3, d(heldout)=3.73 [3.29, 4.16], p=0.0000
+  Layer  23: probe=1.000, LOSO=1.000, norm/RMS=16.4071, SNR=37.0, d(heldout)=3.31 [2.92, 3.71], p=0.0000
+  Layer  24: probe=1.000, LOSO=1.000, norm/RMS=18.9245, SNR=42.5, d(heldout)=3.86 [3.41, 4.31], p=0.0000
+  Layer  25: probe=1.000, LOSO=1.000, norm/RMS=20.7024, SNR=48.3, d(heldout)=3.89 [3.44, 4.35], p=0.0000
+  Layer  26: probe=1.000, LOSO=1.000, norm/RMS=22.2498, SNR=48.5, d(heldout)=3.53 [3.11, 3.95], p=0.0000
+  Layer  27: probe=1.000, LOSO=1.000, norm/RMS=21.0191, SNR=48.0, d(heldout)=3.49 [3.08, 3.90], p=0.0000
+  Layer  28: probe=1.000, LOSO=1.000, norm/RMS=22.9210, SNR=47.3, d(heldout)=3.35 [2.95, 3.75], p=0.0000
+  Layer  29: probe=1.000, LOSO=1.000, norm/RMS=23.4066, SNR=45.7, d(heldout)=3.19 [2.80, 3.57], p=0.0000
+  Layer  30: probe=1.000, LOSO=1.000, norm/RMS=24.0364, SNR=38.8, d(heldout)=3.00 [2.64, 3.36], p=0.0000
+  Layer  31: probe=1.000, LOSO=1.000, norm/RMS=27.4699, SNR=40.7, d(heldout)=3.13 [2.76, 3.51], p=0.0000
+  Layer  32: probe=1.000, LOSO=1.000, norm/RMS=27.9364, SNR=40.9, d(heldout)=3.06 [2.69, 3.43], p=0.0000
+  Layer  33: probe=1.000, LOSO=1.000, norm/RMS=27.9907, SNR=43.3, d(heldout)=3.09 [2.72, 3.47], p=0.0000
+  Layer  34: probe=1.000, LOSO=1.000, norm/RMS=27.6850, SNR=44.4, d(heldout)=3.15 [2.77, 3.53], p=0.0000
+  Layer  35: probe=1.000, LOSO=1.000, norm/RMS=27.0316, SNR=39.3, d(heldout)=3.15 [2.77, 3.53], p=0.0000
+  Layer  36: probe=1.000, LOSO=1.000, norm/RMS=27.6056, SNR=41.0, d(heldout)=3.13 [2.75, 3.50], p=0.0000
+  Layer  37: probe=1.000, LOSO=1.000, norm/RMS=26.7240, SNR=39.2, d(heldout)=3.17 [2.79, 3.55], p=0.0000
+  Layer  38: probe=1.000, LOSO=1.000, norm/RMS=26.7018, SNR=40.9, d(heldout)=3.20 [2.82, 3.59], p=0.0000
+  Layer  39: probe=1.000, LOSO=1.000, norm/RMS=26.5379, SNR=43.8, d(heldout)=3.26 [2.87, 3.64], p=0.0000
+  Layer  40: probe=1.000, LOSO=1.000, norm/RMS=25.6937, SNR=41.5, d(heldout)=3.36 [2.96, 3.76], p=0.0000
+  Layer  41: probe=1.000, LOSO=1.000, norm/RMS=24.7325, SNR=45.0, d(heldout)=3.31 [2.91, 3.70], p=0.0000
+  Layer  42: probe=1.000, LOSO=1.000, norm/RMS=24.8947, SNR=41.7, d(heldout)=3.33 [2.93, 3.72], p=0.0000
+  Layer  43: probe=1.000, LOSO=1.000, norm/RMS=24.3536, SNR=41.0, d(heldout)=3.51 [3.09, 3.92], p=0.0000
+  Layer  44: probe=1.000, LOSO=1.000, norm/RMS=24.4510, SNR=41.8, d(heldout)=3.34 [2.94, 3.74], p=0.0000
+  Layer  45: probe=1.000, LOSO=1.000, norm/RMS=23.9796, SNR=41.7, d(heldout)=3.37 [2.97, 3.77], p=0.0000
+  Layer  46: probe=1.000, LOSO=1.000, norm/RMS=20.5637, SNR=39.2, d(heldout)=3.42 [3.01, 3.82], p=0.0000
+  Layer  47: probe=1.000, LOSO=1.000, norm/RMS=27.6143, SNR=40.3, d(heldout)=2.67 [2.34, 3.00], p=0.0000
+
+  ★ Best layer (LOSO): Layer 5 (acc: 1.000)
+  ★ Best layer (SNR):  Layer 26
+  Saved visualization to results/persona_vectors/Qwen_Qwen2.5-14B-Instruct/agreeableness/layer_analysis_v2_agreeableness.png
+
+============================================================
+SUMMARY (v2 — Enhanced)
+============================================================
+  agreeableness             LOSO-best: L  5 (acc=1.000), SNR-best: L 26
+
+✓ Enhanced extraction complete! → results/persona_vectors/Qwen_Qwen2.5-14B-Instruct
+=== Finished agreeableness at 2026年 04月 12日 星期日 23:12:16 CST ===
+=== Starting neuroticism at 2026年 04月 12日 星期日 23:12:16 CST ===
+
+============================================================
+Analyzing trait: neuroticism (v2 — enhanced)
+============================================================
+  Layers: 48, Hidden dim: 5120, Samples: 160
+  Regularization C: 0.01, CV: StratifiedKFold
+  Layer   0: probe=0.850, LOSO=0.875, norm/RMS=3.3511, SNR=30.5, d(heldout)=1.81 [1.56, 2.06], p=0.0000
+  Layer   1: probe=0.872, LOSO=0.887, norm/RMS=3.0628, SNR=30.3, d(heldout)=2.21 [1.92, 2.50], p=0.0000
+  Layer   2: probe=0.853, LOSO=0.887, norm/RMS=3.2808, SNR=30.5, d(heldout)=2.41 [2.11, 2.72], p=0.0000
+  Layer   3: probe=0.866, LOSO=0.891, norm/RMS=3.5214, SNR=28.1, d(heldout)=2.29 [2.00, 2.59], p=0.0000
+  Layer   4: probe=0.878, LOSO=0.894, norm/RMS=3.9472, SNR=20.7, d(heldout)=2.03 [1.76, 2.30], p=0.0000
+  Layer   5: probe=0.912, LOSO=0.916, norm/RMS=5.4159, SNR=24.4, d(heldout)=2.04 [1.77, 2.32], p=0.0000
+  Layer   6: probe=0.934, LOSO=0.953, norm/RMS=6.1623, SNR=27.3, d(heldout)=2.07 [1.79, 2.34], p=0.0000
+  Layer   7: probe=0.969, LOSO=0.975, norm/RMS=7.0405, SNR=27.1, d(heldout)=1.79 [1.54, 2.04], p=0.0000
+  Layer   8: probe=0.969, LOSO=0.988, norm/RMS=7.3054, SNR=26.1, d(heldout)=1.92 [1.66, 2.19], p=0.0000
+  Layer   9: probe=0.997, LOSO=1.000, norm/RMS=7.4239, SNR=24.6, d(heldout)=1.93 [1.67, 2.20], p=0.0000
+  Layer  10: probe=0.994, LOSO=1.000, norm/RMS=7.8463, SNR=24.0, d(heldout)=2.03 [1.76, 2.30], p=0.0000
+  Layer  11: probe=0.994, LOSO=1.000, norm/RMS=7.3246, SNR=25.3, d(heldout)=1.98 [1.71, 2.24], p=0.0000
+  Layer  12: probe=0.994, LOSO=1.000, norm/RMS=7.4431, SNR=21.3, d(heldout)=1.92 [1.66, 2.18], p=0.0000
+  Layer  13: probe=1.000, LOSO=1.000, norm/RMS=8.1883, SNR=20.2, d(heldout)=2.02 [1.75, 2.28], p=0.0000
+  Layer  14: probe=0.997, LOSO=1.000, norm/RMS=8.3646, SNR=21.2, d(heldout)=1.99 [1.72, 2.26], p=0.0000
+  Layer  15: probe=1.000, LOSO=1.000, norm/RMS=8.4560, SNR=22.1, d(heldout)=2.37 [2.06, 2.67], p=0.0000
+  Layer  16: probe=0.991, LOSO=0.997, norm/RMS=8.5192, SNR=23.4, d(heldout)=2.46 [2.14, 2.77], p=0.0000
+  Layer  17: probe=1.000, LOSO=1.000, norm/RMS=9.1770, SNR=22.1, d(heldout)=2.60 [2.27, 2.92], p=0.0000
+  Layer  18: probe=1.000, LOSO=1.000, norm/RMS=10.1922, SNR=22.7, d(heldout)=2.66 [2.33, 2.99], p=0.0000
+  Layer  19: probe=1.000, LOSO=1.000, norm/RMS=11.4665, SNR=25.6, d(heldout)=2.66 [2.33, 2.99], p=0.0000
+  Layer  20: probe=1.000, LOSO=1.000, norm/RMS=11.9016, SNR=27.2, d(heldout)=2.93 [2.58, 3.29], p=0.0000
+  Layer  21: probe=1.000, LOSO=1.000, norm/RMS=12.0921, SNR=27.3, d(heldout)=3.21 [2.83, 3.60], p=0.0000
+  Layer  22: probe=1.000, LOSO=1.000, norm/RMS=12.7329, SNR=28.9, d(heldout)=3.71 [3.28, 4.15], p=0.0000
+  Layer  23: probe=1.000, LOSO=1.000, norm/RMS=13.5392, SNR=34.1, d(heldout)=3.77 [3.33, 4.21], p=0.0000
+  Layer  24: probe=1.000, LOSO=1.000, norm/RMS=14.6764, SNR=36.5, d(heldout)=4.43 [3.92, 4.94], p=0.0000
+  Layer  25: probe=1.000, LOSO=1.000, norm/RMS=14.8753, SNR=36.4, d(heldout)=4.74 [4.20, 5.28], p=0.0000
+  Layer  26: probe=1.000, LOSO=1.000, norm/RMS=15.9842, SNR=35.2, d(heldout)=4.48 [3.96, 4.99], p=0.0000
+  Layer  27: probe=1.000, LOSO=1.000, norm/RMS=15.8772, SNR=36.4, d(heldout)=4.44 [3.93, 4.95], p=0.0000
+  Layer  28: probe=1.000, LOSO=1.000, norm/RMS=18.9078, SNR=36.4, d(heldout)=4.20 [3.72, 4.69], p=0.0000
+  Layer  29: probe=1.000, LOSO=1.000, norm/RMS=21.1228, SNR=35.3, d(heldout)=3.95 [3.49, 4.41], p=0.0000
+  Layer  30: probe=1.000, LOSO=1.000, norm/RMS=23.4876, SNR=36.4, d(heldout)=3.92 [3.46, 4.38], p=0.0000
+  Layer  31: probe=1.000, LOSO=1.000, norm/RMS=25.7858, SNR=31.6, d(heldout)=3.92 [3.46, 4.37], p=0.0000
+  Layer  32: probe=1.000, LOSO=1.000, norm/RMS=26.5740, SNR=33.7, d(heldout)=3.91 [3.45, 4.36], p=0.0000
+  Layer  33: probe=1.000, LOSO=1.000, norm/RMS=26.8105, SNR=35.5, d(heldout)=3.94 [3.48, 4.40], p=0.0000
+  Layer  34: probe=1.000, LOSO=1.000, norm/RMS=26.9406, SNR=31.9, d(heldout)=3.75 [3.31, 4.19], p=0.0000
+  Layer  35: probe=1.000, LOSO=1.000, norm/RMS=26.2160, SNR=31.4, d(heldout)=3.84 [3.40, 4.29], p=0.0000
+  Layer  36: probe=1.000, LOSO=1.000, norm/RMS=27.0976, SNR=28.5, d(heldout)=3.89 [3.44, 4.35], p=0.0000
+  Layer  37: probe=1.000, LOSO=1.000, norm/RMS=26.5873, SNR=30.6, d(heldout)=3.90 [3.44, 4.35], p=0.0000
+  Layer  38: probe=1.000, LOSO=1.000, norm/RMS=27.0823, SNR=34.4, d(heldout)=3.84 [3.39, 4.28], p=0.0000
+  Layer  39: probe=1.000, LOSO=1.000, norm/RMS=27.0547, SNR=34.6, d(heldout)=3.95 [3.49, 4.41], p=0.0000
+  Layer  40: probe=1.000, LOSO=1.000, norm/RMS=26.2265, SNR=32.6, d(heldout)=3.88 [3.42, 4.33], p=0.0000
+  Layer  41: probe=1.000, LOSO=1.000, norm/RMS=25.3504, SNR=33.3, d(heldout)=3.86 [3.41, 4.31], p=0.0000
+  Layer  42: probe=1.000, LOSO=1.000, norm/RMS=25.6220, SNR=33.9, d(heldout)=3.75 [3.31, 4.19], p=0.0000
+  Layer  43: probe=1.000, LOSO=1.000, norm/RMS=25.1513, SNR=29.1, d(heldout)=3.64 [3.21, 4.07], p=0.0000
+  Layer  44: probe=1.000, LOSO=1.000, norm/RMS=25.0957, SNR=31.6, d(heldout)=3.62 [3.20, 4.05], p=0.0000
+  Layer  45: probe=1.000, LOSO=1.000, norm/RMS=24.4268, SNR=27.9, d(heldout)=3.49 [3.08, 3.90], p=0.0000
+  Layer  46: probe=1.000, LOSO=1.000, norm/RMS=20.7566, SNR=31.6, d(heldout)=3.48 [3.06, 3.89], p=0.0000
+  Layer  47: probe=1.000, LOSO=1.000, norm/RMS=27.3408, SNR=33.9, d(heldout)=3.32 [2.92, 3.71], p=0.0000
+
+  ★ Best layer (LOSO): Layer 9 (acc: 1.000)
+  ★ Best layer (SNR):  Layer 24
+  Saved visualization to results/persona_vectors/Qwen_Qwen2.5-14B-Instruct/neuroticism/layer_analysis_v2_neuroticism.png
+
+============================================================
+SUMMARY (v2 — Enhanced)
+============================================================
+  neuroticism               LOSO-best: L  9 (acc=1.000), SNR-best: L 24
+
+✓ Enhanced extraction complete! → results/persona_vectors/Qwen_Qwen2.5-14B-Instruct
+=== Finished neuroticism at 2026年 04月 12日 星期日 23:49:36 CST ===
+ALL DONE at 2026年 04月 12日 星期日 23:49:36 CST

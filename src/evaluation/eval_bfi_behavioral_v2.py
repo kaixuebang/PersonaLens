@@ -81,7 +81,10 @@ class SteeringEngine:
                 or self.steering_vec is None
             ):
                 return output
-            vec = self.alpha * self.steering_vec.to(self.device)
+            # Use the actual device of the output tensor (handles multi-GPU device_map="auto")
+            target_device = output[0].device if isinstance(output, tuple) else output.device
+            target_dtype = output[0].dtype if isinstance(output, tuple) else output.dtype
+            vec = (self.alpha * self.steering_vec).to(device=target_device, dtype=target_dtype)
             if isinstance(output, tuple):
                 modified = list(output)
                 modified[0] = output[0] + vec.unsqueeze(0).unsqueeze(0)
@@ -132,7 +135,23 @@ def generate_response(
     text = apply_chat_template_safe(
         tokenizer, messages, tokenize=False, add_generation_prompt=True
     )
-    inputs = tokenizer(text, return_tensors="pt").to(device)
+    # Determine the correct input device
+    if device == "auto":
+        if hasattr(model, 'hf_device_map') and model.hf_device_map:
+            first_device = list(model.hf_device_map.values())[0]
+            if isinstance(first_device, int):
+                input_device = f"cuda:{first_device}"
+            else:
+                input_device = str(first_device)
+        elif hasattr(model, 'device'):
+            input_device = model.device
+        else:
+            input_device = "cuda"
+    elif hasattr(model, 'device'):
+        input_device = model.device
+    else:
+        input_device = device
+    inputs = tokenizer(text, return_tensors="pt").to(input_device)
 
     with torch.no_grad():
         outputs = model.generate(
@@ -142,6 +161,7 @@ def generate_response(
             top_p=TOP_P,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,
+            use_cache=False,
         )
 
     generated_ids = outputs[0][inputs["input_ids"].shape[-1] :]
@@ -223,16 +243,18 @@ def run_evaluation(model_name, trait, output_dir, device, alphas=None,
         return False
 
     print(f"Loading {model_name}...")
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, local_files_only=True)
+    use_auto_device_map = (device == "auto")
+    effective_device = "cuda" if use_auto_device_map else device
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        dtype=torch.float16 if device == "cuda" else torch.float32,
-        device_map=device if device == "cuda" else None,
+        dtype=torch.float16 if effective_device == "cuda" else torch.float32,
+        device_map="auto" if use_auto_device_map else (effective_device if effective_device == "cuda" else None),
         trust_remote_code=True,
+        local_files_only=True,
     )
-    if device != "cuda":
+    if effective_device != "cuda" and not use_auto_device_map:
         model = model.to(device)
-    model.eval()
 
     steering = SteeringEngine(model, device)
 
@@ -280,7 +302,7 @@ def run_evaluation(model_name, trait, output_dir, device, alphas=None,
 
     steering.clear()
     del model, tokenizer
-    if device == "cuda":
+    if "cuda" in device:
         torch.cuda.empty_cache()
     return True
 
@@ -301,7 +323,7 @@ def main():
 
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
-    if device == "cuda":
+    if device == "cuda" or device == "auto":
         print(f"GPU: {torch.cuda.get_device_name(0)}")
         free_mem = torch.cuda.mem_get_info()[0] / (1024**3)
         print(f"Free VRAM: {free_mem:.1f} GB")
