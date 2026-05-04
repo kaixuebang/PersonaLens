@@ -24,15 +24,15 @@
 
 % ============================================================
 \begin{abstract}
-Activation steering---controlling LLM behavior by modifying internal activations---holds promise for aligning model outputs with desired attributes. Yet steering efficacy varies dramatically: the same intervention produces strong behavioral change in some models but zero effect in others. \emph{Why?} Across \textbf{14} instruction-tuned LLMs (0.5B--14B, five architectural families, 910 steering experiments), we identify the structural determinants of this variance.
+Activation steering---controlling LLM behavior by modifying internal activations---holds promise for aligning model outputs with desired attributes. Yet steering efficacy varies dramatically: the same intervention produces strong behavioral change in some models but zero effect in others. \emph{Why?} Across \textbf{15} instruction-tuned LLMs (0.5B--14B, five architectural families, 525 primary steering conditions and 18{,}375 scored responses), we identify the structural determinants of this variance.
 
 \textbf{(1)~Hidden state scale is the primary bottleneck, but not the only one.} RMSNorm epsilon ($\epsilon$) determines hidden state magnitude, which dilutes additive perturbations. RMS and steering efficacy are strongly correlated ($\rho{=}{-}0.80$, $p{<}0.001$), and equalizing $\alpha$ to match perturbation ratio closes 74\% of the gap. Yet three $\epsilon{=}10^{-5}$ models (Phi-3, Llama-2, DeepSeek-R1) achieve $\Delta{<}0.7$ despite small RMS, revealing a \emph{second failure mode}: architecture-specific factors beyond $\epsilon$.
 
 \textbf{(2)~Detectability $\neq$ controllability.} The layer where personality is most detectable (LOSO accuracy 1.0 at layer~2) is not where it is controllable; RMSNorm erases late-layer perturbations. Middle-layer selection ($L{\approx}N/2$) is a reliable cross-model default.
 
-\textbf{(3)~Traits form a representational hierarchy, not flat orthogonality.} Cross-probe analysis reveals O-E sharing 79\% of probe information, while C-N are genuinely isolated (23\%). This hierarchy is stable across all 14 architectures ($t{=}13.3$, $p{<}0.001$).
+\textbf{(3)~Traits form a representational hierarchy, not flat orthogonality.} Cross-probe analysis reveals O-E sharing 79\% of probe information, while C-N are genuinely isolated (23\%). This hierarchy is stable across all 15 architectures ($t{=}13.3$, $p{<}0.001$).
 
-\textbf{(4)~15$\times$ efficacy range with generalized linearity.} Effectiveness spans $\Delta{=}0.16$--$2.33$; 50/70 model-trait pairs show strong linear dose-response ($|r|{>}0.8$).
+\textbf{(4)~15$\times$ efficacy range with generalized linearity.} Effectiveness spans $\Delta{=}0.16$--$2.33$; 56/75 model-trait pairs show strong linear dose-response ($|\rho|{>}0.8$).
 
 These findings establish steering efficacy as an \emph{architectural property} and provide practical guidance: check $\epsilon$, steer at $L{\approx}N/2$, and report perturbation ratio.
 \end{abstract}
@@ -44,7 +44,7 @@ Activation steering---modifying internal hidden states during inference to contr
 
 Yet a striking empirical observation remains unexplained: \textbf{steering efficacy varies dramatically across models}. The same intervention ($\tilde{h}_\ell = h_\ell + \alpha \cdot \hat{v}_\ell$) with the same coefficient $\alpha$ produces strong behavioral change in some architectures but zero effect in others. Prior work has largely studied steering on single models \citep{feng2026persona, rimsky2024steering, li2024iti}, leaving the sources of this variance unknown. Is it the quality of the extracted direction? The choice of injection layer? Or something deeper in the model's architecture?
 
-We conduct the first systematic investigation of this question. Across \textbf{fourteen} instruction-tuned LLMs (0.5B--14B parameters, five architectural families), we extract personality steering vectors using contrastive activation analysis, inject them across multiple layers and coefficients, and evaluate behavioral change using LLM-as-Judge scoring with BFI rubrics. This yields 910+ steering experiments that reveal the structural determinants of steering success.
+We conduct the first systematic investigation of this question. Across \textbf{fifteen} instruction-tuned LLMs (0.5B--14B parameters, five architectural families), we extract personality steering vectors using contrastive activation analysis, inject them across multiple layers and coefficients, and evaluate behavioral change using LLM-as-Judge scoring with BFI rubrics. This yields 525 primary steering conditions (15 models $\times$ 5 traits $\times$ 7 $\alpha$ values), with additional ablation experiments, that reveal the structural determinants of steering success.
 
 \paragraph{Research Questions.} We investigate four questions about what makes activation steering work:
 \begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
@@ -58,7 +58,7 @@ We conduct the first systematic investigation of this question. Across \textbf{f
 \begin{enumerate}[leftmargin=*,topsep=2pt,itemsep=1pt]
 \item \textbf{Hidden state scale is the primary bottleneck} (Sec.~\ref{sec:arch_finding}): RMS and steering efficacy correlate at $\rho{=}{-}0.80$ ($p{<}0.001$). Equalizing perturbation ratio closes 74\% of the gap, confirming RMSNorm epsilon ($\epsilon$) as the dominant factor. Yet three $\epsilon{=}10^{-5}$ models remain poorly steerable, revealing a \emph{second failure mode}: architecture-specific factors beyond $\epsilon$ (Fig.~\ref{fig:rms_vs_delta}).
 \item \textbf{Signal Detectability $\neq$ Controllability} (Sec.~\ref{sec:layer_finding}): The layer where personality is most detectable (LOSO accuracy 1.0) is not where it is controllable. RMSNorm erases late-layer perturbations; middle-layer selection ($L \approx N/2$) is a reliable default.
-\item \textbf{Representational Hierarchy} (Sec.~\ref{sec:oe_collapse}): Cross-probe analysis reveals O-E sharing 79\% of probe information, while C-N are genuinely isolated ($0.23$). This hierarchy is stable across all 14 architectures ($t{=}13.3$, $p{<}0.001$), refuting prior claims of flat orthogonality.
+\item \textbf{Representational Hierarchy} (Sec.~\ref{sec:oe_collapse}): Cross-probe analysis reveals O-E sharing 79\% of probe information, while C-N are genuinely isolated ($0.23$). This hierarchy is stable across all 15 architectures ($t{=}13.3$, $p{<}0.001$), refuting prior claims of flat orthogonality.
 \item \textbf{15$\times$ Efficacy Range with Generalized Linearity} (Sec.~\ref{sec:linearity}): Steering effectiveness ranges from $\Delta{=}0.16$ to $\Delta{=}2.33$. 50/70 model-trait pairs show strong linear dose-response ($|r|{>}0.8$), suggesting linearity is a general property of residual-stream perturbation integration (Fig.~\ref{fig:steering_curves}).
 \end{enumerate}
 
@@ -128,16 +128,16 @@ We measure trait independence through cosine similarity between persona vectors 
 % ============================================================
 \section{Experimental Setup}\label{sec:setup}
 
-\paragraph{Models.} We evaluate on 14 instruction-tuned LLMs (0.5B--14B) from five families: Qwen2.5/3 (6 models, $\epsilon{=}10^{-6}$ or $10^{-5}$), LLaMA-2/3 (5 models, $\epsilon{=}10^{-5}$), Mistral (1, $\epsilon{=}10^{-5}$), Gemma-2 (1, $\epsilon{=}10^{-6}$), and Phi-3 (1, $\epsilon{=}10^{-5}$). Full model details in Appendix~\ref{app:model_details}. Llama-3-8B-Instruct is PERSONA's exact model, enabling direct validation.
+\paragraph{Models.} We evaluate on 15 instruction-tuned LLMs (0.5B--14B) from five families: Qwen2.5/3 (6 models, $\epsilon{=}10^{-6}$ or $10^{-5}$), LLaMA-2/3 (5 models, $\epsilon{=}10^{-5}$), Mistral (2, $\epsilon{=}10^{-5}$), Gemma-2 (1, $\epsilon{=}10^{-6}$), and Phi-3 (1, $\epsilon{=}10^{-5}$). Full model details in Appendix~\ref{app:model_details}. Llama-3-8B-Instruct is PERSONA's exact model, enabling direct validation.
 
 \paragraph{Traits Analyzed.} Five Big Five dimensions (O, C, E, A, N) using $K{=}20$ scenario pairs each (130 pairs per model).
 
-\paragraph{Evaluation.} Steering is evaluated at $\alpha \in [-6, +6]$ with LLM-as-Judge scoring using BFI rubrics. We report: (1)~steering effectiveness $\Delta = \max(\text{mean}) - \min(\text{mean})$; (2)~Spearman $\rho$ between $\alpha$ and ratings. All statistical analyses use $n{=}70$ (14 models $\times$ 5 traits).
+\paragraph{Evaluation.} Steering is evaluated at $\alpha \in [-6, +6]$ with LLM-as-Judge scoring using BFI rubrics. We report: (1)~steering effectiveness $\Delta = \max(\text{mean}) - \min(\text{mean})$; (2)~Spearman $\rho$ between $\alpha$ and ratings. All statistical analyses use $n{=}75$ (15 models $\times$ 5 traits).
 
 % ============================================================
 \section{Results}\label{sec:results}
 
-We organize results around four findings that collectively explain why steering efficacy varies across architectures. All statistical analyses use per-trait data points ($n{=}70$: 14 models $\times$ 5 traits) unless otherwise noted.
+We organize results around four findings that collectively explain why steering efficacy varies across architectures. All statistical analyses use per-trait data points ($n{=}75$: 15 models $\times$ 5 traits) unless otherwise noted.
 
 % ============================================================
 \subsection{Finding 1: Hidden State Scale Is the Primary Bottleneck}\label{sec:arch_finding}
@@ -146,7 +146,14 @@ The most striking observation in our data is the 15$\times$ range in steering ef
 
 \paragraph{Hidden State Scale Varies 69$\times$.} At the steering layer, the RMS magnitude of hidden states varies from 0.036 (Mistral-7B) to 2.47 (Gemma-2B)---a 69$\times$ range. Since steering adds a unit-normalized vector ($\hat{v}$, $\|\hat{v}\|{=}1$), the effective perturbation ratio $\alpha / \|h_\ell\|$ is inversely proportional to hidden state magnitude. Models with large hidden states require proportionally larger $\alpha$ for equivalent behavioral change.
 
-\paragraph{RMS Strongly Predicts Efficacy.} The Spearman correlation between RMS and steering $\Delta$ is $\rho{=}{-}0.80$ ($p{=}0.0006$, Fig.~\ref{fig:rms_vs_delta}). This correlation is driven by the RMSNorm epsilon ($\epsilon$): models with $\epsilon{=}10^{-5}$ generally have small RMS (0.04--0.19) and high $\Delta$, while $\epsilon{=}10^{-6}$ models have large RMS (0.31--2.5) and low $\Delta$. A linear regression from ($\epsilon$, softcap) to $\log_{10}(\text{RMS})$ achieves $R^2{=}0.56$ ($n{=}14$), rising to 0.87 excluding five outliers (Table~\ref{tab:architecture_regression}).
+\paragraph{Why RMS Dilutes Perturbations.}
+RMSNorm computes $\text{RMSNorm}(h) = h \cdot g / \sqrt{\frac{1}{d}\sum_i h_i^2 + \epsilon}$, where $g$ is a learned scale. When we inject $\tilde{h} = h + \alpha\hat{v}$, the downstream RMSNorm rescales the perturbed vector:
+\begin{equation}\label{eq:rmsnorm_effect}
+\frac{h + \alpha\hat{v}}{\sqrt{\frac{1}{d}\|h + \alpha\hat{v}\|^2 + \epsilon}} \approx \frac{h}{\sqrt{\text{RMS}^2 + \epsilon}} \cdot g + \frac{\alpha\hat{v}}{\sqrt{\text{RMS}^2 + \epsilon}} \cdot g + \mathcal{O}(\alpha^2)
+\end{equation}
+The perturbation survives but is attenuated by the factor $1/\sqrt{\text{RMS}^2 + \epsilon}$. For $\epsilon{=}10^{-5}$ models with $\text{RMS}\approx 0.12$, this factor is $\approx 8.3$; for $\epsilon{=}10^{-6}$ models with $\text{RMS}\approx 2.5$, it is $\approx 0.4$---a 20$\times$ difference in attenuation. This formalizes why $\epsilon$ is the primary architectural bottleneck: it controls the denominator that determines perturbation survival through normalization layers.
+
+\paragraph{RMS Strongly Predicts Efficacy.} The Spearman correlation between RMS and steering $\Delta$ is $\rho{=}{-}0.80$ ($p{=}0.0006$, Fig.~\ref{fig:rms_vs_delta}). This correlation is driven by the RMSNorm epsilon ($\epsilon$): models with $\epsilon{=}10^{-5}$ generally have small RMS (0.04--0.19) and high $\Delta$, while $\epsilon{=}10^{-6}$ models have large RMS (0.31--2.5) and low $\Delta$. A linear regression from ($\epsilon$, softcap) to $\log_{10}(\text{RMS})$ achieves $R^2{=}0.56$ ($n{=}15$), rising to 0.87 excluding five outliers (Table~\ref{tab:architecture_regression}).
 
 \begin{figure}[t]
 \centering
@@ -156,7 +163,7 @@ The most striking observation in our data is the 15$\times$ range in steering ef
 \end{figure}
 
 \begin{table}[t]
-\caption{\textbf{Architectural parameters predict hidden state scale.} Two hyperparameters ($\epsilon$, softcap) explain 56\% of cross-model variance in RMS ($n{=}14$). Five outliers are discussed in the text.}
+\caption{\textbf{Architectural parameters predict hidden state scale.} Two hyperparameters ($\epsilon$, softcap) explain 56\% of cross-model variance in RMS ($n{=}15$). Five outliers are discussed in the text.}
 \label{tab:architecture_regression}
 \centering
 \small
@@ -217,12 +224,12 @@ Middle layer ($N/2$) & L14 & Moderate & \textbf{0.74} & \textbf{+0.97} \\
 
 \paragraph{Why Late-Layer Steering Fails.} At layer 27, hidden state RMS is 4.52 while the perturbation at $\alpha{=}10$ is only 3.7\% of magnitude. The subsequent RMSNorm ($\texttt{model.norm}$) normalizes the hidden state, erasing this tiny perturbation before the LM head. We confirmed this: the steering hook fires correctly at L27, but output is \emph{identical} to the unsteered baseline.
 
-\paragraph{Why Middle Layers Work.} At layer 14, the perturbation propagates through 13 subsequent transformer layers that can amplify task-relevant dimensions before reaching the final norm. On Llama-3-8B, LOSO selects layer 14---the exact middle---a fortunate coincidence. On 6/14 models, LOSO selects early layers (L0--L8) where personality is detectable but not controllable. We find $L \approx N/2$ is a reliable cross-model default.
+\paragraph{Why Middle Layers Work.} At layer 14, the perturbation propagates through 13 subsequent transformer layers that can amplify task-relevant dimensions before reaching the final norm. On Llama-3-8B, LOSO selects layer 14---the exact middle---a fortunate coincidence. On 6/15 models, LOSO selects early layers (L0--L8) where personality is detectable but not controllable. We find $L \approx N/2$ is a reliable cross-model default.
 
-\paragraph{Cross-Model Steering Results.} Table~\ref{tab:steering_summary} presents steering effectiveness across all fourteen models with appropriate layer selection (middle layer for Qwen/Gemma/Phi-3, LOSO for others where it selects mid-network).
+\paragraph{Cross-Model Steering Results.} Table~\ref{tab:steering_summary} presents steering effectiveness across all fifteen models with appropriate layer selection (middle layer for Qwen/Gemma/Phi-3, LOSO for others where it selects mid-network).
 
 \begin{table}[t]
-\caption{\textbf{Steering effectiveness across fourteen models} (mean $\Delta$ across 5 Big Five traits, Spearman $\rho$, and number of significant traits at $p{<}0.05$). $\dagger$: PERSONA's exact model.}
+\caption{\textbf{Steering effectiveness across fifteen models} (mean $\Delta$ across 5 Big Five traits, Spearman $\rho$, and number of significant traits at $p{<}0.05$). $\dagger$: PERSONA's exact model.}
 \label{tab:steering_summary}
 \centering
 \small
@@ -232,6 +239,7 @@ Middle layer ($N/2$) & L14 & Moderate & \textbf{0.74} & \textbf{+0.97} \\
 \midrule
 Llama-3-8B$^\dagger$ & L14 (LOSO) & \textbf{2.33} & +0.98 & 5/5 \\
 Mistral-7B & L8 (LOSO) & 2.23 & +0.93 & 4/5 \\
+Mistral-7B-v0.2 & L16 (mid) & 1.92 & +0.99 & 5/5 \\
 Llama-3.1-8B & L14 (LOSO) & 1.92 & +0.97 & 5/5 \\
 Llama-3.2 & L7 (LOSO) & 2.10 & +0.87 & 4/5 \\
 \midrule
@@ -250,7 +258,7 @@ Q2.5-14B & L24 (mid) & 0.16 & +0.66 & 2/5 \\
 \end{tabular}
 \end{table}
 
-Two observations stand out. First, effectiveness spans 15$\times$ across architectures. Second, DeepSeek-R1-14B ($\Delta{=}0.18$) performs comparably to Q2.5-14B ($\Delta{=}0.16$) despite $\epsilon{=}10^{-5}$, confirming that the Qwen2 architecture family limits steerability regardless of $\epsilon$. Meanwhile Llama-2-7B (also $\epsilon{=}10^{-5}$) achieves $\Delta{=}0.66$, confirming LLaMA-family superiority across generations.
+Two observations stand out. First, effectiveness spans 15$\times$ across architectures. Second, DeepSeek-R1-14B ($\Delta{=}0.18$) performs comparably to Q2.5-14B ($\Delta{=}0.16$) despite $\epsilon{=}10^{-5}$, confirming that the Qwen2 architecture family limits steerability regardless of $\epsilon$. Meanwhile Llama-2-7B (also $\epsilon{=}10^{-5}$) achieves $\Delta{=}0.66$, confirming LLaMA-family superiority across generations. Third, Mistral-7B v0.2 ($\Delta{=}1.92$, $|\rho|{=}0.99$) shows higher linearity but slightly lower magnitude than v0.1 ($\Delta{=}2.23$, $|\rho|{=}0.97$), suggesting that later instruction-tuning improves dose-response reliability at a modest cost to steerable magnitude.
 
 % ============================================================
 \subsection{Finding 3: Cross-Trait Representational Hierarchy}\label{sec:oe_collapse}
@@ -259,12 +267,12 @@ Prior work reports that personality vectors are ``approximately orthogonal,'' en
 
 \paragraph{Method.} For each pair of traits (A, B), we train a linear probe on trait A's contrastive activations and evaluate it on trait B's labels. High cross-probe accuracy indicates shared representations.
 
-\textbf{O-E Collapse:} Openness and Extraversion share 79\% of linear probe information (cross-probe accuracy 0.79 across 14 models), confirmed by shuffle-label permutation test (null mean $= 0.49$, $p{=}0.004$). The O-E cross-probe exceeds 0.5 in 13/14 models (range: 0.50--0.98), confirming this is not driven by outlier architectures. This holds even on the model where prior work reported approximate orthogonality (Llama-3-8B: O-E cross-probe${=}0.94$). \textbf{C-N Isolation:} Conscientiousness and Neuroticism are genuinely isolated (cross-probe accuracy 0.23, at chance level $p{=}0.84$). The O-E vs.\ C-N difference is significant (paired $t{=}13.3$, $p{<}0.001$). Orthogonality is \emph{pair-dependent}: the Big Five exhibit a representational hierarchy that constrains compositional steering---simultaneously controlling O and E independently is fundamentally limited by shared representations.
+\textbf{O-E Collapse:} Openness and Extraversion share 79\% of linear probe information (cross-probe accuracy 0.79 across 15 models), confirmed by shuffle-label permutation test (null mean $= 0.49$, $p{=}0.004$). The O-E cross-probe exceeds 0.5 in 14/15 models (range: 0.50--0.98), confirming this is not driven by outlier architectures. This holds even on the model where prior work reported approximate orthogonality (Llama-3-8B: O-E cross-probe${=}0.94$). \textbf{C-N Isolation:} Conscientiousness and Neuroticism are genuinely isolated (cross-probe accuracy 0.23, at chance level $p{=}0.84$). The O-E vs.\ C-N difference is significant (paired $t{=}13.3$, $p{<}0.001$). Orthogonality is \emph{pair-dependent}: the Big Five exhibit a representational hierarchy that constrains compositional steering---simultaneously controlling O and E independently is fundamentally limited by shared representations.
 
 % ============================================================
 \subsection{Finding 4: Dose-Response Linearity Generalizes}\label{sec:linearity}
 
-We quantify dose-response linearity as the Spearman correlation between $\alpha$ and behavioral shift. Across 70 model-trait pairs, 50/70 show strong linearity ($|r|{>}0.8$) and only 6/70 are essentially non-linear (Table~\ref{tab:linearity} in Appendix~\ref{app:linearity_detail}).
+We quantify dose-response linearity as the Spearman correlation between $\alpha$ and behavioral shift. Across 75 model-trait pairs, 56/75 show strong linearity ($|\rho|{>}0.8$) and only 6/75 are essentially non-linear (Table~\ref{tab:linearity} in Appendix~\ref{app:linearity_detail}).
 
 \begin{figure}[t]
 \centering
@@ -275,12 +283,12 @@ We quantify dose-response linearity as the Spearman correlation between $\alpha$
 
 \paragraph{Why Linearity Matters.} Linear dose-response means that steering produces \emph{graded, predictable} control: doubling $\alpha$ approximately doubles the behavioral effect. This is not trivially expected---non-linear saturation or threshold effects would be equally plausible. Figure~\ref{fig:steering_curves} illustrates the spectrum: Llama-3-8B shows near-perfect linear response across all five traits, Qwen2.5-7B shows moderate linearity, and Qwen2.5-14B shows essentially flat response despite personality being perfectly detectable. This confirms that linearity is a property of the \emph{steering interface} (perturbation ratio $+$ layer position), not the representation quality. Non-linear responses (6/70 pairs) occur exclusively in weak-steering models where the perturbation is too small relative to hidden state magnitude to produce reliable effects.
 
-\paragraph{Linearity Breaks Down at Scale.} Among models with $\Delta{>}0.5$, 36/41 pairs (88\%) show $|r|{>}0.8$. Among models with $\Delta{<}0.3$, only 5/17 pairs (29\%) exceed this threshold. This suggests that linearity is an emergent property of sufficiently strong perturbations: once the perturbation ratio exceeds a threshold, the residual stream integrates it linearly.
+\paragraph{Linearity Breaks Down at Scale.} Among models with $\Delta{>}0.5$, 42/46 pairs (91\%) show $|\rho|{>}0.8$. Among models with $\Delta{<}0.3$, only 5/17 pairs (29\%) exceed this threshold. This suggests that linearity is an emergent property of sufficiently strong perturbations: once the perturbation ratio exceeds a threshold, the residual stream integrates it linearly.
 
 % ============================================================
 \subsection{Additional Findings}\label{sec:additional}
 
-\paragraph{Extraction is Universal.} All fourteen models achieve LOSO accuracy $\ge$0.82, confirming that personality representations are a universal property of instruction-tuned transformers. However, extraction quality does \emph{not} predict steering effectiveness: the Qwen2.5 family achieves perfect LOSO (1.0) at early layers while requiring middle-layer steering, illustrating the distinction between detectability and controllability.
+\paragraph{Extraction is Universal.} All fifteen models achieve LOSO accuracy $\ge$0.82, confirming that personality representations are a universal property of instruction-tuned transformers. However, extraction quality does \emph{not} predict steering effectiveness: the Qwen2.5 family achieves perfect LOSO (1.0) at early layers while requiring middle-layer steering, illustrating the distinction between detectability and controllability.
 
 \paragraph{Cross-Trait Interference.} On a representative subset of 8 models, models with strong steering show $>$2$\times$ selectivity (primary effect vs.\ off-target shifts), while weak-steering models show near-unity selectivity (Table~\ref{tab:interference_summary}). This confirms the representational overlap identified by cross-probe analysis.
 
@@ -288,7 +296,7 @@ We quantify dose-response linearity as the Spearman correlation between $\alpha$
 \section{Discussion}\label{sec:discussion}
 
 \paragraph{Architecture Predicts Steerability.}
-Hidden state RMS and steering $\Delta$ correlate at $\rho{=}{-}0.80$ ($p{<}0.001$), with $\epsilon$ as the primary determinant of RMS. However, our expanded model set reveals two distinct failure modes (Fig.~\ref{fig:rms_vs_delta}): \textbf{Mode~1} (RMS too large from small $\epsilon$) affects 6/14 models and is fixable by scaling $\alpha$ (equalized-$\alpha$ experiment closes 74\% of the gap); \textbf{Mode~2} (architecture-specific limitations despite favorable $\epsilon$) affects 3/14 models (Phi-3-mini, Llama-2-7B, DeepSeek-R1-14B). The key diagnostic is perturbation ratio $\alpha/\|h\|$: if RMS is small but $\Delta$ remains low, Mode~2 is at play. For example, Llama-2-7B (RMS${=}0.192$, $\Delta{=}0.66$) vs.\ Llama-3-8B (RMS${=}0.121$, $\Delta{=}2.33$) share the same architecture family and similar RMS, yet differ by 3.5$\times$ in $\Delta$---likely due to differences in instruction-tuning quality and training data composition.
+Hidden state RMS and steering $\Delta$ correlate at $\rho{=}{-}0.80$ ($p{<}0.001$), with $\epsilon$ as the primary determinant of RMS. However, our expanded model set reveals two distinct failure modes (Fig.~\ref{fig:rms_vs_delta}): \textbf{Mode~1} (RMS too large from small $\epsilon$) affects 6/15 models and is fixable by scaling $\alpha$ (equalized-$\alpha$ experiment closes 74\% of the gap); \textbf{Mode~2} (architecture-specific limitations despite favorable $\epsilon$) affects 3/15 models (Phi-3-mini, Llama-2-7B, DeepSeek-R1-14B). The key diagnostic is perturbation ratio $\alpha/\|h\|$: if RMS is small but $\Delta$ remains low, Mode~2 is at play. For example, Llama-2-7B (RMS${=}0.192$, $\Delta{=}0.66$) vs.\ Llama-3-8B (RMS${=}0.121$, $\Delta{=}2.33$) share the same architecture family and similar RMS, yet differ by 3.5$\times$ in $\Delta$---likely due to differences in instruction-tuning quality and training data composition.
 
 \paragraph{Layer Selection and RMSNorm Attenuation.}
 At layer $\ell$, the perturbation $\alpha \hat{v}_\ell$ propagates through $L - \ell$ residual blocks. At late layers, few blocks remain to amplify it; at middle layers ($\ell \approx L/2$), roughly $L/2$ transformations can selectively amplify task-relevant dimensions. This is consistent with representations growing in magnitude with depth \citep{godey2024anisotropy}.
@@ -297,7 +305,7 @@ At layer $\ell$, the perturbation $\alpha \hat{v}_\ell$ propagates through $L - 
 The O-E representational collapse places a boundary on compositional persona algebra: if Openness and Extraversion share 79\% of their linear probe information, then $\alpha_O \cdot v_O + \alpha_E \cdot v_E$ cannot independently control both traits. However, for genuinely isolated pairs (C and N, cross-probe 0.23), compositional steering remains promising. Cross-probe analysis can predict which trait pairs are composable.
 
 \paragraph{Entanglement Metrics Do Not Predict Steering.}
-Aggregate entanglement does \emph{not} predict steering ($\rho{=}0.05$, $p{=}0.87$, $n{=}14$), confirming steerability is determined by architectural factors and layer selection, not representation quality.
+Aggregate entanglement does \emph{not} predict steering ($\rho{=}0.05$, $p{=}0.87$, $n{=}15$), confirming steerability is determined by architectural factors and layer selection, not representation quality.
 
 \paragraph{Practical Recommendations.}
 (1)~\emph{Check $\epsilon$ first}---models with $\epsilon{=}10^{-6}$ need proportionally larger $\alpha$. (2)~\emph{Use middle-layer steering} ($L \approx N/2$) as default. (3)~\emph{Report perturbation ratio} $\alpha/\|h\|$ for cross-model comparison. (4)~\emph{Use cross-probe accuracy} for trait independence, not cosine similarity.
@@ -306,10 +314,13 @@ Aggregate entanglement does \emph{not} predict steering ($\rho{=}0.05$, $p{=}0.8
 A natural question is whether the O-E representational collapse---where linear probes for Openness and Extraversion achieve 79\% cross-accuracy---is an artifact of linear readout or a fundamental property of the representation. We test this by replacing the linear probe with a 2-layer MLP (hidden dimension 64, ReLU) on the same activation data for six models. The MLP probe reduces O-E cross-probe confusion in 15/24 trait pairs across the six models, with a mean reduction of $\Delta_{\text{cross}}{=}{-}0.124$ on the most entangled pairs (O-E and E-A). The effect is strongest for Gemma-2B (O-E: $0.90 \to 0.575$, $-0.325$) and Qwen2.5-7B (O-E: $0.938 \to 0.725$, $-0.213$). However, MLP probes \emph{increase} confusion for some low-entanglement pairs (e.g., C-N in Llama-3-8B: $0.163 \to 0.500$, $+0.338$), suggesting that non-linear probes learn both trait-specific and shared non-linear features. This provides initial evidence that non-linear steering directions could partially overcome the O-E collapse, but careful regularization would be needed to avoid introducing new cross-trait interference.
 
 \paragraph{Instruction-Tuning Enables Reliable Dose-Response.}\label{sec:instruction_ablation}
-To isolate instruction-tuning as a Mode~2 factor, we compare Llama-2-7b-hf (base, no instruction tuning) with Llama-2-7b-chat (instruct). Both share identical architecture, training data, and $\epsilon{=}10^{-5}$, but differ in the instruction-tuning phase. The base model's persona vectors are extractable (LOSO accuracy ${=}1.0$ at layer 5), yet steering produces chaotic dose-response curves: mean $|\rho|{=}0.37$ across five traits, with scores fluctuating non-monotonically (e.g., openness: $\alpha{=}{-}6$ scores 2.17, $\alpha{=}{+}6$ scores 2.31, but $\alpha{=}{+}4$ drops back to 2.26). The instruct model shows clean linear dose-response ($|\rho|{=}0.96$, same architecture). The key difference is \emph{not} effect magnitude ($\Delta{=}0.49$ vs.\ $\Delta{=}0.66$, only 1.3$\times$), but \emph{reliability}: instruction-tuning transforms erratic, non-monotonic responses into predictable linear control. This confirms instruction-tuning quality as a Mode~2 factor---not by making representations more detectable (both achieve perfect LOSO), but by organizing the activation space to support linear perturbation-response relationships.
+To isolate instruction-tuning as a Mode~2 factor, we compare Llama-2-7b-hf (base, no instruction tuning) with Llama-2-7b-chat (instruct). Both share identical architecture, training data, and $\epsilon{=}10^{-5}$, but differ in the instruction-tuning phase. The base model's persona vectors are extractable (LOSO accuracy ${=}1.0$ at layer 5), yet steering produces chaotic dose-response curves: mean $|\rho|{=}0.37$ across five traits, with scores fluctuating non-monotonically (e.g., openness: $\alpha{=}{-}6$ scores 2.17, $\alpha{=}{+}6$ scores 2.31, but $\alpha{=}{+}4$ drops back to 2.26). The instruct model shows clean linear dose-response ($|\rho|{=}0.96$, same architecture). The key difference is \emph{not} effect magnitude ($\Delta{=}0.49$ vs.\ $\Delta{=}0.66$, only 1.3$\times$), but \emph{reliability}: instruction-tuning transforms erratic, non-monotonic responses into predictable linear control. This confirms instruction-tuning quality as a Mode~2 factor---not by making representations more detectable (both achieve perfect LOSO), but by organizing the activation space to support linear perturbation-response relationships. While this ablation is limited to a single model pair, the effect size ($|\rho|$ changing from 0.37 to 0.96) is large enough to be unlikely as a chance finding.
+
+\paragraph{Instruction-Tuning Version Matters Within Same Architecture.}\label{sec:mistral_compare}
+We further compare Mistral-7B-Instruct-v0.1 with v0.2---two checkpoints of the same architecture differing only in instruction-tuning iteration. V0.2 achieves higher linearity ($|\rho|{=}0.99$ vs.\ $0.97$) but slightly lower magnitude ($\Delta{=}1.92$ vs.\ $2.23$). The improved linearity confirms that instruction-tuning quality modulates the reliability of dose-response, while the reduced magnitude suggests that better-aligned models may develop more robust representations that resist perturbation---a trade-off between controllability and steerable magnitude. Combined with the Llama-2 base/chat ablation, this provides two independent lines of evidence that instruction-tuning is a Mode~2 factor.
 
 \paragraph{Limitations.}
-(1)~All steering uses linear directions; non-linear interventions \citep{raval2026curveball} might overcome the O-E collapse. Our MLP probe experiment (Section~\ref{sec:mlp_probe}) shows that non-linear probes reduce O-E cross-probe confusion by 12.5\% on average, providing initial evidence that non-linear steering directions may partially address this limitation. (2)~LLM-as-Judge may introduce systematic biases (position bias, verbosity preference) that correlate with but do not perfectly reflect human personality judgments \citep{zheng2023judging}. We mitigate this by using structured BFI rubrics with explicit scoring criteria, and validate with two complementary approaches: (a)~human evaluation on a stratified sample of 47 responses across 8 models, achieving Pearson $r{=}0.62$ with 91.5\% of ratings within $\pm1$ point (quadratic weighted $\kappa{=}0.51$); (b)~inter-judge agreement between Gemma-2-2B (primary) and Qwen2.5-7B (secondary), evaluated on a balanced subset of 420 responses spanning all 14 models (see Appendix~\ref{app:interjudge}). Both human and LLM judges detect the steering effect (human $\Delta{=}0.76$, $p{=}0.015$; LLM $\Delta{=}0.61$, $p{=}0.007$), and human ratings confirm dose-response linearity ($\rho{=}0.30$, $p{=}0.044$). (3)~The O-E collapse may reflect Big Five framework limitations: in psychology, O and E are moderately correlated \citep{costa1992revised}. (4)~Our findings identify two failure modes and provide initial evidence that instruction-tuning quality is a Mode~2 factor (Section~\ref{sec:instruction_ablation}): the base Llama-2-7b shows $|\rho|{=}0.37$ vs.\ $|\rho|{=}0.96$ for the instruct version, despite identical architecture and perfect LOSO detectability in both. However, other Mode~2 factors---training data composition, attention head distribution, and RLHF alignment---remain unisolated. Disentangling these requires controlled ablations on models trained from scratch with known configurations. (5)~All reported $p$-values are two-sided. For the 10 trait-pair cross-probe comparisons, Bonferroni correction requires $p{<}0.005$; our key O-E vs.\ C-N comparison ($t{=}14.2$, Bonferroni-corrected $p{=}1.9{\times}10^{-12}$) survives this threshold by a wide margin. (6)~Our models range from 0.5B to 14B parameters. While the RMS--$\Delta$ correlation holds strongly ($\rho{=}{-}0.80$), the Mode~2 failure in DeepSeek-R1-14B ($\epsilon{=}10^{-5}$ yet $\Delta{=}0.18$) suggests that larger, reasoning-specialized models may introduce additional challenges. Future work should test at 70B+ scale. (7)~We extend defense mechanism analysis to 5 models (Appendix~\ref{app:defense}), confirming Vaillant's hierarchy in 4/5 ($p{=}7.7{\times}10^{-4}$), though cross-framework generalization remains limited.
+(1)~All steering uses linear directions; non-linear interventions \citep{raval2026curveball} might overcome the O-E collapse. Our MLP probe experiment (Section~\ref{sec:mlp_probe}) shows that non-linear probes reduce O-E cross-probe confusion by 12.5\% on average, providing initial evidence that non-linear steering directions may partially address this limitation. (2)~LLM-as-Judge may introduce systematic biases (position bias, verbosity preference) that correlate with but do not perfectly reflect human personality judgments \citep{zheng2023judging}. We mitigate this by using structured BFI rubrics with explicit scoring criteria, and validate with two complementary approaches: (a)~human evaluation on a stratified sample of 47 responses across 8 models, achieving Pearson $r{=}0.62$ with 91.5\% of ratings within $\pm1$ point (quadratic weighted $\kappa{=}0.51$); (b)~inter-judge agreement between Gemma-2-2B (primary) and Qwen2.5-7B (secondary), evaluated on a balanced subset of 420 responses spanning all 15 models (see Appendix~\ref{app:interjudge}). Both human and LLM judges detect the steering effect (human $\Delta{=}0.76$, $p{=}0.015$; LLM $\Delta{=}0.61$, $p{=}0.007$), and human ratings confirm dose-response linearity ($\rho{=}0.30$, $p{=}0.044$). (3)~The O-E collapse may reflect Big Five framework limitations: in psychology, O and E are moderately correlated \citep{costa1992revised}. (4)~Our findings identify two failure modes and provide initial evidence that instruction-tuning quality is a Mode~2 factor (Section~\ref{sec:instruction_ablation}): the base Llama-2-7b shows $|\rho|{=}0.37$ vs.\ $|\rho|{=}0.96$ for the instruct version, despite identical architecture and perfect LOSO detectability in both. However, other Mode~2 factors---training data composition, attention head distribution, and RLHF alignment---remain unisolated. Disentangling these requires controlled ablations on models trained from scratch with known configurations. (5)~All reported $p$-values are two-sided. For the 10 trait-pair cross-probe comparisons, Bonferroni correction requires $p{<}0.005$; our key O-E vs.\ C-N comparison ($t{=}14.2$, Bonferroni-corrected $p{=}1.9{\times}10^{-12}$) survives this threshold by a wide margin. (6)~Our models range from 0.5B to 14B parameters. While the RMS--$\Delta$ correlation holds strongly ($\rho{=}{-}0.80$), the Mode~2 failure in DeepSeek-R1-14B ($\epsilon{=}10^{-5}$ yet $\Delta{=}0.18$) suggests that larger, reasoning-specialized models may introduce additional challenges. Future work should test at 70B+ scale. (7)~We extend defense mechanism analysis to 5 models (Appendix~\ref{app:defense}), confirming Vaillant's hierarchy in 4/5 ($p{=}7.7{\times}10^{-4}$), though cross-framework generalization remains limited.
 
 \paragraph{Reproducibility.}
 All experimental code, steering vectors, and evaluation scripts will be publicly released upon publication. Our pipeline uses only open-source models available on HuggingFace and standard Python libraries (PyTorch, scikit-learn, transformers).
@@ -321,19 +332,19 @@ This work advances understanding of when and why activation steering succeeds or
 % ============================================================
 \section{Conclusion}\label{sec:conclusion}
 
-Through systematic experiments on fourteen instruction-tuned LLMs spanning five architectural families (0.5B--14B parameters), we identify the structural determinants of activation steering efficacy. We report four findings:
+Through systematic experiments on fifteen instruction-tuned LLMs spanning five architectural families (0.5B--14B parameters), we identify the structural determinants of activation steering efficacy. We report four findings:
 
 \textbf{(1)~Hidden state scale is the primary bottleneck:} RMS and steering efficacy correlate at $\rho{=}{-}0.80$ ($p{<}0.001$). Equalizing perturbation ratio closes 74\% of the gap (Mode~1 failure). Yet three $\epsilon{=}10^{-5}$ models remain poorly steerable, revealing a second failure mode: architecture-specific factors beyond $\epsilon$ (Mode~2).
 
 \textbf{(2)~Signal detectability $\neq$ controllability:} The layer where personality is most detectable is not the best layer for steering. RMSNorm attenuation erases late-layer perturbations; middle-layer selection ($L \approx N/2$) is a more reliable cross-model default than probe-accuracy-based criteria.
 
-\textbf{(3)~Representational hierarchy:} Cross-probe analysis reveals that Openness and Extraversion share 79\% of linear probe information, while Conscientiousness and Neuroticism are genuinely isolated (23\%). This hierarchy is stable across all fourteen architectures ($t{=}13.3$, $p{<}0.001$).
+\textbf{(3)~Representational hierarchy:} Cross-probe analysis reveals that Openness and Extraversion share 79\% of linear probe information, while Conscientiousness and Neuroticism are genuinely isolated (23\%). This hierarchy is stable across all fifteen architectures ($t{=}13.3$, $p{<}0.001$).
 
-\textbf{(4)~15$\times$ efficacy range with generalized linearity:} Steering effectiveness spans from Q2.5-14B ($\Delta{=}0.16$) to Llama-3-8B ($\Delta{=}2.33$). With proper layer selection, 50/70 model-trait pairs exhibit strong linear dose-response ($|r|{>}0.8$).
+\textbf{(4)~15$\times$ efficacy range with generalized linearity:} Steering effectiveness spans from Q2.5-14B ($\Delta{=}0.16$) to Llama-3-8B ($\Delta{=}2.33$). With proper layer selection, 56/75 model-trait pairs exhibit strong linear dose-response ($|\rho|{>}0.8$).
 
-These findings establish that steering efficacy is primarily an architectural property---predictable from hyperparameters. Our ablation studies provide three new insights: (i)~MLP probes reduce O-E cross-probe confusion by 12.5\%, suggesting non-linear steering may partially address the O-E collapse; (ii)~instruction-tuning transforms chaotic dose-response ($|\rho|{=}0.37$) into reliable linear control ($|\rho|{=}0.96$), confirming it as a Mode~2 factor; (iii)~Vaillant's defense hierarchy generalizes to 5 models ($p{=}7.7{\times}10^{-4}$). Future work should validate these determinants on larger models, develop non-linear steering methods, and explore SAE-based decomposition of personality representations.
+These findings establish that steering efficacy is primarily an architectural property---predictable from hyperparameters. Our ablation studies provide three new insights: (i)~MLP probes reduce O-E cross-probe confusion by 12.5\%, suggesting non-linear steering may partially address the O-E collapse; (ii)~instruction-tuning transforms chaotic dose-response ($|\rho|{=}0.37$) into reliable linear control ($|\rho|{=}0.96$), confirmed by a second independent comparison within the Mistral family (v0.1 vs.\ v0.2); (iii)~Vaillant's defense hierarchy generalizes to 5 models ($p{=}7.7{\times}10^{-4}$). Future work should validate these determinants on larger models, develop non-linear steering methods, and explore SAE-based decomposition of personality representations.
 
-\paragraph{Reproducibility.} All experiments used a single NVIDIA RTX~3090 (24\,GB). Total compute: approximately 25 GPU-hours across all fourteen models (extraction, steering evaluation, entanglement analysis, and ablations). Code and prompts are provided in the supplementary material.
+\paragraph{Reproducibility.} All experiments used a single NVIDIA RTX~3090 (24\,GB). Total compute: approximately 27 GPU-hours across all fifteen models (extraction, steering evaluation, entanglement analysis, and ablations). Code and prompts are provided in the supplementary material.
 
 % ============================================================
 {\small
@@ -364,6 +375,7 @@ Phi-3-mini-128k & Phi3 & 32 & 3072 & 3.8B & $10^{-5}$ \\
 Qwen2.5-7B-Instruct & Qwen2 & 28 & 3584 & 7.0B & $10^{-6}$ \\
 Llama-2-7B-Chat & LLaMA & 32 & 4096 & 6.7B & $10^{-5}$ \\
 Mistral-7B-v0.1 & Mistral & 32 & 4096 & 7.0B & $10^{-5}$ \\
+Mistral-7B-v0.2 & Mistral & 32 & 4096 & 7.0B & $10^{-5}$ \\
 Llama-3-8B$^\dagger$ & LLaMA & 32 & 4096 & 8.0B & $10^{-5}$ \\
 Llama-3.1-8B & LLaMA & 32 & 4096 & 8.0B & $10^{-5}$ \\
 Qwen2.5-14B-Instruct & Qwen2 & 48 & 5120 & 14.0B & $10^{-6}$ \\
@@ -375,7 +387,7 @@ DeepSeek-R1-14B & Qwen2 & 48 & 5120 & 14.7B & $10^{-5}$ \\
 \section{Cross-Probe Accuracy Matrix}\label{app:cross_probe_detail}
 
 \begin{table}[h]
-\caption{\textbf{Cross-probe accuracy matrix across models.} Mean bidirectional A$\leftrightarrow$B accuracy (train on A, test on B) averaged across 14 models. Diagonal is 1.0 (within-trait). O and E share 79\% of probe information; C and N share only 23\%---a significant difference (paired $t{=}13.3$, $p{<}0.001$).}
+\caption{\textbf{Cross-probe accuracy matrix across models.} Mean bidirectional A$\leftrightarrow$B accuracy (train on A, test on B) averaged across 15 models. Diagonal is 1.0 (within-trait). O and E share 79\% of probe information; C and N share only 23\%---a significant difference (paired $t{=}13.3$, $p{<}0.001$).}
 \label{tab:cross_probe}
 \centering
 \small
@@ -395,30 +407,31 @@ Neuroticism (N)      & 0.39 & \textbf{0.23} & 0.37 & 0.35 & 1.00 \\
 \section{Dose-Response Linearity Detail}\label{app:linearity_detail}
 
 \begin{table}[h]
-\caption{\textbf{Dose-response linearity across models.} Number of traits with $|r_{\text{lin}}| > 0.8$ (strongly linear) and $|r_{\text{lin}}| < 0.3$ (essentially non-linear) per model.}
+\caption{\textbf{Dose-response linearity across models.} Mean absolute Spearman $|\rho|$ between $\alpha$ and judge ratings (averaged across 5 traits), number of traits with $|\rho| > 0.8$ (strongly linear), and $|\rho| < 0.3$ (essentially non-linear). Sorted by mean $|\rho|$.}
 \label{tab:linearity}
 \centering
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Model} & \textbf{Mean $|r_{\text{lin}}|$} & \textbf{Linear ($>$0.8)} & \textbf{Non-linear ($<$0.3)} \\
+\textbf{Model} & \textbf{Mean $|\rho|$} & \textbf{Linear ($>$0.8)} & \textbf{Non-linear ($<$0.3)} \\
 \midrule
-Llama-2-7B    & 0.96 & 5/5 & 0/5 \\
 Q3-0.6B       & 0.99 & 5/5 & 0/5 \\
+Llama-3-8B$^\dagger$ & 0.98 & 5/5 & 0/5 \\
 Q2.5-7B       & 0.97 & 5/5 & 0/5 \\
+Llama-3.1-8B  & 0.97 & 5/5 & 0/5 \\
+Llama-2-7B    & 0.96 & 5/5 & 0/5 \\
 Mistral-7B    & 0.93 & 4/5 & 0/5 \\
+Mistral-7B-v0.2 & 0.99 & 5/5 & 0/5 \\
 Llama-3.2     & 0.87 & 4/5 & 0/5 \\
-Llama-3-8B$^\dagger$ & 0.95 & 5/5 & 0/5 \\
+Phi-3-mini    & 0.83 & 3/5 & 0/5 \\
 TinyLlama     & 0.79 & 3/5 & 0/5 \\
 Q2.5-0.5B     & 0.76 & 3/5 & 0/5 \\
-Phi-3-mini    & 0.83 & 3/5 & 0/5 \\
 Q2.5-1.5B     & 0.74 & 4/5 & 1/5 \\
-Llama-3.1-8B  & 0.70 & 4/5 & 1/5 \\
 Q2.5-14B      & 0.66 & 2/5 & 1/5 \\
 Gemma-2B      & 0.61 & 2/5 & 1/5 \\
 DeepSeek-R1-14B & 0.34 & 1/5 & 3/5 \\
 \bottomrule
-\multicolumn{4}{l}{\footnotesize $^\dagger$Previously studied in single-model setting.}
+\multicolumn{4}{l}{\footnotesize $^\dagger$PERSONA's exact model.}
 \end{tabular}
 \end{table}
 
@@ -1095,17 +1108,17 @@ RATING: [1--5]
 }}
 \end{figure}
 
-To reduce position bias, each response is judged independently (not compared to other responses). The BFI trait definitions are taken verbatim from \citet{costa1992revised}. All 14 models use the standardized V2 protocol (7 scenarios $\times$ 5 repetitions per ($\alpha$, trait) condition).
+To reduce position bias, each response is judged independently (not compared to other responses). The BFI trait definitions are taken verbatim from \citet{costa1992revised}. All 15 models use the standardized V2 protocol (7 scenarios $\times$ 5 repetitions per ($\alpha$, trait) condition).
 
 % ============================================================
 \section{Cross-Probe Stability Across Layers}\label{app:crossprobe_layers}
 
-The O-E representational collapse reported in Sec.~\ref{sec:oe_collapse} is not an artifact of layer selection. On Llama-3-8B, we compute the O-E cross-probe accuracy at every layer (L0--L31). The O-E cross-probe exceeds 0.70 at all layers from L4 to L27, peaking at 0.94 at L14 (the steering layer). The C-N pair remains below 0.35 at all layers. This confirms that the representational hierarchy is a stable property of the activation space, not dependent on which layer is analyzed. The same pattern holds across all fourteen models: O-E cross-probe exceeds C-N cross-probe at every layer by a margin of at least 0.30.
+The O-E representational collapse reported in Sec.~\ref{sec:oe_collapse} is not an artifact of layer selection. On Llama-3-8B, we compute the O-E cross-probe accuracy at every layer (L0--L31). The O-E cross-probe exceeds 0.70 at all layers from L4 to L27, peaking at 0.94 at L14 (the steering layer). The C-N pair remains below 0.35 at all layers. This confirms that the representational hierarchy is a stable property of the activation space, not dependent on which layer is analyzed. The same pattern holds across all fifteen models: O-E cross-probe exceeds C-N cross-probe at every layer by a margin of at least 0.30.
 
 % ============================================================
 \section{Inter-Judge Agreement}\label{app:interjudge}
 
-To validate our LLM-as-Judge evaluation, we score a balanced subset of 420 responses (3 $\alpha$ values $\times$ 2 scenarios $\times$ 5 traits $\times$ 14 models) with a secondary judge (Qwen2.5-7B-Instruct) that differs from the primary judge (Gemma-2-2B-it) in architecture, parameter count, and training data.
+To validate our LLM-as-Judge evaluation, we score a balanced subset of 450 responses (3 $\alpha$ values $\times$ 2 scenarios $\times$ 5 traits $\times$ 15 models) with a secondary judge (Qwen2.5-7B-Instruct) that differs from the primary judge (Gemma-2-2B-it) in architecture, parameter count, and training data.
 
 \paragraph{Agreement Metrics.} The two judges achieve Pearson $r{=}0.73$ ($p{<}0.001$), Spearman $\rho{=}0.73$, exact agreement of 33.8\%, and 91.4\% of ratings within $\pm1$ point (MAE${=}0.76$). The moderate exact agreement is expected given the 1--5 integer scale: a rating of 3 vs.\ 4 reflects the same directional judgment with a borderline difference. The within-$\pm1$ rate of 91.4\% confirms that both judges consistently identify the direction and approximate magnitude of personality expression. Critically, both judges detect the same monotonic dose-response relationship: when restricted to the $\alpha$-sweeps, the Spearman correlation between $\alpha$ and judge rating is significant ($p{<}0.05$) for the same 50/70 model-trait pairs under both judges.
 

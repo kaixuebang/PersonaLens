@@ -29,7 +29,6 @@
 \newlabel{sec:related}{{2}{2}{}{section.2}{}}
 \@writefile{toc}{\contentsline {paragraph}{Personality in LLMs.}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Representation Engineering and Steering.}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Reliability Concerns.}{2}{}\protected@file@percent }
 \citation{zou2023representation}
 \citation{rimsky2024steering}
 \citation{meng2022locating,bao2024emotion}
@@ -37,6 +36,7 @@
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:pipeline}{{1}{3}{}{figure.1}{}}
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {paragraph}{Reliability Concerns.}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}PersonaLens Framework}{3}{}\protected@file@percent }
 \newlabel{sec:method}{{3}{3}{}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Phases 1--2: Data Construction and Activation Collection}{3}{}\protected@file@percent }
@@ -49,8 +49,6 @@
 \newlabel{eq:steering}{{2}{3}{}{equation.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Cross-Trait Orthogonality Analysis}{3}{}\protected@file@percent }
 \newlabel{sec:orthogonality}{{3.4}{3}{}{subsection.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Hidden state scale predicts steering efficacy.} Each point is one model; color indicates architecture family. Spearman $\rho {=}{-}0.80$ ($p{<}0.001$). The three circled $\epsilon {=}10^{-5}$ models (Phi-3, Llama-2, DeepSeek-R1) achieve low $\Delta $ despite small RMS, revealing a \emph  {second failure mode}.}}{4}{}\protected@file@percent }
-\newlabel{fig:rms_vs_delta}{{2}{4}{}{figure.2}{}}
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{4}{}\protected@file@percent }
 \newlabel{sec:setup}{{4}{4}{}{section.4}{}}
@@ -62,43 +60,44 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Finding 1: Hidden State Scale Is the Primary Bottleneck}{4}{}\protected@file@percent }
 \newlabel{sec:arch_finding}{{5.1}{4}{}{subsection.5.1}{}}
 \@writefile{toc}{\contentsline {paragraph}{Hidden State Scale Varies 69$\times $.}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why RMS Dilutes Perturbations.}{4}{}\protected@file@percent }
+\newlabel{eq:rmsnorm_effect}{{3}{4}{}{equation.3}{}}
 \@writefile{toc}{\contentsline {paragraph}{RMS Strongly Predicts Efficacy.}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Two Failure Modes.}{4}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Architectural parameters predict hidden state scale.} Two hyperparameters ($\epsilon $, softcap) explain 56\% of cross-model variance in RMS ($n{=}14$). Five outliers are discussed in the text.}}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Hidden state scale predicts steering efficacy.} Each point is one model; color indicates architecture family. Spearman $\rho {=}{-}0.80$ ($p{<}0.001$). The three circled $\epsilon {=}10^{-5}$ models (Phi-3, Llama-2, DeepSeek-R1) achieve low $\Delta $ despite small RMS, revealing a \emph  {second failure mode}.}}{5}{}\protected@file@percent }
+\newlabel{fig:rms_vs_delta}{{2}{5}{}{figure.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Architectural parameters predict hidden state scale.} Two hyperparameters ($\epsilon $, softcap) explain 56\% of cross-model variance in RMS ($n{=}15$). Five outliers are discussed in the text.}}{5}{}\protected@file@percent }
 \newlabel{tab:architecture_regression}{{1}{5}{}{table.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Layer selection comparison for Qwen2.5-7B (Openness).} Three layer selection criteria and their steering outcomes. Only middle-layer steering produces effective control.}}{5}{}\protected@file@percent }
-\newlabel{tab:layer_comparison}{{2}{5}{}{table.2}{}}
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {paragraph}{Causal Validation: Equalized-$\alpha $.}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Finding 2: Signal Detectability $\neq  $ Controllability}{5}{}\protected@file@percent }
 \newlabel{sec:layer_finding}{{5.2}{5}{}{subsection.5.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{The Problem.}{5}{}\protected@file@percent }
 \citation{feng2026persona}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Steering effectiveness across fourteen models} (mean $\Delta $ across 5 Big Five traits, Spearman $\rho $, and number of significant traits at $p{<}0.05$). $\dagger $: PERSONA's exact model.}}{6}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Layer selection comparison for Qwen2.5-7B (Openness).} Three layer selection criteria and their steering outcomes. Only middle-layer steering produces effective control.}}{6}{}\protected@file@percent }
+\newlabel{tab:layer_comparison}{{2}{6}{}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Steering effectiveness across fifteen models} (mean $\Delta $ across 5 Big Five traits, Spearman $\rho $, and number of significant traits at $p{<}0.05$). $\dagger $: PERSONA's exact model.}}{6}{}\protected@file@percent }
 \newlabel{tab:steering_summary}{{3}{6}{}{table.3}{}}
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {paragraph}{The Problem.}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Why Late-Layer Steering Fails.}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Why Middle Layers Work.}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Cross-Model Steering Results.}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Finding 3: Cross-Trait Representational Hierarchy}{6}{}\protected@file@percent }
-\newlabel{sec:oe_collapse}{{5.3}{6}{}{subsection.5.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Method.}{6}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Representative steering curves.} Mean judge rating vs.\ $\alpha $ for three models spanning the efficacy range. Left: Llama-3-8B ($\varepsilon {=}10^{-5}$) shows strong monotonic response across all traits. Center: Qwen2.5-7B ($\varepsilon {=}10^{-6}$) shows weaker but still linear response. Right: Qwen2.5-14B ($\varepsilon {=}10^{-6}$) shows near-flat response---personality is detectable (LOSO${=}1.0$) but not controllable at this scale.}}{7}{}\protected@file@percent }
 \newlabel{fig:steering_curves}{{3}{7}{}{figure.3}{}}
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Finding 3: Cross-Trait Representational Hierarchy}{7}{}\protected@file@percent }
+\newlabel{sec:oe_collapse}{{5.3}{7}{}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Method.}{7}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Finding 4: Dose-Response Linearity Generalizes}{7}{}\protected@file@percent }
 \newlabel{sec:linearity}{{5.4}{7}{}{subsection.5.4}{}}
 \@writefile{toc}{\contentsline {paragraph}{Why Linearity Matters.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Linearity Breaks Down at Scale.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Additional Findings}{7}{}\protected@file@percent }
-\newlabel{sec:additional}{{5.5}{7}{}{subsection.5.5}{}}
-\@writefile{toc}{\contentsline {paragraph}{Extraction is Universal.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Cross-Trait Interference.}{7}{}\protected@file@percent }
 \citation{godey2024anisotropy}
-\citation{raval2026curveball}
-\citation{zheng2023judging}
-\citation{costa1992revised}
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {paragraph}{Linearity Breaks Down at Scale.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Additional Findings}{8}{}\protected@file@percent }
+\newlabel{sec:additional}{{5.5}{8}{}{subsection.5.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Extraction is Universal.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cross-Trait Interference.}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{8}{}\protected@file@percent }
 \newlabel{sec:discussion}{{6}{8}{}{section.6}{}}
 \@writefile{toc}{\contentsline {paragraph}{Architecture Predicts Steerability.}{8}{}\protected@file@percent }
@@ -108,18 +107,25 @@
 \@writefile{toc}{\contentsline {paragraph}{Practical Recommendations.}{8}{}\protected@file@percent }
 \newlabel{sec:mlp_probe}{{6}{8}{}{section.6}{}}
 \@writefile{toc}{\contentsline {paragraph}{Can Non-Linear Probes Overcome the O-E Collapse?}{8}{}\protected@file@percent }
-\newlabel{sec:instruction_ablation}{{6}{8}{}{section.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{Instruction-Tuning Enables Reliable Dose-Response.}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Limitations.}{8}{}\protected@file@percent }
+\citation{raval2026curveball}
+\citation{zheng2023judging}
+\citation{costa1992revised}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {paragraph}{Reproducibility.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{9}{}\protected@file@percent }
-\newlabel{sec:conclusion}{{7}{9}{}{section.7}{}}
+\newlabel{sec:instruction_ablation}{{6}{9}{}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Instruction-Tuning Enables Reliable Dose-Response.}{9}{}\protected@file@percent }
+\newlabel{sec:mistral_compare}{{6}{9}{}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Instruction-Tuning Version Matters Within Same Architecture.}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{9}{}\protected@file@percent }
 \bibstyle{unsrtnat}
 \bibdata{references}
 \bibcite{zou2023representation}{{1}{2023}{{Zou et~al.}}{{Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin, Mazeika, Dombrowski, et~al.}}}
 \bibcite{li2024iti}{{2}{2024}{{Li et~al.}}{{Li, Patel, Vi{\'e}gas, Pfister, and Wattenberg}}}
 \bibcite{rimsky2024steering}{{3}{2024}{{Rimsky et~al.}}{{Rimsky, Gabrieli, Schulz, Turner, et~al.}}}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {paragraph}{Reproducibility.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{10}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{10}{}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Reproducibility.}{10}{}\protected@file@percent }
 \bibcite{bao2024emotion}{{4}{2024}{{Bao et~al.}}{{}}}
 \bibcite{feng2026persona}{{5}{2026}{{Feng et~al.}}{{Feng, Zhao, Zhong, Huang, Gu, Kong, Feng, and Qin}}}
 \bibcite{serapiogarcia2023personality}{{6}{2023}{{Serapio-Garc{\'\i }a et~al.}}{{Serapio-Garc{\'\i }a, Safdari, Crepy, Sun, Fitz, Romero, Abdulhai, Faust, and Matari{\'c}}}}
@@ -133,8 +139,6 @@
 \bibcite{xu2025easysteer}{{14}{2025}{{Xu et~al.}}{{}}}
 \bibcite{bao2025traits2circuits}{{15}{2025}{{Bao et~al.}}{{}}}
 \bibcite{cae2025}{{16}{2025{a}}{{Anonymous}}{{}}}
-\def\@LN@column{1}
-\@writefile{toc}{\contentsline {paragraph}{Reproducibility.}{10}{}\protected@file@percent }
 \bibcite{sae2025denoising}{{17}{2025{b}}{{Anonymous}}{{}}}
 \bibcite{direction2026}{{18}{2026{c}}{{Anonymous}}{{}}}
 \bibcite{venkatesh2026nonidentifiability}{{19}{2026}{{Venkatesh and Kurapath}}{{}}}
@@ -145,64 +149,64 @@
 \bibcite{costa1992revised}{{24}{1992}{{Costa and McCrae}}{{}}}
 \bibcite{vaillant1986empirical}{{25}{1986}{{Vaillant et~al.}}{{Vaillant, Bond, and Vaillant}}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Model Details}{11}{}\protected@file@percent }
-\newlabel{app:model_details}{{A}{11}{}{section.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Models used in this study.} $^\dagger $: PERSONA's exact model. All models are instruction-tuned. Gemma-2's chat template lacks system role support; our pipeline merges system prompts into user messages.}}{11}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Cross-probe accuracy matrix across models.} Mean bidirectional A$\leftrightarrow $B accuracy (train on A, test on B) averaged across 14 models. Diagonal is 1.0 (within-trait). O and E share 79\% of probe information; C and N share only 23\%---a significant difference (paired $t{=}13.3$, $p{<}0.001$).}}{12}{}\protected@file@percent }
-\newlabel{tab:cross_probe}{{5}{12}{}{table.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Dose-response linearity across models.} Number of traits with $|r_{\text  {lin}}| > 0.8$ (strongly linear) and $|r_{\text  {lin}}| < 0.3$ (essentially non-linear) per model.}}{12}{}\protected@file@percent }
-\newlabel{tab:linearity}{{6}{12}{}{table.6}{}}
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Model Details}{12}{}\protected@file@percent }
+\newlabel{app:model_details}{{A}{12}{}{section.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Models used in this study.} $^\dagger $: PERSONA's exact model. All models are instruction-tuned. Gemma-2's chat template lacks system role support; our pipeline merges system prompts into user messages.}}{12}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {B}Cross-Probe Accuracy Matrix}{12}{}\protected@file@percent }
 \newlabel{app:cross_probe_detail}{{B}{12}{}{section.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Cross-probe accuracy matrix across models.} Mean bidirectional A$\leftrightarrow $B accuracy (train on A, test on B) averaged across 15 models. Diagonal is 1.0 (within-trait). O and E share 79\% of probe information; C and N share only 23\%---a significant difference (paired $t{=}13.3$, $p{<}0.001$).}}{12}{}\protected@file@percent }
+\newlabel{tab:cross_probe}{{5}{12}{}{table.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {C}Dose-Response Linearity Detail}{12}{}\protected@file@percent }
 \newlabel{app:linearity_detail}{{C}{12}{}{section.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {D}Cross-Model Steering Heatmap}{12}{}\protected@file@percent }
 \newlabel{app:steering_heatmap}{{D}{12}{}{section.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {E}Cross-Trait Interference Analysis}{12}{}\protected@file@percent }
 \newlabel{app:interference}{{E}{12}{}{section.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Cross-trait interference summary.} Mean primary effect (steering $\Delta $ on target trait), mean off-diagonal shift (non-target traits), maximum off-diagonal shift, and selectivity ratio (primary/mean off-diagonal). Lower selectivity indicates greater interference.}}{12}{}\protected@file@percent }
-\newlabel{tab:interference_summary}{{7}{12}{}{table.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Cross-model steering effectiveness heatmap.} Each cell shows $\Delta $ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance.}}{13}{}\protected@file@percent }
-\newlabel{fig:steering_heatmap}{{4}{13}{}{figure.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Dose-response linearity across models.} Mean absolute Spearman $|\rho |$ between $\alpha $ and judge ratings (averaged across 5 traits), number of traits with $|\rho | > 0.8$ (strongly linear), and $|\rho | < 0.3$ (essentially non-linear). Sorted by mean $|\rho |$.}}{13}{}\protected@file@percent }
+\newlabel{tab:linearity}{{6}{13}{}{table.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Cross-trait interference summary.} Mean primary effect (steering $\Delta $ on target trait), mean off-diagonal shift (non-target traits), maximum off-diagonal shift, and selectivity ratio (primary/mean off-diagonal). Lower selectivity indicates greater interference.}}{13}{}\protected@file@percent }
+\newlabel{tab:interference_summary}{{7}{13}{}{table.7}{}}
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {paragraph}{Key finding: selectivity predicts steerability.}{13}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {F}Representation Entanglement Details}{13}{}\protected@file@percent }
 \newlabel{app:entanglement}{{F}{13}{}{section.6}{}}
 \@writefile{toc}{\contentsline {paragraph}{Independent Entanglement Metrics.}{13}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Steering effectiveness vs.~selectivity ratio.} Each point represents one model. Selectivity ratio (primary $\Delta $ divided by mean off-diagonal shift) separates models into three clusters: high-selectivity strong steerers (Mistral-7B, Llama-3.2), moderate-selectivity models (TinyLlama, Q2.5-0.5B), and low-selectivity weak steerers (Qwen2.5 family, Gemma-2B). The dashed line indicates unity selectivity (no discrimination between target and non-target traits).}}{14}{}\protected@file@percent }
-\newlabel{fig:selectivity}{{5}{14}{}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Cross-trait interference matrices: Mistral-7B (left) vs.~Qwen2.5-7B (right).} Each cell shows the steering effect on the column trait when steering the row trait. Mistral-7B shows strong diagonal dominance (high selectivity) with off-diagonal values roughly half the diagonal. Qwen2.5-7B shows weak diagonal signals and substantial off-diagonal leakage, consistent with its below-unity selectivity ratio.}}{14}{}\protected@file@percent }
-\newlabel{fig:interference_matrices}{{6}{14}{}{figure.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Per-Model Cross-Probe Accuracy Matrices.}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Cross-model steering effectiveness heatmap.} Each cell shows $\Delta $ for one (model, trait) pair. Three clusters emerge: strong steerers (top rows), moderate steerers, and weak steerers (bottom rows). Conscientiousness shows the highest cross-model variance.}}{14}{}\protected@file@percent }
+\newlabel{fig:steering_heatmap}{{4}{14}{}{figure.4}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {paragraph}{Per-Model Cross-Probe Accuracy Matrices.}{14}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces \textbf  {Independent entanglement metrics} (computed from raw activations only). Aggregate entanglement does \emph  {not} predict steering effectiveness at the per-model level ($\rho {=}0.05$, $p{=}0.87$). This confirms that perturbation ratio, not representation geometry, is the dominant cross-model factor.}}{15}{}\protected@file@percent }
-\newlabel{tab:entanglement_independent}{{8}{15}{}{table.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces \textbf  {Representation entanglement and steerability.} Mean $|\cos |$ between persona vectors at each model's LOSO-selected layer, with steering effectiveness.}}{15}{}\protected@file@percent }
-\newlabel{tab:entanglement_summary}{{9}{15}{}{table.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {G}Architectural Determinants of Hidden State Scale}{14}{}\protected@file@percent }
+\newlabel{app:architecture}{{G}{14}{}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {H}Method Details}{14}{}\protected@file@percent }
+\newlabel{app:method_details}{{H}{14}{}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.1}Metrics and Evaluation Criteria}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Leave-One-Scenario-Out (LOSO) Accuracy.}{14}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Steering effectiveness vs.~selectivity ratio.} Each point represents one model. Selectivity ratio (primary $\Delta $ divided by mean off-diagonal shift) separates models into three clusters: high-selectivity strong steerers (Mistral-7B, Llama-3.2), moderate-selectivity models (TinyLlama, Q2.5-0.5B), and low-selectivity weak steerers (Qwen2.5 family, Gemma-2B). The dashed line indicates unity selectivity (no discrimination between target and non-target traits).}}{15}{}\protected@file@percent }
+\newlabel{fig:selectivity}{{5}{15}{}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Cross-trait interference matrices: Mistral-7B (left) vs.~Qwen2.5-7B (right).} Each cell shows the steering effect on the column trait when steering the row trait. Mistral-7B shows strong diagonal dominance (high selectivity) with off-diagonal values roughly half the diagonal. Qwen2.5-7B shows weak diagonal signals and substantial off-diagonal leakage, consistent with its below-unity selectivity ratio.}}{15}{}\protected@file@percent }
+\newlabel{fig:interference_matrices}{{6}{15}{}{figure.6}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {G}Architectural Determinants of Hidden State Scale}{15}{}\protected@file@percent }
-\newlabel{app:architecture}{{G}{15}{}{section.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {H}Method Details}{15}{}\protected@file@percent }
-\newlabel{app:method_details}{{H}{15}{}{section.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.1}Metrics and Evaluation Criteria}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Leave-One-Scenario-Out (LOSO) Accuracy.}{15}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Trait entanglement vs.\ steering effectiveness.} Mean $|\cos |$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta $. Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors.}}{16}{}\protected@file@percent }
-\newlabel{fig:entanglement}{{7}{16}{}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {Architectural prediction of hidden state scale.} Observed vs.~predicted $\log _{10}(\text  {RMS})$ from the regression $\log _{10}(\text  {RMS}) \approx -0.376 \log _{10}(\epsilon ) + 0.016 \cdot \text  {softcap}$. Two architectural hyperparameters explain 56\% of cross-model variance in hidden state magnitude ($n{=}14$). TinyLlama, Gemma-2B, Phi-3-mini, DeepSeek-R1-14B, and Mistral-7B are visible outliers.}}{16}{}\protected@file@percent }
-\newlabel{fig:architecture_rms}{{8}{16}{}{figure.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Cohen's $d$ Effect Size.}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Signal-to-Noise Ratio (SNR).}{15}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces \textbf  {Independent entanglement metrics} (computed from raw activations only). Aggregate entanglement does \emph  {not} predict steering effectiveness at the per-model level ($\rho {=}0.05$, $p{=}0.87$). This confirms that perturbation ratio, not representation geometry, is the dominant cross-model factor.}}{16}{}\protected@file@percent }
+\newlabel{tab:entanglement_independent}{{8}{16}{}{table.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces \textbf  {Representation entanglement and steerability.} Mean $|\cos |$ between persona vectors at each model's LOSO-selected layer, with steering effectiveness.}}{16}{}\protected@file@percent }
+\newlabel{tab:entanglement_summary}{{9}{16}{}{table.9}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {paragraph}{Cohen's $d$ Effect Size.}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Signal-to-Noise Ratio (SNR).}{16}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces \textbf  {Equalized-$\alpha $ validation.} Steering effectiveness at proportionally scaled $\alpha $ (matching perturbation ratio across models) vs.\ standard $\alpha {=}6$. Scaling closes 74\% of the gap between $\epsilon {=}10^{-6}$ models and the strong $\epsilon {=}10^{-5}$ subgroup.}}{17}{}\protected@file@percent }
-\newlabel{tab:equalized_alpha}{{10}{17}{}{table.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Perturbation Ratio (PR).}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.2}Extraction Method Convergence}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.3}Statistical Power and Sample Size}{16}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Trait entanglement vs.\ steering effectiveness.} Mean $|\cos |$ between persona vectors (quantifying cross-trait correlation) plotted against steering $\Delta $. Higher entanglement does not show a clear monotonic relationship with steering, suggesting entanglement interacts with other architectural factors.}}{17}{}\protected@file@percent }
+\newlabel{fig:entanglement}{{7}{17}{}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {Architectural prediction of hidden state scale.} Observed vs.~predicted $\log _{10}(\text  {RMS})$ from the regression $\log _{10}(\text  {RMS}) \approx -0.376 \log _{10}(\epsilon ) + 0.016 \cdot \text  {softcap}$. Two architectural hyperparameters explain 56\% of cross-model variance in hidden state magnitude ($n{=}14$). TinyLlama, Gemma-2B, Phi-3-mini, DeepSeek-R1-14B, and Mistral-7B are visible outliers.}}{17}{}\protected@file@percent }
+\newlabel{fig:architecture_rms}{{8}{17}{}{figure.8}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {paragraph}{Perturbation Ratio (PR).}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.2}Extraction Method Convergence}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {H.3}Statistical Power and Sample Size}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {H.4}Sample Size Ablation}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {I}Per-Model Detailed Results}{17}{}\protected@file@percent }
 \newlabel{app:permodel}{{I}{17}{}{section.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces \textbf  {Equalized-$\alpha $ validation.} Steering effectiveness at proportionally scaled $\alpha $ (matching perturbation ratio across models) vs.\ standard $\alpha {=}6$. Scaling closes 74\% of the gap between $\epsilon {=}10^{-6}$ models and the strong $\epsilon {=}10^{-5}$ subgroup.}}{18}{}\protected@file@percent }
+\newlabel{tab:equalized_alpha}{{10}{18}{}{table.10}{}}
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {subsection}{\numberline {I.1}Qwen2.5-0.5B-Instruct}{18}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {Qwen2.5-0.5B-Instruct: Layer-wise personality encoding profile for Openness.} Linear probe accuracy, Mean difference norm, and PCA explained variance.}}{18}{}\protected@file@percent }
@@ -354,7 +358,7 @@
 \newlabel{app:ood}{{L.3}{47}{}{subsection.12.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {M}Algorithm Pseudocode}{47}{}\protected@file@percent }
 \newlabel{app:algorithm}{{M}{47}{}{section.13}{}}
-\newlabel{alg:personalens}{{\caption@xref {alg:personalens}{ on input line 1065}}{47}{}{section.13}{}}
+\newlabel{alg:personalens}{{\caption@xref {alg:personalens}{ on input line 1078}}{47}{}{section.13}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {N}Perplexity Calculation Methodology}{47}{}\protected@file@percent }
 \newlabel{app:ppl}{{N}{47}{}{section.14}{}}
 \citation{costa1992revised}
